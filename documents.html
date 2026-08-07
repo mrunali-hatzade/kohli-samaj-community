@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kohali Samaj Official Community Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-normal">
+
+    <div class="top-utility-bar">
+        <div class="container utility-flex">
+            <div class="utility-left">
+                <span class="utility-item"><i class="fa-solid fa-location-dot"></i> <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span></span>
+                <div class="utility-item">
+                    <button id="btnLangEn" class="lang-btn active">English</button>
+                    <button id="btnLangMr" class="lang-btn">मराठी</button>
+                </div>
+                <div class="utility-item font-resizer">
+                    <button id="btnFontSm" class="font-btn">A-</button>
+                    <button id="btnFontMd" class="font-btn active">A</button>
+                    <button id="btnFontLg" class="font-btn">A+</button>
+                </div>
+            </div>
+            <div class="utility-right">
+                <span class="utility-item"><i class="fa-solid fa-phone"></i> +91 12345 67890</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="brand-section">
+                <a href="index.html"><img src="images/kohli_samaj_logo.png" alt="Kohali Samaj Logo" class="brand-logo"></a>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-menu" id="mainNav">
+                    <li><a href="index.html" class="nav-link " data-lang-en="Home" data-lang-mr="मुखपृष्ठ"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="about.html" class="nav-link " data-lang-en="About Us" data-lang-mr="आमच्याबद्दल">About Us</a></li>
+                    <li><a href="history.html" class="nav-link " data-lang-en="History" data-lang-mr="इतिहास">History</a></li>
+                    <li><a href="districts.html" class="nav-link " data-lang-en="Districts & Villages" data-lang-mr="जिल्हा व गाव सूची">Districts & Villages</a></li>
+                    <li><a href="culture.html" class="nav-link " data-lang-en="Culture & Traditions" data-lang-mr="संस्कृती व परंपरा">Culture & Traditions</a></li>
+                    <li><a href="water-heritage.html" class="nav-link " data-lang-en="Water Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Heritage</a></li>
+                    <li><a href="sanghatana.html" class="nav-link " data-lang-en="Organization" data-lang-mr="समाज संघटना">Organization</a></li>
+                    <li><a href="news.html" class="nav-link " data-lang-en="News" data-lang-mr="बातम्या">News</a></li>
+                    <li><a href="gallery.html" class="nav-link " data-lang-en="Gallery" data-lang-mr="गॅलरी">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link " data-lang-en="Contact" data-lang-mr="संपर्क">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" id="mobileNavToggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+    <div style="background: linear-gradient(135deg, #0e3e29 0%, #0b3221 100%); color:white; padding: 2.5rem 0; border-bottom:3px solid var(--accent-gold);">
+        <div class="container">
+            <h1 style="font-size:2.2rem; font-weight:800;" data-lang-en="Historical Documents & Gazetteers" data-lang-mr="ऐतिहासिक दस्तऐवज व गॅझेटियर">Historical Documents & Gazetteers</h1>
+            <p style="color:#d1d5db; margin-top:0.4rem;" data-lang-en="Official British Colonial Gazetteers, Census Reports & Archival Records" data-lang-mr="शासकीय अभिलेख, जनगणना अहवाल व ऐतिहासिक पुरावे">Official British Colonial Gazetteers, Census Reports & Archival Records</p>
+        </div>
+    </div>
+    <main class="container" style="padding: 3rem 1.25rem;">
+        <div style="margin-bottom:2rem;">
+            <img src="images/document_scroll.jpg" style="width:100%; max-height:280px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem;">
+            <h2 style="color:var(--primary-dark); font-size:1.6rem; font-weight:800; margin-bottom:1rem;">Archival Record Repository</h2>
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+                <div style="background:white; border-radius:8px; border:1px solid var(--border-color); padding:1.2rem; display:flex; justify-content:space-between; align-items:center;">
+                    <div><strong>Central Provinces Gazetteer (1867)</strong><div style="font-size:0.8rem; color:var(--text-muted);">Land Settlement & Malguzari Tank References</div></div>
+                    <button class="btn-primary" onclick="alert('Document download integration ready.')"><i class="fa-solid fa-download"></i> View Document</button>
+                </div>
+                <div style="background:white; border-radius:8px; border:1px solid var(--border-color); padding:1.2rem; display:flex; justify-content:space-between; align-items:center;">
+                    <div><strong>Chanda Settlement Report (1870)</strong><div style="font-size:0.8rem; color:var(--text-muted);">Agricultural Records & Village Leadership</div></div>
+                    <button class="btn-primary" onclick="alert('Document download integration ready.')"><i class="fa-solid fa-download"></i> View Document</button>
+                </div>
+                <div style="background:white; border-radius:8px; border:1px solid var(--border-color); padding:1.2rem; display:flex; justify-content:space-between; align-items:center;">
+                    <div><strong>Census of India Archival Record (1881)</strong><div style="font-size:0.8rem; color:var(--text-muted);">Demographic Classifications</div></div>
+                    <button class="btn-primary" onclick="alert('Document download integration ready.')"><i class="fa-solid fa-download"></i> View Document</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
+            <div>© 2026 Kohali Samaj Portal. All Rights Reserved.</div>
+            <div>Built by Community Volunteers</div>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

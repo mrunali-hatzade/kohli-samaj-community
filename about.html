@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Overview | Kohali Samaj Official Portal</title>
+    <meta name="description" content="Detailed overview of Kohali Samaj community, demographics, district presence, and cultural identity.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-normal">
+
+    <!-- Top Utility Bar -->
+    <div class="top-utility-bar">
+        <div class="container utility-flex">
+            <div class="utility-left">
+                <span class="utility-item"><i class="fa-solid fa-location-dot"></i> <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span></span>
+                <div class="utility-item">
+                    <button id="btnLangEn" class="lang-btn active">English</button>
+                    <button id="btnLangMr" class="lang-btn">मराठी</button>
+                </div>
+                <div class="utility-item font-resizer">
+                    <button id="btnFontSm" class="font-btn">A-</button>
+                    <button id="btnFontMd" class="font-btn active">A</button>
+                    <button id="btnFontLg" class="font-btn">A+</button>
+                </div>
+            </div>
+            <div class="utility-right">
+                <span class="utility-item"><i class="fa-solid fa-phone"></i> +91 12345 67890</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="brand-section">
+                <a href="index.html"><img src="images/kohli_samaj_logo.png" alt="Kohali Samaj Logo" class="brand-logo"></a>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-menu" id="mainNav">
+                    <li><a href="index.html" class="nav-link" data-lang-en="Home" data-lang-mr="मुखपृष्ठ"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="about.html" class="nav-link active" data-lang-en="About Us" data-lang-mr="आमच्याबद्दल">About Us</a></li>
+                    <li><a href="history.html" class="nav-link" data-lang-en="History" data-lang-mr="इतिहास">History</a></li>
+                    <li><a href="districts.html" class="nav-link" data-lang-en="Districts & Villages" data-lang-mr="जिल्हा व गाव सूची">Districts & Villages</a></li>
+                    <li><a href="culture.html" class="nav-link" data-lang-en="Culture & Traditions" data-lang-mr="संस्कृती व परंपरा">Culture & Traditions</a></li>
+                    <li><a href="water-heritage.html" class="nav-link" data-lang-en="Water Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Heritage</a></li>
+                    <li><a href="sanghatana.html" class="nav-link" data-lang-en="Organization" data-lang-mr="समाज संघटना">Organization</a></li>
+                    <li><a href="news.html" class="nav-link" data-lang-en="News" data-lang-mr="बातम्या">News</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-lang-en="Gallery" data-lang-mr="गॅलरी">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link" data-lang-en="Contact" data-lang-mr="संपर्क">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" id="mobileNavToggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Page Title Banner -->
+    <div style="background: linear-gradient(135deg, #0e3e29 0%, #0b3221 100%); color:white; padding: 2.5rem 0; border-bottom:3px solid var(--accent-gold);">
+        <div class="container">
+            <h1 style="font-size:2.2rem; font-weight:800;" data-lang-en="Community Overview" data-lang-mr="कोहळी समाज परिचय">Community Overview</h1>
+            <p style="color:#d1d5db; margin-top:0.4rem;" data-lang-en="Demographics, Vision, Agricultural Heritage & Geographic Regions" data-lang-mr="लोकसंख्या, उद्दिष्टे, कृषी वारसा व प्रमुख जिल्हे">Demographics, Vision, Agricultural Heritage & Geographic Regions</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container" style="padding: 3rem 1.25rem;">
+        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem;">
+            <div>
+                <h2 style="color:var(--primary-dark); font-size:1.6rem; font-weight:800; margin-bottom:1rem;" data-lang-en="About Kohali Samaj" data-lang-mr="कोहळी समाजाविषयी">About Kohali Samaj</h2>
+                <p style="line-height:1.7; font-size:1rem; color:var(--text-main); margin-bottom:1.2rem;" data-lang-en="Kohali Samaj is a distinguished, hardworking agricultural and water-engineering community primarily settled across Vidarbha region of Maharashtra and parts of Madhya Pradesh. Renowned historically as the builders of the famous Malguzari tanks (bhandaras), the community has contributed immensely to rural prosperity and irrigation engineering." data-lang-mr="कोहळी समाज हा महाराष्ट्र आणि मध्य प्रदेशातील एक अत्यंत मेहनती, उद्योगशील आणि जलव्यवस्थापनासाठी प्रसिद्ध असलेला समाज आहे. वैदर्भीय मालगुजारी तलावांची बांधणी करून कृषी समृद्धी आणण्यात कोहळी समाजाचा वाटा अतुलनीय आहे.">
+                    Kohali Samaj is a distinguished, hardworking agricultural and water-engineering community primarily settled across Vidarbha region of Maharashtra and parts of Madhya Pradesh. Renowned historically as the builders of the famous Malguzari tanks (bhandaras), the community has contributed immensely to rural prosperity and irrigation engineering.
+                </p>
+
+                <h3 style="color:var(--primary-dark); font-size:1.3rem; font-weight:700; margin:1.8rem 0 0.8rem 0;" data-lang-en="Core Pillars & Objectives" data-lang-mr="प्रमुख ध्येय व उद्दिष्टे">Core Pillars & Objectives</h3>
+                <ul style="line-height:1.8; padding-left:1.2rem; color:var(--text-main); margin-bottom:1.5rem;">
+                    <li data-lang-en="Preserving indigenous water management and tank building heritage." data-lang-mr="पारंपरिक जलसंवर्धन व तलाव निर्माणाचा वारसा जपून ठेवणे.">Preserving indigenous water management and tank building heritage.</li>
+                    <li data-lang-en="Fostering youth education, competitive exam counseling, and financial aid." data-lang-mr="युवकांचे शिक्षण, स्पर्धा परीक्षा समुपदेशन व आर्थिक मदत.">Fostering youth education, competitive exam counseling, and financial aid.</li>
+                    <li data-lang-en="Promoting community harmony through annual Vadhu-Var Parichay Melavas." data-lang-mr="वार्षिक वधू-वर परिचय मेळाव्यांद्वारे सामाजिक सलोखा वाढवणे.">Promoting community harmony through annual Vadhu-Var Parichay Melavas.</li>
+                    <li data-lang-en="Unifying rural and urban community forums." data-lang-mr="ग्रामीण व शहरी समाज संघटनांचे एकत्रीकरण.">Unifying rural and urban community forums.</li>
+                </ul>
+            </div>
+
+            <!-- Sidebar Card -->
+            <div style="background:white; border-radius:12px; border:1px solid var(--border-color); padding:1.4rem; box-shadow:var(--shadow-sm);">
+                <h3 style="color:var(--primary-dark); font-size:1.15rem; font-weight:800; border-bottom:2px solid var(--accent-gold); padding-bottom:0.5rem; margin-bottom:1rem;" data-lang-en="Key Districts" data-lang-mr="प्रमुख ५ जिल्हे">Key Districts</h3>
+                <div style="display:flex; flex-direction:column; gap:0.8rem;">
+                    <div style="display:flex; align-items:center; gap:0.8rem;">
+                        <img src="images/hero_stepwell.jpg" style="width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
+                        <div><strong>Bhandara</strong><div style="font-size:0.75rem; color:var(--text-muted);">District of Lakes</div></div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.8rem;">
+                        <img src="images/water_lake.jpg" style="width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
+                        <div><strong>Gondia</strong><div style="font-size:0.75rem; color:var(--text-muted);">Rice Bowl & Tank Capital</div></div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.8rem;">
+                        <img src="images/history_arch.jpg" style="width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
+                        <div><strong>Gadchiroli</strong><div style="font-size:0.75rem; color:var(--text-muted);">Forest & River Heritage</div></div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.8rem;">
+                        <img src="images/culture_tradition.jpg" style="width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
+                        <div><strong>Chandrapur</strong><div style="font-size:0.75rem; color:var(--text-muted);">Historic Forts & Dams</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
+            <div>© 2026 Kohali Samaj Portal. All Rights Reserved.</div>
+            <div>Built by Community Volunteers</div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

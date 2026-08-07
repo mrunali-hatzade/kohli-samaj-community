@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive District Map & Village Directory | Kohali Samaj Official Portal</title>
+    <meta name="description" content="Explore Kohali Samaj presence across 518+ villages and key districts: Bhandara, Gondia, Gadchiroli, Chandrapur, and Balaghat.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .district-tab-btn {
+            padding: 0.8rem 1.4rem;
+            border-radius: 8px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .district-tab-btn.active, .district-tab-btn:hover {
+            background: var(--primary-dark);
+            color: #ffffff;
+            border-color: var(--primary-dark);
+        }
+        .village-card {
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        .village-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body class="font-normal">
+
+    <!-- Top Utility Bar -->
+    <div class="top-utility-bar">
+        <div class="container utility-flex">
+            <div class="utility-left">
+                <span class="utility-item"><i class="fa-solid fa-location-dot"></i> <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span></span>
+                <div class="utility-item">
+                    <button id="btnLangEn" class="lang-btn active">English</button>
+                    <button id="btnLangMr" class="lang-btn">मराठी</button>
+                </div>
+                <div class="utility-item font-resizer">
+                    <button id="btnFontSm" class="font-btn">A-</button>
+                    <button id="btnFontMd" class="font-btn active">A</button>
+                    <button id="btnFontLg" class="font-btn">A+</button>
+                </div>
+            </div>
+            <div class="utility-right">
+                <span class="utility-item"><i class="fa-solid fa-phone"></i> +91 12345 67890</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="brand-section">
+                <a href="index.html"><img src="images/kohli_samaj_logo.png" alt="Kohali Samaj Logo" class="brand-logo"></a>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-menu" id="mainNav">
+                    <li><a href="index.html" class="nav-link" data-lang-en="Home" data-lang-mr="मुखपृष्ठ"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="about.html" class="nav-link" data-lang-en="About Us" data-lang-mr="आमच्याबद्दल">About Us</a></li>
+                    <li><a href="history.html" class="nav-link" data-lang-en="History" data-lang-mr="इतिहास">History</a></li>
+                    <li><a href="districts.html" class="nav-link active" data-lang-en="Districts & Villages" data-lang-mr="जिल्हा व गाव सूची">Districts & Villages</a></li>
+                    <li><a href="culture.html" class="nav-link" data-lang-en="Culture & Traditions" data-lang-mr="संस्कृती व परंपरा">Culture & Traditions</a></li>
+                    <li><a href="water-heritage.html" class="nav-link" data-lang-en="Water Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Heritage</a></li>
+                    <li><a href="sanghatana.html" class="nav-link" data-lang-en="Organization" data-lang-mr="समाज संघटना">Organization</a></li>
+                    <li><a href="news.html" class="nav-link" data-lang-en="News" data-lang-mr="बातम्या">News</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-lang-en="Gallery" data-lang-mr="गॅलरी">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link" data-lang-en="Contact" data-lang-mr="संपर्क">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" id="mobileNavToggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Page Title Banner -->
+    <div style="background: linear-gradient(135deg, #0e3e29 0%, #0b3221 100%); color:white; padding: 2.5rem 0; border-bottom:3px solid var(--accent-gold);">
+        <div class="container">
+            <h1 style="font-size:2.2rem; font-weight:800;" data-lang-en="Interactive District Map & Village Directory" data-lang-mr="जिल्हा व गाव माहिती भांडार">Interactive District Map & Village Directory</h1>
+            <p style="color:#d1d5db; margin-top:0.4rem;" data-lang-en="Explore Kohali Samaj presence across 518+ Villages & 5 Key Districts" data-lang-mr="५१८+ गावे व ५ प्रमुख जिल्ह्यांमधील कोहळी समाज हक्क व माहिती">Explore Kohali Samaj presence across 518+ Villages & 5 Key Districts</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container" style="padding: 3rem 1.25rem;">
+        
+        <!-- District Selector Tabs -->
+        <div style="display:flex; gap:0.8rem; overflow-x:auto; padding-bottom:0.5rem; margin-bottom:2rem;" id="districtTabContainer">
+            <!-- Tabs rendered dynamically -->
+        </div>
+
+        <!-- Selected District Detail View -->
+        <div id="districtDetailView">
+            <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Village Search & Directory Section -->
+        <div style="margin-top:3rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; flex-wrap:wrap; gap:1rem;">
+                <h3 style="color:var(--primary-dark); font-size:1.4rem; font-weight:800;" data-lang-en="Village Directory & Water Tanks" data-lang-mr="गाव व जल तलाव यादी">Village Directory & Water Tanks</h3>
+                <div style="position:relative; width:300px;">
+                    <input type="text" id="villageSearchInput" class="form-control" placeholder="Search village by name..." onkeyup="filterVillages()">
+                </div>
+            </div>
+
+            <div id="villagesListContainer" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1rem;">
+                <!-- Village rows rendered dynamically -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
+            <div>© 2026 Kohali Samaj Portal. All Rights Reserved.</div>
+            <div>Built by Community Volunteers</div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        let currentDistrictId = 1;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const data = getPortalData();
+            renderDistrictTabs(data.districts);
+            selectDistrict(1);
+        });
+
+        function renderDistrictTabs(districts) {
+            const container = document.getElementById('districtTabContainer');
+            if (!container) return;
+
+            container.innerHTML = districts.map(d => `
+                <button class="district-tab-btn ${d.id === currentDistrictId ? 'active' : ''}" onclick="selectDistrict(${d.id})" id="tab-btn-${d.id}">
+                    <i class="fa-solid fa-location-dot" style="color:var(--accent-gold);"></i> ${d.name_en}
+                </button>
+            `).join('');
+        }
+
+        function selectDistrict(id) {
+            currentDistrictId = id;
+            const data = getPortalData();
+            const dist = data.districts.find(d => d.id === id);
+            if (!dist) return;
+
+            // Update Tab Active State
+            document.querySelectorAll('.district-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`tab-btn-${id}`)?.classList.add('active');
+
+            // Render Detail View
+            const detailContainer = document.getElementById('districtDetailView');
+            detailContainer.innerHTML = `
+                <div style="background:white; border-radius:12px; border:1px solid var(--border-color); padding:1.8rem; box-shadow:var(--shadow-md); display:grid; grid-template-columns:1.2fr 1fr; gap:2rem; align-items:center;">
+                    <div>
+                        <div style="display:inline-block; background:var(--accent-gold-light); color:var(--accent-gold-hover); padding:0.3rem 0.8rem; border-radius:9999px; font-weight:700; font-size:0.85rem; margin-bottom:0.8rem;">
+                            ${dist.subtitle_en}
+                        </div>
+                        <h2 style="color:var(--primary-dark); font-size:1.8rem; font-weight:800; margin-bottom:0.8rem;">${dist.name_en} District Overview</h2>
+                        <p style="line-height:1.6; color:var(--text-main); margin-bottom:1.5rem;">${dist.desc_en}</p>
+                        
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="background:var(--bg-cream); padding:0.8rem; border-radius:8px; border:1px solid var(--border-color);">
+                                <div style="font-size:1.3rem; font-weight:800; color:var(--primary-dark);">${dist.villages_count}</div>
+                                <div style="font-size:0.8rem; color:var(--text-muted);">Kohali Villages</div>
+                            </div>
+                            <div style="background:var(--bg-cream); padding:0.8rem; border-radius:8px; border:1px solid var(--border-color);">
+                                <div style="font-size:1.3rem; font-weight:800; color:var(--accent-gold-hover);">${dist.tanks_count}+</div>
+                                <div style="font-size:0.8rem; color:var(--text-muted);">Malguzari Water Tanks</div>
+                            </div>
+                        </div>
+
+                        <div style="background:#fdf8eb; padding:1rem; border-radius:8px; border:1px solid #f2ebe0; font-size:0.9rem;">
+                            <div><i class="fa-solid fa-user-tie" style="color:var(--accent-gold);"></i> <strong>Representative:</strong> ${dist.representative}</div>
+                            <div style="margin-top:0.4rem;"><i class="fa-solid fa-phone" style="color:var(--accent-gold);"></i> <strong>Helpline:</strong> ${dist.phone}</div>
+                            <div style="margin-top:0.4rem;"><i class="fa-solid fa-building" style="color:var(--accent-gold);"></i> <strong>Office:</strong> ${dist.office}</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <img src="${dist.image}" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:var(--shadow-sm);">
+                    </div>
+                </div>
+            `;
+
+            renderVillages(dist.villages || []);
+        }
+
+        function renderVillages(villages) {
+            const container = document.getElementById('villagesListContainer');
+            if (!container) return;
+
+            if (!villages.length) {
+                container.innerHTML = '<p style="color:var(--text-muted);">No village records found for this district.</p>';
+                return;
+            }
+
+            container.innerHTML = villages.map(v => `
+                <div class="village-card">
+                    <div>
+                        <div style="font-size:1.05rem; font-weight:800; color:var(--primary-dark);">${v.name_en} (${v.name_mr})</div>
+                        <div style="font-size:0.82rem; color:var(--accent-gold-hover); font-weight:600; margin-top:0.2rem;">
+                            <i class="fa-solid fa-droplet"></i> ${v.tank_en}
+                        </div>
+                    </div>
+                    <button class="btn-primary" style="padding:0.4rem 0.8rem; font-size:0.8rem;" onclick="alert('Viewing detailed village record for ${v.name_en}')">
+                        View Info
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function filterVillages() {
+            const query = document.getElementById('villageSearchInput').value.toLowerCase().trim();
+            const data = getPortalData();
+            const dist = data.districts.find(d => d.id === currentDistrictId);
+            if (!dist || !dist.villages) return;
+
+            const filtered = dist.villages.filter(v => 
+                v.name_en.toLowerCase().includes(query) || 
+                v.name_mr.includes(query) ||
+                v.tank_en.toLowerCase().includes(query)
+            );
+            renderVillages(filtered);
+        }
+    </script>
+</body>
+</html>
