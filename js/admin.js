@@ -1,5 +1,5 @@
 /**
- * Admin Dashboard Simulator for Kohali Samaj Web Portal
+ * Admin Dashboard Simulator for Kohli Samaj Web Portal
  * Allows dynamic Add, Edit, and Delete of Notices, News, Timeline, and Gallery.
  * Prepared for seamless C# .NET Backend Integration.
  */
@@ -114,7 +114,7 @@ window.openAdminModal = function() {
         </div>
     `;
 
-    openModal('<i class="fa-solid fa-sliders"></i> Kohali Samaj Admin Dashboard Demo', adminHtml);
+    openModal('<i class="fa-solid fa-sliders"></i> Kohli Samaj Admin Dashboard Demo', adminHtml);
 };
 
 window.switchAdminTab = function(tabName) {

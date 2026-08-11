@@ -3,90 +3,587 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kohali Samaj Official Community Portal</title>
+    <title>Historical Documents & Gazetteers | Kohli Samaj Official Portal</title>
+    <meta name="description" content="Archival British settlement reports, gazetteers, census records, and research publications documenting the Kohli Samaj community's heritage as master water engineers and Malguzars.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Document Archive Page Styles ── */
+        .doc-archive-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a5c3a 60%, #0a2e1f 100%);
+            padding: 3.5rem 0 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .doc-archive-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .doc-hero-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .doc-hero-icon-wrap {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: rgba(245, 158, 11, 0.15);
+            border: 2px solid rgba(245, 158, 11, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+        .doc-hero-text h1 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .doc-hero-text p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Stats bar */
+        .doc-stats-bar {
+            background: white;
+            border-bottom: 2px solid var(--border-color);
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .doc-stats-inner {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .doc-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .doc-stat-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--primary-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+        }
+        .doc-stat-label { font-size: 0.75rem; color: var(--text-muted); }
+        .doc-stat-value { font-size: 1.1rem; font-weight: 800; color: var(--primary-dark); }
+
+        /* Filter bar */
+        .doc-filter-bar {
+            background: #f8faf9;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 40;
+        }
+        .filter-inner {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filter-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 0.4rem;
+        }
+        .filter-btn {
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            border: 1.5px solid var(--border-color);
+            background: white;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-dark);
+            color: white;
+            border-color: var(--primary-dark);
+        }
+
+        /* Document cards grid */
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+            padding: 2.5rem 0;
+        }
+        .doc-card {
+            background: white;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            transition: box-shadow 0.25s, transform 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+        .doc-card:hover {
+            box-shadow: 0 8px 32px rgba(14,62,41,0.12);
+            transform: translateY(-3px);
+        }
+        .doc-card-header {
+            padding: 1.2rem 1.4rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .doc-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            flex-shrink: 0;
+        }
+        .doc-card-meta {
+            flex: 1;
+            min-width: 0;
+        }
+        .doc-year-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .doc-category-badge {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-left: 0.4rem;
+        }
+        .cat-gazetteer { background: #fef3c7; color: #92400e; }
+        .cat-settlement { background: #d1fae5; color: #065f46; }
+        .cat-census { background: #dbeafe; color: #1e40af; }
+        .cat-research { background: #ede9fe; color: #5b21b6; }
+        .doc-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.35;
+            margin-top: 0.3rem;
+        }
+        .doc-card-body {
+            padding: 1rem 1.4rem;
+            flex: 1;
+        }
+        .doc-meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .doc-meta-item {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .doc-meta-item i { color: var(--accent-gold); width: 12px; }
+        .doc-description {
+            font-size: 0.83rem;
+            color: var(--text-body);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .doc-quote-block {
+            background: linear-gradient(135deg, #f0fdf4, #fefce8);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+        }
+        .doc-quote-block p {
+            font-size: 0.8rem;
+            color: #374151;
+            line-height: 1.55;
+            font-style: italic;
+        }
+        .doc-quote-block .quote-label {
+            font-size: 0.7rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+        }
+        .doc-card-footer {
+            padding: 0.9rem 1.4rem;
+            border-top: 1px solid var(--border-color);
+            background: #f8faf9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .doc-avail-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .avail-yes { color: #059669; }
+        .avail-no { color: var(--text-muted); }
+        .btn-view-doc {
+            padding: 0.4rem 1rem;
+            background: var(--primary-dark);
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+        .btn-view-doc:hover { background: #0a2a1c; }
+        .btn-view-doc.disabled {
+            background: var(--border-color);
+            color: var(--text-muted);
+            cursor: not-allowed;
+        }
+        /* no-results */
+        .no-docs-msg {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            display: none;
+        }
+        .no-docs-msg i { font-size: 3rem; margin-bottom: 1rem; color: var(--border-color); }
+
+        @media (max-width: 600px) {
+            .documents-grid { grid-template-columns: 1fr; }
+            .doc-stats-inner { gap: 1rem; }
+        }
+    </style>
 </head>
 <body class="font-normal">
 
+    <!-- TOP UTILITY BAR -->
     <div class="top-utility-bar">
         <div class="container utility-flex">
             <div class="utility-left">
-                <span class="utility-item"><i class="fa-solid fa-location-dot"></i> <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span></span>
+                <span class="utility-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
+                </span>
                 <div class="utility-item">
                     <button id="btnLangEn" class="lang-btn active">English</button>
                     <button id="btnLangMr" class="lang-btn">मराठी</button>
                 </div>
-                <div class="utility-item font-resizer">
+                <div class="utility-item font-resizer" title="Adjust Text Size">
                     <button id="btnFontSm" class="font-btn">A-</button>
                     <button id="btnFontMd" class="font-btn active">A</button>
                     <button id="btnFontLg" class="font-btn">A+</button>
                 </div>
             </div>
             <div class="utility-right">
-                <span class="utility-item"><i class="fa-solid fa-phone"></i> +91 12345 67890</span>
+                <span class="utility-item" style="cursor:pointer;" onclick="if(typeof openAdminModal==='function')openAdminModal();">
+                    <i class="fa-solid fa-bell"></i>
+                    <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
+                </span>
+                <form id="topSearchForm" class="top-search-form">
+                    <input type="text" id="searchInput" placeholder="Search portal...">
+                    <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
             </div>
         </div>
     </div>
 
+    <!-- HEADER & NAV -->
     <header class="main-header">
         <div class="container header-inner">
             <div class="brand-section">
-                <a href="index.html"><img src="images/kohli_samaj_logo.png" alt="Kohali Samaj Logo" class="brand-logo"></a>
+                <a href="index.html">
+                    <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Official Emblem Logo" class="brand-logo">
+                </a>
             </div>
-            <nav class="nav-bar">
+            <nav class="nav-bar" id="mainNavBar">
                 <ul class="nav-menu" id="mainNav">
-                    <li><a href="index.html" class="nav-link " data-lang-en="Home" data-lang-mr="मुखपृष्ठ"><i class="fa-solid fa-house"></i> Home</a></li>
-                    <li><a href="about.html" class="nav-link " data-lang-en="About Us" data-lang-mr="आमच्याबद्दल">About Us</a></li>
-                    <li><a href="history.html" class="nav-link " data-lang-en="History" data-lang-mr="इतिहास">History</a></li>
-                    <li><a href="districts.html" class="nav-link " data-lang-en="Districts & Villages" data-lang-mr="जिल्हा व गाव सूची">Districts & Villages</a></li>
-                    <li><a href="culture.html" class="nav-link " data-lang-en="Culture & Traditions" data-lang-mr="संस्कृती व परंपरा">Culture & Traditions</a></li>
-                    <li><a href="water-heritage.html" class="nav-link " data-lang-en="Water Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Heritage</a></li>
-                    <li><a href="sanghatana.html" class="nav-link " data-lang-en="Organization" data-lang-mr="समाज संघटना">Organization</a></li>
-                    <li><a href="news.html" class="nav-link " data-lang-en="News" data-lang-mr="बातम्या">News</a></li>
-                    <li><a href="gallery.html" class="nav-link " data-lang-en="Gallery" data-lang-mr="गॅलरी">Gallery</a></li>
-                    <li><a href="contact.html" class="nav-link " data-lang-en="Contact" data-lang-mr="संपर्क">Contact</a></li>
+                    <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
+                    <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
+                    <li class="has-dropdown">
+                        <a href="#" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
+                            <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
+                            <li><a href="documents.html" class="dropdown-link"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></a></li>
+                            <li><a href="gazetteers.html" class="dropdown-link"><i class="fa-solid fa-book-open"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></a></li>
+                            <li><a href="census.html" class="dropdown-link"><i class="fa-solid fa-users-rectangle"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></a></li>
+                            <li><a href="settlement.html" class="dropdown-link"><i class="fa-solid fa-map"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="water-heritage.html" class="dropdown-link"><i class="fa-solid fa-droplet"></i> <span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span></a></li>
+                            <li><a href="historical-gallery.html" class="dropdown-link"><i class="fa-solid fa-image"></i> <span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></a></li>
+                            <li><a href="research.html" class="dropdown-link"><i class="fa-solid fa-microscope"></i> <span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="culture.html" class="nav-link"><span data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span></a></li>
+                    <li class="has-dropdown">
+                        <a href="#" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html" class="dropdown-link"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Overview" data-lang-mr="समाज परिचय">Community Overview</span></a></li>
+                            <li><a href="districts.html" class="dropdown-link"><i class="fa-solid fa-map-location-dot"></i> <span data-lang-en="Districts & Regions" data-lang-mr="जिल्हे व क्षेत्र">Districts & Regions</span></a></li>
+                            <li><a href="matrimonial.html" class="dropdown-link"><i class="fa-solid fa-heart"></i> <span data-lang-en="Matrimonial" data-lang-mr="वधू-वर परिचय">Matrimonial</span></a></li>
+                            <li><a href="scholarships.html" class="dropdown-link"><i class="fa-solid fa-graduation-cap"></i> <span data-lang-en="Scholarships" data-lang-mr="शिष्यवृत्ती">Scholarships</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="committee.html" class="nav-link"><span data-lang-en="Committee" data-lang-mr="समिती">Committee</span></a></li>
+                    <li><a href="events.html" class="nav-link"><span data-lang-en="Events" data-lang-mr="कार्यक्रम">Events</span></a></li>
+                    <li><a href="gallery.html" class="nav-link"><span data-lang-en="Gallery" data-lang-mr="गॅलरी">Gallery</span></a></li>
+                    <li><a href="news.html" class="nav-link"><span data-lang-en="News" data-lang-mr="बातम्या">News</span></a></li>
+                    <li><a href="contact.html" class="nav-link"><span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span></a></li>
                 </ul>
             </nav>
-            <button class="mobile-nav-toggle" id="mobileNavToggle"><i class="fa-solid fa-bars"></i></button>
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </header>
-    <div style="background: linear-gradient(135deg, #0e3e29 0%, #0b3221 100%); color:white; padding: 2.5rem 0; border-bottom:3px solid var(--accent-gold);">
+
+    <!-- BREADCRUMB -->
+    <div class="page-title-banner">
         <div class="container">
-            <h1 style="font-size:2.2rem; font-weight:800;" data-lang-en="Historical Documents & Gazetteers" data-lang-mr="ऐतिहासिक दस्तऐवज व गॅझेटियर">Historical Documents & Gazetteers</h1>
-            <p style="color:#d1d5db; margin-top:0.4rem;" data-lang-en="Official British Colonial Gazetteers, Census Reports & Archival Records" data-lang-mr="शासकीय अभिलेख, जनगणना अहवाल व ऐतिहासिक पुरावे">Official British Colonial Gazetteers, Census Reports & Archival Records</p>
+            <div class="breadcrumb-trail">
+                <a href="index.html" class="bc-home"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
+                <span class="bc-sep">&gt;&gt;</span>
+                <span class="bc-parent" data-lang-en="History" data-lang-mr="इतिहास">History</span>
+                <span class="bc-sep">&gt;&gt;</span>
+                <span class="bc-current" data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span>
+            </div>
+            <h1 class="page-banner-title"><span data-lang-en="Historical Documents Archive" data-lang-mr="ऐतिहासिक दस्तऐवज संग्रह">Historical Documents Archive</span></h1>
+            <p class="page-banner-subtitle"><span data-lang-en="British-era gazetteers, settlement reports, census records & research publications on Kohli heritage" data-lang-mr="कोहळी वारशावरील ब्रिटिशकालीन गॅझेटियर, सेटलमेंट अहवाल, जनगणना नोंदी व संशोधन प्रकाशने">British-era gazetteers, settlement reports, census records & research publications on Kohli heritage</span></p>
         </div>
     </div>
-    <main class="container" style="padding: 3rem 1.25rem;">
-        <div style="margin-bottom:2rem;">
-            <img src="images/document_scroll.jpg" style="width:100%; max-height:280px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem;">
-            <h2 style="color:var(--primary-dark); font-size:1.6rem; font-weight:800; margin-bottom:1rem;">Archival Record Repository</h2>
-            <div style="display:flex; flex-direction:column; gap:1rem;">
-                <div style="background:white; border-radius:8px; border:1px solid var(--border-color); padding:1.2rem; display:flex; justify-content:space-between; align-items:center;">
-                    <div><strong>Central Provinces Gazetteer (1867)</strong><div style="font-size:0.8rem; color:var(--text-muted);">Land Settlement & Malguzari Tank References</div></div>
-                    <button class="btn-primary" onclick="alert('Document download integration ready.')"><i class="fa-solid fa-download"></i> View Document</button>
+
+    <!-- STATS BAR -->
+    <div class="doc-stats-bar">
+        <div class="container doc-stats-inner">
+            <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+                <div class="doc-stat-item">
+                    <div class="doc-stat-icon"><i class="fa-solid fa-file-lines"></i></div>
+                    <div>
+                        <div class="doc-stat-label" data-lang-en="Total Records" data-lang-mr="एकूण नोंदी">Total Records</div>
+                        <div class="doc-stat-value">12</div>
+                    </div>
                 </div>
-                <div style="background:white; border-radius:8px; border:1px solid var(--border-color); padding:1.2rem; display:flex; justify-content:space-between; align-items:center;">
-                    <div><strong>Chanda Settlement Report (1870)</strong><div style="font-size:0.8rem; color:var(--text-muted);">Agricultural Records & Village Leadership</div></div>
-                    <button class="btn-primary" onclick="alert('Document download integration ready.')"><i class="fa-solid fa-download"></i> View Document</button>
+                <div class="doc-stat-item">
+                    <div class="doc-stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <div>
+                        <div class="doc-stat-label" data-lang-en="Time Span" data-lang-mr="कालावधी">Time Span</div>
+                        <div class="doc-stat-value">1867 – 2010</div>
+                    </div>
                 </div>
-                <div style="background:white; border-radius:8px; border:1px solid var(--border-color); padding:1.2rem; display:flex; justify-content:space-between; align-items:center;">
-                    <div><strong>Census of India Archival Record (1881)</strong><div style="font-size:0.8rem; color:var(--text-muted);">Demographic Classifications</div></div>
-                    <button class="btn-primary" onclick="alert('Document download integration ready.')"><i class="fa-solid fa-download"></i> View Document</button>
+                <div class="doc-stat-item">
+                    <div class="doc-stat-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <div>
+                        <div class="doc-stat-label" data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</div>
+                        <div class="doc-stat-value">5</div>
+                    </div>
+                </div>
+                <div class="doc-stat-item">
+                    <div class="doc-stat-icon"><i class="fa-solid fa-scroll"></i></div>
+                    <div>
+                        <div class="doc-stat-label" data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</div>
+                        <div class="doc-stat-value">3</div>
+                    </div>
                 </div>
             </div>
+            <div style="font-size:0.82rem; color:var(--text-muted); max-width:260px; line-height:1.5;" data-lang-en="All records reference the Kohli Samaj as master water engineers and hereditary Malguzars of Vidarbha." data-lang-mr="सर्व नोंदी कोहळी समाजाला विदर्भाचे जल अभियंते व मालगुजार म्हणून संदर्भित करतात.">
+                All records reference the Kohli Samaj as master water engineers and hereditary Malguzars of Vidarbha.
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="doc-filter-bar">
+        <div class="container">
+            <div class="filter-inner">
+                <span class="filter-label" data-lang-en="Filter by:" data-lang-mr="फिल्टर:">Filter by:</span>
+                <button class="filter-btn active" data-filter="all" id="filterAll">
+                    <i class="fa-solid fa-layer-group"></i> <span data-lang-en="All Documents" data-lang-mr="सर्व दस्तऐवज">All Documents</span>
+                </button>
+                <button class="filter-btn" data-filter="gazetteer">
+                    <i class="fa-solid fa-book-open"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span>
+                </button>
+                <button class="filter-btn" data-filter="settlement">
+                    <i class="fa-solid fa-scroll"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span>
+                </button>
+                <button class="filter-btn" data-filter="census">
+                    <i class="fa-solid fa-users-rectangle"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span>
+                </button>
+                <button class="filter-btn" data-filter="research">
+                    <i class="fa-solid fa-microscope"></i> <span data-lang-en="Research" data-lang-mr="संशोधन">Research</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOCUMENTS GRID -->
+    <main class="container">
+        <div class="documents-grid" id="documentsGrid">
+            <!-- Cards rendered by JS below -->
+        </div>
+        <div class="no-docs-msg" id="noDocsMsg">
+            <i class="fa-solid fa-file-circle-xmark"></i>
+            <p data-lang-en="No documents found for this category." data-lang-mr="या श्रेणीसाठी दस्तऐवज आढळले नाहीत.">No documents found for this category.</p>
         </div>
     </main>
+
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
-            <div>© 2026 Kohali Samaj Portal. All Rights Reserved.</div>
-            <div>Built by Community Volunteers</div>
+            <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
+            <div><span data-lang-en="Built by Community Volunteers" data-lang-mr="समाज स्वयंसेवकांनी बनवले">Built by Community Volunteers</span></div>
         </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+    (function() {
+        const data = typeof initialData !== 'undefined' ? initialData : window.initialData;
+        const docs = (data && data.documents) ? data.documents : [];
+        const grid = document.getElementById('documentsGrid');
+        const noMsg = document.getElementById('noDocsMsg');
+        let currentLangLocal = (typeof currentLang !== 'undefined') ? currentLang : 'en';
+
+        const catLabels = {
+            gazetteer: { en: 'Gazetteer', mr: 'गॅझेटियर' },
+            settlement: { en: 'Settlement', mr: 'सेटलमेंट' },
+            census: { en: 'Census', mr: 'जनगणना' },
+            research: { en: 'Research', mr: 'संशोधन' }
+        };
+
+        function getLang() {
+            return (typeof currentLang !== 'undefined' ? currentLang : 'en');
+        }
+
+        function renderDocs(filter) {
+            const lang = getLang();
+            grid.innerHTML = '';
+            const filtered = filter === 'all' ? docs : docs.filter(d => d.category === filter);
+            if (filtered.length === 0) {
+                noMsg.style.display = 'block';
+                return;
+            }
+            noMsg.style.display = 'none';
+            filtered.forEach(doc => {
+                const title = lang === 'mr' ? doc.title_mr : doc.title_en;
+                const desc = lang === 'mr' ? doc.desc_mr : doc.desc_en;
+                const author = lang === 'mr' ? doc.author_mr : doc.author_en;
+                const publisher = lang === 'mr' ? doc.publisher_mr : doc.publisher_en;
+                const quote = lang === 'mr' ? doc.key_reference_mr : doc.key_reference_en;
+                const catLabel = catLabels[doc.category] ? catLabels[doc.category][lang] : doc.category;
+                const availTxt = doc.available
+                    ? (lang === 'mr' ? 'उपलब्ध' : 'Reference Available')
+                    : (lang === 'mr' ? 'लवकरच येणार' : 'Coming Soon');
+                const availClass = doc.available ? 'avail-yes' : 'avail-no';
+                const availIcon = doc.available ? 'fa-circle-check' : 'fa-clock';
+                const btnHtml = doc.available
+                    ? `<button class="btn-view-doc" onclick="alert('Archival reference for: ${title.replace(/'/g,"\\'")}. Full digital copy integration pending.')" aria-label="View document"><i class="fa-solid fa-book-open-reader"></i> ${lang === 'mr' ? 'संदर्भ पहा' : 'View Reference'}</button>`
+                    : `<button class="btn-view-doc disabled" disabled><i class="fa-solid fa-clock"></i> ${lang === 'mr' ? 'लवकरच' : 'Coming Soon'}</button>`;
+
+                grid.innerHTML += `
+                <article class="doc-card" data-category="${doc.category}" id="doc-${doc.id}">
+                    <div class="doc-card-header">
+                        <div class="doc-icon-box" style="background:${doc.color};">
+                            <i class="fa-solid ${doc.icon}"></i>
+                        </div>
+                        <div class="doc-card-meta">
+                            <span class="doc-year-badge">${doc.year}</span>
+                            <span class="doc-category-badge cat-${doc.category}">${catLabel}</span>
+                            <div class="doc-title">${title}</div>
+                        </div>
+                    </div>
+                    <div class="doc-card-body">
+                        <div class="doc-meta-row">
+                            <span class="doc-meta-item"><i class="fa-solid fa-pen-nib"></i> ${author}</span>
+                            <span class="doc-meta-item"><i class="fa-solid fa-building-columns"></i> ${doc.language}</span>
+                            <span class="doc-meta-item"><i class="fa-solid fa-file-lines"></i> ${doc.pages} ${lang === 'mr' ? 'पाने' : 'pages'}</span>
+                        </div>
+                        <p class="doc-description">${desc}</p>
+                        <div class="doc-quote-block">
+                            <div class="quote-label"><i class="fa-solid fa-quote-left"></i> ${lang === 'mr' ? 'मुख्य संदर्भ' : 'Key Reference'}</div>
+                            <p>${quote}</p>
+                        </div>
+                    </div>
+                    <div class="doc-card-footer">
+                        <span class="doc-avail-badge ${availClass}">
+                            <i class="fa-solid ${availIcon}"></i> ${availTxt}
+                        </span>
+                        ${btnHtml}
+                    </div>
+                </article>`;
+            });
+        }
+
+        // Initial render
+        renderDocs('all');
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                renderDocs(this.dataset.filter);
+            });
+        });
+
+        // Re-render on language change
+        document.addEventListener('langChange', () => {
+            const activeFilter = document.querySelector('.filter-btn.active');
+            renderDocs(activeFilter ? activeFilter.dataset.filter : 'all');
+        });
+    })();
+    </script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 /**
- * Core Application Controller for Kohali Samaj Web Portal
+ * Core Application Controller for Kohli Samaj Web Portal
  * Handles rendering, language toggle, font resizer, ticker, search, and detail modals.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initial State Loading
+    // 1. Initial State Loading — read persisted language from localStorage first
     let portalData = getPortalData();
-    let currentLang = portalData.settings.currentLang || 'en';
+    let currentLang = localStorage.getItem('ks_lang') || portalData.settings.currentLang || 'en';
 
     // 2. Initialize UI Components
     renderAll(portalData, currentLang);
@@ -202,11 +202,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Language Switcher for static elements
+     * Language Switcher for static elements — only target leaf elements so <i> icons are preserved
      */
     function updateStaticText(lang) {
         document.querySelectorAll('[data-lang-en]').forEach(elem => {
-            elem.textContent = lang === 'mr' ? elem.getAttribute('data-lang-mr') : elem.getAttribute('data-lang-en');
+            if (elem.children.length === 0) {
+                elem.textContent = lang === 'mr' ? elem.getAttribute('data-lang-mr') : elem.getAttribute('data-lang-en');
+            }
         });
     }
 
@@ -243,6 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLang = lang;
         portalData.settings.currentLang = lang;
         savePortalData(portalData);
+        localStorage.setItem('ks_lang', lang); // persist for nav.js and other pages
 
         document.getElementById('btnLangEn')?.classList.toggle('active', lang === 'en');
         document.getElementById('btnLangMr')?.classList.toggle('active', lang === 'mr');
@@ -311,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${pillar.image}" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
                 <p style="line-height: 1.6; font-size: 0.95rem;">${desc}</p>
                 <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
-                    Historical details & archival material for Kohali Samaj heritage.
+                    Historical details & archival material for Kohli Samaj heritage.
                 </p>
             </div>
         `);
@@ -359,12 +362,12 @@ document.addEventListener('DOMContentLoaded', () => {
             openModal(title, `
                 <div>
                     <h4 style="color:var(--accent-gold-hover); margin-bottom:0.8rem;">
-                        <i class="fa-solid fa-house-chimney"></i> ${currentLang === 'mr' ? 'कोहळी समाजाची ५१८+ समृद्ध गावे' : '518+ Villages of Kohali Community'}
+                        <i class="fa-solid fa-house-chimney"></i> ${currentLang === 'mr' ? 'कोहळी समाजाची ५१८+ समृद्ध गावे' : '518+ Villages of Kohli Community'}
                     </h4>
                     <p style="line-height:1.6; font-size:0.95rem; margin-bottom:1rem;">
                         ${currentLang === 'mr' 
                             ? 'भंडारा, गोंदिया, गडचिरोली, चंद्रपूर आणि बालाघाट या ५ प्रमुख जिल्ह्यांमध्ये कोहळी समाजाची ५१८ हून अधिक गावे वसलेली आहेत. या गावांमध्ये पिढ्यानपिढ्या जलसंवर्धन, शेती व समाज संस्कृती जपली आहे.' 
-                            : 'Over 518 villages across Bhandara, Gondia, Gadchiroli, Chandrapur, and Balaghat form the core agricultural and cultural backbone of the Kohali Samaj.'}
+                            : 'Over 518 villages across Bhandara, Gondia, Gadchiroli, Chandrapur, and Balaghat form the core agricultural and cultural backbone of the Kohli Samaj.'}
                     </p>
                     <div style="background:var(--bg-cream); padding:1rem; border-radius:8px; border:1px solid var(--border-color);">
                         <strong style="color:var(--primary-dark);">${currentLang === 'mr' ? 'प्रमुख वैशिष्ट्ये:' : 'Key Village Highlights:'}</strong>
@@ -385,12 +388,12 @@ document.addEventListener('DOMContentLoaded', () => {
             openModal(title, `
                 <div>
                     <h4 style="color:var(--accent-gold-hover); margin-bottom:0.8rem;">
-                        <i class="fa-solid fa-users"></i> ${currentLang === 'mr' ? 'कोहळी समाज लोकसंख्या व नेटवर्क' : 'Kohali Community Population & Network'}
+                        <i class="fa-solid fa-users"></i> ${currentLang === 'mr' ? 'कोहळी समाज लोकसंख्या व नेटवर्क' : 'Kohli Community Population & Network'}
                     </h4>
                     <p style="line-height:1.6; font-size:0.95rem; margin-bottom:1rem;">
                         ${currentLang === 'mr'
                             ? 'महाराष्ट्र व शेजारील राज्यांमध्ये पसरलेले लाखो कोहळी समाज बांधव विविध सामाजिक, शैक्षणिक आणि सांस्कृतिक उपक्रमांमध्ये सक्रिय सहभाग नोंदवतात.'
-                            : 'Lakhs of Kohali community members spread across Maharashtra and neighboring regions are connected through social forums, educational scholarship programs, and matrimonial networks.'}
+                            : 'Lakhs of Kohli community members spread across Maharashtra and neighboring regions are connected through social forums, educational scholarship programs, and matrimonial networks.'}
                     </p>
                     <div style="text-align:center; margin-top:1.2rem;">
                         <button class="btn-primary" onclick="openAdminModal()">
