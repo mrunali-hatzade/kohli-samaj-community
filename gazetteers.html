@@ -259,6 +259,17 @@
             .gaz-entry-header { flex-wrap: wrap; gap: 1rem; }
             .gaz-region-badge { display: none; }
         }
+        .featured-card-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .featured-card-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body class="font-normal">
@@ -271,43 +282,62 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
                 </span>
+                
+                <!-- Language Switcher -->
                 <div class="utility-item">
                     <button id="btnLangEn" class="lang-btn active">English</button>
                     <button id="btnLangMr" class="lang-btn">मराठी</button>
                 </div>
+
+                <!-- Font Resizer -->
                 <div class="utility-item font-resizer" title="Adjust Text Size">
                     <button id="btnFontSm" class="font-btn">A-</button>
                     <button id="btnFontMd" class="font-btn active">A</button>
                     <button id="btnFontLg" class="font-btn">A+</button>
                 </div>
+
+                <span class="utility-item" style="cursor:pointer;" onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')">
+                    <i class="fa-universal-access"></i>
+                    <span data-lang-en="Accessibility" data-lang-mr="अ‍ॅक्सेसिबिलिटी">Accessibility</span>
+                </span>
             </div>
+
             <div class="utility-right">
                 <span class="utility-item" style="cursor:pointer;" onclick="if(typeof openAdminModal==='function')openAdminModal();">
                     <i class="fa-solid fa-bell"></i>
                     <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
                 </span>
+                <span class="utility-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
+                </span>
+                
+                <!-- Search Box -->
                 <form id="topSearchForm" class="top-search-form">
-                    <input type="text" id="searchInput" placeholder="Search portal...">
+                    <input type="text" id="searchInput" placeholder="Search portal..." data-lang-en-placeholder="Search portal..." data-lang-mr-placeholder="शोधा...">
                     <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- HEADER & NAV -->
+    <!-- MAIN HEADER & BRANDING & NAVIGATION -->
     <header class="main-header">
         <div class="container header-inner">
+            <!-- Official Emblem Logo -->
             <div class="brand-section">
                 <a href="index.html">
                     <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Official Emblem Logo" class="brand-logo">
                 </a>
             </div>
+
+            <!-- Merged Navigation Bar -->
             <nav class="nav-bar" id="mainNavBar">
                 <ul class="nav-menu" id="mainNav">
                     <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
                     <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="history.html" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
                             <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
@@ -323,16 +353,26 @@
                     </li>
                     <li><a href="culture.html" class="nav-link"><span data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="about.html" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="about.html" class="dropdown-link"><i class="fa-solid fa-users"></i> Community Overview</a></li>
-                            <li><a href="districts.html" class="dropdown-link"><i class="fa-solid fa-map-location-dot"></i> Districts & Regions</a></li>
-                            <li><a href="matrimonial.html" class="dropdown-link"><i class="fa-solid fa-heart"></i> Matrimonial</a></li>
+                            <li><a href="about.html" class="dropdown-link"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Overview" data-lang-mr="समाज परिचय">Community Overview</span></a></li>
+                            <li><a href="districts.html" class="dropdown-link"><i class="fa-solid fa-map-location-dot"></i> <span data-lang-en="Districts & Regions" data-lang-mr="जिल्हे व क्षेत्र">Districts & Regions</span></a></li>
+                            <li><a href="village-directory.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> <span data-lang-en="Village Directory" data-lang-mr="ग्राम सूची">Village Directory</span></a></li>
+                            <li><a href="surname-directory.html" class="dropdown-link"><i class="fa-solid fa-id-card"></i> <span data-lang-en="Surname Directory" data-lang-mr="आडनाव सूची">Surname Directory</span></a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="sanghatana.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> <span data-lang-en="Community Organizations" data-lang-mr="समाज संघटना">Community Organizations</span></a></li>
+                            <li><a href="community-services.html" class="dropdown-link"><i class="fa-solid fa-hand-holding-heart"></i> <span data-lang-en="Community Services" data-lang-mr="समाज सेवा">Community Services</span></a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="matrimonial.html" class="dropdown-link"><i class="fa-solid fa-heart"></i> <span data-lang-en="Matrimonial" data-lang-mr="वधू-वर परिचय">Matrimonial</span></a></li>
+                            <li><a href="scholarships.html" class="dropdown-link"><i class="fa-solid fa-graduation-cap"></i> <span data-lang-en="Scholarships" data-lang-mr="शिष्यवृत्ती">Scholarships</span></a></li>
+                            <li><a href="career-guidance.html" class="dropdown-link"><i class="fa-solid fa-briefcase"></i> <span data-lang-en="Career Guidance" data-lang-mr="करिअर मार्गदर्शन">Career Guidance</span></a></li>
+                            <li><a href="join-community.html" class="dropdown-link"><i class="fa-solid fa-user-plus"></i> <span data-lang-en="Join Community" data-lang-mr="समाजात सामील व्हा">Join Community</span></a></li>
                         </ul>
                     </li>
                     <li><a href="committee.html" class="nav-link"><span data-lang-en="Committee" data-lang-mr="समिती">Committee</span></a></li>
                     <li><a href="events.html" class="nav-link"><span data-lang-en="Events" data-lang-mr="कार्यक्रम">Events</span></a></li>
                     <li><a href="gallery.html" class="nav-link"><span data-lang-en="Gallery" data-lang-mr="गॅलरी">Gallery</span></a></li>
+                    <li><a href="achievements.html" class="nav-link"><span data-lang-en="Achievements" data-lang-mr="उपलब्धी">Achievements</span></a></li>
                     <li><a href="news.html" class="nav-link"><span data-lang-en="News" data-lang-mr="बातम्या">News</span></a></li>
                     <li><a href="contact.html" class="nav-link"><span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span></a></li>
                 </ul>
@@ -353,54 +393,219 @@
                 <span class="bc-sep">&gt;&gt;</span>
                 <span class="bc-current" data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Historical Gazetteers" data-lang-mr="ऐतिहासिक गॅझेटियर">Historical Gazetteers</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="British-era district gazetteers documenting Kohli Samaj as master water engineers and hereditary Malguzars of Vidarbha" data-lang-mr="कोहळी समाजाला विदर्भाचे जल अभियंते व वंशपरंपरागत मालगुजार म्हणून नोंदवणारे ब्रिटिशकालीन जिल्हा गॅझेटियर">British-era district gazetteers documenting Kohli Samaj as master water engineers and hereditary Malguzars of Vidarbha</span></p>
+            <h1 class="page-banner-title"><span data-lang-en="Kohli Samaj in Historical Gazetteers" data-lang-mr="ऐतिहासिक गॅझेटियरमध्ये कोहळी समाज">Kohli Samaj in Historical Gazetteers</span></h1>
+            <p class="page-banner-subtitle"><span data-lang-en="Exploring historical references to the community in Gazetteers and regional records." data-lang-mr="गॅझेटियर आणि प्रादेशिक अभिलेखांमधील समाजाच्या ऐतिहासिक संदर्भांचा शोध.">Exploring historical references to the community in Gazetteers and regional records.</span></p>
         </div>
     </div>
 
-    <!-- INTRO SECTION -->
-    <section class="gaz-intro-section">
-        <div class="container">
-            <div class="gaz-intro-grid">
-                <div class="gaz-info-card">
-                    <div class="gaz-info-icon"><i class="fa-solid fa-book-open"></i></div>
-                    <div>
-                        <h3 data-lang-en="What are Gazetteers?" data-lang-mr="गॅझेटियर म्हणजे काय?">What are Gazetteers?</h3>
-                        <p data-lang-en="British-era official reference books documenting geography, history, caste groups, economy, and administration of each district in Colonial India." data-lang-mr="वसाहतकालीन भारतातील प्रत्येक जिल्ह्याचा भूगोल, इतिहास, जात गट, अर्थव्यवस्था व प्रशासन नोंदवणारी ब्रिटिशकालीन अधिकृत संदर्भ पुस्तके.">British-era official reference books documenting geography, history, caste groups, economy, and administration of each district in Colonial India.</p>
-                    </div>
+    <!-- MAIN CONTAINER -->
+    <main class="container" style="padding: 3rem 1.25rem;">
+        <div class="history-layout-container">
+            <!-- LEFT SIDEBAR PANEL -->
+            <aside class="history-sidebar-card">
+                <div class="history-sidebar-header">
+                    <h3>
+                        <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="History Navigation" data-lang-mr="इतिहास मार्गदर्शिका">History Navigation</span>
+                    </h3>
                 </div>
-                <div class="gaz-info-card">
-                    <div class="gaz-info-icon"><i class="fa-solid fa-star"></i></div>
-                    <div>
-                        <h3 data-lang-en="Why are they Important?" data-lang-mr="ते महत्त्वाचे का आहेत?">Why are they Important?</h3>
-                        <p data-lang-en="Gazetteers are the most authoritative historical record of community heritage. Their mention of Kohli Malguzars validates the community's centuries-old role as tank-builders and landlords." data-lang-mr="गॅझेटियर हे समाज वारशाची सर्वाधिक अधिकृत ऐतिहासिक नोंद आहे. कोहळी मालगुजारांचा उल्लेख समाजाच्या शतकानुशतके तलाव-निर्माते व जमीनदार म्हणूनच्या भूमिकेला प्रमाणित करतो.">Gazetteers are the most authoritative historical record. Their mention of Kohli Malguzars validates the community's centuries-old role as tank-builders and landlords.</p>
-                    </div>
+                <div class="history-sidebar-nav-wrapper">
+                    <ul class="history-sidebar-nav" id="historySidebarNav">
+                        <li>
+                            <a href="history.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-landmark"></i> &nbsp;<span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="history.html#sec-origin" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin & Journey" data-lang-mr="उगम व वाटचाल">Origin & Journey</span></a></li>
+                                <li><a href="history.html#sec-cp-records" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Central Provinces Record" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस नोंदी">Central Provinces Record</span></a></li>
+                                <li><a href="history.html#sec-chanda-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Settlement" data-lang-mr="चांदा सेटलमेंट">Chanda Settlement</span></a></li>
+                                <li><a href="history.html#sec-agri-heritage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Agricultural Heritage" data-lang-mr="कृषी वारसा">Agricultural Heritage</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="historical-timeline.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-timeline"></i> &nbsp;<span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline (1867 – 1973)" data-lang-mr="कालरेषा (१८६७ – १९७३)">Timeline (1867 – 1973)</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="documents.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-file-contract"></i> &nbsp;<span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                        </li>
+                        <li class="expanded">
+                            <a href="gazetteers.html" class="sidebar-main-link active">
+                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link active" data-scroll="sec-cp-gazetteer"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
+                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link" data-scroll="sec-kaulees-ref"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical References" data-lang-mr="ऐतिहासिक संदर्भ">Historical References</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="census.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-users-rectangle"></i> &nbsp;<span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
+                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="settlement.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-map"></i> &nbsp;<span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="water-heritage.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="historical-gallery.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="research.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-microscope"></i> &nbsp;<span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Spellings" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Spellings</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-                <div class="gaz-info-card">
-                    <div class="gaz-info-icon"><i class="fa-solid fa-water"></i></div>
+            </aside>
+
+            <!-- RIGHT CONTENT AREA -->
+            <div class="history-content-area">
+                <div style="background: var(--bg-cream); border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                    <p style="line-height:1.7; font-size:1.02rem; color:var(--text-main); margin:0; font-weight: 500;" data-lang-en="Maharashtra State Gazetteers and earlier regional records provide valuable historical information about the communities, settlements, occupations and social life of the Vidarbha region. These records are an important part of understanding the historical context of the Kohli Samaj." data-lang-mr="महाराष्ट्र राज्य गॅझेटियर आणि त्यापूर्वीचे प्रादेशिक अभिलेख विदर्भ प्रदेशातील समुदाय, वसाहती, व्यवसाय आणि सामाजिक जीवनाबद्दल मौल्यवान ऐतिहासिक माहिती देतात. कोहळी समाजाचा ऐतिहासिक संदर्भ समजून घेण्यासाठी या नोंदी अत्यंत महत्त्वाच्या आहेत.">
+                        Maharashtra State Gazetteers and earlier regional records provide valuable historical information about the communities, settlements, occupations and social life of the Vidarbha region. These records are an important part of understanding the historical context of the Kohli Samaj.
+                    </p>
+                </div>
+
+                <!-- FEATURED SOURCE CARD -->
+                <section id="sec-cp-gazetteer">
+                    <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md);">
+                <div style="background: linear-gradient(135deg, var(--primary-dark) 0%, #1a5c3a 100%); padding: 1.6rem 2rem; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
                     <div>
-                        <h3 data-lang-en="Kohli Legacy Documented" data-lang-mr="कोहळी वारसा नोंदवलेला">Kohli Legacy Documented</h3>
-                        <p data-lang-en="All 5 gazetteers consistently recognize the Kohli community as the primary builders and maintainers of the Vidarbha irrigation tank network — a system of 3,000+ tanks built over centuries." data-lang-mr="सर्व ५ गॅझेटियर सातत्याने कोहळी समाजाला विदर्भाच्या सिंचन तलाव जाळ्याचे प्रमुख निर्माते व संरक्षक म्हणून ओळखतात.">All 5 gazetteers consistently recognize the Kohli community as the primary builders and maintainers of Vidarbha's 3,000+ tank irrigation network.</p>
+                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(255, 255, 255, 0.15); padding: 0.25rem 0.75rem; border-radius: 4px;" data-lang-en="Historical Gazetteer Reference" data-lang-mr="ऐतिहासिक गॅझेटियर संदर्भ">Historical Gazetteer Reference</span>
+                        <h2 style="font-size: 1.4rem; font-weight: 800; margin-top: 0.6rem; color: white; line-height: 1.3;" data-lang-en="Maharashtra State Gazetteers — Chandrapur District" data-lang-mr="महाराष्ट्र राज्य गॅझेटियर — चंद्रपूर जिल्हा">Maharashtra State Gazetteers — Chandrapur District</h2>
+                    </div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-gold); border: 1.5px solid var(--accent-gold); padding: 0.35rem 0.95rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;" data-lang-en="Historical Reference" data-lang-mr="ऐतिहासिक संदर्भ">Historical Reference</span>
+                </div>
+                <div style="padding: 2.2rem 2rem;" class="featured-card-grid">
+                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                        <p style="line-height: 1.8; font-size: 1.05rem; color: var(--text-main); margin: 0;" data-lang-en="The Chandrapur District Gazetteer contains historical references to communities associated with the region. One historical excerpt refers to communities including Manas, Gowarees and 'Kaulees'. The reference is presented here as a historical record and should be understood in the context of the period in which the Gazetteer was compiled." data-lang-mr="चंद्रपूर जिल्हा गॅझेटियरमध्ये या क्षेत्राशी संबंधित समुदायांचे ऐतिहासिक संदर्भ आहेत. एका ऐतिहासिक उताऱ्यात माणा (Manas), गोवारी (Gowarees) आणि 'कौली' (Kaulees) या समुदायांचा उल्लेख आहे. हा संदर्भ येथे ऐतिहासिक नोंद म्हणून सादर केला गेला असून तो ज्या काळात गॅझेटियर संकलित केले गेले होते त्या काळाच्या संदर्भात समजून घेतला पाहिजे.">
+                            The Chandrapur District Gazetteer contains historical references to communities associated with the region. One historical excerpt refers to communities including Manas, Gowarees and 'Kaulees'. The reference is presented here as a historical record and should be understood in the context of the period in which the Gazetteer was compiled.
+                        </p>
+                    </div>
+                    <div style="background: #f8faf9; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;" data-lang-en="First Edition" data-lang-mr="पहिली आवृत्ती">First Edition</div>
+                            <div style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.2rem;">1909</div>
+                        </div>
+                        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0;">
+                        <div>
+                            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;" data-lang-en="Revised Edition" data-lang-mr="सुधारित आवृत्ती">Revised Edition</div>
+                            <div style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.2rem;">1973</div>
+                        </div>
+                        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0;">
+                        <div>
+                            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;" data-lang-en="Region" data-lang-mr="क्षेत्र">Region</div>
+                            <div style="font-size: 0.95rem; font-weight: 700; color: var(--primary-dark); margin-top: 0.2rem;" data-lang-en="Chandrapur District, Maharashtra" data-lang-mr="चंद्रपूर जिल्हा, महाराष्ट्र">Chandrapur District, Maharashtra</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- GAZETTEERS LIST -->
-    <main class="container">
-        <div class="section-heading-bar">
-            <h2 data-lang-en="Gazetteer Archive" data-lang-mr="गॅझेटियर संग्रह">Gazetteer Archive</h2>
-            <div class="gold-line"></div>
-            <span class="section-count-badge" id="gazCount">5 Records</span>
-        </div>
+        <!-- HISTORICAL REFERENCE SECTION -->
+        <section style="margin-bottom: 3.5rem;">
+            <h3 style="color: var(--primary-dark); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;" data-lang-en="Historical References to Kohli / Kaulee" data-lang-mr="कोहळी / कौली (Kaulee) चे ऐतिहासिक संदर्भ">Historical References to Kohli / Kaulee</h3>
+            <p style="line-height: 1.7; font-size: 1rem; color: var(--text-main); margin-bottom: 1.5rem;" data-lang-en="Historical records sometimes use different spellings or forms of community names. Such variations are important when studying older records because terminology and classification systems changed over time." data-lang-mr="ऐतिहासिक अभिलेखांमध्ये काहीवेळा सामाजिक नावांची वेगवेगळी स्पेलिंग्ज किंवा रूपे वापरली जातात. जुन्या नोंदींचा अभ्यास करताना अशा भिन्नता महत्त्वाच्या ठरतात कारण काळानुरूप संज्ञा आणि वर्गीकरण पद्धती बदलत गेल्या आहेत.">
+                Historical records sometimes use different spellings or forms of community names. Such variations are important when studying older records because terminology and classification systems changed over time.
+            </p>
 
-        <div id="gazetteersContainer">
-            <!-- Rendered by JS -->
-        </div>
+            <div style="background: var(--bg-cream); border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.8rem; display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: center;" class="featured-card-grid">
+                <div style="text-align: center; padding: 1.5rem 1rem; background: var(--accent-gold-light); border-radius: 10px; border: 1px dashed var(--accent-gold);">
+                    <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--accent-gold-hover); letter-spacing: 0.05em;" data-lang-en="Historical Spelling" data-lang-mr="ऐतिहासिक स्पेलिंग">Historical Spelling</div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-gold-hover); margin-top: 0.3rem;">Kaulees</div>
+                </div>
+                <div>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.2rem; font-size: 0.95rem; color: var(--text-main);">
+                        <div>
+                            <strong data-lang-en="Source:" data-lang-mr="स्रोत:">Source:</strong> <span data-lang-en="Maharashtra State Gazetteers — Chandrapur District" data-lang-mr="महाराष्ट्र राज्य गॅझेटियर — चंद्रपूर जिल्हा">Maharashtra State Gazetteers — Chandrapur District</span>
+                        </div>
+                        <div>
+                            <strong data-lang-en="Editions:" data-lang-mr="आवृत्त्या:">Editions:</strong> 1909 / Revised 1973
+                        </div>
+                        <div>
+                            <strong data-lang-en="Context:" data-lang-mr="संदर्भ:">Context:</strong> <span data-lang-en="Historical reference to communities of the Chandrapur region." data-lang-mr="चंद्रपूर क्षेत्रातील समुदायांचा ऐतिहासिक संदर्भ.">Historical reference to communities of the Chandrapur region.</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent-gold); padding-left: 0.8rem; font-style: italic; margin: 0;" data-lang-en="Note: Historical spellings and terminology are reproduced for archival and research context and should not be interpreted as contemporary social classifications." data-lang-mr="टीप: ऐतिहासिक नाव आणि संज्ञा केवळ संशोधन व पुरातन संदर्भ संदर्भासाठी पुनरुत्पादित केल्या आहेत आणि त्यांचा आधुनिक सामाजिक वर्गीकरण म्हणून अर्थ लावला जाऊ नये.">
+                        Note: Historical spellings and terminology are reproduced for archival and research context and should not be interpreted as contemporary social classifications.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        <div class="gaz-nav-dots" id="gazNavDots">
-            <!-- Dots rendered by JS -->
+        <!-- CONNECTION CARD: HISTORICAL GAZETTEER REFERENCES -->
+        <section id="sec-kaulees-ref" style="margin-bottom: 3.5rem; background: white; border: 1.5px solid var(--border-color); border-radius: 16px; padding: 2rem; box-shadow: var(--shadow-sm);">
+            <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
+                <i class="fa-solid fa-link" style="color: var(--accent-gold);"></i>
+                <span data-lang-en="Historical Gazetteer References" data-lang-mr="ऐतिहासिक गॅझेटियर संदर्भ">Historical Gazetteer References</span>
+            </h3>
+            <p style="line-height: 1.7; font-size: 1rem; color: var(--text-main); margin: 0;" data-lang-en="Regional Gazetteers contain historical references to communities of Chandrapur and Vidarbha, including historical spellings such as 'Kaulees'. These references are preserved as part of the region's historical record." data-lang-mr="प्रादेशिक गॅझेटियरमध्ये चंद्रपूर आणि विदर्भातील विविध समुदायांचे ऐतिहासिक संदर्भ आढळतात, ज्यामध्ये 'Kaulees' (कौली) यांसारख्या ऐतिहासिक स्पेलिंग्जचा समावेश आहे. हे संदर्भ या भागाच्या ऐतिहासिक अभिलेखांचा भाग म्हणून जतन केले गेले आहेत.">
+                Regional Gazetteers contain historical references to communities of Chandrapur and Vidarbha, including historical spellings such as 'Kaulees'. These references are preserved as part of the region's historical record.
+            </p>
+        </section>
+
+        <!-- WHY IT MATTERS SECTION -->
+        <section style="margin-bottom: 3.5rem; background: var(--primary-dark); color: white; padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow-md);">
+            <h3 style="color: var(--accent-gold); font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem;" data-lang-en="Why These Historical Records Matter" data-lang-mr="या ऐतिहासिक नोंदींचे महत्त्व काय?">Why These Historical Records Matter</h3>
+            <p style="line-height: 1.8; font-size: 1.05rem; color: rgba(255, 255, 255, 0.95); margin: 0;" data-lang-en="Gazetteers provide a window into the historical geography, communities, occupations and social life of earlier periods. For the Kohli Samaj, such records help researchers and community members trace historical references, understand regional terminology and preserve knowledge for future generations." data-lang-mr="गॅझेटियर हे पूर्वीच्या काळातील ऐतिहासिक भूगोल, समुदाय, व्यवसाय आणि सामाजिक जीवनाचा अभ्यास करण्यासाठी खिडकीसारखे काम करतात. कोहळी समाजासाठी अशा नोंदी संशोधकांना आणि समाज बांधवांना ऐतिहासिक संदर्भांचा शोध घेण्यास, प्रादेशिक संज्ञा समजून घेण्यास आणि भावी पिढ्यांसाठी ज्ञान जतन करण्यास मदत करतात.">
+                Gazetteers provide a window into the historical geography, communities, occupations and social life of earlier periods. For the Kohli Samaj, such records help researchers and community members trace historical references, understand regional terminology and preserve knowledge for future generations.
+            </p>
+        </section>
+
+        <!-- GAZETTEER REFERENCES COLLECTION LIST -->
+        <section>
+            <div class="section-heading-bar">
+                <h2 data-lang-en="Gazetteer References" data-lang-mr="गॅझेटियर संदर्भ यादी">Gazetteer References</h2>
+                <div class="gold-line"></div>
+                <span class="section-count-badge" id="gazCount">6 Records</span>
+            </div>
+
+            <div id="gazetteersContainer">
+                <!-- Rendered dynamically by JS -->
+            </div>
+
+            <div class="gaz-nav-dots" id="gazNavDots">
+                <!-- Dots rendered dynamically by JS -->
+            </div>
+        </section>
+            </div>
         </div>
     </main>
 
@@ -447,7 +652,7 @@
         const dotsEl = document.getElementById('gazNavDots');
 
         function getLang() {
-            return (typeof currentLang !== 'undefined' ? currentLang : 'en');
+            return localStorage.getItem('ks_lang') || 'en';
         }
 
         function renderGazetteers() {

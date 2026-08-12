@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderStats(data.stats, lang);
         renderPillars(data.pillars, lang);
         renderTimeline(data.timeline, lang);
+        renderFullTimeline(data.timeline, lang);
         renderDistricts(data.districts, lang);
         renderNews(data.news, lang);
         renderGallery(data.gallery, lang);
@@ -112,14 +113,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Historical Timeline Render
+     * Historical Timeline Render (Homepage limited to 3 items for compact layout)
      */
     function renderTimeline(timeline, lang) {
         const timelineContainer = document.getElementById('timelineList');
         if (!timelineContainer) return;
 
         let html = '';
-        timeline.forEach(item => {
+        const homeTimeline = timeline.slice(0, 3);
+        homeTimeline.forEach(item => {
             const title = lang === 'mr' ? item.title_mr : item.title_en;
             html += `
                 <div class="timeline-item" onclick="openTimelineModal(${item.id})" style="cursor:pointer;">
@@ -129,6 +131,29 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
         timelineContainer.innerHTML = html;
+    }
+
+    function renderFullTimeline(timeline, lang) {
+        const container = document.getElementById('timelineFullContainer');
+        if (!container) return;
+
+        let html = '';
+        timeline.forEach(item => {
+            const title = lang === 'mr' ? item.title_mr : item.title_en;
+            const desc = lang === 'mr' ? item.desc_mr : item.desc_en;
+            html += `
+                <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.5rem; display: flex; gap: 1.5rem; align-items: flex-start; box-shadow: var(--shadow-sm);">
+                    <div style="background: var(--accent-gold-light); border: 1.5px solid var(--accent-gold); color: var(--accent-gold-hover); font-weight: 800; font-size: 1.1rem; padding: 0.4rem 1rem; border-radius: 8px; flex-shrink: 0; min-width: 80px; text-align: center;">
+                        ${item.year}
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h4 style="color: var(--primary-dark); font-weight: 800; font-size: 1.15rem; margin: 0 0 0.4rem 0;">${title}</h4>
+                        <p style="color: var(--text-main); font-size: 0.98rem; line-height: 1.6; margin: 0;">${desc}</p>
+                    </div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
     }
 
     /**
@@ -431,4 +456,30 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `);
     };
+
+    // History Sidebar Sub-link Smooth Scroll Controller (Only for same-page section links)
+    const sidebarSubLinks = document.querySelectorAll('.sidebar-sub-link');
+    sidebarSubLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('data-scroll');
+            const targetEl = targetId ? document.getElementById(targetId) : null;
+            if (targetEl) {
+                e.preventDefault();
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.querySelectorAll('.sidebar-sub-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                const parentLi = link.closest('#historySidebarNav > li');
+                if (parentLi) {
+                    parentLi.classList.add('expanded');
+                }
+            }
+        });
+    });
+
+    // Listen for language changes dispatched by nav.js
+    document.addEventListener('langChange', (e) => {
+        const lang = e.detail.lang;
+        currentLang = lang;
+        renderAll(portalData, lang);
+    });
 });

@@ -80,7 +80,7 @@
                     <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
                     <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="history.html" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
                             <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
@@ -141,13 +141,111 @@
             <p class="page-banner-subtitle"><span data-lang-en="Rare historical photographs, archival images, and visual records of Kohli Samaj heritage" data-lang-mr="कोहळी समाजाच्या वारशाचे दुर्मिळ ऐतिहासिक छायाचित्रे">Rare historical photographs, archival images, and visual records of Kohli Samaj heritage</span></p>
         </div>
     </div>
-    <!-- Coming Soon -->
-    <main class="container" style="padding: 4rem 1.25rem; text-align:center;">
-        <div style="max-width:520px; margin:0 auto; background:white; border-radius:16px; padding:3rem 2rem; box-shadow:0 4px 24px rgba(14,62,41,0.08); border-top:4px solid var(--accent-gold);">
-            <i class="fa-solid fa-image" style="font-size:3.5rem; color:var(--accent-gold); margin-bottom:1.2rem;"></i>
-            <h2 style="color:var(--primary-dark); font-size:1.5rem; font-weight:800; margin-bottom:0.75rem;" data-lang-en="Content Coming Soon" data-lang-mr="सामग्री लवकरच येणार">Content Coming Soon</h2>
-            <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;" data-lang-en="Historical photographs, archival images, and rare visual records will be published here." data-lang-mr="ऐतिहासिक छायाचित्रे आणि दुर्मिळ दृश्य नोंदी येथे प्रकाशित केल्या जातील.">Historical photographs, archival images, and rare visual records will be published here.</p>
-            <a href="index.html" class="btn-gold-fill" style="display:inline-flex;"><i class="fa-solid fa-house"></i>&nbsp;<span data-lang-en="Back to Home" data-lang-mr="मुखपृष्ठावर परत">Back to Home</span></a>
+    <main class="container" style="padding: 3rem 1.25rem;">
+        <div class="history-layout-container">
+            <!-- LEFT SIDEBAR PANEL -->
+            <aside class="history-sidebar-card">
+                <div class="history-sidebar-header">
+                    <h3>
+                        <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="History Navigation" data-lang-mr="इतिहास मार्गदर्शिका">History Navigation</span>
+                    </h3>
+                </div>
+                <div class="history-sidebar-nav-wrapper">
+                    <ul class="history-sidebar-nav" id="historySidebarNav">
+                        <li>
+                            <a href="history.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-landmark"></i> &nbsp;<span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="history.html#sec-origin" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin & Journey" data-lang-mr="उगम व वाटचाल">Origin & Journey</span></a></li>
+                                <li><a href="history.html#sec-cp-records" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Central Provinces Record" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस नोंदी">Central Provinces Record</span></a></li>
+                                <li><a href="history.html#sec-chanda-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Settlement" data-lang-mr="चांदा सेटलमेंट">Chanda Settlement</span></a></li>
+                                <li><a href="history.html#sec-agri-heritage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Agricultural Heritage" data-lang-mr="कृषी वारसा">Agricultural Heritage</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="historical-timeline.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-timeline"></i> &nbsp;<span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline (1867 – 1973)" data-lang-mr="कालरेषा (१८६७ – १९७३)">Timeline (1867 – 1973)</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="documents.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-file-contract"></i> &nbsp;<span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gazetteers.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
+                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical References" data-lang-mr="ऐतिहासिक संदर्भ">Historical References</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="census.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-users-rectangle"></i> &nbsp;<span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
+                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="settlement.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-map"></i> &nbsp;<span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="water-heritage.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="expanded">
+                            <a href="historical-gallery.html" class="sidebar-main-link active">
+                                <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="research.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-microscope"></i> &nbsp;<span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Spellings" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Spellings</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT AREA -->
+            <div class="history-content-area" style="text-align: center;">
+                <div style="max-width:520px; margin:0 auto; background:white; border-radius:16px; padding:3rem 2rem; box-shadow:0 4px 24px rgba(14,62,41,0.08); border-top:4px solid var(--accent-gold);">
+                    <i class="fa-solid fa-image" style="font-size:3.5rem; color:var(--accent-gold); margin-bottom:1.2rem;"></i>
+                    <h2 style="color:var(--primary-dark); font-size:1.5rem; font-weight:800; margin-bottom:0.75rem;" data-lang-en="Content Coming Soon" data-lang-mr="सामग्री लवकरच येणार">Content Coming Soon</h2>
+                    <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;" data-lang-en="Historical photographs, archival images, and rare visual records will be published here." data-lang-mr="ऐतिहासिक छायाचित्रे आणि दुर्मिळ दृश्य नोंदी येथे प्रकाशित केल्या जातील.">Historical photographs, archival images, and rare visual records will be published here.</p>
+                    <a href="index.html" class="btn-gold-fill" style="display:inline-flex;"><i class="fa-solid fa-house"></i>&nbsp;<span data-lang-en="Back to Home" data-lang-mr="मुखपृष्ठावर परत">Back to Home</span></a>
+                </div>
+            </div>
         </div>
     </main>
     <!-- Footer -->

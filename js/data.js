@@ -125,6 +125,22 @@ const initialData = {
         },
         {
             id: 5,
+            year: '1891',
+            title_en: 'Census of India Record',
+            title_mr: 'भारतीय जनगणना नोंद',
+            desc_en: 'Historical population and demographic census records for the Kohli community across the Central Provinces.',
+            desc_mr: 'मध्य प्रांतातील कोहळी समाजाच्या लोकसंख्येची आणि लोकसंख्याशास्त्राची ऐतिहासिक जनगणना नोंद.'
+        },
+        {
+            id: 6,
+            year: '1901',
+            title_en: 'Census of India Record',
+            title_mr: 'भारतीय जनगणना नोंद',
+            desc_en: 'Historical census documentation recording population and household statistics of the Kohli community in regional districts.',
+            desc_mr: 'प्रादेशिक जिल्ह्यांमधील कोहळी समाजाच्या लोकसंख्येची आणि घरगुती आकडेवारीची नोंद करणारा ऐतिहासिक जनगणना दस्तऐवज.'
+        },
+        {
+            id: 7,
             year: '1909',
             title_en: 'Chanda Gazetteer (1st Edition)',
             title_mr: 'चांदा गॅझेटियर (पहिली आवृत्ती)',
@@ -132,7 +148,23 @@ const initialData = {
             desc_mr: 'स्थानिक जल अभियांत्रिकीच्या आश्चर्यांवर प्रकाश टाकणारा सर्वसमावेशक भौगोलिक व ऐतिहासिक अभ्यास.'
         },
         {
-            id: 6,
+            id: 8,
+            year: '1911',
+            title_en: 'Census of India Documentation',
+            title_mr: 'भारतीय जनगणना दस्तऐवज',
+            desc_en: 'Historical demographic record documenting the agricultural association and distribution of the Kohli community across Central Provinces.',
+            desc_mr: 'मध्य प्रांतातील कोहळी समाजाचे कृषी संबंध आणि लोकसंख्या वितरणाची नोंद करणारा ऐतिहासिक लोकसंख्याशास्त्रीय दस्तऐवज.'
+        },
+        {
+            id: 9,
+            year: '1916',
+            title_en: 'R. V. Russell - Tribes & Castes Documentation',
+            title_mr: 'आर. व्ही. रसेल - ट्राईब्स अँड कास्ट्स नोंद',
+            desc_en: 'The Tribes and Castes of the Central Provinces of India published, providing historical population records, agricultural associations, and origin traditions of the Kohli community.',
+            desc_mr: '‘द ट्राईब्स अँड कास्ट्स ऑफ द सेंट्रल प्रॉव्हिन्सेस ऑफ इंडिया’ प्रकाशित, ज्यामध्ये कोहळी समाजाची ऐतिहासिक लोकसंख्या नोंद, कृषी संबंध आणि उत्पत्तीच्या परंपरांचा समावेश आहे.'
+        },
+        {
+            id: 10,
             year: '1920',
             title_en: 'Bhandara District Gazetteer Published',
             title_mr: 'भंडारा जिल्हा गॅझेटियर प्रकाशित',
@@ -140,7 +172,7 @@ const initialData = {
             desc_mr: 'भंडारा जिल्ह्यातील कोहळी समाजाच्या ८५०+ तलावांचे आणि भात शेतीतील योगदानाचे तपशीलवार वर्णन.'
         },
         {
-            id: 7,
+            id: 11,
             year: '1947',
             title_en: 'Independence & Community Reorganization',
             title_mr: 'स्वातंत्र्य व समाज पुनर्गठन',
@@ -148,15 +180,15 @@ const initialData = {
             desc_mr: 'स्वातंत्र्यानंतर महाराष्ट्र व मध्य प्रदेशात कोहळी समाज संघटनांची औपचारिक स्थापना.'
         },
         {
-            id: 8,
+            id: 12,
             year: '1973',
             title_en: 'Maharashtra State Gazetteer (Revised)',
             title_mr: 'महाराष्ट्र स्टेट गॅझेटियर (सुधारित)',
-            desc_en: 'Updated state archive recognizing traditional water tanks constructed by Kohli Malguzars. Formally documented 518+ villages with Kohli settlements across Vidarbha.',
-            desc_mr: 'कोहळी मालगुजारांनी उभारलेल्या पारंपरिक तलावांना मान्यता देणारा अद्ययावत राज्य अभिलेख.'
+            desc_en: 'Updated state archive recognizing traditional water tanks constructed by Kohli Malguzars in Chandrapur District Revised Edition.',
+            desc_mr: 'चांदा जिल्हा सुधारित आवृत्तीत कोहळी मालगुजारांनी उभारलेल्या पारंपरिक तलावांना मान्यता देणारा अद्ययावत राज्य अभिलेख.'
         },
         {
-            id: 9,
+            id: 13,
             year: '2000s',
             title_en: 'Digital Heritage Preservation Movement',
             title_mr: 'डिजिटल वारसा जतन चळवळ',
@@ -408,6 +440,26 @@ const initialData = {
             icon: 'fa-microscope',
             color: '#2d6a4f',
             available: true
+        },
+        {
+            id: 13,
+            category: 'census',
+            year: '1911',
+            title_en: 'Census of India 1911 – Hindoo Castes in Central Provinces',
+            title_mr: 'सेन्सस ऑफ इंडिया १९११ – सेंट्रल प्रॉव्हिन्सेस मधील हिंदू जाती',
+            author_en: 'Census Commissioner, Government of India',
+            author_mr: 'जनगणना आयुक्त, भारत सरकार',
+            publisher_en: 'Government of India',
+            publisher_mr: 'भारत सरकार',
+            language: 'English',
+            pages: '323',
+            desc_en: 'Extract from the 1911 Census documenting "Hindoo Castes in Central Provinces" (Page 323). The Kohli caste is distinctly categorized under "I.—Of good social Standing," with their characteristic occupation recorded as "Cultivators."',
+            desc_mr: '१९११ च्या जनगणनेतील "सेंट्रल प्रॉव्हिन्सेस मधील हिंदू जाती" (पृष्ठ ३२३) यातील नोंद. कोहळी जातीला "चांगल्या सामाजिक स्तरावरील जाती" मध्ये वर्गीकृत केले असून त्यांचा मुख्य व्यवसाय "शेतकरी" (Cultivators) म्हणून नोंदवला आहे.',
+            key_reference_en: '"Hindoo Castes in Central Provinces. I.—Of good social Standing. Castes: Kohli, Characteristic Occupation: Cultivators."',
+            key_reference_mr: '"सेंट्रल प्रॉव्हिन्सेस मधील हिंदू जाती. I.— चांगल्या सामाजिक स्तरावरील. जाती: कोहळी, मुख्य व्यवसाय: शेतकरी."',
+            icon: 'fa-users-rectangle',
+            color: '#1a6b8a',
+            available: true
         }
     ],
 
@@ -494,6 +546,22 @@ const initialData = {
             topics_mr: ['स्वातंत्र्योत्तर वारसा', 'मालगुजारी व्यवस्था रद्द', 'समुदाय संवर्धन', 'आधुनिक जल व्यवस्थापन'],
             significance_en: 'First post-independence recognition of Kohli heritage by Maharashtra state government',
             significance_mr: 'महाराष्ट्र राज्य सरकारद्वारे कोहळी वारशाची प्रथम स्वातंत्र्योत्तर मान्यता'
+        },
+        {
+            id: 6,
+            year: '1909 / 1973',
+            title_en: 'Maharashtra State Gazetteers — Chandrapur District',
+            title_mr: 'महाराष्ट्र राज्य गॅझेटियर — चंद्रपूर जिल्हा',
+            volume_en: 'First Edition (1909) & Revised Edition (1973)',
+            volume_mr: 'पहिली आवृत्ती (१९०९) व सुधारित आवृत्ती (१९७३)',
+            region_en: 'Chandrapur District, Maharashtra',
+            region_mr: 'चंद्रपूर जिल्हा, महाराष्ट्र',
+            excerpt_en: 'The Chandrapur District Gazetteer contains historical references to communities associated with the region. One historical excerpt refers to communities including Manas, Gowarees and \'Kaulees\'. The reference is presented here as a historical record and should be understood in the context of the period in which the Gazetteer was compiled.',
+            excerpt_mr: 'चंद्रपूर जिल्हा गॅझेतियरमध्ये या क्षेत्राशी संबंधित समुदायांचे ऐतिहासिक संदर्भ आहेत. एका ऐतिहासिक उताऱ्यात माणा (Manas), गोवारी (Gowarees) आणि \'कौली\' (Kaulees) या समुदायांचा उल्लेख आहे. हा संदर्भ येथे ऐतिहासिक नोंद म्हणून सादर केला गेला असून तो ज्या काळात गॅझेटियर संकलित केले गेले होते त्या काळाच्या संदर्भात समजून घेतला पाहिजे.',
+            topics_en: ['Historical Terminology', 'Chandrapur Communities', 'Kaulees', 'Regional Records'],
+            topics_mr: ['ऐतिहासिक संज्ञा', 'चंद्रपूर समुदाय', 'कौली (Kaulees)', 'प्रादेशिक नोंदी'],
+            significance_en: 'Historical references to communities recorded under historical spellings such as Kaulees.',
+            significance_mr: 'कौली (Kaulees) या ऐतिहासिक नावाखाली नोंदवलेल्या समुदायांचे ऐतिहासिक संदर्भ.'
         }
     ],
     districts: [
@@ -637,12 +705,12 @@ const initialData = {
         }
     ],
     gallery: [
-        { id: 1, image: 'images/hero_stepwell.jpg', caption_en: 'Historical Stepwell Malguzari Tank', caption_mr: 'ऐतिहासिक मालगुजारी तलाव' },
+        { id: 1, image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80', caption_en: 'Navegaon Bandh Lake (Kolu Patel Kohli)', caption_mr: 'नवेगाव बांध तलाव (कोळू पटेल कोहळी)' },
         { id: 2, image: 'images/water_lake.jpg', caption_en: 'Scenic Water Reservoir Bhandara', caption_mr: 'जलसंवर्धन बंधारा' },
         { id: 3, image: 'images/history_arch.jpg', caption_en: 'Heritage Arch Archway', caption_mr: 'ऐतिहासिक वास्तू' },
         { id: 4, image: 'images/culture_tradition.jpg', caption_en: 'Community Gathering & Celebration', caption_mr: 'सांस्कृतिक कार्यक्रम' },
         { id: 5, image: 'images/document_scroll.jpg', caption_en: 'Archival Records & Manuscripts', caption_mr: 'ऐतिहासिक दस्तऐवज' },
-        { id: 6, image: 'images/hero_stepwell.jpg', caption_en: 'Ancient Water System Vidarbha', caption_mr: 'जलव्यवस्थापन सिंचन' }
+        { id: 6, image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80', caption_en: 'Historic Malguzari Water System Vidarbha', caption_mr: 'ऐतिहासिक मालगुजारी जलव्यवस्थापन सिंचन' }
     ]
 };
 

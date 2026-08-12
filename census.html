@@ -163,7 +163,7 @@
 </head>
 <body class="font-normal">
 
-    <!-- TOP GOVT UTILITY BAR -->
+    <!-- TOP UTILITY BAR -->
     <div class="top-utility-bar">
         <div class="container utility-flex">
             <div class="utility-left">
@@ -171,43 +171,62 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
                 </span>
+                
+                <!-- Language Switcher -->
                 <div class="utility-item">
                     <button id="btnLangEn" class="lang-btn active">English</button>
                     <button id="btnLangMr" class="lang-btn">मराठी</button>
                 </div>
+
+                <!-- Font Resizer -->
                 <div class="utility-item font-resizer" title="Adjust Text Size">
                     <button id="btnFontSm" class="font-btn">A-</button>
                     <button id="btnFontMd" class="font-btn active">A</button>
                     <button id="btnFontLg" class="font-btn">A+</button>
                 </div>
+
+                <span class="utility-item" style="cursor:pointer;" onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')">
+                    <i class="fa-universal-access"></i>
+                    <span data-lang-en="Accessibility" data-lang-mr="अ‍ॅक्सेसिबिलिटी">Accessibility</span>
+                </span>
             </div>
+
             <div class="utility-right">
                 <span class="utility-item" style="cursor:pointer;" onclick="if(typeof openAdminModal==='function')openAdminModal();">
                     <i class="fa-solid fa-bell"></i>
                     <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
                 </span>
+                <span class="utility-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
+                </span>
+                
+                <!-- Search Box -->
                 <form id="topSearchForm" class="top-search-form">
-                    <input type="text" id="searchInput" placeholder="Search portal...">
+                    <input type="text" id="searchInput" placeholder="Search portal..." data-lang-en-placeholder="Search portal..." data-lang-mr-placeholder="शोधा...">
                     <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- MAIN HEADER & NAV -->
+    <!-- MAIN HEADER & BRANDING & NAVIGATION -->
     <header class="main-header">
         <div class="container header-inner">
+            <!-- Official Emblem Logo -->
             <div class="brand-section">
                 <a href="index.html">
                     <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Official Emblem Logo" class="brand-logo">
                 </a>
             </div>
+
+            <!-- Merged Navigation Bar -->
             <nav class="nav-bar" id="mainNavBar">
                 <ul class="nav-menu" id="mainNav">
                     <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
                     <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="history.html" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
                             <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
@@ -223,7 +242,7 @@
                     </li>
                     <li><a href="culture.html" class="nav-link"><span data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="about.html" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="about.html" class="dropdown-link"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Overview" data-lang-mr="समाज परिचय">Community Overview</span></a></li>
                             <li><a href="districts.html" class="dropdown-link"><i class="fa-solid fa-map-location-dot"></i> <span data-lang-en="Districts & Regions" data-lang-mr="जिल्हे व क्षेत्र">Districts & Regions</span></a></li>
@@ -235,13 +254,9 @@
                             <li class="dropdown-divider"></li>
                             <li><a href="matrimonial.html" class="dropdown-link"><i class="fa-solid fa-heart"></i> <span data-lang-en="Matrimonial" data-lang-mr="वधू-वर परिचय">Matrimonial</span></a></li>
                             <li><a href="scholarships.html" class="dropdown-link"><i class="fa-solid fa-graduation-cap"></i> <span data-lang-en="Scholarships" data-lang-mr="शिष्यवृत्ती">Scholarships</span></a></li>
+                            <li><a href="career-guidance.html" class="dropdown-link"><i class="fa-solid fa-briefcase"></i> <span data-lang-en="Career Guidance" data-lang-mr="करिअर मार्गदर्शन">Career Guidance</span></a></li>
+                            <li><a href="join-community.html" class="dropdown-link"><i class="fa-solid fa-user-plus"></i> <span data-lang-en="Join Community" data-lang-mr="समाजात सामील व्हा">Join Community</span></a></li>
                         </ul>
-                    </li>
-                    <li><a href="committee.html" class="nav-link"><span data-lang-en="Committee" data-lang-mr="समिती">Committee</span></a></li>
-                    <li><a href="events.html" class="nav-link"><span data-lang-en="Events" data-lang-mr="कार्यक्रम">Events</span></a></li>
-                    <li><a href="gallery.html" class="nav-link"><span data-lang-en="Gallery" data-lang-mr="गॅलरी">Gallery</span></a></li>
-                    <li><a href="achievements.html" class="nav-link"><span data-lang-en="Achievements" data-lang-mr="उपलब्धी">Achievements</span></a></li>
-                    <li><a href="news.html" class="nav-link"><span data-lang-en="News" data-lang-mr="बातम्या">News</span></a></li>
                     <li><a href="contact.html" class="nav-link"><span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span></a></li>
                 </ul>
             </nav>
@@ -266,150 +281,232 @@
         </div>
     </div>
 
-    <!-- IMPORTANT CENSUS 2021 APPEAL HERO SECTION -->
-    <section class="census-hero-alert">
-        <div class="container">
-            <div class="census-alert-box">
-                <div class="census-alert-icon">
-                    <i class="fa-solid fa-bullhorn"></i>
-                </div>
-                <div class="census-alert-content">
-                    <h2 data-lang-en="Important Community Appeal: Indian Census 2021 (100 Years after 1911)" data-lang-mr="अत्यंत महत्त्वाचे आवाहन: वर्ष 1911 नंतरची 100 वर्षानंतरची भारतीय जनगणना 2021">
-                        अत्यंत महत्त्वाचे आवाहन: वर्ष 1911 नंतरची 100 वर्षानंतरची भारतीय जनगणना 2021
-                    </h2>
-                    <p data-lang-en="For our community, if we want to accomplish a most vital task, it is the 2021 Indian Census after 100 years since 1911. Everyone must prioritize this task above all else without getting distracted by other matters!" data-lang-mr="आपल्या समाजासाठी एक अत्यंत महत्त्वाचे काम करायचे असेल तर, वर्ष 1911 नंतरची आपल्यासाठीची 100 वर्षानंतरची भारतीय जनगणना 2021, सर्वांनी इतर बाबींमध्ये विचलित न होता प्रथम या कामाला प्राधान्य देणे आवश्यक आहे.">
-                        आपल्या समाजासाठी एक अत्यंत महत्त्वाचे काम करायचे असेल तर, वर्ष 1911 नंतरची आपल्यासाठीची 100 वर्षानंतरची भारतीय जनगणना 2021, सर्वांनी इतर बाबींमध्ये विचलित न होता प्रथम या कामाला प्राधान्य देणे आवश्यक आहे.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMMUNITY CENSUS FORMS DOWNLOAD SECTION -->
-    <section class="forms-section">
-        <div class="container">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">
-                <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800;" data-lang-en="District Community Survey Forms" data-lang-mr="समाज जनगणना व माहिती फॉर्म (डाउनलोड)">
-                    समाज जनगणना व माहिती फॉर्म (डाउनलोड)
-                </h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;" data-lang-en="Download the official community enumeration forms for your respective district, fill in family details, and submit to district representatives." data-lang-mr="आपल्या संबंधित जिल्ह्यासाठी अधिकृत समाज गणना अर्ज डाउनलोड करा, कौटुंबिक माहिती भरा आणि जिल्हा प्रतिनिधींकडे सादर करा.">
-                    आपल्या संबंधित जिल्ह्यासाठी अधिकृत समाज गणना अर्ज डाउनलोड करा, कौटुंबिक माहिती भरा आणि जिल्हा प्रतिनिधींकडे सादर करा.
-                </p>
-            </div>
-
-            <div class="forms-grid">
-                <!-- Form Card 1 -->
-                <div class="form-card">
-                    <div>
-                        <div class="form-card-header">
-                            <div class="form-icon"><i class="fa-solid fa-file-pdf"></i></div>
-                            <div>
-                                <div class="form-title" data-lang-en="Bhandara & Gondia District Form" data-lang-mr="भंडारा व गोंदिया जिल्हा अर्ज">
-                                    भंडारा व गोंदिया जिल्हा अर्ज
-                                </div>
-                                <span style="font-size:0.75rem; color:var(--accent-gold); font-weight:700;">PDF Document (192 KB)</span>
-                            </div>
-                        </div>
-                        <p class="form-desc" data-lang-en="Official community census and family survey form for all villages and cities across Bhandara and Gondia districts." data-lang-mr="भंडारा आणि गोंदिया जिल्ह्यातील सर्व गावे व शहरांसाठी अधिकृत कोहळी समाज कुटुंब माहिती पत्रक.">
-                            भंडारा आणि गोंदिया जिल्ह्यातील सर्व गावे व शहरांसाठी अधिकृत कोहळी समाज कुटुंब माहिती पत्रक.
-                        </p>
-                    </div>
-                    <a href="forms/Form-Community-Bhandara-Gondia.pdf" download class="btn-download-pdf">
-                        <i class="fa-solid fa-download"></i> <span data-lang-en="Download Form PDF" data-lang-mr="फॉर्म डाउनलोड करा (PDF)">फॉर्म डाउनलोड करा (PDF)</span>
-                    </a>
-                </div>
-
-                <!-- Form Card 2 -->
-                <div class="form-card">
-                    <div>
-                        <div class="form-card-header">
-                            <div class="form-icon"><i class="fa-solid fa-file-pdf"></i></div>
-                            <div>
-                                <div class="form-title" data-lang-en="Chandrapur & Gadchiroli District Form" data-lang-mr="चंद्रपूर व गडचिरोली जिल्हा अर्ज">
-                                    चंद्रपूर व गडचिरोली जिल्हा अर्ज
-                                </div>
-                                <span style="font-size:0.75rem; color:var(--accent-gold); font-weight:700;">PDF Document (196 KB)</span>
-                            </div>
-                        </div>
-                        <p class="form-desc" data-lang-en="Official community census form for Chandrapur and Gadchiroli districts including detailed family member records." data-lang-mr="चंद्रपूर व गडचिरोली जिल्ह्यातील समाज बांधवांसाठी कौटुंबिक माहिती व जनगणना अर्ज.">
-                            चंद्रपूर व गडचिरोली जिल्ह्यातील समाज बांधवांसाठी कौटुंबिक माहिती व जनगणना अर्ज.
-                        </p>
-                    </div>
-                    <a href="forms/Form-Community-Chandrapur-Gadchiroli.pdf" download class="btn-download-pdf">
-                        <i class="fa-solid fa-download"></i> <span data-lang-en="Download Form PDF" data-lang-mr="फॉर्म डाउनलोड करा (PDF)">फॉर्म डाउनलोड करा (PDF)</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HISTORICAL CENSUS & GAZETTEER EVIDENCE GALLERY -->
+    <!-- HISTORICAL CENSUS RECORDS SECTION -->
     <main class="container" style="padding: 3rem 1.25rem;">
-        <h2 style="color:var(--primary-dark); font-size:1.5rem; font-weight:800; margin-bottom:0.5rem;" data-lang-en="Archival Proof & Gazetteers Evidence" data-lang-mr="ऐतिहासिक दस्तऐवज व गॅझेटियर पुरावे">
-            ऐतिहासिक दस्तऐवज व गॅझेटियर पुरावे
-        </h2>
-        <p style="color:var(--text-muted); margin-bottom:1.5rem;" data-lang-en="Scanned extracts from British Gazetteers, Census of India 1881/1911, and Water Security Textbooks." data-lang-mr="ब्रिटिश गॅझेटियर, १८८१/१९११ ची जनगणना नोंदी आणि महाराष्ट्र जलसुरक्षा पाठ्यपुस्तकातील मूळ उतारे.">
-            ब्रिटिश गॅझेटियर, १८८१/१९११ ची जनगणना नोंदी आणि महाराष्ट्र जलसुरक्षा पाठ्यपुस्तकातील मूळ उतारे.
-        </p>
-
-        <div class="archive-evidence-grid">
-            <div class="evidence-card">
-                <img src="data/WhatsApp Image 2026-07-31 at 6.37.47 PM.jpeg" alt="Census of India 1881 Record" class="evidence-img">
-                <div class="evidence-body">
-                    <div class="evidence-title">Census of India 1881 – Hindoo Castes</div>
-                    <p class="evidence-text" data-lang-en="Official 1881 Census recording 'Kohli' as top-tier Cultivators under 'Hindoo Castes in Central Provinces of Good Social Standing'." data-lang-mr="१८८१ च्या जनगणनेत 'Kohli' समाजाची नोंद 'Good Social Standing' श्रेणीतील प्रमुख शेतकरी म्हणून.">
-                        १८८१ च्या जनगणनेत 'Kohli' समाजाची नोंद 'Good Social Standing' श्रेणीतील प्रमुख शेतकरी म्हणून.
-                    </p>
+        <div class="history-layout-container">
+            <!-- LEFT SIDEBAR PANEL -->
+            <aside class="history-sidebar-card">
+                <div class="history-sidebar-header">
+                    <h3>
+                        <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="History Navigation" data-lang-mr="इतिहास मार्गदर्शिका">History Navigation</span>
+                    </h3>
                 </div>
-            </div>
-
-            <div class="evidence-card">
-                <img src="data/WhatsApp Image 2026-07-31 at 6.38.40 PM.jpeg" alt="Maharashtra State Gazetteer Page 325" class="evidence-img">
-                <div class="evidence-body">
-                    <div class="evidence-title">Maharashtra State Gazetteer (Page 325-326)</div>
-                    <p class="evidence-text" data-lang-en="Documents Kohli population in 1911 Nagpur census, tank construction in Wainganga valley, sugarcane farming, and traditional tank building quotes by Mr. Dux." data-lang-mr="१९११ मधील नागपूर जनगणना नोंद, वैनगंगा खोऱ्यातील तलाव बांधणी, ऊस शेती आणि मि. डॅक्स यांचा तलाव बांधणी अहवाल.">
-                        १९११ मधील नागपूर जनगणना नोंद, वैनगंगा खोऱ्यातील तलाव बांधणी, ऊस शेती आणि मि. डॅक्स यांचा तलाव बांधणी अहवाल.
-                    </p>
+                <div class="history-sidebar-nav-wrapper">
+                    <ul class="history-sidebar-nav" id="historySidebarNav">
+                        <li>
+                            <a href="history.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-landmark"></i> &nbsp;<span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="history.html#sec-origin" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin & Journey" data-lang-mr="उगम व वाटचाल">Origin & Journey</span></a></li>
+                                <li><a href="history.html#sec-cp-records" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Central Provinces Record" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस नोंदी">Central Provinces Record</span></a></li>
+                                <li><a href="history.html#sec-chanda-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Settlement" data-lang-mr="चांदा सेटलमेंट">Chanda Settlement</span></a></li>
+                                <li><a href="history.html#sec-agri-heritage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Agricultural Heritage" data-lang-mr="कृषी वारसा">Agricultural Heritage</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="historical-timeline.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-timeline"></i> &nbsp;<span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline (1867 – 1973)" data-lang-mr="कालरेषा (१८६७ – १९त्७३)">Timeline (1867 – 1973)</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="documents.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-file-contract"></i> &nbsp;<span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gazetteers.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
+                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Kaulees & Regional References" data-lang-mr="कौली व प्रादेशिक संदर्भ">Kaulees & Regional References</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="expanded">
+                            <a href="census.html" class="sidebar-main-link active">
+                                <span><i class="fa-solid fa-users-rectangle"></i> &nbsp;<span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="#sec-census-1916" class="sidebar-sub-link active" data-scroll="sec-census-1916"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
+                                <li><a href="#sec-origin-traditions" class="sidebar-sub-link" data-scroll="sec-origin-traditions"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="settlement.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-map"></i> &nbsp;<span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="water-heritage.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="historical-gallery.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="research.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-microscope"></i> &nbsp;<span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Transliterations" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Transliterations</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+            </aside>
 
-            <div class="evidence-card">
-                <img src="data/WhatsApp Image 2026-07-31 at 6.38.41 PM.jpeg" alt="Water Security Textbook Std 10" class="evidence-img">
-                <div class="evidence-body">
-                    <div class="evidence-title">Maharashtra Standard 10 Water Security Textbook</div>
-                    <p class="evidence-text" data-lang-en="Govt textbook documenting Kohli tribe's creation of 10,000+ Malguzari lakes during Gond reign across Vidarbha." data-lang-mr="महाराष्ट्र शासन १० वी जलसुरक्षा पुस्तकात पूर्व गोंड काळात कोहळी समाजाने बांधलेल्या १०,००० मालगुजारी तलावांचा गौरव.">
-                        महाराष्ट्र शासन १० वी जलसुरक्षा पुस्तकात पूर्व गोंड काळात कोहळी समाजाने बांधलेल्या १०,००० मालगुजारी तलावांचा गौरव.
-                    </p>
+            <!-- RIGHT CONTENT AREA -->
+            <div class="history-content-area">
+                
+                <!-- IMPORTANT CENSUS 2021 APPEAL HERO CARD -->
+                <div style="margin-bottom: 2rem;">
+                    <div class="census-alert-box" style="border-radius: 12px;">
+                        <div class="census-alert-icon">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <div class="census-alert-content">
+                            <h2 data-lang-en="Important Community Appeal: Indian Census 2021 (100 Years after 1911)" data-lang-mr="अत्यंत महत्त्वाचे आवाहन: वर्ष 1911 नंतरची 100 वर्षानंतरची भारतीय जनगणना 2021" style="font-size: 1.25rem;">
+                                अत्यंत महत्त्वाचे आवाहन: वर्ष 1911 नंतरची 100 वर्षानंतरची भारतीय जनगणना 2021
+                            </h2>
+                            <p data-lang-en="For our community, if we want to accomplish a most vital task, it is the 2021 Indian Census after 100 years since 1911. Everyone must prioritize this task above all else without getting distracted by other matters!" data-lang-mr="आपल्या समाजासाठी एक अत्यंत महत्त्वाचे काम करायचे असेल तर, वर्ष 1911 नंतरची आपल्यासाठीची 100 वर्षानंतरची भारतीय जनगणना 2021, सर्वांनी इतर बाबींमध्ये विचलित न होता प्रथम या कामाला प्राधान्य देणे आवश्यक आहे.">
+                                आपल्या समाजासाठी एक अत्यंत महत्त्वाचे काम करायचे असेल तर, वर्ष 1911 नंतरची आपल्यासाठीची 100 वर्षानंतरची भारतीय जनगणना 2021, सर्वांनी इतर बाबींमध्ये विचलित न होता प्रथम या कामाला प्राधान्य देणे आवश्यक आहे.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="evidence-card">
-                <img src="data/WhatsApp Image 2026-07-31 at 6.40.46 PM.jpeg" alt="Settlement Report Record" class="evidence-img">
-                <div class="evidence-body">
-                    <div class="evidence-title">Bhandara & Chanda Settlement Report (19,739 Population)</div>
-                    <p class="evidence-text" data-lang-en="Archival population data recording 19,739 Kohlis in Bhandara & Chanda, highlighting Sakoli and Brahmapuri tehsils." data-lang-mr="भंडारा व चांदा सेटलमेंट रिपोर्टमध्ये १९,७३९ कोहळी लोकसंख्येची नोंद (साकोली व ब्रह्मपुरी तालुका).">
-                        भंडारा व चांदा सेटलमेंट रिपोर्टमध्ये १९,७३९ कोहळी लोकसंख्येची नोंद (साकोली व ब्रह्मपुरी तालुका).
-                    </p>
+                <!-- COMMUNITY CENSUS FORMS DOWNLOAD SECTION -->
+                <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+                    <div style="text-align: center; max-width: 700px; margin: 0 auto 1.5rem;">
+                        <h2 style="color: var(--primary-dark); font-size: 1.4rem; font-weight: 800;" data-lang-en="District Community Survey Forms" data-lang-mr="समाज जनगणना व माहिती फॉर्म (डाउनलोड)">
+                            समाज जनगणना व माहिती फॉर्म (डाउनलोड)
+                        </h2>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.4rem;" data-lang-en="Download the official community enumeration forms for your respective district, fill in family details, and submit to district representatives." data-lang-mr="आपल्या संबंधित जिल्ह्यासाठी अधिकृत समाज गणना अर्ज डाउनलोड करा, कौटुंबिक माहिती भरा आणि जिल्हा प्रतिनिधींकडे सादर करा.">
+                            आपल्या संबंधित जिल्ह्यासाठी अधिकृत समाज गणना अर्ज डाउनलोड करा, कौटुंबिक माहिती भरा आणि जिल्हा प्रतिनिधींकडे सादर करा.
+                        </p>
+                    </div>
+
+                    <div class="forms-grid">
+                        <!-- Form Card 1 -->
+                        <div class="form-card">
+                            <div>
+                                <div class="form-card-header">
+                                    <div class="form-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                                    <div>
+                                        <div class="form-title" data-lang-en="Bhandara & Gondia District Form" data-lang-mr="भंडारा व गोंदिया जिल्हा अर्ज">
+                                            भंडारा व गोंदिया जिल्हा अर्ज
+                                        </div>
+                                        <span style="font-size:0.75rem; color:var(--accent-gold); font-weight:700;">PDF Document (192 KB)</span>
+                                    </div>
+                                </div>
+                                <p class="form-desc" data-lang-en="Official community census and family survey form for all villages and cities across Bhandara and Gondia districts." data-lang-mr="भंडारा आणि गोंदिया जिल्ह्यातील सर्व गावे व शहरांसाठी अधिकृत कोहळी समाज कुटुंब माहिती पत्रक.">
+                                    भंडारा आणि गोंदिया जिल्ह्यातील सर्व गावे व शहरांसाठी अधिकृत कोहळी समाज कुटुंब माहिती पत्रक.
+                                </p>
+                            </div>
+                            <a href="forms/Form-Community-Bhandara-Gondia.pdf" download class="btn-download-pdf">
+                                <i class="fa-solid fa-download"></i> <span data-lang-en="Download Form PDF" data-lang-mr="फॉर्म डाउनलोड करा (PDF)">फॉर्म डाउनलोड करा (PDF)</span>
+                            </a>
+                        </div>
+
+                        <!-- Form Card 2 -->
+                        <div class="form-card">
+                            <div>
+                                <div class="form-card-header">
+                                    <div class="form-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                                    <div>
+                                        <div class="form-title" data-lang-en="Chandrapur & Gadchiroli District Form" data-lang-mr="चंद्रपूर व गडचिरोली जिल्हा अर्ज">
+                                            चंद्रपूर व गडचिरोली जिल्हा अर्ज
+                                        </div>
+                                        <span style="font-size:0.75rem; color:var(--accent-gold); font-weight:700;">PDF Document (196 KB)</span>
+                                    </div>
+                                </div>
+                                <p class="form-desc" data-lang-en="Official community census form for Chandrapur and Gadchiroli districts including detailed family member records." data-lang-mr="चंद्रपूर व गडचिरोली जिल्ह्यातील समाज बांधवांसाठी कौटुंबिक माहिती व जनगणना अर्ज.">
+                                    चंद्रपूर व गडचिरोली जिल्ह्यातील समाज बांधवांसाठी कौटुंबिक माहिती व जनगणना अर्ज.
+                                </p>
+                            </div>
+                            <a href="forms/Form-Community-Chandrapur-Gadchiroli.pdf" download class="btn-download-pdf">
+                                <i class="fa-solid fa-download"></i> <span data-lang-en="Download Form PDF" data-lang-mr="फॉर्म डाउनलोड करा (PDF)">फॉर्म डाउनलोड करा (PDF)</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="evidence-card">
-                <img src="data/WhatsApp Image 2026-07-31 at 6.40.47 PM.jpeg" alt="Aboriginal Indian Kohli References" class="evidence-img">
-                <div class="evidence-body">
-                    <div class="evidence-title">Archival Chronology by N. R. Kapgate</div>
-                    <p class="evidence-text" data-lang-en="Chronological index of Kohli spellings in British records from 1867 to Central Govt Sl. No. 221 and State Govt Sl. No. 315." data-lang-mr="१८६७ पासूनच्या ब्रिटिश नोंदींमधील Kohiree, Kohulee, Kohli नामावल्या आणि सरकारी सूची क्रमांक (२२१/३१५).">
-                        १८६७ पासूनच्या ब्रिटिश नोंदींमधील Kohiree, Kohulee, Kohli नामावल्या आणि सरकारी सूची क्रमांक (२२१/३१५).
-                    </p>
-                </div>
-            </div>
+                <h2 style="color:var(--primary-dark); font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; text-align: center;" data-lang-en="Historical Population & Origin Records" data-lang-mr="ऐतिहासिक लोकसंख्या व उत्पत्ती नोंदी">
+                    Historical Population & Origin Records
+                </h2>
 
-            <div class="evidence-card">
-                <img src="data/WhatsApp Image 2026-07-31 at 6.35.09 PM.jpeg" alt="Settlement Officer A. B. Napier Document" class="evidence-img">
-                <div class="evidence-body">
-                    <div class="evidence-title">Settlement Officer A. B. Napier Report</div>
-                    <p class="evidence-text" data-lang-en="Historic report praising Kohli mastery over sugarcane and large reservoir construction." data-lang-mr="सेटलमेंट अधिकारी ए. बी. नेपिअर यांचा अहवाल - कोहळी समाजाचे ऊस पीक व विशाल जलाशयांमधील कौशल्य.">
-                        सेटलमेंट अधिकारी ए. बी. नेपिअर यांचा अहवाल - कोहळी समाजाचे ऊस पीक व विशाल जलाशयांमधील कौशल्य.
-                    </p>
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    
+                    <!-- SUBSECTION 1: POPULATION RECORDS -->
+                    <div id="sec-census-1916" class="history-tab-section" style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
+                        <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
+                            <i class="fa-solid fa-users" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Kohli Community in Historical Records" data-lang-mr="ऐतिहासिक नोंदींमध्ये कोहळी समाज">Kohli Community in Historical Records</span>
+                        </h3>
+                        <p style="line-height: 1.7; font-size: 0.98rem; color: var(--text-main); margin-bottom: 1.5rem;" data-lang-en="R. V. Russell's historical account records the Kohlis or Kohris in the districts of Bhandara and Chanda and provides population figures for the period covered by the work. The account also describes the community's association with agricultural regions where tanks supported the cultivation of crops such as sugarcane and rice." data-lang-mr="आर. व्ही. रसेल यांच्या ऐतिहासिक नोंदींमध्ये भंडारा आणि चांदा जिल्ह्यातील कोहळी किंवा कोहरी समाजाचा समावेश आहे आणि त्या काळातील लोकसंख्येची आकडेवारी दिली आहे. या नोंदीमध्ये उसासारख्या आणि भातासारख्या पिकांच्या लागवडीला आधार देणाऱ्या तलावांशी संबंधित कृषी क्षेत्रांशी समाजाच्या जोडणीचेही वर्णन केले आहे.">
+                            R. V. Russell's historical account records the Kohlis or Kohris in the districts of Bhandara and Chanda and provides population figures for the period covered by the work. The account also describes the community's association with agricultural regions where tanks supported the cultivation of crops such as sugarcane and rice.
+                        </p>
+
+                        <!-- Data Card -->
+                        <div style="background: var(--bg-cream); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.8rem;">
+                                <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.05em;" data-lang-en="Historical Population Data (1916)" data-lang-mr="ऐतिहासिक लोकसंख्या आकडेवारी (१९१६)">Historical Population Data (1916)</span>
+                                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;" data-lang-en="Source: R. V. Russell (p. 176)" data-lang-mr="स्रोत: आर. व्ही. रसेल (पृ. १७६)">Source: R. V. Russell (p. 176)</span>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
+                                <div style="text-align: center; background: white; padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
+                                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" data-lang-en="Bhandara District" data-lang-mr="भंडारा जिल्हा">Bhandara District</div>
+                                    <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.25rem;">12,097</div>
+                                </div>
+                                <div style="text-align: center; background: white; padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
+                                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" data-lang-en="Chanda District" data-lang-mr="चांदा जिल्हा">Chanda District</div>
+                                    <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.25rem;">7,602</div>
+                                </div>
+                            </div>
+                            <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; font-style: italic; margin-top: 0.5rem; text-align: center;">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span data-lang-en="Historical population figures recorded in the source. This data is preserved for archival reference and does not represent contemporary census statistics." data-lang-mr="स्रोतामध्ये नोंदवलेली ऐतिहासिक लोकसंख्या आकडेवारी. ही माहिती ऐतिहासिक संदर्भासाठी जतन केली गेली आहे आणि ती आधुनिक काळातील आकडेवारी दर्शवत नाही.">Historical population figures recorded in the source. This data is preserved for archival reference and does not represent contemporary census statistics.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUBSECTION 2: ORIGIN TRADITIONS -->
+                    <div id="sec-origin-traditions" class="history-tab-section" style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
+                        <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
+                            <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Historical Traditions About Origin" data-lang-mr="उत्पत्तीविषयी ऐतिहासिक परंपरा">Historical Traditions About Origin</span>
+                        </h3>
+                        <p style="line-height: 1.7; font-size: 0.98rem; color: var(--text-main); margin-bottom: 1.2rem;" data-lang-en="Historical sources record differing traditions about the origins of the Kohli community. R. V. Russell records one theory connecting the community's movement to Chanda with the Benares region and the Bhonsla period, while also noting that the Chanda Kohlis themselves did not retain a tradition linking their ancestry to Upper India. These accounts should therefore be understood as historical traditions rather than a single conclusively established origin." data-lang-mr="ऐतिहासिक नोंदींमध्ये कोहळी समाजाच्या उत्पत्तीविषयी वेगवेगळ्या परंपरा आढळतात. आर. व्ही. रसेल यांनी चांदा येथील समाजाचे स्थलांतर बनारस प्रांत आणि भोसले काळाशी जोडणारा एक सिद्धांत मांडला आहे. पण त्याचसोबत त्यांनी असेही नमूद केले आहे की, प्रत्यक्ष चांदा येथील कोहळी समाजात स्वतःचा संबंध उत्तर भारताशी जोडणारी कोणतीही परंपरा शिल्लक नव्हती. म्हणूनच, या नोंदी केवळ ऐतिहासिक परंपरा म्हणून समजल्या पाहिजेत, अंतिम प्रमाणित इतिहास म्हणून नव्हे.">
+                            Historical sources record differing traditions about the origins of the Kohli community. R. V. Russell records one theory connecting the community's movement to Chanda with the Benares region and the Bhonsla period, while also noting that the Chanda Kohlis themselves did not retain a tradition linking their ancestry to Upper India. These accounts should therefore be understood as historical traditions rather than a single conclusively established origin.
+                        </p>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent-gold); padding-left: 0.8rem; font-style: italic;">
+                            <span data-lang-en="Historical note: These are competing traditions recorded in the historical source. They should not be presented as a conclusively established modern origin story." data-lang-mr="ऐतिहासिक टीप: हे ऐतिहासिक स्रोतामध्ये नोंदवलेले परस्परविरोधी मतप्रवाह आहेत. त्यांना आधुनिक काळातील निश्चित किंवा प्रमाणित उत्पत्तीचा इतिहास म्हणून सादर करू नये.">Historical note: These are competing traditions recorded in the historical source. They should not be presented as a conclusively established modern origin story.</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

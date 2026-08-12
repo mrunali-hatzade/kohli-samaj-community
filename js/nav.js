@@ -8,6 +8,12 @@
 (function () {
     'use strict';
 
+    // Auto-redirect from history.html to history_clean.html if opened
+    if (window.location.pathname.endsWith('/history.html') || window.location.pathname.endsWith('history.html')) {
+        window.location.replace('history_clean.html' + window.location.hash);
+        return;
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
 
         /* ------------------------------------------------------------------ */
@@ -66,6 +72,10 @@
             if (save) {
                 localStorage.setItem('ks_lang', lang);
             }
+
+            // Dispatch custom event for dynamic components (like Gazetteers and Documents) to re-render bilingually
+            const event = new CustomEvent('langChange', { detail: { lang: lang } });
+            document.dispatchEvent(event);
         }
 
         // Export for global usage if needed
@@ -100,18 +110,23 @@
 
             if (toggle) {
                 toggle.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                    var isChevron = e.target.classList.contains('nav-chevron') || e.target.closest('.nav-chevron');
+                    var href = toggle.getAttribute('href');
 
-                    var isAlreadyOpen = parent.classList.contains('open');
+                    if (isChevron || href === '#' || !href) {
+                        e.preventDefault();
+                        e.stopPropagation();
 
-                    // Close all other open dropdowns
-                    dropdownParents.forEach(function (p) {
-                        if (p !== parent) p.classList.remove('open');
-                    });
+                        var isAlreadyOpen = parent.classList.contains('open');
 
-                    // Toggle current dropdown: stays open until click outside
-                    parent.classList.toggle('open', !isAlreadyOpen);
+                        // Close all other open dropdowns
+                        dropdownParents.forEach(function (p) {
+                            if (p !== parent) p.classList.remove('open');
+                        });
+
+                        // Toggle current dropdown: stays open until click outside
+                        parent.classList.toggle('open', !isAlreadyOpen);
+                    }
                 });
             }
         });
@@ -222,6 +237,39 @@
                 }
             });
         }
+
+        /* ------------------------------------------------------------------ */
+        /* 9. HISTORY SIDEBAR ACCORDION BEHAVIOR                              */
+        /*    1st Click: Expands sub-bar so user can explore on current page.  */
+        /*    2nd Click (when expanded): Navigates to that page!               */
+        /* ------------------------------------------------------------------ */
+        var sidebarMainLinks = document.querySelectorAll('.history-sidebar-nav .sidebar-main-link');
+        sidebarMainLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var li = link.closest('li');
+                if (!li) return;
+
+                var hasSubList = li.querySelector('.sidebar-sub-list') !== null;
+                var isExpanded = li.classList.contains('expanded');
+
+                if (hasSubList && !isExpanded) {
+                    // First click: expand sub-bar while staying on current page (zero scrolling)
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Collapse sibling items for clean accordion
+                    var siblings = li.parentElement.querySelectorAll(':scope > li');
+                    siblings.forEach(function (sibling) {
+                        if (sibling !== li) {
+                            sibling.classList.remove('expanded');
+                        }
+                    });
+
+                    li.classList.add('expanded');
+                }
+                // Second click (when already expanded): proceed with navigation to page!
+            });
+        });
 
     }); // end DOMContentLoaded
 

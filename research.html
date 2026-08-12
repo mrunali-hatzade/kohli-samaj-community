@@ -80,7 +80,7 @@
                     <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
                     <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="history.html" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
                             <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
@@ -141,13 +141,175 @@
             <p class="page-banner-subtitle"><span data-lang-en="Academic research, published books, and scholarly articles about Kohli Samaj history and culture" data-lang-mr="कोहळी समाजाच्या इतिहास व संस्कृतीवर शैक्षणिक संशोधन आणि प्रकाशित पुस्तके">Academic research, published books, and scholarly articles about Kohli Samaj history and culture</span></p>
         </div>
     </div>
-    <!-- Coming Soon -->
-    <main class="container" style="padding: 4rem 1.25rem; text-align:center;">
-        <div style="max-width:520px; margin:0 auto; background:white; border-radius:16px; padding:3rem 2rem; box-shadow:0 4px 24px rgba(14,62,41,0.08); border-top:4px solid var(--accent-gold);">
-            <i class="fa-solid fa-microscope" style="font-size:3.5rem; color:var(--accent-gold); margin-bottom:1.2rem;"></i>
-            <h2 style="color:var(--primary-dark); font-size:1.5rem; font-weight:800; margin-bottom:0.75rem;" data-lang-en="Content Coming Soon" data-lang-mr="सामग्री लवकरच येणार">Content Coming Soon</h2>
-            <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;" data-lang-en="Research papers, books, and scholarly publications about Kohli Samaj will be listed here." data-lang-mr="कोहळी समाजावरील संशोधन पत्रे, पुस्तके येथे सूचीबद्ध केली जातील.">Research papers, books, and scholarly publications about Kohli Samaj will be listed here.</p>
-            <a href="index.html" class="btn-gold-fill" style="display:inline-flex;"><i class="fa-solid fa-house"></i>&nbsp;<span data-lang-en="Back to Home" data-lang-mr="मुखपृष्ठावर परत">Back to Home</span></a>
+
+    <main class="container" style="padding: 3rem 1.25rem;">
+        <div class="history-layout-container">
+            <!-- LEFT SIDEBAR PANEL -->
+            <aside class="history-sidebar-card">
+                <div class="history-sidebar-header">
+                    <h3>
+                        <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="History Navigation" data-lang-mr="इतिहास मार्गदर्शिका">History Navigation</span>
+                    </h3>
+                </div>
+                <div class="history-sidebar-nav-wrapper">
+                    <ul class="history-sidebar-nav" id="historySidebarNav">
+                        <li>
+                            <a href="history.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-landmark"></i> &nbsp;<span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="history.html#sec-origin" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin & Journey" data-lang-mr="उगम व वाटचाल">Origin & Journey</span></a></li>
+                                <li><a href="history.html#sec-cp-records" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Central Provinces Record" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस नोंदी">Central Provinces Record</span></a></li>
+                                <li><a href="history.html#sec-chanda-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Settlement" data-lang-mr="चांदा सेटलमेंट">Chanda Settlement</span></a></li>
+                                <li><a href="history.html#sec-agri-heritage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Agricultural Heritage" data-lang-mr="कृषी वारसा">Agricultural Heritage</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="historical-timeline.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-timeline"></i> &nbsp;<span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline (1867 – 1973)" data-lang-mr="कालरेषा (१८६७ – १९७३)">Timeline (1867 – 1973)</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="documents.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-file-contract"></i> &nbsp;<span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gazetteers.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
+                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical References" data-lang-mr="ऐतिहासिक संदर्भ">Historical References</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="census.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-users-rectangle"></i> &nbsp;<span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
+                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="settlement.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-map"></i> &nbsp;<span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="water-heritage.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="historical-gallery.html" class="sidebar-main-link">
+                                <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                        </li>
+                        <li class="expanded">
+                            <a href="research.html" class="sidebar-main-link active">
+                                <span><i class="fa-solid fa-microscope"></i> &nbsp;<span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
+                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
+                            </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link active" data-scroll="sec-spellings-table"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Spellings" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Spellings</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT AREA -->
+            <div class="history-content-area" id="sec-spellings-table">
+                <!-- INTRO -->
+                <div style="margin-bottom: 2.5rem; text-align: center;">
+                    <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;" data-lang-en="Historical Names & References" data-lang-mr="ऐतिहासिक नावे आणि संदर्भ">Historical Names आणि संदर्भ</h2>
+                    <p style="line-height: 1.8; font-size: 1.02rem; color: var(--text-main);" data-lang-en="Historical publications may record the Kohli community under different spellings and forms, reflecting the terminology and transliteration practices of their period. References include forms such as Kohiree, Kohulee, Koholee, Kohoree, Kohri and Kohli." data-lang-mr="ऐतिहासिक प्रकाशनांमध्ये कोहळी समाजाची नोंद वेगवेगळ्या नावांनी आणि स्पेलिंग्जनी केली गेली असू शकते, जी त्या काळातील संज्ञा आणि लिप्यंतरण पद्धती दर्शवते. यामध्ये Kohiree, Kohulee, Koholee, Kohoree, Kohri आणि Kohli यांसारख्या विविध स्वरूपांचा समावेश आहे.">
+                        Historical publications may record the Kohli community under different spellings and forms, reflecting the terminology and transliteration practices of their period. References include forms such as Kohiree, Kohulee, Koholee, Kohoree, Kohri and Kohli.
+                    </p>
+                </div>
+
+                <!-- TABLE CARD -->
+                <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm); overflow-x: auto; margin-bottom: 2.5rem;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--primary-dark); color: var(--primary-dark); font-weight: 800;">
+                                <th style="padding: 0.8rem 1rem;" data-lang-en="Historical Spelling" data-lang-mr="ऐतिहासिक स्पेलिंग">Historical Spelling</th>
+                                <th style="padding: 0.8rem 1rem;" data-lang-en="Source Publication" data-lang-mr="स्रोत प्रकाशन">Source Publication</th>
+                                <th style="padding: 0.8rem 1rem;" data-lang-en="Year" data-lang-mr="वर्ष">Year</th>
+                                <th style="padding: 0.8rem 1rem;" data-lang-en="Page / Reference" data-lang-mr="पृष्ठ / संदर्भ">Page / Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: var(--text-main);">
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.8rem 1rem; font-weight: 700; color: var(--accent-gold-hover);">Kohiree</td>
+                                <td style="padding: 0.8rem 1rem;" data-lang-en="Gazetteer of the Central Provinces" data-lang-mr="गॅझेटियर ऑफ द सेंट्रल प्रॉव्हिन्सेस">Gazetteer of the Central Provinces</td>
+                                <td style="padding: 0.8rem 1rem;">1867</td>
+                                <td style="padding: 0.8rem 1rem;">Volume I, p. 235</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.8rem 1rem; font-weight: 700; color: var(--accent-gold-hover);">Kohulee</td>
+                                <td style="padding: 0.8rem 1rem;" data-lang-en="Census of India 1881" data-lang-mr="सेन्सस ऑफ इंडिया १८८१">Census of India 1881</td>
+                                <td style="padding: 0.8rem 1rem;">1881</td>
+                                <td style="padding: 0.8rem 1rem;">Table III, p. 112</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.8rem 1rem; font-weight: 700; color: var(--accent-gold-hover);">Koholee</td>
+                                <td style="padding: 0.8rem 1rem;" data-lang-en="Census of India 1891" data-lang-mr="सेन्सस ऑफ इंडिया १८९१">Census of India 1891</td>
+                                <td style="padding: 0.8rem 1rem;">1891</td>
+                                <td style="padding: 0.8rem 1rem;">Table VIII, p. 94</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.8rem 1rem; font-weight: 700; color: var(--accent-gold-hover);">Kohoree</td>
+                                <td style="padding: 0.8rem 1rem;" data-lang-en="Census of India 1901" data-lang-mr="सेन्सस ऑफ इंडिया १९०१">Census of India 1901</td>
+                                <td style="padding: 0.8rem 1rem;">1901</td>
+                                <td style="padding: 0.8rem 1rem;">Table XIV, p. 104</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.8rem 1rem; font-weight: 700; color: var(--accent-gold-hover);">Kohri</td>
+                                <td style="padding: 0.8rem 1rem;" data-lang-en="R. V. Russell - The Tribes & Castes" data-lang-mr="आर. व्ही. रसेल - द ट्राईब्स अँड कास्ट्स">R. V. Russell - The Tribes & Castes</td>
+                                <td style="padding: 0.8rem 1rem;">1916</td>
+                                <td style="padding: 0.8rem 1rem;">p. 176</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.8rem 1rem; font-weight: 700; color: var(--accent-gold-hover);">Kohli</td>
+                                <td style="padding: 0.8rem 1rem;" data-lang-en="Census of India 1911 / Chanda Settlement" data-lang-mr="भारतीय जनगणना १९११ / चांदा सेटलमेंट">Census of India 1911 / Chanda Settlement</td>
+                                <td style="padding: 0.8rem 1rem;">1911 / 1870</td>
+                                <td style="padding: 0.8rem 1rem;">p. 323 / Chanda Report</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 0.8rem 1rem; font-weight: 700; color: var(--accent-gold-hover);">Kaulees</td>
+                                <td style="padding: 0.8rem 1rem;" data-lang-en="Maharashtra State Gazetteers: Chandrapur" data-lang-mr="महाराष्ट्र स्टेट गॅझेटियर: चंद्रपूर">Maharashtra State Gazetteers: Chandrapur</td>
+                                <td style="padding: 0.8rem 1rem;">1909 / 1973</td>
+                                <td style="padding: 0.8rem 1rem;">Revised Edition, p. 182</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="margin-top: 1.5rem; font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent-gold); padding-left: 0.8rem; font-style: italic;">
+                        <span data-lang-en="Note: Historical source records identify these alternate forms and spellings in relation to historical records of the community. They are reproduced here for research and context, and should not be automatically assumed to refer to the exact same modern community in every context." data-lang-mr="टीप: ऐतिहासिक दस्तऐवज वेगवेगळ्या नावांची आणि स्पेलिंग्जची नोंद दर्शवतात. हे संदर्भ केवळ संशोधन आणि ऐतिहासिक अभ्यासासाठी येथे दिले आहेत आणि प्रत्येक ठिकाणी ते एकाच विशिष्ट आधुनिक समाजाशी संबंधित आहेत असे गृहीत धरले जाऊ नये.">Note: Historical source records identify these alternate forms and spellings in relation to historical records of the community. They are reproduced here for research and context, and should not be automatically assumed to refer to the exact same modern community in every context.</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <!-- Footer -->
