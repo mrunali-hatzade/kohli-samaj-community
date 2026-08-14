@@ -497,47 +497,80 @@
 
             <!-- RIGHT CONTENT AREA -->
             <div class="history-content-area">
-                <div style="background: var(--bg-cream); border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
-                    <p style="line-height:1.7; font-size:1.02rem; color:var(--text-main); margin:0; font-weight: 500;" data-lang-en="Maharashtra State Gazetteers and earlier regional records provide valuable historical information about the communities, settlements, occupations and social life of the Vidarbha region. These records are an important part of understanding the historical context of the Kohli Samaj." data-lang-mr="महाराष्ट्र राज्य गॅझेटियर आणि त्यापूर्वीचे प्रादेशिक अभिलेख विदर्भ प्रदेशातील समुदाय, वसाहती, व्यवसाय आणि सामाजिक जीवनाबद्दल मौल्यवान ऐतिहासिक माहिती देतात. कोहळी समाजाचा ऐतिहासिक संदर्भ समजून घेण्यासाठी या नोंदी अत्यंत महत्त्वाच्या आहेत.">
-                        Maharashtra State Gazetteers and earlier regional records provide valuable historical information about the communities, settlements, occupations and social life of the Vidarbha region. These records are an important part of understanding the historical context of the Kohli Samaj.
-                    </p>
+                
+                <!-- HEADER & INTRO -->
+                <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.8rem; margin-bottom: 2rem; box-shadow:var(--shadow-sm);">
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:0.8rem;">
+                        <h2 style="color:var(--primary-dark); font-size:1.5rem; font-weight:800; margin:0;" data-lang-en="Kohli Samaj in Historical Gazetteers" data-lang-mr="ऐतिहासिक गॅझेटियरमध्ये कोहळी समाज">Kohli Samaj in Historical Gazetteers</h2>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-book"></i> Administrative Archive</span>
+                    </div>
+                    <blockquote style="border-left:4px solid var(--accent-gold); padding-left:1rem; margin:0; font-size:0.98rem; color:var(--text-main); line-height:1.7; font-style:italic;">
+                        "Historical gazetteers and administrative publications from the Central Provinces and later Maharashtra contain references to the Kohli/Kohri community, its settlements, occupations and social life. These records provide an important window into the historical presence of the community in the region."
+                    </blockquote>
                 </div>
 
-                <!-- FEATURED SOURCE CARD -->
-                <section id="sec-cp-gazetteer">
+                <!-- FEATURED SOURCE CARD 1: CHANDRAPUR GAZETTEER -->
+                <section id="sec-cp-gazetteer" style="margin-bottom:2rem;">
                     <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md);">
-                <div style="background: linear-gradient(135deg, var(--primary-dark) 0%, #1a5c3a 100%); padding: 1.6rem 2rem; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                    <div>
-                        <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(255, 255, 255, 0.15); padding: 0.25rem 0.75rem; border-radius: 4px;" data-lang-en="Historical Gazetteer Reference" data-lang-mr="ऐतिहासिक गॅझेटियर संदर्भ">Historical Gazetteer Reference</span>
-                        <h2 style="font-size: 1.4rem; font-weight: 800; margin-top: 0.6rem; color: white; line-height: 1.3;" data-lang-en="Maharashtra State Gazetteers — Chandrapur District" data-lang-mr="महाराष्ट्र राज्य गॅझेटियर — चंद्रपूर जिल्हा">Maharashtra State Gazetteers — Chandrapur District</h2>
+                        <div style="background: linear-gradient(135deg, var(--primary-dark) 0%, #1a5c3a 100%); padding: 1.6rem 2rem; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(255, 255, 255, 0.15); padding: 0.25rem 0.75rem; border-radius: 4px;" data-lang-en="Historical Gazetteer Reference" data-lang-mr="ऐतिहासिक गॅझेटियर संदर्भ">Historical Gazetteer Reference</span>
+                                <h3 style="font-size: 1.35rem; font-weight: 800; margin-top: 0.6rem; color: white; line-height: 1.3;" data-lang-en="Maharashtra State Gazetteers — Chandrapur District" data-lang-mr="महाराष्ट्र राज्य गॅझेटियर — चंद्रपूर जिल्हा">Maharashtra State Gazetteers — Chandrapur District</h3>
+                            </div>
+                            <span class="badge-source badge-record" style="background:rgba(255,255,255,0.2); color:white; border:1px solid rgba(255,255,255,0.4);"><i class="fa-solid fa-certificate"></i> Historical Record</span>
+                        </div>
+                        <div style="padding: 2rem;" class="featured-card-grid">
+                            <div style="display: flex; flex-direction: column; justify-content: center;">
+                                <p style="line-height: 1.8; font-size: 1rem; color: var(--text-main); margin-bottom:1rem;" data-lang-en="The Maharashtra State Gazetteers, Chandrapur District — First Edition 1909 and Revised Second Edition 1973 contain historical references to the Kohli community in their discussion of regional agricultural communities, landholdings, and irrigation systems." data-lang-mr="महाराष्ट्र राज्य गॅझेटियर, चंद्रपूर जिल्हा — १ली आवृत्ती १९०९ आणि सुधारित २री आवृत्ती १९७३ मध्ये प्रादेशिक शेतकरी समाज, जमीन वहिवाट आणि सिंचन यंत्रणेच्या चर्चेत कोहळी समाजाचा ऐतिहासिक संदर्भ आढळतो.">
+                                    The Maharashtra State Gazetteers, Chandrapur District — First Edition 1909 and Revised Second Edition 1973 contain historical references to the Kohli community in their discussion of regional agricultural communities, landholdings, and irrigation systems.
+                                </p>
+                                <p style="font-size:0.86rem; color:var(--text-muted); margin:0; font-style:italic;" data-lang-en="Source Reference: The Maharashtra State Gazetteers, Chandrapur District (1909, 1973)." data-lang-mr="संदर्भ: महाराष्ट्र राज्य गॅझेटियर, चंद्रपूर जिल्हा (१९०९, १९७३).">
+                                    Source Reference: The Maharashtra State Gazetteers, Chandrapur District (1909, 1973).
+                                </p>
+                            </div>
+                            <div style="background: #f8faf9; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                                <div>
+                                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;" data-lang-en="First Edition" data-lang-mr="पहिली आवृत्ती">First Edition</div>
+                                    <div style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.2rem;">1909</div>
+                                </div>
+                                <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0;">
+                                <div>
+                                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;" data-lang-en="Revised Edition" data-lang-mr="सुधारित आवृत्ती">Revised Edition</div>
+                                    <div style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.2rem;">1973</div>
+                                </div>
+                                <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0;">
+                                <div>
+                                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;" data-lang-en="Region" data-lang-mr="क्षेत्र">Region</div>
+                                    <div style="font-size: 0.95rem; font-weight: 700; color: var(--primary-dark); margin-top: 0.2rem;" data-lang-en="Chandrapur District, Maharashtra" data-lang-mr="चंद्रपूर जिल्हा, महाराष्ट्र">Chandrapur District, Maharashtra</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-gold); border: 1.5px solid var(--accent-gold); padding: 0.35rem 0.95rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;" data-lang-en="Historical Reference" data-lang-mr="ऐतिहासिक संदर्भ">Historical Reference</span>
-                </div>
-                <div style="padding: 2.2rem 2rem;" class="featured-card-grid">
-                    <div style="display: flex; flex-direction: column; justify-content: center;">
-                        <p style="line-height: 1.8; font-size: 1.05rem; color: var(--text-main); margin: 0;" data-lang-en="The Chandrapur District Gazetteer contains historical references to communities associated with the region. One historical excerpt refers to communities including Manas, Gowarees and 'Kaulees'. The reference is presented here as a historical record and should be understood in the context of the period in which the Gazetteer was compiled." data-lang-mr="चंद्रपूर जिल्हा गॅझेटियरमध्ये या क्षेत्राशी संबंधित समुदायांचे ऐतिहासिक संदर्भ आहेत. एका ऐतिहासिक उताऱ्यात माणा (Manas), गोवारी (Gowarees) आणि 'कौली' (Kaulees) या समुदायांचा उल्लेख आहे. हा संदर्भ येथे ऐतिहासिक नोंद म्हणून सादर केला गेला असून तो ज्या काळात गॅझेटियर संकलित केले गेले होते त्या काळाच्या संदर्भात समजून घेतला पाहिजे.">
-                            The Chandrapur District Gazetteer contains historical references to communities associated with the region. One historical excerpt refers to communities including Manas, Gowarees and 'Kaulees'. The reference is presented here as a historical record and should be understood in the context of the period in which the Gazetteer was compiled.
+                </section>
+
+                <!-- FEATURED SOURCE CARD 2: R. V. RUSSELL -->
+                <section style="margin-bottom:2.5rem;">
+                    <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 16px; padding:1.8rem; box-shadow: var(--shadow-sm);">
+                        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+                            <div>
+                                <span style="font-size:0.75rem; font-weight:700; color:var(--accent-gold); text-transform:uppercase; letter-spacing:0.05em;" data-lang-en="Anthropological Documentation (1916)" data-lang-mr="मानववंशशास्त्र दस्तऐवजीकरण (१९१६)">Anthropological Documentation (1916)</span>
+                                <h3 style="color:var(--primary-dark); font-size:1.3rem; font-weight:800; margin:0.3rem 0 0 0;" data-lang-en="The Tribes and Castes of the Central Provinces of India" data-lang-mr="द ट्राईब्स अँड कास्ट्स ऑफ द सेंट्रल प्रॉव्हिन्सेस ऑफ इंडिया">The Tribes and Castes of the Central Provinces of India</h3>
+                            </div>
+                            <span class="badge-source badge-record"><i class="fa-solid fa-book-bookmark"></i> Historical Record</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.2rem; background:var(--bg-cream); padding:1rem; border-radius:8px; border:1px solid var(--border-color);">
+                            <div><strong>Author:</strong> R. V. Russell</div>
+                            <div><strong>Year of Publication:</strong> 1916</div>
+                            <div><strong>Region Covered:</strong> Central Provinces of India</div>
+                        </div>
+                        <p style="line-height:1.7; font-size:0.95rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="R. V. Russell's seminal 1916 publication documents the Kohli/Kohri community among the ethnological and agricultural groups of the Central Provinces. The reference records traditional village customs, agricultural practices, and social organization." data-lang-mr="आर. व्ही. रसेल यांच्या १९१६ मधील प्रसिद्ध ग्रंथात मध्य प्रांतातील कृषी आणि सामाजिक गटांमध्ये कोहळी/कोहरी समाजाचे दस्तऐवजीकरण केले गेले आहे. यामध्ये पारंपरिक गाव रीती, शेती पद्धती आणि सामाजिक रचनेची नोंद आहे.">
+                            R. V. Russell's seminal 1916 publication documents the Kohli/Kohri community among the ethnological and agricultural groups of the Central Provinces. The reference records traditional village customs, agricultural practices, and social organization.
+                        </p>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin:0; font-style:italic;" data-lang-en="Note: This historical reference documents communities and caste groups of the Central Provinces during the early 20th century." data-lang-mr="टीप: हा ऐतिहासिक संदर्भ २०व्या शतकाच्या सुरुवातीच्या मध्य प्रांतातील समुदाय व सामाजिक गटांची नोंद करतो.">
+                            Note: This historical reference documents communities and caste groups of the Central Provinces during the early 20th century.
                         </p>
                     </div>
-                    <div style="background: #f8faf9; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div>
-                            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;" data-lang-en="First Edition" data-lang-mr="पहिली आवृत्ती">First Edition</div>
-                            <div style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.2rem;">1909</div>
-                        </div>
-                        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0;">
-                        <div>
-                            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;" data-lang-en="Revised Edition" data-lang-mr="सुधारित आवृत्ती">Revised Edition</div>
-                            <div style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.2rem;">1973</div>
-                        </div>
-                        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0;">
-                        <div>
-                            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;" data-lang-en="Region" data-lang-mr="क्षेत्र">Region</div>
-                            <div style="font-size: 0.95rem; font-weight: 700; color: var(--primary-dark); margin-top: 0.2rem;" data-lang-en="Chandrapur District, Maharashtra" data-lang-mr="चंद्रपूर जिल्हा, महाराष्ट्र">Chandrapur District, Maharashtra</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
         <!-- HISTORICAL REFERENCE SECTION -->
         <section style="margin-bottom: 3.5rem;">

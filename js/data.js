@@ -9,10 +9,10 @@ const initialData = {
         fontSize: 'normal' // 'small', 'normal', 'large'
     },
     stats: [
-        { id: 1, icon: 'fa-house-chimney', number: '518+', label_en: 'Villages', label_mr: 'गावे' },
-        { id: 2, icon: 'fa-location-dot', number: '5', label_en: 'Key Districts', label_mr: 'प्रमुख जिल्हे' },
-        { id: 3, icon: 'fa-users', number: 'Lakhs+', label_en: 'Community Members', label_mr: 'समाज बांधव' },
-        { id: 4, icon: 'fa-city', number: 'Nagpur, Pune, Mumbai', label_en: 'and other major cities', label_mr: 'आणि इतर शहरे' }
+        { id: 1, icon: 'fa-house-chimney', number: '518', label_en: 'Villages', label_mr: 'गावे', note_en: 'Community-reported figure', note_mr: 'समाज-नोंदणीकृत आकडेवारी' },
+        { id: 2, icon: 'fa-location-dot', number: '5', label_en: 'Key Districts', label_mr: 'प्रमुख जिल्हे', note_en: 'Bhandara, Gondia, Gadchiroli, Chandrapur, Balaghat', note_mr: 'भंडारा, गोंदिया, गडचिरोली, चंद्रपूर, बालाघाट' },
+        { id: 3, icon: 'fa-users', number: 'Lakhs+', label_en: 'Community Members', label_mr: 'समाज बांधव', note_en: 'Across Vidarbha & Urban Centers', note_mr: 'विदर्भ व शहरी भागातील' },
+        { id: 4, icon: 'fa-city', number: 'Nagpur, Pune, Mumbai', label_en: 'Urban & Industrial Centers', label_mr: 'प्रमुख शहरी व औद्योगिक केंद्रे', note_en: 'Education, Employment & Business', note_mr: 'शिक्षण, नोकरी व व्यवसाय' }
     ],
     notices: [
         {

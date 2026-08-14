@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let html = '';
         stats.forEach((stat, idx) => {
             const label = lang === 'mr' ? stat.label_mr : stat.label_en;
+            const note = lang === 'mr' ? stat.note_mr : stat.note_en;
             html += `
                 <div class="stat-row" onclick="openStatDetailModal(${stat.id})">
                     <div class="stat-icon-circle">
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="stat-detail-text">
                         <div class="stat-main-num">${stat.number}</div>
                         <div class="stat-sub-label">${label}</div>
+                        ${note ? `<div style="font-size:0.72rem; color:var(--text-muted); font-weight:600; margin-top:2px;">${note}</div>` : ''}
                     </div>
                     <div class="stat-chevron">
                         <i class="fa-solid fa-chevron-right"></i>

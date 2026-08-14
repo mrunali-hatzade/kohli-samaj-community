@@ -240,8 +240,8 @@
 
         /* ------------------------------------------------------------------ */
         /* 9. HISTORY SIDEBAR ACCORDION BEHAVIOR                              */
-        /*    1st Click: Expands sub-bar so user can explore on current page.  */
-        /*    2nd Click (when expanded): Navigates to that page!               */
+        /*    1st Click (words or arrow): Opens sub-panel to explore topics.   */
+        /*    2nd Click (when already open): Navigates directly to page!       */
         /* ------------------------------------------------------------------ */
         var sidebarMainLinks = document.querySelectorAll('.history-sidebar-nav .sidebar-main-link');
         sidebarMainLinks.forEach(function (link) {
@@ -251,23 +251,33 @@
 
                 var hasSubList = li.querySelector('.sidebar-sub-list') !== null;
                 var isExpanded = li.classList.contains('expanded');
+                var rect = link.getBoundingClientRect();
+                var clickXFromRight = rect.right - e.clientX;
+                var isChevron = (clickXFromRight <= 48) || e.target.classList.contains('chevron-toggle') || e.target.closest('.chevron-toggle');
 
-                if (hasSubList && !isExpanded) {
-                    // First click: expand sub-bar while staying on current page (zero scrolling)
-                    e.preventDefault();
-                    e.stopPropagation();
+                if (hasSubList) {
+                    if (!isExpanded) {
+                        // 1st Click (words or arrow): Open sub-panel to explore topics first!
+                        e.preventDefault();
+                        e.stopPropagation();
 
-                    // Collapse sibling items for clean accordion
-                    var siblings = li.parentElement.querySelectorAll(':scope > li');
-                    siblings.forEach(function (sibling) {
-                        if (sibling !== li) {
-                            sibling.classList.remove('expanded');
-                        }
-                    });
+                        // Collapse siblings for a clean single-open accordion
+                        var siblings = li.parentElement.querySelectorAll(':scope > li');
+                        siblings.forEach(function (sibling) {
+                            if (sibling !== li) {
+                                sibling.classList.remove('expanded');
+                            }
+                        });
 
-                    li.classList.add('expanded');
+                        li.classList.add('expanded');
+                    } else if (isChevron) {
+                        // Clicking chevron specifically when already open -> toggle close panel
+                        e.preventDefault();
+                        e.stopPropagation();
+                        li.classList.remove('expanded');
+                    }
+                    // 2nd Click on text/row when already open -> allow normal navigation to link.href!
                 }
-                // Second click (when already expanded): proceed with navigation to page!
             });
         });
 
