@@ -11,80 +11,86 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* ── Culture Page Specific Styles ── */
+        /* ── Culture Page Enhanced Styles ── */
+        .culture-main-content {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
         .culture-hero-intro {
             background: white;
             border: 1.5px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.8rem;
-            margin-bottom: 2rem;
+            border-radius: 16px;
+            padding: 2.4rem 2.8rem;
+            margin-bottom: 2.8rem;
             box-shadow: var(--shadow-sm);
         }
         .culture-hero-intro h2 {
             color: var(--primary-dark);
-            font-size: 1.45rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
         .culture-hero-intro p {
             color: var(--text-main);
-            font-size: 0.98rem;
-            line-height: 1.7;
+            font-size: 1.04rem;
+            line-height: 1.8;
             margin: 0;
         }
 
         /* Pillars 6 Cards Grid */
         .pillars-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.4rem;
-            margin: 1.5rem 0 2.5rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.6rem;
+            margin: 1.8rem 0 3rem 0;
         }
         .pillar-card {
             background: white;
             border: 1.5px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.6rem;
+            border-radius: 16px;
+            padding: 2.2rem 2rem;
+            min-height: 280px;
             box-shadow: var(--shadow-sm);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
         }
         .pillar-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(14,62,41,0.09);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(14,62,41,0.1);
             border-color: var(--primary-dark);
         }
         .pillar-icon-box {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
             background: var(--primary-light);
             color: var(--primary-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         .pillar-title {
-            font-size: 1.15rem;
+            font-size: 1.22rem;
             font-weight: 800;
             color: var(--primary-dark);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
         .pillar-desc {
-            font-size: 0.9rem;
-            line-height: 1.65;
+            font-size: 0.95rem;
+            line-height: 1.7;
             color: var(--text-main);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.4rem;
         }
         .pillar-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            font-size: 0.88rem;
+            gap: 0.45rem;
+            font-size: 0.92rem;
             font-weight: 700;
             color: var(--primary-dark);
             text-decoration: none;
@@ -92,59 +98,91 @@
         }
         .pillar-link:hover {
             color: var(--accent-gold-hover);
-            gap: 0.65rem;
+            gap: 0.75rem;
         }
 
-        /* Section Cards */
+        /* Section Cards with Generous Length & Padding */
         .culture-section-card {
             background: white;
             border: 1.5px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.8rem 2rem;
-            margin-bottom: 2.2rem;
+            border-radius: 16px;
+            padding: 2.6rem 2.8rem;
+            margin-bottom: 3rem;
             box-shadow: var(--shadow-sm);
         }
         .culture-section-title {
             color: var(--primary-dark);
-            font-size: 1.3rem;
+            font-size: 1.42rem;
             font-weight: 800;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.7rem;
         }
         .culture-section-desc {
-            font-size: 0.94rem;
-            line-height: 1.65;
+            font-size: 1rem;
+            line-height: 1.75;
             color: var(--text-main);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.6rem;
+        }
+
+        /* Feature Sub-grid inside sections */
+        .culture-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.3rem;
+            margin: 1.5rem 0;
+        }
+        .culture-feature-card {
+            background: #fafcfb;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.4rem 1.5rem;
+        }
+        .culture-feature-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.45rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .culture-feature-card p {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: var(--text-muted);
+            margin: 0;
         }
 
         /* Tag lists */
         .culture-tag-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.8rem;
+            gap: 0.65rem;
+            margin-top: 1.3rem;
         }
         .culture-tag-item {
             background: var(--bg-cream);
             border: 1px solid var(--border-color);
-            padding: 0.35rem 0.85rem;
-            border-radius: 6px;
-            font-size: 0.84rem;
+            padding: 0.45rem 1.05rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
             font-weight: 600;
             color: var(--primary-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
         }
 
         /* Tradition & Change Card */
         .tradition-change-box {
             background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
             border: 1.5px solid var(--accent-gold);
-            border-left: 5px solid var(--accent-gold);
-            border-radius: 12px;
-            padding: 1.6rem 1.8rem;
-            margin-bottom: 2.2rem;
+            border-left: 6px solid var(--accent-gold);
+            border-radius: 16px;
+            padding: 2.4rem 2.8rem;
+            margin-bottom: 3rem;
             box-shadow: var(--shadow-sm);
         }
 
@@ -152,10 +190,10 @@
         .memory-box {
             background: #f0fdf4;
             border: 1.5px solid #bbf7d0;
-            border-left: 5px solid #16a34a;
-            border-radius: 12px;
-            padding: 1.6rem 1.8rem;
-            margin-bottom: 2.2rem;
+            border-left: 6px solid #16a34a;
+            border-radius: 16px;
+            padding: 2.4rem 2.8rem;
+            margin-bottom: 3rem;
             box-shadow: var(--shadow-sm);
         }
 
@@ -163,12 +201,12 @@
         .culture-disclaimer-box {
             background: #f8fafc;
             border: 1.5px solid #cbd5e1;
-            border-left: 5px solid #475569;
-            border-radius: 12px;
-            padding: 1.4rem 1.6rem;
-            margin-bottom: 2.2rem;
-            font-size: 0.92rem;
-            line-height: 1.65;
+            border-left: 6px solid #475569;
+            border-radius: 16px;
+            padding: 2.2rem 2.6rem;
+            margin-bottom: 3rem;
+            font-size: 0.96rem;
+            line-height: 1.75;
             color: #334155;
         }
 
@@ -176,26 +214,26 @@
         .culture-related-section {
             background: white;
             border: 1.5px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.8rem 2rem;
-            margin-top: 2rem;
+            border-radius: 16px;
+            padding: 2.4rem 2.8rem;
+            margin-top: 2.5rem;
             box-shadow: var(--shadow-sm);
         }
         .culture-related-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.4rem;
         }
         .culture-related-link {
             background: var(--bg-cream);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 0.9rem 1.1rem;
+            border-radius: 12px;
+            padding: 1.15rem 1.4rem;
             text-decoration: none;
             color: var(--primary-dark);
             font-weight: 700;
-            font-size: 0.88rem;
+            font-size: 0.94rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -204,11 +242,11 @@
         .culture-related-link:hover {
             background: var(--primary-light);
             border-color: var(--primary-dark);
-            transform: translateX(3px);
+            transform: translateX(4px);
         }
         .culture-related-link i {
             color: var(--accent-gold);
-            font-size: 0.8rem;
+            font-size: 0.88rem;
         }
     </style>
 </head>
@@ -264,10 +302,14 @@
     <!-- MAIN HEADER & BRANDING & NAVIGATION -->
     <header class="main-header">
         <div class="container header-inner">
-            <!-- Official Emblem Logo -->
+            <!-- Official Emblem Logo & Brand Title -->
             <div class="brand-section">
-                <a href="index.html">
+                <a href="index.html" class="brand-link">
                     <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Official Emblem Logo" class="brand-logo">
+                    <div class="brand-info">
+                        <span class="brand-title" data-lang-en="Kohli Samaj" data-lang-mr="कोहळी समाज">Kohli Samaj</span>
+                        <span class="brand-subtitle" data-lang-en="Official Portal" data-lang-mr="अधिकृत पोर्टल">Official Portal</span>
+                    </div>
                 </a>
             </div>
 
@@ -340,330 +382,386 @@
         </div>
     </div>
 
-    <!-- MAIN CONTAINER -->
-    <main class="container" style="padding: 3rem 1.25rem;">
-        <div class="history-layout-container">
-            <!-- LEFT SIDEBAR PANEL -->
-            <aside class="history-sidebar-card">
-                <div class="history-sidebar-header">
-                    <h3>
-                        <i class="fa-solid fa-om" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Culture Navigation" data-lang-mr="संस्कृती मार्गदर्शिका">Culture Navigation</span>
-                    </h3>
+    <!-- MAIN CONTAINER (FULL-WIDTH CLEAN LAYOUT) -->
+    <main class="container" style="padding: 3.5rem 1.25rem;">
+        <div class="culture-main-content">
+            
+            <!-- HERO INTRO SECTION -->
+            <section id="sec-culture-intro" class="culture-hero-intro">
+                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem;">
+                    <h2>
+                        <i class="fa-solid fa-om" style="color: var(--accent-gold); margin-right: 0.4rem;"></i>
+                        <span data-lang-en="Cultural Heritage of Kohli Samaj" data-lang-mr="कोहळी समाजाचा सांस्कृतिक वारसा">Cultural Heritage of Kohli Samaj</span>
+                    </h2>
+                    <span class="badge-source badge-community"><i class="fa-solid fa-hands-holding"></i> <span data-lang-en="Living Cultural Heritage" data-lang-mr="जिवंत सांस्कृतिक परंपरा">Living Cultural Heritage</span></span>
                 </div>
-                <div class="history-sidebar-nav-wrapper">
-                    <ul class="history-sidebar-nav" id="cultureSidebarNav">
-                        <li class="expanded">
-                            <a href="#sec-culture-intro" class="sidebar-main-link active">
-                                <span><i class="fa-solid fa-landmark-dome"></i> &nbsp;<span data-lang-en="Kohli Culture" data-lang-mr="कोहळी संस्कृती">Kohli Culture</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="#sec-culture-intro" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Overview & Intro" data-lang-mr="परिचय व आढावा">Overview & Intro</span></a></li>
-                                <li><a href="#sec-pillars" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="6 Cultural Pillars" data-lang-mr="६ मुख्य आधारस्तंभ">6 Cultural Pillars</span></a></li>
-                                <li><a href="#sec-marriage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Marriage Traditions" data-lang-mr="विवाह परंपरा">Marriage Traditions</span></a></li>
-                                <li><a href="#sec-festivals" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Festivals & Religion" data-lang-mr="सण व धार्मिक जीवन">Festivals & Religion</span></a></li>
-                                <li><a href="#sec-lifestyle" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Traditional Lifestyle" data-lang-mr="पारंपरिक जीवनशैली">Traditional Lifestyle</span></a></li>
-                                <li><a href="#sec-folkarts" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Folk Arts & Dandaar" data-lang-mr="लोककला व दंडार">Folk Arts & Dandaar</span></a></li>
-                                <li><a href="#sec-food" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Food & Agriculture" data-lang-mr="अन्न व कृषी संस्कृती">Food & Agriculture</span></a></li>
-                                <li><a href="#sec-family" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Family & Community" data-lang-mr="कुटुंब व समाजजीवन">Family & Community</span></a></li>
-                                <li><a href="#sec-tradition-change" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Tradition & Change" data-lang-mr="परंपरा आणि बदल">Tradition & Change</span></a></li>
-                                <li><a href="#sec-community-memory" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Community Memory" data-lang-mr="सामुदायिक स्मृती जतन">Community Memory</span></a></li>
-                                <li><a href="#sec-source-note" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Cultural Source Note" data-lang-mr="सांस्कृतिक स्रोत नोंद">Cultural Source Note</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                <p data-lang-en="Culture is preserved through everyday life — family traditions, festivals, marriage ceremonies, agriculture, food, religious practices, folk arts and community gatherings. The Kohli community's cultural heritage has evolved across generations while adapting to changing social and economic conditions." data-lang-mr="संस्कृती ही केवळ सणांमध्ये नसते; ती कुटुंबपरंपरा, विवाहविधी, शेती, अन्नसंस्कृती, धार्मिक प्रथा, लोककला आणि सामुदायिक सहभागातून पिढ्यान्पिढ्या जपली जाते. बदलत्या सामाजिक आणि आर्थिक परिस्थितीनुसार कोहळी समाजाची सांस्कृतिक परंपराही विकसित होत गेली आहे.">
+                    Culture is preserved through everyday life — family traditions, festivals, marriage ceremonies, agriculture, food, religious practices, folk arts and community gatherings. The Kohli community's cultural heritage has evolved across generations while adapting to changing social and economic conditions.
+                </p>
+            </section>
+
+            <!-- SECTION: 6 CULTURAL PILLARS GRID -->
+            <section id="sec-pillars">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.8rem; margin-bottom:0.8rem;">
+                    <h3 style="color: var(--primary-dark); font-size: 1.45rem; font-weight: 800; margin:0; display:flex; align-items:center; gap:0.6rem;">
+                        <i class="fa-solid fa-cubes-stacked" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Core Pillars of Kohli Culture" data-lang-mr="कोहळी संस्कृतीचे मुख्य आधारस्तंभ">Core Pillars of Kohli Culture</span>
+                    </h3>
+                    <span class="badge-source badge-record"><i class="fa-solid fa-list-check"></i> <span data-lang-en="6 Cultural Domains" data-lang-mr="६ सांस्कृतिक घटक">6 Cultural Domains</span></span>
                 </div>
-            </aside>
 
-            <!-- RIGHT CONTENT AREA -->
-            <div class="history-content-area">
-                
-                <!-- HERO SECTION -->
-                <section id="sec-culture-intro" class="culture-hero-intro">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; margin-bottom:0.8rem;">
-                        <h2>
-                            <i class="fa-solid fa-om" style="color: var(--accent-gold); margin-right: 0.4rem;"></i>
-                            <span data-lang-en="Cultural Heritage of Kohli Samaj" data-lang-mr="कोहळी समाजाचा सांस्कृतिक वारसा">Cultural Heritage of Kohli Samaj</span>
-                        </h2>
-                        <span class="badge-source badge-community"><i class="fa-solid fa-hands-holding"></i> <span data-lang-en="Living Cultural Heritage" data-lang-mr="जिवंत सांस्कृतिक परंपरा">Living Cultural Heritage</span></span>
-                    </div>
-                    <p data-lang-en="Culture is preserved through everyday life — family traditions, festivals, marriage ceremonies, agriculture, food, religious practices, folk arts and community gatherings. The Kohli community's cultural heritage has evolved across generations while adapting to changing social and economic conditions." data-lang-mr="संस्कृती ही केवळ सणांमध्ये नसते; ती कुटुंबपरंपरा, विवाहविधी, शेती, अन्नसंस्कृती, धार्मिक प्रथा, लोककला आणि सामुदायिक सहभागातून पिढ्यान्पिढ्या जपली जाते. बदलत्या सामाजिक आणि आर्थिक परिस्थितीनुसार कोहळी समाजाची सांस्कृतिक परंपराही विकसित होत गेली आहे.">
-                        Culture is preserved through everyday life — family traditions, festivals, marriage ceremonies, agriculture, food, religious practices, folk arts and community gatherings. The Kohli community's cultural heritage has evolved across generations while adapting to changing social and economic conditions.
-                    </p>
-                </section>
-
-                <!-- SECTION: 6 CULTURAL PILLARS GRID -->
-                <section id="sec-pillars">
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.8rem; margin-bottom:0.6rem;">
-                        <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin:0; display:flex; align-items:center; gap:0.5rem;">
-                            <i class="fa-solid fa-cubes-stacked" style="color: var(--accent-gold);"></i>
-                            <span data-lang-en="Core Pillars of Kohli Culture" data-lang-mr="कोहळी संस्कृतीचे मुख्य आधारस्तंभ">Core Pillars of Kohli Culture</span>
-                        </h3>
-                        <span class="badge-source badge-record"><i class="fa-solid fa-list-check"></i> <span data-lang-en="6 Cultural Domains" data-lang-mr="६ सांस्कृतिक घटक">6 Cultural Domains</span></span>
-                    </div>
-
-                    <div class="pillars-grid">
-                        <!-- Pillar 1: Marriage Traditions -->
-                        <div class="pillar-card">
-                            <div>
-                                <div class="pillar-icon-box"><i class="fa-solid fa-ring"></i></div>
-                                <h4 class="pillar-title" data-lang-en="1. Marriage Traditions" data-lang-mr="१. विवाह परंपरा">1. Marriage Traditions</h4>
-                                <p class="pillar-desc" data-lang-en="Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals." data-lang-mr="पारंपरिक विवाहामध्ये कुटुंबीयांची चर्चा, समाजाचा सहभाग, रूढीपरंपरांनुसार विधी, वरात, पाहुणचार आणि सामूहिक भोजन यांना महत्त्व होते.">
-                                    Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals.
-                                </p>
-                            </div>
-                            <a href="#sec-marriage" class="pillar-link">
-                                <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                <div class="pillars-grid">
+                    <!-- Pillar 1: Marriage Traditions -->
+                    <div class="pillar-card">
+                        <div>
+                            <div class="pillar-icon-box"><i class="fa-solid fa-ring"></i></div>
+                            <h4 class="pillar-title" data-lang-en="1. Marriage Traditions" data-lang-mr="१. विवाह परंपरा">1. Marriage Traditions</h4>
+                            <p class="pillar-desc" data-lang-en="Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals." data-lang-mr="पारंपरिक विवाहामध्ये कुटुंबीयांची चर्चा, समाजाचा सहभाग, रूढीपरंपरांनुसार विधी, वरात, पाहुणचार आणि सामूहिक भोजन यांना महत्त्व होते.">
+                                Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals.
+                            </p>
                         </div>
-
-                        <!-- Pillar 2: Festivals & Religion -->
-                        <div class="pillar-card">
-                            <div>
-                                <div class="pillar-icon-box"><i class="fa-solid fa-sun"></i></div>
-                                <h4 class="pillar-title" data-lang-en="2. Festivals & Religion" data-lang-mr="२. सण आणि धार्मिक जीवन">2. Festivals & Religion</h4>
-                                <p class="pillar-desc" data-lang-en="Festivals brought together religious observance, family participation, music, folk performances and community gatherings." data-lang-mr="सणांमध्ये धार्मिक विधी, कुटुंबीयांचा सहभाग, संगीत, लोककला आणि सामुदायिक एकत्र येण्याची परंपरा दिसून येते.">
-                                    Festivals brought together religious observance, family participation, music, folk performances and community gatherings.
-                                </p>
-                            </div>
-                            <a href="#sec-festivals" class="pillar-link">
-                                <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                        <!-- Pillar 3: Traditional Lifestyle -->
-                        <div class="pillar-card">
-                            <div>
-                                <div class="pillar-icon-box"><i class="fa-solid fa-tree-city"></i></div>
-                                <h4 class="pillar-title" data-lang-en="3. Traditional Lifestyle" data-lang-mr="३. पारंपरिक जीवनशैली">3. Traditional Lifestyle</h4>
-                                <p class="pillar-desc" data-lang-en="Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles." data-lang-mr="पारंपरिक कोहळी जीवनशैलीचा शेती, पशुधन, ग्रामव्यवस्था आणि ऋतूचक्राशी जवळचा संबंध होता.">
-                                    Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles.
-                                </p>
-                            </div>
-                            <a href="#sec-lifestyle" class="pillar-link">
-                                <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                        <!-- Pillar 4: Folk Arts -->
-                        <div class="pillar-card">
-                            <div>
-                                <div class="pillar-icon-box"><i class="fa-solid fa-masks-theater"></i></div>
-                                <h4 class="pillar-title" data-lang-en="4. Folk Arts & Dandaar" data-lang-mr="४. लोककला आणि दंडार">4. Folk Arts & Dandaar</h4>
-                                <p class="pillar-desc" data-lang-en="Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages." data-lang-mr="लोकनाट्य आणि लोककला या केवळ करमणुकीचे माध्यम नव्हत्या; त्या सामाजिक अभिव्यक्ती आणि धार्मिक-सामाजिक संदेश देण्याचे माध्यमही होत्या.">
-                                    Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages.
-                                </p>
-                            </div>
-                            <a href="#sec-folkarts" class="pillar-link">
-                                <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                        <!-- Pillar 5: Food & Agriculture -->
-                        <div class="pillar-card">
-                            <div>
-                                <div class="pillar-icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
-                                <h4 class="pillar-title" data-lang-en="5. Food & Agriculture" data-lang-mr="५. अन्न आणि कृषी संस्कृती">5. Food & Agriculture</h4>
-                                <p class="pillar-desc" data-lang-en="Food traditions developed alongside agriculture and local availability of crops such as rice and sugarcane." data-lang-mr="स्थानिक शेती आणि उपलब्ध पिकांनुसार कोहळी समाजातील अन्नपरंपरा विकसित झाल्या.">
-                                    Food traditions developed alongside agriculture and local availability of crops such as rice and sugarcane.
-                                </p>
-                            </div>
-                            <a href="#sec-food" class="pillar-link">
-                                <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                        <!-- Pillar 6: Family & Community Life -->
-                        <div class="pillar-card">
-                            <div>
-                                <div class="pillar-icon-box"><i class="fa-solid fa-users"></i></div>
-                                <h4 class="pillar-title" data-lang-en="6. Family & Community Life" data-lang-mr="६. कुटुंब आणि समाजजीवन">6. Family & Community Life</h4>
-                                <p class="pillar-desc" data-lang-en="Family and community relationships played an important role in traditional village life and collective welfare." data-lang-mr="पारंपरिक ग्रामीण जीवनात कुटुंबीय आणि समाजातील परस्पर संबंधांना महत्त्वाचे स्थान होते.">
-                                    Family and community relationships played an important role in traditional village life and collective welfare.
-                                </p>
-                            </div>
-                            <a href="#sec-family" class="pillar-link">
-                                <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 1: MARRIAGE TRADITIONS -->
-                <section id="sec-marriage" class="culture-section-card">
-                    <h3 class="culture-section-title">
-                        <i class="fa-solid fa-ring" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="1. Marriage Traditions & Customs" data-lang-mr="१. विवाह परंपरा आणि चालीरीती">1. Marriage Traditions & Customs</span>
-                    </h3>
-                    <p class="culture-section-desc" data-lang-en="Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals. Marriage arrangements were historically scheduled around the agricultural calendar after the seasonal paddy harvests." data-lang-mr="पारंपरिक विवाहामध्ये कुटुंबीयांची चर्चा, समाजाचा सहभाग, रूढीपरंपरांनुसार विधी, वरात, पाहुणचार आणि सामूहिक भोजन यांना महत्त्व होते. विवाहाचे नियोजन हे भातकापणी व शेतीच्या कामानंतरच्या मोकळ्या वेळेवर आधारित असे.">
-                        Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals. Marriage arrangements were historically scheduled around the agricultural calendar after the seasonal paddy harvests.
-                    </p>
-                    <div class="culture-tag-list">
-                        <span class="culture-tag-item"><i class="fa-solid fa-handshake"></i> Family Consultations</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-calendar"></i> Post-Harvest Timing</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-utensils"></i> Community Hospitality</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-people-roof"></i> Kinship Participation</span>
-                    </div>
-                </section>
-
-                <!-- SECTION 2: FESTIVALS & RELIGIOUS LIFE -->
-                <section id="sec-festivals" class="culture-section-card">
-                    <h3 class="culture-section-title">
-                        <i class="fa-solid fa-sun" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="2. Festivals & Religious Life" data-lang-mr="२. सण आणि धार्मिक जीवन">2. Festivals & Religious Life</span>
-                    </h3>
-                    <p class="culture-section-desc" data-lang-en="Festivals brought together religious observance, family participation, music, folk performances and community gatherings. Celebrations reflect deep agrarian reverence and community togetherness." data-lang-mr="सणांमध्ये धार्मिक विधी, कुटुंबीयांचा सहभाग, संगीत, लोककला आणि सामुदायिक एकत्र येण्याची परंपरा दिसून येते. हे सण निसर्गाबद्दलची कृतज्ञता आणि सामाजिक ऐक्य व्यक्त करतात.">
-                        Festivals brought together religious observance, family participation, music, folk performances and community gatherings. Celebrations reflect deep agrarian reverence and community togetherness.
-                    </p>
-
-                    <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:10px; padding:1.2rem; margin-bottom:1rem;">
-                        <strong style="color:var(--primary-dark); display:block; margin-bottom:0.5rem;" data-lang-en="Prominent Community Celebrations:" data-lang-mr="प्रमुख सण व धार्मिक उत्सव:">Prominent Community Celebrations:</strong>
-                        <div class="culture-tag-list">
-                            <span class="culture-tag-item"><i class="fa-solid fa-om"></i> Tulsi Vivah</span>
-                            <span class="culture-tag-item"><i class="fa-solid fa-fire"></i> Holi & Rang Panchami</span>
-                            <span class="culture-tag-item"><i class="fa-solid fa-cow"></i> Bail Pola (Cattle Worship)</span>
-                            <span class="culture-tag-item"><i class="fa-solid fa-shield-heart"></i> Shiv Jayanti</span>
-                            <span class="culture-tag-item"><i class="fa-solid fa-temple"></i> Ram Navami</span>
-                            <span class="culture-tag-item"><i class="fa-solid fa-arrow-up-right-dots"></i> Dussehra & Diwali</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 3: TRADITIONAL LIFESTYLE -->
-                <section id="sec-lifestyle" class="culture-section-card">
-                    <h3 class="culture-section-title">
-                        <i class="fa-solid fa-tree-city" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="3. Traditional Lifestyle" data-lang-mr="३. पारंपरिक जीवनशैली">3. Traditional Lifestyle</span>
-                    </h3>
-                    <p class="culture-section-desc" data-lang-en="Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles. Rural settlement patterns were designed around water tanks and arable farmland." data-lang-mr="पारंपरिक कोहळी जीवनशैलीचा शेती, पशुधन, ग्रामव्यवस्था आणि ऋतूचक्राशी जवळचा संबंध होता. ग्रामीण वस्त्यांची रचना तलाव आणि शेतजमिनींच्या लगत केली जात असे.">
-                        Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles. Rural settlement patterns were designed around water tanks and arable farmland.
-                    </p>
-                    <div class="culture-tag-list">
-                        <span class="culture-tag-item"><i class="fa-solid fa-wheat-awn"></i> Agrarian Occupations</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-cow"></i> Animal Husbandry</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-water"></i> Tank Water Management</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-calendar-days"></i> Seasonal Rhythm</span>
-                    </div>
-                </section>
-
-                <!-- SECTION 4: FOLK ARTS -->
-                <section id="sec-folkarts" class="culture-section-card">
-                    <h3 class="culture-section-title">
-                        <i class="fa-solid fa-masks-theater" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="4. Folk Arts & Dandaar" data-lang-mr="४. लोककला आणि दंडार">4. Folk Arts & Dandaar</span>
-                    </h3>
-                    <p class="culture-section-desc" data-lang-en="Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages. Traditional performances enriched village life during winter months and festive gatherings." data-lang-mr="लोकनाट्य आणि लोककला या केवळ करमणुकीचे माध्यम नव्हत्या; त्या सामाजिक अभिव्यक्ती आणि धार्मिक-सामाजिक संदेश देण्याचे माध्यमही होत्या. हिवाळ्याच्या दिवसांत व सणासुदीला गावात होणाऱ्या लोककला सादरीकरणामुळे ग्रामीण संस्कृती समृद्ध होत असे.">
-                        Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages. Traditional performances enriched village life during winter months and festive gatherings.
-                    </p>
-                    <div class="culture-tag-list">
-                        <span class="culture-tag-item"><i class="fa-solid fa-theater-masks"></i> Dandaar (Folk Drama)</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-music"></i> Traditional Bhajan</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-guitar"></i> Folk Music & Songs</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-people-group"></i> Community Stage Performances</span>
-                    </div>
-                </section>
-
-                <!-- SECTION 5: FOOD & AGRICULTURE -->
-                <section id="sec-food" class="culture-section-card">
-                    <h3 class="culture-section-title">
-                        <i class="fa-solid fa-wheat-awn" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="5. Food & Agriculture" data-lang-mr="५. अन्न आणि कृषी संस्कृती">5. Food & Agriculture</span>
-                    </h3>
-                    <p class="culture-section-desc" data-lang-en="Food traditions developed alongside agriculture and local availability of crops. Staple food habits centred on tank-irrigated rice varieties, pulses, sugarcane derivatives, and seasonal country vegetables." data-lang-mr="स्थानिक शेती आणि उपलब्ध पिकांनुसार कोहळी समाजातील अन्नपरंपरा विकसित झाल्या. भात, डाळी, ऊस उत्पादने (गूळ) आणि हंगामी भाज्या यावर आधारित पारंपरिक आहार पद्धती विकसित झाली.">
-                        Food traditions developed alongside agriculture and local availability of crops. Staple food habits centred on tank-irrigated rice varieties, pulses, sugarcane derivatives, and seasonal country vegetables.
-                    </p>
-                    <div class="culture-tag-list">
-                        <span class="culture-tag-item"><i class="fa-solid fa-bowl-rice"></i> Traditional Rice Preparations</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-cubes-stacked"></i> Sugarcane & Jaggery (Gur)</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-plate-wheat"></i> Seasonal Festival Dishes</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-leaf"></i> Agrarian Culinary Practices</span>
-                    </div>
-                </section>
-
-                <!-- SECTION 6: FAMILY & COMMUNITY LIFE -->
-                <section id="sec-family" class="culture-section-card">
-                    <h3 class="culture-section-title">
-                        <i class="fa-solid fa-users" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="6. Family & Community Life" data-lang-mr="६. कुटुंब आणि समाजजीवन">6. Family & Community Life</span>
-                    </h3>
-                    <p class="culture-section-desc" data-lang-en="Family and community relationships played an important role in traditional village life. Mutual cooperation in agricultural work, irrigation canal maintenance, and collective social gatherings fostered enduring solidarity." data-lang-mr="पारंपरिक ग्रामीण जीवनात कुटुंबीय आणि समाजातील परस्पर संबंधांना महत्त्वाचे स्थान होते. शेतीची कामे, कालव्यांची देखभाल आणि सणसमारंभांमधील सामूहिक सहकार्यामुळे सामाजिक एकोपा टिकून राहिला.">
-                        Family and community relationships played an important role in traditional village life. Mutual cooperation in agricultural work, irrigation canal maintenance, and collective social gatherings fostered enduring solidarity.
-                    </p>
-                    <div class="culture-tag-list">
-                        <span class="culture-tag-item"><i class="fa-solid fa-people-roof"></i> Joint & Extended Family Systems</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-handshake-angle"></i> Mutual Agricultural Support</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-comments"></i> Village Gatherings</span>
-                        <span class="culture-tag-item"><i class="fa-solid fa-heart"></i> Social Solidarity</span>
-                    </div>
-                </section>
-
-                <!-- TRADITION AND CHANGE SECTION -->
-                <section id="sec-tradition-change" class="tradition-change-box">
-                    <h3 style="color:var(--primary-dark); font-size:1.25rem; font-weight:800; margin-bottom:0.6rem; display:flex; align-items:center; gap:0.5rem;">
-                        <i class="fa-solid fa-clock-rotate-left" style="color:var(--accent-gold);"></i>
-                        <span data-lang-en="Tradition and Change" data-lang-mr="परंपरा आणि बदल">Tradition and Change</span>
-                    </h3>
-                    <p style="font-size:0.95rem; line-height:1.7; color:var(--text-main); margin:0;" data-lang-en="Like every living culture, Kohli traditions have changed over time. Education, urbanization, technology, migration and changing economic conditions have influenced family structures, celebrations, occupations and social practices." data-lang-mr="इतर जिवंत संस्कृतींप्रमाणे कोहळी समाजाच्या परंपरांमध्येही काळानुसार बदल झाले आहेत. शिक्षण, शहरीकरण, तंत्रज्ञान, स्थलांतर आणि बदलत्या आर्थिक परिस्थितीचा कुटुंबव्यवस्था, सणसमारंभ, व्यवसाय आणि सामाजिक प्रथांवर परिणाम झाला आहे.">
-                        Like every living culture, Kohli traditions have changed over time. Education, urbanization, technology, migration and changing economic conditions have influenced family structures, celebrations, occupations and social practices.
-                    </p>
-                </section>
-
-                <!-- PRESERVING COMMUNITY MEMORY SECTION -->
-                <section id="sec-community-memory" class="memory-box">
-                    <h3 style="color:#166534; font-size:1.25rem; font-weight:800; margin-bottom:0.6rem; display:flex; align-items:center; gap:0.5rem;">
-                        <i class="fa-solid fa-book-bookmark"></i>
-                        <span data-lang-en="Preserving Community Memory" data-lang-mr="सामुदायिक स्मृतींचे जतन">Preserving Community Memory</span>
-                    </h3>
-                    <p style="font-size:0.95rem; line-height:1.7; color:#14532d; margin:0;" data-lang-en="Older generations carry memories of customs, ceremonies, food, songs, performances and village life. Recording these memories helps preserve cultural knowledge for future generations." data-lang-mr="ज्येष्ठ पिढीकडे पारंपरिक चालीरीती, विधी, अन्नसंस्कृती, गीते, लोककला आणि ग्रामजीवनाच्या अनेक आठवणी जतन झालेल्या आहेत. या आठवणींचे दस्तऐवजीकरण पुढील पिढ्यांसाठी सांस्कृतिक ज्ञान जतन करण्यास मदत करते.">
-                        Older generations carry memories of customs, ceremonies, food, songs, performances and village life. Recording these memories helps preserve cultural knowledge for future generations.
-                    </p>
-                </section>
-
-                <!-- CULTURAL SOURCE NOTE / DISCLAIMER -->
-                <section id="sec-source-note" class="culture-disclaimer-box">
-                    <div style="font-weight:800; font-size:1.05rem; color:#0f172a; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.5rem;">
-                        <i class="fa-solid fa-circle-info" style="color:var(--accent-gold);"></i>
-                        <span data-lang-en="Cultural Source Note" data-lang-mr="सांस्कृतिक स्रोत नोंद">Cultural Source Note</span>
-                    </div>
-                    <p style="margin:0 0 0.5rem 0;" data-lang-en="Some cultural descriptions on this website come from community-authored material and oral traditions. Practices may vary between villages, families and generations." data-lang-mr="या वेबसाइटवरील काही सांस्कृतिक माहिती समुदायातील लेखकांच्या साहित्यावर आणि मौखिक परंपरांवर आधारित आहे. गाव, कुटुंब आणि पिढीनुसार चालीरीतींमध्ये फरक असू शकतो.">
-                        Some cultural descriptions on this website come from community-authored material and oral traditions. Practices may vary between villages, families and generations.
-                    </p>
-                    <div style="font-size:0.85rem; color:#475569; font-style:italic;" data-lang-en="Note: Cultural practices are documented as heritage references and are not presented as rigid universal obligations." data-lang-mr="टीप: सांस्कृतिक प्रथा ऐतिहासिक वारसा म्हणून नोंदवल्या आहेत, त्यांना बंधनकारक नियम मानले जाऊ नये.">
-                        Note: Cultural practices are documented as heritage references and are not presented as rigid universal obligations.
-                    </div>
-                </section>
-
-                <!-- RELATED SECTIONS -->
-                <section class="culture-related-section">
-                    <h3 style="color: var(--primary-dark); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; display:flex; align-items:center; gap:0.5rem;">
-                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Related Sections on the Portal" data-lang-mr="पोर्टलवरील संबंधित विभाग">Related Sections on the Portal</span>
-                    </h3>
-                    <p style="font-size:0.88rem; color:var(--text-muted); margin:0;" data-lang-en="Explore other historical and community documentation on the portal:" data-lang-mr="पोर्टलवरील इतर ऐतिहासिक आणि सामाजिक दस्तऐवजीकरण पहा:">
-                        Explore other historical and community documentation on the portal:
-                    </p>
-                    <div class="culture-related-grid">
-                        <a href="history.html" class="culture-related-link">
-                            <span><i class="fa-solid fa-landmark" style="margin-right:0.4rem;"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="historical-gallery.html" class="culture-related-link">
-                            <span><i class="fa-solid fa-image" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="research.html" class="culture-related-link">
-                            <span><i class="fa-solid fa-microscope" style="margin-right:0.4rem;"></i> <span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="water-heritage.html" class="culture-related-link">
-                            <span><i class="fa-solid fa-droplet" style="margin-right:0.4rem;"></i> <span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
+                        <a href="#sec-marriage" class="pillar-link">
+                            <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
-                </section>
 
-            </div>
+                    <!-- Pillar 2: Festivals & Religion -->
+                    <div class="pillar-card">
+                        <div>
+                            <div class="pillar-icon-box"><i class="fa-solid fa-sun"></i></div>
+                            <h4 class="pillar-title" data-lang-en="2. Festivals & Religion" data-lang-mr="२. सण आणि धार्मिक जीवन">2. Festivals & Religion</h4>
+                            <p class="pillar-desc" data-lang-en="Festivals brought together religious observance, family participation, music, folk performances and community gatherings." data-lang-mr="सणांमध्ये धार्मिक विधी, कुटुंबीयांचा सहभाग, संगीत, लोककला आणि सामुदायिक एकत्र येण्याची परंपरा दिसून येते.">
+                                Festivals brought together religious observance, family participation, music, folk performances and community gatherings.
+                            </p>
+                        </div>
+                        <a href="#sec-festivals" class="pillar-link">
+                            <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Pillar 3: Traditional Lifestyle -->
+                    <div class="pillar-card">
+                        <div>
+                            <div class="pillar-icon-box"><i class="fa-solid fa-tree-city"></i></div>
+                            <h4 class="pillar-title" data-lang-en="3. Traditional Lifestyle" data-lang-mr="३. पारंपरिक जीवनशैली">3. Traditional Lifestyle</h4>
+                            <p class="pillar-desc" data-lang-en="Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles." data-lang-mr="पारंपरिक कोहळी जीवनशैलीचा शेती, पशुधन, ग्रामव्यवस्था आणि ऋतूचक्राशी जवळचा संबंध होता.">
+                                Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles.
+                            </p>
+                        </div>
+                        <a href="#sec-lifestyle" class="pillar-link">
+                            <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Pillar 4: Folk Arts -->
+                    <div class="pillar-card">
+                        <div>
+                            <div class="pillar-icon-box"><i class="fa-solid fa-masks-theater"></i></div>
+                            <h4 class="pillar-title" data-lang-en="4. Folk Arts & Dandaar" data-lang-mr="४. लोककला आणि दंडार">4. Folk Arts & Dandaar</h4>
+                            <p class="pillar-desc" data-lang-en="Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages." data-lang-mr="लोकनाट्य आणि लोककला या केवळ करमणुकीचे माध्यम नव्हत्या; त्या सामाजिक अभिव्यक्ती आणि धार्मिक-सामाजिक संदेश देण्याचे माध्यमही होत्या.">
+                                Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages.
+                            </p>
+                        </div>
+                        <a href="#sec-folkarts" class="pillar-link">
+                            <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Pillar 5: Food & Agriculture -->
+                    <div class="pillar-card">
+                        <div>
+                            <div class="pillar-icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
+                            <h4 class="pillar-title" data-lang-en="5. Food & Agriculture" data-lang-mr="५. अन्न आणि कृषी संस्कृती">5. Food & Agriculture</h4>
+                            <p class="pillar-desc" data-lang-en="Food traditions developed alongside agriculture and local availability of crops such as rice and sugarcane." data-lang-mr="स्थानिक शेती आणि उपलब्ध पिकांनुसार कोहळी समाजातील अन्नपरंपरा विकसित झाल्या.">
+                                Food traditions developed alongside agriculture and local availability of crops such as rice and sugarcane.
+                            </p>
+                        </div>
+                        <a href="#sec-food" class="pillar-link">
+                            <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Pillar 6: Family & Community Life -->
+                    <div class="pillar-card">
+                        <div>
+                            <div class="pillar-icon-box"><i class="fa-solid fa-users"></i></div>
+                            <h4 class="pillar-title" data-lang-en="6. Family & Community Life" data-lang-mr="६. कुटुंब आणि समाजजीवन">6. Family & Community Life</h4>
+                            <p class="pillar-desc" data-lang-en="Family and community relationships played an important role in traditional village life and collective welfare." data-lang-mr="पारंपरिक ग्रामीण जीवनात कुटुंबीय आणि समाजातील परस्पर संबंधांना महत्त्वाचे स्थान होते.">
+                                Family and community relationships played an important role in traditional village life and collective welfare.
+                            </p>
+                        </div>
+                        <a href="#sec-family" class="pillar-link">
+                            <span data-lang-en="Explore details" data-lang-mr="सविस्तर पहा">Explore details</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 1: MARRIAGE TRADITIONS -->
+            <section id="sec-marriage" class="culture-section-card">
+                <h3 class="culture-section-title">
+                    <i class="fa-solid fa-ring" style="color: var(--accent-gold);"></i>
+                    <span data-lang-en="1. Marriage Traditions & Customs" data-lang-mr="१. विवाह परंपरा आणि चालीरीती">1. Marriage Traditions & Customs</span>
+                </h3>
+                <p class="culture-section-desc" data-lang-en="Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals. In traditional rural contexts, wedding seasons were closely synchronized with the post-harvest agricultural calendar, allowing extended families and community members to travel and participate fully in multi-day ceremonies." data-lang-mr="पारंपरिक विवाहामध्ये कुटुंबीयांची चर्चा, समाजाचा सहभाग, रूढीपरंपरांनुसार विधी, वरात, पाहुणचार आणि सामूहिक भोजन यांना महत्त्व होते. पारंपरिक ग्रामीण संदर्भात, विवाहाचे नियोजन भातकापणी व शेतीच्या कामानंतरच्या मोकळ्या वेळेवर आधारित असे, ज्यामुळे कुटुंबीय आणि ग्रामस्थांना उत्सवात पूर्णपणे सहभागी होता येत असे.">
+                    Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals. In traditional rural contexts, wedding seasons were closely synchronized with the post-harvest agricultural calendar, allowing extended families and community members to travel and participate fully in multi-day ceremonies.
+                </p>
+
+                <div class="culture-feature-grid">
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-handshake"></i> <span data-lang-en="Family Consultations" data-lang-mr="कुटुंब सल्लामसलत">Family Consultations</span></h4>
+                        <p data-lang-en="Customary discussions between elders, relatives, and community representatives ensuring reciprocal respect and social cohesion." data-lang-mr="ज्येष्ठ, नातेवाईक आणि समाज प्रतिनिधी यांच्यातील विचारविनिमय ज्यामुळे सामाजिक सलोखा टिकून राहत असे.">Customary discussions between elders, relatives, and community representatives ensuring reciprocal respect and social cohesion.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-calendar-check"></i> <span data-lang-en="Seasonal Coordination" data-lang-mr="हंगामी नियोजन">Seasonal Coordination</span></h4>
+                        <p data-lang-en="Scheduling weddings after paddy and sugarcane harvest seasons during the winter and pre-summer months." data-lang-mr="भातकापणी आणि ऊस हंगामानंतर हिवाळ्यात व उन्हाळ्याच्या प्रारंभी विधींचे आयोजन.">Scheduling weddings after paddy and sugarcane harvest seasons during the winter and pre-summer months.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-people-group"></i> <span data-lang-en="Collective Hospitality" data-lang-mr="सामूहिक आतिथ्य">Collective Hospitality</span></h4>
+                        <p data-lang-en="Village-wide participation in welcoming the wedding party, organizing customary meals, and assisting in event arrangements." data-lang-mr="वरातीचे स्वागत, पंगत व्यवस्था आणि विवाहाच्या विविध कामांत संपूर्ण ग्रामस्थांचे सहकार्य.">Village-wide participation in welcoming the wedding party, organizing customary meals, and assisting in event arrangements.</p>
+                    </div>
+                </div>
+
+                <div class="culture-tag-list">
+                    <span class="culture-tag-item"><i class="fa-solid fa-handshake"></i> Family Consultations</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-calendar"></i> Post-Harvest Timing</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-utensils"></i> Community Hospitality</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-people-roof"></i> Kinship Participation</span>
+                </div>
+            </section>
+
+            <!-- SECTION 2: FESTIVALS & RELIGIOUS LIFE -->
+            <section id="sec-festivals" class="culture-section-card">
+                <h3 class="culture-section-title">
+                    <i class="fa-solid fa-sun" style="color: var(--accent-gold);"></i>
+                    <span data-lang-en="2. Festivals & Religious Life" data-lang-mr="२. सण आणि धार्मिक जीवन">2. Festivals & Religious Life</span>
+                </h3>
+                <p class="culture-section-desc" data-lang-en="Festivals brought together religious observance, family participation, music, folk performances and community gatherings. Celebrations reflect deep agrarian reverence for the soil, bullocks, water tanks, and seasonal cycles that sustain rural life." data-lang-mr="सणांमध्ये धार्मिक विधी, कुटुंबीयांचा सहभाग, संगीत, लोककला आणि सामुदायिक एकत्र येण्याची परंपरा दिसून येते. हे उत्सव माती, बैल, तलाव आणि ऋतूचक्राबद्दलची कृतज्ञता आणि सामाजिक ऐक्य व्यक्त करतात.">
+                    Festivals brought together religious observance, family participation, music, folk performances and community gatherings. Celebrations reflect deep agrarian reverence for the soil, bullocks, water tanks, and seasonal cycles that sustain rural life.
+                </p>
+
+                <div class="culture-feature-grid">
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-cow"></i> <span data-lang-en="Bail Pola Festival" data-lang-mr="बैल पोळा उत्सव">Bail Pola Festival</span></h4>
+                        <p data-lang-en="The premier agricultural festival expressing deep gratitude to working bullocks, with village processions and ornate decorations." data-lang-mr="शेतीमध्ये साथ देणाऱ्या बैलांप्रती कृतज्ञता व्यक्त करणारा मुख्य कृषी सण; भव्य मिरवणुका आणि सजावट.">The premier agricultural festival expressing deep gratitude to working bullocks, with village processions and ornate decorations.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-om"></i> <span data-lang-en="Tulsi Vivah Ceremonies" data-lang-mr="तुळशी विवाह विधी">Tulsi Vivah Ceremonies</span></h4>
+                        <p data-lang-en="Ceremonial worship marking the conclusion of the monsoon period and the customary commencement of the auspicious marriage season." data-lang-mr="चातुर्मास समाप्ती आणि विवाह हंगामाचा प्रारंभ दर्शविणारा पारंपरिक धार्मिक व सामाजिक सोहळा.">Ceremonial worship marking the conclusion of the monsoon period and the customary commencement of the auspicious marriage season.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-fire"></i> <span data-lang-en="Holi & Rang Panchami" data-lang-mr="होळी व रंगपंचमी">Holi & Rang Panchami</span></h4>
+                        <p data-lang-en="Community bonfires, folk songs, rhythmic dances, and festive color celebrations welcoming the spring harvest." data-lang-mr="वसंत ऋतूचे स्वागत, होळी दहन, पारंपरिक लोकगीते आणि सामुदायिक रंगोत्सव.">Community bonfires, folk songs, rhythmic dances, and festive color celebrations welcoming the spring harvest.</p>
+                    </div>
+                </div>
+
+                <div class="culture-tag-list">
+                    <span class="culture-tag-item"><i class="fa-solid fa-om"></i> Tulsi Vivah</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-fire"></i> Holi & Rang Panchami</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-cow"></i> Bail Pola (Cattle Worship)</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-shield-heart"></i> Shiv Jayanti</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-temple"></i> Ram Navami</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-arrow-up-right-dots"></i> Dussehra & Diwali</span>
+                </div>
+            </section>
+
+            <!-- SECTION 3: TRADITIONAL LIFESTYLE -->
+            <section id="sec-lifestyle" class="culture-section-card">
+                <h3 class="culture-section-title">
+                    <i class="fa-solid fa-tree-city" style="color: var(--accent-gold);"></i>
+                    <span data-lang-en="3. Traditional Lifestyle" data-lang-mr="३. पारंपरिक जीवनशैली">3. Traditional Lifestyle</span>
+                </h3>
+                <p class="culture-section-desc" data-lang-en="Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles. Rural settlement patterns were organized sustainably around water storage tanks, paddy fields, cattle sheds, and communal gathering spaces." data-lang-mr="पारंपरिक कोहळी जीवनशैलीचा शेती, पशुधन, ग्रामव्यवस्था आणि ऋतूचक्राशी जवळचा संबंध होता. ग्रामीण वस्त्यांची रचना तलाव, भाताची शेती, गोठे आणि गावातील सार्वजनिक जागांभोवती सुसंबद्ध पद्धतीने केली जात असे.">
+                    Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles. Rural settlement patterns were organized sustainably around water storage tanks, paddy fields, cattle sheds, and communal gathering spaces.
+                </p>
+
+                <div class="culture-feature-grid">
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-water"></i> <span data-lang-en="Tank-Centric Living" data-lang-mr="तलाव-केंद्रित वस्ती">Tank-Centric Living</span></h4>
+                        <p data-lang-en="Villages flourished around perennial tanks providing domestic water, irrigation, livestock bathing, and groundwater recharge." data-lang-mr="पिण्याचे पाणी, शेती सिंचन आणि जनावरांसाठी बारमाही तलावांभोवती वसलेली गावे.">Villages flourished around perennial tanks providing domestic water, irrigation, livestock bathing, and groundwater recharge.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-calendar-days"></i> <span data-lang-en="Seasonal Rhythm" data-lang-mr="ऋतूचक्र व जीवन">Seasonal Rhythm</span></h4>
+                        <p data-lang-en="Daily work and annual events revolved around monsoon sowing, winter harvesting, and pre-monsoon tank repair." data-lang-mr="पावसाळ्यातील पेरणी, हिवाळ्यातील कापणी आणि उन्हाळ्यातील तलाव दुरुस्ती यानुसार दैनिक जीवन.">Daily work and annual events revolved around monsoon sowing, winter harvesting, and pre-monsoon tank repair.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-building-user"></i> <span data-lang-en="Village Governance" data-lang-mr="ग्रामसंस्था व सहकार्य">Village Governance</span></h4>
+                        <p data-lang-en="Community consultation through village elders ensuring equitable water distribution and mutual civil support." data-lang-mr="पाण्याचे न्याय्य वाटप आणि सामाजिक सहकार्यासाठी गावपातळीवरील ज्येष्ठांचे मार्गदर्शन.">Community consultation through village elders ensuring equitable water distribution and mutual civil support.</p>
+                    </div>
+                </div>
+
+                <div class="culture-tag-list">
+                    <span class="culture-tag-item"><i class="fa-solid fa-wheat-awn"></i> Agrarian Occupations</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-cow"></i> Animal Husbandry</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-water"></i> Tank Water Management</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-calendar-days"></i> Seasonal Rhythm</span>
+                </div>
+            </section>
+
+            <!-- SECTION 4: FOLK ARTS -->
+            <section id="sec-folkarts" class="culture-section-card">
+                <h3 class="culture-section-title">
+                    <i class="fa-solid fa-masks-theater" style="color: var(--accent-gold);"></i>
+                    <span data-lang-en="4. Folk Arts & Dandaar" data-lang-mr="४. लोककला आणि दंडार">4. Folk Arts & Dandaar</span>
+                </h3>
+                <p class="culture-section-desc" data-lang-en="Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages. Traditional performances enriched village life during winter months and festive gatherings, passing oral narratives and moral teachings across generations." data-lang-mr="लोकनाट्य आणि लोककला या केवळ करमणुकीचे माध्यम नव्हत्या; त्या सामाजिक अभिव्यक्ती आणि धार्मिक-सामाजिक संदेश देण्याचे माध्यमही होत्या. हिवाळ्याच्या दिवसांत व सणासुदीला गावात होणाऱ्या लोककला सादरीकरणामुळे ग्रामीण संस्कृती समृद्ध होत असे आणि मौखिक ज्ञान पिढ्यान्पिढ्या पुढे जात असे.">
+                    Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages. Traditional performances enriched village life during winter months and festive gatherings, passing oral narratives and moral teachings across generations.
+                </p>
+
+                <div class="culture-feature-grid">
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-theater-masks"></i> <span data-lang-en="Dandaar Folk Drama" data-lang-mr="दंडार लोकनाट्य">Dandaar Folk Drama</span></h4>
+                        <p data-lang-en="A vibrant traditional folk theatre form blending music, rhythmic dance, mythic episodes, and witty social satire performed by village troupes." data-lang-mr="संगीत, नृत्य आणि सामाजिक प्रबोधनाचा संगम असलेले विदर्भातील लोकप्रिय पारंपरिक लोकनाट्य.">A vibrant traditional folk theatre form blending music, rhythmic dance, mythic episodes, and witty social satire performed by village troupes.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-music"></i> <span data-lang-en="Bhajan & Kirtan" data-lang-mr="भजन व कीर्तन परंपरा">Bhajan & Kirtan</span></h4>
+                        <p data-lang-en="Devotional musical gatherings at village temples fostering spiritual reflection and shared communal devotion." data-lang-mr="ग्राम मंदिरांमध्ये होणारे भक्तीसंगीत व सामूहिक भजन जे एकात्मता आणि आध्यात्मिक जाणीव वाढवते.">Devotional musical gatherings at village temples fostering spiritual reflection and shared communal devotion.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-drum"></i> <span data-lang-en="Folk Music Instruments" data-lang-mr="पारंपरिक वाद्ये">Folk Music Instruments</span></h4>
+                        <p data-lang-en="Use of regional percussion such as Dholak, Khanjari, and Taal to accompany traditional festive ballads and folk songs." data-lang-mr="ढोलक, खंजिरी आणि टाळ या पारंपरिक वाद्यांच्या साथीने गायली जाणारी लोकगीते.">Use of regional percussion such as Dholak, Khanjari, and Taal to accompany traditional festive ballads and folk songs.</p>
+                    </div>
+                </div>
+
+                <div class="culture-tag-list">
+                    <span class="culture-tag-item"><i class="fa-solid fa-theater-masks"></i> Dandaar (Folk Drama)</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-music"></i> Traditional Bhajan</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-guitar"></i> Folk Music & Songs</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-people-group"></i> Community Stage Performances</span>
+                </div>
+            </section>
+
+            <!-- SECTION 5: FOOD & AGRICULTURE -->
+            <section id="sec-food" class="culture-section-card">
+                <h3 class="culture-section-title">
+                    <i class="fa-solid fa-wheat-awn" style="color: var(--accent-gold);"></i>
+                    <span data-lang-en="5. Food & Agriculture" data-lang-mr="५. अन्न आणि कृषी संस्कृती">5. Food & Agriculture</span>
+                </h3>
+                <p class="culture-section-desc" data-lang-en="Food traditions developed alongside agriculture and local availability of crops. Staple food habits centred on tank-irrigated rice varieties, pulses, sugarcane derivatives, and seasonal country vegetables, creating a wholesome, sustainable culinary heritage." data-lang-mr="स्थानिक शेती आणि उपलब्ध पिकांनुसार कोहळी समाजातील अन्नपरंपरा विकसित झाल्या. तलावाच्या पाण्यावर पिकणारे भात, डाळी, ऊस उत्पादने (गूळ) आणि हंगामी भाज्या यावर आधारित पौष्टिक आणि निसर्गपूरक आहार पद्धती विकसित झाली.">
+                    Food traditions developed alongside agriculture and local availability of crops. Staple food habits centred on tank-irrigated rice varieties, pulses, sugarcane derivatives, and seasonal country vegetables, creating a wholesome, sustainable culinary heritage.
+                </p>
+
+                <div class="culture-feature-grid">
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-bowl-rice"></i> <span data-lang-en="Indigenous Rice Varieties" data-lang-mr="स्थानिक भात वाण">Indigenous Rice Varieties</span></h4>
+                        <p data-lang-en="Aromatic and staple paddies such as Luchai, Chinnor, and Dubraj cultivated using traditional tank irrigation techniques." data-lang-mr="लुचाई, चिन्नोर आणि दुबराज यांसारखे सुवासिक आणि पारंपरिक भाताचे वाण.">Aromatic and staple paddies such as Luchai, Chinnor, and Dubraj cultivated using traditional tank irrigation techniques.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-cubes-stacked"></i> <span data-lang-en="Sugarcane & Jaggery" data-lang-mr="ऊस आणि गूळ निर्मिती">Sugarcane & Jaggery</span></h4>
+                        <p data-lang-en="Traditional cane crushing and jaggery preparation providing natural sweeteners for festive and everyday cooking." data-lang-mr="पारंपरिक पद्धतीने उसाचा रस काढून गूळ तयार करण्याची पूर्वापार चालत आलेली पद्धत.">Traditional cane crushing and jaggery preparation providing natural sweeteners for festive and everyday cooking.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-leaf"></i> <span data-lang-en="Seasonal Agrarian Diets" data-lang-mr="हंगामी आहार पद्धती">Seasonal Agrarian Diets</span></h4>
+                        <p data-lang-en="Nutritious pulse broths, fresh country greens, and festival sweets crafted according to seasonal availability." data-lang-mr="ताजी भाजीपाला, डाळी आणि सणवाराला बनवले जाणारे पारंपरिक गोडधोड पदार्थ.">Nutritious pulse broths, fresh country greens, and festival sweets crafted according to seasonal availability.</p>
+                    </div>
+                </div>
+
+                <div class="culture-tag-list">
+                    <span class="culture-tag-item"><i class="fa-solid fa-bowl-rice"></i> Traditional Rice Preparations</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-cubes-stacked"></i> Sugarcane & Jaggery (Gur)</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-plate-wheat"></i> Seasonal Festival Dishes</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-leaf"></i> Agrarian Culinary Practices</span>
+                </div>
+            </section>
+
+            <!-- SECTION 6: FAMILY & COMMUNITY LIFE -->
+            <section id="sec-family" class="culture-section-card">
+                <h3 class="culture-section-title">
+                    <i class="fa-solid fa-users" style="color: var(--accent-gold);"></i>
+                    <span data-lang-en="6. Family & Community Life" data-lang-mr="६. कुटुंब आणि समाजजीवन">6. Family & Community Life</span>
+                </h3>
+                <p class="culture-section-desc" data-lang-en="Family and community relationships played an important role in traditional village life. Mutual cooperation in agricultural work, irrigation canal maintenance, and collective social gatherings fostered enduring solidarity across generations." data-lang-mr="पारंपरिक ग्रामीण जीवनात कुटुंबीय आणि समाजातील परस्पर संबंधांना महत्त्वाचे स्थान होते. शेतीची कामे, कालव्यांची देखभाल आणि सणसमारंभांमधील सामूहिक सहकार्यामुळे सामाजिक एकोपा आणि आपुलकी टिकून राहिली.">
+                    Family and community relationships played an important role in traditional village life. Mutual cooperation in agricultural work, irrigation canal maintenance, and collective social gatherings fostered enduring solidarity across generations.
+                </p>
+
+                <div class="culture-feature-grid">
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-people-roof"></i> <span data-lang-en="Extended Kinship Networks" data-lang-mr="विस्तारित कुटुंब व्यवस्था">Extended Kinship Networks</span></h4>
+                        <p data-lang-en="Multi-generational households providing shared responsibility, childcare, emotional security, and respect for elder wisdom." data-lang-mr="अनेक पिढ्यांचे एकत्र वास्तव्य ज्यामुळे परस्पर आदर, संस्कार आणि सुरक्षितता टिकून राहत असे.">Multi-generational households providing shared responsibility, childcare, emotional security, and respect for elder wisdom.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-handshake-angle"></i> <span data-lang-en="Mutual Agricultural Help" data-lang-mr="शेतीमध्ये परस्पर सहकार्य">Mutual Agricultural Help</span></h4>
+                        <p data-lang-en="Traditional reciprocal labor sharing during intensive transplanting and harvesting phases." data-lang-mr="भात लावणी आणि कापणीच्या हंगामात एकमेकांच्या शेतात सामूहिक सहकार्याने काम करण्याची पद्धत.">Traditional reciprocal labor sharing during intensive transplanting and harvesting phases.</p>
+                    </div>
+                    <div class="culture-feature-card">
+                        <h4><i class="fa-solid fa-comments"></i> <span data-lang-en="Community Conventions" data-lang-mr="सामाजिक मेळावे व चर्चा">Community Conventions</span></h4>
+                        <p data-lang-en="Gatherings for youth guidance, matrimonial introductions, and cultural celebrations reinforcing collective strength." data-lang-mr="तरुणांचे मार्गदर्शन, वधू-वर परिचय आणि सामाजिक उत्सवांसाठी होणारे एकत्रिकरण.">Gatherings for youth guidance, matrimonial introductions, and cultural celebrations reinforcing collective strength.</p>
+                    </div>
+                </div>
+
+                <div class="culture-tag-list">
+                    <span class="culture-tag-item"><i class="fa-solid fa-people-roof"></i> Joint & Extended Family Systems</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-handshake-angle"></i> Mutual Agricultural Support</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-comments"></i> Village Gatherings</span>
+                    <span class="culture-tag-item"><i class="fa-solid fa-heart"></i> Social Solidarity</span>
+                </div>
+            </section>
+
+            <!-- TRADITION AND CHANGE SECTION -->
+            <section id="sec-tradition-change" class="tradition-change-box">
+                <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin-bottom:0.8rem; display:flex; align-items:center; gap:0.6rem;">
+                    <i class="fa-solid fa-clock-rotate-left" style="color:var(--accent-gold);"></i>
+                    <span data-lang-en="Tradition and Change" data-lang-mr="परंपरा आणि बदल">Tradition and Change</span>
+                </h3>
+                <p style="font-size:1.02rem; line-height:1.8; color:var(--text-main); margin:0;" data-lang-en="Like every living culture, Kohli traditions have changed over time. Education, urbanization, technology, migration and changing economic conditions have influenced family structures, celebrations, occupations and social practices." data-lang-mr="इतर जिवंत संस्कृतींप्रमाणे कोहळी समाजाच्या परंपरांमध्येही काळानुसार बदल झाले आहेत. शिक्षण, शहरीकरण, तंत्रज्ञान, स्थलांतर आणि बदलत्या आर्थिक परिस्थितीचा कुटुंबव्यवस्था, सणसमारंभ, व्यवसाय आणि सामाजिक प्रथांवर परिणाम झाला आहे.">
+                    Like every living culture, Kohli traditions have changed over time. Education, urbanization, technology, migration and changing economic conditions have influenced family structures, celebrations, occupations and social practices.
+                </p>
+            </section>
+
+            <!-- PRESERVING COMMUNITY MEMORY SECTION -->
+            <section id="sec-community-memory" class="memory-box">
+                <h3 style="color:#166534; font-size:1.35rem; font-weight:800; margin-bottom:0.8rem; display:flex; align-items:center; gap:0.6rem;">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <span data-lang-en="Preserving Community Memory" data-lang-mr="सामुदायिक स्मृतींचे जतन">Preserving Community Memory</span>
+                </h3>
+                <p style="font-size:1.02rem; line-height:1.8; color:#14532d; margin:0;" data-lang-en="Older generations carry memories of customs, ceremonies, food, songs, performances and village life. Recording these memories helps preserve cultural knowledge for future generations." data-lang-mr="ज्येष्ठ पिढीकडे पारंपरिक चालीरीती, विधी, अन्नसंस्कृती, गीते, लोककला आणि ग्रामजीवनाच्या अनेक आठवणी जतन झालेल्या आहेत. या आठवणींचे दस्तऐवजीकरण पुढील पिढ्यांसाठी सांस्कृतिक ज्ञान जतन करण्यास मदत करते.">
+                    Older generations carry memories of customs, ceremonies, food, songs, performances and village life. Recording these memories helps preserve cultural knowledge for future generations.
+                </p>
+            </section>
+
+            <!-- CULTURAL SOURCE NOTE / DISCLAIMER -->
+            <section id="sec-source-note" class="culture-disclaimer-box">
+                <div style="font-weight:800; font-size:1.12rem; color:#0f172a; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.6rem;">
+                    <i class="fa-solid fa-circle-info" style="color:var(--accent-gold);"></i>
+                    <span data-lang-en="Cultural Source Note" data-lang-mr="सांस्कृतिक स्रोत नोंद">Cultural Source Note</span>
+                </div>
+                <p style="margin:0 0 0.6rem 0;" data-lang-en="Some cultural descriptions on this website come from community-authored material and oral traditions. Practices may vary between villages, families and generations." data-lang-mr="या वेबसाइटवरील काही सांस्कृतिक माहिती समुदायातील लेखकांच्या साहित्यावर आणि मौखिक परंपरांवर आधारित आहे. गाव, कुटुंब आणि पिढीनुसार चालीरीतींमध्ये फरक असू शकतो.">
+                    Some cultural descriptions on this website come from community-authored material and oral traditions. Practices may vary between villages, families and generations.
+                </p>
+                <div style="font-size:0.88rem; color:#475569; font-style:italic;" data-lang-en="Note: Cultural practices are documented as heritage references and are not presented as rigid universal obligations." data-lang-mr="टीप: सांस्कृतिक प्रथा ऐतिहासिक वारसा म्हणून नोंदवल्या आहेत, त्यांना बंधनकारक नियम मानले जाऊ नये.">
+                    Note: Cultural practices are documented as heritage references and are not presented as rigid universal obligations.
+                </div>
+            </section>
+
+            <!-- RELATED SECTIONS -->
+            <section class="culture-related-section">
+                <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.4rem; display:flex; align-items:center; gap:0.6rem;">
+                    <i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--accent-gold);"></i>
+                    <span data-lang-en="Related Sections on the Portal" data-lang-mr="पोर्टलवरील संबंधित विभाग">Related Sections on the Portal</span>
+                </h3>
+                <p style="font-size:0.94rem; color:var(--text-muted); margin:0;" data-lang-en="Explore other historical and community documentation on the portal:" data-lang-mr="पोर्टलवरील इतर ऐतिहासिक आणि सामाजिक दस्तऐवजीकरण पहा:">
+                    Explore other historical and community documentation on the portal:
+                </p>
+                <div class="culture-related-grid">
+                    <a href="history.html" class="culture-related-link">
+                        <span><i class="fa-solid fa-landmark" style="margin-right:0.4rem;"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="historical-gallery.html" class="culture-related-link">
+                        <span><i class="fa-solid fa-image" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="research.html" class="culture-related-link">
+                        <span><i class="fa-solid fa-microscope" style="margin-right:0.4rem;"></i> <span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="water-heritage.html" class="culture-related-link">
+                        <span><i class="fa-solid fa-droplet" style="margin-right:0.4rem;"></i> <span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </section>
+
         </div>
     </main>
 
