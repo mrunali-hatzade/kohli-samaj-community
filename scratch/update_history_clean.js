@@ -1,263 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our History | Kohli Samaj Official Portal</title>
-    <meta name="description" content="Explore the centuries-old history, colonial settlement reports, gazetteers, and water conservation heritage of the Kohli Samaj community in Vidarbha.">
-    <!-- Google Fonts & Font Awesome -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="font-normal">
+const fs = require('fs');
+const path = require('path');
 
-    <!-- TOP UTILITY BAR -->
-    <div class="top-utility-bar">
-        <div class="container utility-flex">
-            <div class="utility-left">
-                <span class="utility-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
-                </span>
-                
-                <!-- Language Switcher -->
-                <div class="utility-item">
-                    <button id="btnLangEn" class="lang-btn active">English</button>
-                    <button id="btnLangMr" class="lang-btn">मराठी</button>
-                </div>
+const targetFile = path.join('d:', 'PROJECTS', 'kohali samaj', 'history_clean.html');
+let content = fs.readFileSync(targetFile, 'utf8');
 
-                <!-- Font Resizer -->
-                <div class="utility-item font-resizer" title="Adjust Text Size">
-                    <button id="btnFontSm" class="font-btn">A-</button>
-                    <button id="btnFontMd" class="font-btn active">A</button>
-                    <button id="btnFontLg" class="font-btn">A+</button>
-                </div>
+// Replace Page Title Banner
+content = content.replace(
+    /<h1 class="page-banner-title">.*?<\/h1>/s,
+    `<h1 class="page-banner-title"><span data-lang-en="Kohli Samaj — Our History" data-lang-mr="कोहळी समाजाचा इतिहास">Kohli Samaj — Our History</span></h1>`
+);
 
-                <span class="utility-item" style="cursor:pointer;" onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')">
-                    <i class="fa-universal-access"></i>
-                    <span data-lang-en="Accessibility" data-lang-mr="अ‍ॅक्सेसिबिलिटी">Accessibility</span>
-                </span>
-            </div>
+// We need to replace everything from <!-- RIGHT CONTENT AREA (Independent Page Content) --> to <!-- Footer -->
+const rightContentAreaStart = content.indexOf('<!-- RIGHT CONTENT AREA (Independent Page Content) -->');
+const footerStart = content.indexOf('<!-- Footer -->');
 
-            <div class="utility-right">
-                <span class="utility-item" style="cursor:pointer;" onclick="if(typeof openAdminModal==='function')openAdminModal();">
-                    <i class="fa-solid fa-bell"></i>
-                    <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
-                </span>
-                <span class="utility-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
-                </span>
-                
-                <!-- Search Box -->
-                <form id="topSearchForm" class="top-search-form">
-                    <input type="text" id="searchInput" placeholder="Search portal..." data-lang-en-placeholder="Search portal..." data-lang-mr-placeholder="शोधा...">
-                    <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- MAIN HEADER & BRANDING & NAVIGATION -->
-    <header class="main-header">
-        <div class="container header-inner">
-            <div class="brand-section">
-                <a href="index.html">
-                    <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Official Emblem Logo" class="brand-logo">
-                </a>
-            </div>
-
-            <!-- Navigation Bar -->
-            <nav class="nav-bar" id="mainNavBar">
-                <ul class="nav-menu" id="mainNav">
-                    <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
-                    <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
-                    <li class="has-dropdown">
-                        <a href="history.html" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
-                            <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
-                            <li><a href="documents.html" class="dropdown-link"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></a></li>
-                            <li><a href="gazetteers.html" class="dropdown-link"><i class="fa-solid fa-book-open"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></a></li>
-                            <li><a href="census.html" class="dropdown-link"><i class="fa-solid fa-users-rectangle"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></a></li>
-                            <li><a href="settlement.html" class="dropdown-link"><i class="fa-solid fa-map"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></a></li>
-                            <li class="dropdown-divider"></li>
-                            <li><a href="water-heritage.html" class="dropdown-link"><i class="fa-solid fa-droplet"></i> <span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span></a></li>
-                            <li><a href="historical-gallery.html" class="dropdown-link"><i class="fa-solid fa-image"></i> <span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></a></li>
-                            <li><a href="research.html" class="dropdown-link"><i class="fa-solid fa-microscope"></i> <span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href="culture.html" class="nav-link"><span data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span></a></li>
-                    <li class="has-dropdown">
-                        <a href="about.html" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="about.html" class="dropdown-link"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Overview" data-lang-mr="समाज परिचय">Community Overview</span></a></li>
-                            <li><a href="districts.html" class="dropdown-link"><i class="fa-solid fa-map-location-dot"></i> <span data-lang-en="Districts & Regions" data-lang-mr="जिल्हे व क्षेत्र">Districts & Regions</span></a></li>
-                            <li><a href="village-directory.html" class="dropdown-link"><i class="fa-solid fa-house-chimney"></i> <span data-lang-en="Village Directory" data-lang-mr="ग्राम सूची">Village Directory</span></a></li>
-                            <li><a href="surname-directory.html" class="dropdown-link"><i class="fa-solid fa-id-card"></i> <span data-lang-en="Surname Directory" data-lang-mr="आडनाव सूची">Surname Directory</span></a></li>
-                            <li class="dropdown-divider"></li>
-                            <li><a href="sanghatana.html" class="dropdown-link"><i class="fa-solid fa-building-columns"></i> <span data-lang-en="Community Organizations" data-lang-mr="समाज संघटना">Community Organizations</span></a></li>
-                            <li><a href="community-services.html" class="dropdown-link"><i class="fa-solid fa-hand-holding-heart"></i> <span data-lang-en="Community Services" data-lang-mr="समाज सेवा">Community Services</span></a></li>
-                            <li class="dropdown-divider"></li>
-                            <li><a href="matrimonial.html" class="dropdown-link"><i class="fa-solid fa-heart"></i> <span data-lang-en="Matrimonial" data-lang-mr="वधू-वर परिचय">Matrimonial</span></a></li>
-                            <li><a href="scholarships.html" class="dropdown-link"><i class="fa-solid fa-graduation-cap"></i> <span data-lang-en="Scholarships" data-lang-mr="शिष्यवृत्ती">Scholarships</span></a></li>
-                            <li><a href="career-guidance.html" class="dropdown-link"><i class="fa-solid fa-briefcase"></i> <span data-lang-en="Career Guidance" data-lang-mr="करिअर मार्गदर्शन">Career Guidance</span></a></li>
-                            <li><a href="join-community.html" class="dropdown-link"><i class="fa-solid fa-user-plus"></i> <span data-lang-en="Join Community" data-lang-mr="समाजात सामील व्हा">Join Community</span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href="committee.html" class="nav-link"><span data-lang-en="Committee" data-lang-mr="समिती">Committee</span></a></li>
-                    <li><a href="events.html" class="nav-link"><span data-lang-en="Events" data-lang-mr="कार्यक्रम">Events</span></a></li>
-                    <li><a href="gallery.html" class="nav-link"><span data-lang-en="Gallery" data-lang-mr="गॅलरी">Gallery</span></a></li>
-                    <li><a href="achievements.html" class="nav-link"><span data-lang-en="Achievements" data-lang-mr="उपलब्धी">Achievements</span></a></li>
-                    <li><a href="news.html" class="nav-link"><span data-lang-en="News" data-lang-mr="बातम्या">News</span></a></li>
-                    <li><a href="contact.html" class="nav-link"><span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span></a></li>
-                </ul>
-            </nav>
-
-            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Page Title Banner & Breadcrumbs -->
-    <div class="page-title-banner">
-        <div class="container">
-            <div class="breadcrumb-trail">
-                <a href="index.html" class="bc-home"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-parent" data-lang-en="History" data-lang-mr="इतिहास">History</span>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-current" data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span>
-            </div>
-            <h1 class="page-banner-title"><span data-lang-en="Kohli Samaj — Our History" data-lang-mr="कोहळी समाजाचा इतिहास">Kohli Samaj — Our History</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="Centuries of agricultural leadership, water engineering marvels & historical documentation" data-lang-mr="शतकांची कृषी संस्कृती, मालगुजारी तलाव आणि ऐतिहासिक दस्तऐवज">Centuries of agricultural leadership, water engineering marvels & historical documentation</span></p>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <main class="container" style="padding: 3rem 1.25rem;">
-        <div class="history-layout-container">
-            
-            <!-- LEFT SIDEBAR PANEL (Independently Scrollable with Custom Scrollbar) -->
-            <aside class="history-sidebar-card">
-                <div class="history-sidebar-header">
-                    <h3>
-                        <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="History Navigation" data-lang-mr="इतिहास मार्गदर्शिका">History Navigation</span>
-                    </h3>
-                </div>
-                <div class="history-sidebar-nav-wrapper">
-                    <ul class="history-sidebar-nav" id="historySidebarNav">
-                        
-                        <!-- Item 1: Our History -->
-                        <li class="expanded">
-                            <a href="history_clean.html" class="sidebar-main-link active">
-                                <span><i class="fa-solid fa-landmark"></i> &nbsp;<span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="history_clean.html#sec-presence" class="sidebar-sub-link" data-scroll="sec-presence"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Presence" data-lang-mr="ऐतिहासिक उपस्थिती">Historical Presence</span></a></li>
-                                <li><a href="history_clean.html#sec-livelihood" class="sidebar-sub-link" data-scroll="sec-livelihood"><i class="fa-solid fa-circle"></i> <span data-lang-en="Farming & Livelihood" data-lang-mr="शेती व उपजीविका">Farming & Livelihood</span></a></li>
-                                <li><a href="history_clean.html#sec-patil" class="sidebar-sub-link" data-scroll="sec-patil"><i class="fa-solid fa-circle"></i> <span data-lang-en="Village Administration" data-lang-mr="ग्रामव्यवस्था">Village Administration</span></a></li>
-                                <li><a href="history_clean.html#sec-family" class="sidebar-sub-link" data-scroll="sec-family"><i class="fa-solid fa-circle"></i> <span data-lang-en="Social Change" data-lang-mr="सामाजिक बदल">Social Change</span></a></li>
-                                <li><a href="history_clean.html#sec-spellings" class="sidebar-sub-link" data-scroll="sec-spellings"><i class="fa-solid fa-circle"></i> <span data-lang-en="Name Transliterations" data-lang-mr="नावांची रूपे">Name Transliterations</span></a></li>
-                                <li><a href="history_clean.html#sec-stats" class="sidebar-sub-link" data-scroll="sec-stats"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Records" data-lang-mr="ऐतिहासिक नोंदी">Historical Records</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 2: Historical Timeline -->
-                        <li>
-                            <a href="historical-timeline.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-timeline"></i> &nbsp;<span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline Milestones (1867 – 1973)" data-lang-mr="कालरेषा टप्पे (१८६७ – १९७३)">Timeline Milestones (1867 – 1973)</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 3: Historical Documents -->
-                        <li>
-                            <a href="documents.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-file-contract"></i> &nbsp;<span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-
-                        <!-- Item 4: Gazetteers -->
-                        <li>
-                            <a href="gazetteers.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
-                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Kaulees & Regional References" data-lang-mr="कौली व प्रादेशिक संदर्भ">Kaulees & Regional References</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 5: Census Records -->
-                        <li>
-                            <a href="census.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-users-rectangle"></i> &nbsp;<span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
-                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 6: Settlement Reports -->
-                        <li>
-                            <a href="settlement.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-map"></i> &nbsp;<span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 7: Water Conservation Heritage -->
-                        <li>
-                            <a href="water-heritage.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 8: Historical Gallery -->
-                        <li>
-                            <a href="historical-gallery.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-
-                        <!-- Item 9: Research & Publications -->
-                        <li>
-                            <a href="research.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-microscope"></i> &nbsp;<span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Transliterations" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Transliterations</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-
-            
+if (rightContentAreaStart !== -1 && footerStart !== -1) {
+    const newContentHTML = `
             <!-- RIGHT CONTENT AREA (Independent Page Content) -->
             <div class="history-content-area">
                 
@@ -632,21 +390,13 @@
                 </div>
 
             </div>
-        </div>
-    </main>
+`;
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
-            <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
-            <div>Built by Community Volunteers</div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/data.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/admin.js"></script>
-    <script src="js/nav.js"></script>
-</body>
-</html>
+    let leftPart = content.substring(0, rightContentAreaStart);
+    let rightPart = `        </div>\n    </main>\n\n    <!-- Footer -->` + content.split('<!-- Footer -->')[1];
+    
+    fs.writeFileSync(targetFile, leftPart + newContentHTML + rightPart);
+    console.log("Updated history_clean.html successfully");
+} else {
+    console.log("Could not find start/end markers");
+}
