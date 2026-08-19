@@ -3,160 +3,405 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Census 2021 & Historical Population Records | Kohli Samaj Official Portal</title>
-    <meta name="description" content="Important Census 2021 community call to action, downloadable community registration forms for Bhandara, Gondia, Chandrapur, Gadchiroli, and historical British census records documenting Kohli Samaj.">
+    <title>Kohli Samaj — Census Records | Historical Population & Current Census Information | Kohli Samaj Official Portal</title>
+    <meta name="description" content="Historical population records, demographic census archives (1881–1931), Bhandara 1911 census figures, settlement data, and current Census 2027 information relating to the Kohli community.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .census-hero-alert {
-            background: linear-gradient(135deg, #7c1d1d 0%, #b91c1c 50%, #991b1b 100%);
-            color: white;
-            padding: 3rem 0;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(185, 28, 28, 0.25);
-        }
-        .census-alert-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 16px;
-            padding: 2rem;
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-        .census-alert-icon {
-            font-size: 3.5rem;
-            color: #fef08a;
-            flex-shrink: 0;
-        }
-        .census-alert-content h2 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-        }
-        .census-alert-content p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #fef2f2;
-            font-weight: 500;
-        }
-        .forms-section {
-            padding: 3rem 0;
-            background: #f8faf9;
-        }
-        .forms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        .form-card {
+        /* ── Census Page Specific Styles ── */
+        .census-hero-intro {
             background: white;
             border: 1.5px solid var(--border-color);
             border-radius: 14px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .census-hero-intro h2 {
+            color: var(--primary-dark);
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+        .census-hero-intro p {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+        .census-hero-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Highlight Stat Cards */
+        .census-highlight-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+            border: 2px solid var(--accent-gold);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 4px 20px rgba(180, 83, 9, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .census-highlight-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--accent-gold);
+        }
+        .census-stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .census-stat-badge-group {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .census-stat-number-box {
+            background: var(--primary-dark);
+            color: white;
+            padding: 1rem 1.8rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(14, 62, 41, 0.2);
+            min-width: 170px;
+        }
+        .census-stat-number {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--accent-gold);
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .census-stat-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 0.35rem;
+        }
+
+        /* Settlement Card Styling */
+        .settlement-stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #3b82f6;
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .settlement-stat-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: #3b82f6;
+        }
+        .settlement-number-box {
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 1.8rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+            min-width: 170px;
+        }
+        .settlement-number {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #93c5fd;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        /* Breakdown Grid */
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+        .breakdown-item {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .breakdown-region {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .breakdown-val {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-top: 0.3rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Warning/Caution Boxes */
+        .census-warning-box {
+            background: #fffbeb;
+            border: 1.5px solid #fde68a;
+            border-left: 4px solid #d97706;
+            border-radius: 10px;
+            padding: 1rem 1.3rem;
+            font-size: 0.92rem;
+            color: #92400e;
+            line-height: 1.6;
+            margin-top: 1.2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+        }
+        .census-warning-box i {
+            color: #d97706;
+            font-size: 1.1rem;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+        }
+
+        /* Administrative Boundaries Box */
+        .census-admin-box {
+            background: #f0fdf4;
+            border: 1.5px solid #bbf7d0;
+            border-left: 5px solid #16a34a;
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 2.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .census-admin-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #166534;
+            margin-bottom: 0.6rem;
+        }
+        .census-admin-body {
+            font-size: 0.95rem;
+            color: #14532d;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* Census Series Grid */
+        .census-series-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.3rem;
+            margin-bottom: 2.2rem;
+        }
+        .census-year-card {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.4rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .form-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(14,62,41,0.12);
+        .census-year-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14,62,41,0.08);
             border-color: var(--primary-dark);
         }
-        .form-card-header {
+        .census-year-header {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        .form-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            background: #fee2e2;
-            color: #dc2626;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        .form-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-        .form-desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-        .btn-download-pdf {
-            background: var(--primary-dark);
-            color: white;
-            padding: 0.75rem 1.2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: background 0.2s;
-        }
-        .btn-download-pdf:hover {
-            background: var(--accent-gold);
-            color: #1a0a00;
-        }
-
-        .archive-evidence-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        .evidence-card {
-            background: white;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .evidence-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
             border-bottom: 1px solid var(--border-color);
         }
-        .evidence-body {
-            padding: 1.2rem;
-        }
-        .evidence-title {
-            font-weight: 700;
-            font-size: 1rem;
+        .census-year-tag {
+            font-size: 1.25rem;
+            font-weight: 800;
             color: var(--primary-dark);
-            margin-bottom: 0.5rem;
+            font-family: 'Outfit', sans-serif;
         }
-        .evidence-text {
-            font-size: 0.85rem;
-            color: var(--text-body);
+        .census-year-desc {
+            font-size: 0.9rem;
+            color: var(--text-main);
             line-height: 1.6;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        .census-year-status-row {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 0.6rem 0.8rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
-        @media(max-width: 768px) {
-            .census-alert-box {
+        /* Historical Spellings Section */
+        .census-spellings-box {
+            background: #f8fafc;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 2.2rem;
+        }
+        .census-spellings-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1rem 0;
+        }
+        .census-spelling-pill {
+            background: white;
+            border: 1.5px solid #cbd5e1;
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--primary-dark);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .census-spelling-pill i {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+        }
+
+        /* Current Census Section */
+        .current-census-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 14px;
+            padding: 2rem;
+            color: white;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        .current-census-box::after {
+            content: "\f02d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+        }
+        .current-census-box h3 {
+            color: #38bdf8;
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .current-census-box p {
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.2rem;
+        }
+        .current-census-advisory {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            font-size: 0.9rem;
+            color: #e0f2fe;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .current-census-advisory i {
+            color: #38bdf8;
+            font-size: 1.1rem;
+        }
+
+        /* Related Pages Grid */
+        .census-related-section {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .census-related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .census-related-link {
+            background: var(--bg-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.9rem 1.1rem;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s;
+        }
+        .census-related-link:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-dark);
+            transform: translateX(3px);
+        }
+        .census-related-link i {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .census-stat-row {
                 flex-direction: column;
-                text-align: center;
+                align-items: flex-start;
+            }
+            .census-stat-number-box, .settlement-number-box {
+                width: 100%;
+            }
+            .breakdown-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
@@ -272,7 +517,7 @@
         </div>
     </header>
 
-    <!-- BREADCRUMB BANNER -->
+    <!-- PAGE TITLE BANNER -->
     <div class="page-title-banner">
         <div class="container">
             <div class="breadcrumb-trail">
@@ -282,12 +527,16 @@
                 <span class="bc-sep">&gt;&gt;</span>
                 <span class="bc-current" data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Census Records & Community Survey 2021" data-lang-mr="जनगणना नोंदी व भारतीय जनगणना 2021">Census Records & Community Survey 2021</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="Historical demographic records and official community census participation guidelines." data-lang-mr="ऐतिहासिक लोकसंख्या नोंदी आणि समाज जनगणनेतील सहभागासाठी महत्त्वाचे आवाहन.">Historical demographic records and official community census participation guidelines.</span></p>
+            <h1 class="page-banner-title">
+                <span data-lang-en="Kohli Samaj — Census Records" data-lang-mr="कोहळी समाज — जनगणना नोंदी">Kohli Samaj — Census Records</span>
+            </h1>
+            <p class="page-banner-subtitle">
+                <span data-lang-en="Historical population records and current census information relating to the Kohli community." data-lang-mr="कोहळी समाजाशी संबंधित ऐतिहासिक लोकसंख्या नोंदी आणि सध्याच्या जनगणना प्रक्रियेची माहिती.">Historical population records and current census information relating to the Kohli community.</span>
+            </p>
         </div>
     </div>
 
-    <!-- HISTORICAL CENSUS RECORDS SECTION -->
+    <!-- MAIN CONTAINER -->
     <main class="container" style="padding: 3rem 1.25rem;">
         <div class="history-layout-container">
             <!-- LEFT SIDEBAR PANEL -->
@@ -318,7 +567,7 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline (1867 – 1973)" data-lang-mr="कालरेषा (१८६७ – १९त्७३)">Timeline (1867 – 1973)</span></a></li>
+                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline (1867 – 1973)" data-lang-mr="कालरेषा (१८६७ – १९७३)">Timeline (1867 – 1973)</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -329,12 +578,15 @@
                         </li>
                         <li>
                             <a href="gazetteers.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
+                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटिअर">Gazetteers</span></span>
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
-                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Kaulees & Regional References" data-lang-mr="कौली व प्रादेशिक संदर्भ">Kaulees & Regional References</span></a></li>
+                                <li><a href="gazetteers.html#sec-disclaimer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Reading Context" data-lang-mr="ऐतिहासिक वाचन संदर्भ">Historical Reading Context</span></a></li>
+                                <li><a href="gazetteers.html#sec-gov-refs" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Government References" data-lang-mr="शासकीय संदर्भ">Government References</span></a></li>
+                                <li><a href="gazetteers.html#sec-themes" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Themes" data-lang-mr="ऐतिहासिक विषय">Historical Themes</span></a></li>
+                                <li><a href="gazetteers.html#sec-spellings" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Name Forms" data-lang-mr="नावांची ऐतिहासिक रूपे">Historical Name Forms</span></a></li>
+                                <li><a href="gazetteers.html#sec-gazetteers-archive" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Gazetteer Records" data-lang-mr="गॅझेटिअर नोंदी">Gazetteer Records</span></a></li>
                             </ul>
                         </li>
                         <li class="expanded">
@@ -343,8 +595,14 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="#sec-census-1916" class="sidebar-sub-link active" data-scroll="sec-census-1916"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
-                                <li><a href="#sec-origin-traditions" class="sidebar-sub-link" data-scroll="sec-origin-traditions"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
+                                <li><a href="#sec-census-intro" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Census Records" data-lang-mr="ऐतिहासिक जनगणना नोंदी">Historical Census Records</span></a></li>
+                                <li><a href="#sec-census-series" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Census Series (1881–1931)" data-lang-mr="जनगणना मालिका (१८८१–१९३१)">Census Series (1881–1931)</span></a></li>
+                                <li><a href="#sec-1911-record" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1911 Bhandara (11,399)" data-lang-mr="१९११ भंडारा (११,३९९)">1911 Bhandara (11,399)</span></a></li>
+                                <li><a href="#sec-settlement-record" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Settlement Record (19,739)" data-lang-mr="सेटलमेंट नोंद (१९,७३९)">Settlement Record (19,739)</span></a></li>
+                                <li><a href="#sec-admin-boundaries" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Administrative Boundaries" data-lang-mr="प्रशासकीय सीमा">Administrative Boundaries</span></a></li>
+                                <li><a href="#sec-spellings" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Name Forms" data-lang-mr="नावांची ऐतिहासिक रूपे">Historical Name Forms</span></a></li>
+                                <li><a href="#sec-census-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Census Data Table" data-lang-mr="जनगणना माहिती तक्ता">Census Data Table</span></a></li>
+                                <li><a href="#sec-current-census" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Current Census 2027" data-lang-mr="सध्याची जनगणना २०२७">Current Census 2027</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -377,7 +635,7 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Transliterations" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Transliterations</span></a></li>
+                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Spellings" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Spellings</span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -387,254 +645,399 @@
             <!-- RIGHT CONTENT AREA -->
             <div class="history-content-area">
                 
-                <!-- HISTORICAL CENSUS RECORDS SECTION -->
-                <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.8rem; margin-bottom: 2rem; box-shadow:var(--shadow-sm);">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:0.8rem;">
-                        <h2 style="color:var(--primary-dark); font-size:1.5rem; font-weight:800; margin:0;" data-lang-en="Historical Census Records" data-lang-mr="ऐतिहासिक जनगणना नोंदी">Historical Census Records</h2>
-                        <span class="badge-source badge-record"><i class="fa-solid fa-users-rectangle"></i> Census Archive</span>
+                <!-- SECTION 1: HISTORICAL CENSUS RECORDS INTRO -->
+                <section id="sec-census-intro" class="census-hero-intro">
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem;">
+                        <h2>
+                            <i class="fa-solid fa-users-rectangle" style="color: var(--accent-gold); margin-right: 0.4rem;"></i>
+                            <span data-lang-en="Historical Census Records" data-lang-mr="ऐतिहासिक जनगणना नोंदी">Historical Census Records</span>
+                        </h2>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Demographic Archive" data-lang-mr="लोकसंख्या अभिलेख">Demographic Archive</span></span>
                     </div>
-                    <blockquote style="border-left:4px solid var(--accent-gold); padding-left:1rem; margin:0 0 1.2rem 0; font-size:0.98rem; color:var(--text-main); line-height:1.7; font-style:italic;">
-                        "Historical Census of India publications contain records relating to the Kohli/Kohri community across the Central Provinces and Vidarbha."
-                    </blockquote>
+                    <p data-lang-en="Historical census publications provide demographic information from different periods. Administrative boundaries and classification systems changed over time, so historical figures must always be read together with their year, district and source." data-lang-mr="ऐतिहासिक जनगणना प्रकाशनांमधून वेगवेगळ्या कालखंडातील लोकसंख्येविषयी माहिती मिळते. काळानुसार जिल्ह्यांच्या प्रशासकीय सीमा आणि वर्गीकरणाच्या पद्धती बदलल्या असल्यामुळे ऐतिहासिक आकडे नेहमी त्यांचा कालखंड, जिल्हा आणि स्रोत यांच्यासह समजून घ्यावेत.">
+                        Historical census publications provide demographic information from different periods. Administrative boundaries and classification systems changed over time, so historical figures must always be read together with their year, district and source.
+                    </p>
+                </section>
 
-                    <!-- CENSUS TIMELINE TABLE -->
-                    <div class="archive-table-container" style="margin-bottom:0;">
+                <!-- SECTION 2: 1911 BHANDARA MAIN HIGHLIGHT CARD -->
+                <section id="sec-1911-record" class="census-highlight-card">
+                    <div class="census-stat-row">
+                        <div>
+                            <div class="census-stat-badge-group" style="margin-bottom:0.5rem;">
+                                <span class="badge-source badge-record"><i class="fa-solid fa-calendar-check"></i> 1911</span>
+                                <span class="badge-source badge-record"><i class="fa-solid fa-map-pin"></i> <span data-lang-en="Bhandara District" data-lang-mr="भंडारा जिल्हा">Bhandara District</span></span>
+                                <span class="badge-source badge-community"><i class="fa-solid fa-chart-pie"></i> <span data-lang-en="Historical Population Record" data-lang-mr="ऐतिहासिक लोकसंख्या नोंद">Historical Population Record</span></span>
+                            </div>
+                            <h3 style="color: var(--primary-dark); font-size: 1.35rem; font-weight: 800; margin: 0;" data-lang-en="1911 Census — Bhandara District" data-lang-mr="१९११ जनगणना — भंडारा जिल्हा">
+                                1911 Census — Bhandara District
+                            </h3>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                                <span data-lang-en="Source: Bhandara District / Central Provinces District Gazetteer statistical material" data-lang-mr="स्रोत: भंडारा जिल्हा / सेंट्रल प्रॉव्हिन्सेस जिल्हा गॅझेटिअर सांख्यिकीय सामग्री">Source: Bhandara District / Central Provinces District Gazetteer statistical material</span>
+                            </div>
+                        </div>
+                        <div class="census-stat-number-box">
+                            <div class="census-stat-number">11,399</div>
+                            <div class="census-stat-label" data-lang-en="Kohli Population" data-lang-mr="कोहळी लोकसंख्या">Kohli Population</div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 0.96rem; line-height: 1.65; color: var(--text-main); margin: 0 0 0.8rem 0;" data-lang-en="According to the supplied historical statistical material, the Kohli population recorded in Bhandara District in the 1911 census was 11,399." data-lang-mr="उपलब्ध ऐतिहासिक सांख्यिकीय सामग्रीनुसार 1911 च्या जनगणनेत भंडारा जिल्ह्यात कोहळी समाजाची लोकसंख्या 11,399 अशी नोंद आढळते.">
+                        According to the supplied historical statistical material, the Kohli population recorded in Bhandara District in the 1911 census was 11,399.
+                    </p>
+
+                    <!-- Strong Warning -->
+                    <div class="census-warning-box">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <div>
+                            <strong data-lang-en="Important Note:" data-lang-mr="महत्त्वाची टीप:">Important Note:</strong>
+                            <span data-lang-en="This is a historical figure based on the administrative boundaries of Bhandara District at that time. It should not be directly compared with the present-day Bhandara district." data-lang-mr="हा त्या काळातील भंडारा जिल्ह्याच्या प्रशासकीय सीमांवर आधारित ऐतिहासिक आकडा आहे. आजच्या भंडारा जिल्ह्याशी थेट तुलना करू नये.">This is a historical figure based on the administrative boundaries of Bhandara District at that time. It should not be directly compared with the present-day Bhandara district.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: SEPARATE HISTORICAL SETTLEMENT RECORD (19,739) -->
+                <section id="sec-settlement-record" class="settlement-stat-card">
+                    <div class="census-stat-row">
+                        <div>
+                            <div class="census-stat-badge-group" style="margin-bottom:0.5rem;">
+                                <span class="badge-source badge-record" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;"><i class="fa-solid fa-map"></i> <span data-lang-en="Settlement Record" data-lang-mr="सेटलमेंट नोंद">Settlement Record</span></span>
+                                <span class="badge-source badge-record" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;"><i class="fa-solid fa-location-dot"></i> <span data-lang-en="Bhandara & Chanda Settlement" data-lang-mr="भंडारा व चांदा सेटलमेंट">Bhandara & Chanda Settlement</span></span>
+                            </div>
+                            <h3 style="color: #1e3a8a; font-size: 1.35rem; font-weight: 800; margin: 0;" data-lang-en="Historical Settlement Population Record" data-lang-mr="ऐतिहासिक सेटलमेंट लोकसंख्या नोंद">
+                                Historical Settlement Population Record
+                            </h3>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                                <span data-lang-en="Source: Historical Settlement Context Material (Bhandara & Chanda)" data-lang-mr="स्रोत: ऐतिहासिक सेटलमेंट संदर्भ सामग्री (भंडारा व चांदा)">Source: Historical Settlement Context Material (Bhandara & Chanda)</span>
+                            </div>
+                        </div>
+                        <div class="settlement-number-box">
+                            <div class="settlement-number">19,739</div>
+                            <div class="census-stat-label" data-lang-en="Settlement Population" data-lang-mr="सेटलमेंट लोकसंख्या">Settlement Population</div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 0.96rem; line-height: 1.65; color: var(--text-main); margin: 0 0 0.8rem 0;" data-lang-en="Available historical settlement material records a Kohli/Kohri population figure of 19,739 in the relevant Bhandara/Chanda settlement context." data-lang-mr="उपलब्ध ऐतिहासिक सेटलमेंट सामग्रीमध्ये संबंधित भंडारा/चांदा सेटलमेंट संदर्भात कोहळी/कोहरी समाजाची लोकसंख्या 19,739 अशी नोंद आढळते.">
+                        Available historical settlement material records a Kohli/Kohri population figure of 19,739 in the relevant Bhandara/Chanda settlement context.
+                    </p>
+
+                    <!-- Breakdown Grid -->
+                    <div class="breakdown-grid">
+                        <div class="breakdown-item">
+                            <div class="breakdown-region" data-lang-en="Bhandara" data-lang-mr="भंडारा">Bhandara</div>
+                            <div class="breakdown-val">12,097</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-region" data-lang-en="Chanda" data-lang-mr="चांदा">Chanda</div>
+                            <div class="breakdown-val">7,602</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-region" data-lang-en="Sakoli Tehsil" data-lang-mr="साकोली तहसील">Sakoli Tehsil</div>
+                            <div class="breakdown-val">8,130</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-region" data-lang-en="Brahmapuri Tehsil" data-lang-mr="ब्रह्मपुरी तहसील">Brahmapuri Tehsil</div>
+                            <div class="breakdown-val">6,578</div>
+                        </div>
+                    </div>
+
+                    <!-- Strong Warning -->
+                    <div class="census-warning-box" style="background:#eff6ff; border-color:#bfdbfe; border-left-color:#2563eb; color:#1e40af;">
+                        <i class="fa-solid fa-circle-info" style="color:#2563eb;"></i>
+                        <div>
+                            <strong data-lang-en="Important Clarification:" data-lang-mr="महत्त्वाचे स्पष्टीकरण:">Important Clarification:</strong>
+                            <span data-lang-en="This is not the 1911 population figure of 11,399. It belongs to a separate historical settlement/administrative context." data-lang-mr="ही 1911 मधील 11,399 लोकसंख्येची नोंद नाही. हा वेगळ्या ऐतिहासिक सेटलमेंट/प्रशासकीय संदर्भातील आकडा आहे.">This is not the 1911 population figure of 11,399. It belongs to a separate historical settlement/administrative context.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: HISTORICAL ADMINISTRATIVE BOUNDARIES -->
+                <section id="sec-admin-boundaries" class="census-admin-box">
+                    <div class="census-admin-header">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span data-lang-en="Historical Administrative Boundaries" data-lang-mr="ऐतिहासिक प्रशासकीय सीमा व नोंदींमधील तफावत">Historical Administrative Boundaries</span>
+                    </div>
+                    <p class="census-admin-body" data-lang-en="Historical districts and tehsils did not always have the same boundaries as today's administrative units. Changes in district formation, tehsil boundaries and administrative arrangements can therefore produce different population figures in different historical records." data-lang-mr="ऐतिहासिक काळातील जिल्हे आणि तहसील यांच्या सीमा आजच्या प्रशासकीय सीमांसारख्या नव्हत्या. जिल्ह्यांची पुनर्रचना, तहसील सीमांतील बदल आणि प्रशासकीय बदलांमुळे वेगवेगळ्या ऐतिहासिक नोंदींमध्ये वेगवेगळे लोकसंख्या आकडे दिसू शकतात.">
+                        Historical districts and tehsils did not always have the same boundaries as today's administrative units. Changes in district formation, tehsil boundaries and administrative arrangements can therefore produce different population figures in different historical records.
+                    </p>
+                </section>
+
+                <!-- SECTION 5: HISTORICAL CENSUS SERIES (1881, 1891, 1901, 1921, 1931) -->
+                <section id="sec-census-series" style="margin-bottom: 2.2rem;">
+                    <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem;">
+                        <i class="fa-solid fa-timeline" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Historical Census Series (Central Provinces)" data-lang-mr="ऐतिहासिक जनगणना मालिका (सेंट्रल प्रॉव्हिन्सेस)">Historical Census Series (Central Provinces)</span>
+                    </h3>
+
+                    <div class="census-series-grid">
+                        <!-- 1881 Card -->
+                        <div class="census-year-card">
+                            <div>
+                                <div class="census-year-header">
+                                    <span class="census-year-tag">1881</span>
+                                    <span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Historical Census" data-lang-mr="ऐतिहासिक जनगणना">Historical Census</span></span>
+                                </div>
+                                <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem;" data-lang-en="1881 Census" data-lang-mr="१८८१ जनगणना">1881 Census</h4>
+                                <p class="census-year-desc" data-lang-en="The 1881 Census forms part of the historical census series for the Central Provinces and surrounding administrative regions. It provides demographic context for studying communities during the period." data-lang-mr="1881 ची जनगणना ही Central Provinces आणि संबंधित तत्कालीन प्रशासकीय प्रदेशांच्या ऐतिहासिक जनगणना मालिकेतील महत्त्वाची नोंद आहे. त्या काळातील विविध समुदायांच्या लोकसंख्येचा अभ्यास करण्यासाठी ती संदर्भ देते.">
+                                    The 1881 Census forms part of the historical census series for the Central Provinces and surrounding administrative regions. It provides demographic context for studying communities during the period.
+                                </p>
+                            </div>
+                            <div class="census-year-status-row">
+                                <i class="fa-solid fa-circle-info" style="color: var(--accent-gold);"></i>
+                                <span data-lang-en="Not displayed — specific Kohli figure not yet verified." data-lang-mr="विशिष्ट कोहळी लोकसंख्या आकडा अद्याप प्रमाणित नाही.">Not displayed — specific Kohli figure not yet verified.</span>
+                            </div>
+                        </div>
+
+                        <!-- 1891 Card -->
+                        <div class="census-year-card">
+                            <div>
+                                <div class="census-year-header">
+                                    <span class="census-year-tag">1891</span>
+                                    <span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Historical Census" data-lang-mr="ऐतिहासिक जनगणना">Historical Census</span></span>
+                                </div>
+                                <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem;" data-lang-en="1891 Census" data-lang-mr="१८९१ जनगणना">1891 Census</h4>
+                                <p class="census-year-desc" data-lang-en="The 1891 Census provides another historical demographic reference point for studying population and community distribution in the Central Provinces region." data-lang-mr="1891 ची जनगणना Central Provinces प्रदेशातील लोकसंख्या आणि समुदायांच्या वितरणाचा ऐतिहासिक अभ्यास करण्यासाठी महत्त्वाचा संदर्भ आहे.">
+                                    The 1891 Census provides another historical demographic reference point for studying population and community distribution in the Central Provinces region.
+                                </p>
+                            </div>
+                            <div class="census-year-status-row">
+                                <i class="fa-solid fa-circle-info" style="color: var(--accent-gold);"></i>
+                                <span data-lang-en="Specific Kohli figure not currently verified." data-lang-mr="विशिष्ट कोहळी लोकसंख्या आकडा सध्या प्रमाणित नाही.">Specific Kohli figure not currently verified.</span>
+                            </div>
+                        </div>
+
+                        <!-- 1901 Card -->
+                        <div class="census-year-card">
+                            <div>
+                                <div class="census-year-header">
+                                    <span class="census-year-tag">1901</span>
+                                    <span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Historical Census" data-lang-mr="ऐतिहासिक जनगणना">Historical Census</span></span>
+                                </div>
+                                <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem;" data-lang-en="1901 Census" data-lang-mr="१९०१ जनगणना">1901 Census</h4>
+                                <p class="census-year-desc" data-lang-en="The 1901 Census provides demographic and administrative context for the region before the 1911 census record." data-lang-mr="1901 ची जनगणना 1911 पूर्वीच्या कालखंडातील प्रदेशाची लोकसंख्या आणि प्रशासकीय पार्श्वभूमी समजून घेण्यासाठी महत्त्वाची ऐतिहासिक नोंद आहे.">
+                                    The 1901 Census provides demographic and administrative context for the region before the 1911 census record.
+                                </p>
+                            </div>
+                            <div class="census-year-status-row">
+                                <i class="fa-solid fa-circle-info" style="color: var(--accent-gold);"></i>
+                                <span data-lang-en="Specific Kohli figure not currently verified." data-lang-mr="विशिष्ट कोहळी लोकसंख्या आकडा सध्या प्रमाणित नाही.">Specific Kohli figure not currently verified.</span>
+                            </div>
+                        </div>
+
+                        <!-- 1921 Card -->
+                        <div class="census-year-card">
+                            <div>
+                                <div class="census-year-header">
+                                    <span class="census-year-tag">1921</span>
+                                    <span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Historical Census" data-lang-mr="ऐतिहासिक जनगणना">Historical Census</span></span>
+                                </div>
+                                <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem;" data-lang-en="1921 Census" data-lang-mr="१९२१ जनगणना">1921 Census</h4>
+                                <p class="census-year-desc" data-lang-en="The 1921 Census of India forms part of the regional administrative series. Specific Kohli population data for this census period remains under archival verification." data-lang-mr="1921 ची भारतीय जनगणना प्रादेशिक प्रशासकीय मालिकेचा भाग आहे. या जनगणनेतील विशिष्ट कोहळी लोकसंख्या माहिती अभिलेखागार पडताळणी अंतर्गत आहे.">
+                                    The 1921 Census of India forms part of the regional administrative series. Specific Kohli population data for this census period remains under archival verification.
+                                </p>
+                            </div>
+                            <div class="census-year-status-row">
+                                <i class="fa-solid fa-circle-info" style="color: var(--accent-gold);"></i>
+                                <span data-lang-en="Figure not currently verified." data-lang-mr="आकडा सध्या प्रमाणित नाही.">Figure not currently verified.</span>
+                            </div>
+                        </div>
+
+                        <!-- 1931 Card -->
+                        <div class="census-year-card">
+                            <div>
+                                <div class="census-year-header">
+                                    <span class="census-year-tag">1931</span>
+                                    <span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Historical Census" data-lang-mr="ऐतिहासिक जनगणना">Historical Census</span></span>
+                                </div>
+                                <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem;" data-lang-en="1931 Census" data-lang-mr="१९३१ जनगणना">1931 Census</h4>
+                                <p class="census-year-desc" data-lang-en="The 1931 Census of India recorded regional demographic patterns in the Central Provinces and Berar. Specific Kohli population data for this period remains under archival verification." data-lang-mr="1931 च्या जनगणनेत Central Provinces आणि बेरार भागातील प्रादेशिक लोकसंख्येचे स्वरूप नोंदवले गेले. या कालखंडातील विशिष्ट कोहळी लोकसंख्या माहिती अभिलेखागार पडताळणी अंतर्गत आहे.">
+                                    The 1931 Census of India recorded regional demographic patterns in the Central Provinces and Berar. Specific Kohli population data for this period remains under archival verification.
+                                </p>
+                            </div>
+                            <div class="census-year-status-row">
+                                <i class="fa-solid fa-circle-info" style="color: var(--accent-gold);"></i>
+                                <span data-lang-en="Figure not currently verified." data-lang-mr="आकडा सध्या प्रमाणित नाही.">Figure not currently verified.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: HISTORICAL NAME FORMS -->
+                <section id="sec-spellings" class="census-spellings-box">
+                    <h3 style="color: var(--primary-dark); font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem; display:flex; align-items:center; gap:0.5rem;">
+                        <i class="fa-solid fa-spell-check" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Historical Name Forms" data-lang-mr="ऐतिहासिक दस्तऐवजांमधील नावांची रूपे">Historical Name Forms</span>
+                    </h3>
+                    <p style="font-size:0.92rem; color:var(--text-muted); margin:0;" data-lang-en="These are historical spellings/transliterations found in historical material and should not automatically be treated as separate modern communities." data-lang-mr="ही ऐतिहासिक दस्तऐवजांमध्ये आढळणारी लेखनरूपे/transliterations आहेत. त्यांना स्वतंत्र आधुनिक समुदाय म्हणून आपोआप समजू नये.">
+                        These are historical spellings/transliterations found in historical material and should not automatically be treated as separate modern communities.
+                    </p>
+                    <div class="census-spellings-list">
+                        <span class="census-spelling-pill"><i class="fa-solid fa-tag"></i> Kohli</span>
+                        <span class="census-spelling-pill"><i class="fa-solid fa-tag"></i> Kohri</span>
+                        <span class="census-spelling-pill"><i class="fa-solid fa-tag"></i> Kohiree</span>
+                        <span class="census-spelling-pill"><i class="fa-solid fa-tag"></i> Kohulee</span>
+                        <span class="census-spelling-pill"><i class="fa-solid fa-tag"></i> Koholee</span>
+                        <span class="census-spelling-pill"><i class="fa-solid fa-tag"></i> Kohoree</span>
+                        <span class="census-spelling-pill"><i class="fa-solid fa-tag"></i> Kaulees</span>
+                    </div>
+                </section>
+
+                <!-- SECTION 7: CENSUS DATA TABLE -->
+                <section id="sec-census-table" style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.8rem; margin-bottom: 2.2rem; box-shadow: var(--shadow-sm);">
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; margin-bottom:1.2rem;">
+                        <h3 style="color: var(--primary-dark); font-size: 1.25rem; font-weight: 800; margin:0; display:flex; align-items:center; gap:0.5rem;">
+                            <i class="fa-solid fa-table-list" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Census Data Summary Table" data-lang-mr="जनगणना माहिती संक्षिप्त तक्ता">Census Data Summary Table</span>
+                        </h3>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-circle-check"></i> <span data-lang-en="Historical Summary" data-lang-mr="ऐतिहासिक सारांश">Historical Summary</span></span>
+                    </div>
+
+                    <div class="archive-table-container">
                         <table class="archive-table">
                             <thead>
                                 <tr>
-                                    <th>Census Year</th>
-                                    <th>Official Publication</th>
-                                    <th>Region</th>
-                                    <th>Relevance & Historical Reference</th>
-                                    <th>Source Status</th>
+                                    <th data-lang-en="Year" data-lang-mr="वर्ष">Year</th>
+                                    <th data-lang-en="Record Type" data-lang-mr="नोंद प्रकार">Record Type</th>
+                                    <th data-lang-en="Region" data-lang-mr="क्षेत्र / जिल्हा">Region</th>
+                                    <th data-lang-en="Kohli Figure" data-lang-mr="कोहळी संख्या">Kohli Figure</th>
+                                    <th data-lang-en="Status" data-lang-mr="स्थिती">Status</th>
+                                    <th data-lang-en="Source Classification" data-lang-mr="स्रोत वर्गीकरण">Source Classification</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><strong>1881</strong></td>
-                                    <td>Census of India (1881)</td>
+                                    <td><span data-lang-en="Census" data-lang-mr="जनगणना">Census</span></td>
                                     <td>Central Provinces</td>
-                                    <td>Documentation of community presence, landholdings & agriculture</td>
-                                    <td><span class="badge-source badge-record"><i class="fa-solid fa-check"></i> Historical Record</span></td>
+                                    <td><span style="color: var(--text-muted); font-weight: 600;">—</span></td>
+                                    <td><span class="badge-status badge-status-reference"><i class="fa-solid fa-bookmark"></i> <span data-lang-en="Historical reference" data-lang-mr="ऐतिहासिक संदर्भ">Historical reference</span></span></td>
+                                    <td><span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> Government Census</span></td>
                                 </tr>
                                 <tr>
                                     <td><strong>1891</strong></td>
-                                    <td>Census of India (1891)</td>
+                                    <td><span data-lang-en="Census" data-lang-mr="जनगणना">Census</span></td>
                                     <td>Central Provinces</td>
-                                    <td>Documentation of regional agriculturalists & rural population</td>
-                                    <td><span class="badge-source badge-record"><i class="fa-solid fa-check"></i> Historical Record</span></td>
+                                    <td><span style="color: var(--text-muted); font-weight: 600;">—</span></td>
+                                    <td><span class="badge-status badge-status-reference"><i class="fa-solid fa-bookmark"></i> <span data-lang-en="Historical reference" data-lang-mr="ऐतिहासिक संदर्भ">Historical reference</span></span></td>
+                                    <td><span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> Government Census</span></td>
                                 </tr>
                                 <tr>
                                     <td><strong>1901</strong></td>
-                                    <td>Census of India (1901)</td>
+                                    <td><span data-lang-en="Census" data-lang-mr="जनगणना">Census</span></td>
                                     <td>Central Provinces</td>
-                                    <td>Administrative classification & occupational statistics</td>
-                                    <td><span class="badge-source badge-record"><i class="fa-solid fa-check"></i> Historical Record</span></td>
+                                    <td><span style="color: var(--text-muted); font-weight: 600;">—</span></td>
+                                    <td><span class="badge-status badge-status-reference"><i class="fa-solid fa-bookmark"></i> <span data-lang-en="Historical reference" data-lang-mr="ऐतिहासिक संदर्भ">Historical reference</span></span></td>
+                                    <td><span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> Government Census</span></td>
+                                </tr>
+                                <tr style="background: #fdfbf7;">
+                                    <td><strong style="color: var(--primary-dark); font-size: 1.05rem;">1911</strong></td>
+                                    <td><strong data-lang-en="Census" data-lang-mr="जनगणना">Census</strong></td>
+                                    <td><strong>Bhandara District</strong></td>
+                                    <td><span style="font-size: 1.15rem; font-weight: 800; color: #b45309;">11,399</span></td>
+                                    <td><span class="badge-status badge-status-verified"><i class="fa-solid fa-circle-check"></i> <span data-lang-en="Historical figure supplied" data-lang-mr="ऐतिहासिक आकडा उपलब्ध">Historical figure supplied</span></span></td>
+                                    <td><span class="badge-source badge-community"><i class="fa-solid fa-chart-pie"></i> Statistical Record</span></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>1911</strong></td>
-                                    <td>Census of India (1911)</td>
-                                    <td>Central Provinces</td>
-                                    <td>Demographic & community census records</td>
-                                    <td><span class="badge-source badge-record"><i class="fa-solid fa-check"></i> Historical Record</span></td>
+                                    <td><strong>1921</strong></td>
+                                    <td><span data-lang-en="Census" data-lang-mr="जनगणना">Census</span></td>
+                                    <td>Historical region</td>
+                                    <td><span style="color: var(--text-muted); font-weight: 600;">—</span></td>
+                                    <td><span class="badge-status badge-status-verify-page"><i class="fa-solid fa-clock-rotate-left"></i> <span data-lang-en="Figure not currently verified" data-lang-mr="आकडा सध्या प्रमाणित नाही">Figure not currently verified</span></span></td>
+                                    <td><span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> Government Census</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>1931</strong></td>
+                                    <td><span data-lang-en="Census" data-lang-mr="जनगणना">Census</span></td>
+                                    <td>Historical region</td>
+                                    <td><span style="color: var(--text-muted); font-weight: 600;">—</span></td>
+                                    <td><span class="badge-status badge-status-verify-page"><i class="fa-solid fa-clock-rotate-left"></i> <span data-lang-en="Figure not currently verified" data-lang-mr="आकडा सध्या प्रमाणित नाही">Figure not currently verified</span></span></td>
+                                    <td><span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> Government Census</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </section>
 
-                <!-- IMPORTANT CENSUS 2021 APPEAL HERO CARD -->
-                <div style="margin-bottom: 2rem;">
-                    <div class="census-alert-box" style="border-radius: 12px;">
-                        <div class="census-alert-icon">
-                            <i class="fa-solid fa-bullhorn"></i>
-                        </div>
-                        <div class="census-alert-content">
-                            <h2 data-lang-en="Important Community Appeal: Indian Census 2021 (100 Years after 1911)" data-lang-mr="अत्यंत महत्त्वाचे आवाहन: वर्ष 1911 नंतरची 100 वर्षानंतरची भारतीय जनगणना 2021" style="font-size: 1.25rem;">
-                                अत्यंत महत्त्वाचे आवाहन: वर्ष 1911 नंतरची 100 वर्षानंतरची भारतीय जनगणना 2021
-                            </h2>
-                            <p data-lang-en="For our community, if we want to accomplish a most vital task, it is the 2021 Indian Census after 100 years since 1911. Everyone must prioritize this task above all else without getting distracted by other matters!" data-lang-mr="आपल्या समाजासाठी एक अत्यंत महत्त्वाचे काम करायचे असेल तर, वर्ष 1911 नंतरची आपल्यासाठीची 100 वर्षानंतरची भारतीय जनगणना 2021, सर्वांनी इतर बाबींमध्ये विचलित न होता प्रथम या कामाला प्राधान्य देणे आवश्यक आहे.">
-                                आपल्या समाजासाठी एक अत्यंत महत्त्वाचे काम करायचे असेल तर, वर्ष 1911 नंतरची आपल्यासाठीची 100 वर्षानंतरची भारतीय जनगणना 2021, सर्वांनी इतर बाबींमध्ये विचलित न होता प्रथम या कामाला प्राधान्य देणे आवश्यक आहे.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- COMMUNITY CENSUS FORMS DOWNLOAD SECTION -->
-                <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
-                    <div style="text-align: center; max-width: 700px; margin: 0 auto 1.5rem;">
-                        <h2 style="color: var(--primary-dark); font-size: 1.4rem; font-weight: 800;" data-lang-en="District Community Survey Forms" data-lang-mr="समाज जनगणना व माहिती फॉर्म (डाउनलोड)">
-                            समाज जनगणना व माहिती फॉर्म (डाउनलोड)
-                        </h2>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.4rem;" data-lang-en="Download the official community enumeration forms for your respective district, fill in family details, and submit to district representatives." data-lang-mr="आपल्या संबंधित जिल्ह्यासाठी अधिकृत समाज गणना अर्ज डाउनलोड करा, कौटुंबिक माहिती भरा आणि जिल्हा प्रतिनिधींकडे सादर करा.">
-                            आपल्या संबंधित जिल्ह्यासाठी अधिकृत समाज गणना अर्ज डाउनलोड करा, कौटुंबिक माहिती भरा आणि जिल्हा प्रतिनिधींकडे सादर करा.
-                        </p>
+                <!-- SECTION 8: CURRENT CENSUS INFORMATION (VISUALLY DISTINCT SECTION) -->
+                <section id="sec-current-census" class="current-census-box">
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem;">
+                        <h3 style="margin:0;">
+                            <i class="fa-solid fa-bullhorn" style="color: #38bdf8;"></i>
+                            <span data-lang-en="Current Census Information" data-lang-mr="सध्याची जनगणना माहिती">Current Census Information</span>
+                        </h3>
+                        <span class="badge-status" style="background:#0284c7; color:white; border:none; padding:0.3rem 0.8rem;">
+                            <i class="fa-solid fa-building-flag"></i> <span data-lang-en="Government of India" data-lang-mr="भारत सरकार">Government of India</span>
+                        </span>
                     </div>
 
-                    <div class="forms-grid">
-                        <!-- Form Card 1 -->
-                        <div class="form-card">
-                            <div>
-                                <div class="form-card-header">
-                                    <div class="form-icon"><i class="fa-solid fa-file-pdf"></i></div>
-                                    <div>
-                                        <div class="form-title" data-lang-en="Bhandara & Gondia District Form" data-lang-mr="भंडारा व गोंदिया जिल्हा अर्ज">
-                                            भंडारा व गोंदिया जिल्हा अर्ज
-                                        </div>
-                                        <span style="font-size:0.75rem; color:var(--accent-gold); font-weight:700;">PDF Document (192 KB)</span>
-                                    </div>
-                                </div>
-                                <p class="form-desc" data-lang-en="Official community census and family survey form for all villages and cities across Bhandara and Gondia districts." data-lang-mr="भंडारा आणि गोंदिया जिल्ह्यातील सर्व गावे व शहरांसाठी अधिकृत कोहळी समाज कुटुंब माहिती पत्रक.">
-                                    भंडारा आणि गोंदिया जिल्ह्यातील सर्व गावे व शहरांसाठी अधिकृत कोहळी समाज कुटुंब माहिती पत्रक.
-                                </p>
-                            </div>
-                            <a href="forms/Form-Community-Bhandara-Gondia.pdf" download class="btn-download-pdf">
-                                <i class="fa-solid fa-download"></i> <span data-lang-en="Download Form PDF" data-lang-mr="फॉर्म डाउनलोड करा (PDF)">फॉर्म डाउनलोड करा (PDF)</span>
-                            </a>
-                        </div>
+                    <h4 style="font-size:1.15rem; font-weight:800; color:white; margin-bottom:0.5rem;" data-lang-en="India Census 2027" data-lang-mr="भारतीय जनगणना २०२७">
+                        India Census 2027
+                    </h4>
 
-                        <!-- Form Card 2 -->
-                        <div class="form-card">
-                            <div>
-                                <div class="form-card-header">
-                                    <div class="form-icon"><i class="fa-solid fa-file-pdf"></i></div>
-                                    <div>
-                                        <div class="form-title" data-lang-en="Chandrapur & Gadchiroli District Form" data-lang-mr="चंद्रपूर व गडचिरोली जिल्हा अर्ज">
-                                            चंद्रपूर व गडचिरोली जिल्हा अर्ज
-                                        </div>
-                                        <span style="font-size:0.75rem; color:var(--accent-gold); font-weight:700;">PDF Document (196 KB)</span>
-                                    </div>
-                                </div>
-                                <p class="form-desc" data-lang-en="Official community census form for Chandrapur and Gadchiroli districts including detailed family member records." data-lang-mr="चंद्रपूर व गडचिरोली जिल्ह्यातील समाज बांधवांसाठी कौटुंबिक माहिती व जनगणना अर्ज.">
-                                    चंद्रपूर व गडचिरोली जिल्ह्यातील समाज बांधवांसाठी कौटुंबिक माहिती व जनगणना अर्ज.
-                                </p>
-                            </div>
-                            <a href="forms/Form-Community-Chandrapur-Gadchiroli.pdf" download class="btn-download-pdf">
-                                <i class="fa-solid fa-download"></i> <span data-lang-en="Download Form PDF" data-lang-mr="फॉर्म डाउनलोड करा (PDF)">फॉर्म डाउनलोड करा (PDF)</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RESTORED: HISTORICAL CENSUS & GAZETTEER EVIDENCE GALLERY -->
-                <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
-                    <h2 style="color:var(--primary-dark); font-size:1.5rem; font-weight:800; margin-bottom:0.5rem;" data-lang-en="Archival Proof & Gazetteers Evidence" data-lang-mr="ऐतिहासिक दस्तऐवज व गॅझेटियर पुरावे">
-                        ऐतिहासिक दस्तऐवज व गॅझेटियर पुरावे
-                    </h2>
-                    <p style="color:var(--text-muted); margin-bottom:1.5rem;" data-lang-en="Scanned extracts from British Gazetteers, Census of India 1881/1911, and Water Security Textbooks." data-lang-mr="ब्रिटिश गॅझेटियर, १८८१/१९११ ची जनगणना नोंदी आणि महाराष्ट्र जलसुरक्षा पाठ्यपुस्तकातील मूळ उतारे.">
-                        ब्रिटिश गॅझेटियर, १८८१/१९११ ची जनगणना नोंदी आणि महाराष्ट्र जलसुरक्षा पाठ्यपुस्तकातील मूळ उतारे.
+                    <p data-lang-en="The Government of India has initiated the administrative process for Census 2027 through the official Gazette notification." data-lang-mr="भारत सरकारने अधिकृत राजपत्र अधिसूचनेद्वारे जनगणना 2027 साठी प्रशासकीय प्रक्रिया सुरू केली आहे.">
+                        The Government of India has initiated the administrative process for Census 2027 through the official Gazette notification.
                     </p>
 
-                    <div class="archive-evidence-grid">
-                        <div class="evidence-card">
-                            <img src="data/WhatsApp Image 2026-07-31 at 6.37.47 PM.jpeg" alt="Census of India 1881 Record" class="evidence-img">
-                            <div class="evidence-body">
-                                <div class="evidence-title">Census of India 1881 – Hindoo Castes</div>
-                                <p class="evidence-text" data-lang-en="Official 1881 Census recording 'Kohli' as top-tier Cultivators under 'Hindoo Castes in Central Provinces of Good Social Standing'." data-lang-mr="१८८१ च्या जनगणनेत 'Kohli' समाजाची नोंद 'Good Social Standing' श्रेणीतील प्रमुख शेतकरी म्हणून.">
-                                    १८८१ च्या जनगणनेत 'Kohli' समाजाची नोंद 'Good Social Standing' श्रेणीतील प्रमुख शेतकरी म्हणून.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="evidence-card">
-                            <img src="data/WhatsApp Image 2026-07-31 at 6.38.40 PM.jpeg" alt="Maharashtra State Gazetteer Page 325" class="evidence-img">
-                            <div class="evidence-body">
-                                <div class="evidence-title">Maharashtra State Gazetteer (Page 325-326)</div>
-                                <p class="evidence-text" data-lang-en="Documents Kohali population in 1911 Nagpur census, tank construction in Wainganga valley, sugarcane farming, and traditional tank building quotes by Mr. Dux." data-lang-mr="१९११ मधील नागपूर जनगणना नोंद, वैनगंगा खोऱ्यातील तलाव बांधणी, ऊस शेती आणि मि. डॅक्स यांचा तलाव बांधणी अहवाल.">
-                                    १९११ मधील नागपूर जनगणना नोंद, वैनगंगा खोऱ्यातील तलाव बांधणी, ऊस शेती आणि मि. डॅक्स यांचा तलाव बांधणी अहवाल.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="evidence-card">
-                            <img src="data/WhatsApp Image 2026-07-31 at 6.38.41 PM.jpeg" alt="Water Security Textbook Std 10" class="evidence-img">
-                            <div class="evidence-body">
-                                <div class="evidence-title">Maharashtra Standard 10 Water Security Textbook</div>
-                                <p class="evidence-text" data-lang-en="Govt textbook documenting Kohali tribe's creation of 10,000+ Malguzari lakes during Gond reign across Vidarbha." data-lang-mr="महाराष्ट्र शासन १० वी जलसुरक्षा पुस्तकात पूर्व गोंड काळात कोहळी समाजाने बांधलेल्या १०,००० मालगुजारी तलावांचा गौरव.">
-                                    महाराष्ट्र शासन १० वी जलसुरक्षा पुस्तकात पूर्व गोंड काळात कोहळी समाजाने बांधलेल्या १०,००० मालगुजारी तलावांचा गौरव.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="evidence-card">
-                            <img src="data/WhatsApp Image 2026-07-31 at 6.40.46 PM.jpeg" alt="Settlement Report Record" class="evidence-img">
-                            <div class="evidence-body">
-                                <div class="evidence-title">Bhandara & Chanda Settlement Report (19,739 Population)</div>
-                                <p class="evidence-text" data-lang-en="Archival population data recording 19,739 Kohlis in Bhandara & Chanda, highlighting Sakoli and Brahmapuri tehsils." data-lang-mr="भंडारा व चांदा सेटलमेंट रिपोर्टमध्ये १९,७३९ कोहळी लोकसंख्येची नोंद (साकोली व ब्रह्मपुरी तालुका).">
-                                    भंडारा व चांदा सेटलमेंट रिपोर्टमध्ये १९,७३९ कोहळी लोकसंख्येची नोंद (साकोली व ब्रह्मपुरी तालुका).
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="evidence-card">
-                            <img src="data/WhatsApp Image 2026-07-31 at 6.40.47 PM.jpeg" alt="Aboriginal Indian Kohli References" class="evidence-img">
-                            <div class="evidence-body">
-                                <div class="evidence-title">Archival Chronology by N. R. Kapgate</div>
-                                <p class="evidence-text" data-lang-en="Chronological index of Kohali spellings in British records from 1867 to Central Govt Sl. No. 221 and State Govt Sl. No. 129." data-lang-mr="ब्रिटिश काळातील १८६७ पासूनच्या कागदपत्रांमध्ये कोहळी नावाच्या विविध नोंदींचे तुलनात्मक संकलन (एन. आर. कापगते).">
-                                    ब्रिटिश काळातील १८६७ पासूनच्या कागदपत्रांमध्ये कोहळी नावाच्या विविध नोंदींचे तुलनात्मक संकलन (एन. आर. कापगते).
-                                </p>
-                            </div>
-                        </div>
+                    <div class="current-census-advisory">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span data-lang-en="Official government information should be followed for current census instructions." data-lang-mr="सध्याच्या जनगणनेच्या सूचनांसाठी अधिकृत शासकीय मार्गदर्शक तत्त्वांचे व माहितीचे पालन करावे.">Official government information should be followed for current census instructions.</span>
                     </div>
-                </div>
+                </section>
 
-                <h2 style="color:var(--primary-dark); font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; text-align: center;" data-lang-en="Historical Population & Origin Records" data-lang-mr="ऐतिहासिक लोकसंख्या व उत्पत्ती नोंदी">
-                    Historical Population & Origin Records
-                </h2>
-
-                <div style="display: flex; flex-direction: column; gap: 2rem;">
-                    
-                    <!-- SUBSECTION 1: POPULATION RECORDS -->
-                    <div id="sec-census-1916" class="history-tab-section" style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
-                            <i class="fa-solid fa-users" style="color: var(--accent-gold);"></i>
-                            <span data-lang-en="Kohli Community in Historical Records" data-lang-mr="ऐतिहासिक नोंदींमध्ये कोहळी समाज">Kohli Community in Historical Records</span>
-                        </h3>
-                        <p style="line-height: 1.7; font-size: 0.98rem; color: var(--text-main); margin-bottom: 1.5rem;" data-lang-en="R. V. Russell's historical account records the Kohlis or Kohris in the districts of Bhandara and Chanda and provides population figures for the period covered by the work. The account also describes the community's association with agricultural regions where tanks supported the cultivation of crops such as sugarcane and rice." data-lang-mr="आर. व्ही. रसेल यांच्या ऐतिहासिक नोंदींमध्ये भंडारा आणि चांदा जिल्ह्यातील कोहळी किंवा कोहरी समाजाचा समावेश आहे आणि त्या काळातील लोकसंख्येची आकडेवारी दिली आहे. या नोंदीमध्ये उसासारख्या आणि भातासारख्या पिकांच्या लागवडीला आधार देणाऱ्या तलावांशी संबंधित कृषी क्षेत्रांशी समाजाच्या जोडणीचेही वर्णन केले आहे.">
-                            R. V. Russell's historical account records the Kohlis or Kohris in the districts of Bhandara and Chanda and provides population figures for the period covered by the work. The account also describes the community's association with agricultural regions where tanks supported the cultivation of crops such as sugarcane and rice.
-                        </p>
-
-                        <!-- Data Card -->
-                        <div style="background: var(--bg-cream); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.8rem;">
-                                <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.05em;" data-lang-en="Historical Population Data (1916)" data-lang-mr="ऐतिहासिक लोकसंख्या आकडेवारी (१९१६)">Historical Population Data (1916)</span>
-                                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;" data-lang-en="Source: R. V. Russell (p. 176)" data-lang-mr="स्रोत: आर. व्ही. रसेल (पृ. १७६)">Source: R. V. Russell (p. 176)</span>
-                            </div>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
-                                <div style="text-align: center; background: white; padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
-                                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" data-lang-en="Bhandara District" data-lang-mr="भंडारा जिल्हा">Bhandara District</div>
-                                    <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.25rem;">12,097</div>
-                                </div>
-                                <div style="text-align: center; background: white; padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
-                                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" data-lang-en="Chanda District" data-lang-mr="चांदा जिल्हा">Chanda District</div>
-                                    <div style="font-size: 1.8rem; font-weight: 800; color: var(--primary-dark); margin-top: 0.25rem;">7,602</div>
-                                </div>
-                            </div>
-                            <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; font-style: italic; margin-top: 0.5rem; text-align: center;">
-                                <i class="fa-solid fa-circle-info"></i>
-                                <span data-lang-en="Historical population figures recorded in the source. This data is preserved for archival reference and does not represent contemporary census statistics." data-lang-mr="स्रोतामध्ये नोंदवलेली ऐतिहासिक लोकसंख्या आकडेवारी. ही माहिती ऐतिहासिक संदर्भासाठी जतन केली गेली आहे आणि ती आधुनिक काळातील आकडेवारी दर्शवत नाही.">Historical population figures recorded in the source. This data is preserved for archival reference and does not represent contemporary census statistics.</span>
-                            </div>
-                        </div>
+                <!-- SECTION 9: RELATED HISTORICAL SECTIONS -->
+                <section class="census-related-section">
+                    <h3 style="color: var(--primary-dark); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; display:flex; align-items:center; gap:0.5rem;">
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Related Historical Sections" data-lang-mr="संबंधित ऐतिहासिक विभाग">Related Historical Sections</span>
+                    </h3>
+                    <p style="font-size:0.88rem; color:var(--text-muted); margin:0;" data-lang-en="Explore other complementary historical archives and documentation on the portal:" data-lang-mr="पोर्टलवरील इतर पूरक ऐतिहासिक संग्रह आणि दस्तऐवजीकरण पहा:">
+                        Explore other complementary historical archives and documentation on the portal:
+                    </p>
+                    <div class="census-related-grid">
+                        <a href="history.html" class="census-related-link">
+                            <span><i class="fa-solid fa-landmark" style="margin-right:0.4rem;"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="historical-timeline.html" class="census-related-link">
+                            <span><i class="fa-solid fa-timeline" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="documents.html" class="census-related-link">
+                            <span><i class="fa-solid fa-file-contract" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="gazetteers.html" class="census-related-link">
+                            <span><i class="fa-solid fa-book-open" style="margin-right:0.4rem;"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटिअर">Gazetteers</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="settlement.html" class="census-related-link">
+                            <span><i class="fa-solid fa-map" style="margin-right:0.4rem;"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="water-heritage.html" class="census-related-link">
+                            <span><i class="fa-solid fa-droplet" style="margin-right:0.4rem;"></i> <span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
                     </div>
+                </section>
 
-                    <!-- SUBSECTION 2: ORIGIN TRADITIONS -->
-                    <div id="sec-origin-traditions" class="history-tab-section" style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
-                            <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
-                            <span data-lang-en="Historical Traditions About Origin" data-lang-mr="उत्पत्तीविषयी ऐतिहासिक परंपरा">Historical Traditions About Origin</span>
-                        </h3>
-                        <p style="line-height: 1.7; font-size: 0.98rem; color: var(--text-main); margin-bottom: 1.2rem;" data-lang-en="Historical sources record differing traditions about the origins of the Kohli community. R. V. Russell records one theory connecting the community's movement to Chanda with the Benares region and the Bhonsla period, while also noting that the Chanda Kohlis themselves did not retain a tradition linking their ancestry to Upper India. These accounts should therefore be understood as historical traditions rather than a single conclusively established origin." data-lang-mr="ऐतिहासिक नोंदींमध्ये कोहळी समाजाच्या उत्पत्तीविषयी वेगवेगळ्या परंपरा आढळतात. आर. व्ही. रसेल यांनी चांदा येथील समाजाचे स्थलांतर बनारस प्रांत आणि भोसले काळाशी जोडणारा एक सिद्धांत मांडला आहे. पण त्याचसोबत त्यांनी असेही नमूद केले आहे की, प्रत्यक्ष चांदा येथील कोहळी समाजात स्वतःचा संबंध उत्तर भारताशी जोडणारी कोणतीही परंपरा शिल्लक नव्हती. म्हणूनच, या नोंदी केवळ ऐतिहासिक परंपरा म्हणून समजल्या पाहिजेत, अंतिम प्रमाणित इतिहास म्हणून नव्हे.">
-                            Historical sources record differing traditions about the origins of the Kohli community. R. V. Russell records one theory connecting the community's movement to Chanda with the Benares region and the Bhonsla period, while also noting that the Chanda Kohlis themselves did not retain a tradition linking their ancestry to Upper India. These accounts should therefore be understood as historical traditions rather than a single conclusively established origin.
-                        </p>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent-gold); padding-left: 0.8rem; font-style: italic;">
-                            <span data-lang-en="Historical note: These are competing traditions recorded in the historical source. They should not be presented as a conclusively established modern origin story." data-lang-mr="ऐतिहासिक टीप: हे ऐतिहासिक स्रोतामध्ये नोंदवलेले परस्परविरोधी मतप्रवाह आहेत. त्यांना आधुनिक काळातील निश्चित किंवा प्रमाणित उत्पत्तीचा इतिहास म्हणून सादर करू नये.">Historical note: These are competing traditions recorded in the historical source. They should not be presented as a conclusively established modern origin story.</span>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
     </main>
+
+    <!-- DYNAMIC MODAL CONTAINER -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Modal Details</div>
+                <button class="modal-close-btn" onclick="closeModal()" aria-label="Close Modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal Body injected via JavaScript -->
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="site-footer">

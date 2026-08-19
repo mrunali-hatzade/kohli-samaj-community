@@ -143,18 +143,78 @@ document.addEventListener('DOMContentLoaded', () => {
         timeline.forEach(item => {
             const title = lang === 'mr' ? item.title_mr : item.title_en;
             const desc = lang === 'mr' ? item.desc_mr : item.desc_en;
+            const category = lang === 'mr' ? item.category_mr : item.category_en;
+            const source = lang === 'mr' ? item.source_mr : item.source_en;
+            const icon = item.icon || 'fa-circle-dot';
+            
+            let sourceHtml = '';
+            if (source) {
+                const sourceLabel = lang === 'mr' ? 'स्रोत:' : 'Source:';
+                sourceHtml = `<div style="margin-top:0.8rem; font-size:0.85rem; color:var(--text-muted);"><i class="fa-solid fa-book"></i> <strong>${sourceLabel}</strong> ${source}</div>`;
+            }
+
             html += `
                 <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 1.5rem; display: flex; gap: 1.5rem; align-items: flex-start; box-shadow: var(--shadow-sm);">
                     <div style="background: var(--accent-gold-light); border: 1.5px solid var(--accent-gold); color: var(--accent-gold-hover); font-weight: 800; font-size: 1.1rem; padding: 0.4rem 1rem; border-radius: 8px; flex-shrink: 0; min-width: 80px; text-align: center;">
                         ${item.year}
                     </div>
                     <div style="flex-grow: 1;">
+                        <div style="margin-bottom:0.5rem;"><span style="display:inline-block; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.75rem; font-weight:700; background:#f0f4ff; color:#3b5bdb; border:1px solid #bac8ff; text-transform:uppercase;"><i class="fa-solid ${icon}"></i> ${category}</span></div>
                         <h4 style="color: var(--primary-dark); font-weight: 800; font-size: 1.15rem; margin: 0 0 0.4rem 0;">${title}</h4>
                         <p style="color: var(--text-main); font-size: 0.98rem; line-height: 1.6; margin: 0;">${desc}</p>
+                        ${sourceHtml}
                     </div>
                 </div>
             `;
         });
+        
+        // Append the separate Historical Settlement Record
+        const settlementTitle = lang === 'mr' ? 'ऐतिहासिक सेटलमेंट नोंद' : 'Historical Settlement Population Record';
+        const settlementDesc = lang === 'mr' ? 
+            'उपलब्ध ऐतिहासिक सेटलमेंट संदर्भात कोहळी/कोहरी लोकसंख्या 19,739 अशी नोंदवली आहे. प्रशासकीय सीमा आणि स्रोतांचे संदर्भ वेगळे आहेत; या ऐतिहासिक आकडेवारीची सध्याच्या जिल्हा लोकसंख्येशी थेट तुलना करू नये किंवा 1911 च्या 11,399 आकडेवारीसोबत थेट जोडू नये.' : 
+            'Available historical settlement material records Kohli/Kohri population as 19,739 in the relevant Bhandara/Chanda settlement context. Historical administrative boundaries and source contexts differ; this figure should not be directly compared with current population figures or automatically combined with the 1911 figure of 11,399.';
+        const breakdownTitle = lang === 'mr' ? 'विभागणी:' : 'Breakdown:';
+        const addFigTitle = lang === 'mr' ? 'अतिरिक्त आकडेवारी (मूळ स्रोत):' : 'Additional figures in the supplied source:';
+        
+        html += `
+            <div style="background: linear-gradient(to right, #fdfbfb, #ebedee); border: 2px solid #ced4da; border-radius: 12px; padding: 1.5rem; display: flex; gap: 1.5rem; align-items: flex-start; box-shadow: var(--shadow-sm); margin-top:1.5rem;">
+                <div style="background: #e9ecef; border: 1.5px solid #adb5bd; color: #495057; font-weight: 800; font-size: 1.1rem; padding: 0.4rem 1rem; border-radius: 8px; flex-shrink: 0; min-width: 80px; text-align: center;">
+                    Record
+                </div>
+                <div style="flex-grow: 1;">
+                    <div style="margin-bottom:0.5rem;"><span style="display:inline-block; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.75rem; font-weight:700; background:#e6fcf5; color:#0ca678; border:1px solid #63e6be; text-transform:uppercase;"><i class="fa-solid fa-map"></i> Settlement Record</span></div>
+                    <h4 style="color: var(--primary-dark); font-weight: 800; font-size: 1.15rem; margin: 0 0 0.4rem 0;">${settlementTitle}</h4>
+                    <div style="font-size:2.5rem; font-weight:800; color:var(--primary-dark); margin:0.5rem 0;">19,739</div>
+                    <p style="color: var(--text-main); font-size: 0.98rem; line-height: 1.6; margin: 0 0 1rem 0;">${settlementDesc}</p>
+                    
+                    <details style="background:white; border:1px solid var(--border-color); border-radius:6px; padding:0.8rem;">
+                        <summary style="font-weight:700; color:var(--primary-dark); cursor:pointer;">${lang === 'mr' ? 'तपशील पहा' : 'View Details'}</summary>
+                        <div style="margin-top:0.8rem; font-size:0.9rem; color:var(--text-main); display:flex; gap:2rem; flex-wrap:wrap;">
+                            <div>
+                                <strong>${breakdownTitle}</strong><br>
+                                Bhandara — 12,097<br>
+                                Chanda — 7,602
+                            </div>
+                            <div>
+                                <strong>${addFigTitle}</strong><br>
+                                Sakoli tehsil — 8,130<br>
+                                Brahmapuri tehsil — 6,578
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        `;
+        
+        // Append the Census 2027 Link Note
+        html += `
+            <div style="text-align:center; margin-top:2.5rem; padding:1.5rem; border-top:1px dashed var(--border-color);">
+                <a href="census.html" class="btn-gold-fill" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.2rem; font-size:0.95rem; border-radius:6px; font-weight:700; text-decoration:none;">
+                    <i class="fa-solid fa-users"></i> ${lang === 'mr' ? 'वर्तमान जनगणना माहिती → जनगणना नोंदी' : 'Current Census Information → Census Records'}
+                </a>
+            </div>
+        `;
+
         container.innerHTML = html;
     }
 

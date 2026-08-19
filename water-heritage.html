@@ -3,18 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kohli Samaj Official Community Portal</title>
+    <title>Water Conservation Heritage | Traditional Irrigation & Malguzari Tanks | Kohli Samaj Official Portal</title>
+    <meta name="description" content="Traditional water management, Malguzari tanks, embankments, irrigation engineering, and agrarian heritage associated with the Kohli community and the historic Vidarbha region.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Water Heritage Page Specific Styles ── */
+        .water-hero-intro {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .water-hero-intro h2 {
+            color: var(--primary-dark);
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+        .water-hero-intro p {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+        .water-hero-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Reading Context / Disclaimer Box */
+        .water-disclaimer-box {
+            background: #f0fdf4;
+            border: 1.5px solid #bbf7d0;
+            border-left: 5px solid #16a34a;
+            border-radius: 12px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 2.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .water-disclaimer-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.08rem;
+            font-weight: 800;
+            color: #166534;
+            margin-bottom: 0.5rem;
+        }
+        .water-disclaimer-body {
+            font-size: 0.94rem;
+            color: #14532d;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* Section Cards */
+        .water-section-card {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .water-section-title {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .water-section-desc {
+            font-size: 0.96rem;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin-bottom: 1.2rem;
+        }
+
+        /* Highlight Source Box */
+        .water-highlight-box {
+            background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+            border: 1.5px solid var(--accent-gold);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 10px;
+            padding: 1.3rem 1.5rem;
+            margin: 1.2rem 0;
+        }
+        .water-highlight-box h4 {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* 6 Engineering Cards Grid */
+        .engineering-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin: 1.4rem 0;
+        }
+        .eng-card {
+            background: #fafcfb;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.3rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .eng-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(14,62,41,0.06);
+            border-color: var(--primary-dark);
+        }
+        .eng-card-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.45rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .eng-card-desc {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        /* Crops Grid (Rice, Sugarcane, Jaggery) */
+        .crops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin: 1.2rem 0;
+        }
+        .crop-card {
+            background: #f8fafc;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.3rem;
+            text-align: center;
+        }
+        .crop-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .crop-name {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .crop-desc {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* Water Bodies Grid */
+        .waterbodies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.3rem;
+            margin: 1.4rem 0;
+        }
+        .waterbody-card {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.4rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .waterbody-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14,62,41,0.08);
+            border-color: var(--primary-dark);
+        }
+        .waterbody-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .waterbody-name {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        /* Village Life 4 Cards */
+        .village-life-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.1rem;
+            margin: 1.2rem 0;
+        }
+        .village-life-card {
+            background: #fdfbf7;
+            border: 1px solid #fed7aa;
+            border-radius: 10px;
+            padding: 1.1rem;
+        }
+        .village-life-title {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: #9a3412;
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+        .village-life-desc {
+            font-size: 0.86rem;
+            color: var(--text-main);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* Sources Grid */
+        .sources-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin: 1.2rem 0;
+        }
+        .source-item-card {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.3rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .source-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .source-item-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        /* Related Pages Grid */
+        .water-related-section {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .water-related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .water-related-link {
+            background: var(--bg-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.9rem 1.1rem;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s;
+        }
+        .water-related-link:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-dark);
+            transform: translateX(3px);
+        }
+        .water-related-link i {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body class="font-normal">
 
-    <!-- ==========================================================================
-         1. TOP GOVT UTILITY BAR
-         ========================================================================== -->
+    <!-- TOP UTILITY BAR -->
     <div class="top-utility-bar">
         <div class="container utility-flex">
             <div class="utility-left">
@@ -61,9 +358,7 @@
         </div>
     </div>
 
-    <!-- ==========================================================================
-         2. MAIN HEADER & BRANDING & NAVIGATION
-         ========================================================================== -->
+    <!-- MAIN HEADER & BRANDING & NAVIGATION -->
     <header class="main-header">
         <div class="container header-inner">
             <!-- Official Emblem Logo -->
@@ -95,7 +390,7 @@
                     </li>
                     <li><a href="culture.html" class="nav-link"><span data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="about.html" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="about.html" class="dropdown-link"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Overview" data-lang-mr="समाज परिचय">Community Overview</span></a></li>
                             <li><a href="districts.html" class="dropdown-link"><i class="fa-solid fa-map-location-dot"></i> <span data-lang-en="Districts & Regions" data-lang-mr="जिल्हे व क्षेत्र">Districts & Regions</span></a></li>
@@ -119,14 +414,13 @@
                     <li><a href="contact.html" class="nav-link"><span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span></a></li>
                 </ul>
             </nav>
-
             <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
 
-        <!-- Page Title Banner & Breadcrumbs -->
+    <!-- PAGE TITLE BANNER -->
     <div class="page-title-banner">
         <div class="container">
             <div class="breadcrumb-trail">
@@ -136,10 +430,16 @@
                 <span class="bc-sep">&gt;&gt;</span>
                 <span class="bc-current" data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="Malguzari tanks (bhandaras), stepwells, traditional irrigation engineering & biodiversity" data-lang-mr="मालगुजारी तलाव, बारव, पारंपरिक सिंचन अभियांत्रिकी आणि जैवविविधता">Malguzari tanks (bhandaras), stepwells, traditional irrigation engineering & biodiversity</span></p>
+            <h1 class="page-banner-title">
+                <span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span>
+            </h1>
+            <p class="page-banner-subtitle">
+                <span data-lang-en="Traditional water management, irrigation and agricultural knowledge associated with the Kohli community and the historic Vidarbha region." data-lang-mr="कोहळी समाज आणि ऐतिहासिक विदर्भ प्रदेशाशी संबंधित पारंपरिक जलव्यवस्थापन, सिंचन आणि कृषी ज्ञानाचा वारसा.">Traditional water management, irrigation and agricultural knowledge associated with the Kohli community and the historic Vidarbha region.</span>
+            </p>
         </div>
     </div>
+
+    <!-- MAIN CONTAINER -->
     <main class="container" style="padding: 3rem 1.25rem;">
         <div class="history-layout-container">
             <!-- LEFT SIDEBAR PANEL -->
@@ -185,8 +485,11 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
-                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical References" data-lang-mr="ऐतिहासिक संदर्भ">Historical References</span></a></li>
+                                <li><a href="gazetteers.html#sec-disclaimer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Reading Context" data-lang-mr="ऐतिहासिक वाचन संदर्भ">Historical Reading Context</span></a></li>
+                                <li><a href="gazetteers.html#sec-gov-refs" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Government References" data-lang-mr="शासकीय संदर्भ">Government References</span></a></li>
+                                <li><a href="gazetteers.html#sec-themes" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Themes" data-lang-mr="ऐतिहासिक विषय">Historical Themes</span></a></li>
+                                <li><a href="gazetteers.html#sec-spellings" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Name Forms" data-lang-mr="नावांची ऐतिहासिक रूपे">Historical Name Forms</span></a></li>
+                                <li><a href="gazetteers.html#sec-gazetteers-archive" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Gazetteer Records" data-lang-mr="गॅझेटिअर नोंदी">Gazetteer Records</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -195,8 +498,9 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
-                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
+                                <li><a href="census.html#sec-census-intro" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Census Records" data-lang-mr="ऐतिहासिक जनगणना नोंदी">Historical Census Records</span></a></li>
+                                <li><a href="census.html#sec-1911-record" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1911 Bhandara (11,399)" data-lang-mr="१९११ भंडारा (११,३९९)">1911 Bhandara (11,399)</span></a></li>
+                                <li><a href="census.html#sec-settlement-record" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Settlement Record (19,739)" data-lang-mr="सेटलमेंट नोंद (१९,७३९)">Settlement Record (19,739)</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -205,17 +509,28 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
+                                <li><a href="settlement.html#sec-chanda-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Settlement" data-lang-mr="चांदा सेटलमेंट">Chanda Settlement</span></a></li>
+                                <li><a href="settlement.html#sec-bhandara-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Bhandara Settlement" data-lang-mr="भंडारा सेटलमेंट">Bhandara Settlement</span></a></li>
+                                <li><a href="settlement.html#sec-malguzari-admin" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Administration" data-lang-mr="मालगुजारी प्रशासन">Malguzari Administration</span></a></li>
                             </ul>
                         </li>
                         <li class="expanded">
-                        <li>
                             <a href="water-heritage.html" class="sidebar-main-link active">
                                 <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link active" data-scroll="sec-malguzari-systems"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
+                                <li><a href="#sec-malguzari-tanks" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Tanks" data-lang-mr="मालगुजारी तलाव">Malguzari Tanks</span></a></li>
+                                <li><a href="#sec-kohli-tradition" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Kohli Water Tradition" data-lang-mr="कोहळी जलव्यवस्थापन परंपरा">Kohli Water Tradition</span></a></li>
+                                <li><a href="#sec-traditional-engineering" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Traditional Engineering" data-lang-mr="पारंपरिक तलाव बांधणी">Traditional Engineering</span></a></li>
+                                <li><a href="#sec-water-agriculture" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Agriculture & Crops" data-lang-mr="जलव्यवस्था आणि शेती">Agriculture & Crops</span></a></li>
+                                <li><a href="#sec-historic-waterbodies" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historic Water Bodies" data-lang-mr="ऐतिहासिक तलाव व जलसाठे">Historic Water Bodies</span></a></li>
+                                <li><a href="#sec-navegaon-bandh" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Navegaon Bandh" data-lang-mr="नवेगाव बांध">Navegaon Bandh</span></a></li>
+                                <li><a href="#sec-community-responsibility" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Community Water Management" data-lang-mr="सामूहिक जलव्यवस्थापन">Community Water Management</span></a></li>
+                                <li><a href="#sec-village-life" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Water & Village Life" data-lang-mr="पाणी आणि ग्रामजीवन">Water & Village Life</span></a></li>
+                                <li><a href="#sec-traditional-knowledge" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Traditional Knowledge" data-lang-mr="पारंपरिक ज्ञानसाठा">Traditional Knowledge</span></a></li>
+                                <li><a href="#sec-modern-conservation" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Modern Conservation" data-lang-mr="आधुनिक जलसंवर्धन">Modern Conservation</span></a></li>
+                                <li><a href="#sec-historical-sources" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Sources" data-lang-mr="ऐतिहासिक स्रोत">Historical Sources</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -238,90 +553,472 @@
             </aside>
 
             <!-- RIGHT CONTENT AREA -->
-            <div class="history-content-area" id="sec-malguzari-systems">
+            <div class="history-content-area">
                 
-                <!-- HERO SECTION -->
-                <div style="margin-bottom:2rem;">
-                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" style="width:100%; max-height:340px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem; box-shadow:var(--shadow-sm);" alt="Navegaon Bandh Water Heritage">
-                    
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
-                        <h2 style="color:var(--primary-dark); font-size:1.6rem; font-weight:800; margin:0;" data-lang-en="Kohli Samaj — Water Conservation Heritage" data-lang-mr="कोहळी समाज — जलसंवर्धन वारसा">Kohli Samaj — Water Conservation Heritage</h2>
-                        <span class="badge-source badge-record"><i class="fa-solid fa-droplet"></i> Historical Heritage</span>
+                <!-- HERO INTRODUCTION SECTION -->
+                <section class="water-hero-intro">
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem;">
+                        <h2>
+                            <i class="fa-solid fa-droplet" style="color: #0284c7; margin-right: 0.4rem;"></i>
+                            <span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span>
+                        </h2>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-water"></i> <span data-lang-en="Traditional Water Management" data-lang-mr="पारंपरिक जलव्यवस्थापन">Traditional Water Management</span></span>
+                    </div>
+                    <p data-lang-en="For generations, rural communities across the Bhandara–Gondia–Vidarbha region developed practical systems for storing, distributing and using water. Tanks, embankments, channels and spillways supported agriculture and village life, especially in a landscape dependent on seasonal rainfall." data-lang-mr="भंडारा–गोंदिया–विदर्भ प्रदेशातील ग्रामीण समाजांनी पाणी साठवणे, त्याचे वितरण करणे आणि शेतीसाठी वापरणे यासाठी पिढ्यान्पिढ्या व्यावहारिक पद्धती विकसित केल्या. तलाव, बंधारे, कालवे आणि सांडवे यामुळे विशेषतः मोसमी पावसावर अवलंबून असलेल्या प्रदेशातील शेती आणि ग्रामजीवनाला आधार मिळाला.">
+                        For generations, rural communities across the Bhandara–Gondia–Vidarbha region developed practical systems for storing, distributing and using water. Tanks, embankments, channels and spillways supported agriculture and village life, especially in a landscape dependent on seasonal rainfall.
+                    </p>
+                </section>
+
+                <!-- HISTORICAL INTERPRETATION DISCLAIMER NOTE -->
+                <section class="water-disclaimer-box">
+                    <div class="water-disclaimer-header">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span data-lang-en="Historical Interpretation Note" data-lang-mr="ऐतिहासिक अर्थ लावण्याची नोंद">Historical Interpretation Note</span>
+                    </div>
+                    <p class="water-disclaimer-body" data-lang-en="Water systems described in historical sources were created and maintained within the administrative, agricultural and environmental conditions of their time. Individual tanks may have different histories and builders. Community association should therefore be stated only where supported by documentary or clearly identified community evidence." data-lang-mr="ऐतिहासिक स्रोतांमध्ये वर्णन केलेल्या जलव्यवस्था त्या काळातील प्रशासकीय, कृषी आणि पर्यावरणीय परिस्थितीत निर्माण व देखभाल केल्या जात होत्या. प्रत्येक तलावाचा इतिहास आणि बांधकामाशी संबंधित व्यक्ती किंवा समुदाय वेगळा असू शकतो. त्यामुळे एखाद्या जलसाठ्याचा समुदायाशी संबंध केवळ दस्तऐवजी किंवा स्पष्टपणे ओळखलेल्या समुदायाच्या पुराव्यावर आधारित असल्यासच नमूद करावा.">
+                        Water systems described in historical sources were created and maintained within the administrative, agricultural and environmental conditions of their time. Individual tanks may have different histories and builders. Community association should therefore be stated only where supported by documentary or clearly identified community evidence.
+                    </p>
+                </section>
+
+                <!-- SECTION 1: MALGUZARI TANKS -->
+                <section id="sec-malguzari-tanks" class="water-section-card">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
+                        <h3 class="water-section-title" style="margin:0;">
+                            <i class="fa-solid fa-water" style="color: #0284c7;"></i>
+                            <span data-lang-en="Malguzari Tanks" data-lang-mr="मालगुजारी तलाव">Malguzari Tanks</span>
+                        </h3>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Agrarian Water Systems" data-lang-mr="कृषी जलव्यवस्था">Agrarian Water Systems</span></span>
                     </div>
 
-                    <p style="line-height:1.8; font-size:1.02rem; color:var(--text-main); margin-bottom:1.5rem;" data-lang-en="Traditional Kohli communities were historically associated with agriculture, irrigation, tanks, reservoirs and water-management practices across Vidarbha. The network of Malguzari tanks and embankments transformed the region into a thriving paddy belt." data-lang-mr="विदर्भातील पारंपरिक कोहळी समाज ऐतिहासिकदृष्ट्या शेती, सिंचन, तलाव, साठवणूक आणि जलव्यवस्थापन पद्धतींशी जोडलेला आहे. मालगुजारी तलाव आणि बंधाऱ्यांच्या जाळ्याने या प्रदेशाला समृद्ध भातशेतीचे केंद्र बनवले.">
-                        Traditional Kohli communities were historically associated with agriculture, irrigation, tanks, reservoirs and water-management practices across Vidarbha. The network of Malguzari tanks and embankments transformed the region into a thriving paddy belt.
+                    <p class="water-section-desc" data-lang-en="Large numbers of traditional irrigation tanks existed across the historic Central Provinces, particularly in the Bhandara and adjoining regions. These water bodies supported agriculture, livestock and village settlements." data-lang-mr="ऐतिहासिक Central Provinces मध्ये, विशेषतः भंडारा आणि लगतच्या प्रदेशात, पारंपरिक सिंचन तलावांची मोठी व्यवस्था अस्तित्वात होती. या जलसाठ्यांमुळे शेती, पशुधन आणि ग्रामवस्तींना आधार मिळत असे.">
+                        Large numbers of traditional irrigation tanks existed across the historic Central Provinces, particularly in the Bhandara and adjoining regions. These water bodies supported agriculture, livestock and village settlements.
                     </p>
-                </div>
 
-                <!-- SUBSECTION 1: TRADITIONAL WATER MANAGEMENT -->
-                <div style="background:white; border:1.5px solid var(--border-color); border-radius:12px; padding:1.8rem; box-shadow:var(--shadow-sm); margin-bottom:2rem;">
-                    <h3 style="color:var(--primary-dark); font-size:1.3rem; font-weight:800; margin-bottom:1rem;" data-lang-en="Traditional Water Management" data-lang-mr="पारंपरिक जल व्यवस्थापन">Traditional Water Management</h3>
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.2rem;">
-                        <div>
-                            <h4 style="color:var(--primary-dark); font-size:1rem; font-weight:700; margin-bottom:0.4rem;" data-lang-en="Construction of Tanks & Reservoirs" data-lang-mr="तलाव व साठवणुकीचे बांधकाम">Construction of Tanks & Reservoirs</h4>
-                            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin:0;" data-lang-en="Building earthen dams and embankments to harvest monsoon runoff for multi-season agricultural use." data-lang-mr="पावसाचे पाणी अडवून बहुपिकाऊ शेतीसाठी मातीचे बंधारे व तलाव उभारणे.">Building earthen dams and embankments to harvest monsoon runoff for multi-season agricultural use.</p>
+                    <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:10px; padding:1rem 1.2rem; font-size:0.92rem; color:var(--text-main); line-height:1.6;">
+                        <strong data-lang-en="Historical Terminology:" data-lang-mr="ऐतिहासिक संज्ञा:">Historical Terminology:</strong>
+                        <span data-lang-en="Historical administrative records and community literature use the term 'Malguzari tanks' in connection with village-level land and water systems." data-lang-mr="ऐतिहासिक प्रशासकीय नोंदी आणि समुदायाच्या साहित्यामध्ये 'मालगुजारी तलाव' हा शब्द जमीन व ग्रामस्तरीय जलव्यवस्थेशी संबंधित संदर्भात आढळतो.">Historical administrative records and community literature use the term 'Malguzari tanks' in connection with village-level land and water systems.</span>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: KOHLIS AND WATER MANAGEMENT -->
+                <section id="sec-kohli-tradition" class="water-section-card">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
+                        <h3 class="water-section-title" style="margin:0;">
+                            <i class="fa-solid fa-users" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Kohli Water-Management Tradition" data-lang-mr="कोहळी समाजाची जलव्यवस्थापन परंपरा">Kohli Water-Management Tradition</span>
+                        </h3>
+                        <span class="badge-source badge-community"><i class="fa-solid fa-hands-holding-circle"></i> <span data-lang-en="Community Heritage" data-lang-mr="सामुदायिक वारसा">Community Heritage</span></span>
+                    </div>
+
+                    <p class="water-section-desc" data-lang-en="Historical descriptions of the Kohli community in the Central Provinces associate sections of the community with agriculture, irrigation and the construction or maintenance of water works. The available sources describe practical knowledge of tanks and irrigation systems, developed through experience and adapted to local conditions." data-lang-mr="Central Provinces मधील कोहळी समाजासंबंधी उपलब्ध ऐतिहासिक वर्णनांमध्ये समाजातील काही घटकांचा शेती, सिंचन आणि जलव्यवस्थेच्या बांधकाम किंवा देखभालीशी संबंध असल्याचे नमूद केले आहे. उपलब्ध स्रोतांमध्ये स्थानिक परिस्थितीनुसार अनुभवातून विकसित झालेले तलाव आणि सिंचन व्यवस्थेचे व्यावहारिक ज्ञान वर्णन केलेले आढळते.">
+                        Historical descriptions of the Kohli community in the Central Provinces associate sections of the community with agriculture, irrigation and the construction or maintenance of water works. The available sources describe practical knowledge of tanks and irrigation systems, developed through experience and adapted to local conditions.
+                    </p>
+
+                    <!-- SECTION 3: HISTORICAL DESCRIPTION BOX -->
+                    <div class="water-highlight-box">
+                        <h4>
+                            <i class="fa-solid fa-quote-left" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Historical Description" data-lang-mr="ऐतिहासिक वर्णन">Historical Description</span>
+                        </h4>
+                        <p style="font-size:0.95rem; line-height:1.65; color:var(--text-main); margin-bottom:0.8rem;" data-lang-en="One historical settlement description notes that the Kohlis were particularly associated with the cultivation of sugarcane and were found in areas where the ground conditions were favourable for large tanks. It also describes their practical knowledge and disciplined community organization." data-lang-mr="एका ऐतिहासिक सेटलमेंट वर्णनात कोहळी समाजाचा ऊस लागवडीशी विशेष संबंध असल्याचे आणि मोठ्या तलावांसाठी अनुकूल भौगोलिक परिस्थिती असलेल्या भागात त्यांची वस्ती असल्याचे नमूद केले आहे. त्यामध्ये त्यांच्या व्यावहारिक ज्ञानाचा आणि समाजातील शिस्तबद्ध संघटनेचाही उल्लेख आढळतो.">
+                            One historical settlement description notes that the Kohlis were particularly associated with the cultivation of sugarcane and were found in areas where the ground conditions were favourable for large tanks. It also describes their practical knowledge and disciplined community organization.
+                        </p>
+                        <div style="font-size:0.82rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.04em;">
+                            <i class="fa-solid fa-file-invoice"></i> <span data-lang-en="Source: Historical Settlement Material" data-lang-mr="स्रोत: ऐतिहासिक सेटलमेंट संदर्भ">Source: Historical Settlement Material</span>
                         </div>
-                        <div>
-                            <h4 style="color:var(--primary-dark); font-size:1rem; font-weight:700; margin-bottom:0.4rem;" data-lang-en="Irrigation Systems & Canals" data-lang-mr="सिंचन प्रणाली व कालवे">Irrigation Systems & Canals</h4>
-                            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin:0;" data-lang-en="Designing gravity-fed channels to deliver water directly to sugarcane and paddy fields." data-lang-mr="उंच सखल भागातून भात आणि ऊसाच्या शेतांना पाणी पोहोचवण्यासाठी गुरुत्वाकर्षण कालवे उभारणे.">Designing gravity-fed channels to deliver water directly to sugarcane and paddy fields.</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: TRADITIONAL TANK ENGINEERING -->
+                <section id="sec-traditional-engineering" class="water-section-card">
+                    <h3 class="water-section-title">
+                        <i class="fa-solid fa-compass-drafting" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Traditional Tank Engineering" data-lang-mr="पारंपरिक तलाव बांधणीचे तंत्र">Traditional Tank Engineering</span>
+                    </h3>
+                    <p class="water-section-desc" data-lang-en="Historical water storage across the region relied on time-tested principles of topography, soil compaction, stone reinforcement and gravity-flow irrigation." data-lang-mr="या प्रदेशातील ऐतिहासिक जलसाठे भौगोलिक उतार, मातीची मजबुती, दगडी संरक्षण आणि गुरुत्वाकर्षण सिंचनाच्या व्यावहारिक तत्त्वांवर आधारलेले होते.">
+                        Historical water storage across the region relied on time-tested principles of topography, soil compaction, stone reinforcement and gravity-flow irrigation.
+                    </p>
+
+                    <div class="engineering-grid">
+                        <div class="eng-card">
+                            <div class="eng-card-title">
+                                <i class="fa-solid fa-mound" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Earthen Embankments" data-lang-mr="मातीचे बांध">Earthen Embankments</span>
+                            </div>
+                            <p class="eng-card-desc" data-lang-en="Compacted earth was used to create strong embankments that retained seasonal water." data-lang-mr="मातीचा थर घट्ट बसवून पाणी साठवून ठेवणारे मजबूत बांध तयार केले जात.">
+                                Compacted earth was used to create strong embankments that retained seasonal water.
+                            </p>
                         </div>
-                        <div>
-                            <h4 style="color:var(--primary-dark); font-size:1rem; font-weight:700; margin-bottom:0.4rem;" data-lang-en="Community Participation & Maintenance" data-lang-mr="सामूहिक सहभाग व देखभाल">Community Participation & Maintenance</h4>
-                            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin:0;" data-lang-en="Annual desilting, repair of bunds, and equitable water distribution managed collectively by villagers." data-lang-mr="गावकऱ्यांनी मिळून गाळ काढणे, पाळ दुरुस्ती करणे आणि पाण्याचे समान वाटप करणे.">Annual desilting, repair of bunds, and equitable water distribution managed collectively by villagers.</p>
+
+                        <div class="eng-card">
+                            <div class="eng-card-title">
+                                <i class="fa-solid fa-cubes" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Stone Structures" data-lang-mr="दगडी बांधकाम">Stone Structures</span>
+                            </div>
+                            <p class="eng-card-desc" data-lang-en="Stone was used in selected sections where greater strength and resistance to water flow was required." data-lang-mr="जिथे पाण्याचा प्रवाह तीव्र असतो आणि अधिक मजबुतीची गरज असते तिथे दगडी बांधकामाचा वापर केला जात असे.">
+                                Stone was used in selected sections where greater strength and resistance to water flow was required.
+                            </p>
+                        </div>
+
+                        <div class="eng-card">
+                            <div class="eng-card-title">
+                                <i class="fa-solid fa-water-ladder" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Spillways" data-lang-mr="सांडवे (Waste Weirs)">Spillways</span>
+                            </div>
+                            <p class="eng-card-desc" data-lang-en="Spillways allowed excess water to leave the tank safely during heavy rainfall." data-lang-mr="मुसळधार पावसात तलावातील अतिरिक्त पाणी सुरक्षितपणे बाहेर सोडण्यासाठी सांडव्यांची रचना केली जात असे.">
+                                Spillways allowed excess water to leave the tank safely during heavy rainfall.
+                            </p>
+                        </div>
+
+                        <div class="eng-card">
+                            <div class="eng-card-title">
+                                <i class="fa-solid fa-route" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Water Channels" data-lang-mr="पाटाचे कालवे">Water Channels</span>
+                            </div>
+                            <p class="eng-card-desc" data-lang-en="Channels distributed stored water towards agricultural fields." data-lang-mr="साठवलेले पाणी शेतात नेण्यासाठी लहान-मोठ्या पाटांचे व कालव्यांचे जाळे तयार केले जाई.">
+                                Channels distributed stored water towards agricultural fields.
+                            </p>
+                        </div>
+
+                        <div class="eng-card">
+                            <div class="eng-card-title">
+                                <i class="fa-solid fa-faucet" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Sluice / Outlet Systems" data-lang-mr="पाणी सोडण्याच्या मोऱ्या (Sluice)">Sluice / Outlet Systems</span>
+                            </div>
+                            <p class="eng-card-desc" data-lang-en="Controlled outlets helped regulate the release of stored water." data-lang-mr="साठवलेल्या पाण्याचा नियंत्रित विसर्ग करण्यासाठी पारंपरिक मोऱ्या व झडपांची व्यवस्था केली जात असे.">
+                                Controlled outlets helped regulate the release of stored water.
+                            </p>
+                        </div>
+
+                        <div class="eng-card">
+                            <div class="eng-card-title">
+                                <i class="fa-solid fa-arrows-split-up-and-left" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Irrigation Distribution" data-lang-mr="सिंचन वितरण व्यवस्था">Irrigation Distribution</span>
+                            </div>
+                            <p class="eng-card-desc" data-lang-en="Stored water could be distributed to agricultural land according to local arrangements." data-lang-mr="स्थानिक नियोजनानुसार व गरजेनुसार शेतजमिनींना पाण्याचे समन्यायी वितरण केले जात असे.">
+                                Stored water could be distributed to agricultural land according to local arrangements.
+                            </p>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- SUBSECTION 2: TRADITIONAL ENGINEERING KNOWLEDGE -->
-                <div style="background:var(--bg-cream); border:1.5px solid var(--border-color); border-radius:12px; padding:1.8rem; box-shadow:var(--shadow-sm); margin-bottom:2rem;">
-                    <h3 style="color:var(--primary-dark); font-size:1.3rem; font-weight:800; margin-bottom:0.8rem;" data-lang-en="Traditional Engineering Knowledge" data-lang-mr="पारंपरिक अभियांत्रिकी ज्ञान">Traditional Engineering Knowledge</h3>
-                    <blockquote style="border-left:4px solid var(--accent-gold); padding-left:1rem; margin:0 0 1rem 0; font-size:0.96rem; color:var(--primary-dark); font-weight:600; font-style:italic;">
-                        "Historical accounts describe traditional water-management knowledge and engineering practices among communities associated with the region."
-                    </blockquote>
-                    <p style="font-size:0.92rem; color:var(--text-main); line-height:1.7; margin:0;" data-lang-en="Without modern surveying equipment, community elders identified natural catchment contours, spillways, and soil types to construct enduring reservoirs that sustained agriculture for centuries." data-lang-mr="आधुनिक उपकरणांशिवाय, नैसर्गिक पाणलोट क्षेत्र, सांडवे आणि मातीचे प्रकार ओळखून शतकानुशतके शेती टिकवून ठेवणारे तलाव उभारले गेले.">
-                        Without modern surveying equipment, community elders identified natural catchment contours, spillways, and soil types to construct enduring reservoirs that sustained agriculture for centuries.
+                <!-- SECTION 5: WATER AND AGRICULTURE (RICE + SUGARCANE + JAGGERY) -->
+                <section id="sec-water-agriculture" class="water-section-card">
+                    <h3 class="water-section-title">
+                        <i class="fa-solid fa-wheat-awn" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Water and Agriculture" data-lang-mr="जलव्यवस्था आणि शेती">Water and Agriculture</span>
+                    </h3>
+                    <p class="water-section-desc" data-lang-en="Reliable water storage enabled cultivation of water-dependent crops such as rice and sugarcane. Historical material also connects Kohli agricultural practice with sugarcane cultivation and jaggery production." data-lang-mr="विश्वसनीय जलसाठ्यामुळे भात आणि ऊस यांसारख्या पाण्याची गरज असलेल्या पिकांची लागवड शक्य होत असे. ऐतिहासिक सामग्रीमध्ये कोहळी समाजाच्या कृषी परंपरेचा ऊस लागवड आणि गूळनिर्मितीशीही संबंध आढळतो.">
+                        Reliable water storage enabled cultivation of water-dependent crops such as rice and sugarcane. Historical material also connects Kohli agricultural practice with sugarcane cultivation and jaggery production.
                     </p>
-                </div>
 
-                <!-- FEATURED CARD 1: NAVEGAON BANDH -->
-                <div style="background:white; border:1.5px solid var(--border-color); border-radius:12px; padding:1.8rem; box-shadow:var(--shadow-sm); margin-bottom:2rem;">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
-                        <h3 style="color:var(--primary-dark); font-size:1.3rem; font-weight:800; margin:0;" data-lang-en="Navegaon Bandh" data-lang-mr="नवेगाव बांध">Navegaon Bandh</h3>
-                        <span class="badge-source badge-community"><i class="fa-solid fa-users-line"></i> Community Account</span>
+                    <div class="crops-grid">
+                        <div class="crop-card">
+                            <div class="crop-icon">🌾</div>
+                            <div class="crop-name" data-lang-en="Rice (Paddy)" data-lang-mr="भात (धान)">Rice (Paddy)</div>
+                            <p class="crop-desc" data-lang-en="Major traditional crop supported by tank irrigation and seasonal rainfall across Vidarbha." data-lang-mr="विदर्भातील तलाव सिंचन आणि मोसमी पावसावर आधारलेले प्रमुख पारंपरिक पीक.">Major traditional crop supported by tank irrigation and seasonal rainfall across Vidarbha.</p>
+                        </div>
+
+                        <div class="crop-card">
+                            <div class="crop-icon">🌱</div>
+                            <div class="crop-name" data-lang-en="Sugarcane" data-lang-mr="ऊस लागवड">Sugarcane</div>
+                            <p class="crop-desc" data-lang-en="Historically associated with irrigation and prominent in certain Kohli agricultural settlements." data-lang-mr="ऐतिहासिकदृष्ट्या सिंचनाशी जोडलेले आणि कोहळी शेतकरी वसाहतींमधील महत्त्वाचे पीक.">Historically associated with irrigation and prominent in certain Kohli agricultural settlements.</p>
+                        </div>
+
+                        <div class="crop-card">
+                            <div class="crop-icon">🍯</div>
+                            <div class="crop-name" data-lang-en="Jaggery Production" data-lang-mr="गूळनिर्मिती">Jaggery Production</div>
+                            <p class="crop-desc" data-lang-en="Traditional processing associated with local sugarcane farming and rural cottage enterprise." data-lang-mr="स्थानिक ऊस शेतीशी जोडलेली पारंपरिक गूळनिर्मिती आणि ग्रामीण प्रक्रिया उद्योग.">Traditional processing associated with local sugarcane farming and rural cottage enterprise.</p>
+                        </div>
                     </div>
-                    <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.8rem;"><strong>Location:</strong> Gondia Region, Maharashtra | <strong>Significance:</strong> Major Water Body & Agricultural Reservoir</p>
-                    <blockquote style="border-left:4px solid var(--accent-gold); padding-left:1rem; margin:0 0 1rem 0; font-size:0.93rem; color:var(--text-main); line-height:1.7;">
-                        "Community historical accounts associate the Kohli community with traditional water-conservation works in the region, including references to major reservoirs such as Navegaon Bandh."
-                    </blockquote>
-                    <p style="font-size:0.88rem; color:var(--text-muted); margin:0;" data-lang-en="Navegaon Bandh remains a testament to historical irrigation ingenuity and local water heritage in Vidarbha." data-lang-mr="नवेगाव बांध हा विदर्भातील ऐतिहासिक सिंचन कौशल्य आणि स्थानिक जलवारशाचे मुख्य प्रतीक मानला जातो.">
-                        Navegaon Bandh remains a testament to historical irrigation ingenuity and local water heritage in Vidarbha.
-                    </p>
-                </div>
+                </section>
 
-                <!-- FEATURED CARD 2: AMBAZARI LAKE -->
-                <div style="background:white; border:1.5px solid var(--border-color); border-radius:12px; padding:1.8rem; box-shadow:var(--shadow-sm); margin-bottom:2rem;">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
-                        <h3 style="color:var(--primary-dark); font-size:1.3rem; font-weight:800; margin:0;" data-lang-en="Ambazari Lake, Nagpur" data-lang-mr="अंबाझरी तलाव, नागपूर">Ambazari Lake, Nagpur</h3>
-                        <span class="badge-source badge-verification"><i class="fa-solid fa-clipboard-check"></i> Verification Required</span>
+                <!-- SECTION 6: HISTORIC TANKS AND WATER BODIES -->
+                <section id="sec-historic-waterbodies" class="water-section-card">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
+                        <h3 class="water-section-title" style="margin:0;">
+                            <i class="fa-solid fa-map-location-dot" style="color: #0284c7;"></i>
+                            <span data-lang-en="Historic Tanks and Water Bodies" data-lang-mr="ऐतिहासिक तलाव आणि जलसाठे">Historic Tanks and Water Bodies</span>
+                        </h3>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-water"></i> <span data-lang-en="Regional Water Heritage" data-lang-mr="प्रादेशिक जलवारसा">Regional Water Heritage</span></span>
                     </div>
-                    <blockquote style="border-left:4px solid #9ca3af; padding-left:1rem; margin:0 0 1rem 0; font-size:0.93rem; color:var(--text-main); line-height:1.7;">
-                        "Community accounts attribute a historical association between Kohli water-management traditions and major water structures such as Ambazari Lake."
-                    </blockquote>
-                    <p style="font-size:0.85rem; color:var(--text-muted); margin:0; font-style:italic;" data-lang-en="Note: This historical attribution is recorded from community accounts; independent archival source verification is currently ongoing." data-lang-mr="टीप: हा संदर्भ समाज संदर्भांमधून घेतला गेला असून स्वतंत्र दस्तऐवजीकरण पडताळणी सुरू आहे.">
-                        Note: This historical attribution is recorded from community accounts; independent archival source verification is currently ongoing.
+
+                    <p class="water-section-desc" data-lang-en="The historic water landscape of Bhandara, Gondia and surrounding districts contains several well-known water reservoirs and traditional tanks that have sustained communities for generations." data-lang-mr="भंडारा, गोंदिया आणि लगतच्या जिल्ह्यांच्या ऐतिहासिक जलरचनेत अनेक प्रसिद्ध तलाव आणि पारंपरिक जलसाठे समाविष्ट आहेत ज्यांनी पिढ्यान्पिढ्या समाजाला आधार दिला.">
+                        The historic water landscape of Bhandara, Gondia and surrounding districts contains several well-known water reservoirs and traditional tanks that have sustained communities for generations.
                     </p>
-                </div>
+
+                    <div class="waterbodies-grid">
+                        <!-- Tank 1: Navegaon Bandh -->
+                        <div class="waterbody-card">
+                            <div>
+                                <div class="waterbody-header">
+                                    <h4 class="waterbody-name" data-lang-en="Navegaon Bandh" data-lang-mr="नवेगाव बांध">Navegaon Bandh</h4>
+                                    <span class="badge-source badge-community"><i class="fa-solid fa-users"></i> Association</span>
+                                </div>
+                                <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.6rem;">
+                                    <strong>Region:</strong> Gondia Region, Vidarbha
+                                </div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--text-main); margin:0;" data-lang-en="Major historical water body and prominent regional reservoir forming part of the wider agricultural landscape." data-lang-mr="विस्तृत कृषी परिसंस्थेचा भाग असलेला प्रमुख ऐतिहासिक जलसाठा आणि विदर्भातील प्रसिद्ध जलाशय.">
+                                    Major historical water body and prominent regional reservoir forming part of the wider agricultural landscape.
+                                </p>
+                            </div>
+                            <div style="margin-top:0.8rem; padding-top:0.6rem; border-top:1px dashed var(--border-color); font-size:0.78rem; color:var(--text-muted); font-style:italic;" data-lang-en="Regional Water Heritage / Community Association" data-lang-mr="प्रादेशिक जलवारसा / सामुदायिक संबंध">
+                                Regional Water Heritage / Community Association
+                            </div>
+                        </div>
+
+                        <!-- Tank 2: Bodalkasa -->
+                        <div class="waterbody-card">
+                            <div>
+                                <div class="waterbody-header">
+                                    <h4 class="waterbody-name" data-lang-en="Bodalkasa" data-lang-mr="बोदलकसा">Bodalkasa</h4>
+                                    <span class="badge-source badge-record"><i class="fa-solid fa-water"></i> Heritage</span>
+                                </div>
+                                <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.6rem;">
+                                    <strong>Region:</strong> Gondia / Tirora
+                                </div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--text-main); margin:0;" data-lang-en="Historic reservoir and traditional irrigation tank supporting agrarian settlements and paddy cultivation." data-lang-mr="शेतकरी वस्त्यांना आणि भातशेतीला सिंचन सहाय्य पुरवणारा ऐतिहासिक जलाशय व पारंपरिक तलाव.">
+                                    Historic reservoir and traditional irrigation tank supporting agrarian settlements and paddy cultivation.
+                                </p>
+                            </div>
+                            <div style="margin-top:0.8rem; padding-top:0.6rem; border-top:1px dashed var(--border-color); font-size:0.78rem; color:var(--text-muted); font-style:italic;" data-lang-en="Regional Water Heritage" data-lang-mr="प्रादेशिक जलवारसा">
+                                Regional Water Heritage
+                            </div>
+                        </div>
+
+                        <!-- Tank 3: Chorkhamara -->
+                        <div class="waterbody-card">
+                            <div>
+                                <div class="waterbody-header">
+                                    <h4 class="waterbody-name" data-lang-en="Chorkhamara" data-lang-mr="चोरखमारा">Chorkhamara</h4>
+                                    <span class="badge-source badge-record"><i class="fa-solid fa-water"></i> Heritage</span>
+                                </div>
+                                <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.6rem;">
+                                    <strong>Region:</strong> Bhandara / Gondia
+                                </div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--text-main); margin:0;" data-lang-en="Traditional irrigation water body serving rural agricultural lands in the historic Wainganga basin." data-lang-mr="ऐतिहासिक वैनगंगा खोऱ्यातील ग्रामीण शेतीला पाणी पुरवणारा पारंपरिक सिंचन जलसाठा.">
+                                    Traditional irrigation water body serving rural agricultural lands in the historic Wainganga basin.
+                                </p>
+                            </div>
+                            <div style="margin-top:0.8rem; padding-top:0.6rem; border-top:1px dashed var(--border-color); font-size:0.78rem; color:var(--text-muted); font-style:italic;" data-lang-en="Regional Water Heritage" data-lang-mr="प्रादेशिक जलवारसा">
+                                Regional Water Heritage
+                            </div>
+                        </div>
+
+                        <!-- Tank 4: Seoni Bandh -->
+                        <div class="waterbody-card">
+                            <div>
+                                <div class="waterbody-header">
+                                    <h4 class="waterbody-name" data-lang-en="Seoni Bandh" data-lang-mr="सिवनी बांध">Seoni Bandh</h4>
+                                    <span class="badge-source badge-record"><i class="fa-solid fa-water"></i> Heritage</span>
+                                </div>
+                                <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.6rem;">
+                                    <strong>Region:</strong> Bhandara / Vidarbha
+                                </div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--text-main); margin:0;" data-lang-en="Traditional earthen embankment and tank illustrating historical water-harvesting practices." data-lang-mr="पाणी अडवण्याच्या व साठवण्याच्या पारंपरिक पद्धती दर्शवणारा मातीचा बंधारा व तलाव.">
+                                    Traditional earthen embankment and tank illustrating historical water-harvesting practices.
+                                </p>
+                            </div>
+                            <div style="margin-top:0.8rem; padding-top:0.6rem; border-top:1px dashed var(--border-color); font-size:0.78rem; color:var(--text-muted); font-style:italic;" data-lang-en="Regional Water Heritage" data-lang-mr="प्रादेशिक जलवारसा">
+                                Regional Water Heritage
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 7: NAVEGAON BANDH (DEDICATED HIGHLIGHT) -->
+                <section id="sec-navegaon-bandh" class="water-section-card" style="border-left: 5px solid #0284c7;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
+                        <h3 class="water-section-title" style="margin:0;">
+                            <i class="fa-solid fa-landmark-flag" style="color: #0284c7;"></i>
+                            <span data-lang-en="Navegaon Bandh" data-lang-mr="नवेगाव बांध">Navegaon Bandh</span>
+                        </h3>
+                        <span class="badge-source badge-community"><i class="fa-solid fa-star"></i> <span data-lang-en="Prominent Water Landmark" data-lang-mr="प्रमुख जलवारसा स्थळ">Prominent Water Landmark</span></span>
+                    </div>
+
+                    <p class="water-section-desc" data-lang-en="Navegaon Bandh is part of the wider water and agricultural landscape of the Bhandara–Gondia region. Its presence illustrates the long-standing importance of stored water to agriculture and rural settlements." data-lang-mr="नवेगाव बंध हा भंडारा–गोंदिया प्रदेशातील जलस्रोत आणि कृषी जीवनाचा महत्त्वाचा भाग आहे. साठवलेल्या पाण्याचे शेती आणि ग्रामीण वसाहतींसाठी असलेले दीर्घकालीन महत्त्व या जलसाठ्यांमधून दिसून येते.">
+                        Navegaon Bandh is part of the wider water and agricultural landscape of the Bhandara–Gondia region. Its presence illustrates the long-standing importance of stored water to agriculture and rural settlements.
+                    </p>
+
+                    <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:10px; padding:1rem 1.2rem; font-size:0.88rem; color:#0369a1; line-height:1.6;">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span data-lang-en="Community traditions associate local water heritage with historic tanks across the district, while documentary sources describe the collective agrarian importance of such reservoirs." data-lang-mr="स्थानिक परंपरेमध्ये या भागातील तलावांचा संबंध ऐतिहासिक जलवारशाशी जोडला जातो, तर दस्तऐवजी नोंदी अशा जलाशयांचे सामूहिक कृषी महत्त्व स्पष्ट करतात.">Community traditions associate local water heritage with historic tanks across the district, while documentary sources describe the collective agrarian importance of such reservoirs.</span>
+                    </div>
+                </section>
+
+                <!-- SECTION 8: COMMUNITY PARTICIPATION -->
+                <section id="sec-community-responsibility" class="water-section-card">
+                    <h3 class="water-section-title">
+                        <i class="fa-solid fa-hand-holding-hand" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Water as a Community Responsibility" data-lang-mr="जलव्यवस्था : सामूहिक जबाबदारी">Water as a Community Responsibility</span>
+                    </h3>
+                    <p class="water-section-desc" data-lang-en="Traditional village water systems depended not only on construction but also on collective maintenance, regulation and seasonal use. Community cooperation was essential for keeping irrigation systems functional." data-lang-mr="पारंपरिक ग्रामजलव्यवस्था केवळ बांधकामावर अवलंबून नव्हती; तिच्या देखभालीसाठी, पाण्याच्या वापराच्या नियमनासाठी आणि हंगामी व्यवस्थापनासाठी सामूहिक सहभाग आवश्यक होता.">
+                        Traditional village water systems depended not only on construction but also on collective maintenance, regulation and seasonal use. Community cooperation was essential for keeping irrigation systems functional.
+                    </p>
+                </section>
+
+                <!-- SECTION 9: WATER AND VILLAGE LIFE -->
+                <section id="sec-village-life" class="water-section-card">
+                    <h3 class="water-section-title">
+                        <i class="fa-solid fa-house-chimney-window" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Water and Village Life" data-lang-mr="पाणी आणि ग्रामजीवन">Water and Village Life</span>
+                    </h3>
+                    <p class="water-section-desc" data-lang-en="Village tanks supported multiple interconnected dimensions of rural society, economy and ecology:" data-lang-mr="गावातील तलाव ग्रामीण समाज, अर्थव्यवस्था आणि पर्यावरणाच्या विविध घटकांना आधार देत असत:">
+                        Village tanks supported multiple interconnected dimensions of rural society, economy and ecology:
+                    </p>
+
+                    <div class="village-life-grid">
+                        <div class="village-life-card">
+                            <div class="village-life-title"><i class="fa-solid fa-seedling"></i> <span data-lang-en="Agriculture" data-lang-mr="शेती">Agriculture</span></div>
+                            <p class="village-life-desc" data-lang-en="Essential irrigation for staple paddy crops and sugarcane plots during dry spells." data-lang-mr="कोरड्या हंगामात भात व उसाच्या पिकांसाठी आवश्यक सिंचन पुरवठा.">Essential irrigation for staple paddy crops and sugarcane plots during dry spells.</p>
+                        </div>
+                        <div class="village-life-card">
+                            <div class="village-life-title"><i class="fa-solid fa-cow"></i> <span data-lang-en="Livestock" data-lang-mr="पशुधन">Livestock</span></div>
+                            <p class="village-life-desc" data-lang-en="Year-round drinking and bathing water for cattle, buffaloes and agricultural livestock." data-lang-mr="गाई, म्हशी व शेतीच्या जनावरांसाठी बारमाही पिण्याचे व वापराचे पाणी.">Year-round drinking and bathing water for cattle, buffaloes and agricultural livestock.</p>
+                        </div>
+                        <div class="village-life-card">
+                            <div class="village-life-title"><i class="fa-solid fa-bucket"></i> <span data-lang-en="Household Needs" data-lang-mr="घरगुती गरजा">Household Needs</span></div>
+                            <p class="village-life-desc" data-lang-en="Non-potable domestic water requirements, washing, and traditional village routines." data-lang-mr="कपडे धुणे व इतर घरगुती वापराच्या पाण्यासाठी स्थानिक सोय.">Non-potable domestic water requirements, washing, and traditional village routines.</p>
+                        </div>
+                        <div class="village-life-card">
+                            <div class="village-life-title"><i class="fa-solid fa-tree"></i> <span data-lang-en="Village Ecology" data-lang-mr="ग्राम पर्यावरण">Village Ecology</span></div>
+                            <p class="village-life-desc" data-lang-en="Sustaining local groundwater levels, regional wells, aquatic flora, and bird habitats." data-lang-mr="भूजल पातळी वाढवणे, विहिरींचे पुनर्भरण आणि स्थानिक परिसंस्थेचे रक्षण.">Sustaining local groundwater levels, regional wells, aquatic flora, and bird habitats.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 10: TRADITIONAL KNOWLEDGE -->
+                <section id="sec-traditional-knowledge" class="water-section-card">
+                    <h3 class="water-section-title">
+                        <i class="fa-solid fa-brain" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Knowledge Passed Through Generations" data-lang-mr="पिढ्यान्पिढ्या चालत आलेला ज्ञानवारसा">Knowledge Passed Through Generations</span>
+                    </h3>
+                    <p class="water-section-desc" data-lang-en="Much of the traditional knowledge surrounding tanks, water flow, soil, crops and seasonal management was practical knowledge transmitted through experience and generations." data-lang-mr="तलाव, पाण्याचा प्रवाह, माती, पिके आणि ऋतुनुसार जलव्यवस्थापनाशी संबंधित मोठा भाग हा अनुभवातून आणि पिढ्यान्पिढ्या हस्तांतरित झालेला व्यावहारिक ज्ञानसाठा होता.">
+                        Much of the traditional knowledge surrounding tanks, water flow, soil, crops and seasonal management was practical knowledge transmitted through experience and generations.
+                    </p>
+                    <div style="background:#f8fafc; border-left:4px solid var(--accent-gold); padding:0.9rem 1.2rem; border-radius:0 8px 8px 0; font-size:0.9rem; color:var(--text-main); line-height:1.6;">
+                        <span data-lang-en="Historical sources and oral traditions should be read together, while keeping documented evidence and community memory clearly distinguished." data-lang-mr="ऐतिहासिक स्रोत आणि मौखिक परंपरा यांचा एकत्रित अभ्यास करता येतो; मात्र दस्तऐवजी पुरावे आणि समुदायाच्या स्मृती यांची स्पष्टपणे वेगळी नोंद ठेवणे आवश्यक आहे.">Historical sources and oral traditions should be read together, while keeping documented evidence and community memory clearly distinguished.</span>
+                    </div>
+                </section>
+
+                <!-- SECTION 11: MODERN CONSERVATION -->
+                <section id="sec-modern-conservation" class="water-section-card">
+                    <h3 class="water-section-title">
+                        <i class="fa-solid fa-seedling" style="color: #16a34a;"></i>
+                        <span data-lang-en="From Heritage to Conservation" data-lang-mr="वारशापासून आधुनिक जलसंवर्धनाकडे">From Heritage to Conservation</span>
+                    </h3>
+                    <p class="water-section-desc" style="margin:0;" data-lang-en="Traditional water systems remain relevant to contemporary discussions about water conservation, groundwater recharge, agricultural resilience and restoration of village water bodies." data-lang-mr="पारंपरिक जलव्यवस्था आजच्या जलसंवर्धन, भूजल पुनर्भरण, कृषी स्थैर्य आणि गावातील जलस्रोतांच्या पुनरुज्जीवनाच्या चर्चांसाठीही महत्त्वाची ठरू शकते.">
+                        Traditional water systems remain relevant to contemporary discussions about water conservation, groundwater recharge, agricultural resilience and restoration of village water bodies.
+                    </p>
+                </section>
+
+                <!-- SECTION 12: HISTORICAL SOURCES NOTE -->
+                <section id="sec-historical-sources" class="water-section-card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; margin-bottom:1rem;">
+                        <h3 class="water-section-title" style="margin:0;">
+                            <i class="fa-solid fa-book-bookmark" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Historical Sources & References" data-lang-mr="ऐतिहासिक स्रोत व संदर्भ">Historical Sources & References</span>
+                        </h3>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-file-lines"></i> <span data-lang-en="Archival Compilations" data-lang-mr="अभिलेखागार संदर्भ">Archival Compilations</span></span>
+                    </div>
+
+                    <div class="sources-list-grid">
+                        <div class="source-item-card">
+                            <div class="source-item-header">
+                                <h4 class="source-item-title">Chanda Settlement Report</h4>
+                                <span class="badge-status badge-status-research">Supplied</span>
+                            </div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.4rem;"><strong>Author:</strong> A. B. Napier | <strong>Region:</strong> Chanda</div>
+                            <p style="font-size:0.85rem; color:var(--text-main); line-height:1.55; margin:0;" data-lang-en="Records historical observations regarding agriculture, sugarcane cultivation, reservoirs, and community organization." data-lang-mr="शेती, ऊस लागवड, तलाव आणि सामाजिक रचनेविषयी ऐतिहासिक नोंदी देणारा अहवाल.">Records historical observations regarding agriculture, sugarcane cultivation, reservoirs, and community organization.</p>
+                        </div>
+
+                        <div class="source-item-card">
+                            <div class="source-item-header">
+                                <h4 class="source-item-title">Bhandara Settlement Records</h4>
+                                <span class="badge-status badge-status-reference">Reference</span>
+                            </div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.4rem;"><strong>Authority:</strong> Settlement Dept. | <strong>Region:</strong> Bhandara</div>
+                            <p style="font-size:0.85rem; color:var(--text-main); line-height:1.55; margin:0;" data-lang-en="Administrative documentation of village lands, irrigation structures, and revenue settlements." data-lang-mr="ग्रामजमीन, सिंचन रचना आणि महसूल सेटलमेंटचे प्रशासकीय दस्तऐवजीकरण.">Administrative documentation of village lands, irrigation structures, and revenue settlements.</p>
+                        </div>
+
+                        <div class="source-item-card">
+                            <div class="source-item-header">
+                                <h4 class="source-item-title">Central Provinces Gazetteers</h4>
+                                <span class="badge-status badge-status-verified">Verified</span>
+                            </div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.4rem;"><strong>Series:</strong> Bhandara & Chanda | <strong>Period:</strong> 1908–1909</div>
+                            <p style="font-size:0.85rem; color:var(--text-main); line-height:1.55; margin:0;" data-lang-en="Official district publications documenting agrarian geography, tank systems, and rural communities." data-lang-mr="कृषी भूगोल, तलाव व्यवस्था आणि ग्रामीण समुदायांची नोंद करणारे अधिकृत गॅझेटिअर.">Official district publications documenting agrarian geography, tank systems, and rural communities.</p>
+                        </div>
+
+                        <div class="source-item-card">
+                            <div class="source-item-header">
+                                <h4 class="source-item-title">Ethnographic Material (Russell & Hira Lal)</h4>
+                                <span class="badge-status badge-status-reference">Reference</span>
+                            </div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.4rem;"><strong>Publication:</strong> Tribes and Castes | <strong>Year:</strong> 1916</div>
+                            <p style="font-size:0.85rem; color:var(--text-main); line-height:1.55; margin:0;" data-lang-en="Early ethnographic survey documenting agricultural and water-engineering traditions in Central Provinces." data-lang-mr="सेंट्रल प्रॉव्हिन्सेसमधील कृषी व जलव्यवस्थापन परंपरांची नोंद करणारा मानववंशशास्त्रीय अभ्यास.">Early ethnographic survey documenting agricultural and water-engineering traditions in Central Provinces.</p>
+                        </div>
+
+                        <div class="source-item-card">
+                            <div class="source-item-header">
+                                <h4 class="source-item-title">Community Historical Publications</h4>
+                                <span class="badge-status badge-status-research">Supplied</span>
+                            </div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.4rem;"><strong>Context:</strong> Community Literature | <strong>Region:</strong> Vidarbha</div>
+                            <p style="font-size:0.85rem; color:var(--text-main); line-height:1.55; margin:0;" data-lang-en="Community memory and historical compilations documenting regional tank heritage and oral history." data-lang-mr="प्रादेशिक तलाव वारसा आणि मौखिक स्मृतीचे दस्तऐवजीकरण करणारे सामुदायिक साहित्य.">Community memory and historical compilations documenting regional tank heritage and oral history.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 13: RELATED HISTORICAL SECTIONS -->
+                <section class="water-related-section">
+                    <h3 style="color: var(--primary-dark); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; display:flex; align-items:center; gap:0.5rem;">
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Related Historical Sections" data-lang-mr="संबंधित ऐतिहासिक विभाग">Related Historical Sections</span>
+                    </h3>
+                    <p style="font-size:0.88rem; color:var(--text-muted); margin:0;" data-lang-en="Explore other complementary historical archives and documentation on the portal:" data-lang-mr="पोर्टलवरील इतर पूरक ऐतिहासिक संग्रह आणि दस्तऐवजीकरण पहा:">
+                        Explore other complementary historical archives and documentation on the portal:
+                    </p>
+                    <div class="water-related-grid">
+                        <a href="history.html" class="water-related-link">
+                            <span><i class="fa-solid fa-landmark" style="margin-right:0.4rem;"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="historical-timeline.html" class="water-related-link">
+                            <span><i class="fa-solid fa-timeline" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="documents.html" class="water-related-link">
+                            <span><i class="fa-solid fa-file-contract" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="gazetteers.html" class="water-related-link">
+                            <span><i class="fa-solid fa-book-open" style="margin-right:0.4rem;"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटिअर">Gazetteers</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="settlement.html" class="water-related-link">
+                            <span><i class="fa-solid fa-map" style="margin-right:0.4rem;"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="research.html" class="water-related-link">
+                            <span><i class="fa-solid fa-microscope" style="margin-right:0.4rem;"></i> <span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </section>
 
             </div>
         </div>
     </main>
+
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
             <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
-            <div>Built by Community Volunteers</div>
+            <div><span data-lang-en="Built by Community Volunteers" data-lang-mr="समाज स्वयंसेवकांनी बनवले">Built by Community Volunteers</span></div>
         </div>
     </footer>
+
     <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>

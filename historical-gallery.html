@@ -3,19 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historical Gallery | Kohli Samaj | Kohli Samaj Official Portal</title>
-    <meta name="description" content="Rare historical photographs, archival images, and visual records of Kohli Samaj heritage">
+    <title>Historical Gallery | Visual Heritage & Community Archive | Kohli Samaj Official Portal</title>
+    <meta name="description" content="Curated visual archive of Kohli community heritage, historic water bodies, traditional agriculture, community publications, personalities, and cultural traditions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Historical Gallery Specific Styles ── */
+        .gallery-hero-intro {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .gallery-hero-intro h2 {
+            color: var(--primary-dark);
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+        .gallery-hero-intro p {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Filter & Search Bar */
+        .gallery-filter-wrapper {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .gallery-search-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .gallery-search-box {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+        }
+        .gallery-search-box input {
+            width: 100%;
+            padding: 0.55rem 1rem 0.55rem 2.4rem;
+            border-radius: 8px;
+            border: 1.5px solid var(--border-color);
+            font-size: 0.9rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .gallery-search-box input:focus {
+            border-color: var(--primary-dark);
+        }
+        .gallery-search-box i {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .gallery-filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .gallery-filter-btn {
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            border: 1.5px solid var(--border-color);
+            background: #f8faf9;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .gallery-filter-btn:hover, .gallery-filter-btn.active {
+            background: var(--primary-dark);
+            color: white;
+            border-color: var(--primary-dark);
+        }
+        .gallery-filter-btn.active i {
+            color: var(--accent-gold);
+        }
+
+        /* Gallery Sections */
+        .gallery-section-card {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .gallery-section-title {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .gallery-section-desc {
+            font-size: 0.94rem;
+            line-height: 1.65;
+            color: var(--text-main);
+            margin-bottom: 1.4rem;
+        }
+
+        /* Gallery Cards Grid */
+        .gallery-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.4rem;
+        }
+        .gallery-item-card {
+            background: #fafcfb;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .gallery-item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(14,62,41,0.08);
+            border-color: var(--primary-dark);
+        }
+
+        /* Placeholder / Media Frame */
+        .gallery-media-frame {
+            height: 180px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+        .gallery-media-frame i {
+            font-size: 2.8rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+        .gallery-media-placeholder-text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+        .gallery-category-tag {
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            background: rgba(14, 62, 41, 0.85);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* Card Body */
+        .gallery-item-body {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .gallery-item-title {
+            font-size: 1.08rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .gallery-item-caption {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+        }
+        .gallery-meta-list {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.6rem;
+            margin-bottom: 0.8rem;
+        }
+        .gallery-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .gallery-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Achievement Highlight Card */
+        .achievement-highlight-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 1.6rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 18px rgba(180, 83, 9, 0.08);
+            position: relative;
+        }
+        .achievement-score-box {
+            background: var(--primary-dark);
+            color: var(--accent-gold);
+            padding: 0.8rem 1.4rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 1.8rem;
+            font-family: 'Outfit', sans-serif;
+            min-width: 140px;
+        }
+
+        /* Verification Note Box */
+        .gallery-verification-note {
+            background: #f8fafc;
+            border: 1.5px solid #cbd5e1;
+            border-left: 4px solid #475569;
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: #334155;
+        }
+
+        /* Related Pages Grid */
+        .gallery-related-section {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .gallery-related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .gallery-related-link {
+            background: var(--bg-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.9rem 1.1rem;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s;
+        }
+        .gallery-related-link:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-dark);
+            transform: translateX(3px);
+        }
+        .gallery-related-link i {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body class="font-normal">
 
-    <!-- ==========================================================================
-         1. TOP GOVT UTILITY BAR
-         ========================================================================== -->
+    <!-- TOP UTILITY BAR -->
     <div class="top-utility-bar">
         <div class="container utility-flex">
             <div class="utility-left">
@@ -62,9 +356,7 @@
         </div>
     </div>
 
-    <!-- ==========================================================================
-         2. MAIN HEADER & BRANDING & NAVIGATION
-         ========================================================================== -->
+    <!-- MAIN HEADER & BRANDING & NAVIGATION -->
     <header class="main-header">
         <div class="container header-inner">
             <!-- Official Emblem Logo -->
@@ -96,7 +388,7 @@
                     </li>
                     <li><a href="culture.html" class="nav-link"><span data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="about.html" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="about.html" class="dropdown-link"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Overview" data-lang-mr="समाज परिचय">Community Overview</span></a></li>
                             <li><a href="districts.html" class="dropdown-link"><i class="fa-solid fa-map-location-dot"></i> <span data-lang-en="Districts & Regions" data-lang-mr="जिल्हे व क्षेत्र">Districts & Regions</span></a></li>
@@ -120,14 +412,13 @@
                     <li><a href="contact.html" class="nav-link"><span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span></a></li>
                 </ul>
             </nav>
-
             <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
 
-        <!-- Page Title Banner & Breadcrumbs -->
+    <!-- PAGE TITLE BANNER -->
     <div class="page-title-banner">
         <div class="container">
             <div class="breadcrumb-trail">
@@ -135,12 +426,18 @@
                 <span class="bc-sep">&gt;&gt;</span>
                 <span class="bc-parent" data-lang-en="History" data-lang-mr="इतिहास">History</span>
                 <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-current" data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span>
+                <span class="bc-current" data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक चित्रदालन">Historical Gallery</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Historical Photo Gallery" data-lang-mr="ऐतिहासिक छायाचित्र गॅलरी">Historical Photo Gallery</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="Rare historical photographs, archival images, and visual records of Kohli Samaj heritage" data-lang-mr="कोहळी समाजाच्या वारशाचे दुर्मिळ ऐतिहासिक छायाचित्रे">Rare historical photographs, archival images, and visual records of Kohli Samaj heritage</span></p>
+            <h1 class="page-banner-title">
+                <span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक चित्रदालन">Historical Gallery</span>
+            </h1>
+            <p class="page-banner-subtitle">
+                <span data-lang-en="Visual memories, heritage, people and records connected with the Kohli community." data-lang-mr="कोहळी समाजाशी संबंधित दृश्य आठवणी, वारसा, व्यक्तिमत्त्वे आणि ऐतिहासिक नोंदी.">Visual memories, heritage, people and records connected with the Kohli community.</span>
+            </p>
         </div>
     </div>
+
+    <!-- MAIN CONTAINER -->
     <main class="container" style="padding: 3rem 1.25rem;">
         <div class="history-layout-container">
             <!-- LEFT SIDEBAR PANEL -->
@@ -186,8 +483,11 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
-                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical References" data-lang-mr="ऐतिहासिक संदर्भ">Historical References</span></a></li>
+                                <li><a href="gazetteers.html#sec-disclaimer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Reading Context" data-lang-mr="ऐतिहासिक वाचन संदर्भ">Historical Reading Context</span></a></li>
+                                <li><a href="gazetteers.html#sec-gov-refs" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Government References" data-lang-mr="शासकीय संदर्भ">Government References</span></a></li>
+                                <li><a href="gazetteers.html#sec-themes" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Themes" data-lang-mr="ऐतिहासिक विषय">Historical Themes</span></a></li>
+                                <li><a href="gazetteers.html#sec-spellings" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Name Forms" data-lang-mr="नावांची ऐतिहासिक रूपे">Historical Name Forms</span></a></li>
+                                <li><a href="gazetteers.html#sec-gazetteers-archive" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Gazetteer Records" data-lang-mr="गॅझेटिअर नोंदी">Gazetteer Records</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -196,8 +496,9 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
-                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
+                                <li><a href="census.html#sec-census-intro" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Census Records" data-lang-mr="ऐतिहासिक जनगणना नोंदी">Historical Census Records</span></a></li>
+                                <li><a href="census.html#sec-1911-record" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1911 Bhandara (11,399)" data-lang-mr="१९११ भंडारा (११,३९९)">1911 Bhandara (11,399)</span></a></li>
+                                <li><a href="census.html#sec-settlement-record" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Settlement Record (19,739)" data-lang-mr="सेटलमेंट नोंद (१९,७३९)">Settlement Record (19,739)</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -206,7 +507,9 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
+                                <li><a href="settlement.html#sec-chanda-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Settlement" data-lang-mr="चांदा सेटलमेंट">Chanda Settlement</span></a></li>
+                                <li><a href="settlement.html#sec-bhandara-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Bhandara Settlement" data-lang-mr="भंडारा सेटलमेंट">Bhandara Settlement</span></a></li>
+                                <li><a href="settlement.html#sec-malguzari-admin" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Administration" data-lang-mr="मालगुजारी प्रशासन">Malguzari Administration</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -215,7 +518,8 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
+                                <li><a href="water-heritage.html#sec-malguzari-tanks" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Tanks" data-lang-mr="मालगुजारी तलाव">Malguzari Tanks</span></a></li>
+                                <li><a href="water-heritage.html#sec-traditional-engineering" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Traditional Engineering" data-lang-mr="पारंपरिक तलाव बांधणी">Traditional Engineering</span></a></li>
                             </ul>
                         </li>
                         <li class="expanded">
@@ -223,6 +527,17 @@
                                 <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
+                            <ul class="sidebar-sub-list">
+                                <li><a href="#sec-community-heritage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Community Heritage" data-lang-mr="समाजाचा वारसा">Community Heritage</span></a></li>
+                                <li><a href="#sec-water-heritage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Water Heritage" data-lang-mr="जलवारसा">Water Heritage</span></a></li>
+                                <li><a href="#sec-agricultural-heritage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Agricultural Heritage" data-lang-mr="कृषी वारसा">Agricultural Heritage</span></a></li>
+                                <li><a href="#sec-personalities" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Personalities & Leaders" data-lang-mr="मान्यवर व लोकप्रतिनिधी">Personalities & Leaders</span></a></li>
+                                <li><a href="#sec-culture-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Culture & Traditions" data-lang-mr="संस्कृती आणि परंपरा">Culture & Traditions</span></a></li>
+                                <li><a href="#sec-documents-publications" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Documents & Publications" data-lang-mr="दस्तऐवज व प्रकाशने">Documents & Publications</span></a></li>
+                                <li><a href="#sec-education-achievements" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Education & Achievements" data-lang-mr="शिक्षण आणि यश">Education & Achievements</span></a></li>
+                                <li><a href="#sec-community-events" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Community Events" data-lang-mr="समाजातील कार्यक्रम">Community Events</span></a></li>
+                                <li><a href="#sec-image-policy" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Image Verification Policy" data-lang-mr="छायाचित्र पडताळणी धोरण">Image Verification Policy</span></a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="research.html" class="sidebar-main-link">
@@ -238,27 +553,916 @@
             </aside>
 
             <!-- RIGHT CONTENT AREA -->
-            <div class="history-content-area" style="text-align: center;">
-                <div style="max-width:520px; margin:0 auto; background:white; border-radius:16px; padding:3rem 2rem; box-shadow:0 4px 24px rgba(14,62,41,0.08); border-top:4px solid var(--accent-gold);">
-                    <i class="fa-solid fa-image" style="font-size:3.5rem; color:var(--accent-gold); margin-bottom:1.2rem;"></i>
-                    <h2 style="color:var(--primary-dark); font-size:1.5rem; font-weight:800; margin-bottom:0.75rem;" data-lang-en="Content Coming Soon" data-lang-mr="सामग्री लवकरच येणार">Content Coming Soon</h2>
-                    <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;" data-lang-en="Historical photographs, archival images, and rare visual records will be published here." data-lang-mr="ऐतिहासिक छायाचित्रे आणि दुर्मिळ दृश्य नोंदी येथे प्रकाशित केल्या जातील.">Historical photographs, archival images, and rare visual records will be published here.</p>
-                    <a href="index.html" class="btn-gold-fill" style="display:inline-flex;"><i class="fa-solid fa-house"></i>&nbsp;<span data-lang-en="Back to Home" data-lang-mr="मुखपृष्ठावर परत">Back to Home</span></a>
+            <div class="history-content-area">
+                
+                <!-- HERO SECTION -->
+                <section class="gallery-hero-intro">
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; margin-bottom:0.8rem;">
+                        <h2>
+                            <i class="fa-solid fa-images" style="color: var(--accent-gold); margin-right: 0.4rem;"></i>
+                            <span data-lang-en="Historical Gallery & Visual Archive" data-lang-mr="ऐतिहासिक चित्रदालन आणि दृश्य संग्रह">Historical Gallery & Visual Archive</span>
+                        </h2>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-box-archive"></i> <span data-lang-en="Curated Visual Archive" data-lang-mr="संकलित दृश्य संग्रह">Curated Visual Archive</span></span>
+                    </div>
+                    <p data-lang-en="Visual memories, heritage, people and records connected with the Kohli community. This gallery compiles documented visual records, architecture, traditional agricultural practices, historical publications, and community milestones with source provenance." data-lang-mr="कोहळी समाजाशी संबंधित दृश्य आठवणी, वारसा, व्यक्तिमत्त्वे आणि ऐतिहासिक नोंदी. हे चित्रदालन दस्तऐवजीकरण केलेल्या दृश्य नोंदी, वास्तुकला, पारंपरिक शेती पद्धती, ऐतिहासिक प्रकाशने आणि समाजाच्या महत्त्वाच्या टप्प्यांना अधिकृत स्रोत संदर्भासह मांडते.">
+                        Visual memories, heritage, people and records connected with the Kohli community. This gallery compiles documented visual records, architecture, traditional agricultural practices, historical publications, and community milestones with source provenance.
+                    </p>
+                </section>
+
+                <!-- FILTER AND SEARCH BAR -->
+                <div class="gallery-filter-wrapper">
+                    <div class="gallery-search-row">
+                        <div class="gallery-search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="gallerySearchInput" placeholder="Search gallery records, titles, locations..." data-lang-en-placeholder="Search gallery records, titles, locations..." data-lang-mr-placeholder="गॅलरी नोंदी, शीर्षके, स्थाने शोधा...">
+                        </div>
+                        <span id="galleryResultsCount" style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">Showing all gallery entries</span>
+                    </div>
+
+                    <div class="gallery-filter-buttons" id="galleryFilterBtns">
+                        <button class="gallery-filter-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i> <span data-lang-en="All" data-lang-mr="सर्व">All</span></button>
+                        <button class="gallery-filter-btn" data-filter="community-heritage"><i class="fa-solid fa-house-chimney"></i> <span data-lang-en="Community Heritage" data-lang-mr="समाजाचा वारसा">Community Heritage</span></button>
+                        <button class="gallery-filter-btn" data-filter="water-heritage"><i class="fa-solid fa-droplet"></i> <span data-lang-en="Water Heritage" data-lang-mr="जलवारसा">Water Heritage</span></button>
+                        <button class="gallery-filter-btn" data-filter="agriculture"><i class="fa-solid fa-wheat-awn"></i> <span data-lang-en="Agriculture" data-lang-mr="कृषी">Agriculture</span></button>
+                        <button class="gallery-filter-btn" data-filter="personalities"><i class="fa-solid fa-user-tie"></i> <span data-lang-en="Historical Personalities" data-lang-mr="ऐतिहासिक व्यक्तिमत्त्वे">Historical Personalities</span></button>
+                        <button class="gallery-filter-btn" data-filter="culture"><i class="fa-solid fa-om"></i> <span data-lang-en="Culture & Traditions" data-lang-mr="संस्कृती व परंपरा">Culture & Traditions</span></button>
+                        <button class="gallery-filter-btn" data-filter="documents"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Documents & Publications" data-lang-mr="दस्तऐवज व प्रकाशने">Documents & Publications</span></button>
+                        <button class="gallery-filter-btn" data-filter="events"><i class="fa-solid fa-calendar-check"></i> <span data-lang-en="Community Events" data-lang-mr="समाजकार्य व कार्यक्रम">Community Events</span></button>
+                        <button class="gallery-filter-btn" data-filter="education"><i class="fa-solid fa-graduation-cap"></i> <span data-lang-en="Education & Achievements" data-lang-mr="शिक्षण व यश">Education & Achievements</span></button>
+                    </div>
                 </div>
+
+                <!-- SECTION 1: COMMUNITY HERITAGE -->
+                <section id="sec-community-heritage" class="gallery-section-card" data-section-category="community-heritage">
+                    <h3 class="gallery-section-title">
+                        <i class="fa-solid fa-house-chimney" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Community Heritage" data-lang-mr="समाजाचा वारसा">Community Heritage</span>
+                    </h3>
+                    <p class="gallery-section-desc" data-lang-en="Visual documentation of traditional village architecture, ancestral settlements, and community heritage sites across the Vidarbha region." data-lang-mr="विदर्भ प्रदेशातील पारंपरिक ग्राम वास्तुकला, वसाहती आणि समाजाच्या ऐतिहासिक वारसा स्थळांचे दृश्य दस्तऐवजीकरण.">
+                        Visual documentation of traditional village architecture, ancestral settlements, and community heritage sites across the Vidarbha region.
+                    </p>
+
+                    <div class="gallery-cards-grid">
+                        <!-- Card 1 -->
+                        <div class="gallery-item-card" data-category="community-heritage" data-tags="village architecture wada house">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Architecture" data-lang-mr="वास्तुकला">Architecture</span>
+                                <i class="fa-solid fa-landmark-dome"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Historic Village Architecture" data-lang-mr="ऐतिहासिक ग्रामीण वास्तुकला">Historic Village Architecture</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Traditional rural residential structures and wada architecture found in historical Kohli settlements." data-lang-mr="ऐतिहासिक कोहळी वस्त्यांमध्ये आढळणारी पारंपरिक ग्रामीण घरे आणि वाडा वास्तुकला.">Traditional rural residential structures and wada architecture found in historical Kohli settlements.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-map-pin"></i> <strong>Location:</strong> <span data-lang-en="Location not yet documented" data-lang-mr="स्थान अद्याप नोंदलेले नाही">Location not yet documented</span></div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-database"></i> <strong>Source:</strong> Community Archive</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-research">Research Entry</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(1)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="gallery-item-card" data-category="community-heritage" data-tags="rural settlement village">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Settlement" data-lang-mr="वसाहत">Settlement</span>
+                                <i class="fa-solid fa-tree-city"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Traditional Rural Settlement" data-lang-mr="पारंपरिक ग्रामीण वसाहत">Traditional Rural Settlement</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Visual layout of agrarian villages situated alongside natural water catchments and irrigation tanks." data-lang-mr="नैसर्गिक पाणलोट क्षेत्र आणि सिंचन तलावांच्या लगत वसलेल्या शेतकरी गावांची दृश्य रचना.">Visual layout of agrarian villages situated alongside natural water catchments and irrigation tanks.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-map-pin"></i> <strong>Location:</strong> <span data-lang-en="Location not yet documented" data-lang-mr="स्थान अद्याप नोंदलेले नाही">Location not yet documented</span></div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-database"></i> <strong>Source:</strong> Heritage Survey</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-research">Research Entry</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(2)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="gallery-item-card" data-category="community-heritage" data-tags="community heritage site">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Heritage Site" data-lang-mr="वारसा स्थळ">Heritage Site</span>
+                                <i class="fa-solid fa-monument"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Community Heritage Site" data-lang-mr="समाज वारसा स्थळ">Community Heritage Site</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Historic gathering sites and village administrative centres associated with community oral traditions." data-lang-mr="मौखिक परंपरेशी जोडलेली ऐतिहासिक सभास्थाने आणि ग्राम प्रशासकीय केंद्रे.">Historic gathering sites and village administrative centres associated with community oral traditions.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-map-pin"></i> <strong>Location:</strong> <span data-lang-en="Location not yet documented" data-lang-mr="स्थान अद्याप नोंदलेले नाही">Location not yet documented</span></div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-database"></i> <strong>Source:</strong> Oral History Archive</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-research">Research Entry</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(3)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: WATER HERITAGE -->
+                <section id="sec-water-heritage" class="gallery-section-card" data-section-category="water-heritage">
+                    <h3 class="gallery-section-title">
+                        <i class="fa-solid fa-droplet" style="color: #0284c7;"></i>
+                        <span data-lang-en="Water Heritage" data-lang-mr="जलवारसा">Water Heritage</span>
+                    </h3>
+                    <p class="gallery-section-desc" data-lang-en="Visual archive of Malguzari tanks, traditional embankments, spillways, water channels, and stepwells that form part of the regional water-management landscape." data-lang-mr="मालगुजारी तलाव, पारंपरिक बंधारे, सांडवे, कालवे आणि बारव यांचा दृश्य संग्रह जो प्रादेशिक जलव्यवस्थापनाचा महत्त्वाचा भाग आहे.">
+                        Visual archive of Malguzari tanks, traditional embankments, spillways, water channels, and stepwells that form part of the regional water-management landscape.
+                    </p>
+
+                    <div class="gallery-cards-grid">
+                        <!-- Water Card 1 -->
+                        <div class="gallery-item-card" data-category="water-heritage" data-tags="navegaon bandh reservoir tank">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Reservoir" data-lang-mr="जलाशय">Reservoir</span>
+                                <i class="fa-solid fa-water"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Navegaon Bandh" data-lang-mr="नवेगाव बांध">Navegaon Bandh</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Part of the historical water-management landscape of the Bhandara–Gondia region supporting multi-season agriculture." data-lang-mr="भंडारा–गोंदिया प्रदेशातील शेतीला पाणी पुरवणारा ऐतिहासिक जलव्यवस्थापन वारसा.">Part of the historical water-management landscape of the Bhandara–Gondia region supporting multi-season agriculture.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-map-pin"></i> <strong>Region:</strong> Gondia District</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-tag"></i> <strong>Classification:</strong> Regional Water Heritage</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-verified">Documented Site</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(4)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Water Card 2 -->
+                        <div class="gallery-item-card" data-category="water-heritage" data-tags="bodalkasa tank irrigation">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Tank" data-lang-mr="तलाव">Tank</span>
+                                <i class="fa-solid fa-mound"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Bodalkasa Tank" data-lang-mr="बोदलकसा तलाव">Bodalkasa Tank</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Traditional water-storage reservoir forming part of the historical irrigation network in the Tirora region." data-lang-mr="तिरोडा परिसरातील ऐतिहासिक सिंचन व्यवस्थेचा भाग असलेला पारंपरिक पाण्याचा साठा.">Traditional water-storage reservoir forming part of the historical irrigation network in the Tirora region.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-map-pin"></i> <strong>Region:</strong> Gondia / Tirora</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-tag"></i> <strong>Classification:</strong> Regional Water Heritage</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-reference">Historical Ref</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(5)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Water Card 3 -->
+                        <div class="gallery-item-card" data-category="water-heritage" data-tags="stepwell barav water structure">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Stepwell" data-lang-mr="बारव">Stepwell</span>
+                                <i class="fa-solid fa-dungeon"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Traditional Stepwells (Baravs)" data-lang-mr="पारंपरिक बारव (Stepwells)">Traditional Stepwells (Baravs)</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Stone-lined stepwells constructed for perennial domestic water storage and village convenience." data-lang-mr="बारमाही पिण्याच्या पाण्यासाठी आणि ग्रामसोयीसाठी दगडी पायऱ्यांनी बांधलेली पारंपरिक बारव.">Stone-lined stepwells constructed for perennial domestic water storage and village convenience.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-map-pin"></i> <strong>Region:</strong> Vidarbha Heritage</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-tag"></i> <strong>Classification:</strong> Traditional Water Structure</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-research">Research Entry</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(6)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: AGRICULTURAL HERITAGE -->
+                <section id="sec-agricultural-heritage" class="gallery-section-card" data-section-category="agriculture">
+                    <h3 class="gallery-section-title">
+                        <i class="fa-solid fa-wheat-awn" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Agricultural Heritage" data-lang-mr="कृषी वारसा">Agricultural Heritage</span>
+                    </h3>
+                    <p class="gallery-section-desc" data-lang-en="Visual records illustrating historical farming practices, paddy transplantation, sugarcane cultivation, jaggery processing, and bullock-driven agricultural implements." data-lang-mr="भातशेती, ऊस लागवड, गूळनिर्मिती आणि पारंपरिक शेती अवजारांचे ऐतिहासिक दृश्य संदर्भ.">
+                        Visual records illustrating historical farming practices, paddy transplantation, sugarcane cultivation, jaggery processing, and bullock-driven agricultural implements.
+                    </p>
+
+                    <div class="gallery-cards-grid">
+                        <!-- Agri Card 1 -->
+                        <div class="gallery-item-card" data-category="agriculture" data-tags="rice cultivation paddy farming">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Crops" data-lang-mr="पिके">Crops</span>
+                                <i class="fa-solid fa-seedling"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Traditional Rice Cultivation" data-lang-mr="पारंपरिक भातशेती">Traditional Rice Cultivation</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Paddy fields cultivated using monsoon runoff and channel irrigation from local Malguzari tanks." data-lang-mr="मालगुजारी तलावांतून कालव्याद्वारे पाणी देऊन पिकवली जाणारी पारंपरिक भातशेती.">Paddy fields cultivated using monsoon runoff and channel irrigation from local Malguzari tanks.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-tractor"></i> <strong>Practice:</strong> Tank-Fed Paddy Farming</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-book"></i> <strong>Record:</strong> Gazetteer Documentation</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-verified">Documented Practice</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(7)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Agri Card 2 -->
+                        <div class="gallery-item-card" data-category="agriculture" data-tags="sugarcane jaggery processing">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Agri-Industry" data-lang-mr="कृषी प्रक्रिया">Agri-Industry</span>
+                                <i class="fa-solid fa-plant-wilt"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Sugarcane & Jaggery Production" data-lang-mr="ऊस शेती आणि गूळनिर्मिती">Sugarcane & Jaggery Production</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Historical sugarcane cultivation and traditional village jaggery processing recorded in settlement reports." data-lang-mr="सेटलमेंट अहवालात नमूद केलेली ऐतिहासिक ऊस लागवड आणि पारंपरिक गूळ तयार करण्याची पद्धत.">Historical sugarcane cultivation and traditional village jaggery processing recorded in settlement reports.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-tractor"></i> <strong>Practice:</strong> Sugarcane Cultivation & Jaggery</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-book"></i> <strong>Record:</strong> Napier Settlement Report</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-verified">Documented Practice</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(8)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: HISTORICAL PERSONALITIES & PUBLIC REPRESENTATIVES -->
+                <section id="sec-personalities" class="gallery-section-card" data-section-category="personalities">
+                    <h3 class="gallery-section-title">
+                        <i class="fa-solid fa-user-tie" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Community Personalities & Leaders" data-lang-mr="समाजातील मान्यवर व्यक्तिमत्त्वे आणि नेते">Community Personalities & Leaders</span>
+                    </h3>
+                    <p class="gallery-section-desc" data-lang-en="Curated profile archive honoring historical leaders, social workers, and public representatives supported by community records." data-lang-mr="समुदायाच्या दस्तऐवजीकरण नोंदींवर आधारित ऐतिहासिक नेते, समाजसेवक आणि लोकप्रतिनिधींचा सन्मानपूर्वक संग्रह.">
+                        Curated profile archive honoring historical leaders, social workers, and public representatives supported by community records.
+                    </p>
+
+                    <div class="gallery-cards-grid">
+                        <div class="gallery-item-card" data-category="personalities" data-tags="public representatives leaders">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Leadership" data-lang-mr="नेतृत्व">Leadership</span>
+                                <i class="fa-solid fa-user-gear"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Public Representatives & Community Leaders" data-lang-mr="लोकप्रतिनिधी आणि समाजनेते">Public Representatives & Community Leaders</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Elected representatives and community leaders who contributed to public life and social upliftment across Vidarbha." data-lang-mr="विदर्भातील सार्वजनिक जीवनात आणि सामाजिक उत्थानात योगदान देणारे लोकप्रतिनिधी आणि समाजनेते.">Elected representatives and community leaders who contributed to public life and social upliftment across Vidarbha.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-users-line"></i> <strong>Scope:</strong> Vidarbha Region</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-clock-rotate-left"></i> <strong>Status:</strong> Source verification ongoing</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-research">Profile Archive</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(9)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: CULTURE & TRADITIONS -->
+                <section id="sec-culture-traditions" class="gallery-section-card" data-section-category="culture">
+                    <h3 class="gallery-section-title">
+                        <i class="fa-solid fa-om" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Culture & Traditions" data-lang-mr="संस्कृती आणि परंपरा">Culture & Traditions</span>
+                    </h3>
+                    <p class="gallery-section-desc" data-lang-en="Visual and descriptive records of cultural celebrations, marriage rituals, and festive gatherings documented in community literature." data-lang-mr="समुदायाच्या साहित्यात नोंदवलेले सांस्कृतिक सण, विवाह परंपरा आणि सामाजिक उत्सवांचे संदर्भ.">
+                        Visual and descriptive records of cultural celebrations, marriage rituals, and festive gatherings documented in community literature.
+                    </p>
+
+                    <div class="gallery-cards-grid">
+                        <!-- Tulsi Vivah Card -->
+                        <div class="gallery-item-card" data-category="culture" data-tags="tulsi vivah ceremony ritual">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Documented Tradition" data-lang-mr="नोंदवलेली परंपरा">Documented Tradition</span>
+                                <i class="fa-solid fa-hands-praying"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Tulsi Vivah Tradition" data-lang-mr="तुळशी विवाह परंपरा">Tulsi Vivah Tradition</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Tulsi Vivah is described in community literature as a traditional Kohli social and religious practice involving ceremonial worship and community participation." data-lang-mr="समुदायाच्या साहित्यामध्ये तुळशी विवाह हा कोहळी समाजातील पारंपरिक धार्मिक व सामाजिक विधी म्हणून वर्णन केला आहे. या विधीमध्ये पूजाअर्चा आणि सामुदायिक सहभागाला महत्त्व असते.">Tulsi Vivah is described in community literature as a traditional Kohli social and religious practice involving ceremonial worship and community participation.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-book-open"></i> <strong>Source:</strong> Community Cultural Literature</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-landmark"></i> <strong>Category:</strong> Social & Religious Ceremony</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-verified">Documented</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(10)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Traditional Customs Card -->
+                        <div class="gallery-item-card" data-category="culture" data-tags="traditional customs ceremonies">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Social Customs" data-lang-mr="सामाजिक चालीरीती">Social Customs</span>
+                                <i class="fa-solid fa-users"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Community Gathering & Customs" data-lang-mr="सामाजिक मेळावे व चालीरीती">Community Gathering & Customs</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Traditional social ceremonies, folk celebrations, and community assemblies fostering mutual cohesion." data-lang-mr="सामाजिक ऐक्य आणि सलोखा टिकवून ठेवणारे पारंपरिक सण आणि ग्राम मेळावे.">Traditional social ceremonies, folk celebrations, and community assemblies fostering mutual cohesion.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-book-open"></i> <strong>Source:</strong> Community Smrutigranth</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-landmark"></i> <strong>Category:</strong> Community Gathering</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-research">Research Entry</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(11)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: DOCUMENTS & PUBLICATIONS -->
+                <section id="sec-documents-publications" class="gallery-section-card" data-section-category="documents">
+                    <h3 class="gallery-section-title">
+                        <i class="fa-solid fa-file-contract" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Historical Documents & Publications" data-lang-mr="ऐतिहासिक दस्तऐवज आणि प्रकाशने">Historical Documents & Publications</span>
+                    </h3>
+                    <p class="gallery-section-desc" data-lang-en="Visual metadata and covers of historical Gazetteers, Settlement Reports, Census volumes, and community publications." data-lang-mr="ऐतिहासिक गॅझेटिअर, सेटलमेंट अहवाल, जनगणना नोंदी आणि समाज प्रकाशनांचे अधिकृत संदर्भ.">
+                        Visual metadata and covers of historical Gazetteers, Settlement Reports, Census volumes, and community publications.
+                    </p>
+
+                    <div class="gallery-cards-grid">
+                        <!-- Doc 1 -->
+                        <div class="gallery-item-card" data-category="documents" data-tags="chanda settlement report document">
+                            <div class="gallery-media-frame" style="background:#fdf6ec;">
+                                <span class="gallery-category-tag" style="background:#b45309;" data-lang-en="Settlement Report" data-lang-mr="सेटलमेंट अहवाल">Settlement Report</span>
+                                <i class="fa-solid fa-book-journal-whills" style="color:#b45309;"></i>
+                                <span class="gallery-media-placeholder-text" style="color:#92400e;">Chanda Settlement Record</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Chanda Settlement Report (Napier)" data-lang-mr="चांदा सेटलमेंट अहवाल (नेपिअर)">Chanda Settlement Report (Napier)</h4>
+                                    <p class="gallery-item-caption" data-lang-en="19th-century administrative settlement report documenting agriculture, sugarcane, and community organization." data-lang-mr="शेती, ऊस लागवड आणि सामाजिक रचनेची नोंद करणारा १९ व्या शतकातील प्रशासकीय सेटलमेंट अहवाल.">19th-century administrative settlement report documenting agriculture, sugarcane, and community organization.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-calendar"></i> <strong>Period:</strong> 19th Century</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-user-pen"></i> <strong>Author:</strong> A. B. Napier</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-research">Supplied Source</span>
+                                    <a href="settlement.html" class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-lang-en="Source info" data-lang-mr="स्रोत माहिती">Source info</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doc 2 -->
+                        <div class="gallery-item-card" data-category="documents" data-tags="gazetteer bhandara 1908 document">
+                            <div class="gallery-media-frame" style="background:#ecfdf5;">
+                                <span class="gallery-category-tag" style="background:#047857;" data-lang-en="Gazetteer" data-lang-mr="गॅझेटिअर">Gazetteer</span>
+                                <i class="fa-solid fa-book" style="color:#047857;"></i>
+                                <span class="gallery-media-placeholder-text" style="color:#065f46;">Bhandara District Gazetteer</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Bhandara District Gazetteer (1908)" data-lang-mr="भंडारा जिल्हा गॅझेटिअर (१९०८)">Bhandara District Gazetteer (1908)</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Official government district publication documenting tank systems, land revenue, and rural society." data-lang-mr="तलाव व्यवस्था, जमीन महसूल आणि समाजजीवनाची नोंद करणारे अधिकृत शासकीय जिल्हा गॅझेटिअर.">Official government district publication documenting tank systems, land revenue, and rural society.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-calendar"></i> <strong>Year:</strong> 1908</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-user-pen"></i> <strong>Editor:</strong> R. V. Russell, ICS</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-verified">Verified Source</span>
+                                    <a href="gazetteers.html" class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-lang-en="Source info" data-lang-mr="स्रोत माहिती">Source info</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doc 3 -->
+                        <div class="gallery-item-card" data-category="documents" data-tags="community publication smrutigranth book">
+                            <div class="gallery-media-frame" style="background:#f5f3ff;">
+                                <span class="gallery-category-tag" style="background:#6d28d9;" data-lang-en="Publication" data-lang-mr="प्रकाशन">Publication</span>
+                                <i class="fa-solid fa-newspaper" style="color:#6d28d9;"></i>
+                                <span class="gallery-media-placeholder-text" style="color:#5b21b6;">Community Literature</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Community Souvenir & Smrutigranth" data-lang-mr="समाज स्मृतीग्रंथ व स्मरणिका">Community Souvenir & Smrutigranth</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Community compilations documenting surnames, village genealogies, social customs, and historical notes." data-lang-mr="आडनावे, ग्राम वंशावळी, सामाजिक प्रथा आणि ऐतिहासिक नोंदींचे दस्तऐवजीकरण करणारी प्रकाशने.">Community compilations documenting surnames, village genealogies, social customs, and historical notes.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-layer-group"></i> <strong>Type:</strong> Smarika / Souvenir Book</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-tag"></i> <strong>Coverage:</strong> Surnames & History</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-research">Community Literature</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(12)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 7: EDUCATION & ACHIEVEMENTS -->
+                <section id="sec-education-achievements" class="gallery-section-card" data-section-category="education">
+                    <h3 class="gallery-section-title">
+                        <i class="fa-solid fa-graduation-cap" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Education & Achievements" data-lang-mr="शिक्षण आणि यश">Education & Achievements</span>
+                    </h3>
+                    <p class="gallery-section-desc" data-lang-en="Documented academic and professional achievements of community youths and scholars supported by verified sources." data-lang-mr="अधिकृत स्रोतांद्वारे प्रमाणित समाज युवक-युवतींचे शैक्षणिक आणि व्यावसायिक यश.">
+                        Documented academic and professional achievements of community youths and scholars supported by verified sources.
+                    </p>
+
+                    <!-- TEJASWINI KAPGATE ACHIEVEMENT CARD -->
+                    <div class="achievement-highlight-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+                            <div>
+                                <span class="badge-source badge-community" style="margin-bottom:0.4rem; display:inline-flex;">
+                                    <i class="fa-solid fa-award"></i> <span data-lang-en="University Academic Distinction" data-lang-mr="विद्यापीठ शैक्षणिक गुणवत्ता">University Academic Distinction</span>
+                                </span>
+                                <h4 style="font-size:1.3rem; font-weight:800; color:var(--primary-dark); margin:0.3rem 0;" data-lang-en="Miss Tejaswini Hemraj Kapgate" data-lang-mr="कु. तेजस्विनी हेमराज कापगते">
+                                    Miss Tejaswini Hemraj Kapgate
+                                </h4>
+                                <div style="font-size:0.95rem; font-weight:700; color:#b45309;" data-lang-en="RTM Nagpur University 1st Topper in B.Sc. Physics" data-lang-mr="राष्ट्रसंत तुकडोजी महाराज नागपूर विद्यापीठ — बी.एस्सी. भौतिकशास्त्र (Physics) प्रथम क्रमांक (Topper)">
+                                    RTM Nagpur University 1st Topper in B.Sc. Physics
+                                </div>
+                            </div>
+                            <div class="achievement-score-box">
+                                94.66%
+                                <div style="font-size:0.72rem; color:white; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;">Percentage</div>
+                            </div>
+                        </div>
+
+                        <div style="font-size:0.92rem; color:var(--text-main); line-height:1.65; border-top:1px solid var(--border-color); padding-top:0.8rem;">
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.6rem;">
+                                <div><strong><i class="fa-solid fa-building-columns"></i> Institution:</strong> J. M. Patel Arts, Commerce and Science College, Bhandara</div>
+                                <div><strong><i class="fa-solid fa-certificate"></i> Context:</strong> Community Congratulatory Publication</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 8: COMMUNITY EVENTS & DIGITAL ERA -->
+                <section id="sec-community-events" class="gallery-section-card" data-section-category="events">
+                    <h3 class="gallery-section-title">
+                        <i class="fa-solid fa-calendar-check" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Community Events & Digital Generation" data-lang-mr="समाजातील कार्यक्रम व डिजिटल युग">Community Events & Digital Generation</span>
+                    </h3>
+                    <p class="gallery-section-desc" data-lang-en="Visual records of community conventions, youth felicitations, and emerging achievements in digital media." data-lang-mr="समाज मेळावे, युवक सत्कार आणि डिजिटल माध्यमातील उल्लेखनीय कामगिरीच्या नोंदी.">
+                        Visual records of community conventions, youth felicitations, and emerging achievements in digital media.
+                    </p>
+
+                    <div class="gallery-cards-grid">
+                        <!-- Harsh Pushpode Card -->
+                        <div class="gallery-item-card" data-category="events" data-tags="digital media content creation felicitation">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Digital Media" data-lang-mr="डिजिटल माध्यम">Digital Media</span>
+                                <i class="fa-solid fa-video"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Harsh Pushpode — Digital Media Recognition" data-lang-mr="हर्ष पुष्पोदे — डिजिटल माध्यम सन्मान">Harsh Pushpode — Digital Media Recognition</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Community recognition and felicitation for achievements in digital media and creative content creation." data-lang-mr="डिजिटल माध्यम आणि सर्जनशील निर्मिती क्षेत्रातील कामगिरीसाठी समाजस्तरावरील सन्मान व सत्कार.">Community recognition and felicitation for achievements in digital media and creative content creation.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-user"></i> <strong>Name:</strong> Harsh Pushpode</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-trophy"></i> <strong>Field:</strong> Digital Content Creation & Media</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-verified">Felicitation Entry</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(13)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Community Melava Card -->
+                        <div class="gallery-item-card" data-category="events" data-tags="community melava gathering conference">
+                            <div class="gallery-media-frame">
+                                <span class="gallery-category-tag" data-lang-en="Conference" data-lang-mr="मेळावा">Conference</span>
+                                <i class="fa-solid fa-users-viewfinder"></i>
+                                <span class="gallery-media-placeholder-text" data-lang-en="Historical photograph not yet available" data-lang-mr="ऐतिहासिक छायाचित्र अद्याप उपलब्ध नाही">Historical photograph not yet available</span>
+                            </div>
+                            <div class="gallery-item-body">
+                                <div>
+                                    <h4 class="gallery-item-title" data-lang-en="Annual Community Conventions" data-lang-mr="वार्षिक समाज मेळावे व अधिवेशने">Annual Community Conventions</h4>
+                                    <p class="gallery-item-caption" data-lang-en="Social gatherings focusing on educational advancement, agricultural modernization, and community welfare." data-lang-mr="शैक्षणिक प्रगती, शेतीचे आधुनिकीकरण आणि समाज कल्याणावर भर देणारे वार्षिक मेळावे.">Social gatherings focusing on educational advancement, agricultural modernization, and community welfare.</p>
+                                    <div class="gallery-meta-list">
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-map-location-dot"></i> <strong>Region:</strong> Bhandara, Gondia, Chandrapur</div>
+                                        <div class="gallery-meta-item"><i class="fa-solid fa-handshake"></i> <strong>Scope:</strong> Social Assembly</div>
+                                    </div>
+                                </div>
+                                <div class="gallery-item-footer">
+                                    <span class="badge-status badge-status-research">Event Record</span>
+                                    <button class="btn btn-secondary" style="padding:0.3rem 0.75rem; font-size:0.78rem;" onclick="openGalleryModal(14)">
+                                        <i class="fa-solid fa-circle-info"></i> <span data-lang-en="Details" data-lang-mr="तपशील">Details</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 9: IMAGE SOURCE & VERIFICATION POLICY -->
+                <section id="sec-image-policy" class="gallery-verification-note">
+                    <div style="font-weight:800; font-size:1.05rem; color:#0f172a; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.5rem;">
+                        <i class="fa-solid fa-shield-halved" style="color:var(--accent-gold);"></i>
+                        <span data-lang-en="Image Verification & Provenance Policy" data-lang-mr="छायाचित्र पडताळणी व अधिकृतता धोरण">Image Verification & Provenance Policy</span>
+                    </div>
+                    <p style="margin:0 0 0.6rem 0;" data-lang-en="Historical photographs are published with available source information. Where the date, location or identity cannot yet be established, the gallery clearly marks the information as undocumented rather than presenting an assumption as fact." data-lang-mr="ऐतिहासिक छायाचित्रांसाठी उपलब्ध स्रोतांची माहिती दिली आहे. एखाद्या छायाचित्राची तारीख, ठिकाण किंवा व्यक्तीची ओळख अद्याप निश्चित नसल्यास अंदाजाला तथ्य म्हणून न मांडता ती माहिती अपूर्ण असल्याचे स्पष्टपणे दर्शविले आहे.">
+                        Historical photographs are published with available source information. Where the date, location or identity cannot yet be established, the gallery clearly marks the information as undocumented rather than presenting an assumption as fact.
+                    </p>
+                    <div style="font-size:0.85rem; color:#475569; font-style:italic;" data-lang-en="The gallery only accepts authenticated community photographs, supplied archival materials, or public-domain historical records. Unverified AI-generated historical portraits and unofficial internet screenshots are strictly excluded." data-lang-mr="चित्रदालनात केवळ प्रमाणित समाज छायाचित्रे, अधिकृत ऐतिहासिक नोंदी व संदर्भ स्वीकारले जातात. कृत्रिम बुद्धिमत्ता-निर्मित (AI) चित्रे किंवा अप्रमाणित स्क्रीनशॉट्सना येथे स्थान नाही.">
+                        The gallery only accepts authenticated community photographs, supplied archival materials, or public-domain historical records. Unverified AI-generated historical portraits and unofficial internet screenshots are strictly excluded.
+                    </div>
+                </section>
+
+                <!-- SECTION 10: RELATED HISTORICAL SECTIONS -->
+                <section class="gallery-related-section">
+                    <h3 style="color: var(--primary-dark); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; display:flex; align-items:center; gap:0.5rem;">
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Related Historical Sections" data-lang-mr="संबंधित ऐतिहासिक विभाग">Related Historical Sections</span>
+                    </h3>
+                    <p style="font-size:0.88rem; color:var(--text-muted); margin:0;" data-lang-en="Explore other complementary historical archives and documentation on the portal:" data-lang-mr="पोर्टलवरील इतर पूरक ऐतिहासिक संग्रह आणि दस्तऐवजीकरण पहा:">
+                        Explore other complementary historical archives and documentation on the portal:
+                    </p>
+                    <div class="gallery-related-grid">
+                        <a href="history.html" class="gallery-related-link">
+                            <span><i class="fa-solid fa-landmark" style="margin-right:0.4rem;"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="historical-timeline.html" class="gallery-related-link">
+                            <span><i class="fa-solid fa-timeline" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="documents.html" class="gallery-related-link">
+                            <span><i class="fa-solid fa-file-contract" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="gazetteers.html" class="gallery-related-link">
+                            <span><i class="fa-solid fa-book-open" style="margin-right:0.4rem;"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटिअर">Gazetteers</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="census.html" class="gallery-related-link">
+                            <span><i class="fa-solid fa-users-rectangle" style="margin-right:0.4rem;"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="settlement.html" class="gallery-related-link">
+                            <span><i class="fa-solid fa-map" style="margin-right:0.4rem;"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="water-heritage.html" class="gallery-related-link">
+                            <span><i class="fa-solid fa-droplet" style="margin-right:0.4rem;"></i> <span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="research.html" class="gallery-related-link">
+                            <span><i class="fa-solid fa-microscope" style="margin-right:0.4rem;"></i> <span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </section>
+
             </div>
         </div>
     </main>
-    <!-- Footer -->
+
+    <!-- DYNAMIC MODAL CONTAINER -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Gallery Entry Details</div>
+                <button class="modal-close-btn" onclick="closeModal()" aria-label="Close Modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal Body injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
             <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
             <div><span data-lang-en="Built by Community Volunteers" data-lang-mr="समाज स्वयंसेवकांनी बनवले">Built by Community Volunteers</span></div>
         </div>
     </footer>
+
     <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/nav.js"></script>
+
+    <!-- Gallery Filter and Modal Script -->
+    <script>
+        const galleryEntriesData = {
+            1: {
+                title_en: "Historic Village Architecture",
+                title_mr: "ऐतिहासिक ग्रामीण वास्तुकला",
+                category_en: "Community Heritage",
+                category_mr: "समाजाचा वारसा",
+                location_en: "Location not yet documented",
+                location_mr: "स्थान अद्याप नोंदलेले नाही",
+                source: "Community Archive & Architectural Survey",
+                details_en: "<p>Visual record representing traditional rural residential structures, stone-and-earth embankments, and courtyard wadas found in historic Kohli settlements in the Vidarbha basin.</p><p><em>Verification status: Entry awaiting high-resolution original authenticated photograph.</em></p>",
+                details_mr: "<p>विदर्भ खोऱ्यातील ऐतिहासिक कोहळी वस्त्यांमध्ये आढळणारी पारंपरिक ग्रामीण घरे, माती-दगडांचे बांधकाम आणि वाडा वास्तुकला दर्शवणारी नोंद.</p><p><em>पडताळणी स्थिती: मूळ प्रमाणित छायाचित्र जोडले जाणे बाकी आहे.</em></p>"
+            },
+            2: {
+                title_en: "Traditional Rural Settlement",
+                title_mr: "पारंपरिक ग्रामीण वसाहत",
+                category_en: "Community Heritage",
+                category_mr: "समाजाचा वारसा",
+                location_en: "Location not yet documented",
+                location_mr: "स्थान अद्याप नोंदलेले नाही",
+                source: "Regional Geographical Survey",
+                details_en: "<p>Layout of traditional agricultural settlements strategically positioned near natural catchments, ensuring gravity-based water supply to agricultural fields and domestic livestock.</p>",
+                details_mr: "<p>नैसर्गिक पाणलोट क्षेत्राजवळ वसलेल्या शेतकरी वस्त्यांची रचना, ज्यामुळे शेती आणि जनावरांना नैसर्गिक उतारानुसार पाणीपुरवठा शक्य होत असे.</p>"
+            },
+            3: {
+                title_en: "Community Heritage Site",
+                title_mr: "समाज वारसा स्थळ",
+                category_en: "Community Heritage",
+                category_mr: "समाजाचा वारसा",
+                location_en: "Location not yet documented",
+                location_mr: "स्थान अद्याप नोंदलेले नाही",
+                source: "Oral History & Heritage Documentation",
+                details_en: "<p>Historical gathering grounds and village assembly sites preserved in community memory as places of social decision-making and annual gatherings.</p>",
+                details_mr: "<p>सामाजिक निर्णय आणि वार्षिक मेळाव्यांची ठिकाणे म्हणून समाज स्मृतीमध्ये जतन केलेली ऐतिहासिक सभास्थाने.</p>"
+            },
+            4: {
+                title_en: "Navegaon Bandh Reservoir",
+                title_mr: "नवेगाव बांध जलाशय",
+                category_en: "Water Heritage",
+                category_mr: "जलवारसा",
+                location_en: "Gondia Region, Vidarbha",
+                location_mr: "गोंदिया प्रदेश, विदर्भ",
+                source: "District Irrigation Documentation",
+                details_en: "<p>Navegaon Bandh is a prominent water reservoir forming part of the historical irrigation and agricultural landscape of the Bhandara–Gondia region.</p><p><strong>Heritage Association:</strong> Part of the regional water-management landscape associated with agrarian settlements.</p>",
+                details_mr: "<p>नवेगाव बांध हा भंडारा–गोंदिया प्रदेशातील ऐतिहासिक सिंचन आणि कृषी रचनेचा प्रमुख जलाशय आहे.</p><p><strong>वारसा संदर्भ:</strong> शेतकरी वस्त्यांशी जोडलेल्या प्रादेशिक जलव्यवस्थापनाचा महत्त्वाचा घटक.</p>"
+            },
+            5: {
+                title_en: "Bodalkasa Tank",
+                title_mr: "बोदलकसा तलाव",
+                category_en: "Water Heritage",
+                category_mr: "जलवारसा",
+                location_en: "Tirora / Gondia Region",
+                location_mr: "तिरोडा / गोंदिया प्रदेश",
+                source: "Historical Gazetteer Records",
+                details_en: "<p>Historic irrigation reservoir supporting extensive paddy farming and multi-season cultivation in the Tirora region.</p>",
+                details_mr: "<p>तिरोडा परिसरातील विस्तृत भातशेतीला आणि बहुहंगामी पिकांना पाणी पुरवणारा ऐतिहासिक सिंचन जलाशय.</p>"
+            },
+            6: {
+                title_en: "Traditional Stepwells (Baravs)",
+                title_mr: "पारंपरिक बारव (Stepwells)",
+                category_en: "Water Heritage",
+                category_mr: "जलवारसा",
+                location_en: "Vidarbha Basin",
+                location_mr: "विदर्भ खोरे",
+                source: "Traditional Water Architecture Archive",
+                details_en: "<p>Stone-carved stepwells designed to conserve groundwater and provide clean domestic water to village settlements during summer months.</p>",
+                details_mr: "<p>उन्हाळ्याच्या दिवसांत गावाला स्वच्छ पिण्याचे पाणी उपलब्ध करून देण्यासाठी आणि भूजल संवर्धनासाठी बांधलेली दगडी बारव.</p>"
+            },
+            7: {
+                title_en: "Traditional Rice Cultivation",
+                title_mr: "पारंपरिक भातशेती",
+                category_en: "Agricultural Heritage",
+                category_mr: "कृषी वारसा",
+                location_en: "Bhandara–Gondia Paddy Belt",
+                location_mr: "भंडारा–गोंदिया भातशेती पट्टा",
+                source: "District Agricultural Records",
+                details_en: "<p>Historical documentation of paddy transplantation, indigenous paddy varieties, and canal-fed irrigation methods in the Wainganga river basin.</p>",
+                details_mr: "<p>वैनगंगा नदी खोऱ्यातील भात लावणी, पारंपरिक वाण आणि कालवे सिंचन पद्धतींचे ऐतिहासिक दस्तऐवजीकरण.</p>"
+            },
+            8: {
+                title_en: "Sugarcane & Jaggery Production",
+                title_mr: "ऊस शेती आणि गूळनिर्मिती",
+                category_en: "Agricultural Heritage",
+                category_mr: "कृषी वारसा",
+                location_en: "Historical Central Provinces",
+                location_mr: "ऐतिहासिक सेंट्रल प्रॉव्हिन्सेस",
+                source: "Napier Settlement Report",
+                details_en: "<p>Settlement records explicitly describe sugarcane farming, bullock-crushers, and traditional jaggery production in fertile tank-irrigated zones.</p>",
+                details_mr: "<p>सेटलमेंट अहवालात तलाव सिंचनाखालील सुपीक जमिनींवर उसाची शेती, लाकडी-लोखंडी चरके आणि गूळनिर्मितीचे स्पष्ट वर्णन आढळते.</p>"
+            },
+            9: {
+                title_en: "Public Representatives & Community Leaders",
+                title_mr: "लोकप्रतिनिधी आणि समाजनेते",
+                category_en: "Personalities",
+                category_mr: "मान्यवर",
+                location_en: "Vidarbha Region",
+                location_mr: "विदर्भ प्रदेश",
+                source: "Community Historical Records",
+                details_en: "<p>Profile archive dedicated to preserving biographical and public contributions of elected representatives, panchayat leaders, and social workers.</p><p><em>Note: Individual profiles are documented with source verification.</em></p>",
+                details_mr: "<p>लोकप्रतिनिधी, पंचायत सदस्य आणि समाजसेवकांच्या योगदानाचे जतन करणारा चरित्र संग्रह.</p><p><em>टीप: प्रत्येक व्यक्तीची माहिती स्रोत पडताळणीसह नोंदवली जाते.</em></p>"
+            },
+            10: {
+                title_en: "Tulsi Vivah Tradition",
+                title_mr: "तुळशी विवाह परंपरा",
+                category_en: "Culture & Traditions",
+                category_mr: "संस्कृती आणि परंपरा",
+                location_en: "Documented Community Practice",
+                location_mr: "नोंदवलेली समाज परंपरा",
+                source: "Community Cultural Publications",
+                details_en: "<p>Tulsi Vivah is described in community literature as a traditional Kohli social and religious practice involving ceremonial worship and community participation.</p><p><em>Cultural note: Specific ceremonial rituals reflect local family customs and regional traditions.</em></p>",
+                details_mr: "<p>समुदायाच्या साहित्यामध्ये तुळशी विवाह हा कोहळी समाजातील पारंपरिक धार्मिक व सामाजिक विधी म्हणून वर्णन केला आहे. या विधीमध्ये पूजाअर्चा आणि सामुदायिक सहभागाला महत्त्व असते.</p><p><em>सांस्कृतिक टीप: धार्मिक विधींची पद्धत स्थानिक आणि कौटुंबिक परंपरेनुसार वेगवेगळी असू शकते.</em></p>"
+            },
+            11: {
+                title_en: "Community Gathering & Customs",
+                title_mr: "सामाजिक मेळावे व चालीरीती",
+                category_en: "Culture & Traditions",
+                category_mr: "संस्कृती आणि परंपरा",
+                location_en: "Vidarbha Region",
+                location_mr: "विदर्भ प्रदेश",
+                source: "Community Literature & Smrutigranth",
+                details_en: "<p>Records of traditional folk gatherings, kinship relations, and marriage customs documented across various sub-regions.</p>",
+                details_mr: "<p>विविध भागांतील पारंपरिक सण, नातेसंबंध आणि विवाह पद्धतींची नोंद.</p>"
+            },
+            12: {
+                title_en: "Community Souvenir & Smrutigranth",
+                title_mr: "समाज स्मृतीग्रंथ व स्मरणिका",
+                category_en: "Documents & Publications",
+                category_mr: "दस्तऐवज व प्रकाशने",
+                location_en: "Community Archives",
+                location_mr: "समाज अभिलेखागार",
+                source: "Community Smarika Compilations",
+                details_en: "<p>Special commemorative volumes, community souvenirs, and research articles compiling surnames, family trees, and regional history.</p>",
+                details_mr: "<p>आडनावे, वंशावळी आणि प्रादेशिक इतिहास संकलित करणारे विशेष स्मरणिका ग्रंथ आणि संशोधन लेख.</p>"
+            },
+            13: {
+                title_en: "Harsh Pushpode — Digital Media Recognition",
+                title_mr: "हर्ष पुष्पोदे — डिजिटल माध्यम सन्मान",
+                category_en: "Community Events",
+                category_mr: "समाज कार्यक्रम",
+                location_en: "Nagpur / Vidarbha",
+                location_mr: "नागपूर / विदर्भ",
+                source: "Community Felicitation Record",
+                details_en: "<p>Recognition and felicitation bestowed by community elders and social forums for achievements in modern digital media and creative content generation.</p>",
+                details_mr: "<p>आधुनिक डिजिटल माध्यम आणि सर्जनशील निर्मिती क्षेत्रातील कार्यासाठी समाजातील मान्यवरांकडून झालेला सन्मान.</p>"
+            },
+            14: {
+                title_en: "Annual Community Conventions",
+                title_mr: "वार्षिक समाज मेळावे व अधिवेशने",
+                category_en: "Community Events",
+                category_mr: "समाज कार्यक्रम",
+                location_en: "Bhandara, Gondia, Chandrapur",
+                location_mr: "भंडारा, गोंदिया, चंद्रपूर",
+                source: "Samaj Sammelan Documentation",
+                details_en: "<p>Historical and modern community gatherings organized for social reforms, youth career guidance, and mutual welfare.</p>",
+                details_mr: "<p>सामाजिक सुधारणा, युवक करिअर मार्गदर्शन आणि समाज हितासाठी आयोजित होणारे वार्षिक मेळावे.</p>"
+            }
+        };
+
+        function openGalleryModal(id) {
+            const data = galleryEntriesData[id];
+            if (!data) return;
+            const isMr = (typeof currentLang !== 'undefined' && currentLang === 'mr');
+            const title = isMr ? data.title_mr : data.title_en;
+            const category = isMr ? data.category_mr : data.category_en;
+            const location = isMr ? data.location_mr : data.location_en;
+            const body = isMr ? data.details_mr : data.details_en;
+
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalBody').innerHTML = `
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+                    <span class="badge-source badge-record"><i class="fa-solid fa-tag"></i> ${category}</span>
+                    <span class="badge-source badge-community"><i class="fa-solid fa-map-pin"></i> ${location}</span>
+                </div>
+                <div style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1rem;">
+                    <strong>${isMr ? 'स्रोत:' : 'Source:'}</strong> ${data.source}
+                </div>
+                <div style="line-height:1.7; color:var(--text-main); font-size:0.95rem;">
+                    ${body}
+                </div>
+            `;
+            const overlay = document.getElementById('modalOverlay');
+            if (overlay) overlay.classList.add('active');
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            if (overlay) overlay.classList.remove('active');
+        }
+
+        // Search and Filter Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('gallerySearchInput');
+            const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+            const cards = document.querySelectorAll('.gallery-item-card');
+            const sections = document.querySelectorAll('.gallery-section-card');
+            const countDisplay = document.getElementById('galleryResultsCount');
+
+            let currentFilter = 'all';
+
+            function filterGallery() {
+                const query = (searchInput ? searchInput.value.toLowerCase().trim() : '');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
+                    const cardTags = (card.getAttribute('data-tags') || '').toLowerCase();
+                    const cardText = card.textContent.toLowerCase();
+
+                    const matchesFilter = (currentFilter === 'all' || cardCat === currentFilter);
+                    const matchesQuery = (!query || cardText.includes(query) || cardTags.includes(query));
+
+                    if (matchesFilter && matchesQuery) {
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Adjust section visibility
+                sections.forEach(sec => {
+                    const secCat = (sec.getAttribute('data-section-category') || '').toLowerCase();
+                    const visibleCardsInSec = sec.querySelectorAll('.gallery-item-card[style*="display: flex"], .achievement-highlight-card');
+                    if (currentFilter === 'all' || secCat === currentFilter || visibleCardsInSec.length > 0) {
+                        sec.style.display = 'block';
+                    } else {
+                        sec.style.display = 'none';
+                    }
+                });
+
+                if (countDisplay) {
+                    const isMr = (typeof currentLang !== 'undefined' && currentLang === 'mr');
+                    countDisplay.textContent = isMr ? `${visibleCount} नोंदी दिसत आहेत` : `Showing ${visibleCount} gallery entries`;
+                }
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.getAttribute('data-filter') || 'all';
+                    filterGallery();
+                });
+            });
+
+            if (searchInput) {
+                searchInput.addEventListener('input', filterGallery);
+            }
+        });
+    </script>
 </body>
 </html>

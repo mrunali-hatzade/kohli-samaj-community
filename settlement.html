@@ -3,19 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settlement Reports | Kohli Samaj History | Kohli Samaj Official Portal</title>
-    <meta name="description" content="Colonial-era settlement reports documenting land records, revenue, and Kohli Samaj villages">
+    <title>Historical Settlement Reports | Land Administration & Revenue Records | Kohli Samaj Official Portal</title>
+    <meta name="description" content="Historical settlement reports, land revenue administration, Malguzari records, Chanda and Bhandara district settlements, and traditional water rights relating to the Kohli community.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Settlement Page Specific Styles ── */
+        .settle-hero-intro {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .settle-hero-intro h2 {
+            color: var(--primary-dark);
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+        .settle-hero-intro p {
+            color: var(--text-main);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+        .settle-hero-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Reading Context / Interpretation Box */
+        .settle-context-box {
+            background: #f0fdf4;
+            border: 1.5px solid #bbf7d0;
+            border-left: 5px solid #16a34a;
+            border-radius: 12px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 2.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .settle-context-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.08rem;
+            font-weight: 800;
+            color: #166534;
+            margin-bottom: 0.5rem;
+        }
+        .settle-context-body {
+            font-size: 0.94rem;
+            color: #14532d;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* Section Cards */
+        .settle-section-card {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .settle-section-title {
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .settle-section-desc {
+            font-size: 0.96rem;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin-bottom: 1.2rem;
+        }
+
+        /* Highlight Inner Box */
+        .settle-highlight-inner {
+            background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+            border: 1.5px solid var(--accent-gold);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 10px;
+            padding: 1.3rem 1.5rem;
+            margin: 1rem 0;
+        }
+        .settle-highlight-inner h4 {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Stat Card */
+        .settle-stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #3b82f6;
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .settle-stat-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: #3b82f6;
+        }
+        .settle-stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .settle-number-box {
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 1.8rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+            min-width: 170px;
+        }
+        .settle-number {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #93c5fd;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .settle-number-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 0.35rem;
+        }
+
+        /* Regional Breakdown Grid */
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+        .breakdown-item {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .breakdown-region {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .breakdown-val {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-top: 0.3rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Warning/Caution Box */
+        .settle-warning-box {
+            background: #fffbeb;
+            border: 1.5px solid #fde68a;
+            border-left: 4px solid #d97706;
+            border-radius: 10px;
+            padding: 1rem 1.3rem;
+            font-size: 0.92rem;
+            color: #92400e;
+            line-height: 1.6;
+            margin-top: 1.2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+        }
+        .settle-warning-box i {
+            color: #d97706;
+            font-size: 1.1rem;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+        }
+
+        /* 4 Compact Cards Grid */
+        .compact-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin: 1.4rem 0;
+        }
+        .compact-card {
+            background: #fafcfb;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.3rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .compact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(14,62,41,0.06);
+            border-color: var(--primary-dark);
+        }
+        .compact-card-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .compact-card-desc {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        /* Historical Spellings Section */
+        .settle-spellings-box {
+            background: #f8fafc;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 2.2rem;
+        }
+        .settle-spellings-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1rem 0;
+        }
+        .settle-spelling-pill {
+            background: white;
+            border: 1.5px solid #cbd5e1;
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--primary-dark);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .settle-spelling-pill i {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+        }
+
+        /* Filter & Search Bar */
+        .settle-filter-wrapper {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1.8rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .settle-search-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .settle-search-box {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+        }
+        .settle-search-box input {
+            width: 100%;
+            padding: 0.55rem 1rem 0.55rem 2.4rem;
+            border-radius: 8px;
+            border: 1.5px solid var(--border-color);
+            font-size: 0.9rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .settle-search-box input:focus {
+            border-color: var(--primary-dark);
+        }
+        .settle-search-box i {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .settle-filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .settle-filter-btn {
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            border: 1.5px solid var(--border-color);
+            background: #f8faf9;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .settle-filter-btn:hover, .settle-filter-btn.active {
+            background: var(--primary-dark);
+            color: white;
+            border-color: var(--primary-dark);
+        }
+        .settle-filter-btn.active i {
+            color: var(--accent-gold);
+        }
+
+        /* Source Archive Cards */
+        .settle-sources-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.4rem;
+            margin-bottom: 2.2rem;
+        }
+        .settle-src-card {
+            background: white;
+            border-radius: 12px;
+            border: 1.5px solid var(--border-color);
+            padding: 1.4rem 1.6rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .settle-src-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14,62,41,0.08);
+            border-color: var(--primary-dark);
+        }
+        .settle-src-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .settle-src-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+        .settle-src-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.35rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .settle-src-desc {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+        .settle-src-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Related Pages Grid */
+        .settle-related-section {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .settle-related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .settle-related-link {
+            background: var(--bg-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.9rem 1.1rem;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s;
+        }
+        .settle-related-link:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-dark);
+            transform: translateX(3px);
+        }
+        .settle-related-link i {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .settle-stat-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .settle-number-box {
+                width: 100%;
+            }
+            .breakdown-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 <body class="font-normal">
 
-    <!-- ==========================================================================
-         1. TOP GOVT UTILITY BAR
-         ========================================================================== -->
+    <!-- TOP UTILITY BAR -->
     <div class="top-utility-bar">
         <div class="container utility-flex">
             <div class="utility-left">
@@ -62,9 +518,7 @@
         </div>
     </div>
 
-    <!-- ==========================================================================
-         2. MAIN HEADER & BRANDING & NAVIGATION
-         ========================================================================== -->
+    <!-- MAIN HEADER & BRANDING & NAVIGATION -->
     <header class="main-header">
         <div class="container header-inner">
             <!-- Official Emblem Logo -->
@@ -96,7 +550,7 @@
                     </li>
                     <li><a href="culture.html" class="nav-link"><span data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="about.html" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="about.html" class="dropdown-link"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Overview" data-lang-mr="समाज परिचय">Community Overview</span></a></li>
                             <li><a href="districts.html" class="dropdown-link"><i class="fa-solid fa-map-location-dot"></i> <span data-lang-en="Districts & Regions" data-lang-mr="जिल्हे व क्षेत्र">Districts & Regions</span></a></li>
@@ -120,14 +574,13 @@
                     <li><a href="contact.html" class="nav-link"><span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span></a></li>
                 </ul>
             </nav>
-
             <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
 
-        <!-- Page Title Banner & Breadcrumbs -->
+    <!-- PAGE TITLE BANNER -->
     <div class="page-title-banner">
         <div class="container">
             <div class="breadcrumb-trail">
@@ -137,10 +590,16 @@
                 <span class="bc-sep">&gt;&gt;</span>
                 <span class="bc-current" data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="Colonial-era settlement reports documenting land records, revenue, and Kohli Samaj villages" data-lang-mr="कोहळी समाजाच्या गावांचे, जमीन नोंदी आणि महसूल यांचे वसाहतकालीन सेटलमेंट अहवाल">Colonial-era settlement reports documenting land records, revenue, and Kohli Samaj villages</span></p>
+            <h1 class="page-banner-title">
+                <span data-lang-en="Historical Settlement Reports" data-lang-mr="ऐतिहासिक सेटलमेंट अहवाल">Historical Settlement Reports</span>
+            </h1>
+            <p class="page-banner-subtitle">
+                <span data-lang-en="Historical records relating to land settlement, revenue administration, villages, agriculture and water resources in the regions associated with Kohli Samaj." data-lang-mr="कोहळी समाजाशी संबंधित प्रदेशातील जमीन सेटलमेंट, महसूल व्यवस्था, गावे, शेती आणि जलस्रोत यांच्याशी संबंधित ऐतिहासिक नोंदी.">Historical records relating to land settlement, revenue administration, villages, agriculture and water resources in the regions associated with Kohli Samaj.</span>
+            </p>
         </div>
     </div>
+
+    <!-- MAIN CONTAINER -->
     <main class="container" style="padding: 3rem 1.25rem;">
         <div class="history-layout-container">
             <!-- LEFT SIDEBAR PANEL -->
@@ -186,8 +645,11 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
-                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical References" data-lang-mr="ऐतिहासिक संदर्भ">Historical References</span></a></li>
+                                <li><a href="gazetteers.html#sec-disclaimer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Reading Context" data-lang-mr="ऐतिहासिक वाचन संदर्भ">Historical Reading Context</span></a></li>
+                                <li><a href="gazetteers.html#sec-gov-refs" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Government References" data-lang-mr="शासकीय संदर्भ">Government References</span></a></li>
+                                <li><a href="gazetteers.html#sec-themes" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Themes" data-lang-mr="ऐतिहासिक विषय">Historical Themes</span></a></li>
+                                <li><a href="gazetteers.html#sec-spellings" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Name Forms" data-lang-mr="नावांची ऐतिहासिक रूपे">Historical Name Forms</span></a></li>
+                                <li><a href="gazetteers.html#sec-gazetteers-archive" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Gazetteer Records" data-lang-mr="गॅझेटिअर नोंदी">Gazetteer Records</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -196,8 +658,9 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
-                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
+                                <li><a href="census.html#sec-census-intro" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Census Records" data-lang-mr="ऐतिहासिक जनगणना नोंदी">Historical Census Records</span></a></li>
+                                <li><a href="census.html#sec-1911-record" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1911 Bhandara (11,399)" data-lang-mr="१९११ भंडारा (११,३९९)">1911 Bhandara (11,399)</span></a></li>
+                                <li><a href="census.html#sec-settlement-record" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Settlement Record (19,739)" data-lang-mr="सेटलमेंट नोंद (१९,७३९)">Settlement Record (19,739)</span></a></li>
                             </ul>
                         </li>
                         <li class="expanded">
@@ -206,7 +669,18 @@
                                 <i class="fa-solid fa-chevron-right chevron-toggle"></i>
                             </a>
                             <ul class="sidebar-sub-list">
-                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link active" data-scroll="sec-napier-report"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
+                                <li><a href="#sec-settlement-intro" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Introduction & Context" data-lang-mr="परिचय व ऐतिहासिक संदर्भ">Introduction & Context</span></a></li>
+                                <li><a href="#sec-chanda-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Settlement Report" data-lang-mr="चांदा सेटलमेंट अहवाल">Chanda Settlement Report</span></a></li>
+                                <li><a href="#sec-kohli-chanda" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Kohli References in Chanda" data-lang-mr="चांदा नोंदीतील कोहळी संदर्भ">Kohli References in Chanda</span></a></li>
+                                <li><a href="#sec-bhandara-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Bhandara Settlement Records" data-lang-mr="भंडारा सेटलमेंट नोंदी">Bhandara Settlement Records</span></a></li>
+                                <li><a href="#sec-malguzari-admin" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Administration" data-lang-mr="मालगुजारी आणि ग्रामप्रशासन">Malguzari Administration</span></a></li>
+                                <li><a href="#sec-patil-role" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Patil & Village Role" data-lang-mr="पाटील आणि ग्रामस्तरीय प्रशासन">Patil & Village Role</span></a></li>
+                                <li><a href="#sec-land-agriculture" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Land & Agriculture" data-lang-mr="जमीन, शेती व महसूल">Land & Agriculture</span></a></li>
+                                <li><a href="#sec-water-irrigation" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Water & Irrigation" data-lang-mr="जलस्रोत आणि सिंचन">Water & Irrigation</span></a></li>
+                                <li><a href="#sec-settlement-pop" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Settlement Population (19,739)" data-lang-mr="सेटलमेंट लोकसंख्या (१९,७३९)">Settlement Population (19,739)</span></a></li>
+                                <li><a href="#sec-village-rights" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Village Rights & Records" data-lang-mr="ग्रामहक्क आणि स्थानिक नोंदी">Village Rights & Records</span></a></li>
+                                <li><a href="#sec-spellings" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Name Forms" data-lang-mr="नावांची ऐतिहासिक रूपे">Historical Name Forms</span></a></li>
+                                <li><a href="#sec-sources-archive" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Settlement Sources Archive" data-lang-mr="सेटलमेंट स्रोत संग्रह">Settlement Sources Archive</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -238,109 +712,700 @@
             </aside>
 
             <!-- RIGHT CONTENT AREA -->
-            <div class="history-content-area" id="sec-napier-report">
-                <!-- REPORT TITLE & INTRO -->
-                <div style="margin-bottom: 2.5rem; text-align: center;">
-                    <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;" data-lang-en="Chanda Settlement Report — Historical Reference to the Kohli Community" data-lang-mr="चांदा सेटलमेंट रिपोर्ट — कोहळी समाजाचा ऐतिहासिक संदर्भ">Chanda Settlement Report — Historical Reference to the Kohli Community</h2>
-                    <p style="line-height: 1.8; font-size: 1.05rem; color: var(--text-main);" data-lang-en="A historical settlement report by A. B. Napier, Settlement Officer, provides valuable observations about the Kohli community's agricultural practices, sugarcane cultivation, traditional water management and community organization." data-lang-mr="सेटलमेंट अधिकारी ए. बी. नेपियर यांच्या ऐतिहासिक सेटलमेंट अहवालात कोहळी समाजाच्या कृषी पद्धती, ऊस लागवड, पारंपरिक जल व्यवस्थापन आणि सामाजिक रचनेबद्दल महत्त्वाचे निरीक्षणे नोंदवली आहेत.">
-                        A historical settlement report by A. B. Napier, Settlement Officer, provides valuable observations about the Kohli community's agricultural practices, sugarcane cultivation, traditional water management and community organization.
-                    </p>
-                </div>
-
-                <!-- SECTIONS GRID -->
-                <div style="display: flex; flex-direction: column; gap: 2rem; margin-bottom: 2rem;">
-                    <!-- SECTION 1: AGRICULTURE -->
-                    <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
-                            <i class="fa-solid fa-wheat-awn" style="color: var(--accent-gold);"></i>
-                            <span data-lang-en="Kohli Agriculture and Sugarcane Cultivation" data-lang-mr="कोहळी शेती आणि ऊस लागवड">Kohli Agriculture and Sugarcane Cultivation</span>
-                        </h3>
-                        <p style="line-height: 1.7; font-size: 0.98rem; color: var(--text-main); margin: 0;" data-lang-en="According to the settlement report, the Kohli community was strongly associated with agriculture, with particular emphasis on sugarcane cultivation. The report notes that sugarcane was especially cultivated in areas where the terrain supported the construction of large water tanks." data-lang-mr="सेटलमेंट अहवालानुसार, कोहळी समाज शेतीशी मोठ्या प्रमाणावर जोडला गेला होता, ज्यामध्ये प्रामुख्याने ऊस लागवडीवर भर होता. अहवालात असे नमूद केले आहे की, ज्या भागात तलाव उभारण्यासाठी जमीन अनुकूल होती, अशा ठिकाणी प्रामुख्याने उसाची लागवड केली जात असे.">
-                            According to the settlement report, the Kohli community was strongly associated with agriculture, with particular emphasis on sugarcane cultivation. The report notes that sugarcane was especially cultivated in areas where the terrain supported the construction of large water tanks.
-                        </p>
+            <div class="history-content-area">
+                
+                <!-- INTRO SECTION -->
+                <section id="sec-settlement-intro" class="settle-hero-intro">
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem;">
+                        <h2>
+                            <i class="fa-solid fa-map" style="color: var(--accent-gold); margin-right: 0.4rem;"></i>
+                            <span data-lang-en="Historical Settlement and Land Administration Records" data-lang-mr="ऐतिहासिक सेटलमेंट आणि जमीन प्रशासन नोंदी">Historical Settlement and Land Administration Records</span>
+                        </h2>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Historical Administrative Source" data-lang-mr="ऐतिहासिक प्रशासकीय स्रोत">Historical Administrative Source</span></span>
                     </div>
+                    <p data-lang-en="Settlement Reports were prepared to document land, revenue, villages, agricultural practices and local administrative arrangements. They provide valuable historical context for understanding rural society and land administration in the Central Provinces and adjoining regions." data-lang-mr="सेटलमेंट अहवालांमध्ये जमीन, महसूल, गावे, शेतीच्या पद्धती आणि स्थानिक प्रशासकीय व्यवस्थेची नोंद केली जात असे. Central Provinces आणि लगतच्या प्रदेशातील ग्रामीण समाजजीवन व जमीन प्रशासन समजून घेण्यासाठी हे अहवाल महत्त्वाचे ऐतिहासिक संदर्भ आहेत.">
+                        Settlement Reports were prepared to document land, revenue, villages, agricultural practices and local administrative arrangements. They provide valuable historical context for understanding rural society and land administration in the Central Provinces and adjoining regions.
+                    </p>
+                </section>
 
-                    <!-- SECTION 2: WATER MANAGEMENT -->
-                    <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                        <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
-                            <i class="fa-solid fa-droplet" style="color: var(--accent-gold);"></i>
-                            <span data-lang-en="Traditional Water Management" data-lang-mr="पारंपरिक जल व्यवस्थापन">Traditional Water Management</span>
+                <!-- INTERPRETATION / HOW TO READ BOX -->
+                <section class="settle-context-box">
+                    <div class="settle-context-header">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span data-lang-en="How to read Settlement Reports" data-lang-mr="सेटलमेंट अहवाल कसे समजून घ्यावेत?">How to read Settlement Reports</span>
+                    </div>
+                    <p class="settle-context-body" data-lang-en="Settlement Reports were administrative documents created for the land and revenue systems of their time. Their terminology and classifications reflect historical administrative practices. They are valuable historical sources but should not automatically be interpreted as modern legal or social classifications." data-lang-mr="सेटलमेंट अहवाल हे त्या काळातील जमीन आणि महसूल व्यवस्थेसाठी तयार केलेले प्रशासकीय दस्तऐवज होते. त्यातील संज्ञा आणि वर्गीकरणे त्या काळातील प्रशासकीय पद्धती दर्शवतात. हे अहवाल महत्त्वाचे ऐतिहासिक स्रोत आहेत; मात्र त्यांचा आधुनिक कायदेशीर किंवा सामाजिक वर्गीकरणाशी आपोआप संबंध लावू नये.">
+                        Settlement Reports were administrative documents created for the land and revenue systems of their time. Their terminology and classifications reflect historical administrative practices. They are valuable historical sources but should not automatically be interpreted as modern legal or social classifications.
+                    </p>
+                </section>
+
+                <!-- SECTION 1: CHANDA DISTRICT SETTLEMENT REPORT -->
+                <section id="sec-chanda-settlement" class="settle-section-card">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
+                        <h3 class="settle-section-title" style="margin:0;">
+                            <i class="fa-solid fa-file-lines" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Chanda District Settlement Report" data-lang-mr="चांदा जिल्हा सेटलमेंट अहवाल">Chanda District Settlement Report</span>
                         </h3>
-                        <p style="line-height: 1.7; font-size: 0.98rem; color: var(--text-main); margin-bottom: 1.2rem;" data-lang-en="One of the notable observations in the report concerns the construction of large reservoirs to retain water for irrigation during the long hot months. This historical account provides an important connection between Kohli agricultural life and traditional water-management practices." data-lang-mr="अहवालातील महत्त्वाच्या निरीक्षणांपैकी एक म्हणजे उन्हाळ्याच्या प्रदीर्घ महिन्यांत सिंचनासाठी पाणी साठवून ठेवण्याकरिता मोठ्या जलाशयांची (तलावांची) केलेली रचना. हा ऐतिहासिक संदर्भ कोहळी समाजाच्या कृषी जीवनाचा पारंपरिक जल व्यवस्थापन पद्धतींशी असणारा महत्त्वाचा दुवा स्पष्ट करतो.">
-                            One of the notable observations in the report concerns the construction of large reservoirs to retain water for irrigation during the long hot months. This historical account provides an important connection between Kohli agricultural life and traditional water-management practices.
-                        </p>
-                        <div style="background: var(--accent-gold-light); border-left: 4px solid var(--accent-gold); padding: 1rem 1.5rem; border-radius: 0 8px 8px 0;">
-                            <strong style="color: var(--accent-gold-hover); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.6rem;" data-lang-en="Agriculture + Water Management" data-lang-mr="कृषी + जल व्यवस्थापन">Agriculture + Water Management</strong>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                                <span style="background: white; border: 1px solid var(--border-color); color: var(--primary-dark); font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 4px;" data-lang-en="Sugarcane" data-lang-mr="ऊस">Sugarcane</span>
-                                <span style="background: white; border: 1px solid var(--border-color); color: var(--primary-dark); font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 4px;" data-lang-en="Reservoirs" data-lang-mr="जलाशय">Reservoirs</span>
-                            </div>
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                            <span class="badge-source badge-record"><i class="fa-solid fa-calendar"></i> <span data-lang-en="19th Century" data-lang-mr="१९ वे शतक">19th Century</span></span>
+                            <span class="badge-source badge-record"><i class="fa-solid fa-map-pin"></i> <span data-lang-en="Chanda (Chandrapur)" data-lang-mr="चांदा (चंद्रपूर)">Chanda (Chandrapur)</span></span>
+                            <span class="badge-source badge-record"><i class="fa-solid fa-tag"></i> <span data-lang-en="Settlement Report" data-lang-mr="सेटलमेंट अहवाल">Settlement Report</span></span>
                         </div>
                     </div>
-                </div>
-                <span style="font-size: 0.78rem; color: var(--text-muted); background: #f3f4f6; padding: 0.3rem 0.75rem; border-radius: 20px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <span data-lang-en="Historical observation from the Settlement Report" data-lang-mr="सेटलमेंट अहवालातील ऐतिहासिक निरीक्षण">Historical observation from the Settlement Report</span>
-                </span>
-            </div>
 
-            <!-- SECTION 4: ORIGIN -->
-            <div style="background: white; border: 1.5px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-sm);">
-                <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;">
-                    <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
-                    <span data-lang-en="Historical Traditions About Community Origin" data-lang-mr="समाजाच्या उत्पत्तीविषयी ऐतिहासिक परंपरा">Historical Traditions About Community Origin</span>
-                </h3>
-                <p style="line-height: 1.7; font-size: 0.98rem; color: var(--text-main); margin-bottom: 1.2rem;" data-lang-en="The report states that the origin of the Kohli community was uncertain. It records differing traditions concerning their ancestry. One tradition mentioned a connection with Bengal, while Colonel Lucie Smith, Settlement Officer of Chanda, recorded a different view suggesting a southern origin." data-lang-mr="अहवालात असे म्हटले आहे की, कोहळी समाजाचा मूळ उगम अनिश्चित आहे. यात त्यांच्या पूर्वजांविषयी वेगवेगळ्या परंपरांची नोंद आहे. एका परंपरेनुसार त्यांचा संबंध बंगालशी जोडला गेला आहे, तर चांदा येथील सेटलमेंट अधिकारी कर्नल लुसी स्मिथ यांनी यापेक्षा वेगळा दृष्टिकोन मांडत त्यांच्या दक्षिण भारतातील उत्पत्तीचा उल्लेख केला आहे.">
-                    The report states that the origin of the Kohli community was uncertain. It records differing traditions concerning their ancestry. One tradition mentioned a connection with Bengal, while Colonel Lucie Smith, Settlement Officer of Chanda, recorded a different view suggesting a southern origin.
-                </p>
-                <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent-gold); padding-left: 0.8rem; font-style: italic;">
-                    <span data-lang-en="Historical note: These are competing traditions recorded in the historical source. They should not be presented as a conclusively established modern origin story." data-lang-mr="ऐतिहासिक टीप: हे ऐतिहासिक स्रोतामध्ये नोंदवलेले परस्परविरोधी मतप्रवाह आहेत. त्यांना आधुनिक काळातील निश्चित किंवा प्रमाणित उत्पत्तीचा इतिहास म्हणून सादर करू नये.">Historical note: These are competing traditions recorded in the historical source. They should not be presented as a conclusively established modern origin story.</span>
-                </div>
-            </div>
+                    <p class="settle-section-desc" data-lang-en="The Chanda Settlement Report is an important historical administrative source for understanding land settlement, agriculture, village administration and rural society in the Chanda region." data-lang-mr="चांदा जिल्ह्याच्या सेटलमेंट अहवालातून जमीन सेटलमेंट, शेती, ग्रामप्रशासन आणि ग्रामीण समाजजीवनाचा ऐतिहासिक अभ्यास करता येतो.">
+                        The Chanda Settlement Report is an important historical administrative source for understanding land settlement, agriculture, village administration and rural society in the Chanda region.
+                    </p>
 
-        </div>
+                    <!-- HIGHLIGHTED SUB-SECTION: KOHLI REFERENCES IN CHANDA -->
+                    <div id="sec-kohli-chanda" class="settle-highlight-inner">
+                        <h4>
+                            <i class="fa-solid fa-users" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Kohli References in the Chanda Settlement Material" data-lang-mr="चांदा सेटलमेंट सामग्रीतील कोहळी समाजाचे संदर्भ">Kohli References in the Chanda Settlement Material</span>
+                        </h4>
+                        <p style="font-size:0.95rem; line-height:1.65; color:var(--text-main); margin-bottom:0.8rem;" data-lang-en="Supplied historical material contains references to the Kohli/Kohri community in the Chanda region. The material describes their association with agriculture, sugarcane cultivation and village-level social organization." data-lang-mr="उपलब्ध ऐतिहासिक सामग्रीमध्ये चांदा प्रदेशातील कोहळी/कोहरी समाजाशी संबंधित संदर्भ आढळतात. या सामग्रीमध्ये शेती, ऊस लागवड आणि ग्रामस्तरीय सामाजिक व्यवस्थेशी संबंधित उल्लेख आढळतात.">
+                            Supplied historical material contains references to the Kohli/Kohri community in the Chanda region. The material describes their association with agriculture, sugarcane cultivation and village-level social organization.
+                        </p>
+                        <div style="font-size:0.85rem; color:var(--text-muted); font-style:italic; line-height:1.55; border-left:3px solid var(--accent-gold); padding-left:0.8rem;">
+                            <span data-lang-en="Historical clarification: Some historical records describe particular families or localities with specific administrative involvement. These records reflect historical administrative roles in specific areas rather than universal status for all community members." data-lang-mr="ऐतिहासिक स्पष्टीकरण: काही ऐतिहासिक नोंदींमध्ये विशिष्ट गावांमधील किंवा भागांमधील कुटुंबांच्या प्रशासकीय भूमिकेचा उल्लेख आढळतो. हे त्या-त्या भागांतील ऐतिहासिक संदर्भ दर्शवतात, सर्वच कुटुंबांना ते सरसकट लागू नव्हते.">Historical clarification: Some historical records describe particular families or localities with specific administrative involvement. These records reflect historical administrative roles in specific areas rather than universal status for all community members.</span>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- SOURCE CARD -->
-        <section style="background: var(--primary-dark); border-radius: 16px; padding: 2.2rem; color: white; box-shadow: var(--shadow-md);">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.2rem;">
-                <h3 style="color: var(--accent-gold); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;" data-lang-en="Historical Source" data-lang-mr="ऐतिहासिक स्रोत">Historical Source</h3>
-                <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 0.25rem 0.75rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;" data-lang-en="Historical Source Reference" data-lang-mr="ऐतिहासिक स्रोत संदर्भ">Historical Source Reference</span>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; font-size: 0.95rem;">
-                <div>
-                    <strong style="color: rgba(255, 255, 255, 0.65);" data-lang-en="Author:" data-lang-mr="लेखक:">Author:</strong>
-                    <div style="font-weight: 700; margin-top: 0.25rem;">A. B. Napier</div>
-                </div>
-                <div>
-                    <strong style="color: rgba(255, 255, 255, 0.65);" data-lang-en="Role:" data-lang-mr="भूमिका:">Role:</strong>
-                    <div style="font-weight: 700; margin-top: 0.25rem;" data-lang-en="Settlement Officer" data-lang-mr="सेटलमेंट अधिकारी">Settlement Officer</div>
-                </div>
-                <div>
-                    <strong style="color: rgba(255, 255, 255, 0.65);" data-lang-en="Source Document:" data-lang-mr="स्रोत दस्तऐवज:">Source Document:</strong>
-                    <div style="font-weight: 700; margin-top: 0.25rem;" data-lang-en="Chanda Settlement Report" data-lang-mr="चांदा सेटलमेंट अहवाल">Chanda Settlement Report</div>
-                </div>
-            </div>
+                <!-- SECTION 2: BHANDARA DISTRICT SETTLEMENT RECORDS -->
+                <section id="sec-bhandara-settlement" class="settle-section-card">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
+                        <h3 class="settle-section-title" style="margin:0;">
+                            <i class="fa-solid fa-landmark" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Bhandara District Settlement Records" data-lang-mr="भंडारा जिल्हा सेटलमेंट नोंदी">Bhandara District Settlement Records</span>
+                        </h3>
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                            <span class="badge-source badge-record"><i class="fa-solid fa-map-pin"></i> <span data-lang-en="Bhandara Region" data-lang-mr="भंडारा प्रदेश">Bhandara Region</span></span>
+                            <span class="badge-source badge-record"><i class="fa-solid fa-file-invoice"></i> <span data-lang-en="Historical Administrative Record" data-lang-mr="ऐतिहासिक प्रशासकीय नोंद">Historical Administrative Record</span></span>
+                        </div>
+                    </div>
 
-            <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 1.2rem; font-size: 0.9rem;">
-                <strong style="color: rgba(255, 255, 255, 0.65);" data-lang-en="Key Topics Covered:" data-lang-mr="महत्वाचे विषय:">Key Topics Covered:</strong>
-                <div style="margin-top: 0.4rem; color: rgba(255, 255, 255, 0.85);" data-lang-en="Agriculture • Sugarcane • Water Management • Panchayat • Community History" data-lang-mr="कृषी • ऊस • जल व्यवस्थापन • पंचायत • सामाजिक इतिहास">
-                    Agriculture • Sugarcane • Water Management • Panchayat • Community History
-                </div>
+                    <p class="settle-section-desc" style="margin:0;" data-lang-en="Historical settlement records relating to Bhandara provide information about land, villages, agriculture, revenue arrangements and local administration." data-lang-mr="भंडारा जिल्ह्याशी संबंधित ऐतिहासिक सेटलमेंट नोंदींमध्ये जमीन, गावे, शेती, महसूल व्यवस्था आणि स्थानिक प्रशासनासंबंधी माहिती आढळते.">
+                        Historical settlement records relating to Bhandara provide information about land, villages, agriculture, revenue arrangements and local administration.
+                    </p>
+                </section>
+
+                <!-- SECTION 3: MALGUZARI & VILLAGE ADMINISTRATION -->
+                <section id="sec-malguzari-admin" class="settle-section-card">
+                    <h3 class="settle-section-title">
+                        <i class="fa-solid fa-building-columns" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Malguzari and Village Administration" data-lang-mr="मालगुजारी आणि ग्रामप्रशासन">Malguzari and Village Administration</span>
+                    </h3>
+
+                    <p class="settle-section-desc" data-lang-en="Historical material from the region refers to Malguzari arrangements and village-level revenue administration. In some areas, influential landholding families and village officials played important roles in administration and revenue collection." data-lang-mr="प्रदेशातील ऐतिहासिक सामग्रीमध्ये मालगुजारी व्यवस्था आणि ग्रामस्तरीय महसूल प्रशासनाचे संदर्भ आढळतात. काही भागांमध्ये प्रभावशाली जमीनधारक कुटुंबे आणि गावातील अधिकारी प्रशासन व महसूल व्यवस्थेत महत्त्वाची भूमिका बजावत असत.">
+                        Historical material from the region refers to Malguzari arrangements and village-level revenue administration. In some areas, influential landholding families and village officials played important roles in administration and revenue collection.
+                    </p>
+
+                    <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:10px; padding:1rem 1.2rem; margin-bottom:1.4rem; font-size:0.92rem; color:var(--text-main); line-height:1.6;">
+                        <strong data-lang-en="Administrative Context:" data-lang-mr="प्रशासकीय संदर्भ:">Administrative Context:</strong>
+                        <span data-lang-en="Some Kohli families are described in supplied historical/community material as Patils or Malguzars in particular localities." data-lang-mr="काही भागांमधील उपलब्ध ऐतिहासिक/सामुदायिक सामग्रीमध्ये काही कोहळी कुटुंबांचे वर्णन पाटील किंवा मालगुजार म्हणून आढळते.">Some Kohli families are described in supplied historical/community material as Patils or Malguzars in particular localities.</span>
+                    </div>
+
+                    <!-- PATIL ROLE SUB-SECTION -->
+                    <div id="sec-patil-role" style="border-top:1px solid var(--border-color); padding-top:1.2rem;">
+                        <h4 style="color:var(--primary-dark); font-size:1.15rem; font-weight:800; margin-bottom:0.6rem; display:flex; align-items:center; gap:0.5rem;">
+                            <i class="fa-solid fa-user-tie" style="color:var(--accent-gold);"></i>
+                            <span data-lang-en="Patil and Village-Level Administration" data-lang-mr="पाटील आणि ग्रामस्तरीय प्रशासन">Patil and Village-Level Administration</span>
+                        </h4>
+                        <p style="font-size:0.95rem; line-height:1.65; color:var(--text-main); margin-bottom:0.6rem;" data-lang-en="Patil was a village-level administrative role in historical rural systems. Community accounts describe Kohli Patil families in several villages as socially influential and involved in village affairs." data-lang-mr="ऐतिहासिक ग्रामीण व्यवस्थेत पाटील हे ग्रामस्तरीय प्रशासकीय पद होते. समुदायाच्या उपलब्ध नोंदींमध्ये काही गावांतील कोहळी पाटील कुटुंबांचा ग्रामव्यवहार आणि सामाजिक जीवनावर प्रभाव असल्याचे वर्णन आढळते.">
+                            Patil was a village-level administrative role in historical rural systems. Community accounts describe Kohli Patil families in several villages as socially influential and involved in village affairs.
+                        </p>
+                        <div style="font-size:0.85rem; color:var(--text-muted); font-style:italic;">
+                            <span data-lang-en="Local administrative arrangements varied from village to village and across historical periods." data-lang-mr="गावागावानुसार आणि वेगवेगळ्या कालखंडानुसार स्थानिक प्रशासकीय व्यवस्था वेगवेगळी असू शकत होती.">Local administrative arrangements varied from village to village and across historical periods.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: LAND, AGRICULTURE & REVENUE -->
+                <section id="sec-land-agriculture" class="settle-section-card">
+                    <h3 class="settle-section-title">
+                        <i class="fa-solid fa-wheat-awn" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Land, Agriculture and Revenue" data-lang-mr="जमीन, शेती आणि महसूल">Land, Agriculture and Revenue</span>
+                    </h3>
+
+                    <p class="settle-section-desc" data-lang-en="Settlement records are particularly useful for understanding how agricultural land was organized, assessed and administered." data-lang-mr="शेतीची जमीन कशी आयोजित, मोजणी, महसूल आकारणी आणि प्रशासित केली जात होती हे समजून घेण्यासाठी सेटलमेंट नोंदी महत्त्वाच्या आहेत.">
+                        Settlement records are particularly useful for understanding how agricultural land was organized, assessed and administered.
+                    </p>
+
+                    <div class="compact-cards-grid">
+                        <div class="compact-card">
+                            <div class="compact-card-title">
+                                <i class="fa-solid fa-seedling" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Agricultural Land" data-lang-mr="शेतीची जमीन">Agricultural Land</span>
+                            </div>
+                            <p class="compact-card-desc" data-lang-en="Historical classification, surveys and records of arable lands under local cultivation." data-lang-mr="स्थानिक शेतीखालील लागवडयोग्य जमिनींचे ऐतिहासिक सर्वेक्षण व वर्गीकरण नोंदी.">
+                                Historical classification, surveys and records of arable lands under local cultivation.
+                            </p>
+                        </div>
+                        <div class="compact-card">
+                            <div class="compact-card-title">
+                                <i class="fa-solid fa-receipt" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Land Revenue" data-lang-mr="जमीन महसूल">Land Revenue</span>
+                            </div>
+                            <p class="compact-card-desc" data-lang-en="Administrative assessment structures and settlement terms established by revenue authorities." data-lang-mr="महसूल अधिकाऱ्यांद्वारे ठरवण्यात आलेली महसूल आकारणी व सेटलमेंट अटी.">
+                                Administrative assessment structures and settlement terms established by revenue authorities.
+                            </p>
+                        </div>
+                        <div class="compact-card">
+                            <div class="compact-card-title">
+                                <i class="fa-solid fa-book-bookmark" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Village Records" data-lang-mr="ग्राम नोंदी">Village Records</span>
+                            </div>
+                            <p class="compact-card-desc" data-lang-en="Village-level mapping, boundary demarcations, and landholder registries." data-lang-mr="ग्रामस्तरीय नकाशे, गावच्या सीमांचे रेखांकन आणि खातेदारांच्या नोंदी.">
+                                Village-level mapping, boundary demarcations, and landholder registries.
+                            </p>
+                        </div>
+                        <div class="compact-card">
+                            <div class="compact-card-title">
+                                <i class="fa-solid fa-plant-wilt" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Agricultural Production" data-lang-mr="कृषी उत्पादन">Agricultural Production</span>
+                            </div>
+                            <p class="compact-card-desc" data-lang-en="Crops, sugarcane farming traditions, and local cultivation arrangements." data-lang-mr="पिके, ऊस शेतीची परंपरा आणि स्थानिक लागवड पद्धती.">
+                                Crops, sugarcane farming traditions, and local cultivation arrangements.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: WATER & IRRIGATION IN SETTLEMENT RECORDS -->
+                <section id="sec-water-irrigation" class="settle-section-card">
+                    <h3 class="settle-section-title">
+                        <i class="fa-solid fa-droplet" style="color: #0284c7;"></i>
+                        <span data-lang-en="Water Resources and Irrigation" data-lang-mr="जलस्रोत आणि सिंचन">Water Resources and Irrigation</span>
+                    </h3>
+
+                    <p class="settle-section-desc" data-lang-en="Historical settlement material also provides context for understanding tanks, irrigation and agricultural water resources that supported rural settlements." data-lang-mr="ऐतिहासिक सेटलमेंट सामग्रीत तलाव, सिंचन आणि शेतीसाठी वापरल्या जाणाऱ्या जलस्रोतांचा ग्रामीण वसाहतींशी असलेला संबंध समजतो.">
+                        Historical settlement material also provides context for understanding tanks, irrigation and agricultural water resources that supported rural settlements.
+                    </p>
+
+                    <div style="background:#f0f9ff; border:1.5px solid #bae6fd; border-radius:10px; padding:1.2rem 1.4rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+                        <div>
+                            <strong style="color:#0369a1; display:block; margin-bottom:0.25rem;" data-lang-en="Dedicated Tank & Irrigation Heritage Section" data-lang-mr="स्वतंत्र तलाव व जलसंवर्धन वारसा विभाग">Dedicated Tank & Irrigation Heritage Section</strong>
+                            <span style="font-size:0.9rem; color:#0c4a6e;" data-lang-en="Detailed tank heritage is presented separately in Water Conservation Heritage." data-lang-mr="तलाव आणि पारंपरिक जलव्यवस्थेचा सविस्तर इतिहास स्वतंत्र 'जलसंवर्धन वारसा' विभागात दिला आहे.">Detailed tank heritage is presented separately in Water Conservation Heritage.</span>
+                        </div>
+                        <a href="water-heritage.html" class="btn btn-primary" style="padding:0.55rem 1.1rem; font-size:0.85rem;">
+                            <span data-lang-en="View Water Heritage" data-lang-mr="जलसंवर्धन वारसा पहा">View Water Heritage</span> &nbsp;<i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: HISTORICAL SETTLEMENT POPULATION RECORD (19,739) -->
+                <section id="sec-settlement-pop" class="settle-stat-card">
+                    <div class="settle-stat-row">
+                        <div>
+                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+                                <span class="badge-source badge-record" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;"><i class="fa-solid fa-map"></i> <span data-lang-en="Settlement Record" data-lang-mr="सेटलमेंट नोंद">Settlement Record</span></span>
+                                <span class="badge-source badge-record" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;"><i class="fa-solid fa-location-dot"></i> <span data-lang-en="Bhandara & Chanda Settlement" data-lang-mr="भंडारा व चांदा सेटलमेंट">Bhandara & Chanda Settlement</span></span>
+                            </div>
+                            <h3 style="color: #1e3a8a; font-size: 1.35rem; font-weight: 800; margin: 0;" data-lang-en="Historical Settlement Population Record" data-lang-mr="ऐतिहासिक सेटलमेंट लोकसंख्या नोंद">
+                                Historical Settlement Population Record
+                            </h3>
+                            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                                <span data-lang-en="Source: Historical Settlement Context Material (Bhandara & Chanda)" data-lang-mr="स्रोत: ऐतिहासिक सेटलमेंट संदर्भ सामग्री (भंडारा व चांदा)">Source: Historical Settlement Context Material (Bhandara & Chanda)</span>
+                            </div>
+                        </div>
+                        <div class="settle-number-box">
+                            <div class="settle-number">19,739</div>
+                            <div class="settle-number-label" data-lang-en="Settlement Population" data-lang-mr="सेटलमेंट लोकसंख्या">Settlement Population</div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 0.96rem; line-height: 1.65; color: var(--text-main); margin: 0 0 0.8rem 0;" data-lang-en="Available historical settlement material contains these population figures in the relevant administrative context." data-lang-mr="उपलब्ध ऐतिहासिक सेटलमेंट सामग्रीमध्ये संबंधित प्रशासकीय संदर्भात हे लोकसंख्या आकडे आढळतात.">
+                        Available historical settlement material contains these population figures in the relevant administrative context.
+                    </p>
+
+                    <!-- Breakdown Grid -->
+                    <div class="breakdown-grid">
+                        <div class="breakdown-item">
+                            <div class="breakdown-region" data-lang-en="Bhandara" data-lang-mr="भंडारा">Bhandara</div>
+                            <div class="breakdown-val">12,097</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-region" data-lang-en="Chanda" data-lang-mr="चांदा">Chanda</div>
+                            <div class="breakdown-val">7,602</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-region" data-lang-en="Sakoli Tehsil" data-lang-mr="साकोली तहसील">Sakoli Tehsil</div>
+                            <div class="breakdown-val">8,130</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-region" data-lang-en="Brahmapuri Tehsil" data-lang-mr="ब्रह्मपुरी तहसील">Brahmapuri Tehsil</div>
+                            <div class="breakdown-val">6,578</div>
+                        </div>
+                    </div>
+
+                    <!-- Strong Warning -->
+                    <div class="settle-warning-box" style="background:#eff6ff; border-color:#bfdbfe; border-left-color:#2563eb; color:#1e40af;">
+                        <i class="fa-solid fa-circle-info" style="color:#2563eb;"></i>
+                        <div>
+                            <strong data-lang-en="Important Clarification:" data-lang-mr="महत्त्वाचे स्पष्टीकरण:">Important Clarification:</strong>
+                            <span data-lang-en="This settlement record is separate from the 1911 Bhandara census figure of 11,399." data-lang-mr="ही नोंद 1911 मधील भंडारा जिल्ह्याच्या 11,399 या जनगणना आकड्यापेक्षा स्वतंत्र ऐतिहासिक सेटलमेंट नोंद आहे.">This settlement record is separate from the 1911 Bhandara census figure of 11,399.</span>
+                            <span style="display:inline-block; margin-left:0.4rem;">
+                                <a href="census.html" style="color:#1d4ed8; font-weight:700; text-decoration:underline;" data-lang-en="View Census Records →" data-lang-mr="जनगणना नोंदी पहा →">View Census Records →</a>
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 7: VILLAGE RIGHTS & LOCAL RECORDS -->
+                <section id="sec-village-rights" class="settle-section-card">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
+                        <h3 class="settle-section-title" style="margin:0;">
+                            <i class="fa-solid fa-hand-holding-hand" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Village Rights and Local Records" data-lang-mr="ग्रामहक्क आणि स्थानिक नोंदी">Village Rights and Local Records</span>
+                        </h3>
+                        <span class="badge-status badge-status-verify-page"><i class="fa-solid fa-clock-rotate-left"></i> <span data-lang-en="Reference requires source-level verification." data-lang-mr="संदर्भ स्रोत-स्तरीय पडताळणी आवश्यक आहे.">Reference requires source-level verification.</span></span>
+                    </div>
+
+                    <p class="settle-section-desc" style="margin:0;" data-lang-en="Historical settlement systems could record local rights, responsibilities, land use and access to village resources. Such records may include information relating to agricultural land and water resources." data-lang-mr="ऐतिहासिक सेटलमेंट व्यवस्थेमध्ये स्थानिक हक्क, जबाबदाऱ्या, जमीन वापर आणि ग्रामसंसाधनांशी संबंधित माहितीची नोंद केली जाऊ शकत असे. त्यामध्ये शेतीची जमीन आणि जलस्रोतांशी संबंधित माहितीही असू शकते.">
+                        Historical settlement systems could record local rights, responsibilities, land use and access to village resources. Such records may include information relating to agricultural land and water resources.
+                    </p>
+                </section>
+
+                <!-- SECTION 8: HISTORICAL NAME FORMS -->
+                <section id="sec-spellings" class="settle-spellings-box">
+                    <h3 style="color: var(--primary-dark); font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem; display:flex; align-items:center; gap:0.5rem;">
+                        <i class="fa-solid fa-spell-check" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Historical Name Forms" data-lang-mr="ऐतिहासिक दस्तऐवजांमधील नावांची रूपे">Historical Name Forms</span>
+                    </h3>
+                    <p style="font-size:0.92rem; color:var(--text-muted); margin:0;" data-lang-en="Historical English records used different transliteration forms for Indian names." data-lang-mr="ऐतिहासिक इंग्रजी नोंदींमध्ये भारतीय नावांचे वेगवेगळे transliteration forms वापरले गेले आहेत.">
+                        Historical English records used different transliteration forms for Indian names.
+                    </p>
+                    <div class="settle-spellings-list">
+                        <span class="settle-spelling-pill"><i class="fa-solid fa-tag"></i> Kohli</span>
+                        <span class="settle-spelling-pill"><i class="fa-solid fa-tag"></i> Kohri</span>
+                        <span class="settle-spelling-pill"><i class="fa-solid fa-tag"></i> Kohiree</span>
+                        <span class="settle-spelling-pill"><i class="fa-solid fa-tag"></i> Kohulee</span>
+                        <span class="settle-spelling-pill"><i class="fa-solid fa-tag"></i> Koholee</span>
+                        <span class="settle-spelling-pill"><i class="fa-solid fa-tag"></i> Kohoree</span>
+                        <span class="settle-spelling-pill"><i class="fa-solid fa-tag"></i> Kaulees</span>
+                    </div>
+                </section>
+
+                <!-- SECTION 9: SETTLEMENT SOURCES ARCHIVE (SEARCH & FILTERS) -->
+                <section id="sec-sources-archive">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.8rem; margin-bottom:1rem;">
+                        <h3 style="color: var(--primary-dark); font-size: 1.3rem; font-weight: 800; margin:0; display:flex; align-items:center; gap:0.5rem;">
+                            <i class="fa-solid fa-box-archive" style="color: var(--accent-gold);"></i>
+                            <span data-lang-en="Important Historical Settlement Sources" data-lang-mr="महत्त्वाचे ऐतिहासिक सेटलमेंट स्रोत">Important Historical Settlement Sources</span>
+                        </h3>
+                        <span class="badge-source badge-record"><i class="fa-solid fa-folder-open"></i> <span data-lang-en="5 Curated Sources" data-lang-mr="५ संकलित स्रोत">5 Curated Sources</span></span>
+                    </div>
+
+                    <!-- Filter & Search Box -->
+                    <div class="settle-filter-wrapper">
+                        <div class="settle-search-row">
+                            <div class="settle-search-box">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="settleSearchInput" placeholder="Search settlement sources by title, region, keyword..." data-lang-en-placeholder="Search settlement sources by title, region, keyword..." data-lang-mr-placeholder="शीर्षक, प्रदेश, कीवर्डनुसार सेटलमेंट स्रोत शोधा...">
+                            </div>
+                            <span id="settleResultsCount" style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">Showing 5 sources</span>
+                        </div>
+
+                        <div class="settle-filter-buttons" id="settleFilterBtns">
+                            <button class="settle-filter-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i> <span data-lang-en="All" data-lang-mr="सर्व">All</span></button>
+                            <button class="settle-filter-btn" data-filter="chanda"><i class="fa-solid fa-map-pin"></i> <span data-lang-en="Chanda" data-lang-mr="चांदा">Chanda</span></button>
+                            <button class="settle-filter-btn" data-filter="bhandara"><i class="fa-solid fa-map-pin"></i> <span data-lang-en="Bhandara" data-lang-mr="भंडारा">Bhandara</span></button>
+                            <button class="settle-filter-btn" data-filter="central-provinces"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Central Provinces" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस">Central Provinces</span></button>
+                            <button class="settle-filter-btn" data-filter="land-revenue"><i class="fa-solid fa-receipt"></i> <span data-lang-en="Land & Revenue" data-lang-mr="जमीन व महसूल">Land & Revenue</span></button>
+                            <button class="settle-filter-btn" data-filter="malguzari"><i class="fa-solid fa-building-columns"></i> <span data-lang-en="Malguzari" data-lang-mr="मालगुजारी">Malguzari</span></button>
+                            <button class="settle-filter-btn" data-filter="agriculture"><i class="fa-solid fa-wheat-awn"></i> <span data-lang-en="Agriculture" data-lang-mr="शेती">Agriculture</span></button>
+                            <button class="settle-filter-btn" data-filter="water"><i class="fa-solid fa-droplet"></i> <span data-lang-en="Water / Irrigation" data-lang-mr="जल / सिंचन">Water / Irrigation</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Sources List -->
+                    <div class="settle-sources-grid" id="settleSourcesGrid">
+                        
+                        <!-- Source 1: Chanda Settlement Report -->
+                        <div class="settle-src-card" data-categories="chanda land-revenue malguzari agriculture water" data-region="chanda" data-year="19th Century">
+                            <div>
+                                <div class="settle-src-header">
+                                    <div>
+                                        <h4 class="settle-src-title" data-lang-en="Chanda District Settlement Report" data-lang-mr="चांदा जिल्हा सेटलमेंट अहवाल">Chanda District Settlement Report</h4>
+                                        <div class="settle-src-meta">
+                                            <span><i class="fa-solid fa-user-pen"></i> <strong>A. B. Napier</strong> (Settlement Officer)</span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-calendar"></i> 19th Century</span>
+                                            <span>•</span>
+                                            <span class="cat-regional" style="padding:0.15rem 0.5rem; border-radius:4px; font-weight:700; font-size:0.75rem;">Chanda (Chandrapur)</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge-status badge-status-research"><i class="fa-solid fa-flask"></i> <span data-lang-en="Source Supplied for Research" data-lang-mr="संशोधनासाठी उपलब्ध स्रोत">Source Supplied for Research</span></span>
+                                </div>
+                                <p class="settle-src-desc" data-lang-en="Settlement-era administrative record documenting land settlements, agricultural practices, sugarcane cultivation, water management, and community observations in the Chanda region." data-lang-mr="चांदा प्रदेशातील जमीन सेटलमेंट, कृषी पद्धती, ऊस लागवड, जल व्यवस्थापन आणि समाजजीवनाची नोंद करणारा ऐतिहासिक प्रशासकीय अहवाल.">
+                                    Settlement-era administrative record documenting land settlements, agricultural practices, sugarcane cultivation, water management, and community observations in the Chanda region.
+                                </p>
+                            </div>
+                            <div class="settle-src-footer">
+                                <div style="font-size:0.8rem; color:var(--text-muted);">
+                                    <strong data-lang-en="Type:" data-lang-mr="प्रकार:">Type:</strong> <span data-lang-en="Settlement Report" data-lang-mr="सेटलमेंट अहवाल">Settlement Report</span>
+                                </div>
+                                <button class="btn btn-secondary" style="padding:0.35rem 0.85rem; font-size:0.8rem;" onclick="openSourceDetails(1)">
+                                    <i class="fa-solid fa-circle-info"></i> <span data-lang-en="View Record Summary" data-lang-mr="नोंद सारांश पहा">View Record Summary</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Source 2: Bhandara Settlement Records -->
+                        <div class="settle-src-card" data-categories="bhandara land-revenue malguzari agriculture water" data-region="bhandara" data-year="19th-20th Century">
+                            <div>
+                                <div class="settle-src-header">
+                                    <div>
+                                        <h4 class="settle-src-title" data-lang-en="Bhandara District Settlement Records" data-lang-mr="भंडारा जिल्हा सेटलमेंट नोंदी">Bhandara District Settlement Records</h4>
+                                        <div class="settle-src-meta">
+                                            <span><i class="fa-solid fa-building"></i> Settlement Department</span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-calendar"></i> 19th–20th Century</span>
+                                            <span>•</span>
+                                            <span class="cat-regional" style="padding:0.15rem 0.5rem; border-radius:4px; font-weight:700; font-size:0.75rem;">Bhandara</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge-status badge-status-reference"><i class="fa-solid fa-bookmark"></i> <span data-lang-en="Historical Reference" data-lang-mr="ऐतिहासिक संदर्भ">Historical Reference</span></span>
+                                </div>
+                                <p class="settle-src-desc" data-lang-en="Historical administrative records relating to land settlement, village mapping, revenue assessments, and local administration in Bhandara district." data-lang-mr="भंडारा जिल्ह्यातील जमीन सेटलमेंट, गाव नकाशे, महसूल आकारणी आणि स्थानिक प्रशासनाशी संबंधित ऐतिहासिक प्रशासकीय नोंदी.">
+                                    Historical administrative records relating to land settlement, village mapping, revenue assessments, and local administration in Bhandara district.
+                                </p>
+                            </div>
+                            <div class="settle-src-footer">
+                                <div style="font-size:0.8rem; color:var(--text-muted);">
+                                    <strong data-lang-en="Type:" data-lang-mr="प्रकार:">Type:</strong> <span data-lang-en="Settlement Records" data-lang-mr="सेटलमेंट नोंदी">Settlement Records</span>
+                                </div>
+                                <button class="btn btn-secondary" style="padding:0.35rem 0.85rem; font-size:0.8rem;" onclick="openSourceDetails(2)">
+                                    <i class="fa-solid fa-circle-info"></i> <span data-lang-en="View Record Summary" data-lang-mr="नोंद सारांश पहा">View Record Summary</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Source 3: Central Provinces Administrative Records -->
+                        <div class="settle-src-card" data-categories="central-provinces land-revenue malguzari agriculture" data-region="central-provinces" data-year="19th-20th Century">
+                            <div>
+                                <div class="settle-src-header">
+                                    <div>
+                                        <h4 class="settle-src-title" data-lang-en="Historical Central Provinces Administrative Records" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस ऐतिहासिक प्रशासकीय नोंदी">Historical Central Provinces Administrative Records</h4>
+                                        <div class="settle-src-meta">
+                                            <span><i class="fa-solid fa-landmark"></i> Government of Central Provinces</span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-calendar"></i> 19th–20th Century</span>
+                                            <span>•</span>
+                                            <span class="cat-government" style="padding:0.15rem 0.5rem; border-radius:4px; font-weight:700; font-size:0.75rem;">Central Provinces</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge-status badge-status-reference"><i class="fa-solid fa-bookmark"></i> <span data-lang-en="Historical Reference" data-lang-mr="ऐतिहासिक संदर्भ">Historical Reference</span></span>
+                                </div>
+                                <p class="settle-src-desc" data-lang-en="Administrative reports and revenue policy compilations documenting rural governance, land administration systems, and regional agricultural frameworks across the Central Provinces." data-lang-mr="सेंट्रल प्रॉव्हिन्सेसमधील ग्रामीण प्रशासन, जमीन महसूल व्यवस्था आणि प्रादेशिक कृषी रचनेचे दस्तऐवजीकरण करणारे प्रशासकीय अहवाल.">
+                                    Administrative reports and revenue policy compilations documenting rural governance, land administration systems, and regional agricultural frameworks across the Central Provinces.
+                                </p>
+                            </div>
+                            <div class="settle-src-footer">
+                                <div style="font-size:0.8rem; color:var(--text-muted);">
+                                    <strong data-lang-en="Type:" data-lang-mr="प्रकार:">Type:</strong> <span data-lang-en="Administrative Record" data-lang-mr="प्रशासकीय नोंद">Administrative Record</span>
+                                </div>
+                                <button class="btn btn-secondary" style="padding:0.35rem 0.85rem; font-size:0.8rem;" onclick="openSourceDetails(3)">
+                                    <i class="fa-solid fa-circle-info"></i> <span data-lang-en="View Record Summary" data-lang-mr="नोंद सारांश पहा">View Record Summary</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Source 4: Bhandara District Gazetteer (1908) -->
+                        <div class="settle-src-card" data-categories="bhandara land-revenue agriculture water" data-region="bhandara" data-year="1908">
+                            <div>
+                                <div class="settle-src-header">
+                                    <div>
+                                        <h4 class="settle-src-title" data-lang-en="Bhandara District Gazetteer (1908)" data-lang-mr="भंडारा जिल्हा गॅझेटिअर (१९०८)">Bhandara District Gazetteer (1908)</h4>
+                                        <div class="settle-src-meta">
+                                            <span><i class="fa-solid fa-user-pen"></i> <strong>R. V. Russell, ICS</strong></span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-calendar"></i> 1908</span>
+                                            <span>•</span>
+                                            <span class="cat-state" style="padding:0.15rem 0.5rem; border-radius:4px; font-weight:700; font-size:0.75rem;">Bhandara</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge-status badge-status-verified"><i class="fa-solid fa-circle-check"></i> <span data-lang-en="Verified Historical Source" data-lang-mr="प्रमाणित ऐतिहासिक स्रोत">Verified Historical Source</span></span>
+                                </div>
+                                <p class="settle-src-desc" data-lang-en="Foundational district gazetteer detailing agricultural conditions, settlement background, traditional irrigation systems, and demographic context in Bhandara." data-lang-mr="भंडारा जिल्ह्यातील कृषी परिस्थिती, सेटलमेंट पार्श्वभूमी, पारंपरिक सिंचन व्यवस्था आणि लोकसंख्या संदर्भ देणारा मूलभूत गॅझेटिअर.">
+                                    Foundational district gazetteer detailing agricultural conditions, settlement background, traditional irrigation systems, and demographic context in Bhandara.
+                                </p>
+                            </div>
+                            <div class="settle-src-footer">
+                                <div style="font-size:0.8rem; color:var(--text-muted);">
+                                    <strong data-lang-en="Type:" data-lang-mr="प्रकार:">Type:</strong> <span data-lang-en="District Gazetteer" data-lang-mr="जिल्हा गॅझेटिअर">District Gazetteer</span>
+                                </div>
+                                <button class="btn btn-secondary" style="padding:0.35rem 0.85rem; font-size:0.8rem;" onclick="openSourceDetails(4)">
+                                    <i class="fa-solid fa-circle-info"></i> <span data-lang-en="View Record Summary" data-lang-mr="नोंद सारांश पहा">View Record Summary</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Source 5: Chanda District Gazetteer (1909) -->
+                        <div class="settle-src-card" data-categories="chanda land-revenue agriculture water" data-region="chanda" data-year="1909">
+                            <div>
+                                <div class="settle-src-header">
+                                    <div>
+                                        <h4 class="settle-src-title" data-lang-en="Chanda District Gazetteer (1909)" data-lang-mr="चांदा जिल्हा गॅझेटिअर (१९०९)">Chanda District Gazetteer (1909)</h4>
+                                        <div class="settle-src-meta">
+                                            <span><i class="fa-solid fa-user-pen"></i> <strong>L. F. Begbie, ICS</strong></span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-calendar"></i> 1909</span>
+                                            <span>•</span>
+                                            <span class="cat-state" style="padding:0.15rem 0.5rem; border-radius:4px; font-weight:700; font-size:0.75rem;">Chanda (Chandrapur)</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge-status badge-status-verified"><i class="fa-solid fa-circle-check"></i> <span data-lang-en="Verified Historical Source" data-lang-mr="प्रमाणित ऐतिहासिक स्रोत">Verified Historical Source</span></span>
+                                </div>
+                                <p class="settle-src-desc" data-lang-en="Official district publication documenting land revenue administration, agrarian history, village life, and water structures in the Chanda region." data-lang-mr="चांदा प्रदेशातील जमीन महसूल प्रशासन, कृषी इतिहास, ग्रामजीवन आणि जलरचनांचे दस्तऐवजीकरण करणारे अधिकृत जिल्हा प्रकाशन.">
+                                    Official district publication documenting land revenue administration, agrarian history, village life, and water structures in the Chanda region.
+                                </p>
+                            </div>
+                            <div class="settle-src-footer">
+                                <div style="font-size:0.8rem; color:var(--text-muted);">
+                                    <strong data-lang-en="Type:" data-lang-mr="प्रकार:">Type:</strong> <span data-lang-en="District Gazetteer" data-lang-mr="जिल्हा गॅझेटिअर">District Gazetteer</span>
+                                </div>
+                                <button class="btn btn-secondary" style="padding:0.35rem 0.85rem; font-size:0.8rem;" onclick="openSourceDetails(5)">
+                                    <i class="fa-solid fa-circle-info"></i> <span data-lang-en="View Record Summary" data-lang-mr="नोंद सारांश पहा">View Record Summary</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION 10: RELATED HISTORICAL SECTIONS -->
+                <section class="settle-related-section">
+                    <h3 style="color: var(--primary-dark); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; display:flex; align-items:center; gap:0.5rem;">
+                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--accent-gold);"></i>
+                        <span data-lang-en="Related Historical Sections" data-lang-mr="संबंधित ऐतिहासिक विभाग">Related Historical Sections</span>
+                    </h3>
+                    <p style="font-size:0.88rem; color:var(--text-muted); margin:0;" data-lang-en="Explore other complementary historical archives and documentation on the portal:" data-lang-mr="पोर्टलवरील इतर पूरक ऐतिहासिक संग्रह आणि दस्तऐवजीकरण पहा:">
+                        Explore other complementary historical archives and documentation on the portal:
+                    </p>
+                    <div class="settle-related-grid">
+                        <a href="history.html" class="settle-related-link">
+                            <span><i class="fa-solid fa-landmark" style="margin-right:0.4rem;"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="historical-timeline.html" class="settle-related-link">
+                            <span><i class="fa-solid fa-timeline" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="documents.html" class="settle-related-link">
+                            <span><i class="fa-solid fa-file-contract" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="gazetteers.html" class="settle-related-link">
+                            <span><i class="fa-solid fa-book-open" style="margin-right:0.4rem;"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटिअर">Gazetteers</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="census.html" class="settle-related-link">
+                            <span><i class="fa-solid fa-users-rectangle" style="margin-right:0.4rem;"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                        <a href="water-heritage.html" class="settle-related-link">
+                            <span><i class="fa-solid fa-droplet" style="margin-right:0.4rem;"></i> <span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </section>
+
             </div>
         </div>
     </main>
-    <!-- Footer -->
+
+    <!-- DYNAMIC MODAL CONTAINER -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Source Details</div>
+                <button class="modal-close-btn" onclick="closeModal()" aria-label="Close Modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
             <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
             <div><span data-lang-en="Built by Community Volunteers" data-lang-mr="समाज स्वयंसेवकांनी बनवले">Built by Community Volunteers</span></div>
         </div>
     </footer>
+
     <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/nav.js"></script>
+
+    <!-- Settlement Page Filter & Search Script -->
+    <script>
+        const settlementSourcesData = {
+            1: {
+                title_en: "Chanda District Settlement Report",
+                title_mr: "चांदा जिल्हा सेटलमेंट अहवाल",
+                author: "A. B. Napier (Settlement Officer)",
+                period: "19th Century",
+                region_en: "Chanda (Chandrapur)",
+                region_mr: "चांदा (चंद्रपूर)",
+                type_en: "Settlement Report",
+                type_mr: "सेटलमेंट अहवाल",
+                status_en: "Source Supplied for Research",
+                status_mr: "संशोधनासाठी उपलब्ध स्रोत",
+                status_class: "badge-status-research",
+                details_en: "<p>The Chanda Settlement Report is an administrative source prepared for land settlement and revenue assessment. It documents village organization, agricultural lands, sugarcane cultivation, and water reservoirs.</p><p><strong>Community References:</strong> The report records observations on the Kohli/Kohri community's agricultural practices, water engineering traditions, and village leadership in the Chanda region.</p><p><em>Note: This is a historical administrative source and reflects local arrangements of that period.</em></p>",
+                details_mr: "<p>चांदा सेटलमेंट अहवाल हा जमीन सेटलमेंट आणि महसूल आकारणीसाठी तयार केलेला प्रशासकीय दस्तऐवज आहे. यामध्ये ग्रामव्यवस्था, शेतीची जमीन, ऊस लागवड आणि जलसाठ्यांचे दस्तऐवजीकरण आढळते.</p><p><strong>सामाजिक संदर्भ:</strong> या अहवालात चांदा प्रदेशातील कोहळी/कोहरी समाजाच्या कृषी पद्धती, जलव्यवस्थापन परंपरा आणि ग्रामस्तरीय नेतृत्वाविषयी नोंदी आढळतात.</p><p><em>टीप: हा ऐतिहासिक प्रशासकीय स्रोत असून त्या काळातील स्थानिक व्यवस्था दर्शवतो.</em></p>"
+            },
+            2: {
+                title_en: "Bhandara District Settlement Records",
+                title_mr: "भंडारा जिल्हा सेटलमेंट नोंदी",
+                author: "Settlement Department",
+                period: "19th–20th Century",
+                region_en: "Bhandara",
+                region_mr: "भंडारा",
+                type_en: "Settlement Records",
+                type_mr: "सेटलमेंट नोंदी",
+                status_en: "Historical Reference",
+                status_mr: "ऐतिहासिक संदर्भ",
+                status_class: "badge-status-reference",
+                details_en: "<p>Bhandara Settlement Records encompass revenue settlement registers, cadastral surveys, and village land administration documents from the Central Provinces administration.</p><p><strong>Historical Significance:</strong> They provide empirical context on rural land distribution, Malguzari revenue administration, and village-level agricultural infrastructure across Bhandara.</p>",
+                details_mr: "<p>भंडारा सेटलमेंट नोंदींमध्ये सेंट्रल प्रॉव्हिन्सेस प्रशासनातील महसूल सेटलमेंट नोंदवह्या, जमीन सर्वेक्षण आणि ग्राम प्रशासन दस्तऐवज समाविष्ट आहेत.</p><p><strong>ऐतिहासिक महत्त्व:</strong> या नोंदींमधून भंडारा भागातील जमीन वाटप, मालगुजारी महसूल व्यवस्था आणि ग्रामस्तरीय शेती संरचनेचा अभ्यास करता येतो.</p>"
+            },
+            3: {
+                title_en: "Historical Central Provinces Administrative Records",
+                title_mr: "सेंट्रल प्रॉव्हिन्सेस ऐतिहासिक प्रशासकीय नोंदी",
+                author: "Government of Central Provinces",
+                period: "19th–20th Century",
+                region_en: "Central Provinces",
+                region_mr: "सेंट्रल प्रॉव्हिन्सेस",
+                type_en: "Administrative Record",
+                type_mr: "प्रशासकीय नोंद",
+                status_en: "Historical Reference",
+                status_mr: "ऐतिहासिक संदर्भ",
+                status_class: "badge-status-reference",
+                details_en: "<p>Official administrative compilations and land revenue policy reports documenting colonial rural administration, land rights, revenue collection systems, and village administration across the Central Provinces.</p>",
+                details_mr: "<p>सेंट्रल प्रॉव्हिन्सेसमधील ग्रामीण प्रशासन, जमीन हक्क, महसूल संकलन पद्धती आणि ग्रामप्रशासनाचे दस्तऐवजीकरण करणारे अधिकृत प्रशासकीय अहवाल.</p>"
+            },
+            4: {
+                title_en: "Bhandara District Gazetteer (1908)",
+                title_mr: "भंडारा जिल्हा गॅझेटिअर (१९०८)",
+                author: "R. V. Russell, ICS",
+                period: "1908",
+                region_en: "Bhandara",
+                region_mr: "भंडारा",
+                type_en: "District Gazetteer",
+                type_mr: "जिल्हा गॅझेटिअर",
+                status_en: "Verified Historical Source",
+                status_mr: "प्रमाणित ऐतिहासिक स्रोत",
+                status_class: "badge-status-verified",
+                details_en: "<p>Published in 1908, this foundational district publication contains comprehensive descriptions of Bhandara's agrarian landscape, Malguzari land settlement systems, traditional tank irrigation networks, and demographic records.</p>",
+                details_mr: "<p>१९०८ मध्ये प्रकाशित झालेल्या या अधिकृत जिल्हा गॅझेटिअरमध्ये भंडाऱ्याची कृषी रचना, मालगुजारी जमीन व्यवस्था, पारंपरिक तलाव सिंचन यंत्रणा आणि लोकसंख्या नोंदी सविस्तर मांडल्या आहेत.</p>"
+            },
+            5: {
+                title_en: "Chanda District Gazetteer (1909)",
+                title_mr: "चांदा जिल्हा गॅझेटिअर (१९०९)",
+                author: "L. F. Begbie, ICS",
+                period: "1909",
+                region_en: "Chanda (Chandrapur)",
+                region_mr: "चांदा (चंद्रपूर)",
+                type_en: "District Gazetteer",
+                type_mr: "जिल्हा गॅझेटिअर",
+                status_en: "Verified Historical Source",
+                status_mr: "प्रमाणित ऐतिहासिक स्रोत",
+                status_class: "badge-status-verified",
+                details_en: "<p>Published in 1909 by the Government Press, this gazetteer documents land administration, forest rights, sugarcane agriculture, and rural society in the Chanda district during the early 20th century.</p>",
+                details_mr: "<p>१९०९ मध्ये शासकीय मुद्रणालयाद्वारे प्रकाशित झालेल्या या गॅझेटिअरमध्ये २० व्या शतकाच्या सुरुवातीच्या काळातील चांदा जिल्ह्यातील जमीन महसूल प्रशासन, ऊस शेती आणि ग्रामीण समाजजीवनाची नोंद आहे.</p>"
+            }
+        };
+
+        function openSourceDetails(id) {
+            const data = settlementSourcesData[id];
+            if (!data) return;
+            const isMr = (typeof currentLang !== 'undefined' && currentLang === 'mr');
+            const title = isMr ? data.title_mr : data.title_en;
+            const region = isMr ? data.region_mr : data.region_en;
+            const type = isMr ? data.type_mr : data.type_en;
+            const status = isMr ? data.status_mr : data.status_en;
+            const body = isMr ? data.details_mr : data.details_en;
+
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalBody').innerHTML = `
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+                    <span class="badge-source badge-record"><i class="fa-solid fa-map-pin"></i> ${region}</span>
+                    <span class="badge-source badge-record"><i class="fa-solid fa-calendar"></i> ${data.period}</span>
+                    <span class="badge-source badge-record"><i class="fa-solid fa-tag"></i> ${type}</span>
+                    <span class="badge-status ${data.status_class}">${status}</span>
+                </div>
+                <div style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1rem;">
+                    <strong>${isMr ? 'लेखक / प्राधिकरण:' : 'Author / Authority:'}</strong> ${data.author}
+                </div>
+                <div style="line-height:1.7; color:var(--text-main); font-size:0.95rem;">
+                    ${body}
+                </div>
+            `;
+            const overlay = document.getElementById('modalOverlay');
+            if (overlay) overlay.classList.add('active');
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            if (overlay) overlay.classList.remove('active');
+        }
+
+        // Search and Filter Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('settleSearchInput');
+            const filterBtns = document.querySelectorAll('.settle-filter-btn');
+            const cards = document.querySelectorAll('.settle-src-card');
+            const countDisplay = document.getElementById('settleResultsCount');
+
+            let currentFilter = 'all';
+
+            function filterSources() {
+                const query = (searchInput ? searchInput.value.toLowerCase().trim() : '');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const cardCats = (card.getAttribute('data-categories') || '').toLowerCase();
+                    const cardText = card.textContent.toLowerCase();
+
+                    const matchesFilter = (currentFilter === 'all' || cardCats.includes(currentFilter));
+                    const matchesQuery = (!query || cardText.includes(query));
+
+                    if (matchesFilter && matchesQuery) {
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (countDisplay) {
+                    const isMr = (typeof currentLang !== 'undefined' && currentLang === 'mr');
+                    countDisplay.textContent = isMr ? `${visibleCount} स्रोत दिसत आहेत` : `Showing ${visibleCount} sources`;
+                }
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.getAttribute('data-filter') || 'all';
+                    filterSources();
+                });
+            });
+
+            if (searchInput) {
+                searchInput.addEventListener('input', filterSources);
+            }
+        });
+    </script>
 </body>
 </html>
