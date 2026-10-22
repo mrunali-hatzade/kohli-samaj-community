@@ -19,11 +19,11 @@
         /* ------------------------------------------------------------------ */
         /* 1. ELEMENT REFS                                                     */
         /* ------------------------------------------------------------------ */
-        const mobileToggle    = document.getElementById('mobileNavToggle');
-        const navBar          = document.querySelector('.nav-bar');
+        const mobileToggle = document.getElementById('mobileNavToggle');
+        const navBar = document.querySelector('.nav-bar');
         const dropdownParents = document.querySelectorAll('.has-dropdown');
-        const btnLangEn       = document.getElementById('btnLangEn');
-        const btnLangMr       = document.getElementById('btnLangMr');
+        const btnLangEn = document.getElementById('btnLangEn');
+        const btnLangMr = document.getElementById('btnLangMr');
 
         /* ------------------------------------------------------------------ */
         /* 2. LANGUAGE PERSISTENCE                                             */
@@ -79,7 +79,7 @@
         }
 
         // Export for global usage if needed
-        window.switchLanguage = function(lang) {
+        window.switchLanguage = function (lang) {
             applyLanguage(lang, true);
         };
 
