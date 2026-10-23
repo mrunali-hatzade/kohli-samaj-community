@@ -3,376 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research & Publications | Evidence-Based Historical Library | Kohli Samaj Official Portal</title>
-    <meta name="description" content="Research library compiling official records, gazetteers, settlement reports, census archives, ethnographic surveys, community publications, and methodology for Kohli Samaj history.">
+    <title>Research & Historiographical Library | Evidence-Based Archives | Kohli Samaj Official Portal</title>
+    <meta name="description" content="Academic research library compiling official colonial records, gazetteers, settlement reports, census archives, ethnographic surveys, and historical methodology for Kohli community studies.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* ── Research Page Specific Styles ── */
-        .research-hero-intro {
-            background: white;
-            border: 1.5px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.8rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .research-hero-intro h2 {
-            color: var(--primary-dark);
-            font-size: 1.45rem;
-            font-weight: 800;
-            margin-bottom: 0.8rem;
-        }
-        .research-hero-intro p {
-            color: var(--text-main);
-            font-size: 0.98rem;
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        /* Filter & Search Bar */
-        .research-filter-wrapper {
-            background: white;
-            border: 1.5px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.2rem 1.5rem;
-            margin-bottom: 2.2rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .research-search-row {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-        }
-        .research-search-box {
-            position: relative;
-            flex: 1;
-            min-width: 250px;
-        }
-        .research-search-box input {
-            width: 100%;
-            padding: 0.55rem 1rem 0.55rem 2.4rem;
-            border-radius: 8px;
-            border: 1.5px solid var(--border-color);
-            font-size: 0.9rem;
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .research-search-box input:focus {
-            border-color: var(--primary-dark);
-        }
-        .research-search-box i {
-            position: absolute;
-            left: 0.85rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        .research-filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            align-items: center;
-        }
-        .research-filter-btn {
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            border: 1.5px solid var(--border-color);
-            background: #f8faf9;
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .research-filter-btn:hover, .research-filter-btn.active {
-            background: var(--primary-dark);
-            color: white;
-            border-color: var(--primary-dark);
-        }
-        .research-filter-btn.active i {
-            color: var(--accent-gold);
-        }
-
-        /* Section Cards */
-        .research-section-card {
-            background: white;
-            border: 1.5px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.8rem 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .research-section-title {
-            color: var(--primary-dark);
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-        .research-section-desc {
-            font-size: 0.94rem;
-            line-height: 1.65;
-            color: var(--text-main);
-            margin-bottom: 1.4rem;
-        }
-
-        /* Research Cards Grid */
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.3rem;
-        }
-        .research-card {
-            background: #fafcfb;
-            border: 1.5px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.4rem;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .research-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(14,62,41,0.08);
-            border-color: var(--primary-dark);
-        }
-        .research-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-bottom: 0.6rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .research-card-title {
-            font-size: 1.08rem;
-            font-weight: 800;
-            color: var(--primary-dark);
-            margin: 0;
-        }
-        .research-card-body {
-            font-size: 0.88rem;
-            line-height: 1.6;
-            color: var(--text-main);
-            margin-bottom: 1rem;
-        }
-
-        /* Spellings Section */
-        .research-spellings-box {
-            background: #f8fafc;
-            border: 1.5px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.4rem 1.6rem;
-            margin: 1rem 0;
-        }
-        .research-spelling-pill {
-            background: white;
-            border: 1.5px solid #cbd5e1;
-            padding: 0.4rem 0.95rem;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.92rem;
-            color: var(--primary-dark);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        /* Stat Box */
-        .research-stat-box {
-            background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
-            border: 2px solid var(--accent-gold);
-            border-radius: 12px;
-            padding: 1.6rem;
-            margin: 1.2rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-        }
-        .research-stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #b45309;
-            font-family: 'Outfit', sans-serif;
-            line-height: 1;
-        }
-
-        /* Methodology 4 Principles Grid */
-        .methodology-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 1.2rem;
-            margin: 1.4rem 0;
-        }
-        .method-card {
-            background: #f0fdf4;
-            border: 1.5px solid #bbf7d0;
-            border-left: 4px solid #16a34a;
-            border-radius: 10px;
-            padding: 1.2rem;
-        }
-        .method-title {
-            font-size: 1rem;
-            font-weight: 800;
-            color: #166534;
-            margin-bottom: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
-        }
-        .method-desc {
-            font-size: 0.88rem;
-            color: #14532d;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* Hierarchy Matrix */
-        .hierarchy-matrix {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
-            margin: 1.4rem 0;
-        }
-        .hierarchy-box {
-            background: white;
-            border-radius: 10px;
-            padding: 1.2rem;
-            border: 1.5px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-        }
-        .hierarchy-box h4 {
-            font-size: 0.92rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .hierarchy-box ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 0.86rem;
-            color: var(--text-main);
-            line-height: 1.7;
-        }
-        .hierarchy-box ul li {
-            position: relative;
-            padding-left: 1rem;
-        }
-        .hierarchy-box ul li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
-
-        /* Disclaimer Note Box */
-        .research-disclaimer-box {
-            background: #f8fafc;
-            border: 1.5px solid #cbd5e1;
-            border-left: 4px solid #475569;
-            border-radius: 10px;
-            padding: 1.2rem 1.5rem;
-            margin-top: 2rem;
-            font-size: 0.92rem;
-            line-height: 1.65;
-            color: #334155;
-        }
-
-        /* Related Pages Grid */
-        .research-related-section {
-            background: white;
-            border: 1.5px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.8rem 2rem;
-            margin-top: 2rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .research-related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .research-related-link {
-            background: var(--bg-cream);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 0.9rem 1.1rem;
-            text-decoration: none;
-            color: var(--primary-dark);
-            font-weight: 700;
-            font-size: 0.88rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: all 0.2s;
-        }
-        .research-related-link:hover {
-            background: var(--primary-light);
-            border-color: var(--primary-dark);
-            transform: translateX(3px);
-        }
-        .research-related-link i {
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-        }
-    </style>
 </head>
-<body class="font-normal">
-
+<body>
     <!-- TOP UTILITY BAR -->
     <div class="top-utility-bar">
         <div class="container utility-flex">
             <div class="utility-left">
-                <span class="utility-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
-                </span>
-                
-                <!-- Language Switcher -->
-                <div class="utility-item">
-                    <button id="btnLangEn" class="lang-btn active">English</button>
-                    <button id="btnLangMr" class="lang-btn">मराठी</button>
-                </div>
+                <span class="portal-badge" data-lang-en="Official Community Portal" data-lang-mr="अधिकृत समाज पोर्टल">Official Community Portal</span>
+                <span class="portal-update"><i class="fa-solid fa-clock-rotate-left"></i> <span data-lang-en="Scholarly & Archival Library" data-lang-mr="अभ्यासपूर्ण व अभिलेख ग्रंथालय">Scholarly & Archival Library</span></span>
+            </div>
 
-                <!-- Font Resizer -->
-                <div class="utility-item font-resizer" title="Adjust Text Size">
-                    <button id="btnFontSm" class="font-btn">A-</button>
-                    <button id="btnFontMd" class="font-btn active">A</button>
-                    <button id="btnFontLg" class="font-btn">A+</button>
+            <!-- Central Language Switcher -->
+            <div class="language-selector-wrapper">
+                <span class="lang-label"><i class="fa-solid fa-globe"></i> <span data-lang-en="Language:" data-lang-mr="भाषा:">Language:</span></span>
+                <div class="lang-buttons">
+                    <button class="lang-btn active" data-lang="en">English</button>
+                    <button class="lang-btn" data-lang="mr">मराठी</button>
                 </div>
-
-                <span class="utility-item" style="cursor:pointer;" onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')">
-                    <i class="fa-universal-access"></i>
-                    <span data-lang-en="Accessibility" data-lang-mr="अ‍ॅक्सेसिबिलिटी">Accessibility</span>
-                </span>
             </div>
 
             <div class="utility-right">
@@ -380,11 +34,11 @@
                     <i class="fa-solid fa-bell"></i>
                     <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
                 </a>
-                <span class="utility-item">
+                <a href="contact.html" class="utility-item" title="Contact" style="text-decoration:none;">
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
-                </span>
-                
+                </a>
+
                 <!-- Search Box -->
                 <form id="topSearchForm" class="top-search-form">
                     <input type="text" id="searchInput" placeholder="Search portal..." data-lang-en-placeholder="Search portal..." data-lang-mr-placeholder="शोधा...">
@@ -394,7 +48,7 @@
         </div>
     </div>
 
-    <!-- MAIN HEADER & BRANDING & NAVIGATION -->
+    <!-- MAIN HEADER & NAVIGATION -->
     <header class="main-header">
         <div class="container header-inner">
             <!-- Official Emblem Logo -->
@@ -414,7 +68,7 @@
                     <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
                     <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
                     <li class="has-dropdown">
-                        <a href="history.html" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="history.html" class="nav-link active"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
                             <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
@@ -425,7 +79,7 @@
                             <li class="dropdown-divider"></li>
                             <li><a href="water-heritage.html" class="dropdown-link"><i class="fa-solid fa-droplet"></i> <span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span></a></li>
                             <li><a href="historical-gallery.html" class="dropdown-link"><i class="fa-solid fa-image"></i> <span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></a></li>
-                            <li><a href="research.html" class="dropdown-link"><i class="fa-solid fa-microscope"></i> <span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></a></li>
+                            <li><a href="research.html" class="dropdown-link active"><i class="fa-solid fa-microscope"></i> <span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></a></li>
                         </ul>
                     </li>
                     <li><a href="culture.html" class="nav-link"><span data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span></a></li>
@@ -460,690 +114,423 @@
         </div>
     </header>
 
-    <!-- PAGE TITLE BANNER -->
-    <div class="page-title-banner">
-        <div class="container">
-            <div class="breadcrumb-trail">
-                <a href="index.html" class="bc-home"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-parent" data-lang-en="History" data-lang-mr="इतिहास">History</span>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-current" data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span>
-            </div>
-            <h1 class="page-banner-title">
-                <span data-lang-en="Research & Publications" data-lang-mr="संशोधन आणि प्रकाशने">Research & Publications</span>
-            </h1>
-            <p class="page-banner-subtitle">
-                <span data-lang-en="Historical records, publications and research references for understanding the Kohli community and its regional heritage." data-lang-mr="कोहळी समाज आणि त्याच्या प्रादेशिक वारशाचा अभ्यास करण्यासाठी ऐतिहासिक नोंदी, प्रकाशने आणि संशोधन संदर्भ.">Historical records, publications and research references for understanding the Kohli community and its regional heritage.</span>
-            </p>
+    <!-- WIKIPEDIA VECTOR 2022 LAYOUT CONTAINER -->
+    <div class="wiki-main-layout">
+        <div class="container wiki-layout-grid">
+
+            <!-- LEFT STICKY TABLE OF CONTENTS -->
+            <aside class="wiki-toc-sidebar">
+                <div class="wiki-toc-title">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
+                </div>
+                <ul class="wiki-toc-list">
+                    <li><a href="#sec-overview" class="wiki-toc-link"><span class="wiki-toc-num">1</span> <span data-lang-en="Historiographical Scope" data-lang-mr="इतिहासलेखन व्याप्ती">Historiographical Scope</span></a></li>
+                    <li><a href="#sec-official-sources" class="wiki-toc-link"><span class="wiki-toc-num">2</span> <span data-lang-en="Official Colonial Gazetteers" data-lang-mr="अधिकृत वसाहतकालीन गॅझेटिअर">Official Colonial Gazetteers</span></a></li>
+                    <li><a href="#sec-russell-hiralal" class="wiki-toc-link"><span class="wiki-toc-num">3</span> <span data-lang-en="Russell & Hira Lal Survey (1916)" data-lang-mr="रसेल व हिरालाल सर्वेक्षण (१९१६)">Russell & Hira Lal Survey (1916)</span></a></li>
+                    <li><a href="#sec-name-references" class="wiki-toc-link"><span class="wiki-toc-num">4</span> <span data-lang-en="Orthographic Variations" data-lang-mr="नावांची ऐतिहासिक रूपे व लिप्यंतरण">Orthographic Variations</span></a></li>
+                    <li><a href="#sec-settlement-research" class="wiki-toc-link"><span class="wiki-toc-num">5</span> <span data-lang-en="Land Settlement Analysis" data-lang-mr="जमीन सेटलमेंट विश्लेषण">Land Settlement Analysis</span></a></li>
+                    <li><a href="#sec-census-research" class="wiki-toc-link"><span class="wiki-toc-num">6</span> <span data-lang-en="Demographic Records (11,399 & 19,739)" data-lang-mr="लोकसंख्या नोंदी (११,३९९ व १९,७३९)">Demographic Records (11,399 & 19,739)</span></a></li>
+                    <li><a href="#sec-community-publications" class="wiki-toc-link"><span class="wiki-toc-num">7</span> <span data-lang-en="Community Smrutigranths" data-lang-mr="समाज स्मृतीग्रंथ व स्मरणिका">Community Smrutigranths</span></a></li>
+                    <li><a href="#sec-culture-research" class="wiki-toc-link"><span class="wiki-toc-num">8</span> <span data-lang-en="Cultural Traditions & Ethnology" data-lang-mr="सांस्कृतिक परंपरा व नृवंशशास्त्र">Cultural Traditions & Ethnology</span></a></li>
+                    <li><a href="#sec-water-research" class="wiki-toc-link"><span class="wiki-toc-num">9</span> <span data-lang-en="Hydraulic Engineering Studies" data-lang-mr="जलव्यवस्थापन व तलाव अभियांत्रिकी">Hydraulic Engineering Studies</span></a></li>
+                    <li><a href="#sec-agri-research" class="wiki-toc-link"><span class="wiki-toc-num">10</span> <span data-lang-en="Agrarian Cultivars & Sugarcane" data-lang-mr="पारंपरिक शेती व वाण संशोधन">Agrarian Cultivars & Sugarcane</span></a></li>
+                    <li><a href="#sec-contemporary-research" class="wiki-toc-link"><span class="wiki-toc-num">11</span> <span data-lang-en="Contemporary Distinctions" data-lang-mr="समकालीन यश व गुणवत्ता">Contemporary Distinctions</span></a></li>
+                    <li><a href="#sec-methodology" class="wiki-toc-link"><span class="wiki-toc-num">12</span> <span data-lang-en="Historical Method (4 Principles)" data-lang-mr="संशोधन पद्धती (४ तत्त्वे)">Historical Method (4 Principles)</span></a></li>
+                    <li><a href="#sec-source-hierarchy" class="wiki-toc-link"><span class="wiki-toc-num">13</span> <span data-lang-en="Source Reliability Hierarchy" data-lang-mr="स्रोत श्रेणीरचना व विश्वासार्हता">Source Reliability Hierarchy</span></a></li>
+                    <li><a href="#sec-references" class="wiki-toc-link"><span class="wiki-toc-num">14</span> <span data-lang-en="Bibliographic References" data-lang-mr="ग्रंथसूची व संदर्भ">Bibliographic References</span></a></li>
+                </ul>
+            </aside>
+
+            <!-- MAIN ENCYCLOPEDIC ARTICLE COLUMN -->
+            <main class="wiki-article-col">
+
+                <!-- ARTICLE TITLE & SUBTITLE -->
+                <div class="wiki-article-header">
+                    <h1 class="wiki-page-title" data-lang-en="Research, Publications & Historiographical Library" data-lang-mr="संशोधन, प्रकाशने व इतिहासलेखन ग्रंथालय">Research, Publications & Historiographical Library</h1>
+                    <div class="wiki-page-subtitle" data-lang-en="Evidence-based corpus of colonial administrative records, ethnographic surveys, land settlement registers, and community historiography" data-lang-mr="वसाहतकालीन प्रशासकीय नोंदी, मानववंशशास्त्रीय सर्वेक्षणे, जमीन सेटलमेंट नोंदवह्या आणि समाज इतिहासलेखनाचा पुराव्याधारित संग्रह">Evidence-based corpus of colonial administrative records, ethnographic surveys, land settlement registers, and community historiography</div>
+                </div>
+
+                <!-- WIKIPEDIA ARTICLE BODY -->
+                <div class="wiki-article-body">
+
+                    <!-- RIGHT FLOATING INFOBOX -->
+                    <aside class="wiki-infobox">
+                        <div class="wiki-infobox-title" data-lang-en="Historiographical Library" data-lang-mr="इतिहास संशोधन ग्रंथालय">Historiographical Library</div>
+                        <div class="wiki-infobox-image">
+                            <i class="fa-solid fa-microscope" style="font-size:3.2rem; color:var(--primary-dark); padding:1rem 0;"></i>
+                            <div class="wiki-infobox-caption" data-lang-en="Evidence-Based Historical Archive of Kohli Community" data-lang-mr="कोहळी समाजाचा पुराव्याधारित ऐतिहासिक संग्रह">Evidence-Based Historical Archive of Kohli Community</div>
+                        </div>
+                        <table class="wiki-infobox-table">
+                            <tr>
+                                <th data-lang-en="Territorial Scope" data-lang-mr="भौगोलिक क्षेत्र">Territorial Scope</th>
+                                <td data-lang-en="Central Provinces (Bhandara, Chanda, Balaghat)" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस (भंडारा, चांदा, बालाघाट)">Central Provinces (Bhandara, Chanda, Balaghat)</td>
+                            </tr>
+                            <tr>
+                                <th data-lang-en="Key Colonial Surveys" data-lang-mr="प्रमुख ब्रिटिश सर्वेक्षणे">Key Colonial Surveys</th>
+                                <td data-lang-en="Grant (1870), Lucie Smith (1869), Russell (1908)" data-lang-mr="ग्रँट (१८७०), लुसी स्मिथ (१८६९), रसेल (१९०८)">Grant (1870), Lucie Smith (1869), Russell (1908)</td>
+                            </tr>
+                            <tr>
+                                <th data-lang-en="Ethnographic Work" data-lang-mr="मानववंश ग्रंथ">Ethnographic Work</th>
+                                <td data-lang-en="R. V. Russell & Rai Bahadur Hira Lal (1916)" data-lang-mr="आर. व्ही. रसेल व राय बहादूर हिरालाल (१९१६)">R. V. Russell & Rai Bahadur Hira Lal (1916)</td>
+                            </tr>
+                            <tr>
+                                <th data-lang-en="Demographic Records" data-lang-mr="लोकसंख्या नोंदी">Demographic Records</th>
+                                <td data-lang-en="11,399 (1911 Bhandara) | 19,739 (Settlement)" data-lang-mr="११,३९९ (१९११ भंडारा) | १९,७३९ (सेटलमेंट)">11,399 (1911 Bhandara) | 19,739 (Settlement)</td>
+                            </tr>
+                            <tr>
+                                <th data-lang-en="Key Monograph" data-lang-mr="प्रमुख संशोधन ग्रंथ">Key Monograph</th>
+                                <td data-lang-en="Ramdas Borkar, <em>Kohli Samaj Itihas va Sanskruti</em> (2001)" data-lang-mr="रामदास बोरकर, <em>कोहळी समाज इतिहास व संस्कृती</em> (२००१)">Ramdas Borkar, <em>Kohli Samaj Itihas va Sanskruti</em> (2001)</td>
+                            </tr>
+                            <tr>
+                                <th data-lang-en="Academic Distinction" data-lang-mr="शैक्षणिक गुणवत्ता">Academic Distinction</th>
+                                <td data-lang-en="Miss Tejaswini Kapgate (94.66%, RTMNU Topper)" data-lang-mr="कु. तेजस्विनी कापगते (९४.६६%, नागपूर विद्यापीठ टॉपर)">Miss Tejaswini Kapgate (94.66%, RTMNU Topper)</td>
+                            </tr>
+                            <tr>
+                                <th data-lang-en="Methodology" data-lang-mr="पद्धतीशास्त्र">Methodology</th>
+                                <td data-lang-en="Contextual historical analysis & source triangulation" data-lang-mr="संदर्भाधिष्ठित ऐतिहासिक विश्लेषण व बहु-स्रोत पडताळणी">Contextual historical analysis & source triangulation</td>
+                            </tr>
+                        </table>
+                    </aside>
+
+                    <!-- LEAD PARAGRAPHS -->
+                    <p class="wiki-lead" data-lang-en="The <strong>Historiographical & Research Library</strong> of the Kohli Samaj provides an organized, evidence-based repository of historical documentation relating to the community in the Central Provinces and Berar. Drawing upon nineteenth-century official gazetteers, cadastral settlement records, decennial census volumes, colonial ethnographic treatises, and twentieth-century community monographs, the library establishes an objective empirical foundation for studying eastern Vidarbha’s agrarian and social development." data-lang-mr="कोहळी समाजाचे <strong>इतिहासलेखन व संशोधन ग्रंथालय</strong> हे सेंट्रल प्रॉव्हिन्सेस व बेरारमधील समाजाशी संबंधित ऐतिहासिक दस्तऐवजांचा एक पद्धतशीर, पुराव्याधारित संग्रह आहे. एकोणिसाव्या शतकातील शासकीय गॅझेटिअर, भूमापन सेटलमेंट नोंदी, दशवार्षिक जनगणना खंड, वसाहतकालीन मानववंशशास्त्रीय ग्रंथ आणि विसाव्या शतकातील समाज ग्रंथांच्या आधारे, हे ग्रंथालय पूर्व विदर्भाच्या कृषी व सामाजिक विकासाच्या अभ्यासासाठी वस्तुनिष्ठ पाया प्रदान करते.">
+                        The <strong>Historiographical & Research Library</strong> of the Kohli Samaj provides an organized, evidence-based repository of historical documentation relating to the community in the Central Provinces and Berar. Drawing upon nineteenth-century official gazetteers, cadastral settlement records, decennial census volumes, colonial ethnographic treatises, and twentieth-century community monographs, the library establishes an objective empirical foundation for studying eastern Vidarbha’s agrarian and social development.
+                    </p>
+
+                    <p data-lang-en="Historical scholarship on the Kohli community is marked by a distinctive convergence between colonial administrative reports—which documented their unparalleled mastery over tank construction, sugarcane cultivation, and village Malguzari titles—and indigenous community memoirs which preserved oral genealogies, clan deities, social conventions, and marital traditions. This portal applies rigorous critical standards, separating primary administrative records from oral memory while documenting both with bibliographic integrity." data-lang-mr="कोहळी समाजावरील ऐतिहासिक संशोधनाचे वैशिष्ट्य म्हणजे ब्रिटिश प्रशासकीय अहवाल—ज्यांनी तलाव निर्मिती, ऊस शेती आणि मालगुजारी अधिकारांवरील समाजाचे प्रभुत्व नोंदवले—आणि स्थानिक समाज ग्रंथ—ज्यांनी वंशावळी, कुलदैवते, सामाजिक चालीरीती आणि विवाह परंपरा जतन केल्या—यांचा समतोल संगम. हे पोर्टल प्राथमिक शासकीय नोंदी आणि मौखिक स्मृती यांच्यात स्पष्ट भेद राखून दोन्हीचे काटेकोर संदर्भ जतन करते.">
+                        Historical scholarship on the Kohli community is marked by a distinctive convergence between colonial administrative reports—which documented their unparalleled mastery over tank construction, sugarcane cultivation, and village Malguzari titles—and indigenous community memoirs which preserved oral genealogies, clan deities, social conventions, and marital traditions. This portal applies rigorous critical standards, separating primary administrative records from oral memory while documenting both with bibliographic integrity.
+                    </p>
+
+                    <!-- SECTION 1: HISTORIOGRAPHICAL SCOPE & SEARCH -->
+                    <section id="sec-overview" class="wiki-section">
+                        <h2 class="wiki-heading-2" data-lang-en="Historiographical Scope & Catalog Search" data-lang-mr="इतिहासलेखन व्याप्ती व शोध सूची">Historiographical Scope & Catalog Search</h2>
+
+                        <p data-lang-en="Use the interactive research filters below to navigate across government gazetteers, revenue settlements, census benchmarks, ethnographic publications, and community literature:" data-lang-mr="शासकीय गॅझेटिअर, महसूल सेटलमेंट, जनगणना नोंदी, मानववंश प्रकाशने आणि समाज साहित्याचा अभ्यास करण्यासाठी खालील शोध सूची वापरा:">
+                            Use the interactive research filters below to navigate across government gazetteers, revenue settlements, census benchmarks, ethnographic publications, and community literature:
+                        </p>
+
+                        <!-- SEARCH & FILTER WRAPPER -->
+                        <div style="background:var(--wiki-bg-subtle); border:1px solid var(--wiki-border); border-radius:6px; padding:1rem 1.25rem; margin-bottom:1.5rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+                                <div style="position:relative; flex:1; min-width:240px;">
+                                    <i class="fa-solid fa-magnifying-glass" style="position:absolute; left:0.85rem; top:50%; transform:translateY(-50%); color:var(--wiki-text-muted);"></i>
+                                    <input type="text" id="researchSearchInput" placeholder="Search research topics, sources, gazetteers..." data-lang-en-placeholder="Search research topics, sources, gazetteers..." data-lang-mr-placeholder="संशोधन विषय, स्रोत, गॅझेटिअर शोधा..." style="width:100%; padding:0.5rem 0.8rem 0.5rem 2.2rem; border:1px solid var(--wiki-border); border-radius:4px; font-size:0.9rem; outline:none;">
+                                </div>
+                                <span id="researchResultsCount" style="font-size:0.85rem; font-weight:700; color:var(--wiki-text-muted);">Showing all research entries</span>
+                            </div>
+
+                            <div style="display:flex; flex-wrap:wrap; gap:0.4rem;" id="researchFilterBtns">
+                                <button class="research-filter-btn active" data-filter="all" style="padding:0.3rem 0.8rem; border-radius:20px; border:1px solid var(--wiki-border); background:var(--primary-dark); color:white; font-size:0.8rem; font-weight:600; cursor:pointer;"><span data-lang-en="All Research" data-lang-mr="सर्व संशोधन">All Research</span></button>
+                                <button class="research-filter-btn" data-filter="official-records" style="padding:0.3rem 0.8rem; border-radius:20px; border:1px solid var(--wiki-border); background:white; color:var(--wiki-text); font-size:0.8rem; font-weight:600; cursor:pointer;"><span data-lang-en="Official Records" data-lang-mr="अधिकृत नोंदी">Official Records</span></button>
+                                <button class="research-filter-btn" data-filter="gazetteers" style="padding:0.3rem 0.8rem; border-radius:20px; border:1px solid var(--wiki-border); background:white; color:var(--wiki-text); font-size:0.8rem; font-weight:600; cursor:pointer;"><span data-lang-en="Gazetteers" data-lang-mr="गॅझेटिअर्स">Gazetteers</span></button>
+                                <button class="research-filter-btn" data-filter="settlement-reports" style="padding:0.3rem 0.8rem; border-radius:20px; border:1px solid var(--wiki-border); background:white; color:var(--wiki-text); font-size:0.8rem; font-weight:600; cursor:pointer;"><span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></button>
+                                <button class="research-filter-btn" data-filter="census-records" style="padding:0.3rem 0.8rem; border-radius:20px; border:1px solid var(--wiki-border); background:white; color:var(--wiki-text); font-size:0.8rem; font-weight:600; cursor:pointer;"><span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></button>
+                                <button class="research-filter-btn" data-filter="community-publications" style="padding:0.3rem 0.8rem; border-radius:20px; border:1px solid var(--wiki-border); background:white; color:var(--wiki-text); font-size:0.8rem; font-weight:600; cursor:pointer;"><span data-lang-en="Community Smrutigranths" data-lang-mr="समाज स्मृतीग्रंथ">Community Smrutigranths</span></button>
+                                <button class="research-filter-btn" data-filter="contemporary" style="padding:0.3rem 0.8rem; border-radius:20px; border:1px solid var(--wiki-border); background:white; color:var(--wiki-text); font-size:0.8rem; font-weight:600; cursor:pointer;"><span data-lang-en="Contemporary Distinctions" data-lang-mr="समकालीन यश">Contemporary Distinctions</span></button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 2: OFFICIAL COLONIAL GAZETTEERS -->
+                    <section id="sec-official-sources" class="wiki-section research-sec-block" data-section-category="official-records gazetteers">
+                        <h2 class="wiki-heading-2" data-lang-en="Official Colonial Gazetteers (1867–1909)" data-lang-mr="अधिकृत वसाहतकालीन गॅझेटिअर (१८६७–१९०९)">Official Colonial Gazetteers (1867–1909)</h2>
+
+                        <p data-lang-en="Government gazetteers of the Central Provinces provide the most authoritative administrative descriptions of regional geography, agrarian systems, and community settlements. Four district compilations are of primary relevance:" data-lang-mr="सेंट्रल प्रॉव्हिन्सेसचे शासकीय गॅझेटिअर हे प्रादेशिक भूगोल, शेती व्यवस्था आणि समाज वस्त्यांची सर्वाधिक विश्वासार्ह प्रशासकीय माहिती देतात. खालील चार गॅझेटिअर विशेष महत्त्वाचे आहेत:">
+                            Government gazetteers of the Central Provinces provide the most authoritative administrative descriptions of regional geography, agrarian systems, and community settlements. Four district compilations are of primary relevance:
+                        </p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem; margin:1.25rem 0;">
+                            <!-- CP Gazetteer -->
+                            <div class="research-card" data-category="official-records gazetteers" style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between;">
+                                <div>
+                                    <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--primary-dark); margin-bottom:0.25rem;">Provincial Gazetteer (1870)</div>
+                                    <h4 style="margin:0 0 0.4rem 0; font-size:1.1rem; color:var(--primary-dark);" data-lang-en="Gazetteer of the Central Provinces (Charles Grant)" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस गॅझेटिअर (चार्ल्स ग्रँट)">Gazetteer of the Central Provinces (Charles Grant)</h4>
+                                    <p style="font-size:0.9rem; line-height:1.6; color:var(--wiki-text); margin:0;" data-lang-en="Compiled by Charles Grant, documenting the early administration, geography, irrigation tanks, and agrarian communities across the Wainganga basin." data-lang-mr="चार्ल्स ग्रँट यांनी संकलित केलेला गॅझेटिअर, ज्यामध्ये वैनगंगा खोऱ्यातील प्रारंभिक प्रशासन, भूगोल, सिंचन तलाव आणि शेतकरी समाजाची नोंद आहे.">Compiled by Charles Grant, documenting the early administration, geography, irrigation tanks, and agrarian communities across the Wainganga basin.</p>
+                                </div>
+                                <div style="margin-top:1rem; padding-top:0.5rem; border-top:1px solid var(--wiki-border);">
+                                    <a href="gazetteers.html" class="btn btn-secondary" style="padding:0.25rem 0.65rem; font-size:0.78rem; text-decoration:none;"><i class="fa-solid fa-book-open"></i> <span data-lang-en="Inspect Record" data-lang-mr="नोंद पहा">Inspect Record</span></a>
+                                </div>
+                            </div>
+
+                            <!-- Bhandara Gazetteer -->
+                            <div class="research-card" data-category="official-records gazetteers" style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between;">
+                                <div>
+                                    <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--primary-dark); margin-bottom:0.25rem;">District Gazetteer (1908)</div>
+                                    <h4 style="margin:0 0 0.4rem 0; font-size:1.1rem; color:var(--primary-dark);" data-lang-en="Bhandara District Gazetteer (R. V. Russell)" data-lang-mr="भंडारा जिल्हा गॅझेटिअर (आर. व्ही. रसेल)">Bhandara District Gazetteer (R. V. Russell)</h4>
+                                    <p style="font-size:0.9rem; line-height:1.6; color:var(--wiki-text); margin:0;" data-lang-en="Authored by R. V. Russell, ICS; documents the 1911 census count of 11,399, traditional Malguzari tanks, Navegaon Bandh, and sugarcane agriculture in Sakoli tehsil." data-lang-mr="आर. व्ही. रसेल लिखित गॅझेटिअर; यात १९११ च्या जनगणनेतील ११,३९९ लोकसंख्या, पारंपरिक मालगुजारी तलाव, नवेगाव बांध आणि साकोली तालुक्यातील ऊस शेतीची सविस्तर नोंद आहे.">Authored by R. V. Russell, ICS; documents the 1911 census count of 11,399, traditional Malguzari tanks, Navegaon Bandh, and sugarcane agriculture in Sakoli tehsil.</p>
+                                </div>
+                                <div style="margin-top:1rem; padding-top:0.5rem; border-top:1px solid var(--wiki-border);">
+                                    <a href="gazetteers.html" class="btn btn-secondary" style="padding:0.25rem 0.65rem; font-size:0.78rem; text-decoration:none;"><i class="fa-solid fa-book-open"></i> <span data-lang-en="Inspect Record" data-lang-mr="नोंद पहा">Inspect Record</span></a>
+                                </div>
+                            </div>
+
+                            <!-- Chanda Gazetteer -->
+                            <div class="research-card" data-category="official-records gazetteers" style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between;">
+                                <div>
+                                    <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--primary-dark); margin-bottom:0.25rem;">District Gazetteer (1909)</div>
+                                    <h4 style="margin:0 0 0.4rem 0; font-size:1.1rem; color:var(--primary-dark);" data-lang-en="Chanda District Gazetteer (L. F. Begbie)" data-lang-mr="चांदा जिल्हा गॅझेटिअर (एल. एफ. बेगबी)">Chanda District Gazetteer (L. F. Begbie)</h4>
+                                    <p style="font-size:0.9rem; line-height:1.6; color:var(--wiki-text); margin:0;" data-lang-en="Authored by L. F. Begbie, ICS; records settlement history, Kohli village Patils, sugarcane processing, and tank irrigation in Brahmapuri and Garchiroli." data-lang-mr="एल. एफ. बेगबी लिखित गॅझेटिअर; यात सेटलमेंट इतिहास, कोहळी गाव पाटील, ऊस प्रक्रिया आणि ब्रह्मपुरी व गडचिरोलीतील तलाव सिंचनाची नोंद आहे.">Authored by L. F. Begbie, ICS; records settlement history, Kohli village Patils, sugarcane processing, and tank irrigation in Brahmapuri and Garchiroli.</p>
+                                </div>
+                                <div style="margin-top:1rem; padding-top:0.5rem; border-top:1px solid var(--wiki-border);">
+                                    <a href="gazetteers.html" class="btn btn-secondary" style="padding:0.25rem 0.65rem; font-size:0.78rem; text-decoration:none;"><i class="fa-solid fa-book-open"></i> <span data-lang-en="Inspect Record" data-lang-mr="नोंद पहा">Inspect Record</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 3: RUSSELL & HIRA LAL (1916) -->
+                    <section id="sec-russell-hiralal" class="wiki-section research-sec-block" data-section-category="official-records">
+                        <h2 class="wiki-heading-2" data-lang-en="Russell & Hira Lal Ethnographic Survey (1916)" data-lang-mr="रसेल व हिरालाल मानववंश सर्वेक्षण (१९१६)">Russell & Hira Lal Ethnographic Survey (1916)</h2>
+
+                        <p data-lang-en="Published in 1916 by Macmillan & Co., London, <em>The Tribes and Castes of the Central Provinces of India</em> by <strong>R. V. Russell</strong> and <strong>Rai Bahadur Hira Lal</strong> constitutes the benchmark colonial ethnographic survey of the province. In Volume III, the authors dedicated an extensive monograph to the Kohli community:" data-lang-mr="१९१६ मध्ये मॅकमिलन कंपनी, लंडनद्वारे प्रकाशित झालेले <em>द ट्राईब्स अँड कास्ट्स ऑफ द सेंट्रल प्रॉव्हिन्सेस ऑफ इंडिया</em> हे <strong>आर. व्ही. रसेल</strong> आणि <strong>राय बहादूर हिरालाल</strong> यांचे चार खंडांचे काम तत्कालीन प्रांताचे मूलभूत मानववंशशास्त्रीय सर्वेक्षण मानले जाते. खंड ३ मध्ये लेखकांनी कोहळी समाजावर सविस्तर निबंध लिहिला आहे:">
+                            Published in 1916 by Macmillan & Co., London, <em>The Tribes and Castes of the Central Provinces of India</em> by <strong>R. V. Russell</strong> and <strong>Rai Bahadur Hira Lal</strong> constitutes the benchmark colonial ethnographic survey of the province. In Volume III, the authors dedicated an extensive monograph to the Kohli community:
+                        </p>
+
+                        <ul class="wiki-list" style="margin-left:1.5rem; line-height:1.7;">
+                            <li data-lang-en="<strong>Agrarian Pre-eminence:</strong> Russell described the Kohlis as master cultivators and irrigation engineers who constructed the celebrated Navegaon Bandh and hundreds of earthen tanks throughout the Wainganga valley." data-lang-mr="<strong>कृषी व जल नेतृत्व:</strong> रसेल यांनी कोहळी समाजाचे वर्णन उत्कृष्ट शेतकरी आणि जलअभियंते म्हणून केले, ज्यांनी नवेगाव बांधसह वैनगंगा खोऱ्यात शेकडो मातीचे तलाव बांधले."><strong>Agrarian Pre-eminence:</strong> Russell described the Kohlis as master cultivators and irrigation engineers who constructed the celebrated Navegaon Bandh and hundreds of earthen tanks throughout the Wainganga valley.</li>
+                            <li data-lang-en="<strong>Sugarcane Cultivation:</strong> Documented their introduction and sustained cultivation of the superior <em>Kathani</em> sugarcane variety, operated through communal crushing apparatus and boiling installations." data-lang-mr="<strong>ऊस लागवड:</strong> त्यांनी उत्कृष्ट <em>काठणी</em> ऊस वाणाची लागवड रूढ केली आणि सामूहिक गुऱ्हाळांद्वारे दर्जेदार गूळ उत्पादन केले, अशी नोंद आहे."><strong>Sugarcane Cultivation:</strong> Documented their introduction and sustained cultivation of the superior <em>Kathani</em> sugarcane variety, operated through communal crushing apparatus and boiling installations.</li>
+                            <li data-lang-en="<strong>Village Headships (Patils):</strong> Recorded that substantial Kohli families held hereditary proprietary rights (Malguzari) and village headships (Patilki) in numerous villages across Bhandara and Chanda districts." data-lang-mr="<strong>पाटीलकी व मालगुजारी:</strong> अनेक गावांमध्ये कोहळी घराण्यांकडे वंशपरंपरेने मालगुजारी मालकी हक्क आणि गावची पाटीलकी होती, याचे दस्तऐवजीकरण केले."><strong>Village Headships (Patils):</strong> Recorded that substantial Kohli families held hereditary proprietary rights (Malguzari) and village headships (Patilki) in numerous villages across Bhandara and Chanda districts.</li>
+                        </ul>
+
+                        <div class="wiki-callout" style="background:var(--wiki-bg-subtle); border-left:4px solid var(--wiki-blue); padding:1rem 1.25rem; margin:1.25rem 0; border-radius:4px;">
+                            <strong data-lang-en="Critical Historiographical Context:" data-lang-mr="चिकित्सक इतिहासलेखन संदर्भ:">Critical Historiographical Context:</strong>
+                            <p style="margin:0.4rem 0 0 0; font-size:0.9rem; line-height:1.6;" data-lang-en="Twentieth-century colonial ethnographic surveys employed hierarchical classificatory frameworks characteristic of imperial administrative documentation. Scholars analyze these texts for their empirical observations on agrarian and hydraulic practices while recognizing the historical boundaries of colonial sociological models." data-lang-mr="विसाव्या शतकातील ब्रिटिश मानववंश सर्वेक्षणे तत्कालीन साम्राज्यवादी प्रशासकीय वर्गीकरण पद्धतीवर आधारलेली होती. संशोधक या ग्रंथांचा अभ्यास शेती आणि जलव्यवस्थापनाच्या वस्तुनिष्ठ नोंदींसाठी करतात, तसेच तत्कालीन वसाहतवादी सिद्धांतांच्या मर्यादाही लक्षात ठेवतात.">
+                                Twentieth-century colonial ethnographic surveys employed hierarchical classificatory frameworks characteristic of imperial administrative documentation. Scholars analyze these texts for their empirical observations on agrarian and hydraulic practices while recognizing the historical boundaries of colonial sociological models.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 4: ORTHOGRAPHIC VARIATIONS -->
+                    <section id="sec-name-references" class="wiki-section research-sec-block" data-section-category="official-records">
+                        <h2 class="wiki-heading-2" data-lang-en="Orthographic Variations & Archival Name Forms" data-lang-mr="नावांची ऐतिहासिक रूपे व लिप्यंतरण">Orthographic Variations & Archival Name Forms</h2>
+
+                        <p data-lang-en="Due to variations in phonetic transcription by British revenue collectors, land settlement officers, and census supervisors between 1867 and 1931, the community’s name appeared in official records under diverse transliterations:" data-lang-mr="१८६७ ते १९३१ दरम्यान ब्रिटिश महसूल अधिकारी, सेटलमेंट सुपरवायझर आणि जनगणना अधिकाऱ्यांच्या उच्चारानुरूप इंग्रजी लिप्यंतरणामुळे अधिकृत नोंदींत विविध स्पेलिंग्स आढळतात:">
+                            Due to variations in phonetic transcription by British revenue collectors, land settlement officers, and census supervisors between 1867 and 1931, the community’s name appeared in official records under diverse transliterations:
+                        </p>
+
+                        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin:1rem 0;">
+                            <span style="background:white; border:1.5px solid var(--wiki-border); padding:0.35rem 0.85rem; border-radius:4px; font-weight:700; color:var(--primary-dark);"><i class="fa-solid fa-tag" style="color:var(--accent-gold); margin-right:0.3rem;"></i>Kohli</span>
+                            <span style="background:white; border:1.5px solid var(--wiki-border); padding:0.35rem 0.85rem; border-radius:4px; font-weight:700; color:var(--primary-dark);"><i class="fa-solid fa-tag" style="color:var(--accent-gold); margin-right:0.3rem;"></i>Kohri</span>
+                            <span style="background:white; border:1.5px solid var(--wiki-border); padding:0.35rem 0.85rem; border-radius:4px; font-weight:700; color:var(--primary-dark);"><i class="fa-solid fa-tag" style="color:var(--accent-gold); margin-right:0.3rem;"></i>Kohiree</span>
+                            <span style="background:white; border:1.5px solid var(--wiki-border); padding:0.35rem 0.85rem; border-radius:4px; font-weight:700; color:var(--primary-dark);"><i class="fa-solid fa-tag" style="color:var(--accent-gold); margin-right:0.3rem;"></i>Kohulee</span>
+                            <span style="background:white; border:1.5px solid var(--wiki-border); padding:0.35rem 0.85rem; border-radius:4px; font-weight:700; color:var(--primary-dark);"><i class="fa-solid fa-tag" style="color:var(--accent-gold); margin-right:0.3rem;"></i>Koholee</span>
+                            <span style="background:white; border:1.5px solid var(--wiki-border); padding:0.35rem 0.85rem; border-radius:4px; font-weight:700; color:var(--primary-dark);"><i class="fa-solid fa-tag" style="color:var(--accent-gold); margin-right:0.3rem;"></i>Kohoree</span>
+                            <span style="background:white; border:1.5px solid var(--wiki-border); padding:0.35rem 0.85rem; border-radius:4px; font-weight:700; color:var(--primary-dark);"><i class="fa-solid fa-tag" style="color:var(--accent-gold); margin-right:0.3rem;"></i>Kaulees</span>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 5: LAND SETTLEMENT ANALYSIS -->
+                    <section id="sec-settlement-research" class="wiki-section research-sec-block" data-section-category="settlement-reports">
+                        <h2 class="wiki-heading-2" data-lang-en="Land Settlement Analysis & Revenue Administration" data-lang-mr="जमीन सेटलमेंट विश्लेषण व महसूल प्रशासन">Land Settlement Analysis & Revenue Administration</h2>
+
+                        <p data-lang-en="Settlement reports executed by <strong>Captain C. B. Lucie Smith</strong> (Chanda, 1869), <strong>A. J. Lawrence</strong> (Bhandara, 1867), and <strong>A. B. Napier</strong> (Chanda Revision, 1904) provide foundational empirical data on agrarian land distribution, proprietary titles, and village tank administration." data-lang-mr="<strong>कॅप्टन सी. बी. लुसी स्मिथ</strong> (चांदा, १८६९), <strong>ए. जे. लॉरेन्स</strong> (भंडारा, १८६७) आणि <strong>ए. बी. नेपियर</strong> (चांदा पुनरावलोकन, १९०४) यांनी तयार केलेले सेटलमेंट अहवाल कृषी जमीन वाटप, मालकी हक्क आणि तलाव प्रशासनाचे मूलभूत पुरावे देतात.">
+                            Settlement reports executed by <strong>Captain C. B. Lucie Smith</strong> (Chanda, 1869), <strong>A. J. Lawrence</strong> (Bhandara, 1867), and <strong>A. B. Napier</strong> (Chanda Revision, 1904) provide foundational empirical data on agrarian land distribution, proprietary titles, and village tank administration.
+                        </p>
+
+                        <div style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem; margin:1.25rem 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+                            <div>
+                                <h4 style="margin:0 0 0.25rem 0; font-size:1.15rem; color:var(--primary-dark);" data-lang-en="Comprehensive Settlement Reports Directory" data-lang-mr="सर्वंकष सेटलमेंट अहवाल सूची">Comprehensive Settlement Reports Directory</h4>
+                                <p style="font-size:0.9rem; margin:0; color:var(--wiki-text-muted);" data-lang-en="Detailed analysis of proprietary rights, Wajib-ul-arz customs, and the 19,739 population benchmark." data-lang-mr="मालकी हक्क, वाजीब-उल-अर्ज प्रथा आणि १९,७३९ लोकसंख्या संदर्भाचे सविस्तर विश्लेषण.">Detailed analysis of proprietary rights, Wajib-ul-arz customs, and the 19,739 population benchmark.</p>
+                            </div>
+                            <a href="settlement.html" class="btn btn-secondary" style="padding:0.4rem 0.9rem; font-size:0.82rem; text-decoration:none;">
+                                <span data-lang-en="View Settlement Page →" data-lang-mr="सेटलमेंट पृष्ठ पहा →">View Settlement Page →</span>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 6: DEMOGRAPHIC RECORDS -->
+                    <section id="sec-census-research" class="wiki-section research-sec-block" data-section-category="census-records">
+                        <h2 class="wiki-heading-2" data-lang-en="Demographic Records: The 11,399 & 19,739 Benchmarks" data-lang-mr="लोकसंख्या नोंदी: ११,३९९ व १९,७३९ संदर्भ">Demographic Records: The 11,399 & 19,739 Benchmarks</h2>
+
+                        <p data-lang-en="Two historical demographic benchmarks recur consistently across colonial archives and scholarly publications, representing distinct administrative scopes:" data-lang-mr="वसाहतकालीन अभिलेख आणि संशोधन ग्रंथांमध्ये दोन ऐतिहासिक लोकसंख्या आकडे वारंवार आढळतात, जे स्वतंत्र प्रशासकीय कार्यक्षेत्र दर्शवतात:">
+                            Two historical demographic benchmarks recur consistently across colonial archives and scholarly publications, representing distinct administrative scopes:
+                        </p>
+
+                        <div class="wiki-grid-2" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem; margin:1.25rem 0;">
+                            <!-- 11,399 Box -->
+                            <div style="background:var(--wiki-bg-notice); border:1.5px solid var(--wiki-blue); border-radius:6px; padding:1.25rem;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                                    <span style="font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--primary-dark);">1911 Bhandara Census Benchmark</span>
+                                    <span style="font-size:1.5rem; font-weight:800; font-family:'Outfit',sans-serif; color:var(--primary-dark);">11,399</span>
+                                </div>
+                                <p style="font-size:0.88rem; line-height:1.6; margin:0; color:var(--wiki-text);" data-lang-en="Official decennial census enumeration recorded strictly within the historical boundaries of Bhandara District (which then included present-day Gondia district)." data-lang-mr="तत्कालीन भंडारा जिल्ह्याच्या (ज्यात आधुनिक गोंदिया जिल्ह्याचा समावेश होता) प्रशासकीय हद्दीत झालेली अधिकृत दशवार्षिक जनगणना नोंद.">Official decennial census enumeration recorded strictly within the historical boundaries of Bhandara District (which then included present-day Gondia district).</p>
+                            </div>
+
+                            <!-- 19,739 Box -->
+                            <div style="background:var(--wiki-bg-notice); border:1.5px solid var(--wiki-blue); border-radius:6px; padding:1.25rem;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                                    <span style="font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--primary-dark);">Combined Settlement Record</span>
+                                    <span style="font-size:1.5rem; font-weight:800; font-family:'Outfit',sans-serif; color:var(--primary-dark);">19,739</span>
+                                </div>
+                                <p style="font-size:0.88rem; line-height:1.6; margin:0; color:var(--wiki-text);" data-lang-en="Combined revenue settlement population across Bhandara (12,097) and Chanda (7,602) districts, encompassing Sakoli (8,130) and Brahmapuri (6,578) tehsils." data-lang-mr="भंडारा (१२,०९७) आणि चांदा (७,६०२) जिल्ह्यांच्या सेटलमेंट नोंदवह्यांमधील एकत्रित लोकसंख्या, ज्यात साकोली (८,१३०) व ब्रह्मपुरी (६,५७८) चा समावेश आहे.">Combined revenue settlement population across Bhandara (12,097) and Chanda (7,602) districts, encompassing Sakoli (8,130) and Brahmapuri (6,578) tehsils.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 7: COMMUNITY SMRUTIGRANTHS -->
+                    <section id="sec-community-publications" class="wiki-section research-sec-block" data-section-category="community-publications">
+                        <h2 class="wiki-heading-2" data-lang-en="Community Publications, Smrutigranths & Monographic Studies" data-lang-mr="समाज स्मृतीग्रंथ, स्मरणिका व संशोधन ग्रंथ">Community Publications, Smrutigranths & Monographic Studies</h2>
+
+                        <p data-lang-en="During the post-independence era, community intellectuals and social forums initiated systematic documentation of oral history, village genealogies, and cultural traditions. The most comprehensive academic contribution is <strong>Ramdas Borkar’s</strong> monographic treatise <em>Kohli Samaj Itihas va Sanskruti</em> (2001), which surveyed 518 villages across eastern Vidarbha." data-lang-mr="स्वातंत्र्योत्तर काळात समाजातील विचारवंत आणि सामाजिक संघटनांनी मौखिक इतिहास, ग्राम वंशावळी आणि सांस्कृतिक परंपरांचे पद्धतशीर दस्तऐवजीकरण सुरू केले. यामध्ये <strong>रामदास बोरकर</strong> यांचा <em>कोहळी समाज इतिहास व संस्कृती</em> (२००१) हा ग्रंथ अत्यंत महत्त्वाचा मानला जातो, ज्यामध्ये पूर्व विदर्भातील ५१८ गावांचे सर्वेक्षण केले गेले.">
+                            During the post-independence era, community intellectuals and social forums initiated systematic documentation of oral history, village genealogies, and cultural traditions. The most comprehensive academic contribution is <strong>Ramdas Borkar’s</strong> monographic treatise <em>Kohli Samaj Itihas va Sanskruti</em> (2001), which surveyed 518 villages across eastern Vidarbha.
+                        </p>
+                    </section>
+
+                    <!-- SECTION 8: CULTURAL TRADITIONS & ETHNOLOGY -->
+                    <section id="sec-culture-research" class="wiki-section research-sec-block" data-section-category="culture">
+                        <h2 class="wiki-heading-2" data-lang-en="Cultural Traditions, Rituals & Ethnology" data-lang-mr="सांस्कृतिक परंपरा, विधी व नृवंशशास्त्र">Cultural Traditions, Rituals & Ethnology</h2>
+
+                        <p data-lang-en="Ethnological research on the community documents distinctive social practices including <strong>Tulsi Vivah</strong> community worship, ancestral kuldaivat rituals (such as <em>Khandoba</em> and <em>Bhavani</em>), and communal gatherings at Dahaljit platforms, reflecting strong social coherence." data-lang-mr="समाजावरील सांस्कृतिक संशोधनात <strong>तुळशी विवाह</strong> हा सामुदायिक विधी, कुलदैवतांची पूजा (उदा. <em>खंडोबा</em> व <em>भवानी</em>) आणि डहळजीत ओट्यांवरील बैठका यांसारख्या परंपरांची नोंद आढळते, ज्यातून समाजातील दृढ एकात्मतेचे दर्शन घडते.">
+                            Ethnological research on the community documents distinctive social practices including <strong>Tulsi Vivah</strong> community worship, ancestral kuldaivat rituals (such as <em>Khandoba</em> and <em>Bhavani</em>), and communal gatherings at Dahaljit platforms, reflecting strong social coherence.
+                        </p>
+                    </section>
+
+                    <!-- SECTION 9: HYDRAULIC ENGINEERING STUDIES -->
+                    <section id="sec-water-research" class="wiki-section research-sec-block" data-section-category="water-heritage">
+                        <h2 class="wiki-heading-2" data-lang-en="Hydraulic Engineering & Malguzari Tank Studies" data-lang-mr="जलव्यवस्थापन व तलाव अभियांत्रिकी संशोधन">Hydraulic Engineering & Malguzari Tank Studies</h2>
+
+                        <p data-lang-en="Modern civil and environmental engineering studies have highlighted the sophisticated ecological balance achieved by traditional Kohli tank systems. Through cascading overflow catchments, earthen embankments with rip-rap stone pitching, and gravity-fed stone sluice conduits (<em>Khind</em>), these historical works preserved groundwater without electric power." data-lang-mr="आधुनिक जलव्यवस्थापन अभ्यासकांनी कोहळी तलाव पद्धतीच्या पर्यावरणीय संतुलनाची प्रशंसा केली आहे. नैसर्गिक उतारानुसार जोडलेले तलाव, दगडांची पिचिंग असलेले मातीचे मजबूत बांध आणि दगडी सांडव्यांमधून (<em>खिंड</em>) पाण्याचा विसर्ग यांमुळे विजेचा वापर न करता नैसर्गिक पाण्याचे उत्कृष्ट नियोजन शक्य झाले.">
+                            Modern civil and environmental engineering studies have highlighted the sophisticated ecological balance achieved by traditional Kohli tank systems. Through cascading overflow catchments, earthen embankments with rip-rap stone pitching, and gravity-fed stone sluice conduits (<em>Khind</em>), these historical works preserved groundwater without electric power.
+                        </p>
+                    </section>
+
+                    <!-- SECTION 10: AGRARIAN CULTIVARS & SUGARCANE -->
+                    <section id="sec-agri-research" class="wiki-section research-sec-block" data-section-category="official-records">
+                        <h2 class="wiki-heading-2" data-lang-en="Agrarian Cultivars, Sugarcane & Paddy Heritage" data-lang-mr="पारंपरिक शेती, ऊस व भाताचे वाण संशोधन">Agrarian Cultivars, Sugarcane & Paddy Heritage</h2>
+
+                        <p data-lang-en="Agrarian records demonstrate that Kohli cultivators systematically introduced and propagated superior fragrant rice strains including <strong>Chinnor</strong>, <strong>Luchai</strong>, and <strong>Dubraj</strong>, alongside high-sucrose <em>Kathani</em> sugarcane. Their transplantation method (<em>Aavni</em>) became the standard agricultural technique adopted across the Central Provinces." data-lang-mr="कृषी अभिलेख दर्शवतात की कोहळी शेतकऱ्यांनी <strong>चिन्नोर</strong>, <strong>लुचई</strong> आणि <strong>दुबराज</strong> यांसारख्या सुवासिक बारीक भाताच्या वाणांची आणि गोड <em>काठणी</em> उसाची लागवड रूढ केली. त्यांची रोपांची शास्त्रीय आवणी करण्याची पद्धत (<em>आवणी</em>) नंतर संपूर्ण सेंट्रल प्रॉव्हिन्सेसमध्ये प्रमाण मानली गेली.">
+                            Agrarian records demonstrate that Kohli cultivators systematically introduced and propagated superior fragrant rice strains including <strong>Chinnor</strong>, <strong>Luchai</strong>, and <strong>Dubraj</strong>, alongside high-sucrose <em>Kathani</em> sugarcane. Their transplantation method (<em>Aavni</em>) became the standard agricultural technique adopted across the Central Provinces.
+                        </p>
+                    </section>
+
+                    <!-- SECTION 11: CONTEMPORARY DISTINCTIONS -->
+                    <section id="sec-contemporary-research" class="wiki-section research-sec-block" data-section-category="contemporary">
+                        <h2 class="wiki-heading-2" data-lang-en="Contemporary Distinctions & Academic Honors" data-lang-mr="समकालीन गुणवत्ता व शैक्षणिक यश">Contemporary Distinctions & Academic Honors</h2>
+
+                        <p data-lang-en="Documenting academic excellence in higher education and distinguished public recognition within the contemporary community:" data-lang-mr="समकालीन समाजातील उच्च शिक्षणातील शैक्षणिक गुणवत्ता आणि उल्लेखनीय समाज सन्मानांचे दस्तऐवजीकरण:">
+                            Documenting academic excellence in higher education and distinguished public recognition within the contemporary community:
+                        </p>
+
+                        <div class="wiki-grid-2" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem; margin:1.25rem 0;">
+                            <!-- Tejaswini Kapgate -->
+                            <div style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem;">
+                                <span style="background:#eff6ff; color:#1d4ed8; padding:0.15rem 0.5rem; border-radius:3px; font-size:0.78rem; font-weight:700;"><i class="fa-solid fa-award"></i> University Rank 1</span>
+                                <h4 style="margin:0.4rem 0 0.2rem 0; font-size:1.15rem; color:var(--primary-dark);" data-lang-en="Miss Tejaswini Hemraj Kapgate" data-lang-mr="कु. तेजस्विनी हेमराज कापगते">Miss Tejaswini Hemraj Kapgate</h4>
+                                <div style="font-size:0.9rem; font-weight:700; color:#b45309;">RTM Nagpur University 1st Topper in B.Sc. Physics (94.66%)</div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--wiki-text); margin:0.4rem 0 0 0;" data-lang-en="Student of J. M. Patel College, Bhandara; achieved first rank across RTM Nagpur University in B.Sc. Physics with an aggregate of 94.66%." data-lang-mr="जे. एम. पटेल महाविद्यालय, भंडारा येथील विद्यार्थिनी; राष्ट्रसंत तुकडोजी महाराज नागपूर विद्यापीठाच्या बी.एस्सी. भौतिकशास्त्रात ९४.६६% गुण मिळवून प्रथम क्रमांक.">Student of J. M. Patel College, Bhandara; achieved first rank across RTM Nagpur University in B.Sc. Physics with an aggregate of 94.66%.</p>
+                            </div>
+
+                            <!-- Harsh Pushpode -->
+                            <div style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem;">
+                                <span style="background:var(--wiki-bg-subtle); color:var(--wiki-text-muted); padding:0.15rem 0.5rem; border-radius:3px; font-size:0.78rem; font-weight:700;"><i class="fa-solid fa-video"></i> Digital Media</span>
+                                <h4 style="margin:0.4rem 0 0.2rem 0; font-size:1.15rem; color:var(--primary-dark);" data-lang-en="Harsh Pushpode" data-lang-mr="हर्ष पुष्पोदे">Harsh Pushpode</h4>
+                                <div style="font-size:0.9rem; font-weight:700; color:#0369a1;" data-lang-en="Digital Content Creation & Media Recognition" data-lang-mr="डिजिटल माध्यम व सर्जनशील निर्मिती सन्मान">Digital Content Creation & Media Recognition</div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--wiki-text); margin:0.4rem 0 0 0;" data-lang-en="Documented community felicitation honoring youth initiative in creative digital media, technological outreach, and content production." data-lang-mr="आधुनिक डिजिटल तंत्रज्ञान, सर्जनशील माध्यम निर्मिती आणि समाज संवादातील योगदानासाठी झालेला सन्मान.">Documented community felicitation honoring youth initiative in creative digital media, technological outreach, and content production.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 12: RESEARCH METHODOLOGY -->
+                    <section id="sec-methodology" class="wiki-section">
+                        <h2 class="wiki-heading-2" data-lang-en="Historical Methodology: The Four Interpretive Principles" data-lang-mr="संशोधन पद्धती: चार मूलभूत अभ्यास तत्त्वे">Historical Methodology: The Four Interpretive Principles</h2>
+
+                        <p data-lang-en="To ensure scholarly rigor, this portal adheres to four core historiographical principles when consulting archival sources:" data-lang-mr="ऐतिहासिक अभ्यासात अचूकता राखण्यासाठी हे पोर्टल चार मूलभूत पद्धतीशास्त्र तत्त्वांचे पालन करते:">
+                            To ensure scholarly rigor, this portal adheres to four core historiographical principles when consulting archival sources:
+                        </p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; margin:1.25rem 0;">
+                            <div style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem;">
+                                <div style="font-weight:700; color:var(--primary-dark); font-size:1rem; margin-bottom:0.35rem;"><i class="fa-solid fa-file-circle-check" style="color:var(--accent-gold); margin-right:0.4rem;"></i><span data-lang-en="1. Institutional Context" data-lang-mr="१. प्रशासकीय हेतू व संदर्भ">1. Institutional Context</span></div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--wiki-text); margin:0;" data-lang-en="Analyze the fiscal, legal, or administrative mandate governing why a colonial document was commissioned." data-lang-mr="दस्तऐवज कोणत्या प्रशासकीय किंवा महसूल हेतूसाठी तयार केला गेला, त्याची तत्कालीन पार्श्वभूमी समजून घेणे.">Analyze the fiscal, legal, or administrative mandate governing why a colonial document was commissioned.</p>
+                            </div>
+
+                            <div style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem;">
+                                <div style="font-weight:700; color:var(--primary-dark); font-size:1rem; margin-bottom:0.35rem;"><i class="fa-solid fa-spell-check" style="color:var(--accent-gold); margin-right:0.4rem;"></i><span data-lang-en="2. Historical Semantics" data-lang-mr="२. ऐतिहासिक संज्ञा व अर्थ">2. Historical Semantics</span></div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--wiki-text); margin:0;" data-lang-en="Distinguish nineteenth-century fiscal classifications from modern constitutional and statutory definitions." data-lang-mr="एकोणिसाव्या शतकातील महसूल संज्ञा आणि आधुनिक घटनात्मक व्याख्या यांमधील भेद समजून घेणे.">Distinguish nineteenth-century fiscal classifications from modern constitutional and statutory definitions.</p>
+                            </div>
+
+                            <div style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem;">
+                                <div style="font-weight:700; color:var(--primary-dark); font-size:1rem; margin-bottom:0.35rem;"><i class="fa-solid fa-map-location-dot" style="color:var(--accent-gold); margin-right:0.4rem;"></i><span data-lang-en="3. Geographic Demarcation" data-lang-mr="३. प्रादेशिक सीमा बदल">3. Geographic Demarcation</span></div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--wiki-text); margin:0;" data-lang-en="Account for shifting district, tehsil, and pargana boundaries across decennial census years." data-lang-mr="काळानुरूप झालेले जिल्हे व तहसील यांच्या सीमाबदल लक्षात घेऊन आकडेवारीचा अभ्यास करणे.">Account for shifting district, tehsil, and pargana boundaries across decennial census years.</p>
+                            </div>
+
+                            <div style="background:white; border:1px solid var(--wiki-border); border-radius:6px; padding:1.25rem;">
+                                <div style="font-weight:700; color:var(--primary-dark); font-size:1rem; margin-bottom:0.35rem;"><i class="fa-solid fa-scale-balanced" style="color:var(--accent-gold); margin-right:0.4rem;"></i><span data-lang-en="4. Source Triangulation" data-lang-mr="४. बहु-स्रोत पडताळणी">4. Source Triangulation</span></div>
+                                <p style="font-size:0.88rem; line-height:1.6; color:var(--wiki-text); margin:0;" data-lang-en="Cross-reference oral community memoirs with independent archival surveys to corroborate historical claims." data-lang-mr="मौखिक समाज स्मृती आणि स्वतंत्र ऐतिहासिक पुरावे यांची परस्पर पडताळणी करून तथ्य निश्चित करणे.">Cross-reference oral community memoirs with independent archival surveys to corroborate historical claims.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 13: SOURCE RELIABILITY HIERARCHY -->
+                    <section id="sec-source-hierarchy" class="wiki-section">
+                        <h2 class="wiki-heading-2" data-lang-en="Source Reliability Hierarchy Matrix" data-lang-mr="स्रोत श्रेणीरचना व विश्वासार्हता रचना">Source Reliability Hierarchy Matrix</h2>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin:1.25rem 0;">
+                            <div style="background:white; border:1px solid var(--wiki-border); border-top:4px solid #16a34a; border-radius:4px; padding:1rem;">
+                                <h4 style="margin:0 0 0.5rem 0; font-size:1rem; color:#166534;"><i class="fa-solid fa-landmark"></i> Primary / Official</h4>
+                                <ul style="margin:0; padding-left:1.2rem; font-size:0.85rem; line-height:1.6; color:var(--wiki-text);">
+                                    <li>Government Gazettes</li>
+                                    <li>Census of India Tables</li>
+                                    <li>Land Settlement Reports</li>
+                                    <li>Wajib-ul-arz Registers</li>
+                                </ul>
+                            </div>
+
+                            <div style="background:white; border:1px solid var(--wiki-border); border-top:4px solid #0284c7; border-radius:4px; padding:1rem;">
+                                <h4 style="margin:0 0 0.5rem 0; font-size:1rem; color:#0369a1;"><i class="fa-solid fa-book-open"></i> Secondary Historical</h4>
+                                <ul style="margin:0; padding-left:1.2rem; font-size:0.85rem; line-height:1.6; color:var(--wiki-text);">
+                                    <li>District Gazetteers</li>
+                                    <li>Russell & Hira Lal (1916)</li>
+                                    <li>Academic Monographic Studies</li>
+                                    <li>University Dissertations</li>
+                                </ul>
+                            </div>
+
+                            <div style="background:white; border:1px solid var(--wiki-border); border-top:4px solid #d97706; border-radius:4px; padding:1rem;">
+                                <h4 style="margin:0 0 0.5rem 0; font-size:1rem; color:#b45309;"><i class="fa-solid fa-users"></i> Community Sources</h4>
+                                <ul style="margin:0; padding-left:1.2rem; font-size:0.85rem; line-height:1.6; color:var(--wiki-text);">
+                                    <li>Community Smrutigranths</li>
+                                    <li>Surname Directories</li>
+                                    <li>Oral History Memoirs</li>
+                                    <li>Sammelan Souvenirs</li>
+                                </ul>
+                            </div>
+
+                            <div style="background:white; border:1px solid var(--wiki-border); border-top:4px solid #64748b; border-radius:4px; padding:1rem;">
+                                <h4 style="margin:0 0 0.5rem 0; font-size:1rem; color:#334155;"><i class="fa-solid fa-award"></i> Contemporary</h4>
+                                <ul style="margin:0; padding-left:1.2rem; font-size:0.85rem; line-height:1.6; color:var(--wiki-text);">
+                                    <li>University Merit Gazettes</li>
+                                    <li>Published Media Reports</li>
+                                    <li>Community Felicitations</li>
+                                    <li>Modern Digital Portals</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 14: REFERENCES -->
+                    <section id="sec-references" class="wiki-section">
+                        <h2 class="wiki-heading-2" data-lang-en="Bibliographic References & Primary Records" data-lang-mr="ग्रंथसूची व प्राथमिक संदर्भ">Bibliographic References & Primary Records</h2>
+                        <ol class="wiki-references" style="font-size:0.85rem; line-height:1.6; margin-left:1.5rem; color:var(--wiki-text-muted);">
+                            <li id="ref-1">Grant, Charles (1870). <em>The Gazetteer of the Central Provinces of India</em>. Education Society’s Press, Bombay.</li>
+                            <li id="ref-2">Lucie Smith, C. B. (1869). <em>Report on the Land Revenue Settlement of the Chanda District</em>. Government Press, Bombay.</li>
+                            <li id="ref-3">Lawrence, A. J. (1867). <em>Report on the Land Revenue Settlement of the Bhandara District</em>. Government Press, Nagpur.</li>
+                            <li id="ref-4">Russell, R. V. (1908). <em>Central Provinces District Gazetteers: Bhandara District</em>. Vol. A. Pioneer Press, Allahabad.</li>
+                            <li id="ref-5">Begbie, L. F. (1909). <em>Central Provinces District Gazetteers: Chanda District</em>. Vol. A. Pioneer Press, Allahabad.</li>
+                            <li id="ref-6">Russell, R. V., & Hira Lal, R. B. (1916). <em>The Tribes and Castes of the Central Provinces of India</em>. Vol. III. Macmillan and Co., London.</li>
+                            <li id="ref-7">Napier, A. B. (1904). <em>Report on the Land Revenue Settlement of the Chanda District</em>. Secretariat Press, Nagpur.</li>
+                            <li id="ref-8">Borkar, Ramdas (2001). <em>Kohli Samaj Itihas va Sanskruti</em> [History and Culture of the Kohli Community]. Sakoli.</li>
+                            <li id="ref-9">Census Commissioner of India (1912). <em>Census of India, 1911: Central Provinces and Berar</em>. Vol. X. Government Press, Calcutta.</li>
+                        </ol>
+                    </section>
+
+                </div>
+            </main>
         </div>
     </div>
 
-    <!-- MAIN CONTAINER -->
-    <main class="container" style="padding: 3rem 1.25rem;">
-        <div class="history-layout-container">
-            <!-- LEFT SIDEBAR PANEL -->
-            <aside class="history-sidebar-card">
-                <div class="history-sidebar-header">
-                    <h3>
-                        <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="History Navigation" data-lang-mr="इतिहास मार्गदर्शिका">History Navigation</span>
-                    </h3>
-                </div>
-                <div class="history-sidebar-nav-wrapper">
-                    <ul class="history-sidebar-nav" id="historySidebarNav">
-                        <li>
-                            <a href="history.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-landmark"></i> &nbsp;<span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="history.html#sec-origin" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin & Journey" data-lang-mr="उगम व वाटचाल">Origin & Journey</span></a></li>
-                                <li><a href="history.html#sec-cp-records" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Central Provinces Record" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस नोंदी">Central Provinces Record</span></a></li>
-                                <li><a href="history.html#sec-chanda-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Settlement" data-lang-mr="चांदा सेटलमेंट">Chanda Settlement</span></a></li>
-                                <li><a href="history.html#sec-agri-heritage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Agricultural Heritage" data-lang-mr="कृषी वारसा">Agricultural Heritage</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="historical-timeline.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-timeline"></i> &nbsp;<span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline (1867 – 1973)" data-lang-mr="कालरेषा (१८६७ – १९७३)">Timeline (1867 – 1973)</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="documents.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-file-contract"></i> &nbsp;<span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="gazetteers.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="census.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-users-rectangle"></i> &nbsp;<span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="settlement.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-map"></i> &nbsp;<span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="water-heritage.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="historical-gallery.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li class="expanded">
-                            <a href="research.html" class="sidebar-main-link active">
-                                <span><i class="fa-solid fa-microscope"></i> &nbsp;<span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="#sec-official-sources" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Official Sources" data-lang-mr="अधिकृत स्रोत">Official Sources</span></a></li>
-                                <li><a href="#sec-russell-hiralal" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Russell & Hira Lal" data-lang-mr="रसेल व हिरालाल">Russell & Hira Lal</span></a></li>
-                                <li><a href="#sec-name-references" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Kohli / Kohri Names" data-lang-mr="नावांचे ऐतिहासिक संदर्भ">Kohli / Kohri Names</span></a></li>
-                                <li><a href="#sec-settlement-research" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></a></li>
-                                <li><a href="#sec-census-research" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Census Research" data-lang-mr="जनगणना संशोधन">Census Research</span></a></li>
-                                <li><a href="#sec-community-publications" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Community Publications" data-lang-mr="समुदायाची प्रकाशने">Community Publications</span></a></li>
-                                <li><a href="#sec-culture-research" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Culture Research" data-lang-mr="संस्कृती संशोधन">Culture Research</span></a></li>
-                                <li><a href="#sec-water-research" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Water Research" data-lang-mr="जलव्यवस्थापन संशोधन">Water Research</span></a></li>
-                                <li><a href="#sec-agri-research" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Agricultural Heritage" data-lang-mr="कृषी वारसा संशोधन">Agricultural Heritage</span></a></li>
-                                <li><a href="#sec-contemporary-research" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Contemporary Achievements" data-lang-mr="समकालीन यश">Contemporary Achievements</span></a></li>
-                                <li><a href="#sec-methodology" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Research Methodology" data-lang-mr="संशोधन पद्धती">Research Methodology</span></a></li>
-                                <li><a href="#sec-source-hierarchy" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Source Hierarchy" data-lang-mr="स्रोत श्रेणीरचना">Source Hierarchy</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
-
-            <!-- RIGHT CONTENT AREA -->
-            <div class="history-content-area">
-                
-                <!-- HERO INTRO -->
-                <section class="research-hero-intro">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.8rem; margin-bottom:0.8rem;">
-                        <h2>
-                            <i class="fa-solid fa-book-bookmark" style="color: var(--accent-gold); margin-right: 0.4rem;"></i>
-                            <span data-lang-en="Research & Evidence-Based Archive" data-lang-mr="संशोधन आणि पुरावा-आधारित संग्रह">Research & Evidence-Based Archive</span>
-                        </h2>
-                        <span class="badge-source badge-record"><i class="fa-solid fa-microscope"></i> <span data-lang-en="Academic & Historical Library" data-lang-mr="शैक्षणिक व ऐतिहासिक ग्रंथालय">Academic & Historical Library</span></span>
-                    </div>
-                    <p data-lang-en="Historical records, publications and research references for understanding the Kohli community and its regional heritage. This section organizes government archival publications, scholarly surveys, and community literature into an evidence-based framework." data-lang-mr="कोहळी समाज आणि त्याच्या प्रादेशिक वारशाचा अभ्यास करण्यासाठी ऐतिहासिक नोंदी, प्रकाशने आणि संशोधन संदर्भ. हा विभाग शासकीय अभिलेख, अभ्यासपूर्ण सर्वेक्षणे आणि समाज साहित्याची पुराव्याधारित मांडणी करतो.">
-                        Historical records, publications and research references for understanding the Kohli community and its regional heritage. This section organizes government archival publications, scholarly surveys, and community literature into an evidence-based framework.
-                    </p>
-                </section>
-
-                <!-- FILTER AND SEARCH BAR -->
-                <div class="research-filter-wrapper">
-                    <div class="research-search-row">
-                        <div class="research-search-box">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" id="researchSearchInput" placeholder="Search research topics, records, gazetteers..." data-lang-en-placeholder="Search research topics, records, gazetteers..." data-lang-mr-placeholder="संशोधन विषय, नोंदी, गॅझेटिअर शोधा...">
-                        </div>
-                        <span id="researchResultsCount" style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">Showing all research entries</span>
-                    </div>
-
-                    <div class="research-filter-buttons" id="researchFilterBtns">
-                        <button class="research-filter-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i> <span data-lang-en="All Research" data-lang-mr="सर्व संशोधन">All Research</span></button>
-                        <button class="research-filter-btn" data-filter="official-records"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Official Records" data-lang-mr="अधिकृत नोंदी">Official Records</span></button>
-                        <button class="research-filter-btn" data-filter="gazetteers"><i class="fa-solid fa-book-open"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटिअर्स">Gazetteers</span></button>
-                        <button class="research-filter-btn" data-filter="settlement-reports"><i class="fa-solid fa-map"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></button>
-                        <button class="research-filter-btn" data-filter="census-records"><i class="fa-solid fa-users-rectangle"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></button>
-                        <button class="research-filter-btn" data-filter="historical-books"><i class="fa-solid fa-book"></i> <span data-lang-en="Historical Books" data-lang-mr="ऐतिहासिक पुस्तके">Historical Books</span></button>
-                        <button class="research-filter-btn" data-filter="community-publications"><i class="fa-solid fa-newspaper"></i> <span data-lang-en="Community Publications" data-lang-mr="समुदायाची प्रकाशने">Community Publications</span></button>
-                        <button class="research-filter-btn" data-filter="culture"><i class="fa-solid fa-om"></i> <span data-lang-en="Culture & Traditions" data-lang-mr="संस्कृती व परंपरा">Culture & Traditions</span></button>
-                        <button class="research-filter-btn" data-filter="water-heritage"><i class="fa-solid fa-droplet"></i> <span data-lang-en="Water Heritage" data-lang-mr="जलवारसा">Water Heritage</span></button>
-                        <button class="research-filter-btn" data-filter="contemporary"><i class="fa-solid fa-award"></i> <span data-lang-en="Contemporary Research" data-lang-mr="समकालीन संशोधन">Contemporary Research</span></button>
-                    </div>
-                </div>
-
-                <!-- SECTION 1: OFFICIAL HISTORICAL SOURCES (GAZETTEERS) -->
-                <section id="sec-official-sources" class="research-section-card" data-section-category="official-records gazetteers">
-                    <h3 class="research-section-title">
-                        <i class="fa-solid fa-landmark" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Official Historical Sources" data-lang-mr="अधिकृत ऐतिहासिक स्रोत">Official Historical Sources</span>
-                    </h3>
-                    <p class="research-section-desc" data-lang-en="Government gazetteers, census publications and settlement reports provide some of the most important documentary evidence for studying communities and administrative regions during the colonial and early post-colonial periods." data-lang-mr="सरकारी गॅझेटिअर्स, जनगणना प्रकाशने आणि सेटलमेंट अहवाल हे वसाहतकालीन आणि प्रारंभीच्या स्वातंत्र्योत्तर काळातील समाज आणि प्रशासकीय प्रदेशांचा अभ्यास करण्यासाठी महत्त्वाचे दस्तऐवजी स्रोत आहेत.">
-                        Government gazetteers, census publications and settlement reports provide some of the most important documentary evidence for studying communities and administrative regions during the colonial and early post-colonial periods.
-                    </p>
-
-                    <div class="research-grid">
-                        <!-- CP Gazetteer -->
-                        <div class="research-card" data-category="official-records gazetteers" data-tags="central provinces gazetteer 1867 administration">
-                            <div>
-                                <div class="research-card-header">
-                                    <h4 class="research-card-title">Central Provinces Gazetteers</h4>
-                                    <span class="badge-source badge-record">Official Gazetteer</span>
-                                </div>
-                                <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.5rem;">
-                                    <strong>Region:</strong> Central Provinces
-                                </div>
-                                <p class="research-card-body" data-lang-en="Administrative, demographic, occupational and regional descriptions documenting agrarian communities across the Central Provinces." data-lang-mr="सेंट्रल प्रॉव्हिन्सेसमधील शेतकरी समाजांची प्रशासकीय, लोकसंख्या, व्यवसाय आणि प्रादेशिक वर्णने देणारा अधिकृत स्रोत.">
-                                    Administrative, demographic, occupational and regional descriptions documenting agrarian communities across the Central Provinces.
-                                </p>
-                            </div>
-                            <a href="gazetteers.html" class="btn btn-secondary" style="padding:0.35rem 0.8rem; font-size:0.8rem; width:100%; text-align:center;">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-lang-en="Source information" data-lang-mr="स्रोत माहिती">Source information</span>
-                            </a>
-                        </div>
-
-                        <!-- Bhandara Gazetteer -->
-                        <div class="research-card" data-category="official-records gazetteers" data-tags="bhandara district gazetteer 1908 agriculture">
-                            <div>
-                                <div class="research-card-header">
-                                    <h4 class="research-card-title">Bhandara District Gazetteer</h4>
-                                    <span class="badge-source badge-record">District Gazetteer</span>
-                                </div>
-                                <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.5rem;">
-                                    <strong>Region:</strong> Bhandara
-                                </div>
-                                <p class="research-card-body" data-lang-en="Historical population, occupations, agriculture, settlements and regional administration in Bhandara district." data-lang-mr="भंडारा जिल्ह्यातील ऐतिहासिक लोकसंख्या, व्यवसाय, शेती, वसाहती आणि प्रादेशिक प्रशासनाची माहिती.">
-                                    Historical population, occupations, agriculture, settlements and regional administration in Bhandara district.
-                                </p>
-                            </div>
-                            <a href="gazetteers.html" class="btn btn-secondary" style="padding:0.35rem 0.8rem; font-size:0.8rem; width:100%; text-align:center;">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-lang-en="Source information" data-lang-mr="स्रोत माहिती">Source information</span>
-                            </a>
-                        </div>
-
-                        <!-- Chanda Gazetteer -->
-                        <div class="research-card" data-category="official-records gazetteers" data-tags="chanda chandrapur district gazetteer 1909">
-                            <div>
-                                <div class="research-card-header">
-                                    <h4 class="research-card-title">Chanda District Gazetteer</h4>
-                                    <span class="badge-source badge-record">District Gazetteer</span>
-                                </div>
-                                <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.5rem;">
-                                    <strong>Region:</strong> Chanda / Chandrapur
-                                </div>
-                                <p class="research-card-body" data-lang-en="Historical descriptions of communities, agriculture, irrigation tanks and settlement conditions." data-lang-mr="चांदा प्रदेशातील समाज, शेती, सिंचन तलाव आणि सेटलमेंट परिस्थितीचे ऐतिहासिक वर्णन.">
-                                    Historical descriptions of communities, agriculture, irrigation tanks and settlement conditions.
-                                </p>
-                            </div>
-                            <a href="gazetteers.html" class="btn btn-secondary" style="padding:0.35rem 0.8rem; font-size:0.8rem; width:100%; text-align:center;">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-lang-en="Source information" data-lang-mr="स्रोत माहिती">Source information</span>
-                            </a>
-                        </div>
-
-                        <!-- Balaghat Gazetteer -->
-                        <div class="research-card" data-category="official-records gazetteers" data-tags="balaghat district gazetteer demographic">
-                            <div>
-                                <div class="research-card-header">
-                                    <h4 class="research-card-title">Balaghat District Gazetteer</h4>
-                                    <span class="badge-source badge-record">District Gazetteer</span>
-                                </div>
-                                <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.5rem;">
-                                    <strong>Region:</strong> Balaghat
-                                </div>
-                                <p class="research-card-body" data-lang-en="Historical demographic and regional information providing cross-border context in the Wainganga river basin." data-lang-mr="वैनगंगा नदी खोऱ्यातील प्रादेशिक संदर्भ आणि ऐतिहासिक लोकसंख्या माहिती.">
-                                    Historical demographic and regional information providing cross-border context in the Wainganga river basin.
-                                </p>
-                            </div>
-                            <a href="gazetteers.html" class="btn btn-secondary" style="padding:0.35rem 0.8rem; font-size:0.8rem; width:100%; text-align:center;">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-lang-en="Source information" data-lang-mr="स्रोत माहिती">Source information</span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 2: RUSSELL & HIRA LAL (ETHNOGRAPHIC SURVEY) -->
-                <section id="sec-russell-hiralal" class="research-section-card" data-section-category="historical-books">
-                    <h3 class="research-section-title">
-                        <i class="fa-solid fa-book" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Tribes and Castes of the Central Provinces" data-lang-mr="द ट्राईब्स अँड कास्ट्स ऑफ द सेंट्रल प्रॉव्हिन्सेस">Tribes and Castes of the Central Provinces</span>
-                    </h3>
-                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.8rem;">
-                        <span class="badge-source badge-record"><strong>Authors:</strong> R. V. Russell & Rai Bahadur Hira Lal</span>
-                        <span class="badge-source badge-record"><strong>Year:</strong> 1916</span>
-                        <span class="badge-source badge-record">Historical Ethnographic Publication</span>
-                    </div>
-                    <p class="research-section-desc" data-lang-en="This multi-volume historical work contains descriptions and classifications of communities recorded in the Central Provinces during the early twentieth century. It is an important historical source, but its classifications and terminology reflect the period in which it was written and should be interpreted critically." data-lang-mr="या बहुखंडी ऐतिहासिक ग्रंथामध्ये विसाव्या शतकाच्या सुरुवातीच्या काळात Central Provinces मध्ये नोंदविलेल्या विविध समाजांचे वर्णन आणि वर्गीकरण आढळते. हा महत्त्वाचा ऐतिहासिक स्रोत असला तरी त्यातील वर्गीकरण आणि संज्ञा त्या काळातील दृष्टिकोन प्रतिबिंबित करतात. त्यामुळे त्याचा चिकित्सक पद्धतीने अभ्यास करणे आवश्यक आहे.">
-                        This multi-volume historical work contains descriptions and classifications of communities recorded in the Central Provinces during the early twentieth century. It is an important historical source, but its classifications and terminology reflect the period in which it was written and should be interpreted critically.
-                    </p>
-                    <div style="background:#fffbeb; border-left:4px solid #d97706; padding:0.8rem 1.2rem; border-radius:0 8px 8px 0; font-size:0.88rem; color:#92400e;">
-                        <strong data-lang-en="Critical Note:" data-lang-mr="चिकित्सक टीप:">Critical Note:</strong>
-                        <span data-lang-en="Colonial-era ethnographic classifications reflect administrative taxonomies of their time and should not be treated as modern legal or social identity definitions." data-lang-mr="वसाहतकालीन मानववंशशास्त्रीय वर्गीकरणे त्या काळातील प्रशासकीय रचना दर्शवतात, त्यांना आधुनिक कायदेशीर किंवा सामाजिक व्याख्या मानू नये.">Colonial-era ethnographic classifications reflect administrative taxonomies of their time and should not be treated as modern legal or social identity definitions.</span>
-                    </div>
-                </section>
-
-                <!-- SECTION 3: KOHLI / KOHRI HISTORICAL REFERENCES -->
-                <section id="sec-name-references" class="research-section-card" data-section-category="official-records historical-books">
-                    <h3 class="research-section-title">
-                        <i class="fa-solid fa-spell-check" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Kohli / Kohri Historical References" data-lang-mr="कोहळी / कोहरी ऐतिहासिक संदर्भ व स्पेलिंग्ज">Kohli / Kohri Historical References</span>
-                    </h3>
-                    <p class="research-section-desc" data-lang-en="Historical English-language records sometimes used different spellings when recording the community name. These variations reflect period-specific transliteration and administrative recording practices." data-lang-mr="ऐतिहासिक इंग्रजी नोंदींमध्ये समुदायाच्या नावासाठी वेगवेगळ्या स्पेलिंगचा वापर झालेला आढळतो. या भिन्नता त्या काळातील लिप्यंतरण आणि प्रशासकीय नोंद पद्धतींशी संबंधित आहेत.">
-                        Historical English-language records sometimes used different spellings when recording the community name. These variations reflect period-specific transliteration and administrative recording practices.
-                    </p>
-
-                    <div class="research-spellings-box">
-                        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
-                            <span class="research-spelling-pill"><i class="fa-solid fa-tag"></i> Kohli</span>
-                            <span class="research-spelling-pill"><i class="fa-solid fa-tag"></i> Kohri</span>
-                            <span class="research-spelling-pill"><i class="fa-solid fa-tag"></i> Kohiree</span>
-                            <span class="research-spelling-pill"><i class="fa-solid fa-tag"></i> Kohulee</span>
-                            <span class="research-spelling-pill"><i class="fa-solid fa-tag"></i> Koholee</span>
-                            <span class="research-spelling-pill"><i class="fa-solid fa-tag"></i> Kohoree</span>
-                            <span class="research-spelling-pill"><i class="fa-solid fa-tag"></i> Kaulees</span>
-                        </div>
-                        <div style="font-size:0.84rem; color:var(--text-muted); font-style:italic;">
-                            <span data-lang-en="Historical clarification: Transliteration spellings in colonial records represent phonetic recordings and do not automatically indicate separate modern communities." data-lang-mr="ऐतिहासिक स्पष्टीकरण: वसाहतकालीन नोंदींमधील उच्चारानुरूप स्पेलिंग्स त्या काळातील लिपीबद्ध पद्धती दर्शवतात, त्यावरून स्वतंत्र समुदाय ठरवू नये.">Historical clarification: Transliteration spellings in colonial records represent phonetic recordings and do not automatically indicate separate modern communities.</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 4: SETTLEMENT REPORTS -->
-                <section id="sec-settlement-research" class="research-section-card" data-section-category="settlement-reports">
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
-                        <h3 class="research-section-title" style="margin:0;">
-                            <i class="fa-solid fa-map" style="color: var(--accent-gold);"></i>
-                            <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span>
-                        </h3>
-                        <a href="settlement.html" class="btn btn-primary" style="padding:0.35rem 0.85rem; font-size:0.82rem;">
-                            <i class="fa-solid fa-compass"></i> <span data-lang-en="Explore Settlement Records" data-lang-mr="सेटलमेंट नोंदी पहा">Explore Settlement Records</span>
-                        </a>
-                    </div>
-                    <p class="research-section-desc" data-lang-en="Settlement reports provide historical information about land revenue, villages, agriculture, landholding patterns and local administrative arrangements." data-lang-mr="सेटलमेंट अहवालांमधून जमीन महसूल, गावे, शेती, जमीनधारणा पद्धती आणि स्थानिक प्रशासकीय व्यवस्थेबाबत ऐतिहासिक माहिती मिळते.">
-                        Settlement reports provide historical information about land revenue, villages, agriculture, landholding patterns and local administrative arrangements.
-                    </p>
-
-                    <div class="research-grid">
-                        <div class="research-card">
-                            <div class="research-card-header">
-                                <h4 class="research-card-title">Chanda Settlement Report</h4>
-                                <span class="badge-status badge-status-research">Settlement Record</span>
-                            </div>
-                            <p class="research-card-body" data-lang-en="Prepared by Settlement Officer A. B. Napier, documenting agrarian practices, sugarcane cultivation, reservoirs, and community organization in Chanda." data-lang-mr="सेटलमेंट अधिकारी ए. बी. नेपियर यांच्याद्वारे तयार केलेला अहवाल, ज्यामध्ये चांदा भागातील शेती, ऊस, तलाव आणि समाजजीवनाची नोंद आहे.">
-                                Prepared by Settlement Officer A. B. Napier, documenting agrarian practices, sugarcane cultivation, reservoirs, and community organization in Chanda.
-                            </p>
-                        </div>
-
-                        <div class="research-card">
-                            <div class="research-card-header">
-                                <h4 class="research-card-title">Bhandara Settlement Records</h4>
-                                <span class="badge-status badge-status-reference">Administrative Source</span>
-                            </div>
-                            <p class="research-card-body" data-lang-en="Cadastral surveys and land revenue administration registers recording village lands, Malguzari revenue, and tank irrigation networks in Bhandara." data-lang-mr="भंडारा जिल्ह्यातील जमीन सर्वेक्षण, मालगुजारी महसूल आणि तलाव सिंचन जाळ्याचे दस्तऐवजीकरण करणाऱ्या प्रशासकीय नोंदी.">
-                                Cadastral surveys and land revenue administration registers recording village lands, Malguzari revenue, and tank irrigation networks in Bhandara.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 5: HISTORICAL CENSUS RESEARCH -->
-                <section id="sec-census-research" class="research-section-card" data-section-category="census-records">
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
-                        <h3 class="research-section-title" style="margin:0;">
-                            <i class="fa-solid fa-users-rectangle" style="color: var(--accent-gold);"></i>
-                            <span data-lang-en="Historical Census Research" data-lang-mr="ऐतिहासिक जनगणना संशोधन">Historical Census Research</span>
-                        </h3>
-                        <a href="census.html" class="btn btn-primary" style="padding:0.35rem 0.85rem; font-size:0.82rem;">
-                            <i class="fa-solid fa-table-list"></i> <span data-lang-en="View Census Records" data-lang-mr="जनगणना नोंदी पहा">View Census Records</span>
-                        </a>
-                    </div>
-                    <p class="research-section-desc" data-lang-en="Historical census publications provide population and occupational information recorded under the administrative divisions of their respective periods (1881, 1891, 1901, 1911, 1921, 1931)." data-lang-mr="ऐतिहासिक जनगणना प्रकाशनांमध्ये त्या-त्या काळातील प्रशासकीय विभागांनुसार लोकसंख्या आणि व्यवसायासंबंधी नोंदी आढळतात (१८८१, १८९१, १९०१, १९११, १९२१, १९३१).">
-                        Historical census publications provide population and occupational information recorded under the administrative divisions of their respective periods (1881, 1891, 1901, 1911, 1921, 1931).
-                    </p>
-
-                    <!-- 1911 STAT HIGHLIGHT -->
-                    <div class="research-stat-box">
-                        <div>
-                            <span class="badge-source badge-record" style="margin-bottom:0.4rem; display:inline-flex;">
-                                <i class="fa-solid fa-calendar-check"></i> <span data-lang-en="Historical 1911 Bhandara record" data-lang-mr="ऐतिहासिक १९११ भंडारा नोंद">Historical 1911 Bhandara record</span>
-                            </span>
-                            <h4 style="font-size:1.15rem; font-weight:800; color:var(--primary-dark); margin:0.2rem 0;" data-lang-en="1911 Census — Bhandara District Recorded Kohli Figure" data-lang-mr="१९११ जनगणना — भंडारा जिल्हा नोंदवलेली कोहळी संख्या">
-                                1911 Census — Bhandara District Recorded Kohli Figure
-                            </h4>
-                            <div style="font-size:0.86rem; color:var(--text-muted);">
-                                Source: Central Provinces District Gazetteer statistical series
-                            </div>
-                        </div>
-                        <div style="text-align:center;">
-                            <div class="research-stat-number">11,399</div>
-                            <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--text-muted);">Recorded Population</div>
-                        </div>
-                    </div>
-
-                    <div style="background:#fffbeb; border-left:4px solid #d97706; padding:0.8rem 1.2rem; border-radius:0 8px 8px 0; font-size:0.88rem; color:#92400e; margin-bottom:1.2rem;">
-                        <strong data-lang-en="Administrative Warning:" data-lang-mr="प्रशासकीय सूचना:">Administrative Warning:</strong>
-                        <span data-lang-en="This is a historical administrative record and must not be compared directly with present-day district boundaries or population." data-lang-mr="ही त्या काळातील प्रशासकीय नोंद आहे. तिची आजच्या जिल्ह्यांच्या सीमा किंवा लोकसंख्येशी थेट तुलना करू नये.">This is a historical administrative record and must not be compared directly with present-day district boundaries or population.</span>
-                    </div>
-
-                    <!-- 19,739 SEPARATE STAT -->
-                    <div style="background:#f0f9ff; border:1.5px solid #bae6fd; border-radius:10px; padding:1.2rem 1.4rem;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.8rem;">
-                            <div>
-                                <span class="badge-source badge-record" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;"><i class="fa-solid fa-map"></i> <span data-lang-en="Historical Settlement / Population Record" data-lang-mr="ऐतिहासिक सेटलमेंट / लोकसंख्या नोंद">Historical Settlement / Population Record</span></span>
-                                <h4 style="font-size:1.05rem; font-weight:800; color:#1e3a8a; margin:0.3rem 0;" data-lang-en="Historical Settlement Record (Bhandara & Chanda)" data-lang-mr="ऐतिहासिक सेटलमेंट नोंद (भंडारा व चांदा)">
-                                    Historical Settlement Record (Bhandara & Chanda)
-                                </h4>
-                                <p style="font-size:0.86rem; color:#0369a1; margin:0;" data-lang-en="Source context should be consulted before interpreting this figure. This record is separate from the 1911 census figure." data-lang-mr="हा आकडा समजून घेण्यापूर्वी मूळ संदर्भ पाहणे आवश्यक आहे. हा आकडा १९११ च्या जनगणनेपेक्षा स्वतंत्र आहे.">
-                                    Source context should be consulted before interpreting this figure. This record is separate from the 1911 census figure.
-                                </p>
-                            </div>
-                            <div style="text-align:center; background:#1e3a8a; color:#93c5fd; padding:0.6rem 1.2rem; border-radius:8px; font-weight:800; font-size:1.5rem; font-family:'Outfit', sans-serif;">
-                                19,739
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 6: COMMUNITY PUBLICATIONS -->
-                <section id="sec-community-publications" class="research-section-card" data-section-category="community-publications">
-                    <h3 class="research-section-title">
-                        <i class="fa-solid fa-newspaper" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Community Publications" data-lang-mr="समुदायाची प्रकाशने">Community Publications</span>
-                    </h3>
-                    <p class="research-section-desc" data-lang-en="Community publications preserve local memories, family traditions, cultural practices, biographies, social history and community perspectives that may not appear in government records." data-lang-mr="समुदायाच्या प्रकाशनांमध्ये स्थानिक स्मृती, कुटुंबीय परंपरा, सांस्कृतिक प्रथा, चरित्रे, सामाजिक इतिहास आणि समुदायाचा दृष्टिकोन जतन केलेला असतो. यातील अनेक माहिती सरकारी नोंदींमध्ये आढळत नाही.">
-                        Community publications preserve local memories, family traditions, cultural practices, biographies, social history and community perspectives that may not appear in government records.
-                    </p>
-
-                    <div class="research-grid">
-                        <div class="research-card">
-                            <div class="research-card-header">
-                                <h4 class="research-card-title">Community Smrutigranth & Smarika</h4>
-                                <span class="badge-source badge-community">Community Source</span>
-                            </div>
-                            <p class="research-card-body" data-lang-en="Compilations containing clan histories, regional settlement memories, cultural celebrations, and social directories." data-lang-mr="गोत्र इतिहास, प्रादेशिक वस्ती आठवणी, सांस्कृतिक उत्सव आणि समाज सूची संकलित करणारे स्मरणिका ग्रंथ.">
-                                Compilations containing clan histories, regional settlement memories, cultural celebrations, and social directories.
-                            </p>
-                        </div>
-
-                        <div class="research-card">
-                            <div class="research-card-header">
-                                <h4 class="research-card-title">Cultural & Historical Compilations</h4>
-                                <span class="badge-source badge-community">Community Source</span>
-                            </div>
-                            <p class="research-card-body" data-lang-en="Community booklets documenting local traditions such as Tulsi Vivah, marriage rituals, and oral accounts of tank building." data-lang-mr="तुळशी विवाह, लग्नविधी आणि तलाव बांधकामाच्या मौखिक आठवणींची नोंद करणारी समाज पुस्तके.">
-                                Community booklets documenting local traditions such as Tulsi Vivah, marriage rituals, and oral accounts of tank building.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 7: CULTURE & TRADITIONS RESEARCH -->
-                <section id="sec-culture-research" class="research-section-card" data-section-category="culture">
-                    <h3 class="research-section-title">
-                        <i class="fa-solid fa-om" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Culture & Traditions Research" data-lang-mr="संस्कृती आणि परंपरा संशोधन">Culture & Traditions Research</span>
-                    </h3>
-                    <p class="research-section-desc" data-lang-en="Documented community research topics covering social organization, ceremonial rituals, marriage customs, family structures, and traditional surnames." data-lang-mr="सामाजिक रचना, धार्मिक विधी, विवाह पद्धती, कौटुंबिक रचना आणि पारंपरिक आडनावांचे दस्तऐवजीकरण.">
-                        Documented community research topics covering social organization, ceremonial rituals, marriage customs, family structures, and traditional surnames.
-                    </p>
-
-                    <!-- Tulsi Vivah Highlight -->
-                    <div style="background:#fdfbf7; border:1.5px solid #fed7aa; border-left:4px solid #ea580c; border-radius:10px; padding:1.2rem; margin-bottom:1.2rem;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.4rem;">
-                            <h4 style="color:#9a3412; font-size:1.05rem; font-weight:800; margin:0;" data-lang-en="Tulsi Vivah Tradition" data-lang-mr="तुळशी विवाह परंपरा">Tulsi Vivah Tradition</h4>
-                            <span class="badge-source badge-community">Community Source</span>
-                        </div>
-                        <p style="font-size:0.9rem; line-height:1.65; color:var(--text-main); margin:0;" data-lang-en="Community literature describes Tulsi Vivah as a traditional religious and social practice involving ceremonial worship and community participation." data-lang-mr="समुदायाच्या साहित्यामध्ये तुळशी विवाह हा पारंपरिक धार्मिक आणि सामाजिक विधी म्हणून वर्णन केला आहे. त्यामध्ये पूजाअर्चा आणि सामुदायिक सहभागाला महत्त्व दिले जाते.">
-                            Community literature describes Tulsi Vivah as a traditional religious and social practice involving ceremonial worship and community participation.
-                        </p>
-                    </div>
-
-                    <div style="font-size:0.86rem; color:var(--text-muted); font-style:italic;">
-                        <span data-lang-en="Research note: Cultural customs and ceremonies exhibit local variations across families and sub-districts." data-lang-mr="संशोधन नोंद: सांस्कृतिक प्रथा आणि विधींमध्ये कुटुंब व तालुकेनिहाय स्थानिक भिन्नता आढळते.">Research note: Cultural customs and ceremonies exhibit local variations across families and sub-districts.</span>
-                    </div>
-                </section>
-
-                <!-- SECTION 8: WATER MANAGEMENT RESEARCH -->
-                <section id="sec-water-research" class="research-section-card" data-section-category="water-heritage">
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.8rem;">
-                        <h3 class="research-section-title" style="margin:0;">
-                            <i class="fa-solid fa-droplet" style="color: #0284c7;"></i>
-                            <span data-lang-en="Water Management Research" data-lang-mr="जलव्यवस्थापन संशोधन">Water Management Research</span>
-                        </h3>
-                        <a href="water-heritage.html" class="btn btn-primary" style="padding:0.35rem 0.85rem; font-size:0.82rem;">
-                            <i class="fa-solid fa-water"></i> <span data-lang-en="View Water Heritage" data-lang-mr="जलसंवर्धन वारसा पहा">View Water Heritage</span>
-                        </a>
-                    </div>
-                    <p class="research-section-desc" data-lang-en="Historical settlement and regional material connects parts of the Kohli community with agriculture, irrigation and practical knowledge of water systems." data-lang-mr="ऐतिहासिक सेटलमेंट आणि प्रादेशिक सामग्रीमध्ये कोहळी समाजातील काही घटकांचा शेती, सिंचन आणि जलव्यवस्थेच्या व्यावहारिक ज्ञानाशी संबंध आढळतो.">
-                        Historical settlement and regional material connects parts of the Kohli community with agriculture, irrigation and practical knowledge of water systems.
-                    </p>
-
-                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                        <span class="badge-source badge-record">Malguzari Tanks</span>
-                        <span class="badge-source badge-record">Traditional Irrigation</span>
-                        <span class="badge-source badge-record">Earthen Embankments</span>
-                        <span class="badge-source badge-record">Spillways</span>
-                        <span class="badge-source badge-record">Water Channels</span>
-                        <span class="badge-source badge-record">Community Maintenance</span>
-                    </div>
-                </section>
-
-                <!-- SECTION 9: AGRICULTURAL HERITAGE RESEARCH -->
-                <section id="sec-agri-research" class="research-section-card" data-section-category="official-records">
-                    <h3 class="research-section-title">
-                        <i class="fa-solid fa-wheat-awn" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Agricultural Heritage Research" data-lang-mr="कृषी वारसा संशोधन">Agricultural Heritage Research</span>
-                    </h3>
-                    <p class="research-section-desc" data-lang-en="Agrarian research focuses on rice cultivation, sugarcane farming, jaggery processing, and indigenous crop varieties documented in oral traditions and settlement registers." data-lang-mr="भातशेती, ऊस लागवड, गूळनिर्मिती आणि पारंपरिक वाणांचा अभ्यास.">
-                        Agrarian research focuses on rice cultivation, sugarcane farming, jaggery processing, and indigenous crop varieties documented in oral traditions and settlement registers.
-                    </p>
-
-                    <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:10px; padding:1.2rem;">
-                        <strong style="color:var(--primary-dark); display:block; margin-bottom:0.4rem;" data-lang-en="Community-Reported Traditional Rice Varieties:" data-lang-mr="समुदायाद्वारे नोंदवलेले पारंपरिक भाताचे वाण:">Community-Reported Traditional Rice Varieties:</strong>
-                        <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.6rem;">
-                            <span class="badge-source badge-community"><i class="fa-solid fa-seedling"></i> Luchai</span>
-                            <span class="badge-source badge-community"><i class="fa-solid fa-seedling"></i> Chinnor</span>
-                            <span class="badge-source badge-community"><i class="fa-solid fa-seedling"></i> Dubraj</span>
-                        </div>
-                        <div style="font-size:0.84rem; color:var(--text-muted); font-style:italic;">
-                            <span data-lang-en="Note: Documented as community-reported traditional varieties cultivated across the wider Wainganga basin." data-lang-mr="टीप: वैनगंगा खोऱ्यात पिकवले जाणारे समुदायाने नोंदवलेले पारंपरिक वाण.">Note: Documented as community-reported traditional varieties cultivated across the wider Wainganga basin.</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 10: CONTEMPORARY ACHIEVEMENTS & DIGITAL RESEARCH -->
-                <section id="sec-contemporary-research" class="research-section-card" data-section-category="contemporary">
-                    <h3 class="research-section-title">
-                        <i class="fa-solid fa-award" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Contemporary Community Achievements" data-lang-mr="समकालीन समाजातील यश आणि संशोधन">Contemporary Community Achievements</span>
-                    </h3>
-                    <p class="research-section-desc" data-lang-en="Documenting academic excellence and emerging public achievements within the contemporary community." data-lang-mr="समकालीन समाजातील शैक्षणिक गुणवत्ता आणि उदयोन्मुख कामगिरीचे दस्तऐवजीकरण.">
-                        Documenting academic excellence and emerging public achievements within the contemporary community.
-                    </p>
-
-                    <div class="research-grid">
-                        <!-- Tejaswini Card -->
-                        <div class="research-card">
-                            <div>
-                                <div class="research-card-header">
-                                    <h4 class="research-card-title">Miss Tejaswini Hemraj Kapgate</h4>
-                                    <span class="badge-status badge-status-verified">Academic Distinction</span>
-                                </div>
-                                <div style="font-size:0.85rem; font-weight:700; color:#b45309; margin:0.3rem 0;">
-                                    RTM Nagpur University 1st Topper in B.Sc. Physics (94.66%)
-                                </div>
-                                <p class="research-card-body" data-lang-en="Institution: J. M. Patel Arts, Commerce and Science College, Bhandara. Context: Community-provided achievement record." data-lang-mr="महाविद्यालय: जे. एम. पटेल कला, वाणिज्य व विज्ञान महाविद्यालय, भंडारा. संदर्भ: समाज स्तरावरील अभिनंदन नोंद.">
-                                    Institution: J. M. Patel Arts, Commerce and Science College, Bhandara. Context: Community-provided achievement record.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Harsh Pushpode Card -->
-                        <div class="research-card">
-                            <div>
-                                <div class="research-card-header">
-                                    <h4 class="research-card-title">Harsh Pushpode</h4>
-                                    <span class="badge-status badge-status-research">Digital Media</span>
-                                </div>
-                                <div style="font-size:0.85rem; font-weight:700; color:#0369a1; margin:0.3rem 0;">
-                                    Digital Media / Content Creation Case Study
-                                </div>
-                                <p class="research-card-body" data-lang-en="A contemporary example of a community member building a public identity through digital media, content creation and technology." data-lang-mr="डिजिटल मीडिया, कंटेंट क्रिएशन आणि तंत्रज्ञानाच्या माध्यमातून स्वतःची सार्वजनिक ओळख निर्माण करणाऱ्या समकालीन समाजातील व्यक्तीचे उदाहरण.">
-                                    A contemporary example of a community member building a public identity through digital media, content creation and technology.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 11: RESEARCH METHODOLOGY -->
-                <section id="sec-methodology" class="research-section-card">
-                    <h3 class="research-section-title">
-                        <i class="fa-solid fa-graduation-cap" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="How to Read Historical Sources" data-lang-mr="ऐतिहासिक स्रोतांचा अभ्यास कसा करावा?">How to Read Historical Sources</span>
-                    </h3>
-                    <p class="research-section-desc" data-lang-en="Four fundamental methodological principles for critically evaluating colonial records, gazetteers, and oral accounts:" data-lang-mr="वसाहतकालीन नोंदी, गॅझेटिअर आणि मौखिक परंपरांचा चिकित्सक अभ्यास करण्यासाठी चार मूलभूत पद्धतीशास्त्र तत्त्वे:">
-                        Four fundamental methodological principles for critically evaluating colonial records, gazetteers, and oral accounts:
-                    </p>
-
-                    <div class="methodology-grid">
-                        <div class="method-card">
-                            <div class="method-title"><i class="fa-solid fa-file-circle-check"></i> <span data-lang-en="1. Source Context" data-lang-mr="१. स्रोताचा संदर्भ">1. Source Context</span></div>
-                            <p class="method-desc" data-lang-en="Understand who created the record, the administrative purpose of the document, and the context of its era." data-lang-mr="दस्तऐवज कोणी तयार केला, त्याचा प्रशासकीय हेतू काय होता आणि त्या कालखंडाची पार्श्वभूमी समजून घेणे.">Understand who created the record, the administrative purpose of the document, and the context of its era.</p>
-                        </div>
-
-                        <div class="method-card">
-                            <div class="method-title"><i class="fa-solid fa-spell-check"></i> <span data-lang-en="2. Historical Terminology" data-lang-mr="२. ऐतिहासिक संज्ञा">2. Historical Terminology</span></div>
-                            <p class="method-desc" data-lang-en="Historical terminology and classifications reflect revenue practices of their time and differ from modern definitions." data-lang-mr="ऐतिहासिक संज्ञा आणि वर्गीकरणे त्या काळातील पद्धती दर्शवतात, त्या आधुनिक व्याख्यांपेक्षा वेगळ्या असू शकतात.">Historical terminology and classifications reflect revenue practices of their time and differ from modern definitions.</p>
-                        </div>
-
-                        <div class="method-card">
-                            <div class="method-title"><i class="fa-solid fa-map-location-dot"></i> <span data-lang-en="3. Administrative Boundaries" data-lang-mr="३. प्रशासकीय सीमा">3. Administrative Boundaries</span></div>
-                            <p class="method-desc" data-lang-en="District and tehsil boundaries changed over time; historical statistics apply to former geographical limits." data-lang-mr="काळानुरूप जिल्हे आणि तहसील यांच्या सीमा बदलल्या आहेत; ऐतिहासिक आकडे त्या काळातील सीमांना लागू होतात.">District and tehsil boundaries changed over time; historical statistics apply to former geographical limits.</p>
-                        </div>
-
-                        <div class="method-card">
-                            <div class="method-title"><i class="fa-solid fa-scale-balanced"></i> <span data-lang-en="4. Documentary vs Oral History" data-lang-mr="४. दस्तऐवज विरुद्ध मौखिक इतिहास">4. Documentary vs Oral History</span></div>
-                            <p class="method-desc" data-lang-en="Government records and oral/community traditions answer different questions and should be identified separately." data-lang-mr="सरकारी नोंदी आणि मौखिक परंपरा वेगवेगळ्या प्रश्नांची उत्तरे देतात, त्यांची स्वतंत्र नोंद ठेवावी.">Government records and oral/community traditions answer different questions and should be identified separately.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 12: SOURCE RELIABILITY & HIERARCHY -->
-                <section id="sec-source-hierarchy" class="research-section-card">
-                    <h3 class="research-section-title">
-                        <i class="fa-solid fa-layer-group" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Source Reliability & Hierarchy" data-lang-mr="स्रोत श्रेणीरचना आणि विश्वासार्हता">Source Reliability & Hierarchy</span>
-                    </h3>
-                    <p class="research-section-desc" data-lang-en="Different source types answer different historical questions. The portal categorizes evidence into a structured hierarchy:" data-lang-mr="विविध प्रकारचे स्रोत वेगवेगळ्या ऐतिहासिक प्रश्नांची उत्तरे देतात. हे पोर्टल पुराव्यांची रचना श्रेणीबद्ध स्वरूपात मांडते:">
-                        Different source types answer different historical questions. The portal categorizes evidence into a structured hierarchy:
-                    </p>
-
-                    <div class="hierarchy-matrix">
-                        <div class="hierarchy-box" style="border-top: 4px solid #16a34a;">
-                            <h4 style="color:#166534;"><i class="fa-solid fa-landmark"></i> Primary / Official</h4>
-                            <ul>
-                                <li>Government Gazette</li>
-                                <li>Census of India Volumes</li>
-                                <li>Settlement Reports</li>
-                                <li>Revenue Administration Records</li>
-                            </ul>
-                        </div>
-
-                        <div class="hierarchy-box" style="border-top: 4px solid #0284c7;">
-                            <h4 style="color:#0369a1;"><i class="fa-solid fa-book-open"></i> Secondary Historical</h4>
-                            <ul>
-                                <li>District Gazetteers</li>
-                                <li>Historical Survey Books</li>
-                                <li>Scholarly Publications</li>
-                                <li>Academic Research Papers</li>
-                            </ul>
-                        </div>
-
-                        <div class="hierarchy-box" style="border-top: 4px solid #d97706;">
-                            <h4 style="color:#b45309;"><i class="fa-solid fa-users"></i> Community Sources</h4>
-                            <ul>
-                                <li>Community Smarika Compilations</li>
-                                <li>Smrutigranth Volumes</li>
-                                <li>Community Cultural Literature</li>
-                                <li>Documented Oral Traditions</li>
-                            </ul>
-                        </div>
-
-                        <div class="hierarchy-box" style="border-top: 4px solid #64748b;">
-                            <h4 style="color:#334155;"><i class="fa-solid fa-newspaper"></i> Contemporary</h4>
-                            <ul>
-                                <li>Published Newspaper Articles</li>
-                                <li>Community Announcements</li>
-                                <li>Modern Digital Records</li>
-                                <li>Educational Felicitations</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 13: RESEARCH DISCLAIMER NOTE -->
-                <section class="research-disclaimer-box">
-                    <div style="font-weight:800; font-size:1.05rem; color:#0f172a; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.5rem;">
-                        <i class="fa-solid fa-shield-halved" style="color:var(--accent-gold);"></i>
-                        <span data-lang-en="Research Note & Bibliographic Policy" data-lang-mr="संशोधन नोंद व संदर्भ धोरण">Research Note & Bibliographic Policy</span>
-                    </div>
-                    <p style="margin:0 0 0.6rem 0;" data-lang-en="This research section brings together official records, historical publications and community material. Historical records may contain terminology, classifications and administrative boundaries specific to their period. Community traditions are preserved as community history and should be distinguished from independently documented historical evidence." data-lang-mr="या विभागात अधिकृत नोंदी, ऐतिहासिक प्रकाशने आणि समुदायाच्या साहित्याचा एकत्रित संदर्भ दिला आहे. ऐतिहासिक नोंदींमध्ये त्या काळाशी संबंधित संज्ञा, वर्गीकरणे आणि प्रशासकीय सीमा आढळू शकतात. समुदायाच्या परंपरा या समुदायाच्या इतिहासाचा भाग म्हणून जतन केल्या आहेत; मात्र त्यांना स्वतंत्रपणे दस्तऐवजीकरण झालेल्या ऐतिहासिक पुराव्यांपासून वेगळे ओळखणे आवश्यक आहे.">
-                        This research section brings together official records, historical publications and community material. Historical records may contain terminology, classifications and administrative boundaries specific to their period. Community traditions are preserved as community history and should be distinguished from independently documented historical evidence.
-                    </p>
-                </section>
-
-                <!-- SECTION 14: RELATED HISTORICAL SECTIONS -->
-                <section class="research-related-section">
-                    <h3 style="color: var(--primary-dark); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; display:flex; align-items:center; gap:0.5rem;">
-                        <i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="Related Historical Sections" data-lang-mr="संबंधित ऐतिहासिक विभाग">Related Historical Sections</span>
-                    </h3>
-                    <p style="font-size:0.88rem; color:var(--text-muted); margin:0;" data-lang-en="Explore other complementary historical archives and documentation on the portal:" data-lang-mr="पोर्टलवरील इतर पूरक ऐतिहासिक संग्रह आणि दस्तऐवजीकरण पहा:">
-                        Explore other complementary historical archives and documentation on the portal:
-                    </p>
-                    <div class="research-related-grid">
-                        <a href="history.html" class="research-related-link">
-                            <span><i class="fa-solid fa-landmark" style="margin-right:0.4rem;"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="historical-timeline.html" class="research-related-link">
-                            <span><i class="fa-solid fa-timeline" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="documents.html" class="research-related-link">
-                            <span><i class="fa-solid fa-file-contract" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="gazetteers.html" class="research-related-link">
-                            <span><i class="fa-solid fa-book-open" style="margin-right:0.4rem;"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटिअर">Gazetteers</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="census.html" class="research-related-link">
-                            <span><i class="fa-solid fa-users-rectangle" style="margin-right:0.4rem;"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="settlement.html" class="research-related-link">
-                            <span><i class="fa-solid fa-map" style="margin-right:0.4rem;"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="water-heritage.html" class="research-related-link">
-                            <span><i class="fa-solid fa-droplet" style="margin-right:0.4rem;"></i> <span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                        <a href="historical-gallery.html" class="research-related-link">
-                            <span><i class="fa-solid fa-image" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </section>
-
-            </div>
-        </div>
-    </main>
-
-    <!-- FOOTER -->
+    <!-- SITE FOOTER -->
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
             <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
@@ -1151,7 +538,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- SCRIPTS -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/admin.js"></script>
@@ -1163,7 +550,7 @@
             const searchInput = document.getElementById('researchSearchInput');
             const filterBtns = document.querySelectorAll('.research-filter-btn');
             const cards = document.querySelectorAll('.research-card');
-            const sections = document.querySelectorAll('.research-section-card');
+            const sections = document.querySelectorAll('.research-sec-block');
             const countDisplay = document.getElementById('researchResultsCount');
 
             let currentFilter = 'all';
@@ -1174,11 +561,10 @@
 
                 cards.forEach(card => {
                     const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
-                    const cardTags = (card.getAttribute('data-tags') || '').toLowerCase();
                     const cardText = card.textContent.toLowerCase();
 
                     const matchesFilter = (currentFilter === 'all' || cardCat.includes(currentFilter));
-                    const matchesQuery = (!query || cardText.includes(query) || cardTags.includes(query));
+                    const matchesQuery = (!query || cardText.includes(query));
 
                     if (matchesFilter && matchesQuery) {
                         card.style.display = 'flex';
@@ -1207,8 +593,14 @@
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.style.background = 'white';
+                        b.style.color = 'var(--wiki-text)';
+                    });
                     btn.classList.add('active');
+                    btn.style.background = 'var(--primary-dark)';
+                    btn.style.color = 'white';
                     currentFilter = btn.getAttribute('data-filter') || 'all';
                     filterResearch();
                 });
