@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTimeline(data.timeline, lang);
         renderFullTimeline(data.timeline, lang);
         renderDistricts(data.districts, lang);
+        renderDistrictsPage(data.districts, lang);
         renderNews(data.news, lang);
+        renderNewsPage(data.notices || data.news || [], lang);
         renderGallery(data.gallery, lang);
         updateStaticText(lang);
     }
@@ -270,6 +272,352 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
+     * Districts Page Controller (districts.html)
+     * Features: interactive district tabs, overview with verification note,
+     * and live search filter across villages and historic water tanks.
+     * Note: Dummy representatives and unverified phone numbers are strictly suppressed.
+     */
+    function renderDistrictsPage(districts, lang) {
+        const tabContainer = document.getElementById('districtTabContainer');
+        const detailView = document.getElementById('districtDetailView');
+        const villagesContainer = document.getElementById('villagesListContainer');
+        if (!tabContainer || !detailView || !villagesContainer || !districts || districts.length === 0) return;
+
+        window._selectedDistrictId = window._selectedDistrictId || districts[0].id;
+        const activeDist = districts.find(d => d.id === window._selectedDistrictId) || districts[0];
+
+        // 1. Render Tab Buttons
+        let tabsHtml = '';
+        districts.forEach(dist => {
+            const isActive = dist.id === activeDist.id;
+            const name = lang === 'mr' ? dist.name_mr : dist.name_en;
+            tabsHtml += `
+                <button type="button" class="btn-tab ${isActive ? 'active' : ''}" 
+                    onclick="selectDistrict(${dist.id})"
+                    style="padding:0.7rem 1.4rem; border-radius:30px; font-weight:700; font-size:0.95rem; cursor:pointer; white-space:nowrap; border:1.5px solid ${isActive ? 'var(--primary-dark)' : 'var(--border-color)'}; background:${isActive ? 'var(--primary-dark)' : 'white'}; color:${isActive ? 'white' : 'var(--text-color)'}; transition:all 0.2s ease; display:inline-flex; align-items:center; gap:0.4rem;">
+                    <i class="fa-solid fa-location-dot" style="color:${isActive ? 'var(--accent-gold)' : 'var(--accent-gold-hover)'};"></i>
+                    ${name}
+                </button>
+            `;
+        });
+        tabContainer.innerHTML = tabsHtml;
+
+        // 2. Render Active District Details
+        const distName = lang === 'mr' ? activeDist.name_mr : activeDist.name_en;
+        const distSub = lang === 'mr' ? activeDist.subtitle_mr : activeDist.subtitle_en;
+        const distDesc = lang === 'mr' ? activeDist.desc_mr : activeDist.desc_en;
+        const estVillages = activeDist.villages_count || (activeDist.villages ? activeDist.villages.length : 0);
+        const estTanks = activeDist.tanks_count || 'शेकडो';
+
+        detailView.innerHTML = `
+            <div style="background:white; border:1px solid var(--border-color); border-radius:14px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.04); margin-bottom:2rem;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem; flex-wrap:wrap; gap:0.75rem;">
+                    <div>
+                        <h2 style="color:var(--primary-dark); font-size:1.8rem; font-weight:800; margin:0 0 0.3rem 0;">${distName}</h2>
+                        <span style="background:var(--bg-sand); color:var(--primary-dark); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; font-weight:700;">
+                            ${distSub}
+                        </span>
+                    </div>
+                </div>
+                <p style="color:#495057; line-height:1.7; font-size:0.98rem; margin:0.8rem 0 1.5rem 0; max-width:850px;">
+                    ${distDesc}
+                </p>
+                
+                <div style="display:flex; gap:2.5rem; flex-wrap:wrap; margin-bottom:1.2rem;">
+                    <div style="display:flex; align-items:center; gap:0.8rem;">
+                        <div style="width:46px; height:46px; border-radius:10px; background:rgba(212,160,23,0.15); display:flex; align-items:center; justify-content:center; color:var(--accent-gold-hover); font-size:1.25rem;">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <div>
+                            <div style="font-size:1.4rem; font-weight:800; color:var(--primary-dark); line-height:1.1;">${estVillages}*</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">${lang === 'mr' ? 'नोंदणीकृत गावे' : 'Reported Villages'}</div>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.8rem;">
+                        <div style="width:46px; height:46px; border-radius:10px; background:rgba(42,127,186,0.12); display:flex; align-items:center; justify-content:center; color:#2a7fba; font-size:1.25rem;">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <div>
+                            <div style="font-size:1.4rem; font-weight:800; color:var(--primary-dark); line-height:1.1;">${estTanks}*</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">${lang === 'mr' ? 'मालगुजारी तलाव' : 'Malguzari Tanks'}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification disclaimer -->
+                <div style="font-size:0.82rem; color:#856404; background:#fff3cd; border-left:3px solid #ffc107; padding:0.65rem 0.95rem; border-radius:4px; line-height:1.5;">
+                    <i class="fa-solid fa-circle-info" style="margin-right:0.35rem;"></i>
+                    ${lang === 'mr' ? '* आकडेवारी व गाव सूची ही समाज-नोंदणीकृत माहितीवर आधारित असून गॅझेटिअर व महसूल नोंदींद्वारे पडताळणी सुरू आहे.' : '* Figures and village listings are community-reported estimates currently undergoing historical and gazetteer verification.'}
+                </div>
+            </div>
+        `;
+
+        // 3. Render Village Cards
+        const searchInput = document.getElementById('villageSearchInput');
+        const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        const listToRender = query 
+            ? (activeDist.villages || []).filter(v => 
+                (v.name_en && v.name_en.toLowerCase().includes(query)) ||
+                (v.name_mr && v.name_mr.toLowerCase().includes(query)) ||
+                (v.tank_en && v.tank_en.toLowerCase().includes(query)) ||
+                (v.tank_mr && v.tank_mr.toLowerCase().includes(query)))
+            : (activeDist.villages || []);
+
+        villagesContainer.innerHTML = renderVillageCardsHtml(listToRender, distName, lang);
+    }
+
+    function renderVillageCardsHtml(villages, distName, lang) {
+        if (!villages || villages.length === 0) {
+            return `
+                <div style="grid-column: 1 / -1; text-align:center; padding:3rem 1rem; background:white; border-radius:12px; border:1px dashed var(--border-color); color:var(--text-muted);">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size:2rem; margin-bottom:0.8rem; color:var(--accent-gold);"></i>
+                    <p style="margin:0; font-size:0.95rem;">${lang === 'mr' ? 'या शोधाशी जुळणारे गाव आढळले नाही.' : 'No matching villages found in this district directory.'}</p>
+                </div>
+            `;
+        }
+        return villages.map(v => {
+            const vName = lang === 'mr' ? v.name_mr : v.name_en;
+            const vTank = lang === 'mr' ? (v.tank_mr || 'मालगुजारी जलव्यवस्था') : (v.tank_en || 'Malguzari Water System');
+            return `
+                <div class="village-card" style="background:white; border:1px solid var(--border-color); border-radius:10px; padding:1.2rem 1.4rem; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+                    <div>
+                        <h4 style="color:var(--primary-dark); font-weight:700; margin:0 0 0.3rem 0; font-size:1.05rem;">
+                            <i class="fa-solid fa-location-dot" style="color:var(--accent-gold); margin-right:0.4rem;"></i>
+                            ${vName}
+                        </h4>
+                        <div style="font-size:0.85rem; color:#555;">
+                            <i class="fa-solid fa-droplet" style="color:#2a7fba; margin-right:0.3rem;"></i>
+                            ${vTank}
+                        </div>
+                    </div>
+                    <span class="badge" style="background:var(--bg-sand); color:var(--primary-dark); padding:0.35rem 0.75rem; border-radius:6px; font-size:0.8rem; font-weight:700; white-space:nowrap;">
+                        ${distName}
+                    </span>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // Global district tab selector
+    window.selectDistrict = function(distId) {
+        window._selectedDistrictId = distId;
+        const searchInput = document.getElementById('villageSearchInput');
+        if (searchInput) searchInput.value = '';
+        renderDistrictsPage(portalData.districts, currentLang);
+    };
+
+    // Live search filter across village name and water tank
+    window.filterVillages = function() {
+        const villagesContainer = document.getElementById('villagesListContainer');
+        if (!villagesContainer || !portalData.districts) return;
+        renderDistrictsPage(portalData.districts, currentLang);
+    };
+
+    /**
+     * News & Circulars Page Controller (news.html)
+     * Two-Column Portal Layout inspired by modern community gazettes
+     */
+    window._selectedNewsCategory = 'all';
+    window._newsSearchQuery = '';
+
+    function renderNewsPage(newsItems, lang) {
+        const featuredContainer = document.getElementById('newsFeaturedCard');
+        const storiesContainer = document.getElementById('newsStoriesGrid');
+        const bulletinContainer = document.getElementById('newsBulletinList');
+        const countBadge = document.getElementById('newsFilterCount');
+        const fullNewsContainer = document.getElementById('fullNewsList');
+
+        const allItems = (portalData && portalData.notices && portalData.notices.length > 0) ? portalData.notices : (newsItems || []);
+        
+        // Backward-compatible fallback for fullNewsList if news-layout-wrapper is not present
+        if (!featuredContainer || !storiesContainer) {
+            if (fullNewsContainer) {
+                fullNewsContainer.style.display = 'flex';
+                if (!allItems || allItems.length === 0) {
+                    fullNewsContainer.innerHTML = `<div style="text-align:center; padding:3rem; color:var(--text-muted);">${lang === 'mr' ? 'कोणतीही सूचना उपलब्ध नाही' : 'No announcements published'}</div>`;
+                    return;
+                }
+                fullNewsContainer.innerHTML = allItems.map(item => {
+                    const t = lang === 'mr' ? item.title_mr : item.title_en;
+                    const d = (lang === 'mr' && item.details_mr) ? item.details_mr : item.details_en;
+                    return `<div class="news-full-card" style="background:white; border-radius:10px; border:1px solid var(--border-color); padding:1.5rem; margin-bottom:1rem;"><h3 style="color:var(--primary-dark);">${t}</h3><p>${d}</p></div>`;
+                }).join('');
+            }
+            return;
+        }
+
+        if (!allItems || allItems.length === 0) {
+            featuredContainer.innerHTML = `
+                <div style="text-align:center; padding:3rem; background:white; border-radius:12px; border:1px dashed var(--border-color); color:var(--text-muted);">
+                    <i class="fa-solid fa-newspaper" style="font-size:2.5rem; color:var(--accent-gold); margin-bottom:1rem;"></i>
+                    <h3 style="color:var(--primary-dark);">${lang === 'mr' ? 'कोणतीही नवीन सूचना उपलब्ध नाही' : 'No announcements currently published'}</h3>
+                </div>
+            `;
+            storiesContainer.innerHTML = '';
+            if (bulletinContainer) bulletinContainer.innerHTML = '';
+            return;
+        }
+
+        // Apply Category and Search filters
+        const activeCat = window._selectedNewsCategory || 'all';
+        const query = (window._newsSearchQuery || '').toLowerCase();
+
+        const filtered = allItems.filter(item => {
+            const matchesCat = (activeCat === 'all') || (item.category && item.category.toLowerCase().includes(activeCat.toLowerCase()));
+            const titleEn = (item.title_en || '').toLowerCase();
+            const titleMr = (item.title_mr || '').toLowerCase();
+            const detailsEn = (item.details_en || '').toLowerCase();
+            const detailsMr = (item.details_mr || '').toLowerCase();
+            const matchesQuery = !query || titleEn.includes(query) || titleMr.includes(query) || detailsEn.includes(query) || detailsMr.includes(query);
+            return matchesCat && matchesQuery;
+        });
+
+        if (countBadge) {
+            countBadge.textContent = `${filtered.length} ${lang === 'mr' ? 'सूचना उपलब्ध' : 'Circulars Found'}`;
+        }
+
+        if (filtered.length === 0) {
+            featuredContainer.innerHTML = `
+                <div style="text-align:center; padding:3rem; background:white; border-radius:12px; border:1px dashed var(--border-color); color:var(--text-muted);">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size:2rem; color:var(--accent-gold); margin-bottom:0.8rem;"></i>
+                    <h4 style="color:var(--primary-dark); margin:0 0 0.5rem 0;">${lang === 'mr' ? 'कोणतीही जुळणारी सूचना आढळली नाही' : 'No matching circulars or notices found'}</h4>
+                    <p style="margin:0; font-size:0.9rem;">${lang === 'mr' ? 'कृपया वेगळा शोध शब्द वापरा किंवा सर्व सूचना पहा.' : 'Try adjusting your search query or reset the category filter.'}</p>
+                </div>
+            `;
+            storiesContainer.innerHTML = '';
+        } else {
+            // Lead featured story is the first match
+            const lead = filtered[0];
+            const leadTitle = lang === 'mr' ? lead.title_mr : lead.title_en;
+            const leadDetails = (lang === 'mr' && lead.details_mr) ? lead.details_mr : lead.details_en;
+            const leadCat = lead.category || 'Official';
+            const catClass = getCategoryTagClass(leadCat);
+
+            featuredContainer.innerHTML = `
+                <div class="news-featured-card">
+                    <div class="news-featured-meta">
+                        <span class="news-tag ${catClass}">
+                            <i class="fa-solid fa-bullhorn"></i> ${leadCat}
+                        </span>
+                        <div class="news-date-text">
+                            <i class="fa-regular fa-calendar-check"></i> ${lead.date || '2026'}
+                        </div>
+                    </div>
+                    <h2 class="news-featured-title">${leadTitle}</h2>
+                    <p class="news-featured-excerpt">${leadDetails}</p>
+                    <div class="news-featured-actions">
+                        <div class="news-authority-text">
+                            <i class="fa-solid fa-location-dot" style="color:var(--accent-gold);"></i>
+                            <span>${lead.location || 'Maharashtra, India'}</span>
+                        </div>
+                        <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+                            <button type="button" class="btn-news-action btn-news-primary" onclick="openNoticeModal(${lead.id})">
+                                <i class="fa-solid fa-book-open"></i>
+                                <span>${lang === 'mr' ? 'सविस्तर वाचा' : 'Read Notice'}</span>
+                            </button>
+                            <a href="forms/Form-Community-Bhandara-Gondia.pdf" target="_blank" class="btn-news-action btn-news-pdf" download>
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span>${lang === 'mr' ? 'PDF डाउनलोड' : 'Download PDF'}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Subgrid stories (items after lead)
+            const remaining = filtered.slice(1);
+            if (remaining.length === 0) {
+                storiesContainer.innerHTML = `
+                    <div style="grid-column: 1 / -1; background:#f8fafc; border:1px solid var(--border-color); border-radius:10px; padding:1.2rem; text-align:center; font-size:0.9rem; color:var(--text-muted);">
+                        ${lang === 'mr' ? 'इतर अधिकृत सूचना लवकरच उपलब्ध होतील.' : 'Additional circulars and updates will appear here as they are released.'}
+                    </div>
+                `;
+            } else {
+                storiesContainer.innerHTML = remaining.map(item => {
+                    const title = lang === 'mr' ? item.title_mr : item.title_en;
+                    const details = (lang === 'mr' && item.details_mr) ? item.details_mr : item.details_en;
+                    const cat = item.category || 'Notice';
+                    const cClass = getCategoryTagClass(cat);
+                    return `
+                        <div class="news-story-card">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                                    <span class="news-tag ${cClass}">
+                                        ${cat}
+                                    </span>
+                                    <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">
+                                        <i class="fa-regular fa-calendar"></i> ${item.date || '2026'}
+                                    </span>
+                                </div>
+                                <h4 class="news-story-title">${title}</h4>
+                                <p class="news-story-desc">${details}</p>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--border-color); padding-top:0.8rem; margin-top:0.5rem;">
+                                <button type="button" onclick="openNoticeModal(${item.id})" style="background:transparent; border:none; color:var(--primary-dark); font-weight:700; font-size:0.88rem; cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem;">
+                                    <span>${lang === 'mr' ? 'वाचा' : 'Read'}</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <a href="forms/Form-Community-Bhandara-Gondia.pdf" target="_blank" style="color:#b91c1c; font-size:1rem;" title="Download PDF" download>
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+
+        // Sidebar Official Announcements list
+        if (bulletinContainer) {
+            bulletinContainer.innerHTML = allItems.map(item => {
+                const title = lang === 'mr' ? item.title_mr : item.title_en;
+                const cat = item.category || 'Notice';
+                let tagClass = 'news-tag-event';
+                if (cat.includes('Census')) tagClass = 'news-tag-census';
+                else if (cat.includes('Education')) tagClass = 'news-tag-education';
+                else if (cat.includes('Matrimonial')) tagClass = 'news-tag-matrimonial';
+
+                return `
+                    <li class="news-bulletin-item" onclick="openNoticeModal(${item.id})">
+                        <div class="news-bulletin-header">
+                            <span class="news-tag ${tagClass}" style="font-size:0.7rem; padding:0.15rem 0.5rem;">${cat}</span>
+                            <span style="font-size:0.75rem; color:var(--text-muted);">${item.date || ''}</span>
+                        </div>
+                        <div class="news-bulletin-title">${title}</div>
+                    </li>
+                `;
+            }).join('');
+        }
+    }
+
+    function getCategoryTagClass(cat) {
+        if (!cat) return 'news-tag-featured';
+        const c = cat.toLowerCase();
+        if (c.includes('census')) return 'news-tag-census';
+        if (c.includes('event') || c.includes('melava')) return 'news-tag-event';
+        if (c.includes('education') || c.includes('career')) return 'news-tag-education';
+        if (c.includes('matrimonial')) return 'news-tag-matrimonial';
+        return 'news-tag-featured';
+    }
+
+    window.filterNewsByQuery = function() {
+        const input = document.getElementById('newsSearchInput');
+        window._newsSearchQuery = input ? input.value.trim() : '';
+        renderNewsPage(portalData.notices, currentLang);
+    };
+
+    window.filterNewsCategory = function(cat, btnElem) {
+        window._selectedNewsCategory = cat;
+        document.querySelectorAll('#newsTagCloud .news-filter-btn').forEach(b => b.classList.remove('active'));
+        if (btnElem) {
+            btnElem.classList.add('active');
+        } else {
+            const matchBtn = document.querySelector(`#newsTagCloud .news-filter-btn[data-category="${cat}"]`);
+            if (matchBtn) matchBtn.classList.add('active');
+        }
+        renderNewsPage(portalData.notices, currentLang);
+    };
+
+    /**
      * Photo Gallery Render
      */
     function renderGallery(galleryItems, lang) {
@@ -316,6 +664,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('mobileNavToggle')?.addEventListener('click', () => {
             const nav = document.getElementById('mainNav');
             nav?.classList.toggle('active');
+        });
+
+        // Sync with nav.js language toggle events
+        document.addEventListener('langChange', (e) => {
+            if (e.detail && e.detail.lang) {
+                currentLang = e.detail.lang;
+                portalData.settings.currentLang = currentLang;
+                renderAll(portalData, currentLang);
+            }
         });
 
         // Search Form Submission
@@ -376,15 +733,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!notice) return;
         const title = currentLang === 'mr' ? notice.title_mr : notice.title_en;
         const details = currentLang === 'mr' ? notice.details_mr : notice.details_en;
+        const cat = notice.category || 'Official Circular';
 
         openModal(title, `
             <div style="font-size: 0.95rem;">
-                <p style="margin-bottom: 0.8rem; color: var(--accent-gold-hover); font-weight: 700;">
-                    <i class="fa-solid fa-calendar-days"></i> ${notice.date} | <i class="fa-solid fa-location-dot"></i> ${notice.location}
-                </p>
-                <p style="line-height: 1.6; color: var(--text-main);">${details}</p>
-                <div style="margin-top: 1.5rem; text-align: right;">
-                    <button class="btn-primary" onclick="closeModal()">Close</button>
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom: 1rem; border-bottom:1px solid var(--border-color); padding-bottom:0.6rem;">
+                    <span class="news-tag news-tag-featured" style="font-size:0.75rem;">
+                        <i class="fa-solid fa-bullhorn"></i> ${cat}
+                    </span>
+                    <span style="color: var(--text-muted); font-size:0.85rem; font-weight: 600;">
+                        <i class="fa-solid fa-calendar-days"></i> ${notice.date} | <i class="fa-solid fa-location-dot"></i> ${notice.location}
+                    </span>
+                </div>
+                <p style="line-height: 1.65; color: var(--text-main); font-size:1rem; margin-bottom:1.5rem;">${details}</p>
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.8rem; border-top:1px dashed var(--border-color); padding-top:1rem;">
+                    <a href="forms/Form-Community-Bhandara-Gondia.pdf" target="_blank" class="btn-news-action btn-news-pdf" download>
+                        <i class="fa-solid fa-file-pdf"></i> ${currentLang === 'mr' ? 'परिपत्रक डाउनलोड करा (PDF)' : 'Download Circular (PDF)'}
+                    </a>
+                    <button class="btn-news-action btn-news-primary" onclick="closeModal()">${currentLang === 'mr' ? 'बंद करा' : 'Close'}</button>
                 </div>
             </div>
         `);
@@ -483,9 +849,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             : 'Lakhs of Kohli community members spread across Maharashtra and neighboring regions are connected through social forums, educational scholarship programs, and matrimonial networks.'}
                     </p>
                     <div style="text-align:center; margin-top:1.2rem;">
-                        <button class="btn-primary" onclick="openAdminModal()">
-                            <i class="fa-solid fa-user-plus"></i> ${currentLang === 'mr' ? 'सभासद नोंदणी करा' : 'Register Community Membership'}
-                        </button>
+                        <a href="join-community.html" class="btn-primary" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none;">
+                            <i class="fa-solid fa-file-pdf"></i> ${currentLang === 'mr' ? 'सदस्यत्व नोंदणी अर्ज डाउनलोड करा' : 'Download Membership Forms'}
+                        </a>
                     </div>
                 </div>
             `);
@@ -503,7 +869,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             : 'Active city chapters in metropolitan areas like Nagpur, Pune, Mumbai, Thane, and Nashik provide student hostels, career guidance centers, and family support networks.'}
                     </p>
                     <div style="background:var(--bg-sand); padding:0.8rem; border-radius:8px; font-size:0.88rem; color:var(--primary-dark); margin-top:1rem;">
-                        <i class="fa-solid fa-phone"></i> ${currentLang === 'mr' ? 'शहरी संपर्क हेल्पलाइन' : 'Urban Association Contact'}: <strong>+91 12345 67890</strong>
+                        <i class="fa-solid fa-circle-info" style="color:var(--accent-gold-hover); margin-right:0.3rem;"></i> ${currentLang === 'mr' ? 'शहरी संपर्क व वसतिगृह माहिती समितीद्वारे अद्यतनित केली जात आहे.' : 'Urban association and student hostel contacts are currently being updated by the committee.'}
                     </div>
                 </div>
             `);

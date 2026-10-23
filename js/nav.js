@@ -8,12 +8,6 @@
 (function () {
     'use strict';
 
-    // Auto-redirect from history.html to history_clean.html if opened
-    if (window.location.pathname.endsWith('/history.html') || window.location.pathname.endsWith('history.html')) {
-        window.location.replace('history_clean.html' + window.location.hash);
-        return;
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
 
         /* ------------------------------------------------------------------ */
