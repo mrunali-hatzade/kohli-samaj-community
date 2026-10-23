@@ -269,6 +269,419 @@
             font-size: 0.85rem;
         }
     </style>
+
+    <!-- WIKIPEDIA DESIGN SYSTEM ENHANCEMENTS -->
+    <style>
+        :root {
+            --wiki-border: #a2a9b1;
+            --wiki-light-border: #eaecf0;
+            --wiki-bg-subtle: #f8f9fa;
+            --wiki-link: #3366cc;
+            --wiki-link-hover: #447ff5;
+            --wiki-text-dark: #202122;
+            --wiki-text-muted: #54595d;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--wiki-text-dark);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Noto Sans Devanagari', sans-serif;
+        }
+
+        /* Article Sub-Header / Wikipedia Notice */
+        .wiki-header-container {
+            border-bottom: 1px solid var(--wiki-light-border);
+            background: #ffffff;
+            padding: 1.2rem 0 0.8rem 0;
+            margin-bottom: 1.5rem;
+        }
+        .wiki-site-notice {
+            font-size: 0.82rem;
+            color: var(--wiki-text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .wiki-site-notice i {
+            color: var(--accent-gold);
+        }
+        .wiki-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-bottom: 1px solid var(--wiki-border);
+            padding-bottom: 0.4rem;
+        }
+        .wiki-page-title {
+            font-family: 'Outfit', 'Noto Sans Devanagari', serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--wiki-text-dark);
+            margin: 0;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+        .wiki-lang-pill .wiki-lang-btn {
+            background: var(--wiki-bg-subtle);
+            border: 1px solid var(--wiki-border);
+            border-radius: 4px;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--wiki-link);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s;
+        }
+        .wiki-lang-pill .wiki-lang-btn:hover {
+            background: #eaf3ff;
+            border-color: var(--wiki-link);
+        }
+        .wiki-subtitle {
+            font-size: 0.84rem;
+            color: var(--wiki-text-muted);
+            margin-top: 0.35rem;
+            font-style: italic;
+        }
+
+        /* 3-Column Encyclopedic Grid */
+        .wiki-grid-container {
+            display: grid;
+            grid-template-columns: 240px minmax(0, 1fr);
+            gap: 2.5rem;
+            align-items: start;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        /* Left Column: Vector 2022 Sticky TOC */
+        .wiki-toc-sidebar {
+            position: sticky;
+            top: 85px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            padding: 0.8rem;
+            background: #ffffff;
+            border-right: 1px solid var(--wiki-light-border);
+            font-size: 0.86rem;
+        }
+        .wiki-toc-title {
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--wiki-text-dark);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .wiki-toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .wiki-toc-item {
+            margin-bottom: 0.4rem;
+        }
+        .wiki-toc-link {
+            color: var(--wiki-text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.3rem 0.5rem;
+            border-radius: 3px;
+            transition: all 0.15s;
+            line-height: 1.4;
+        }
+        .wiki-toc-link:hover {
+            color: var(--wiki-link);
+            background: var(--wiki-bg-subtle);
+        }
+        .wiki-toc-link.active {
+            color: var(--primary-dark);
+            font-weight: 700;
+            border-left: 3px solid var(--accent-gold);
+            background: #fdfaf2;
+            padding-left: 0.4rem;
+        }
+        .wiki-toc-sublist {
+            list-style: none;
+            padding-left: 0.9rem;
+            margin-top: 0.25rem;
+            border-left: 1px solid var(--wiki-light-border);
+        }
+
+        /* Article Main Body */
+        .wiki-article-body {
+            min-width: 0;
+            font-size: 1.02rem;
+            line-height: 1.78;
+            color: var(--wiki-text-dark);
+        }
+
+        /* Right-Floated Canonical Infobox */
+        .wiki-infobox {
+            float: right;
+            width: 330px;
+            margin: 0 0 1.5rem 2rem;
+            background: #fcfdfe;
+            border: 1px solid var(--wiki-border);
+            border-radius: 4px;
+            font-size: 0.86rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .wiki-infobox-header {
+            background: var(--primary-dark);
+            color: #ffffff;
+            text-align: center;
+            padding: 0.75rem 0.8rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
+        }
+        .wiki-infobox-subheader {
+            background: #f1f5f9;
+            text-align: center;
+            padding: 0.35rem 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--wiki-text-muted);
+            border-bottom: 1px solid var(--wiki-light-border);
+        }
+        .wiki-infobox-image-box {
+            text-align: center;
+            padding: 1rem 0.5rem 0.5rem 0.5rem;
+            background: #ffffff;
+            border-bottom: 1px solid var(--wiki-light-border);
+        }
+        .wiki-infobox-image {
+            max-width: 140px;
+            height: auto;
+            display: inline-block;
+        }
+        .wiki-infobox-caption {
+            font-size: 0.78rem;
+            color: var(--wiki-text-muted);
+            margin-top: 0.4rem;
+            line-height: 1.35;
+        }
+        .wiki-infobox-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .wiki-infobox-table th,
+        .wiki-infobox-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid var(--wiki-light-border);
+            vertical-align: top;
+            line-height: 1.45;
+        }
+        .wiki-infobox-table th {
+            width: 38%;
+            text-align: left;
+            font-weight: 700;
+            color: var(--wiki-text-dark);
+            background: #f8fafc;
+            font-size: 0.82rem;
+        }
+        .wiki-infobox-table td {
+            color: var(--wiki-text-dark);
+        }
+
+        /* Lead Section */
+        .wiki-lead-paragraph {
+            font-size: 1.08rem;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+        }
+        .wiki-lead-paragraph strong {
+            font-weight: 700;
+        }
+
+        /* Wikipedia Headings */
+        .wiki-heading {
+            font-family: 'Outfit', 'Noto Sans Devanagari', serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--wiki-text-dark);
+            border-bottom: 1px solid var(--wiki-border);
+            padding-bottom: 0.3rem;
+            margin: 2.4rem 0 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            scroll-margin-top: 90px;
+        }
+        .wiki-subheading {
+            font-size: 1.22rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 1.6rem 0 0.6rem 0;
+            scroll-margin-top: 90px;
+        }
+        .wiki-edit-pill {
+            font-size: 0.76rem;
+            font-weight: normal;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--wiki-link);
+            text-decoration: none;
+            letter-spacing: 0;
+        }
+        .wiki-edit-pill:hover {
+            text-decoration: underline;
+        }
+
+        /* Primary Source / Oral Memoir Quotebox */
+        .wiki-quotebox {
+            background: #f8fafc;
+            border: 1px solid #c8ccd1;
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.2rem 1.4rem;
+            border-radius: 4px;
+            margin: 1.4rem 0;
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+        .wiki-quotebox-title {
+            font-weight: 700;
+            font-size: 0.98rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+        .wiki-quotebox-credit {
+            font-size: 0.85rem;
+            color: var(--wiki-text-muted);
+            margin-top: 0.6rem;
+            font-style: italic;
+            border-top: 1px dashed var(--wiki-border);
+            padding-top: 0.4rem;
+        }
+
+        /* Bullet / Fact Lists */
+        .wiki-fact-list {
+            margin: 0.8rem 0 1.4rem 1.4rem;
+            padding: 0;
+        }
+        .wiki-fact-list li {
+            margin-bottom: 0.55rem;
+            line-height: 1.65;
+        }
+
+        /* Inline Citations */
+        .wiki-cite-ref {
+            font-size: 0.76rem;
+            font-weight: 600;
+            vertical-align: super;
+            line-height: 0;
+            padding: 0 0.15rem;
+        }
+        .wiki-cite-ref a {
+            color: var(--wiki-link);
+            text-decoration: none;
+        }
+        .wiki-cite-ref a:hover {
+            text-decoration: underline;
+        }
+
+        /* See Also Grid */
+        .wiki-see-also-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.9rem;
+            margin: 1.2rem 0 2rem 0;
+        }
+        .wiki-see-also-card {
+            background: #ffffff;
+            border: 1px solid var(--wiki-border);
+            border-radius: 4px;
+            padding: 0.85rem 1rem;
+            text-decoration: none;
+            color: var(--wiki-text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: all 0.15s;
+        }
+        .wiki-see-also-card:hover {
+            background: var(--wiki-bg-subtle);
+            border-color: var(--wiki-link);
+            color: var(--wiki-link);
+        }
+
+        /* References Section */
+        .wiki-references-list {
+            font-size: 0.85rem;
+            line-height: 1.65;
+            color: var(--wiki-text-muted);
+            padding-left: 1.4rem;
+            margin: 1rem 0 2.5rem 0;
+        }
+        .wiki-references-list li {
+            margin-bottom: 0.45rem;
+        }
+
+        /* Wikipedia Category Bar */
+        .wiki-categories-box {
+            background: var(--wiki-bg-subtle);
+            border: 1px solid var(--wiki-border);
+            padding: 0.75rem 1rem;
+            font-size: 0.83rem;
+            border-radius: 3px;
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .wiki-cat-label {
+            font-weight: 700;
+            color: var(--wiki-text-dark);
+        }
+        .wiki-cat-link {
+            color: var(--wiki-link);
+            text-decoration: none;
+        }
+        .wiki-cat-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .wiki-grid-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .wiki-toc-sidebar {
+                position: relative;
+                top: 0;
+                max-height: none;
+                border-right: none;
+                border: 1px solid var(--wiki-light-border);
+                border-radius: 4px;
+                background: var(--wiki-bg-subtle);
+                margin-bottom: 1.5rem;
+            }
+            .wiki-infobox {
+                float: none;
+                width: 100%;
+                margin: 1.5rem 0;
+            }
+        }
+    </style>
 </head>
 <body class="font-normal">
 
@@ -280,7 +693,7 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
                 </span>
-                
+
                 <!-- Language Switcher -->
                 <div class="utility-item">
                     <button id="btnLangEn" class="lang-btn active">English</button>
@@ -301,15 +714,15 @@
             </div>
 
             <div class="utility-right">
-                <span class="utility-item" style="cursor:pointer;" onclick="if(typeof openAdminModal==='function')openAdminModal();">
+                <a href="news.html" class="utility-item" title="Notices" style="text-decoration:none;">
                     <i class="fa-solid fa-bell"></i>
                     <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
-                </span>
+                </a>
                 <span class="utility-item">
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
                 </span>
-                
+
                 <!-- Search Box -->
                 <form id="topSearchForm" class="top-search-form">
                     <input type="text" id="searchInput" placeholder="Search portal..." data-lang-en-placeholder="Search portal..." data-lang-mr-placeholder="शोधा...">
@@ -385,370 +798,464 @@
         </div>
     </header>
 
-    <!-- PAGE TITLE BANNER -->
-    <div class="page-title-banner">
-        <div class="container">
-            <div class="breadcrumb-trail">
-                <a href="index.html" class="bc-home"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-current" data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span>
-            </div>
-            <h1 class="page-banner-title">
-                <span data-lang-en="Kohli Culture & Traditions" data-lang-mr="कोहळी समाजाची संस्कृती आणि परंपरा">Kohli Culture & Traditions</span>
-            </h1>
-            <p class="page-banner-subtitle">
-                <span data-lang-en="Exploring the customs, traditions, festivals, social practices, folk arts and cultural heritage of the Kohli community." data-lang-mr="कोहळी समाजातील चालीरीती, परंपरा, सण, सामाजिक प्रथा, लोककला आणि सांस्कृतिक वारशाचा परिचय.">Exploring the customs, traditions, festivals, social practices, folk arts and cultural heritage of the Kohli community.</span>
-            </p>
-        </div>
-    </div>
-
-    <!-- MAIN EDITORIAL CONTENT (CLEAN SECTIONS, NO BOXED CARDS) -->
+    <!-- WIKIPEDIA ARTICLE CONTAINER -->
     <main class="container">
-        <article class="culture-article-wrapper">
-            
-            <!-- LEAD INTRO SECTION -->
-            <section class="culture-lead-section">
-                <h2 data-lang-en="Cultural Heritage of the Kohli Community" data-lang-mr="कोहळी समाजाचा सांस्कृतिक वारसा">Cultural Heritage of the Kohli Community</h2>
-                <p data-lang-en="Culture is preserved through everyday life — family traditions, festivals, marriage ceremonies, agriculture, food, religious practices, folk arts and community gatherings. The Kohli community's cultural heritage has evolved across generations while adapting to changing social and economic conditions." data-lang-mr="संस्कृती ही केवळ सणांमध्ये नसते; ती कुटुंबपरंपरा, विवाहविधी, शेती, अन्नसंस्कृती, धार्मिक प्रथा, लोककला आणि सामुदायिक सहभागातून पिढ्यान्पिढ्या जपली जाते. बदलत्या सामाजिक आणि आर्थिक परिस्थितीनुसार कोहळी समाजाची सांस्कृतिक परंपराही विकसित होत गेली आहे.">
-                    Culture is preserved through everyday life — family traditions, festivals, marriage ceremonies, agriculture, food, religious practices, folk arts and community gatherings. The Kohli community's cultural heritage has evolved across generations while adapting to changing social and economic conditions.
-                </p>
-            </section>
 
-            <!-- 6 CULTURAL PILLARS OVERVIEW -->
-            <section class="pillars-overview-section">
-                <h3 class="pillars-section-heading">
-                    <i class="fa-solid fa-cubes-stacked" style="color: var(--accent-gold);"></i>
-                    <span data-lang-en="Major Cultural Domains" data-lang-mr="प्रमुख सांस्कृतिक आधारस्तंभ">Major Cultural Domains</span>
-                </h3>
+        <!-- WIKIPEDIA ARTICLE TOP HEADER -->
+        <div class="wiki-header-container">
+            <div class="wiki-site-notice">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <span data-lang-en="Kohli Samaj Open Knowledge Base — Peer-Reviewed Community Heritage Encyclopedia" data-lang-mr="कोहळी समाज मुक्त ज्ञानकोश — समाजमान्य सांस्कृतिक व ऐतिहासिक ज्ञानपीठ">Kohli Samaj Open Knowledge Base — Peer-Reviewed Community Heritage Encyclopedia</span>
+            </div>
 
-                <div class="pillars-list-grid">
-                    <div class="pillar-item">
-                        <h3 data-lang-en="1. Marriage Traditions" data-lang-mr="१. विवाह परंपरा">1. Marriage Traditions</h3>
-                        <p data-lang-en="Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals." data-lang-mr="पारंपरिक विवाहामध्ये कुटुंबीयांची चर्चा, समाजाचा सहभाग, रूढीपरंपरांनुसार विधी, वरात, पाहुणचार आणि सामूहिक भोजन यांना महत्त्व होते.">
-                            Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals.
+            <div class="wiki-title-row">
+                <h1 class="wiki-page-title" data-lang-en="Cultural Heritage of the Kohli Community" data-lang-mr="कोहळी समाजाचा सांस्कृतिक वारसा">Cultural Heritage of the Kohli Community</h1>
+                <div class="wiki-lang-pill">
+                    <button class="wiki-lang-btn" onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')" title="Toggle Language">
+                        <i class="fa-solid fa-language"></i>
+                        <span data-lang-en="मराठीत वाचा" data-lang-mr="Read in English">मराठीत वाचा</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="wiki-subtitle">
+                <span data-lang-en="From Kohli Samaj Open Knowledge Base, the free community encyclopedia" data-lang-mr="कोहळी समाज मुक्त ज्ञानकोशातून, सर्वसमावेशक सामाजिक विश्वकोश">From Kohli Samaj Open Knowledge Base, the free community encyclopedia</span>
+            </div>
+        </div>
+
+        <!-- 3-COLUMN ENCYCLOPEDIC LAYOUT GRID -->
+        <div class="wiki-grid-container">
+
+            <!-- LEFT COLUMN: VECTOR 2022 STICKY TABLE OF CONTENTS -->
+            <nav class="wiki-toc-sidebar" aria-label="Table of Contents">
+                <div class="wiki-toc-title">
+                    <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
+                    <i class="fa-solid fa-list-ol" style="color:var(--accent-gold);"></i>
+                </div>
+                <ul class="wiki-toc-list" id="wikiTocList">
+                    <li class="wiki-toc-item">
+                        <a href="#sec-lead" class="wiki-toc-link active"><span data-lang-en="(Top)" data-lang-mr="(प्रारंभ)">(Top)</span></a>
+                    </li>
+                    <li class="wiki-toc-item">
+                        <a href="#sec-marriage" class="wiki-toc-link"><span>1. </span><span data-lang-en="Marriage Traditions & Rites" data-lang-mr="१. विवाह परंपरा व विधी">1. Marriage Traditions & Rites</span></a>
+                        <ul class="wiki-toc-sublist">
+                            <li><a href="#sec-marriage-memoir" class="wiki-toc-link"><span>1.1 </span><span data-lang-en="Elder Oral Memoir (60 Years Ago)" data-lang-mr="१.१ ज्येष्ठ संस्मरण (६० वर्षांपूर्वी)">1.1 Elder Oral Memoir (60 Years Ago)</span></a></li>
+                            <li><a href="#sec-marriage-customs" class="wiki-toc-link"><span>1.2 </span><span data-lang-en="Procession & Banquet Customs" data-lang-mr="१.२ वरात व पंगत संस्कृती">1.2 Procession & Banquet Customs</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="wiki-toc-item">
+                        <a href="#sec-festivals" class="wiki-toc-link"><span>2. </span><span data-lang-en="Deities & Religious Observance" data-lang-mr="२. पारंपरिक दैवते व सण">2. Deities & Religious Observance</span></a>
+                        <ul class="wiki-toc-sublist">
+                            <li><a href="#sec-deities-list" class="wiki-toc-link"><span>2.1 </span><span data-lang-en="Traditional & Guardian Deities" data-lang-mr="२.१ पारंपरिक व कुलदैवते">2.1 Traditional & Guardian Deities</span></a></li>
+                            <li><a href="#sec-festivals-calendar" class="wiki-toc-link"><span>2.2 </span><span data-lang-en="Agro-Festive Calendar" data-lang-mr="२.२ कृषी सण व उत्सव">2.2 Agro-Festive Calendar</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="wiki-toc-item">
+                        <a href="#sec-lifestyle" class="wiki-toc-link"><span>3. </span><span data-lang-en="Village Life & Social Framework" data-lang-mr="३. ग्रामव्यवस्था व समाजजीवन">3. Village Life & Social Framework</span></a>
+                        <ul class="wiki-toc-sublist">
+                            <li><a href="#sec-patil-governance" class="wiki-toc-link"><span>3.1 </span><span data-lang-en="Patil's Wada & Dahalij" data-lang-mr="३.१ पाटलांचा वाडा व डहालीज">3.1 Patil's Wada & Dahalij</span></a></li>
+                            <li><a href="#sec-balutedar-bhatyavar" class="wiki-toc-link"><span>3.2 </span><span data-lang-en="Bara Balutedar & Bhatyavar" data-lang-mr="३.२ बारा बलुतेदार व भात्यावर">3.2 Bara Balutedar & Bhatyavar</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="wiki-toc-item">
+                        <a href="#sec-folkarts" class="wiki-toc-link"><span>4. </span><span data-lang-en="Folk Arts & Dandaar Theatre" data-lang-mr="४. लोककला व दंडार लोकनाट्य">4. Folk Arts & Dandaar Theatre</span></a>
+                    </li>
+                    <li class="wiki-toc-item">
+                        <a href="#sec-food" class="wiki-toc-link"><span>5. </span><span data-lang-en="Food & Agricultural Culture" data-lang-mr="५. अन्न व कृषी संस्कृती">5. Food & Agricultural Culture</span></a>
+                    </li>
+                    <li class="wiki-toc-item">
+                        <a href="#sec-family" class="wiki-toc-link"><span>6. </span><span data-lang-en="Joint Family Traditions" data-lang-mr="६. एकत्र कुटुंब पद्धती">6. Joint Family Traditions</span></a>
+                    </li>
+                    <li class="wiki-toc-item">
+                        <a href="#sec-tradition-change" class="wiki-toc-link"><span>7. </span><span data-lang-en="Tradition & Modernity" data-lang-mr="७. परंपरा आणि आधुनिकता">7. Tradition & Modernity</span></a>
+                    </li>
+                    <li class="wiki-toc-item">
+                        <a href="#sec-see-also" class="wiki-toc-link"><span>8. </span><span data-lang-en="See Also" data-lang-mr="८. हेही पहा">8. See Also</span></a>
+                    </li>
+                    <li class="wiki-toc-item">
+                        <a href="#sec-references" class="wiki-toc-link"><span>9. </span><span data-lang-en="Notes & References" data-lang-mr="९. संदर्भ व नोंदी">9. Notes & References</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- CENTRAL ARTICLE BODY -->
+            <article class="wiki-article-body">
+
+                <!-- CANONICAL WIKIPEDIA INFOBOX (FLOATED RIGHT) -->
+                <aside class="wiki-infobox" aria-label="Culture Quick Facts">
+                    <div class="wiki-infobox-header" data-lang-en="Kohli Samaj Culture" data-lang-mr="कोहळी समाज संस्कृती">
+                        Kohli Samaj Culture
+                    </div>
+                    <div class="wiki-infobox-subheader" data-lang-en="Living Heritage & Traditions of Vidarbha" data-lang-mr="विदर्भाचा जिवंत वारसा व लोकसंस्कृती">
+                        Living Heritage & Traditions of Vidarbha
+                    </div>
+                    <div class="wiki-infobox-image-box">
+                        <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Cultural Emblem" class="wiki-infobox-image">
+                        <div class="wiki-infobox-caption" data-lang-en="Official emblem representing agriculture, water conservation, and community unity" data-lang-mr="शेती, जलसंवर्धन आणि समाज एकतेचे प्रतीक असणारे अधिकृत बोधचिन्ह">
+                            Official emblem representing agriculture, water conservation, and community unity
+                        </div>
+                    </div>
+                    <table class="wiki-infobox-table">
+                        <tbody>
+                            <tr>
+                                <th scope="row" data-lang-en="Geographic Belt" data-lang-mr="भौगोलिक प्रदेश">Geographic Belt</th>
+                                <td data-lang-en="Eastern Vidarbha (Bhandara, Gondia, Chandrapur, Gadchiroli, Balaghat)" data-lang-mr="पूर्व विदर्भ (भंडारा, गोंदिया, चंद्रपूर, गडचिरोली, बालाघाट)">
+                                    Eastern Vidarbha (Bhandara, Gondia, Chandrapur, Gadchiroli, Balaghat)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" data-lang-en="Historical Settlements" data-lang-mr="ऐतिहासिक वस्त्या">Historical Settlements</th>
+                                <td data-lang-en="518 Recognized Villages" data-lang-mr="५१८ मान्यताप्राप्त गावे">518 Recognized Villages</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" data-lang-en="Traditional Deities" data-lang-mr="पारंपरिक दैवते">Traditional Deities</th>
+                                <td data-lang-en="Kolasur, Tadoba, Rama, Shiva, Bhairava, Maruti (Hanuman), Kholyakholba, Kali Devi, Sat Devi" data-lang-mr="कोलासूर, ताडोबा, राम, शिव, भैरव, मारुती (हनुमान), खोल्याखोळबा, काली देवी, सात देवी">
+                                    Kolasur, Tadoba, Rama, Shiva, Bhairava, Maruti (Hanuman), Kholyakholba, Kali Devi, Sat Devi
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" data-lang-en="Performing Arts" data-lang-mr="लोककला">Performing Arts</th>
+                                <td data-lang-en="Dandar (दंडार लोकनाट्य), Bhajan, Kirtan" data-lang-mr="दंडार लोकनाट्य, भजन, कीर्तन">
+                                    Dandar (दंडार लोकनाट्य), Bhajan, Kirtan
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" data-lang-en="Major Festivals" data-lang-mr="प्रमुख सण">Major Festivals</th>
+                                <td data-lang-en="Bail Pola, Tulsi Vivah, Holi, Rang Panchami, Dussehra, Diwali" data-lang-mr="बैल पोळा, तुळशी विवाह, होळी, रंगपंचमी, दसरा, दिवाळी">
+                                    Bail Pola, Tulsi Vivah, Holi, Rang Panchami, Dussehra, Diwali
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" data-lang-en="Social Order" data-lang-mr="सामाजिक व्यवस्था">Social Order</th>
+                                <td data-lang-en="Malguzari, Bara Balutedar, Bhatyavar, Joint Family (Ekatra Kutumb)" data-lang-mr="मालगुजारी, बारा बलुतेदार, भात्यावर पद्धत, एकत्र कुटुंब">
+                                    Malguzari, Bara Balutedar, Bhatyavar, Joint Family (Ekatra Kutumb)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" data-lang-en="Agro-Cuisine" data-lang-mr="अन्नसंस्कृती">Agro-Cuisine</th>
+                                <td data-lang-en="Luchai & Chinnor Rice, Golden Jaggery, Piti Sakhar, Tupachi Dhar, Karanjya" data-lang-mr="लुचाई-चिन्नोर भात, गूळ, पिठी साखर, तुपाची धार, करंज्या">
+                                    Luchai & Chinnor Rice, Golden Jaggery, Piti Sakhar, Tupachi Dhar, Karanjya
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </aside>
+
+                <!-- LEAD PARAGRAPH -->
+                <div id="sec-lead">
+                    <p class="wiki-lead-paragraph">
+                        <span data-lang-en="The " data-lang-mr="">The </span><strong data-lang-en="Cultural Heritage of the Kohli Community" data-lang-mr="कोहळी समाजाचा सांस्कृतिक वारसा">Cultural Heritage of the Kohli Community</strong>
+                        <span data-lang-en=" (Marathi: <em>कोहळी समाज संस्कृती</em>) encompasses centuries of living social practices, indigenous water management ethics, agricultural customs, multi-generational family structures, and vibrant folk performing arts across eastern Maharashtra and Central India. Historical settlements spanning 518 villages in Bhandara, Gondia, Chandrapur, Gadchiroli, and Balaghat districts developed a harmonious rural culture deeply intertwined with seasonal agricultural rhythms, community tank ecosystems, and reciprocal village relationships." data-lang-mr=" (इंग्रजी: <em>Cultural Heritage of the Kohli Community</em>) ही शतकानुशतके पूर्व विदर्भ आणि मध्य भारतातील शेती, जलव्यवस्थापन, बहुपिढी कुटुंबव्यवस्था आणि पारंपरिक लोककलांशी जोडलेली एक समृद्ध लोकसंस्कृती आहे. भंडारा, गोंदिया, चंद्रपूर, गडचिरोली आणि बालाघाट जिल्ह्यांतील ५१८ गावांमध्ये वसलेल्या या समाजाने माती, बारमाही तलाव आणि ग्रामीण सहकार्यावर आधारलेली एक स्वावलंबी जीवनशैली विकसित केली आहे."> (Marathi: <em>कोहळी समाज संस्कृती</em>) encompasses centuries of living social practices, indigenous water management ethics, agricultural customs, multi-generational family structures, and vibrant folk performing arts across eastern Maharashtra and Central India. Historical settlements spanning 518 villages in Bhandara, Gondia, Chandrapur, Gadchiroli, and Balaghat districts developed a harmonious rural culture deeply intertwined with seasonal agricultural rhythms, community tank ecosystems, and reciprocal village relationships.</span>
+                        <span class="wiki-cite-ref"><a href="#cite_note-1">[1]</a></span>
+                    </p>
+                    <p data-lang-en="Unlike transient modern fashions, traditional Kohli culture was anchored in the Malguzari landholding framework, reciprocal support for village craftspeople (Bara Balutedar), multi-day matrimonial ceremonies, and community-wide stage theatre (Dandar). Community memory is preserved through oral testimonies, elder memoirs, and documented social customs." data-lang-mr="बदलत्या काळाच्या ओघात आधुनिक जीवनशैली रुजत असतानाही, कोहळी समाजाचा ऐतिहासिक वारसा मालगुजारी व्यवस्था, बारा बलुतेदारांशी असलेले कौटुंबिक नाते, बहुदिवसीय विवाह परंपरा आणि दंडार यांसारख्या लोककलांच्या माध्यमातून समाजाच्या मौखिक स्मृतींमध्ये जतन झालेला आहे.">Unlike transient modern fashions, traditional Kohli culture was anchored in the Malguzari landholding framework, reciprocal support for village craftspeople (Bara Balutedar), multi-day matrimonial ceremonies, and community-wide stage theatre (Dandar). Community memory is preserved through oral testimonies, elder memoirs, and documented social customs.</p>
+                </div>
+
+                <!-- SECTION 1: MARRIAGE TRADITIONS -->
+                <section id="sec-marriage">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="1. Marriage Traditions & Rites" data-lang-mr="१. विवाह परंपरा व विधी">1. Marriage Traditions & Rites</span></span>
+                        <a href="#sec-marriage" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <p data-lang-en="In Kohli community wedding traditions, ancient ceremonial practices and customary rites inherited through community cultural history continue to be observed, including the veneration of the village guardian mother deity (<em>Matama Pujan</em>), the turmeric smearing ceremony (<em>Halad</em>), and the customary reciprocal family gifting rite (<em>Far takane</em>) on the first day of wedding celebrations (Source Line 39)." data-lang-mr="कोहळी समाजाच्या लग्न समारंभात संस्कृतीच्या इतिहासातून वारसा म्हणून येणाऱ्या पारंपरिक पद्धती व रूढी आजही पाळल्या जातात; ज्यामध्ये लग्नाच्या पहिल्या दिवशी ग्रामदेवतेचे 'मातामा पूजन' (मातमा पूजन), हळदीचा मंगल कार्यक्रम आणि परस्पर मानपानाचा 'फर टाकणे' हा विधी प्राचीन काळापासून अविरत पाळला जात आहे (मूळ नोंद ओळ ३९).">
+                        In Kohli community wedding traditions, ancient ceremonial practices and customary rites inherited through community cultural history continue to be observed, including the veneration of the village guardian mother deity (<em>Matama Pujan</em>), the turmeric smearing ceremony (<em>Halad</em>), and the customary reciprocal family gifting rite (<em>Far takane</em>) on the first day of wedding celebrations (Source Line 39).
+                        <span class="wiki-cite-ref"><a href="#cite_note-1">[1]</a></span>
+                    </p>
+
+                    <!-- ORAL MEMOIR QUOTEBOX -->
+                    <div class="wiki-quotebox" id="sec-marriage-memoir">
+                        <div class="wiki-quotebox-title">
+                            <i class="fa-solid fa-quote-left" style="color:var(--accent-gold);"></i>
+                            <span data-lang-en="Community Oral Memoir: Traditional Wedding Customs from 60 Years Ago" data-lang-mr="सामुदायिक मौखिक संस्मरण: ६० वर्षांपूर्वीची विवाह संस्कृती (इंजि. शालीकराम बोरकर)">Community Oral Memoir: Traditional Wedding Customs from 60 Years Ago</span>
+                        </div>
+                        <p data-lang-en="&ldquo;The marriage traditions of the Kohli community: the mandap canopy (mandodhari) supported by posts of salai and mowai trees, with the wedding mandap roofed with fresh green branches of the jamun tree. Bringing water from the river in damne bandi (water-barrel carts); a caravan of 40–50 racing carts (rengya) forming the groom's procession. With rengyas decorated with cloth curtains, the procession did not enter the village directly; it halted at the village boundary (shivar). Then a folded betel leaf offering (paan-vida) was sent from the bride's side for the groom, after which the groom arrived at the village lodging hall (janosha). Everyone strived to conduct the wedding on time. The groom's procession arrived dancing and singing at the bride's mandap to the rhythm of gachkudi and the beat of the dafli, with the wedding held right on time. Then came the customary banquet rows (pangat): first for distinguished guests, next for household relatives, and then for the villagers. Villagers even had to carry their own water tumblers from home. The meal consisted of varan, bhat, bhaji, poli, powdered sugar over the poli, a stream of pure ghee over the sugar, and karanjyas in some places. Over the pangat, Manache Shlok were recited, followed by the acclamation 'Sadgurunath Maharaj ki Jai', and then dining commenced. 'Welcome, Brother-in-law, please be seated'—such was the hospitality. A Kohli wedding was truly grand; people from other communities and across Maharashtra showered praise. Those memories remain fresh with us even today.&rdquo;" data-lang-mr="&ldquo;कोहळी समाजाचा लग्न जोडण्याची पंरपरा, सालई-मोवईची डेरीची मांडोधरी व लग्न मंडपाला हीरव्यागार जांभळीच्याच डारा. ड़्मने बंडीमध्ये नदी वरून पाणी आणने, 40-50 रेंग्याचा कारवा म्हणजे नवरदेवाची वरात. झुलपडध्याने सजलेल्या रेंग्या, वरात सरळ गावात येत नसे, ती गावाच्या शिवारावर येवून थांबायची, आणि मग नवरी कडून नवरदेवा साठी पानाचा विळा जात असे, नंतर नंवरदेव गावातल्या जाणोश्यावर यायचा. लग्न वेळेवर लावण्यासाठी ‌सरवाची धडपड, नवरदेवाची वरात गचकुडीच्या आवाजात डफलीच्या गजरात नाचतगावत नवरीच्या मंडपात येत असे, लग्न अगदी वेळेवर. मग मानपानाच्या पंगती, पहिल्या पंगतीला पाहूणे मंडळी, नंतर घर पाहूणे व मग गावकरी. गावकऱ्याना जेवायला जाताना ग्लाॅसही घरुन घेऊन जावे लागत असे. जेवणात काय असायचा वरण, भात, भाजी, पोळी, पोळीवर पिटी साखर, साखरेवर तुपाचीधार, कुठे कुठे करंज्या. पंगतीवर मनाचे श्लोक सद्गुरूनात महाराज की जय, मग जेवायला सुरुवात. या भावजी बसा भावजी असा असायचा मानपान. कोहळ्यांचे लग्न म्हणजे लय भारी? इतर समाजाचे लोक काय अख्या महाराष्ट्रचे लोक स्थूती सुमणे उधळायची. त्या आठवणी आम्हाला आजही ताज्या वाटतात.&rdquo;">
+                            &ldquo;The marriage traditions of the Kohli community: the mandap canopy (mandodhari) supported by posts of salai and mowai trees, with the wedding mandap roofed with fresh green branches of the jamun tree. Bringing water from the river in damne bandi (water-barrel carts); a caravan of 40–50 racing carts (rengya) forming the groom's procession...&rdquo;
                         </p>
-                        <a href="#sec-marriage"><span data-lang-en="Read topic" data-lang-mr="सविस्तर वाचा">Read topic</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="wiki-quotebox-credit">
+                            <span data-lang-en="— Er. Shalikram Borkar, Editor 'Reshimgathi', 'Kohli Samajachi Sanskruti — Part 3' (Personal oral community memoir; age 77, fourth-generation recollection)." data-lang-mr="— इंजि. शालीकराम बोरकर, संपादक 'रेशीमगाठी', 'कोहळी समाजाची संस्कृती — भाग ३' (प्रत्यक्ष मौखिक संस्मरण; वय ७७ वर्षे, चौथी पिढी).">— Er. Shalikram Borkar, Editor 'Reshimgathi', 'Kohli Samajachi Sanskruti — Part 3' (Personal oral community memoir; age 77, fourth-generation recollection).</span>
+                        </div>
                     </div>
 
-                    <div class="pillar-item">
-                        <h3 data-lang-en="2. Festivals & Religion" data-lang-mr="२. सण आणि धार्मिक जीवन">2. Festivals & Religion</h3>
-                        <p data-lang-en="Festivals brought together religious observance, family participation, music, folk performances and community gatherings." data-lang-mr="सणांमध्ये धार्मिक विधी, कुटुंबीयांचा सहभाग, संगीत, लोककला आणि सामुदायिक एकत्र येण्याची परंपरा दिसून येते.">
-                            Festivals brought together religious observance, family participation, music, folk performances and community gatherings.
-                        </p>
-                        <a href="#sec-festivals"><span data-lang-en="Read topic" data-lang-mr="सविस्तर वाचा">Read topic</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    <h3 class="wiki-subheading" id="sec-marriage-customs" data-lang-en="Ceremonial Stages & Banquet Protocol" data-lang-mr="विवाह विधी आणि पंगत संस्कृती">Ceremonial Stages & Banquet Protocol</h3>
+                    <p data-lang-en="Traditional ceremonies followed a structured customary etiquette passed down across generations:" data-lang-mr="पारंपरिक विवाहसोहळ्यांमध्ये पूर्वापार चालत आलेले शिष्टाचार आणि विधींचे काटेकोर पालन होत असे:">Traditional ceremonies followed a structured customary etiquette passed down across generations:</p>
+
+                    <ul class="wiki-fact-list">
+                        <li>
+                            <strong data-lang-en="First-Day Rituals: " data-lang-mr="पहिल्या दिवसाचे विधी: ">First-Day Rituals: </strong>
+                            <span data-lang-en="Proceedings opened with reverence to the village guardian mother deity (<em>Matama Pujan</em>), the sacred turmeric smearing rite (<em>Halad</em>), and mutual customary gifting between families (<em>Far takane</em>)." data-lang-mr="विवाहाच्या पहिल्या दिवशी ग्रामदैवत 'मातमा पूजन', हळदीचा मंगल सोहळा आणि दोन्ही कुटुंबांतील मानपानाचा 'फर टाकणे' हा विधी प्राचीन परंपरेनुसार पार पडत असे.">Proceedings opened with reverence to the village guardian mother deity (<em>Matama Pujan</em>), the sacred turmeric smearing rite (<em>Halad</em>), and mutual customary gifting between families (<em>Far takane</em>).</span>
+                            <span class="wiki-cite-ref"><a href="#cite_note-1">[1]</a></span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Musical Accompaniment: " data-lang-mr="पारंपरिक वाद्यवृंद: ">Musical Accompaniment: </strong>
+                            <span data-lang-en="As recorded in oral memoirs, wedding processions arrived dancing and singing to the rhythm of indigenous instruments: <em>gachkudi</em> and <em>dafli</em> (Source Line 107)." data-lang-mr="मौखिक संस्मरणानुसार, नवरदेवाची वरात गचकुडीच्या विशिष्ट आवाजात आणि डफलीच्या गजरात नाचत-गावत मंडपात येत असे (मूळ नोंद ओळ १०७).">As recorded in oral memoirs, wedding processions arrived dancing and singing to the rhythm of indigenous instruments: <em>gachkudi</em> and <em>dafli</em> (Source Line 107).</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Pangat Etiquette: " data-lang-mr="पंगत संस्कृती व मानपान: ">Pangat Etiquette: </strong>
+                            <span data-lang-en="Dining occurred in parallel seated rows (<em>pangats</em>). Steaming rice, dal, vegetables, hand-rolled wheat polis, freshly fried <em>karanjya</em>, powdered sugar (<em>piti sakhar</em>), and a continuous stream of pure ghee (<em>tupachi dhar</em>) were served. Diners collectively recited Samarth Ramdas's <em>Manache Shlok</em>, commencing the meal after the reverent proclamation <em>'Sadgurunath Maharaj ki Jai'</em>." data-lang-mr="मानपानाच्या पंगतींमध्ये गरम वरण, भात, भाजी, पोळी, त्यावर पिठी साखर, साजूक तुपाची अखंड धार आणि करंज्या वाढल्या जात. भोजनापूर्वी समर्थ रामदासांचे 'मनाचे श्लोक' सामूहिकपणे म्हटले जात आणि 'सद्गुरुनाथ महाराज की जय' या जयघोषाने भोजनाची सुरुवात होत असे.">Dining occurred in parallel seated rows (<em>pangats</em>). Steaming rice, dal, vegetables, hand-rolled wheat polis, freshly fried <em>karanjya</em>, powdered sugar (<em>piti sakhar</em>), and a continuous stream of pure ghee (<em>tupachi dhar</em>) were served. Diners collectively recited Samarth Ramdas's <em>Manache Shlok</em>, commencing the meal after the reverent proclamation <em>'Sadgurunath Maharaj ki Jai'</em>.</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 2: FESTIVALS & RELIGIOUS LIFE -->
+                <section id="sec-festivals">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="2. Traditional Deities & Religious Observance" data-lang-mr="२. पारंपरिक दैवते व धार्मिक जीवन">2. Traditional Deities & Religious Observance</span></span>
+                        <a href="#sec-festivals" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <p data-lang-en="Religious traditions in the Kohli community preserve ancient ties with traditional deities venerated since ancient times in the forested tracts and settlements of eastern Vidarbha (Source Line 31, 37):" data-lang-mr="कोहळी समाजातील धार्मिक श्रद्धा या पूर्व विदर्भातील अरण्य व वसाहतींमधील प्राचीन काळापासून चालत आलेल्या पारंपरिक दैवतांशी जोडलेल्या आहेत (मूळ नोंद ओळ ३१, ३७):">
+                        Religious traditions in the Kohli community preserve ancient ties with traditional deities venerated since ancient times in the forested tracts and settlements of eastern Vidarbha (Source Line 31, 37):
+                    </p>
+
+                    <h3 class="wiki-subheading" id="sec-deities-list" data-lang-en="Documented Traditional Deities" data-lang-mr="ऐतिहासिक नोंदींमधील पारंपरिक दैवते">Documented Traditional Deities</h3>
+                    <p data-lang-en="Community records enumerate the traditional deities (Dev / Parameshwar) with whom the Kohli community holds an ancestral religious relationship (Source Line 37):" data-lang-mr="समाज दस्तावेजानुसार, कोहळी समाजाचे खालील पारंपरिक दैवतांशी (परमेश्वर/देव) धार्मिक नाते आहे (मूळ नोंद ओळ ३७):">Community records enumerate the traditional deities (Dev / Parameshwar) with whom the Kohli community holds an ancestral religious relationship (Source Line 37):</p>
+
+                    <ul class="wiki-fact-list">
+                        <li>
+                            <strong data-lang-en="Kolasur, Tadoba & Kholyakholba: " data-lang-mr="कोलासूर, ताडोबा व खोल्याखोळबा: ">Kolasur, Tadoba & Kholyakholba: </strong>
+                            <span data-lang-en="Traditional deities venerated in community tradition, with whom the community holds an ancestral devotional relationship." data-lang-mr="कोहळी समाजाच्या मूळ परंपरेतील पूज्य दैवते, ज्यांच्याशी समाजाचे ऐतिहासिक धार्मिक नाते आहे.">Traditional deities venerated in community tradition, with whom the community holds an ancestral devotional relationship.</span>
+                            <span class="wiki-cite-ref"><a href="#cite_note-1">[1]</a></span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Kali Devi & Sat Devi: " data-lang-mr="काली देवी व सात देवी: ">Kali Devi & Sat Devi: </strong>
+                            <span data-lang-en="Traditional mother deities with whom the community preserves an ancestral devotional bond." data-lang-mr="समाजाचे धार्मिक नाते असणाऱ्या पूज्य पारंपरिक देवी दैवते.">Traditional mother deities with whom the community preserves an ancestral devotional bond.</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Rama, Shiva, Bhairava & Maruti (Hanuman): " data-lang-mr="राम, शिव, भैरव व मारुती (हनुमान): ">Rama, Shiva, Bhairava & Maruti (Hanuman): </strong>
+                            <span data-lang-en="Classical deities including Lord Rama, Shiva, Bhairava, and Maruti (Anjaneya / Pawansut Hanuman / Bajrangbali), venerated across community settlements." data-lang-mr="श्रीराम, शिव, भैरव आणि मारुती (अंजुने / पवनसुत / हनुमान / बजरंगबली), ज्यांच्याशी समाजाचे प्राचीन धार्मिक नाते आहे.">Classical deities including Lord Rama, Shiva, Bhairava, and Maruti (Anjaneya / Pawansut Hanuman / Bajrangbali), venerated across community settlements.</span>
+                        </li>
+                    </ul>
+
+                    <h3 class="wiki-subheading" id="sec-festivals-calendar" data-lang-en="Agricultural & Seasonal Festivals" data-lang-mr="कृषी सण आणि ऋतू उत्सव">Agricultural & Seasonal Festivals</h3>
+                    <ul class="wiki-fact-list">
+                        <li>
+                            <strong data-lang-en="Bail Pola: " data-lang-mr="बैल पोळा: ">Bail Pola: </strong>
+                            <span data-lang-en="The most prominent agrarian festival, dedicated to honoring working bullocks with decorated horns, embroidered cloths, and village-wide parades reflecting gratitude to cattle." data-lang-mr="शेतीमध्ये साथ देणाऱ्या बैलांप्रती कृतज्ञता व्यक्त करणारा मुख्य कृषी सण; बैलांना सजवून वाजत-गाजत मिरवणूक काढली जाते.">The most prominent agrarian festival, dedicated to honoring working bullocks with decorated horns, embroidered cloths, and village-wide parades reflecting gratitude to cattle.</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Tulsi Vivah: " data-lang-mr="तुळशी विवाह: ">Tulsi Vivah: </strong>
+                            <span data-lang-en="Ceremonial worship marking the conclusion of the monsoon Chaturmas, celebrated across households and opening the auspicious winter matrimonial calendar." data-lang-mr="चातुर्मासाची सांगता करून विवाहाच्या शुभ मुहूर्तांची सुरुवात दर्शविणारा पारंपरिक घरगुती सोहळा.">Ceremonial worship marking the conclusion of the monsoon Chaturmas, celebrated across households and opening the auspicious winter matrimonial calendar.</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Holi & Rang Panchami: " data-lang-mr="होळी व रंगपंचमी: ">Holi & Rang Panchami: </strong>
+                            <span data-lang-en="Spring harvest celebration featuring communal bonfires, traditional folk singing, theatrical plays, and vibrant color festivals bringing all village sections together." data-lang-mr="रब्बी हंगामाच्या प्रारंभी होळीचे दहन, लोकगीते, नाटक आणि रंगपंचमीचा उत्सव ज्यामध्ये सर्व गावकरी उत्साहाने सहभागी होतात.">Spring harvest celebration featuring communal bonfires, traditional folk singing, theatrical plays, and vibrant color festivals bringing all village sections together.</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 3: TRADITIONAL LIFESTYLE -->
+                <section id="sec-lifestyle">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="3. Village Organization & Social Interdependence" data-lang-mr="३. ग्रामव्यवस्था व सामाजिक सलोखा">3. Village Organization & Social Interdependence</span></span>
+                        <a href="#sec-lifestyle" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <p data-lang-en="Because historical Malguzari across eastern Vidarbha was widely held by the Kohli community, Kohli village Patels and agrarian households maintained close, paternal relationships with the entire village social fabric, functioning as recognized patrons of the traditional Bara Balutedar system." data-lang-mr="पूर्व विदर्भातील बहुतांश भागात मालगुजारी कोहळी समाजाकडे असल्याने कोहळी पाटील आणि शेतकरी कुटुंबांकडे 'बारा बलुतेदारांचे पोशिंदे' म्हणून पाहिले जात असे. या सर्व घटकांशी त्यांचे जिव्हाळ्याचे कौटुंबिक संबंध होते.">
+                        Because historical Malguzari across eastern Vidarbha was widely held by the Kohli community, Kohli village Patels and agrarian households maintained close, paternal relationships with the entire village social fabric, functioning as recognized patrons of the traditional Bara Balutedar system.
+                        <span class="wiki-cite-ref"><a href="#cite_note-1">[1]</a></span>
+                    </p>
+
+                    <h3 class="wiki-subheading" id="sec-patil-governance" data-lang-en="The Patil's Wada & Dahaljit (डहलजीत) Tradition" data-lang-mr="पाटलांचा वाडा आणि डहलजीत परंपरा">The Patil's Wada & Dahaljit (डहलजीत) Tradition</h3>
+                    <p data-lang-en="According to community recollections, village politics and affairs traditionally centered around the Kohli Patil's homestead (*wada*). When the Patil stood in the *dahaljit* (डहलजीत, the outer portico of the house), passing villagers respectfully greeted him with 'Patil Saheb' (Source Line 1)." data-lang-mr="सामुदायिक आठवणींनुसार, गावातील कारभार कोहळी पाटलांच्या वाड्यातून चालत असे. कोहळी पाटील घराच्या 'डहलजीत' (ओसरीत) उभा जरी असला, तरी येणारे-जाणारे गावकरी आदराने 'पाटील साहेब' म्हणून नमस्कार घालत असत (मूळ नोंद ओळ १).">According to community recollections, village politics and affairs traditionally centered around the Kohli Patil's homestead (*wada*). When the Patil stood in the *dahaljit* (डहलजीत, the outer portico of the house), passing villagers respectfully greeted him with 'Patil Saheb' (Source Line 1).</p>
+
+                    <h3 class="wiki-subheading" id="sec-balutedar-bhatyavar" data-lang-en="Bara Balutedar & The Bhatyavar Remuneration System" data-lang-mr="बारा बलुतेदार आणि भात्यावर मोबदला पद्धत">Bara Balutedar & The Bhatyavar Remuneration System</h3>
+                    <p data-lang-en="Rather than monetary transactions, artisanal and service communities received fixed seasonal shares of unhusked paddy (<em>bhatyavar</em> / भात्यावर) after each winter harvest, ensuring equitable mutual subsistence:" data-lang-mr="पैशांच्या व्यवहारांऐवजी भातकापणीच्या वेळी धान्याचे ठराविक माप ('भात्यावर') देऊन बलुतेदारांना वर्षभराचा मोबदला दिला जात असे:">Rather than monetary transactions, artisanal and service communities received fixed seasonal shares of unhusked paddy (<em>bhatyavar</em> / भात्यावर) after each winter harvest, ensuring equitable mutual subsistence:</p>
+
+                    <ul class="wiki-fact-list">
+                        <li>
+                            <strong data-lang-en="Artisans Supported: " data-lang-mr="सहभागी कारागीर: ">Artisans Supported: </strong>
+                            <span data-lang-en="Blacksmiths (<em>khati</em>) and carpenters (<em>sutar</em>) who fabricated and repaired wooden plows and bullock carts, barbers (<em>navhi</em>), and leatherworkers (<em>chambhar</em>)." data-lang-mr="शेतीची अवजारे बनविणारे सुतार व खाती (लोहार), तसेच नाव्ही आणि चांभार यांना वार्षिक धान्याचा मोबदला ठरलेला असे.">Blacksmiths (<em>khati</em>) and carpenters (<em>sutar</em>) who fabricated and repaired wooden plows and bullock carts, barbers (<em>navhi</em>), and leatherworkers (<em>chambhar</em>).</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Livestock Care & Farm Coordination: " data-lang-mr="पशुधन संगोपन व शेती सहकार्य: ">Livestock Care & Farm Coordination: </strong>
+                            <span data-lang-en="The Patil's household maintained herds of cows and working buffaloes, coordinating with plowing and field assistants across communities (Gond, Gowari, Dhiwar) in a spirit of mutual domestic respect." data-lang-mr="पाटलांच्या वाड्यात गाई-म्हशींचे संवर्धन केले जाई, तसेच नांगरणीसाठी चाकरमानी माणसे (गोंड, गोवारी, ढीवर) यांच्याशी जिव्हाळ्याचे कौटुंबिक सहकार्य होते.">The Patil's household maintained herds of cows and working buffaloes, coordinating with plowing and field assistants across communities (Gond, Gowari, Dhiwar) in a spirit of mutual domestic respect.</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 4: FOLK ARTS -->
+                <section id="sec-folkarts">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="4. Folk Arts, Dandaar & Cultural Performances" data-lang-mr="४. लोककला, दंडार आणि सांस्कृतिक सादरीकरणे">4. Folk Arts, Dandaar & Cultural Performances</span></span>
+                        <a href="#sec-folkarts" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <p data-lang-en="Folk performance traditions served both recreation and moral education in Vidarbha's rural settlements. Several family lines within the Kohli community gained regional renown in traditional stage drama and folk performing arts." data-lang-mr="पूर्व विदर्भातील लोककला ही केवळ मनोरंजनाचे साधन नसून सामाजिक प्रबोधनाचे माध्यम होती. कोहळी समाजातील अनेक घराण्यांनी पारंपरिक नाट्यकलेत आणि लोककलांमध्ये नावलौकिक मिळवला होता.">
+                        Folk performance traditions served both recreation and moral education in Vidarbha's rural settlements. Several family lines within the Kohli community gained regional renown in traditional stage drama and folk performing arts.
+                    </p>
+
+                    <ul class="wiki-fact-list">
+                        <li>
+                            <strong data-lang-en="Dandaar Folk Theatre (दंडार): " data-lang-mr="पारंपरिक दंडार लोकनाट्य: ">Dandaar Folk Theatre (दंडार): </strong>
+                            <span data-lang-en="Performed in customary folk attire across major annual celebrations including Holi, Rang Panchami, Shiv Jayanti, Ram Navami, Pola, Dussehra, and Diwali." data-lang-mr="पारंपरिक पोशाखात सादर होणारे हे विदर्भाचे वैशिष्ट्यपूर्ण लोकनाट्य होळी, रंगपंचमी, शिवजयंती, रामनवमी, पोळा, दसरा आणि दिवाळी यांसारख्या सणांमध्ये सादर केले जाई.">Performed in customary folk attire across major annual celebrations including Holi, Rang Panchami, Shiv Jayanti, Ram Navami, Pola, Dussehra, and Diwali.</span>
+                            <span class="wiki-cite-ref"><a href="#cite_note-1">[1]</a></span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Social Awakening & Moral Instruction: " data-lang-mr="सामाजिक संदेश व प्रबोधन: ">Social Awakening & Moral Instruction: </strong>
+                            <span data-lang-en="Community plays and Dandar performances were consciously staged to deliver social messages, moral education, and cultural awareness to audiences." data-lang-mr="हे नाटक आणि दंडार केवळ करमणूक नसून, सामाजिक संदेश देणे आणि धार्मिक-नैतिक शिक्षणाचे प्रबोधन करण्याचे एक प्रभावी माध्यम ठरले.">Community plays and Dandar performances were consciously staged to deliver social messages, moral education, and cultural awareness to audiences.</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Drama, Bhajan & Traditional Attire: " data-lang-mr="नाटक, भजन व पारंपरिक पोशाख: ">Drama, Bhajan & Traditional Attire: </strong>
+                            <span data-lang-en="Community members actively participated in drama (<em>natak</em>), devotional singing (<em>bhajan</em>), and folk theatre (<em>Dandar</em>) in traditional attire across festive occasions (Source Line 41)." data-lang-mr="सण-उत्सवांच्या काळात नाटक, भजन आणि पारंपरिक पोशाखातील लोकनाट्य (दंडार) यामध्ये समाजबांधवांचा उत्स्फूर्त सहभाग असतो (मूळ नोंद ओळ ४१).">Community members actively participated in drama (<em>natak</em>), devotional singing (<em>bhajan</em>), and folk theatre (<em>Dandar</em>) in traditional attire across festive occasions (Source Line 41).</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 5: FOOD & AGRICULTURE -->
+                <section id="sec-food">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="5. Food Traditions & Agricultural Produce" data-lang-mr="५. अन्नपरंपरा आणि कृषी संस्कृती">5. Food Traditions & Agricultural Produce</span></span>
+                        <a href="#sec-food" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <p data-lang-en="The culinary heritage of the Kohli community evolved alongside tank-fed paddy irrigation and sugarcane cultivation. Staple meals centered on fragrant rice, golden unrefined jaggery, pulses, and country greens." data-lang-mr="कोहळी समाजाची अन्नसंस्कृती ही तलावांच्या पाण्यावर पिकणारा भात, उसाचे गुऱ्हाळ आणि रानभाज्या यांच्याशी जोडलेली आहे:">
+                        The culinary heritage of the Kohli community evolved alongside tank-fed paddy irrigation and sugarcane cultivation. Staple meals centered on fragrant rice, golden unrefined jaggery, pulses, and country greens.
+                    </p>
+
+                    <ul class="wiki-fact-list">
+                        <li>
+                            <strong data-lang-en="Indigenous Fragrant Rice: " data-lang-mr="देशी सुवासिक भात वाण: ">Indigenous Fragrant Rice: </strong>
+                            <span data-lang-en="Historical cultivation of fragrant varieties such as <em>Luchai</em>, <em>Chinnor</em>, and <em>Dubraj</em>, celebrated across Central India for their distinct aroma and cooking qualities." data-lang-mr="तलावाच्या पाण्यावर पिकविले जाणारे 'लुचाई', 'चिन्नोर' आणि 'दुबराज' यांसारखे सुवासिक आणि चवदार देशी भाताचे वाण.">Historical cultivation of fragrant varieties such as <em>Luchai</em>, <em>Chinnor</em>, and <em>Dubraj</em>, celebrated across Central India for their distinct aroma and cooking qualities.</span>
+                            <span class="wiki-cite-ref"><a href="#cite_note-3">[3]</a></span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Sugarcane & Jaggery (Gur): " data-lang-mr="गुऱ्हाळ व गूळ निर्मिती: ">Sugarcane & Jaggery (Gur): </strong>
+                            <span data-lang-en="Bullock-operated cane crushers (<em>charak</em>) and boiling pans produced unrefined golden jaggery used in festive sweets and daily cooking." data-lang-mr="बैलांच्या साह्याने चालणारे चरक आणि मोठमोठ्या कढयांमध्ये उकळून तयार केला जाणारा पिवळाधमक गूळ.">Bullock-operated cane crushers (<em>charak</em>) and boiling pans produced unrefined golden jaggery used in festive sweets and daily cooking.</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Banquet Delicacies: " data-lang-mr="लग्नपंक्तीतील मिष्टान्न: ">Banquet Delicacies: </strong>
+                            <span data-lang-en="Feasts featured hand-rolled <em>karanjya</em>, steaming rice with a continuous stream of pure ghee (<em>tupachi dhar</em>), and fine powdered sugar (<em>piti sakhar</em>)." data-lang-mr="पारंपरिक पंक्तीत गरमागरम वरण-भात, पोळी, त्यावर साजूक तुपाची अखंड धार, पिठी साखर आणि करंज्या वाढण्याची विशेष पद्धत.">Feasts featured hand-rolled <em>karanjya</em>, steaming rice with a continuous stream of pure ghee (<em>tupachi dhar</em>), and fine powdered sugar (<em>piti sakhar</em>).</span>
+                            <span class="wiki-cite-ref"><a href="#cite_note-1">[1]</a></span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 6: FAMILY & COMMUNITY LIFE -->
+                <section id="sec-family">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="6. Family Life & Community Solidarity" data-lang-mr="६. कुटुंबव्यवस्था आणि सामाजिक एकोपा">6. Family Life & Community Solidarity</span></span>
+                        <a href="#sec-family" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <p data-lang-en="Prior to 2001, the joint family system (<em>ekatra kutumb paddhati</em> / एकत्र कुटुंब पद्धती) was the foundational cornerstone of social organization within the Kohli community:" data-lang-mr="इ.स. २००१ पूर्वीच्या काळात 'एकत्र कुटुंब पद्धती' हा कोहळी समाजव्यवस्थेचा मुख्य आधारस्तंभ होती:">
+                        Prior to 2001, the joint family system (<em>ekatra kutumb paddhati</em> / एकत्र कुटुंब पद्धती) was the foundational cornerstone of social organization within the Kohli community:
+                        <span class="wiki-cite-ref"><a href="#cite_note-1">[1]</a></span>
+                    </p>
+
+                    <ul class="wiki-fact-list">
+                        <li>
+                            <strong data-lang-en="Multi-Generational Households: " data-lang-mr="अनेक पिढ्यांचे एकत्र वास्तव्य: ">Multi-Generational Households: </strong>
+                            <span data-lang-en="Multiple generations, siblings, and extended kin lived jointly under a single expansive roof, with respected elders providing moral guidance and presiding over agricultural planning." data-lang-mr="तीन ते चार पिढ्यांचे सदस्य एकाच छताखाली एकत्र राहत; कुटुंबातील ज्येष्ठ व्यक्ती शेती व कौटुंबिक निर्णयात मार्गदर्शक असत.">Multiple generations, siblings, and extended kin lived jointly under a single expansive roof, with respected elders providing moral guidance and presiding over agricultural planning.</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Shared Socio-Economic Management: " data-lang-mr="संयुक्त सामाजिक व आर्थिक व्यवस्थापन: ">Shared Socio-Economic Management: </strong>
+                            <span data-lang-en="Family members shared agricultural labor, cattle management, and household responsibilities as a united economic collective." data-lang-mr="शेतीची कामे, गुरांचे पालन आणि घरकाम सर्व सदस्य एकत्रितपणे सांभाळत, जे संयुक्त आर्थिक व्यवस्थापनाचे प्रतीक होते.">Family members shared agricultural labor, cattle management, and household responsibilities as a united economic collective.</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Modern Transition & Cohesion: " data-lang-mr="आधुनिक बदल व निरंतर एकोपा: ">Modern Transition & Cohesion: </strong>
+                            <span data-lang-en="While formal education and urban employment led to the rise of nuclear households after 2001, community unity remains vibrant through kinship gatherings, matrimonial conferences (<em>Vadhu-Var Melawa</em>), and collective festival homecomings." data-lang-mr="२००१ नंतर शिक्षण व नोकरीमुळे विभक्त कुटुंबे वाढली असली, तरी सण-उत्सवांना गावी एकत्र येणे, वधू-वर मेळावे आणि आप्तस्वकीयांमधील जिव्हाळ्यामुळे समूहभावना आजही कायम आहे.">While formal education and urban employment led to the rise of nuclear households after 2001, community unity remains vibrant through kinship gatherings, matrimonial conferences (<em>Vadhu-Var Melawa</em>), and collective festival homecomings.</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 7: TRADITION AND CHANGE -->
+                <section id="sec-tradition-change">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="7. Tradition and Change" data-lang-mr="७. परंपरा आणि बदल">7. Tradition and Change</span></span>
+                        <a href="#sec-tradition-change" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p data-lang-en="Like every living culture, Kohli traditions have adapted over the past century. Higher education, technical professions in engineering and administration, and migration to urban centers like Nagpur, Pune, and Mumbai have transformed traditional agrarian lifestyles. Yet, ecological stewardship, water conservation awareness, and community cohesion continue to define the modern Kohli ethos." data-lang-mr="इतर कोणत्याही जिवंत संस्कृतीप्रमाणे कोहळी समाजाच्या परंपरांमध्येही काळानुरूप बदल झाले आहेत. उच्च शिक्षण, शासकीय व अभियांत्रिकी क्षेत्रातील प्रगती आणि नागपूर, पुणे, मुंबई यांसारख्या शहरांमध्ये स्थलांतरामुळे जीवनशैलीत बदल झाले, तरी जलव्यवस्थापन, निसर्गप्रेम आणि सामाजिक एकात्मतेची मूळ मूल्ये आजही पिढ्यान्पिढ्या जपली जात आहेत.">Like every living culture, Kohli traditions have adapted over the past century. Higher education, technical professions in engineering and administration, and migration to urban centers like Nagpur, Pune, and Mumbai have transformed traditional agrarian lifestyles. Yet, ecological stewardship, water conservation awareness, and community cohesion continue to define the modern Kohli ethos.</p>
+                </section>
+
+                <!-- SECTION 8: SEE ALSO -->
+                <section id="sec-see-also">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="8. See Also" data-lang-mr="८. हेही पहा">8. See Also</span></span>
+                        <a href="#sec-see-also" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p data-lang-en="Explore related articles in the Kohli Samaj Knowledge Base:" data-lang-mr="कोहळी समाज ज्ञानकोशातील इतर संबंधित लेख पहा:">Explore related articles in the Kohli Samaj Knowledge Base:</p>
+
+                    <div class="wiki-see-also-grid">
+                        <a href="history.html" class="wiki-see-also-card">
+                            <span><i class="fa-solid fa-landmark" style="color:var(--accent-gold);margin-right:0.4rem;"></i> <span data-lang-en="History & Gond Era" data-lang-mr="इतिहास व गोंड काळ">History & Gond Era</span></span>
+                            <i class="fa-solid fa-arrow-right" style="font-size:0.8rem;color:var(--wiki-link);"></i>
+                        </a>
+                        <a href="water-heritage.html" class="wiki-see-also-card">
+                            <span><i class="fa-solid fa-droplet" style="color:var(--accent-gold);margin-right:0.4rem;"></i> <span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span></span>
+                            <i class="fa-solid fa-arrow-right" style="font-size:0.8rem;color:var(--wiki-link);"></i>
+                        </a>
+                        <a href="village-directory.html" class="wiki-see-also-card">
+                            <span><i class="fa-solid fa-house-chimney" style="color:var(--accent-gold);margin-right:0.4rem;"></i> <span data-lang-en="518 Village Directory" data-lang-mr="५१८ ग्राम सूची">518 Village Directory</span></span>
+                            <i class="fa-solid fa-arrow-right" style="font-size:0.8rem;color:var(--wiki-link);"></i>
+                        </a>
+                        <a href="gazetteers.html" class="wiki-see-also-card">
+                            <span><i class="fa-solid fa-book-open" style="color:var(--accent-gold);margin-right:0.4rem;"></i> <span data-lang-en="Gazetteers & Archives" data-lang-mr="गॅझेटियर व दस्तऐवज">Gazetteers & Archives</span></span>
+                            <i class="fa-solid fa-arrow-right" style="font-size:0.8rem;color:var(--wiki-link);"></i>
+                        </a>
                     </div>
+                </section>
 
-                    <div class="pillar-item">
-                        <h3 data-lang-en="3. Traditional Lifestyle" data-lang-mr="३. पारंपरिक जीवनशैली">3. Traditional Lifestyle</h3>
-                        <p data-lang-en="Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles." data-lang-mr="पारंपरिक कोहळी जीवनशैलीचा शेती, पशुधन, ग्रामव्यवस्था आणि ऋतूचक्राशी जवळचा संबंध होता.">
-                            Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles.
-                        </p>
-                        <a href="#sec-lifestyle"><span data-lang-en="Read topic" data-lang-mr="सविस्तर वाचा">Read topic</span> <i class="fa-solid fa-arrow-right"></i></a>
+                <!-- SECTION 9: NOTES & REFERENCES -->
+                <section id="sec-references">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="9. Notes & References" data-lang-mr="९. संदर्भ व नोंदी">9. Notes & References</span></span>
+                        <a href="#sec-references" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <ol class="wiki-references-list">
+                        <li id="cite_note-1">
+                            <span data-lang-en="<strong>Community Oral Memoir:</strong> Er. Shalikram Borkar (Tumsar), <em>'Kohli Samajachi Sanskruti — Part 3'</em>; personal first-hand testimony recording 60-year-old traditional wedding customs, mandap architecture, damne bandi river water, rengya procession, and village social order." data-lang-mr="<strong>सामुदायिक संस्मरण:</strong> इंजि. शालिकराम बोरकर (तुमसर), <em>'कोहळी समाजाची संस्कृती — भाग ३'</em>; ६० वर्षांपूर्वीच्या विवाह चालीरीती, मांडोढरी, दामने बंडी, रेग्यांची वरात, आणि ग्रामव्यवस्थेचे प्रत्यक्ष मौखिक संस्मरण."><strong>Community Oral Memoir:</strong> Er. Shalikram Borkar (Tumsar), <em>'Kohli Samajachi Sanskruti — Part 3'</em>; personal first-hand testimony recording 60-year-old traditional wedding customs, mandap architecture, damne bandi river water, rengya procession, and village social order.</span>
+                        </li>
+                        <li id="cite_note-2">
+                            <span data-lang-en="<strong>Community Documentation:</strong> Published writings and historical records compiled by regional community researchers N. R. Borkar and Ramdas Borkar on traditional village life, deities, and Malguzari institutions." data-lang-mr="<strong>ऐतिहासिक नोंदी:</strong> कोहळी समाजातील ज्येष्ठ लेखक ना. रा. बोरकर व रामदास बोरकर यांनी संकलित केलेल्या ऐतिहासिक व सामाजिक नोंदी."><strong>Community Documentation:</strong> Published writings and historical records compiled by regional community researchers N. R. Borkar and Ramdas Borkar on traditional village life, deities, and Malguzari institutions.</span>
+                        </li>
+                        <li id="cite_note-3">
+                            <span data-lang-en="<strong>Central Provinces District Gazetteers:</strong> <em>Bhandara District (1908)</em> and <em>Chanda District (1909)</em>, edited by R. V. Russell; documenting the Kohli community's traditional sugarcane crushing, jaggery making, and tank-irrigated rice culture." data-lang-mr="<strong>सेंट्रल प्रॉव्हिन्सेस डिस्ट्रिक्ट गॅझेटियर्स:</strong> <em>भंडारा जिल्हा (१९०८)</em> आणि <em>चांदा जिल्हा (१९०९)</em>; संपादन: आर. व्ही. रसेल; कोहळी समाजाचे तलाव सिंचन, ऊस-गूळ निर्मिती आणि भातशेतीचे ऐतिहासिक संदर्भ."><strong>Central Provinces District Gazetteers:</strong> <em>Bhandara District (1908)</em> and <em>Chanda District (1909)</em>, edited by R. V. Russell; documenting the Kohli community's traditional sugarcane crushing, jaggery making, and tank-irrigated rice culture.</span>
+                        </li>
+                    </ol>
+
+                    <div class="wiki-categories-box">
+                        <span class="wiki-cat-label" data-lang-en="Categories:" data-lang-mr="वर्ग:">Categories:</span>
+                        <a href="culture.html" class="wiki-cat-link" data-lang-en="Vidarbha Cultural Heritage" data-lang-mr="विदर्भ सांस्कृतिक वारसा">Vidarbha Cultural Heritage</a> |
+                        <a href="culture.html" class="wiki-cat-link" data-lang-en="Kohli Samaj Living Traditions" data-lang-mr="कोहळी समाज लोकसंस्कृती">Kohli Samaj Living Traditions</a> |
+                        <a href="culture.html" class="wiki-cat-link" data-lang-en="Dandar Folk Theatre" data-lang-mr="दंडार लोकनाट्य">Dandar Folk Theatre</a> |
+                        <a href="water-heritage.html" class="wiki-cat-link" data-lang-en="Malguzari Agrarian Society" data-lang-mr="मालगुजारी कृषी समाज">Malguzari Agrarian Society</a>
                     </div>
+                </section>
 
-                    <div class="pillar-item">
-                        <h3 data-lang-en="4. Folk Arts & Dandaar" data-lang-mr="४. लोककला आणि दंडार">4. Folk Arts & Dandaar</h3>
-                        <p data-lang-en="Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages." data-lang-mr="लोकनाट्य आणि लोककला या केवळ करमणुकीचे माध्यम नव्हत्या; त्या सामाजिक अभिव्यक्ती आणि धार्मिक-सामाजिक संदेश देण्याचे माध्यमही होत्या.">
-                            Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages.
-                        </p>
-                        <a href="#sec-folkarts"><span data-lang-en="Read topic" data-lang-mr="सविस्तर वाचा">Read topic</span> <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-
-                    <div class="pillar-item">
-                        <h3 data-lang-en="5. Food & Agriculture" data-lang-mr="५. अन्न आणि कृषी संस्कृती">5. Food & Agriculture</h3>
-                        <p data-lang-en="Food traditions developed alongside agriculture and local availability of crops such as rice and sugarcane." data-lang-mr="स्थानिक शेती आणि उपलब्ध पिकांनुसार कोहळी समाजातील अन्नपरंपरा विकसित झाल्या.">
-                            Food traditions developed alongside agriculture and local availability of crops such as rice and sugarcane.
-                        </p>
-                        <a href="#sec-food"><span data-lang-en="Read topic" data-lang-mr="सविस्तर वाचा">Read topic</span> <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-
-                    <div class="pillar-item">
-                        <h3 data-lang-en="6. Family & Community Life" data-lang-mr="६. कुटुंब आणि समाजजीवन">6. Family & Community Life</h3>
-                        <p data-lang-en="Family and community relationships played an important role in traditional village life and collective welfare." data-lang-mr="पारंपरिक ग्रामीण जीवनात कुटुंबीय आणि समाजातील परस्पर संबंधांना महत्त्वाचे स्थान होते.">
-                            Family and community relationships played an important role in traditional village life and collective welfare.
-                        </p>
-                        <a href="#sec-family"><span data-lang-en="Read topic" data-lang-mr="सविस्तर वाचा">Read topic</span> <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 1: MARRIAGE TRADITIONS -->
-            <section id="sec-marriage" class="culture-content-section">
-                <div class="section-header-block">
-                    <span class="section-number-tag">Domain 01</span>
-                    <h2 class="section-heading" data-lang-en="Marriage Traditions & Customary Practices" data-lang-mr="विवाह परंपरा आणि सामाजिक चालीरीती">Marriage Traditions & Customary Practices</h2>
-                </div>
-                <p class="section-body-text" data-lang-en="Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals. In traditional rural contexts, wedding seasons were closely synchronized with the post-harvest agricultural calendar, allowing extended families and community members to travel and participate fully in multi-day ceremonies." data-lang-mr="पारंपरिक विवाहामध्ये कुटुंबीयांची चर्चा, समाजाचा सहभाग, रूढीपरंपरांनुसार विधी, वरात, पाहुणचार आणि सामूहिक भोजन यांना महत्त्व होते. पारंपरिक ग्रामीण संदर्भात, विवाहाचे नियोजन भातकापणी व शेतीच्या कामानंतरच्या मोकळ्या वेळेवर आधारित असे, ज्यामुळे कुटुंबीय आणि ग्रामस्थांना उत्सवात पूर्णपणे सहभागी होता येत असे.">
-                    Traditional marriage ceremonies involved family discussions, community participation, customary rituals, processions, hospitality and collective meals. In traditional rural contexts, wedding seasons were closely synchronized with the post-harvest agricultural calendar, allowing extended families and community members to travel and participate fully in multi-day ceremonies.
-                </p>
-
-                <div class="culture-points-grid">
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-handshake"></i> <span data-lang-en="Family Consultations" data-lang-mr="कुटुंब सल्लामसलत">Family Consultations</span></h4>
-                        <p data-lang-en="Customary discussions between elders, relatives, and community representatives ensuring reciprocal respect and social cohesion." data-lang-mr="ज्येष्ठ, नातेवाईक आणि समाज प्रतिनिधी यांच्यातील विचारविनिमय ज्यामुळे सामाजिक सलोखा टिकून राहत असे.">Customary discussions between elders, relatives, and community representatives ensuring reciprocal respect and social cohesion.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-calendar-check"></i> <span data-lang-en="Seasonal Coordination" data-lang-mr="हंगामी नियोजन">Seasonal Coordination</span></h4>
-                        <p data-lang-en="Scheduling weddings after paddy and sugarcane harvest seasons during the winter and pre-summer months." data-lang-mr="भातकापणी आणि ऊस हंगामानंतर हिवाळ्यात व उन्हाळ्याच्या प्रारंभी विधींचे आयोजन.">Scheduling weddings after paddy and sugarcane harvest seasons during the winter and pre-summer months.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-people-group"></i> <span data-lang-en="Collective Hospitality" data-lang-mr="सामूहिक आतिथ्य">Collective Hospitality</span></h4>
-                        <p data-lang-en="Village-wide participation in welcoming the wedding party, organizing customary meals, and assisting in event arrangements." data-lang-mr="वरातीचे स्वागत, पंगत व्यवस्था आणि विवाहाच्या विविध कामांत संपूर्ण ग्रामस्थांचे सहकार्य.">Village-wide participation in welcoming the wedding party, organizing customary meals, and assisting in event arrangements.</p>
-                    </div>
-                </div>
-
-                <div class="culture-pills-list">
-                    <span class="culture-pill"><i class="fa-solid fa-handshake"></i> Family Consultations</span>
-                    <span class="culture-pill"><i class="fa-solid fa-calendar"></i> Post-Harvest Timing</span>
-                    <span class="culture-pill"><i class="fa-solid fa-utensils"></i> Community Hospitality</span>
-                    <span class="culture-pill"><i class="fa-solid fa-people-roof"></i> Kinship Participation</span>
-                </div>
-            </section>
-
-            <!-- SECTION 2: FESTIVALS & RELIGIOUS LIFE -->
-            <section id="sec-festivals" class="culture-content-section">
-                <div class="section-header-block">
-                    <span class="section-number-tag">Domain 02</span>
-                    <h2 class="section-heading" data-lang-en="Festivals & Religious Life" data-lang-mr="सण आणि धार्मिक जीवन">Festivals & Religious Life</h2>
-                </div>
-                <p class="section-body-text" data-lang-en="Festivals brought together religious observance, family participation, music, folk performances and community gatherings. Celebrations reflect deep agrarian reverence for the soil, bullocks, water tanks, and seasonal cycles that sustain rural life." data-lang-mr="सणांमध्ये धार्मिक विधी, कुटुंबीयांचा सहभाग, संगीत, लोककला आणि सामुदायिक एकत्र येण्याची परंपरा दिसून येते. हे उत्सव माती, बैल, तलाव आणि ऋतूचक्राबद्दलची कृतज्ञता आणि सामाजिक ऐक्य व्यक्त करतात.">
-                    Festivals brought together religious observance, family participation, music, folk performances and community gatherings. Celebrations reflect deep agrarian reverence for the soil, bullocks, water tanks, and seasonal cycles that sustain rural life.
-                </p>
-
-                <div class="culture-points-grid">
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-cow"></i> <span data-lang-en="Bail Pola Festival" data-lang-mr="बैल पोळा उत्सव">Bail Pola Festival</span></h4>
-                        <p data-lang-en="The premier agricultural festival expressing deep gratitude to working bullocks, with village processions and ornate decorations." data-lang-mr="शेतीमध्ये साथ देणाऱ्या बैलांप्रती कृतज्ञता व्यक्त करणारा मुख्य कृषी सण; भव्य मिरवणुका आणि सजावट.">The premier agricultural festival expressing deep gratitude to working bullocks, with village processions and ornate decorations.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-om"></i> <span data-lang-en="Tulsi Vivah Ceremonies" data-lang-mr="तुळशी विवाह विधी">Tulsi Vivah Ceremonies</span></h4>
-                        <p data-lang-en="Ceremonial worship marking the conclusion of the monsoon period and the customary commencement of the auspicious marriage season." data-lang-mr="चातुर्मास समाप्ती आणि विवाह हंगामाचा प्रारंभ दर्शविणारा पारंपरिक धार्मिक व सामाजिक सोहळा.">Ceremonial worship marking the conclusion of the monsoon period and the customary commencement of the auspicious marriage season.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-fire"></i> <span data-lang-en="Holi & Rang Panchami" data-lang-mr="होळी व रंगपंचमी">Holi & Rang Panchami</span></h4>
-                        <p data-lang-en="Community bonfires, folk songs, rhythmic dances, and festive color celebrations welcoming the spring harvest." data-lang-mr="वसंत ऋतूचे स्वागत, होळी दहन, पारंपरिक लोकगीते आणि सामुदायिक रंगोत्सव.">Community bonfires, folk songs, rhythmic dances, and festive color celebrations welcoming the spring harvest.</p>
-                    </div>
-                </div>
-
-                <div class="culture-pills-list">
-                    <span class="culture-pill"><i class="fa-solid fa-om"></i> Tulsi Vivah</span>
-                    <span class="culture-pill"><i class="fa-solid fa-fire"></i> Holi & Rang Panchami</span>
-                    <span class="culture-pill"><i class="fa-solid fa-cow"></i> Bail Pola (Cattle Worship)</span>
-                    <span class="culture-pill"><i class="fa-solid fa-shield-heart"></i> Shiv Jayanti</span>
-                    <span class="culture-pill"><i class="fa-solid fa-temple"></i> Ram Navami</span>
-                    <span class="culture-pill"><i class="fa-solid fa-arrow-up-right-dots"></i> Dussehra & Diwali</span>
-                </div>
-            </section>
-
-            <!-- SECTION 3: TRADITIONAL LIFESTYLE -->
-            <section id="sec-lifestyle" class="culture-content-section">
-                <div class="section-header-block">
-                    <span class="section-number-tag">Domain 03</span>
-                    <h2 class="section-heading" data-lang-en="Traditional Lifestyle & Village Organization" data-lang-mr="पारंपरिक जीवनशैली आणि ग्रामव्यवस्था">Traditional Lifestyle & Village Organization</h2>
-                </div>
-                <p class="section-body-text" data-lang-en="Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles. Rural settlement patterns were organized sustainably around water storage tanks, paddy fields, cattle sheds, and communal gathering spaces." data-lang-mr="पारंपरिक कोहळी जीवनशैलीचा शेती, पशुधन, ग्रामव्यवस्था आणि ऋतूचक्राशी जवळचा संबंध होता. ग्रामीण वस्त्यांची रचना तलाव, भाताची शेती, गोठे आणि गावातील सार्वजनिक जागांभोवती सुसंबद्ध पद्धतीने केली जात असे.">
-                    Traditional Kohli life was closely connected with agriculture, livestock, village institutions and seasonal cycles. Rural settlement patterns were organized sustainably around water storage tanks, paddy fields, cattle sheds, and communal gathering spaces.
-                </p>
-
-                <div class="culture-points-grid">
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-water"></i> <span data-lang-en="Tank-Centric Living" data-lang-mr="तलाव-केंद्रित वस्ती">Tank-Centric Living</span></h4>
-                        <p data-lang-en="Villages flourished around perennial tanks providing domestic water, irrigation, livestock bathing, and groundwater recharge." data-lang-mr="पिण्याचे पाणी, शेती सिंचन आणि जनावरांसाठी बारमाही तलावांभोवती वसलेली गावे.">Villages flourished around perennial tanks providing domestic water, irrigation, livestock bathing, and groundwater recharge.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-calendar-days"></i> <span data-lang-en="Seasonal Rhythm" data-lang-mr="ऋतूचक्र व जीवन">Seasonal Rhythm</span></h4>
-                        <p data-lang-en="Daily work and annual events revolved around monsoon sowing, winter harvesting, and pre-monsoon tank repair." data-lang-mr="पावसाळ्यातील पेरणी, हिवाळ्यातील कापणी आणि उन्हाळ्यातील तलाव दुरुस्ती यानुसार दैनिक जीवन.">Daily work and annual events revolved around monsoon sowing, winter harvesting, and pre-monsoon tank repair.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-building-user"></i> <span data-lang-en="Village Governance" data-lang-mr="ग्रामसंस्था व सहकार्य">Village Governance</span></h4>
-                        <p data-lang-en="Community consultation through village elders ensuring equitable water distribution and mutual civil support." data-lang-mr="पाण्याचे न्याय्य वाटप आणि सामाजिक सहकार्यासाठी गावपातळीवरील ज्येष्ठांचे मार्गदर्शन.">Community consultation through village elders ensuring equitable water distribution and mutual civil support.</p>
-                    </div>
-                </div>
-
-                <div class="culture-pills-list">
-                    <span class="culture-pill"><i class="fa-solid fa-wheat-awn"></i> Agrarian Occupations</span>
-                    <span class="culture-pill"><i class="fa-solid fa-cow"></i> Animal Husbandry</span>
-                    <span class="culture-pill"><i class="fa-solid fa-water"></i> Tank Water Management</span>
-                    <span class="culture-pill"><i class="fa-solid fa-calendar-days"></i> Seasonal Rhythm</span>
-                </div>
-            </section>
-
-            <!-- SECTION 4: FOLK ARTS -->
-            <section id="sec-folkarts" class="culture-content-section">
-                <div class="section-header-block">
-                    <span class="section-number-tag">Domain 04</span>
-                    <h2 class="section-heading" data-lang-en="Folk Arts, Dandaar & Cultural Performances" data-lang-mr="लोककला, दंडार आणि सांस्कृतिक सादरीकरणे">Folk Arts, Dandaar & Cultural Performances</h2>
-                </div>
-                <p class="section-body-text" data-lang-en="Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages. Traditional performances enriched village life during winter months and festive gatherings, passing oral narratives and moral teachings across generations." data-lang-mr="लोकनाट्य आणि लोककला या केवळ करमणुकीचे माध्यम नव्हत्या; त्या सामाजिक अभिव्यक्ती आणि धार्मिक-सामाजिक संदेश देण्याचे माध्यमही होत्या. हिवाळ्याच्या दिवसांत व सणासुदीला गावात होणाऱ्या लोककला सादरीकरणामुळे ग्रामीण संस्कृती समृद्ध होत असे आणि मौखिक ज्ञान पिढ्यान्पिढ्या पुढे जात असे.">
-                    Folk theatre and performance traditions served both entertainment and community expression, often carrying social and religious messages. Traditional performances enriched village life during winter months and festive gatherings, passing oral narratives and moral teachings across generations.
-                </p>
-
-                <div class="culture-points-grid">
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-theater-masks"></i> <span data-lang-en="Dandaar Folk Drama" data-lang-mr="दंडार लोकनाट्य">Dandaar Folk Drama</span></h4>
-                        <p data-lang-en="A vibrant traditional folk theatre form blending music, rhythmic dance, mythic episodes, and witty social satire performed by village troupes." data-lang-mr="संगीत, नृत्य आणि सामाजिक प्रबोधनाचा संगम असलेले विदर्भातील लोकप्रिय पारंपरिक लोकनाट्य.">A vibrant traditional folk theatre form blending music, rhythmic dance, mythic episodes, and witty social satire performed by village troupes.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-music"></i> <span data-lang-en="Bhajan & Kirtan" data-lang-mr="भजन व कीर्तन परंपरा">Bhajan & Kirtan</span></h4>
-                        <p data-lang-en="Devotional musical gatherings at village temples fostering spiritual reflection and shared communal devotion." data-lang-mr="ग्राम मंदिरांमध्ये होणारे भक्तीसंगीत व सामूहिक भजन जे एकात्मता आणि आध्यात्मिक जाणीव वाढवते.">Devotional musical gatherings at village temples fostering spiritual reflection and shared communal devotion.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-drum"></i> <span data-lang-en="Folk Music Instruments" data-lang-mr="पारंपरिक वाद्ये">Folk Music Instruments</span></h4>
-                        <p data-lang-en="Use of regional percussion such as Dholak, Khanjari, and Taal to accompany traditional festive ballads and folk songs." data-lang-mr="ढोलक, खंजिरी आणि टाळ या पारंपरिक वाद्यांच्या साथीने गायली जाणारी लोकगीते.">Use of regional percussion such as Dholak, Khanjari, and Taal to accompany traditional festive ballads and folk songs.</p>
-                    </div>
-                </div>
-
-                <div class="culture-pills-list">
-                    <span class="culture-pill"><i class="fa-solid fa-theater-masks"></i> Dandaar (Folk Drama)</span>
-                    <span class="culture-pill"><i class="fa-solid fa-music"></i> Traditional Bhajan</span>
-                    <span class="culture-pill"><i class="fa-solid fa-guitar"></i> Folk Music & Songs</span>
-                    <span class="culture-pill"><i class="fa-solid fa-people-group"></i> Community Stage Performances</span>
-                </div>
-            </section>
-
-            <!-- SECTION 5: FOOD & AGRICULTURE -->
-            <section id="sec-food" class="culture-content-section">
-                <div class="section-header-block">
-                    <span class="section-number-tag">Domain 05</span>
-                    <h2 class="section-heading" data-lang-en="Food Traditions & Agricultural Produce" data-lang-mr="अन्नपरंपरा आणि कृषी संस्कृती">Food Traditions & Agricultural Produce</h2>
-                </div>
-                <p class="section-body-text" data-lang-en="Food traditions developed alongside agriculture and local availability of crops. Staple food habits centred on tank-irrigated rice varieties, pulses, sugarcane derivatives, and seasonal country vegetables, creating a wholesome, sustainable culinary heritage." data-lang-mr="स्थानिक शेती आणि उपलब्ध पिकांनुसार कोहळी समाजातील अन्नपरंपरा विकसित झाल्या. तलावाच्या पाण्यावर पिकणारे भात, डाळी, ऊस उत्पादने (गूळ) आणि हंगामी भाज्या यावर आधारित पौष्टिक आणि निसर्गपूरक आहार पद्धती विकसित झाली.">
-                    Food traditions developed alongside agriculture and local availability of crops. Staple food habits centred on tank-irrigated rice varieties, pulses, sugarcane derivatives, and seasonal country vegetables, creating a wholesome, sustainable culinary heritage.
-                </p>
-
-                <div class="culture-points-grid">
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-bowl-rice"></i> <span data-lang-en="Indigenous Rice Varieties" data-lang-mr="स्थानिक भात वाण">Indigenous Rice Varieties</span></h4>
-                        <p data-lang-en="Aromatic and staple paddies such as Luchai, Chinnor, and Dubraj cultivated using traditional tank irrigation techniques." data-lang-mr="लुचाई, चिन्नोर आणि दुबराज यांसारखे सुवासिक आणि पारंपरिक भाताचे वाण.">Aromatic and staple paddies such as Luchai, Chinnor, and Dubraj cultivated using traditional tank irrigation techniques.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-cubes-stacked"></i> <span data-lang-en="Sugarcane & Jaggery" data-lang-mr="ऊस आणि गूळ निर्मिती">Sugarcane & Jaggery</span></h4>
-                        <p data-lang-en="Traditional cane crushing and jaggery preparation providing natural sweeteners for festive and everyday cooking." data-lang-mr="पारंपरिक पद्धतीने उसाचा रस काढून गूळ तयार करण्याची पूर्वापार चालत आलेली पद्धत.">Traditional cane crushing and jaggery preparation providing natural sweeteners for festive and everyday cooking.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-leaf"></i> <span data-lang-en="Seasonal Agrarian Diets" data-lang-mr="हंगामी आहार पद्धती">Seasonal Agrarian Diets</span></h4>
-                        <p data-lang-en="Nutritious pulse broths, fresh country greens, and festival sweets crafted according to seasonal availability." data-lang-mr="ताजी भाजीपाला, डाळी आणि सणवाराला बनवले जाणारे पारंपरिक गोडधोड पदार्थ.">Nutritious pulse broths, fresh country greens, and festival sweets crafted according to seasonal availability.</p>
-                    </div>
-                </div>
-
-                <div class="culture-pills-list">
-                    <span class="culture-pill"><i class="fa-solid fa-bowl-rice"></i> Traditional Rice Preparations</span>
-                    <span class="culture-pill"><i class="fa-solid fa-cubes-stacked"></i> Sugarcane & Jaggery (Gur)</span>
-                    <span class="culture-pill"><i class="fa-solid fa-plate-wheat"></i> Seasonal Festival Dishes</span>
-                    <span class="culture-pill"><i class="fa-solid fa-leaf"></i> Agrarian Culinary Practices</span>
-                </div>
-            </section>
-
-            <!-- SECTION 6: FAMILY & COMMUNITY LIFE -->
-            <section id="sec-family" class="culture-content-section">
-                <div class="section-header-block">
-                    <span class="section-number-tag">Domain 06</span>
-                    <h2 class="section-heading" data-lang-en="Family Life & Community Solidarity" data-lang-mr="कुटुंबव्यवस्था आणि सामाजिक एकोपा">Family Life & Community Solidarity</h2>
-                </div>
-                <p class="section-body-text" data-lang-en="Family and community relationships played an important role in traditional village life. Mutual cooperation in agricultural work, irrigation canal maintenance, and collective social gatherings fostered enduring solidarity across generations." data-lang-mr="पारंपरिक ग्रामीण जीवनात कुटुंबीय आणि समाजातील परस्पर संबंधांना महत्त्वाचे स्थान होते. शेतीची कामे, कालव्यांची देखभाल आणि सणसमारंभांमधील सामूहिक सहकार्यामुळे सामाजिक एकोपा आणि आपुलकी टिकून राहिली.">
-                    Family and community relationships played an important role in traditional village life. Mutual cooperation in agricultural work, irrigation canal maintenance, and collective social gatherings fostered enduring solidarity across generations.
-                </p>
-
-                <div class="culture-points-grid">
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-people-roof"></i> <span data-lang-en="Extended Kinship Networks" data-lang-mr="विस्तारित कुटुंब व्यवस्था">Extended Kinship Networks</span></h4>
-                        <p data-lang-en="Multi-generational households providing shared responsibility, childcare, emotional security, and respect for elder wisdom." data-lang-mr="अनेक पिढ्यांचे एकत्र वास्तव्य ज्यामुळे परस्पर आदर, संस्कार आणि सुरक्षितता टिकून राहत असे.">Multi-generational households providing shared responsibility, childcare, emotional security, and respect for elder wisdom.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-handshake-angle"></i> <span data-lang-en="Mutual Agricultural Help" data-lang-mr="शेतीमध्ये परस्पर सहकार्य">Mutual Agricultural Help</span></h4>
-                        <p data-lang-en="Traditional reciprocal labor sharing during intensive transplanting and harvesting phases." data-lang-mr="भात लावणी आणि कापणीच्या हंगामात एकमेकांच्या शेतात सामूहिक सहकार्याने काम करण्याची पद्धत.">Traditional reciprocal labor sharing during intensive transplanting and harvesting phases.</p>
-                    </div>
-                    <div class="culture-point-item">
-                        <h4><i class="fa-solid fa-comments"></i> <span data-lang-en="Community Conventions" data-lang-mr="सामाजिक मेळावे व चर्चा">Community Conventions</span></h4>
-                        <p data-lang-en="Gatherings for youth guidance, matrimonial introductions, and cultural celebrations reinforcing collective strength." data-lang-mr="तरुणांचे मार्गदर्शन, वधू-वर परिचय आणि सामाजिक उत्सवांसाठी होणारे एकत्रिकरण.">Gatherings for youth guidance, matrimonial introductions, and cultural celebrations reinforcing collective strength.</p>
-                    </div>
-                </div>
-
-                <div class="culture-pills-list">
-                    <span class="culture-pill"><i class="fa-solid fa-people-roof"></i> Joint & Extended Family Systems</span>
-                    <span class="culture-pill"><i class="fa-solid fa-handshake-angle"></i> Mutual Agricultural Support</span>
-                    <span class="culture-pill"><i class="fa-solid fa-comments"></i> Village Gatherings</span>
-                    <span class="culture-pill"><i class="fa-solid fa-heart"></i> Social Solidarity</span>
-                </div>
-            </section>
-
-            <!-- TRADITION AND CHANGE SECTION -->
-            <section id="sec-tradition-change" class="editorial-highlight-section">
-                <h3>
-                    <i class="fa-solid fa-clock-rotate-left" style="color: var(--accent-gold);"></i>
-                    <span data-lang-en="Tradition and Change" data-lang-mr="परंपरा आणि बदल">Tradition and Change</span>
-                </h3>
-                <p data-lang-en="Like every living culture, Kohli traditions have changed over time. Education, urbanization, technology, migration and changing economic conditions have influenced family structures, celebrations, occupations and social practices." data-lang-mr="इतर जिवंत संस्कृतींप्रमाणे कोहळी समाजाच्या परंपरांमध्येही काळानुसार बदल झाले आहेत. शिक्षण, शहरीकरण, तंत्रज्ञान, स्थलांतर आणि बदलत्या आर्थिक परिस्थितीचा कुटुंबव्यवस्था, सणसमारंभ, व्यवसाय आणि सामाजिक प्रथांवर परिणाम झाला आहे.">
-                    Like every living culture, Kohli traditions have changed over time. Education, urbanization, technology, migration and changing economic conditions have influenced family structures, celebrations, occupations and social practices.
-                </p>
-            </section>
-
-            <!-- PRESERVING COMMUNITY MEMORY SECTION -->
-            <section id="sec-community-memory" class="editorial-highlight-section">
-                <h3 style="color: #166534;">
-                    <i class="fa-solid fa-book-bookmark"></i>
-                    <span data-lang-en="Preserving Community Memory" data-lang-mr="सामुदायिक स्मृतींचे जतन">Preserving Community Memory</span>
-                </h3>
-                <p data-lang-en="Older generations carry memories of customs, ceremonies, food, songs, performances and village life. Recording these memories helps preserve cultural knowledge for future generations." data-lang-mr="ज्येष्ठ पिढीकडे पारंपरिक चालीरीती, विधी, अन्नसंस्कृती, गीते, लोककला आणि ग्रामजीवनाच्या अनेक आठवणी जतन झालेल्या आहेत. या आठवणींचे दस्तऐवजीकरण पुढील पिढ्यांसाठी सांस्कृतिक ज्ञान जतन करण्यास मदत करते.">
-                    Older generations carry memories of customs, ceremonies, food, songs, performances and village life. Recording these memories helps preserve cultural knowledge for future generations.
-                </p>
-            </section>
-
-            <!-- CULTURAL SOURCE NOTE / DISCLAIMER -->
-            <section id="sec-source-note" class="culture-source-callout">
-                <h4>
-                    <i class="fa-solid fa-circle-info" style="color: var(--accent-gold);"></i>
-                    <span data-lang-en="Cultural Source Note" data-lang-mr="सांस्कृतिक स्रोत नोंद">Cultural Source Note</span>
-                </h4>
-                <p data-lang-en="Some cultural descriptions on this website come from community-authored material and oral traditions. Practices may vary between villages, families and generations." data-lang-mr="या वेबसाइटवरील काही सांस्कृतिक माहिती समुदायातील लेखकांच्या साहित्यावर आणि मौखिक परंपरांवर आधारित आहे. गाव, कुटुंब आणि पिढीनुसार चालीरीतींमध्ये फरक असू शकतो.">
-                    Some cultural descriptions on this website come from community-authored material and oral traditions. Practices may vary between villages, families and generations.
-                </p>
-                <span data-lang-en="Note: Cultural practices are documented as living heritage references and are not presented as rigid universal obligations." data-lang-mr="टीप: सांस्कृतिक प्रथा ऐतिहासिक वारसा म्हणून नोंदवल्या आहेत, त्यांना बंधनकारक नियम मानले जाऊ नये.">
-                    Note: Cultural practices are documented as living heritage references and are not presented as rigid universal obligations.
-                </span>
-            </section>
-
-            <!-- RELATED SECTIONS -->
-            <section class="culture-links-section">
-                <h3>
-                    <i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--accent-gold);"></i>
-                    <span data-lang-en="Related Sections on the Portal" data-lang-mr="पोर्टलवरील संबंधित विभाग">Related Sections on the Portal</span>
-                </h3>
-                <p data-lang-en="Explore other historical and community documentation on the portal:" data-lang-mr="पोर्टलवरील इतर ऐतिहासिक आणि सामाजिक दस्तऐवजीकरण पहा:">
-                    Explore other historical and community documentation on the portal:
-                </p>
-                <div class="culture-links-grid">
-                    <a href="history.html" class="culture-link-btn">
-                        <span><i class="fa-solid fa-landmark" style="margin-right:0.4rem;"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="historical-gallery.html" class="culture-link-btn">
-                        <span><i class="fa-solid fa-image" style="margin-right:0.4rem;"></i> <span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="research.html" class="culture-link-btn">
-                        <span><i class="fa-solid fa-microscope" style="margin-right:0.4rem;"></i> <span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                    <a href="water-heritage.html" class="culture-link-btn">
-                        <span><i class="fa-solid fa-droplet" style="margin-right:0.4rem;"></i> <span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </a>
-                </div>
-            </section>
-
-        </article>
+            </article>
+        </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
-            <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
-            <div><span data-lang-en="Built by Community Volunteers" data-lang-mr="समाज स्वयंसेवकांनी बनवले">Built by Community Volunteers</span></div>
-        </div>
-    </footer>
+    <!-- WIKIPEDIA INTERACTIVE TOC SCROLL-SPY SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.wiki-toc-link');
+            const sections = document.querySelectorAll('article.wiki-article-body section, #sec-lead');
 
-    <!-- Scripts -->
+            function highlightToc() {
+                let scrollPos = window.scrollY + 120;
+                sections.forEach(function(section) {
+                    if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                        const currentId = section.getAttribute('id');
+                        tocLinks.forEach(function(link) {
+                            if (link.getAttribute('href') === '#' + currentId) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightToc);
+            highlightToc();
+        });
+    </script>
+
+<!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/admin.js"></script>

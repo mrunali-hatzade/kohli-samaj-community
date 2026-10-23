@@ -43,10 +43,10 @@
             </div>
 
             <div class="utility-right">
-                <span class="utility-item" style="cursor:pointer;" onclick="if(typeof openAdminModal==='function')openAdminModal();">
+                <a href="news.html" class="utility-item" title="Notices" style="text-decoration:none;">
                     <i class="fa-solid fa-bell"></i>
                     <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
-                </span>
+                </a>
                 <span class="utility-item">
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
@@ -142,10 +142,108 @@
             <p class="page-banner-subtitle"><span data-lang-en="Official announcements, government resolutions, educational circulars, and community updates" data-lang-mr="अधिकृत घोषणा, शासन निर्णय, शैक्षणिक परिपत्रके आणि ताज्या समाज घडामोडी">Official announcements, government resolutions, educational circulars, and community updates</span></p>
         </div>
     </div>
-    <main class="container" style="padding: 3rem 1.25rem;">
-        <div id="fullNewsList" style="display:flex; flex-direction:column; gap:1.2rem;">
-            <!-- Rendered dynamically -->
+    <main class="container" style="padding: 2.5rem 1.25rem 4rem;">
+        
+        <!-- Sub-hero badge -->
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+            <div class="newsroom-badge">
+                <i class="fa-solid fa-newspaper" style="color:var(--accent-gold);"></i>
+                <span data-lang-en="Official Announcements & Circulars Bulletin" data-lang-mr="अधिकृत घोषणा व समाज प्रसिद्धी परिपत्रके">Official Announcements & Circulars Bulletin</span>
+            </div>
+            <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">
+                <i class="fa-solid fa-clock-rotate-left"></i> <span data-lang-en="Updated for Community Records 2026" data-lang-mr="समाज नोंदी २०२६ नुसार अद्यतनित">Updated for Community Records 2026</span>
+            </div>
         </div>
+
+        <!-- 2-Column Portal Layout Wrapper -->
+        <div class="news-layout-wrapper">
+            <!-- Left Column: Featured Notice + Stories Grid -->
+            <div class="news-main-column">
+                <!-- Featured Hero Lead Notice -->
+                <div id="newsFeaturedCard">
+                    <!-- Populated dynamically by app.js -->
+                </div>
+
+                <!-- Section Divider Heading -->
+                <div style="display:flex; align-items:center; justify-content:space-between; margin: 2rem 0 1.2rem; border-left: 4px solid var(--accent-gold); padding-left: 0.8rem;">
+                    <h3 style="color: var(--primary-dark); font-size: 1.35rem; font-weight: 800; margin: 0;">
+                        <span data-lang-en="Latest Circulars & Notices" data-lang-mr="ताज्या घडामोडी व परिपत्रके">Latest Circulars & Notices</span>
+                    </h3>
+                    <span id="newsFilterCount" style="font-size:0.82rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;"></span>
+                </div>
+
+                <!-- 2-Column Stories Grid -->
+                <div id="newsStoriesGrid" class="news-stories-subgrid">
+                    <!-- Populated dynamically by app.js -->
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar (Search, Official Bulletins, Categories, Archives) -->
+            <aside class="news-sidebar">
+                <!-- 1. Search Box -->
+                <div class="news-sidebar-card">
+                    <h4 class="news-sidebar-title">
+                        <i class="fa-solid fa-magnifying-glass" style="color:var(--accent-gold);"></i>
+                        <span data-lang-en="Search Notices" data-lang-mr="सूचना शोधा">Search Notices</span>
+                    </h4>
+                    <div class="news-search-box">
+                        <input type="text" id="newsSearchInput" class="news-search-input" placeholder="Search notices, events..." data-lang-en-placeholder="Search notices, events..." data-lang-mr-placeholder="परिपत्रक, कार्यक्रम शोधा..." oninput="filterNewsByQuery()">
+                        <i class="fa-solid fa-magnifying-glass news-search-icon"></i>
+                    </div>
+                </div>
+
+                <!-- 2. Official Circulars Bulletin Box -->
+                <div class="news-sidebar-card" style="background:#fcfbf7; border-color:rgba(217,119,6,0.3);">
+                    <h4 class="news-sidebar-title" style="color:var(--primary-dark);">
+                        <i class="fa-solid fa-bell" style="color:#b91c1c;"></i>
+                        <span data-lang-en="Official Circulars" data-lang-mr="अधिकृत परिपत्रके">Official Circulars</span>
+                    </h4>
+                    <ul class="news-bulletin-list" id="newsBulletinList">
+                        <!-- Populated dynamically by app.js -->
+                    </ul>
+                </div>
+
+                <!-- 3. Category Filter Tags -->
+                <div class="news-sidebar-card">
+                    <h4 class="news-sidebar-title">
+                        <i class="fa-solid fa-tags" style="color:var(--accent-gold);"></i>
+                        <span data-lang-en="Categories" data-lang-mr="वर्गवारी">Categories</span>
+                    </h4>
+                    <div class="news-tag-cloud" id="newsTagCloud">
+                        <button class="news-filter-btn active" data-category="all" onclick="filterNewsCategory('all', this)"><span data-lang-en="All Notices" data-lang-mr="सर्व सूचना">All Notices</span></button>
+                        <button class="news-filter-btn" data-category="Census 2027" onclick="filterNewsCategory('Census 2027', this)"><span data-lang-en="Census 2027" data-lang-mr="जनगणना २०२७">Census 2027</span></button>
+                        <button class="news-filter-btn" data-category="Event" onclick="filterNewsCategory('Event', this)"><span data-lang-en="Events & Melava" data-lang-mr="मेळावा व कार्यक्रम">Events & Melava</span></button>
+                        <button class="news-filter-btn" data-category="Education" onclick="filterNewsCategory('Education', this)"><span data-lang-en="Education" data-lang-mr="शिक्षण">Education</span></button>
+                        <button class="news-filter-btn" data-category="Matrimonial" onclick="filterNewsCategory('Matrimonial', this)"><span data-lang-en="Matrimonial" data-lang-mr="वधू-वर">Matrimonial</span></button>
+                    </div>
+                </div>
+
+                <!-- 4. Monthly Archive -->
+                <div class="news-sidebar-card">
+                    <h4 class="news-sidebar-title">
+                        <i class="fa-solid fa-calendar-days" style="color:var(--accent-gold);"></i>
+                        <span data-lang-en="Recent Archive" data-lang-mr="मागील अभिलेख">Recent Archive</span>
+                    </h4>
+                    <ul class="news-archive-list">
+                        <li class="news-archive-item" onclick="filterNewsCategory('all')">
+                            <span>August 2026</span>
+                            <span style="background:#f1f5f9; padding:2px 8px; border-radius:10px; font-size:0.75rem; font-weight:700;">1</span>
+                        </li>
+                        <li class="news-archive-item" onclick="filterNewsCategory('all')">
+                            <span>July 2026</span>
+                            <span style="background:#f1f5f9; padding:2px 8px; border-radius:10px; font-size:0.75rem; font-weight:700;">1</span>
+                        </li>
+                        <li class="news-archive-item" onclick="filterNewsCategory('all')">
+                            <span>June 2026</span>
+                            <span style="background:#f1f5f9; padding:2px 8px; border-radius:10px; font-size:0.75rem; font-weight:700;">2</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Hidden container to keep backward compatibility with any older scripts checking fullNewsList -->
+        <div id="fullNewsList" style="display:none;"></div>
     </main>
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">

@@ -10,8 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="refresh" content="0; url=history.html">
+    <script>window.location.replace('history.html' + window.location.hash);</script>
 </head>
 <body class="font-normal">
 
@@ -44,10 +45,10 @@
             </div>
 
             <div class="utility-right">
-                <span class="utility-item" style="cursor:pointer;" onclick="if(typeof openAdminModal==='function')openAdminModal();">
+                <a href="news.html" class="utility-item" title="Notices" style="text-decoration:none;">
                     <i class="fa-solid fa-bell"></i>
                     <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
-                </span>
+                </a>
                 <span class="utility-item">
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>

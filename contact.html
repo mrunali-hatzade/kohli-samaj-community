@@ -43,10 +43,10 @@
             </div>
 
             <div class="utility-right">
-                <span class="utility-item" style="cursor:pointer;" onclick="if(typeof openAdminModal==='function')openAdminModal();">
+                <a href="news.html" class="utility-item" title="Notices" style="text-decoration:none;">
                     <i class="fa-solid fa-bell"></i>
                     <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
-                </span>
+                </a>
                 <span class="utility-item">
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
@@ -145,32 +145,54 @@
     <main class="container" style="padding: 3rem 1.25rem;">
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.5rem;">
             <div style="background:white; border-radius:12px; border:1px solid var(--border-color); padding:1.8rem;">
-                <h3 style="color:var(--primary-dark); font-size:1.3rem; font-weight:800; margin-bottom:1.2rem;">Send Us a Message</h3>
-                <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <h3 style="color:var(--primary-dark); font-size:1.3rem; font-weight:800; margin-bottom:1.2rem;" data-lang-en="Community Inquiries" data-lang-mr="समाज संपर्क व विचारणा">Community Inquiries</h3>
+                
+                <!-- Honest Maintenance / Advisory Notice -->
+                <div style="background:#fff3cd; border:1px solid #ffeeba; border-left:4px solid #ffc107; border-radius:8px; padding:1rem; margin-bottom:1.5rem; font-size:0.9rem; color:#856404; line-height:1.5;">
+                    <i class="fa-solid fa-circle-info" style="margin-right:0.4rem;"></i>
+                    <strong data-lang-en="Notice:" data-lang-mr="सूचना:">Notice:</strong>
+                    <span data-lang-en="Online messaging is temporarily unavailable while official contact channels are being verified. Verified contact information will be published after committee confirmation." data-lang-mr="अधिकृत संपर्क माध्यमांची पडताळणी सुरू असल्याने ऑनलाइन संदेश पाठवणे तात्पुरते उपलब्ध नाही. समितीच्या मान्यतेनंतर पडताळणी केलेली अधिकृत संपर्क माहिती प्रसिद्ध केली जाईल.">Online messaging is temporarily unavailable while official contact channels are being verified. Verified contact information will be published after committee confirmation.</span>
+                </div>
+
+                <form onsubmit="event.preventDefault(); return false;">
                     <div style="margin-bottom:1rem;">
-                        <label style="display:block; font-weight:700; font-size:0.85rem; margin-bottom:0.3rem;">Your Name</label>
-                        <input type="text" class="form-control" placeholder="Full Name" required>
+                        <label style="display:block; font-weight:700; font-size:0.85rem; margin-bottom:0.3rem;" data-lang-en="Your Name" data-lang-mr="आपले नाव">Your Name</label>
+                        <input type="text" class="form-control" placeholder="Full Name" disabled style="background:#f8f9fa; cursor:not-allowed;">
                     </div>
                     <div style="margin-bottom:1rem;">
-                        <label style="display:block; font-weight:700; font-size:0.85rem; margin-bottom:0.3rem;">Phone / WhatsApp</label>
-                        <input type="text" class="form-control" placeholder="+91 Mobile Number" required>
+                        <label style="display:block; font-weight:700; font-size:0.85rem; margin-bottom:0.3rem;" data-lang-en="Phone / WhatsApp" data-lang-mr="फोन / व्हॉट्सअ‍ॅप">Phone / WhatsApp</label>
+                        <input type="text" class="form-control" placeholder="+91 Mobile Number" disabled style="background:#f8f9fa; cursor:not-allowed;">
                     </div>
                     <div style="margin-bottom:1rem;">
-                        <label style="display:block; font-weight:700; font-size:0.85rem; margin-bottom:0.3rem;">Message / Inquiry</label>
-                        <textarea class="form-control" style="height:110px;" placeholder="Write your message here..." required></textarea>
+                        <label style="display:block; font-weight:700; font-size:0.85rem; margin-bottom:0.3rem;" data-lang-en="Message / Inquiry" data-lang-mr="संदेश / विचारणा">Message / Inquiry</label>
+                        <textarea class="form-control" style="height:110px; background:#f8f9fa; cursor:not-allowed;" placeholder="Online submissions currently paused..." disabled></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Submit Inquiry</button>
+                    <button type="button" class="btn-primary" style="width:100%; justify-content:center; opacity:0.65; cursor:not-allowed;" disabled>
+                        <i class="fa-solid fa-lock" style="margin-right:0.4rem;"></i>
+                        <span data-lang-en="Submissions Currently Paused" data-lang-mr="संदेश पाठवणे तात्पुरते स्थगित">Submissions Currently Paused</span>
+                    </button>
                 </form>
             </div>
             <div style="display:flex; flex-direction:column; gap:1.2rem;">
                 <div style="background:white; border-radius:12px; border:1px solid var(--border-color); padding:1.4rem;">
-                    <h3 style="color:var(--primary-dark); font-size:1.15rem; font-weight:800; margin-bottom:1rem;">Central Office Address</h3>
-                    <p style="line-height:1.6; font-size:0.95rem;"><i class="fa-solid fa-location-dot" style="color:var(--accent-gold);"></i> Kohli Samaj Executive Office, Bhandara District, Maharashtra, India - 441904</p>
+                    <h3 style="color:var(--primary-dark); font-size:1.15rem; font-weight:800; margin-bottom:1rem;" data-lang-en="Central Office Address (Under Verification)" data-lang-mr="केंद्रीय कार्यालय पत्ता (पडताळणी सुरू)">Central Office Address (Under Verification)</h3>
+                    <p style="line-height:1.6; font-size:0.95rem; color:#495057;">
+                        <i class="fa-solid fa-location-dot" style="color:var(--accent-gold); margin-right:0.4rem;"></i>
+                        <span data-lang-en="Kohli Samaj Executive Office, Bhandara District, Maharashtra, India - 441904 (Listing undergoing official committee verification)" data-lang-mr="कोहळी समाज कार्यालय, भंडारा जिल्हा, महाराष्ट्र, भारत - ४४१९०४ (अधिकृत समितीद्वारे पत्त्याची पडताळणी सुरू)">Kohli Samaj Executive Office, Bhandara District, Maharashtra, India - 441904 (Listing undergoing official committee verification)</span>
+                    </p>
                 </div>
                 <div style="background:white; border-radius:12px; border:1px solid var(--border-color); padding:1.4rem;">
-                    <h3 style="color:var(--primary-dark); font-size:1.15rem; font-weight:800; margin-bottom:1rem;">Helpline & Email</h3>
-                    <p style="margin-bottom:0.5rem;"><i class="fa-solid fa-phone" style="color:var(--accent-gold);"></i> <strong>Phone:</strong> +91 12345 67890</p>
-                    <p><i class="fa-solid fa-envelope" style="color:var(--accent-gold);"></i> <strong>Email:</strong> info@kohalisamaj.org</p>
+                    <h3 style="color:var(--primary-dark); font-size:1.15rem; font-weight:800; margin-bottom:1rem;" data-lang-en="Official Helpline & Communications" data-lang-mr="अधिकृत हेल्पलाईन व संपर्क">Official Helpline & Communications</h3>
+                    <p style="margin-bottom:0.8rem; font-size:0.95rem; color:#495057;">
+                        <i class="fa-solid fa-phone" style="color:var(--accent-gold); margin-right:0.4rem;"></i>
+                        <strong data-lang-en="Phone:" data-lang-mr="दूरध्वनी:">Phone:</strong>
+                        <span data-lang-en="Central contact numbers are currently being updated by the committee." data-lang-mr="केंद्रीय संपर्क क्रमांक समितीद्वारे अद्यतनित केले जात आहेत.">Central contact numbers are currently being updated by the committee.</span>
+                    </p>
+                    <p style="font-size:0.95rem; color:#495057;">
+                        <i class="fa-solid fa-envelope" style="color:var(--accent-gold); margin-right:0.4rem;"></i>
+                        <strong data-lang-en="Email:" data-lang-mr="ईमेल:">Email:</strong>
+                        <span data-lang-en="Official community portal email configuration is underway." data-lang-mr="अधिकृत समाज पोर्टल ईमेल संरचना सुरू आहे.">Official community portal email configuration is underway.</span>
+                    </p>
                 </div>
             </div>
         </div>

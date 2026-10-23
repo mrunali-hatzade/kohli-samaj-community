@@ -10,6 +10,265 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Section-Based Editorial Culture Page Styles ── */
+        .culture-article-wrapper {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 1rem 0 3rem 0;
+        }
+
+        /* Lead Overview Section */
+        .culture-lead-section {
+            padding-bottom: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 1.5px solid var(--border-color);
+        }
+        .culture-lead-section h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        .culture-lead-section p {
+            font-size: 1.12rem;
+            line-height: 1.85;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        /* 6 Pillars Editorial Grid */
+        .pillars-overview-section {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1.5px solid var(--border-color);
+        }
+        .pillars-section-heading {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .pillars-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+        .pillar-item {
+            padding-left: 1.2rem;
+            border-left: 3px solid var(--accent-gold);
+        }
+        .pillar-item h3 {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .pillar-item p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin-bottom: 0.6rem;
+        }
+        .pillar-item a {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent-gold-hover);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: gap 0.2s;
+        }
+        .pillar-item a:hover {
+            gap: 0.55rem;
+            text-decoration: underline;
+        }
+
+        /* Detailed Content Sections (No Cards, Natural Flow) */
+        .culture-content-section {
+            padding: 2.5rem 0;
+            border-bottom: 1.5px solid var(--border-color);
+        }
+        .culture-content-section:last-of-type {
+            border-bottom: none;
+        }
+        .section-header-block {
+            margin-bottom: 1.4rem;
+        }
+        .section-number-tag {
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--accent-gold-hover);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+        .section-heading {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 0;
+            letter-spacing: -0.3px;
+        }
+        .section-body-text {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Sub-points / Feature Blocks */
+        .culture-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.8rem 0;
+        }
+        .culture-point-item {
+            background: #fafcfb;
+            border-left: 3px solid var(--primary-dark);
+            padding: 1.1rem 1.3rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .culture-point-item h4 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+        .culture-point-item p {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Tag lists */
+        .culture-pills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+        .culture-pill {
+            background: var(--bg-cream);
+            border: 1px solid #e2e8f0;
+            padding: 0.4rem 0.95rem;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Editorial Highlight Sections */
+        .editorial-highlight-section {
+            padding: 2.5rem 0;
+            border-bottom: 1.5px solid var(--border-color);
+        }
+        .editorial-highlight-section h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .editorial-highlight-section p {
+            font-size: 1.04rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        /* Callout Box for Disclaimer / Source Note */
+        .culture-source-callout {
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.4rem 1.8rem;
+            background: #fafcfb;
+            margin: 2.5rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+        .culture-source-callout h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .culture-source-callout p {
+            font-size: 0.96rem;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin: 0 0 0.4rem 0;
+        }
+        .culture-source-callout span {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Related Links Grid */
+        .culture-links-section {
+            padding-top: 2rem;
+        }
+        .culture-links-section h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .culture-links-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+        }
+        .culture-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        .culture-link-btn {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.1rem 1.3rem;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s;
+        }
+        .culture-link-btn:hover {
+            border-color: var(--primary-dark);
+            background: var(--primary-light);
+            transform: translateX(4px);
+        }
+        .culture-link-btn i {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 <body class="font-normal">
 
@@ -44,10 +303,10 @@
             </div>
 
             <div class="utility-right">
-                <span class="utility-item" style="cursor:pointer;" onclick="if(typeof openAdminModal==='function')openAdminModal();">
+                <a href="news.html" class="utility-item" title="Notices" style="text-decoration:none;">
                     <i class="fa-solid fa-bell"></i>
                     <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
-                </span>
+                </a>
                 <span class="utility-item">
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
@@ -130,35 +389,446 @@
             </button>
         </div>
     </header>
-
-        <!-- Page Title Banner & Breadcrumbs -->
-    <div class="page-title-banner">
-        <div class="container">
-            <div class="breadcrumb-trail">
-                <a href="index.html" class="bc-home"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-current" data-lang-en="Achievements" data-lang-mr="उपलब्धी">Achievements</span>
+    <!-- WIKIPEDIA VECTOR 2022 SUBHEADER / BREADCRUMB -->
+    <div class="wiki-top-meta">
+        <div class="container wiki-meta-flex">
+            <div class="wiki-breadcrumbs">
+                <a href="index.html" class="wiki-bc-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
+                <span class="wiki-bc-sep">/</span>
+                <span data-lang-en="Community Records" data-lang-mr="सामाजिक नोंदी">Community Records</span>
+                <span class="wiki-bc-sep">/</span>
+                <span class="wiki-bc-current" data-lang-en="Public Leadership & Achievements" data-lang-mr="सार्वजनिक नेतृत्व व उपलब्धी">Public Leadership & Achievements</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Community Achievements" data-lang-mr="समाजाच्या उपलब्धी">Community Achievements</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="Awards, recognitions, and milestones of the Kohli Samaj community" data-lang-mr="कोहळी समाजाचे पुरस्कार, सन्मान आणि महत्त्वाचे टप्पे">Awards, recognitions, and milestones of the Kohli Samaj community</span></p>
+            <div class="wiki-lang-tag">
+                <i class="fa-solid fa-language"></i>
+                <span data-lang-en="Article available in: English & Marathi" data-lang-mr="उपलब्ध भाषा: इंग्रजी व मराठी">Article available in: English & Marathi</span>
+            </div>
         </div>
     </div>
-    <!-- Coming Soon -->
-    <main class="container" style="padding: 4rem 1.25rem; text-align:center;">
-        <div style="max-width:520px; margin:0 auto; background:white; border-radius:16px; padding:3rem 2rem; box-shadow:0 4px 24px rgba(14,62,41,0.08); border-top:4px solid var(--accent-gold);">
-            <i class="fa-solid fa-trophy" style="font-size:3.5rem; color:var(--accent-gold); margin-bottom:1.2rem;"></i>
-            <h2 style="color:var(--primary-dark); font-size:1.5rem; font-weight:800; margin-bottom:0.75rem;" data-lang-en="Content Coming Soon" data-lang-mr="सामग्री लवकरच येणार">Content Coming Soon</h2>
-            <p style="color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;" data-lang-en="Community achievements, awards, and milestones will be showcased here." data-lang-mr="समाजाच्या उपलब्धी, पुरस्कार येथे प्रदर्शित केले जातील.">Community achievements, awards, and milestones will be showcased here.</p>
-            <a href="index.html" class="btn-gold-fill" style="display:inline-flex;"><i class="fa-solid fa-house"></i>&nbsp;<span data-lang-en="Back to Home" data-lang-mr="मुखपृष्ठावर परत">Back to Home</span></a>
+
+    <!-- MAIN WIKIPEDIA LAYOUT CONTAINER -->
+    <main class="container wiki-main-layout">
+        <div class="wiki-layout-grid">
+
+            <!-- WIKIPEDIA LEFT RAIL: TABLE OF CONTENTS -->
+            <aside class="wiki-toc-sidebar" aria-label="Table of Contents">
+                <div class="wiki-toc-title">
+                    <i class="fa-solid fa-list-ol"></i>
+                    <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
+                </div>
+                <nav>
+                    <ul class="wiki-toc-list">
+                        <li class="wiki-toc-item"><a href="#sec-lead" class="wiki-toc-link active" data-lang-en="(Top / Overview)" data-lang-mr="(शीर्ष / विहंगावलोकन)">(Top / Overview)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-malguzari" class="wiki-toc-link" data-lang-en="1. Agrarian Leadership & Malguzari Heritage" data-lang-mr="१. कृषी नेतृत्व व मालगुजारी वारसा">1. Agrarian Leadership & Malguzari Heritage</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-legislative" class="wiki-toc-link" data-lang-en="2. Legislative & Parliamentary Representatives" data-lang-mr="२. विधिमंडळ व संसदीय लोकप्रतिनिधी">2. Legislative & Parliamentary Representatives</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-principled" class="wiki-toc-link" data-lang-en="3. Grassroots & Principled Leadership" data-lang-mr="३. तत्त्वनिष्ठ नेतृत्व व सामाजिक योगदान">3. Grassroots & Principled Leadership</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-civic" class="wiki-toc-link" data-lang-en="4. Legal, Administrative & Civic Service" data-lang-mr="४. न्यायदान, प्रशासकीय व नागरी सेवा">4. Legal, Administrative & Civic Service</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-social" class="wiki-toc-link" data-lang-en="5. Healthcare, Education & Social Reform" data-lang-mr="५. आरोग्य, शिक्षण व समाजप्रबोधन">5. Healthcare, Education & Social Reform</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-research" class="wiki-toc-link" data-lang-en="6. Historiography & Literary Chroniclers" data-lang-mr="६. इतिहास संशोधन व साहित्य संपदा">6. Historiography & Literary Chroniclers</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-sources" class="wiki-toc-link" data-lang-en="7. Primary Community Memoir" data-lang-mr="७. मूळ सामुदायिक संस्मरण">7. Primary Community Memoir</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-see-also" class="wiki-toc-link" data-lang-en="8. See Also" data-lang-mr="८. हेही पहा">8. See Also</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-references" class="wiki-toc-link" data-lang-en="9. Notes & References" data-lang-mr="९. संदर्भ व नोंदी">9. Notes & References</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- WIKIPEDIA ARTICLE BODY -->
+            <article class="wiki-article-body" id="article-content">
+
+                <!-- ARTICLE TITLE & ACTIONS -->
+                <div class="wiki-title-area">
+                    <h1 class="wiki-article-title">
+                        <span data-lang-en="Kohli Samaj: Public Leadership & Community Achievements" data-lang-mr="कोहळी समाज: सार्वजनिक नेतृत्व व सामाजिक उपलब्धी">Kohli Samaj: Public Leadership & Community Achievements</span>
+                    </h1>
+                    <div class="wiki-article-subline">
+                        <span data-lang-en="From Wikipedia and community historical archives, the free encyclopedic record" data-lang-mr="मुक्त ज्ञानकोश व सामाजिक ऐतिहासिक दस्तावेजांवरून">From Wikipedia and community historical archives, the free encyclopedic record</span>
+                        <div class="wiki-quick-lang">
+                            <button onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')" class="wiki-quick-lang-btn">
+                                <i class="fa-solid fa-language"></i> <span data-lang-en="मराठीत वाचा" data-lang-mr="Read in English">मराठीत वाचा</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEAD SECTION WITH RIGHT-FLOAT INFOBOX -->
+                <div class="wiki-lead-section" id="sec-lead">
+
+                    <!-- RIGHT-FLOAT WIKIPEDIA INFOBOX -->
+                    <aside class="wiki-infobox" aria-label="Quick Summary">
+                        <div class="wiki-infobox-title">
+                            <span data-lang-en="Kohli Public Achievements" data-lang-mr="कोहळी समाज लोकनेते व उपलब्धी">Kohli Public Achievements</span>
+                        </div>
+                        <div class="wiki-infobox-subtitle">
+                            <span data-lang-en="Vidarbha Community Leadership Record" data-lang-mr="विदर्भ समाज नेतृत्व व लोकप्रतिनिधी नोंद">Vidarbha Community Leadership Record</span>
+                        </div>
+                        <div class="wiki-infobox-image-box">
+                            <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Emblem" class="wiki-infobox-img">
+                            <div class="wiki-infobox-caption">
+                                <span data-lang-en="Official Community Emblem of Kohli Samaj" data-lang-mr="कोहळी समाज अधिकृत बोधचिन्ह">Official Community Emblem of Kohli Samaj</span>
+                            </div>
+                        </div>
+                        <table class="wiki-infobox-table">
+                            <tr>
+                                <th><span data-lang-en="Category" data-lang-mr="प्रवर्ग">Category</span></th>
+                                <td><span data-lang-en="Public Leadership & Civic Achievements" data-lang-mr="सार्वजनिक नेतृत्व व सामाजिक उपलब्धी">Public Leadership & Civic Achievements</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Primary Region" data-lang-mr="प्रमुख कार्यक्षेत्र">Primary Region</span></th>
+                                <td><span data-lang-en="Eastern Vidarbha (Bhandara, Gondia, Chandrapur, Gadchiroli, Nagpur)" data-lang-mr="पूर्व विदर्भ (भंडारा, गोंदिया, चंद्रपूर, गडचिरोली, नागपूर)">Eastern Vidarbha (Bhandara, Gondia, Chandrapur, Gadchiroli, Nagpur)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Historical Role" data-lang-mr="ऐतिहासिक भूमिका">Historical Role</span></th>
+                                <td><span data-lang-en="Malguzari patrons of village agrarian order and Bara Balutedars" data-lang-mr="बारा बलुतेदारांचे पोशिंदे व मालगुजारी कृषी व्यवस्थापक">Malguzari patrons of village agrarian order and Bara Balutedars</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Key Assembly Seats" data-lang-mr="प्रमुख विधानसभा मतदारसंघ">Key Assembly Seats</span></th>
+                                <td><span data-lang-en="Sakoli, Chimur, Armori / Wadsa, Arjuni Morgaon" data-lang-mr="साकोली, चिमूर, आरमोरी / वडसा, अर्जुनी मोरगाव">Sakoli, Chimur, Armori / Wadsa, Arjuni Morgaon</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Notable Historical MLAs" data-lang-mr="प्रमुख माजी आमदार">Notable Historical MLAs</span></th>
+                                <td>
+                                    <span>Martand Patil Kapgate (1972)</span><br>
+                                    <span>Shamraobapu Kapgate</span><br>
+                                    <span>Dr. Hemkrishna Kapgate</span><br>
+                                    <span>Dayaramji Kapgate</span><br>
+                                    <span>Dr. Indutai Nakade</span><br>
+                                    <span>Balabhau Kashiwar</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Prominent Civic Figures" data-lang-mr="प्रमुख सामाजिक व नागरी व्यक्तिमत्त्वे">Prominent Civic Figures</span></th>
+                                <td>
+                                    <span>Balaji Patil Borkar (Navargaon)</span><br>
+                                    <span>Keshavrao Patil Nakade (Savargaon)</span><br>
+                                    <span>Magistrate Dnyandevji Parshuramkar</span><br>
+                                    <span>Gangadharji Parshuramkar</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Key Historians" data-lang-mr="इतिहास व समाज संशोधक">Key Historians</span></th>
+                                <td>
+                                    <span>Ramdas Borkar</span><br>
+                                    <span>N. R. Borkar</span><br>
+                                    <span>Er. Shalikram Borkar</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </aside>
+
+                    <p class="wiki-lead-p">
+                        <span data-lang-en="The <strong>Kohli Samaj</strong> has historically occupied a position of substantial social prestige and public leadership across eastern Vidarbha, encompassing the districts of Bhandara, Gondia, Chandrapur, and Gadchiroli. Emerging from an ancient heritage of water engineering and <em>Malguzari</em> estate administration, community leaders functioned as primary patrons (*poshinde*) of the village agrarian social order and the traditional <em>Bara Balutedar</em> system<sup>[1]</sup>." data-lang-mr="<strong>कोहळी समाज</strong> हा पूर्व विदर्भातील भंडारा, गोंदिया, चंद्रपूर आणि गडचिरोली जिल्ह्यांमध्ये ऐतिहासिकदृष्ट्या अत्यंत प्रभावशाली व सामाजिक प्रतिष्ठा लाभलेला समाज राहिला आहे. पारंपरिक तलाव सिंचन, कृषी कौशल्य आणि <em>मालगुजारी</em> व्यवस्थापनाच्या वारशामुळे कोहळी समाजातील घराणी ही ग्रामीण समाजव्यवस्था व पारंपरिक <em>बारा बलुतेदारांचे</em> प्रमुख पोशिंदे म्हणून ओळखली जात होती<sup>[१]</sup>.">...</span>
+                    </p>
+                    <p class="wiki-p">
+                        <span data-lang-en="In post-independence democratic governance, members of the community made notable contributions across legislative assemblies, civic administration, grassroots public mobilization, cooperative institutions, and scholarly historical documentation. Community leaders were characterized by principled public conduct, dedication to regional agrarian interests, and the funding of early civic organizations through private resources<sup>[1]</sup><sup>[2]</sup>." data-lang-mr="स्वातंत्र्योत्तर लोकशाही व्यवस्थेत कोहळी समाजातील समाजधुरिणांनी विधिमंडळ, नागरी प्रशासन, जनआंदोलने, सहकार चळवळ आणि इतिहास संशोधनामध्ये मोलाचे योगदान दिले. तत्त्वनिष्ठ राजकारण, शेतकरी-कष्टकऱ्यांचे प्रश्न सोडवण्याची तळमळ आणि स्वतःच्या संपत्तीचा त्याग करून पक्ष व समाज संघटना उभारणी ही कोहळी नेतृत्वाची ठळक वैशिष्ट्ये राहिली आहेत<sup>[१]</sup><sup>[२]</sup>.">...</span>
+                    </p>
+                </div>
+
+                <!-- SECTION 1: AGRARIAN LEADERSHIP & MALGUZARI HERITAGE -->
+                <section id="sec-malguzari">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="1. Agrarian Leadership & Malguzari Heritage" data-lang-mr="१. कृषी नेतृत्व व मालगुजारी वारसा">1. Agrarian Leadership & Malguzari Heritage</span></span>
+                        <a href="#sec-malguzari" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Historically, the economic foundation of the Kohli community in the Wainganga basin rested upon the construction and governance of vast irrigation tanks (*talao* and *bodi*) and the stewardship of Malguzari villages. As recorded in regional community archives, the Malguzars maintained agrarian stability and supported the entire village economy<sup>[1]</sup>:" data-lang-mr="वैनगंगा खोऱ्यात कोहळी समाजाचा आर्थिक व सामाजिक पाया हा तलाव-बोड्यांची निर्मिती आणि मालगुजारी गावांच्या कारभारावर आधारलेला होता. समाज दस्तावेजांनुसार, मालगुजार घराणी ही संपूर्ण ग्रामव्यवस्थेला स्थैर्य देणारी आधारस्तंभ मानली जात असत<sup>[१]</sup>:">...</span>
+                    </p>
+                    <div class="wiki-factbox">
+                        <div class="wiki-factbox-title">
+                            <i class="fa-solid fa-wheat-awn"></i>
+                            <span data-lang-en="Historical Social Position (Source Archive: Line 126)" data-lang-mr="ऐतिहासिक सामाजिक स्थान (मूळ नोंद: ओळ १२६)">Historical Social Position (Source Archive: Line 126)</span>
+                        </div>
+                        <p class="wiki-p" style="margin-bottom:0;" data-lang-en="&ldquo;Across the greater part of eastern Vidarbha, Malguzari was held by the Kohli community. Consequently, the community was regarded as the patron and protector (*poshinde*) of the Bara Balutedars. The community enjoyed widespread public prestige, and owing to their influence across all sections of society, diverse political organizations sought to bring prominent Kohli leaders into their fold.&rdquo;" data-lang-mr="&ldquo;पूर्व विदर्भातील बहुतांश भागात मालगुजारी ही कोहळी समाजाकडे होती त्यामुळे बारा बलुतेदारांचे पोशिंदे म्हणून कोहळी समाजाकडे पाहिले जात होते. एक प्रभावशाली समाज म्हणून कोहळी समाजाचे नावलौकिक होते. सर्व समाजावर त्यांचा प्रभाव असल्याने सर्वच राजकीय पक्ष कोहळी समाजातील प्रभावशाली व्यक्तिमत्व आपल्या पक्षासोबत असावेत यासाठी प्रयत्न करत होते.&rdquo;">
+                            &ldquo;Across the greater part of eastern Vidarbha, Malguzari was held by the Kohli community...&rdquo;
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: LEGISLATIVE & PARLIAMENTARY REPRESENTATIVES -->
+                <section id="sec-legislative">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="2. Legislative & Parliamentary Representatives" data-lang-mr="२. विधिमंडळ व संसदीय लोकप्रतिनिधी">2. Legislative & Parliamentary Representatives</span></span>
+                        <a href="#sec-legislative" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Members of the Kohli community have repeatedly won election to the Maharashtra Legislative Assembly, representing rural and agrarian constituencies in Bhandara, Gondia, Chandrapur, and Gadchiroli districts<sup>[1]</sup><sup>[3]</sup>:" data-lang-mr="कोहळी समाजातील अनेक नेत्यांनी महाराष्ट्र विधानसभेत भंडारा, गोंदिया, चंद्रपूर व गडचिरोली जिल्ह्यातील ग्रामीण व शेतकरी मतदारसंघांचे यशस्वी प्रतिनिधित्व केले आहे<sup>[१]</sup><sup>[३]</sup>:">...</span>
+                    </p>
+
+                    <div class="wiki-leaders-table-wrap">
+                        <table class="wiki-table">
+                            <thead>
+                                <tr>
+                                    <th><span data-lang-en="Public Representative" data-lang-mr="लोकप्रतिनिधी">Public Representative</span></th>
+                                    <th><span data-lang-en="Constituency / Region" data-lang-mr="मतदारसंघ / कार्यक्षेत्र">Constituency / Region</span></th>
+                                    <th><span data-lang-en="Historical Tenure & Contributions" data-lang-mr="कालावधी व योगदान">Historical Tenure & Contributions</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><span data-lang-en="Martand Patil Kapgate" data-lang-mr="मार्तंड पाटील कापगते">Martand Patil Kapgate</span></strong></td>
+                                    <td><span data-lang-en="Sakoli Constituency, Bhandara District" data-lang-mr="साकोली विधानसभा, भंडारा जिल्हा">Sakoli Constituency, Bhandara District</span></td>
+                                    <td><span data-lang-en="Elected Member of the Legislative Assembly (MLA) in 1972; a pioneering early public representative championing irrigation, roads, and agrarian rights across the Sakoli belt<sup>[1]</sup>." data-lang-mr="१९७२ मध्ये विधानसभेत आमदार म्हणून निवडून आले; साकोली परिसरातील सिंचन, रस्ते व शेतकरी हक्कांसाठी लढा देणारे सुरुवातीचे अग्रगण्य लोकप्रतिनिधी<sup>[१]</sup>.">Elected MLA in 1972...</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><span data-lang-en="Late Shamraobapu Kapgate" data-lang-mr="स्व. शामरावबापू कापगते">Late Shamraobapu Kapgate</span></strong></td>
+                                    <td><span data-lang-en="Sakoli / Bhandara Region" data-lang-mr="साकोली / भंडारा परिसर">Sakoli / Bhandara Region</span></td>
+                                    <td><span data-lang-en="Prominent MLA and public builder; expanded party and civic networks across Bhandara district using personal resources; revered for steadfast community service<sup>[1]</sup>." data-lang-mr="माजी आमदार व ज्येष्ठ नेते; स्वतःच्या खर्चाने संपूर्ण भंडारा जिल्ह्यात पक्ष व समाज संघटन उभे केले; साकोली पट्ट्यात त्यांचा मोठा जनसंपर्क होता<sup>[१]</sup>.">Prominent MLA and public builder...</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><span data-lang-en="Dr. Hemkrishna Kapgate" data-lang-mr="डॉ. हेमकृष्ण कापगते">Dr. Hemkrishna Kapgate</span></strong></td>
+                                    <td><span data-lang-en="Sakoli Constituency" data-lang-mr="साकोली विधानसभा">Sakoli Constituency</span></td>
+                                    <td><span data-lang-en="Former MLA representing Sakoli; medical professional dedicated to rural public health, cooperative farming, and regional community unity<sup>[1]</sup>." data-lang-mr="साकोलीचे माजी आमदार; ग्रामीण आरोग्य, शेतकरी सहकार आणि समाज संघटना मजबुतीकरणासाठी दीर्घकाळ कार्यरत<sup>[१]</sup>.">Former MLA representing Sakoli...</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><span data-lang-en="Late Dayaramji Kapgate" data-lang-mr="स्व. दयारामजी कापगते">Late Dayaramji Kapgate</span></strong></td>
+                                    <td><span data-lang-en="Arjuni Morgaon Constituency, Gondia" data-lang-mr="अर्जुनी मोरगाव, गोंदिया जिल्हा">Arjuni Morgaon Constituency, Gondia</span></td>
+                                    <td><span data-lang-en="Former MLA; devoted lifetime leadership to rural school development, rural electrification, and water tank renovation in Navegaon Bandh region<sup>[1]</sup>." data-lang-mr="माजी आमदार; नवेगावबांध परिसरातील शाळांची उभारणी, ग्रामीण विद्युतीकरण आणि तलाव संवर्धनासाठी भरीव योगदान<sup>[१]</sup>.">Former MLA...</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><span data-lang-en="Late Dr. Indutai Nakade" data-lang-mr="स्व. डॉ. इंदुताई नाकाडे">Late Dr. Indutai Nakade</span></strong></td>
+                                    <td><span data-lang-en="Armori / Wadsa Constituency, Gadchiroli" data-lang-mr="आरमोरी / वडसा, गडचिरोली जिल्हा">Armori / Wadsa Constituency, Gadchiroli</span></td>
+                                    <td><span data-lang-en="Pioneering woman medical doctor and former MLA; spearheaded rural health initiatives, women's education, and tribal-agrarian welfare across Gadchiroli<sup>[1]</sup>." data-lang-mr="समाजातील अग्रगण्य महिला डॉक्टर व माजी आमदार; गडचिरोली भागातील ग्रामीण आरोग्यसेवा, स्त्री शिक्षण आणि आदिवासी-शेतकरी कल्याणासाठी ऐतिहासिक कार्य<sup>[१]</sup>.">Pioneering woman medical doctor and former MLA...</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><span data-lang-en="Balabhau Kashiwar" data-lang-mr="श्री बाळाभाऊ काशीवार">Balabhau Kashiwar</span></strong></td>
+                                    <td><span data-lang-en="Sakoli Constituency" data-lang-mr="साकोली विधानसभा">Sakoli Constituency</span></td>
+                                    <td><span data-lang-en="Former MLA of Sakoli; known for intense grassroots representation, irrigation canal expansions, and farmer mobilization<sup>[1]</sup>." data-lang-mr="साकोलीचे माजी आमदार; तळागाळातील शेतकऱ्यांचे प्रश्न, सिंचन कालवे आणि जनहिताच्या कामांसाठी सतत आग्रही<sup>[१]</sup>.">Former MLA of Sakoli...</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: GRASSROOTS & PRINCIPLED LEADERSHIP -->
+                <section id="sec-principled">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="3. Grassroots & Principled Leadership" data-lang-mr="३. तत्त्वनिष्ठ नेतृत्व व सामाजिक योगदान">3. Grassroots & Principled Leadership</span></span>
+                        <a href="#sec-principled" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Beyond legislative office, the Kohli community produced influential civic leaders noted for high ethical standards, resisting political opportunism, and investing private wealth for community welfare<sup>[1]</sup>:" data-lang-mr="केवळ सत्ताकारणापुरते मर्यादित न राहता कोहळी समाजाने अत्यंत तत्त्वनिष्ठ व स्वाभिमानी नेतृत्व उभे केले, ज्यांनी पदांच्या मोहाला बळी न पडता समाज आणि तत्त्वांना सर्वोच्च स्थान दिले<sup>[१]</sup>:">...</span>
+                    </p>
+
+                    <div class="wiki-highlight-card">
+                        <div class="wiki-highlight-header">
+                            <i class="fa-solid fa-award"></i>
+                            <strong data-lang-en="Late Balaji Patil Borkar (Navargaon, Chandrapur)" data-lang-mr="स्व. बालाजी पाटील बोरकर (नवरगाव, चंद्रपूर)">Late Balaji Patil Borkar (Navargaon, Chandrapur)</strong>
+                        </div>
+                        <p class="wiki-p" data-lang-en="Late Balaji Patil Borkar was a towering figure in Navargaon and Chandrapur district. When then-Chief Minister Marotrao Kannamwar visited Navargaon, he publicly offered Balaji Patil Borkar a Cabinet Ministership on the dais to induce him into the ruling government. Borkar outright declined the offer, choosing to preserve his personal principles and ideological commitments rather than pursue political power. In an era when opposition candidates were scarce in Chandrapur, he financed and contested democratic elections at his personal expense to ensure a robust multi-party democracy<sup>[1]</sup>." data-lang-mr="स्व. बालाजी पाटील बोरकर हे नवरगाव व चंद्रपूर जिल्ह्यातील अत्यंत प्रभावशाली मालगुजार व जननेते होते. तत्कालीन मुख्यमंत्री मारोतराव कन्नमवार हे नवरगावला आले असताना त्यांनी व्यासपीठावरूनच बालाजी पाटील बोरकर यांना सरकारमध्ये सामील झाल्यास कॅबिनेट मंत्रीपद देण्याचे जाहीर आश्वासन दिले. मात्र, बोरकरांनी सत्तेच्या लालसेपोटी आपले विचार न सोडता हे मंत्रीपद ठामपणे नाकारले. चंद्रपूर जिल्ह्यात राजकीय संघटन नसताना त्यांनी स्वतःच्या खर्चाने निवडणुका लढवून लोकशाही प्रक्रियेत सक्रिय सहभाग नोंदवला<sup>[१]</sup>.">...</p>
+                    </div>
+
+                    <div class="wiki-highlight-card">
+                        <div class="wiki-highlight-header">
+                            <i class="fa-solid fa-people-roof"></i>
+                            <strong data-lang-en="Late Keshavrao Patil Nakade (Savargaon, Chimur)" data-lang-mr="स्व. केशवराव पाटील नाकाडे (सावरगाव, चिमूर)">Late Keshavrao Patil Nakade (Savargaon, Chimur)</strong>
+                        </div>
+                        <p class="wiki-p" data-lang-en="Malguzar of Savargaon in Chimur assembly constituency and District Sanghchalak. He opened his home as a center for regional social work, civic networking, and youth character development across Chandrapur and Chimur<sup>[1]</sup>." data-lang-mr="चिमूर परिसरातील सावरगावचे मालगुजार व जिल्हा संघचालक. त्यांनी स्वतःच्या घरातून समाजप्रबोधन, सामाजिक संस्थांचे कार्य आणि युवा वर्गामध्ये देशसेवेचे संस्कार घडवण्याचे काम केले<sup>[१]</sup>.">...</p>
+                    </div>
+
+                    <div class="wiki-highlight-card">
+                        <div class="wiki-highlight-header">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                            <strong data-lang-en="Grassroots Activists & Local Organizers" data-lang-mr="स्थानिक कार्यकर्ते व जननेते">Grassroots Activists & Local Organizers</strong>
+                        </div>
+                        <p class="wiki-p" data-lang-en="Community archives also document prolonged grassroots service by social workers such as <strong>Dr. Shyamji Hatwade</strong> (active since 1975 in Chandrapur), <strong>Raju Patil Borkar</strong> (Ratnapur), <strong>Namdevji Kapgate</strong> (Arjuni Morgaon), and <strong>Ramesh Patil Borkar</strong> (Kanhalgaon)<sup>[1]</sup>." data-lang-mr="समाज नोंदीनुसार चंद्रपूर जिल्ह्यात १९७५ पासून अविरत समाजकार्य करणारे <strong>डॉ. श्यामजी हटवाडे</strong>, रत्नापूरचे <strong>राजू पाटील बोरकर</strong>, अर्जुनी मोरगावचे <strong>नामदेवजी कापगते</strong> आणि कन्हाळगावचे <strong>रमेश पाटील बोरकर</strong> यांनी तळागाळात लोकसेवेची परंपरा अखंड सुरू ठेवली<sup>[१]</sup>.">...</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: LEGAL, ADMINISTRATIVE & CIVIC SERVICE -->
+                <section id="sec-civic">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="4. Legal, Administrative & Civic Service" data-lang-mr="४. न्यायदान, प्रशासकीय व नागरी सेवा">4. Legal, Administrative & Civic Service</span></span>
+                        <a href="#sec-civic" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="The community has made significant contributions to the judiciary, civil administration, and regional cooperative governance:" data-lang-mr="न्यायदान, नागरी प्रशासन आणि सहकार क्षेत्रातही कोहळी समाजातील मान्यवरांनी महत्त्वपूर्ण भूमिका बजावली आहे:">...</span>
+                    </p>
+                    <ul class="wiki-list">
+                        <li>
+                            <strong data-lang-en="Late Magistrate Dnyandevji Parshuramkar:" data-lang-mr="स्व. मॅजिस्ट्रेट ज्ञानदेवजी परशुरामकर:">Late Magistrate Dnyandevji Parshuramkar:</strong>
+                            <span data-lang-en="Distinguished judicial administrator and legal luminary who contributed to fair local governance and public administration across eastern Vidarbha<sup>[1]</sup>." data-lang-mr="ज्येष्ठ न्यायाधीश व कायदेतज्ज्ञ; त्यांनी पूर्व विदर्भात निःपक्ष न्यायदान व सामाजिक सलोख्यासाठी मोठे योगदान दिले<sup>[१]</sup>.">Distinguished judicial administrator...</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Shri Gangadharji Parshuramkar:" data-lang-mr="श्री गंगाधरजी परशुरामकर:">Shri Gangadharji Parshuramkar:</strong>
+                            <span data-lang-en="Senior public leader and civic organizer involved in cooperative movement governance and regional developmental representation<sup>[1]</sup>." data-lang-mr="सहकार व नागरी क्षेत्रातील ज्येष्ठ नेते; त्यांनी शेतकरी हितासाठी संघटनात्मक पातळीवर मोलाचे कार्य केले<sup>[१]</sup>.">Senior public leader...</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 5: HEALTHCARE, EDUCATION & SOCIAL REFORM -->
+                <section id="sec-social">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="5. Healthcare, Education & Social Reform" data-lang-mr="५. आरोग्य, शिक्षण व समाजप्रबोधन">5. Healthcare, Education & Social Reform</span></span>
+                        <a href="#sec-social" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Medical professionals and educators from the Kohli community have played a pivotal role in rural human development across eastern Vidarbha:" data-lang-mr="आरोग्य आणि शिक्षण क्षेत्रात कोहळी समाजातील वैद्यकीय तज्ज्ञ व प्राध्यापकांनी ग्रामीण भागातील जनतेला मोठी मदत केली आहे:">...</span>
+                    </p>
+                    <div class="wiki-deity-grid">
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Dr. Dhananjay Patil Nakade (Wadsa/Armori)" data-lang-mr="डॉ. धनंजय पाटील नाकाडे (वडसा/आरमोरी)">Dr. Dhananjay Patil Nakade</div>
+                            <div class="wiki-deity-desc" data-lang-en="Renowned medical doctor and social reformer who provided affordable healthcare and promoted educational upliftment in tribal forest belts." data-lang-mr="ख्यातनाम डॉक्टर व समाजसुधारक; गडचिरोली परिसरातील आदिवासी-ग्रामीण जनतेसाठी वैद्यकीय सेवा व शिक्षणाचा प्रसार केला.">Renowned medical doctor...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Dr. Gajanan Dongarwar (Arjuni Morgaon)" data-lang-mr="डॉ. गजानन डोंगरवार (अर्जुनी मोरगाव)">Dr. Gajanan Dongarwar</div>
+                            <div class="wiki-deity-desc" data-lang-en="Dedicated physician and community elder who fostered rural health camps, student scholarships, and village water sanitation." data-lang-mr="ग्रामीण भागातील आरोग्य शिबिरे, विद्यार्थी साहाय्य आणि स्वच्छता मोहिमांमध्ये अग्रणी राहिलेले निष्ठावंत वैद्यकीय व्यक्तिमत्त्व.">Dedicated physician...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Prof. Sadanandji Borkar (Navargaon)" data-lang-mr="प्रा. सदानंदजी बोरकर (नवरगाव)">Prof. Sadanandji Borkar</div>
+                            <div class="wiki-deity-desc" data-lang-en="Eminent academician and higher education pioneer mentoring thousands of rural youths in Vidarbha colleges." data-lang-mr="ज्येष्ठ प्राध्यापक व शिक्षणतज्ज्ञ; विदर्भातील हजारो ग्रामीण व बहुजन विद्यार्थ्यांना उच्च शिक्षणासाठी मार्गदर्शन केले.">Eminent academician...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Yashwant Lanje Sir (Bhandara)" data-lang-mr="यशवंत लांजे सर (भंडारा)">Yashwant Lanje Sir</div>
+                            <div class="wiki-deity-desc" data-lang-en="Respected educator and mentor promoting social unity, literacy, and student career empowerment across Bhandara." data-lang-mr="भंडारा जिल्ह्यातील आदरणीय शिक्षक व मार्गदर्शक; सामाजिक ऐक्य व युवा करिअर विकासासाठी सतत सक्रिय.">Respected educator...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: HISTORIOGRAPHY & LITERARY CHRONICLERS -->
+                <section id="sec-research">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="6. Historiography & Literary Chroniclers" data-lang-mr="६. इतिहास संशोधन व साहित्य संपदा">6. Historiography & Literary Chroniclers</span></span>
+                        <a href="#sec-research" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="A distinct achievement of the modern Kohli community is the preservation and scholarly documentation of its own history, tank-building architecture, and cultural traditions through dedicated independent writers and chroniclers:" data-lang-mr="कोहळी समाजाचे एक महत्त्वाचे वैशिष्ट्य म्हणजे समाजाने स्वतःचा प्राचीन इतिहास, तलाव निर्मितीचे तंत्रज्ञान आणि लोकसंस्कृती यांचे जतन करण्यासाठी स्वतःचे अभ्यासक व लेखक घडवले आहेत:">...</span>
+                    </p>
+                    <ul class="wiki-list">
+                        <li>
+                            <strong data-lang-en="Historian Ramdas Borkar:" data-lang-mr="इतिहास संशोधक रामदास बोरकर:">Historian Ramdas Borkar:</strong>
+                            <span data-lang-en="Author and compiler of <em>'Kohli Samajacha Itihas, Sheti va Sanskrutik Parampara'</em> (कोहळी समाजाचा इतिहास, शेती व सांस्कृतिक परंपरा); systematically documented ancestral lineages, Wainganga basin tank construction, and agricultural practices<sup>[2]</sup>." data-lang-mr="<em>'कोहळी समाजाचा इतिहास, शेती व सांस्कृतिक परंपरा'</em> या महत्त्वपूर्ण ऐतिहासिक ग्रंथाचे लेखक; वैनगंगा खोऱ्यातील तलाव निर्मिती, कृषी संस्कृती आणि कुळांच्या इतिहासाचे पद्धतशीर संकलन<sup>[२]</sup>.">Author and compiler...</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Senior Researcher N. R. Borkar:" data-lang-mr="ज्येष्ठ संशोधक ना. रा. बोरकर:">Senior Researcher N. R. Borkar:</strong>
+                            <span data-lang-en="Published foundational research tracing community origins, British gazetteer documentation, and village settlement structures." data-lang-mr="गॅझेटियरमधील नोंदी, प्राचीन कागदपत्रे व गाव वसाहतींवर आधारित मूलगामी संशोधन प्रकाशित करणारे ज्येष्ठ अभ्यासक.">Published foundational research...</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Er. Shalikram Borkar (Tumsar):" data-lang-mr="इंजि. शालिकराम बोरकर (तुमसर):">Er. Shalikram Borkar (Tumsar):</strong>
+                            <span data-lang-en="Engineering professional and ethnographic chronicler; authored the memoir series <em>'Kohli Samajachi Sanskruti'</em> recording traditional wedding rites, cooperative village customs, and Dandar folk theatre." data-lang-mr="अभियंता व लोकसंस्कृतीचे अभ्यासक; <em>'कोहळी समाजाची संस्कृती'</em> या संस्मरण मालिकेचे लेखक; ६० वर्षांपूर्वीच्या विवाह पद्धती, सामूहिक सहकार्य व दंडार लोकनाट्याचे प्रत्यक्ष साक्षीदार.">Engineering professional and ethnographic chronicler...</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 7: PRIMARY COMMUNITY MEMOIR -->
+                <section id="sec-sources">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="7. Primary Community Memoir" data-lang-mr="७. मूळ सामुदायिक संस्मरण">7. Primary Community Memoir</span></span>
+                        <a href="#sec-sources" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <div class="wiki-source-quote">
+                        <p data-lang-en="&ldquo;Our community has an exceptional tradition of self-respect, integrity, and principled leadership. We never compromised our values for political greed or money power. Today, preserving the selfless legacy of our elders and building strong community solidarity is our highest duty.&rdquo;" data-lang-mr="&ldquo;आपल्या समाजाला स्वाभिमान, सचोटी आणि तत्त्वनिष्ठ नेतृत्वाची मोठी परंपरा लाभलेली आहे. सत्तेच्या लालसेपोटी किंवा पैशाच्या मागे लागून समाजाने कधी आपले विचार किंवा स्वाभिमान विकला नाही. पूर्वजांचा हा त्यागी वारसा जपणे आणि समाजाची एकता टिकवून ठेवणे हेच आपले कर्तव्य आहे.&rdquo;">
+                            &ldquo;Our community has an exceptional tradition of self-respect, integrity, and principled leadership...&rdquo;
+                        </p>
+                        <div class="wiki-source-author">
+                            <span data-lang-en="— Community Historical Leadership Memoir (Source Archive: Lines 149–151)" data-lang-mr="— सामुदायिक ऐतिहासिक नेतृत्व संस्मरण (मूळ संदर्भ: ओळ १४९-१५१)">— Community Historical Leadership Memoir (Source Archive: Lines 149–151)</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 8: SEE ALSO -->
+                <section id="sec-see-also">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="8. See Also" data-lang-mr="८. हेही पहा">8. See Also</span></span>
+                        <a href="#sec-see-also" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <div class="wiki-see-also-grid">
+                        <a href="history.html" class="wiki-see-card">
+                            <i class="fa-solid fa-landmark"></i>
+                            <div>
+                                <strong data-lang-en="History & Origins" data-lang-mr="इतिहास व मूळ">History & Origins</strong>
+                                <p data-lang-en="Gond kingdom alliance and Wainganga settlement." data-lang-mr="गोंडकालीन इतिहास व वैनगंगा वसाहती.">Gond kingdom alliance...</p>
+                            </div>
+                        </a>
+                        <a href="water-heritage.html" class="wiki-see-card">
+                            <i class="fa-solid fa-droplet"></i>
+                            <div>
+                                <strong data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</strong>
+                                <p data-lang-en="Historic tank engineering, Bodi, and Malguzari irrigation." data-lang-mr="तलाव, बोड्या व ऐतिहासिक मालगुजारी सिंचन.">Historic tank engineering...</p>
+                            </div>
+                        </a>
+                        <a href="culture.html" class="wiki-see-card">
+                            <i class="fa-solid fa-masks-theater"></i>
+                            <div>
+                                <strong data-lang-en="Culture & Living Heritage" data-lang-mr="संस्कृती व लोककला">Culture & Living Heritage</strong>
+                                <p data-lang-en="Traditional weddings, Dandar folk theatre, and deities." data-lang-mr="पारंपरिक विवाह, दंडार लोकनाट्य व कुलदैवते.">Traditional weddings...</p>
+                            </div>
+                        </a>
+                        <a href="sanghatana.html" class="wiki-see-card">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <div>
+                                <strong data-lang-en="Community Organizations" data-lang-mr="समाज संघटना">Community Organizations</strong>
+                                <p data-lang-en="Contemporary conventions, sabhas, and youth forums." data-lang-mr="समाज महामंडळ, युवक मंच व वार्षिक संमेलने.">Contemporary conventions...</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- SECTION 9: NOTES & REFERENCES -->
+                <section id="sec-references">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="9. Notes & References" data-lang-mr="९. संदर्भ व नोंदी">9. Notes & References</span></span>
+                        <a href="#sec-references" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <ol class="wiki-references-list">
+                        <li id="cite_note-1">
+                            <span data-lang-en="<strong>Community Historical Archive:</strong> <em>'Prabhavshali Vyaktimatva aani Samajik Netrutva'</em>; verified community documentation (Lines 123–156) recording Malguzari patron status, MLA tenures of Martand Patil Kapgate, Shamraobapu Kapgate, Dr. Hemkrishna Kapgate, Dayaramji Kapgate, Dr. Indutai Nakade, Balabhau Kashiwar, and the principled stand of Balaji Patil Borkar." data-lang-mr="<strong>सामुदायिक ऐतिहासिक दस्तऐवज:</strong> <em>'प्रभावशाली व्यक्तिमत्त्व आणि पक्षाची आवश्यकता'</em>; मूळ समाज नोंद (ओळ १२३-१५६), मालगुजारी पोशिंदे दर्जा, आमदार मार्तंड पाटील कापगते, शामरावबापू कापगते, डॉ. हेमकृष्ण कापगते, दयारामजी कापगते, डॉ. इंदुताई नाकाडे, बाळाभाऊ काशीवार आणि स्व. बालाजी पाटील बोरकर यांची तत्त्वनिष्ठ भूमिका."><strong>Community Historical Archive:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-2">
+                            <span data-lang-en="<strong>Historical Monograph:</strong> Ramdas Borkar, <em>'Kohli Samajacha Itihas, Sheti va Sanskrutik Parampara'</em>; independent historiographical survey of the community's agricultural, political, and cultural evolution in eastern Vidarbha." data-lang-mr="<strong>ऐतिहासिक ग्रंथ:</strong> रामदास बोरकर, <em>'कोहळी समाजाचा इतिहास, शेती व सांस्कृतिक परंपरा'</em>; पूर्व विदर्भातील कोहळी समाजाचा कृषी, सामाजिक व राजकीय इतिहास मांडणारा स्वतंत्र संशोधन ग्रंथ."><strong>Historical Monograph:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-3">
+                            <span data-lang-en="<strong>Maharashtra Legislative Assembly Archives:</strong> Official electoral gazettes and assembly proceedings for Sakoli, Chimur, and Armori constituencies (1972–2019)." data-lang-mr="<strong>महाराष्ट्र विधानसभा दस्तऐवज:</strong> साकोली, चिमूर आणि आरमोरी विधानसभा मतदारसंघांचे अधिकृत निवडणूक निकाल व विधानसभा कामकाजाच्या नोंदी (१९७२–२०१९)."><strong>Maharashtra Legislative Assembly Archives:</strong> ...</span>
+                        </li>
+                    </ol>
+
+                    <div class="wiki-categories-box">
+                        <span class="wiki-cat-label" data-lang-en="Categories:" data-lang-mr="वर्ग:">Categories:</span>
+                        <a href="achievements.html" class="wiki-cat-link" data-lang-en="Vidarbha Public Figures" data-lang-mr="विदर्भातील लोकनेते">Vidarbha Public Figures</a> |
+                        <a href="achievements.html" class="wiki-cat-link" data-lang-en="Kohli Samaj Achievements" data-lang-mr="कोहळी समाज उपलब्धी">Kohli Samaj Achievements</a> |
+                        <a href="achievements.html" class="wiki-cat-link" data-lang-en="Maharashtra Legislative Assembly Members" data-lang-mr="महाराष्ट्र विधानसभा सदस्य">Maharashtra Legislative Assembly Members</a> |
+                        <a href="history.html" class="wiki-cat-link" data-lang-en="Malguzari Historical Records" data-lang-mr="मालगुजारी ऐतिहासिक नोंदी">Malguzari Historical Records</a>
+                    </div>
+                </section>
+
+            </article>
         </div>
     </main>
-    <!-- Footer -->
+
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
             <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
             <div><span data-lang-en="Built by Community Volunteers" data-lang-mr="समाज स्वयंसेवकांनी बनवले">Built by Community Volunteers</span></div>
         </div>
     </footer>
+
+    <!-- WIKIPEDIA INTERACTIVE TOC SCROLL-SPY SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.wiki-toc-link');
+            const sections = document.querySelectorAll('article.wiki-article-body section, #sec-lead');
+
+            function highlightToc() {
+                let scrollPos = window.scrollY + 120;
+                sections.forEach(function(section) {
+                    if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                        const currentId = section.getAttribute('id');
+                        tocLinks.forEach(function(link) {
+                            if (link.getAttribute('href') === '#' + currentId) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightToc);
+            highlightToc();
+        });
+    </script>
+
     <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
