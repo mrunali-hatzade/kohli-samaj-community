@@ -14,6 +14,265 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Section-Based Editorial Culture Page Styles ── */
+        .culture-article-wrapper {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 1rem 0 3rem 0;
+        }
+
+        /* Lead Overview Section */
+        .culture-lead-section {
+            padding-bottom: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 1.5px solid var(--border-color);
+        }
+        .culture-lead-section h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        .culture-lead-section p {
+            font-size: 1.12rem;
+            line-height: 1.85;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        /* 6 Pillars Editorial Grid */
+        .pillars-overview-section {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1.5px solid var(--border-color);
+        }
+        .pillars-section-heading {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .pillars-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+        .pillar-item {
+            padding-left: 1.2rem;
+            border-left: 3px solid var(--accent-gold);
+        }
+        .pillar-item h3 {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+        }
+        .pillar-item p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin-bottom: 0.6rem;
+        }
+        .pillar-item a {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent-gold-hover);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: gap 0.2s;
+        }
+        .pillar-item a:hover {
+            gap: 0.55rem;
+            text-decoration: underline;
+        }
+
+        /* Detailed Content Sections (No Cards, Natural Flow) */
+        .culture-content-section {
+            padding: 2.5rem 0;
+            border-bottom: 1.5px solid var(--border-color);
+        }
+        .culture-content-section:last-of-type {
+            border-bottom: none;
+        }
+        .section-header-block {
+            margin-bottom: 1.4rem;
+        }
+        .section-number-tag {
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--accent-gold-hover);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+        .section-heading {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 0;
+            letter-spacing: -0.3px;
+        }
+        .section-body-text {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Sub-points / Feature Blocks */
+        .culture-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.8rem 0;
+        }
+        .culture-point-item {
+            background: #fafcfb;
+            border-left: 3px solid var(--primary-dark);
+            padding: 1.1rem 1.3rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .culture-point-item h4 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+        .culture-point-item p {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Tag lists */
+        .culture-pills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+        .culture-pill {
+            background: var(--bg-cream);
+            border: 1px solid #e2e8f0;
+            padding: 0.4rem 0.95rem;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Editorial Highlight Sections */
+        .editorial-highlight-section {
+            padding: 2.5rem 0;
+            border-bottom: 1.5px solid var(--border-color);
+        }
+        .editorial-highlight-section h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .editorial-highlight-section p {
+            font-size: 1.04rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        /* Callout Box for Disclaimer / Source Note */
+        .culture-source-callout {
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.4rem 1.8rem;
+            background: #fafcfb;
+            margin: 2.5rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+        .culture-source-callout h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .culture-source-callout p {
+            font-size: 0.96rem;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin: 0 0 0.4rem 0;
+        }
+        .culture-source-callout span {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Related Links Grid */
+        .culture-links-section {
+            padding-top: 2rem;
+        }
+        .culture-links-section h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .culture-links-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+        }
+        .culture-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        .culture-link-btn {
+            background: white;
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.1rem 1.3rem;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s;
+        }
+        .culture-link-btn:hover {
+            border-color: var(--primary-dark);
+            background: var(--primary-light);
+            transform: translateX(4px);
+        }
+        .culture-link-btn i {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 
 <body class="font-normal">
@@ -188,114 +447,421 @@
             </button>
         </div>
     </header>
-
-
-    <!-- Page Title Banner & Breadcrumbs -->
-    <div class="page-title-banner">
-        <div class="container">
-            <div class="breadcrumb-trail">
-                <a href="index.html" class="bc-home"><i class="fa-solid fa-house"></i> <span data-lang-en="Home"
-                        data-lang-mr="मुखपृष्ठ">Home</span></a>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-parent" data-lang-en="Community" data-lang-mr="समाज">Community</span>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-current" data-lang-en="Community Overview" data-lang-mr="समाज परिचय">Community
-                    Overview</span>
+    <!-- WIKIPEDIA VECTOR 2022 SUBHEADER / BREADCRUMB -->
+    <div class="wiki-top-meta">
+        <div class="container wiki-meta-flex">
+            <div class="wiki-breadcrumbs">
+                <a href="index.html" class="wiki-bc-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
+                <span class="wiki-bc-sep">/</span>
+                <span data-lang-en="Community Records" data-lang-mr="सामाजिक नोंदी">Community Records</span>
+                <span class="wiki-bc-sep">/</span>
+                <span class="wiki-bc-current" data-lang-en="Community Overview" data-lang-mr="कोहळी समाज परिचय">Community Overview</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Community Overview"
-                    data-lang-mr="कोहळी समाज परिचय">Community Overview</span></h1>
-            <p class="page-banner-subtitle"><span
-                    data-lang-en="Demographics, Vision, Agricultural Heritage & Geographic Regions"
-                    data-lang-mr="लोकसंख्या, दृष्टीकोन, कृषी वारसा आणि भौगोलिक क्षेत्र">Demographics, Vision,
-                    Agricultural Heritage & Geographic Regions</span></p>
+            <div class="wiki-lang-tag">
+                <i class="fa-solid fa-language"></i>
+                <span data-lang-en="Article available in: English & Marathi" data-lang-mr="उपलब्ध भाषा: इंग्रजी व मराठी">Article available in: English & Marathi</span>
+            </div>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="container" style="padding: 3rem 1.25rem;">
-        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem;">
-            <div>
-                <h2 style="color:var(--primary-dark); font-size:1.6rem; font-weight:800; margin-bottom:1rem;"
-                    data-lang-en="About Kohli Samaj" data-lang-mr="कोहळी समाजाविषयी">About Kohli Samaj</h2>
-                <p style="line-height:1.7; font-size:1rem; color:var(--text-main); margin-bottom:1.2rem;"
-                    data-lang-en="Kohli Samaj is a distinguished, hardworking agricultural and water-engineering community primarily settled across Vidarbha region of Maharashtra and parts of Madhya Pradesh. Renowned historically as the builders of the famous Malguzari tanks (bhandaras), the community has contributed immensely to rural prosperity and irrigation engineering."
-                    data-lang-mr="कोहळी समाज हा महाराष्ट्र आणि मध्य प्रदेशातील एक अत्यंत मेहनती, उद्योगशील आणि जलव्यवस्थापनासाठी प्रसिद्ध असलेला समाज आहे. वैदर्भीय मालगुजारी तलावांची बांधणी करून कृषी समृद्धी आणण्यात कोहळी समाजाचा वाटा अतुलनीय आहे.">
-                    Kohli Samaj is a distinguished, hardworking agricultural and water-engineering community primarily
-                    settled across Vidarbha region of Maharashtra and parts of Madhya Pradesh. Renowned historically as
-                    the builders of the famous Malguzari tanks (bhandaras), the community has contributed immensely to
-                    rural prosperity and irrigation engineering.
-                </p>
+    <!-- MAIN WIKIPEDIA LAYOUT CONTAINER -->
+    <main class="container wiki-main-layout">
+        <div class="wiki-layout-grid">
 
-                <h3 style="color:var(--primary-dark); font-size:1.3rem; font-weight:700; margin:1.8rem 0 0.8rem 0;"
-                    data-lang-en="Core Pillars & Objectives" data-lang-mr="प्रमुख ध्येय व उद्दिष्टे">Core Pillars &
-                    Objectives</h3>
-                <ul style="line-height:1.8; padding-left:1.2rem; color:var(--text-main); margin-bottom:1.5rem;">
-                    <li data-lang-en="Preserving indigenous water management and tank building heritage."
-                        data-lang-mr="पारंपरिक जलसंवर्धन व तलाव निर्माणाचा वारसा जपून ठेवणे.">Preserving indigenous
-                        water management and tank building heritage.</li>
-                    <li data-lang-en="Fostering youth education, competitive exam counseling, and financial aid."
-                        data-lang-mr="युवकांचे शिक्षण, स्पर्धा परीक्षा समुपदेशन व आर्थिक मदत.">Fostering youth
-                        education, competitive exam counseling, and financial aid.</li>
-                    <li data-lang-en="Promoting community harmony through annual Vadhu-Var Parichay Melavas."
-                        data-lang-mr="वार्षिक वधू-वर परिचय मेळाव्यांद्वारे सामाजिक सलोखा वाढवणे.">Promoting community
-                        harmony through annual Vadhu-Var Parichay Melavas.</li>
-                    <li data-lang-en="Unifying rural and urban community forums."
-                        data-lang-mr="ग्रामीण व शहरी समाज संघटनांचे एकत्रीकरण.">Unifying rural and urban community
-                        forums.</li>
-                </ul>
-            </div>
+            <!-- WIKIPEDIA LEFT RAIL: TABLE OF CONTENTS -->
+            <aside class="wiki-toc-sidebar" aria-label="Table of Contents">
+                <div class="wiki-toc-title">
+                    <i class="fa-solid fa-list-ol"></i>
+                    <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
+                </div>
+                <nav>
+                    <ul class="wiki-toc-list">
+                        <li class="wiki-toc-item"><a href="#sec-lead" class="wiki-toc-link active" data-lang-en="(Top / Overview)" data-lang-mr="(शीर्ष / विहंगावलोकन)">(Top / Overview)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-geography" class="wiki-toc-link" data-lang-en="1. Geographic Sphere & 518 Settlements" data-lang-mr="१. भौगोलिक विस्तार व ५१८ वस्त्या">1. Geographic Sphere & 518 Settlements</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-water" class="wiki-toc-link" data-lang-en="2. Water Heritage & Indigenous Tank Architecture" data-lang-mr="२. जलसंस्कृती व ऐतिहासिक तलाव निर्मिती">2. Water Heritage & Indigenous Tank Architecture</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-agrarian" class="wiki-toc-link" data-lang-en="3. Agrarian Social Structure & Malguzari Order" data-lang-mr="३. मालगुजारी व्यवस्था व कृषी समाजव्यवस्था">3. Agrarian Social Structure & Malguzari Order</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-family" class="wiki-toc-link" data-lang-en="4. Family Organization: The 2001 Watershed" data-lang-mr="४. कुटुंबव्यवस्था: २००१ चा महत्त्वाचा टप्पा">4. Family Organization: The 2001 Watershed</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-economy" class="wiki-toc-link" data-lang-en="5. Agro-Economy: Rice, Sugarcane & Jaggery" data-lang-mr="५. कृषी अर्थव्यवस्था: भात, ऊस व गुळ निर्मिती">5. Agro-Economy: Rice, Sugarcane & Jaggery</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-vision" class="wiki-toc-link" data-lang-en="6. Contemporary Vision, Education & Reform" data-lang-mr="६. आधुनिक दृष्टीकोन, शिक्षण व सामाजिक सुधारणा">6. Contemporary Vision, Education & Reform</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-ganima" class="wiki-toc-link" data-lang-en="7. Primary Community Reflection: Ganima" data-lang-mr="७. मूळ सामुदायिक चिंतन: गणीमा">7. Primary Community Reflection: Ganima</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-see-also" class="wiki-toc-link" data-lang-en="8. See Also" data-lang-mr="८. हेही पहा">8. See Also</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-references" class="wiki-toc-link" data-lang-en="9. Notes & References" data-lang-mr="९. संदर्भ व नोंदी">9. Notes & References</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-            <!-- Sidebar Card -->
-            <div
-                style="background:white; border-radius:12px; border:1px solid var(--border-color); padding:1.4rem; box-shadow:var(--shadow-sm);">
-                <h3 style="color:var(--primary-dark); font-size:1.15rem; font-weight:800; border-bottom:2px solid var(--accent-gold); padding-bottom:0.5rem; margin-bottom:1rem;"
-                    data-lang-en="Key Districts" data-lang-mr="प्रमुख ५ जिल्हे">Key Districts</h3>
-                <div style="display:flex; flex-direction:column; gap:0.8rem;">
-                    <div style="display:flex; align-items:center; gap:0.8rem;">
-                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
-                            style="width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
-                        <div><strong>Bhandara</strong>
-                            <div style="font-size:0.75rem; color:var(--text-muted);">District of Lakes</div>
-                        </div>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:0.8rem;">
-                        <img src="images/water_lake.jpg"
-                            style="width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
-                        <div><strong>Gondia</strong>
-                            <div style="font-size:0.75rem; color:var(--text-muted);">Rice Bowl & Tank Capital</div>
-                        </div>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:0.8rem;">
-                        <img src="images/history_arch.jpg"
-                            style="width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
-                        <div><strong>Gadchiroli</strong>
-                            <div style="font-size:0.75rem; color:var(--text-muted);">Forest & River Heritage</div>
-                        </div>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:0.8rem;">
-                        <img src="images/culture_tradition.jpg"
-                            style="width:45px; height:45px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
-                        <div><strong>Chandrapur</strong>
-                            <div style="font-size:0.75rem; color:var(--text-muted);">Historic Forts & Dams</div>
+            <!-- WIKIPEDIA ARTICLE BODY -->
+            <article class="wiki-article-body" id="article-content">
+
+                <!-- ARTICLE TITLE & ACTIONS -->
+                <div class="wiki-title-area">
+                    <h1 class="wiki-article-title">
+                        <span data-lang-en="Kohli Community (कोहळी समाज)" data-lang-mr="कोहळी समाज (Kohli Community)">Kohli Community (कोहळी समाज)</span>
+                    </h1>
+                    <div class="wiki-article-subline">
+                        <span data-lang-en="From Wikipedia and community historical archives, the free encyclopedic record" data-lang-mr="मुक्त ज्ञानकोश व सामाजिक ऐतिहासिक दस्तावेजांवरून">From Wikipedia and community historical archives, the free encyclopedic record</span>
+                        <div class="wiki-quick-lang">
+                            <button onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')" class="wiki-quick-lang-btn">
+                                <i class="fa-solid fa-language"></i> <span data-lang-en="मराठीत वाचा" data-lang-mr="Read in English">मराठीत वाचा</span>
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- LEAD SECTION WITH RIGHT-FLOAT INFOBOX -->
+                <div class="wiki-lead-section" id="sec-lead">
+
+                    <!-- RIGHT-FLOAT WIKIPEDIA INFOBOX -->
+                    <aside class="wiki-infobox" aria-label="Community Quick Summary">
+                        <div class="wiki-infobox-title">
+                            <span data-lang-en="Kohli Samaj" data-lang-mr="कोहळी समाज">Kohli Samaj</span>
+                        </div>
+                        <div class="wiki-infobox-subtitle">
+                            <span data-lang-en="Vidarbha Community Overview" data-lang-mr="विदर्भ समाज परिचय">Vidarbha Community Overview</span>
+                        </div>
+                        <div class="wiki-infobox-image-box">
+                            <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Emblem" class="wiki-infobox-img">
+                            <div class="wiki-infobox-caption">
+                                <span data-lang-en="Official Emblem of the Kohli Community" data-lang-mr="कोहळी समाज अधिकृत बोधचिन्ह">Official Emblem of the Kohli Community</span>
+                            </div>
+                        </div>
+                        <table class="wiki-infobox-table">
+                            <tr>
+                                <th><span data-lang-en="Classification" data-lang-mr="प्रवर्ग">Classification</span></th>
+                                <td><span data-lang-en="Agrarian, Tank-Architectural & Malguzari Community" data-lang-mr="कृषी, तलाव स्थापत्य व मालगुजारी समाज">Agrarian, Tank-Architectural & Malguzari Community</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Geographic Sphere" data-lang-mr="भौगोलिक कार्यक्षेत्र">Geographic Sphere</span></th>
+                                <td><span data-lang-en="Eastern Vidarbha & Southern Madhya Pradesh (518 Villages across 5 Districts)" data-lang-mr="पूर्व विदर्भ व दक्षिण मध्य प्रदेश (५ जिल्ह्यांतील ५१८ गावे)">Eastern Vidarbha & Southern Madhya Pradesh (518 Villages across 5 Districts)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Core Districts" data-lang-mr="प्रमुख ५ जिल्हे">Core Districts</span></th>
+                                <td><span data-lang-en="Bhandara, Gondia, Chandrapur, Gadchiroli, Balaghat" data-lang-mr="भंडारा, गोंदिया, चंद्रपूर, गडचिरोली, बालाघाट">Bhandara, Gondia, Chandrapur, Gadchiroli, Balaghat</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Urban Centers" data-lang-mr="शहरी वसाहती">Urban Centers</span></th>
+                                <td><span data-lang-en="Nagpur, Pune, Mumbai" data-lang-mr="नागपूर, पुणे, मुंबई">Nagpur, Pune, Mumbai</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Traditional Occupations" data-lang-mr="पारंपरिक व्यवसाय">Traditional Occupations</span></th>
+                                <td><span data-lang-en="Paddy Farming, Sugarcane & Jaggery, Tank Construction, Agrarian Stewardship" data-lang-mr="भातशेती, ऊस-गूळ उत्पादन, तलाव निर्मिती, मालगुजारी कारभार">Paddy Farming, Sugarcane & Jaggery, Tank Construction, Agrarian Stewardship</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Social Order Role" data-lang-mr="सामाजिक भूमिका">Social Order Role</span></th>
+                                <td><span data-lang-en="Patrons (*poshinde*) of the Bara Balutedar system; Malguzari landholders" data-lang-mr="बारा बलुतेदारांचे पोशिंदे; मालगुजारी ग्रामव्यवस्थापक">Patrons (*poshinde*) of the Bara Balutedar system; Malguzari landholders</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Traditional Deities" data-lang-mr="पारंपरिक दैवते">Traditional Deities</span></th>
+                                <td><span data-lang-en="Kolasur, Tadoba, Rama, Shiva, Bhairava, Maruti, Kholyakholba, Kali Devi, Sat Devi" data-lang-mr="कोलासूर, ताडोबा, राम, शिव, भैरव, मारुती, खोल्याखोळबा, काली देवी, सात देवी">Kolasur, Tadoba, Rama, Shiva, Bhairava, Maruti, Kholyakholba, Kali Devi, Sat Devi</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Key Engineering Works" data-lang-mr="प्रमुख जलनिर्मिती">Key Engineering Works</span></th>
+                                <td><span data-lang-en="Navegaon Bandh, Ambazari Tank (Nagpur), thousands of Malguzari bodis" data-lang-mr="नवेगावबांध, अंबाझरी तलाव (नागपूर), हजारो मालगुजारी बोड्या">Navegaon Bandh, Ambazari Tank (Nagpur), thousands of Malguzari bodis</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Languages" data-lang-mr="भाषा">Languages</span></th>
+                                <td><span data-lang-en="Marathi, Regional Kohali dialect" data-lang-mr="मराठी, प्रादेशिक कोहळी बोली">Marathi, Regional Kohali dialect</span></td>
+                            </tr>
+                        </table>
+                    </aside>
+
+                    <p class="wiki-lead-p">
+                        <span data-lang-en="The <strong>Kohli</strong> (also referenced historically as <em>Kohali</em> / <em>कोहळी</em>) is an ancient, industrious agrarian and water-engineering community primarily settled across eastern Vidarbha in Maharashtra and adjoining tracts of southern Madhya Pradesh<sup>[1]</sup>. Revered across Central India as master architects of expansive irrigation reservoirs and earthen tanks (*bodi* and *bandhara*), the community played a foundational role in converting dense forest tracts of the Wainganga basin into fertile paddy and sugarcane landscapes without relying on state grants<sup>[1]</sup><sup>[2]</sup>." data-lang-mr="<strong>कोहळी समाज</strong> हा पूर्व विदर्भ (महाराष्ट्र) आणि लगतच्या दक्षिण मध्य प्रदेशात शतकानुशतके स्थायिक असलेला एक अत्यंत कष्टाळू, स्वाभिमानी आणि जलव्यवस्थापनासाठी प्रसिद्ध असलेला कृषी समाज आहे<sup>[१]</sup>. वैनगंगा नदीच्या खोऱ्यातील घनदाट अरण्य प्रदेशात शासकीय अनुदानाची वाट न पाहता स्वतःच्या घामाने नवेगावबांधसारखे विशाल तलाव आणि हजारो शेततळी (बोड्या) निर्माण करून भात व उसाची समृद्ध शेती फुलवण्यात कोहळी पूर्वजांचा वाटा ऐतिहासिक आहे<sup>[१]</sup><sup>[२]</sup>.">...</span>
+                    </p>
+                    <p class="wiki-p">
+                        <span data-lang-en="Historically holding <em>Malguzari</em> land rights across the region, Kohli Patils and farming households served as recognized patrons (*poshinde*) of the village agrarian social order and the traditional <em>Bara Balutedar</em> system<sup>[1]</sup><sup>[3]</sup>. In the contemporary era, while preserving their living cultural heritage, community members have achieved distinction in higher education, engineering, civil governance, healthcare, and progressive democratic leadership." data-lang-mr="पूर्व विदर्भातील बहुतांश भागात मालगुजारी कोहळी समाजाकडे असल्याने, समाज ग्रामीण रचनेमध्ये 'बारा बलुतेदारांचे पोशिंदे' म्हणून सन्मानित राहिला आहे<sup>[१]</sup><sup>[३]</sup>. आजच्या आधुनिक युगात आपल्या समृद्ध सांस्कृतिक परंपरांचे जतन करतानाच कोहळी बांधव उच्च शिक्षण, अभियांत्रिकी, प्रशासकीय सेवा, वैद्यकीय क्षेत्र आणि लोकशाही राजकारणात आघाडीवर आहेत.">...</span>
+                    </p>
+                </div>
+
+                <!-- SECTION 1: GEOGRAPHIC SPHERE & 518 SETTLEMENTS -->
+                <section id="sec-geography">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="1. Geographic Sphere & 518 Settlements" data-lang-mr="१. भौगोलिक विस्तार व ५१८ वस्त्या">1. Geographic Sphere & 518 Settlements</span></span>
+                        <a href="#sec-geography" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="According to community documentation, the primary traditional habitat of the Kohli community spans <strong>518 villages</strong> across five contiguous districts in eastern Maharashtra and southern Madhya Pradesh<sup>[1]</sup>:" data-lang-mr="समाज दस्तावेजानुसार, कोहळी समाजाचे मुख्य पारंपरिक वास्तव्य पूर्व महाराष्ट्र आणि दक्षिण मध्य प्रदेशातील पाच प्रमुख जिल्ह्यांमधील <strong>५१८ गावांमध्ये</strong> विस्तारलेले आहे<sup>[१]</sup>:">...</span>
+                    </p>
+
+                    <div class="wiki-deity-grid">
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Bhandara District (भंडारा)" data-lang-mr="भंडारा जिल्हा">Bhandara District (भंडारा)</div>
+                            <div class="wiki-deity-desc" data-lang-en="The historic lake heartland; major settlements across Sakoli, Pauni, and Lakhandur talukas known for extensive Malguzari tank systems." data-lang-mr="तलावांचा ऐतिहासिक जिल्हा; साकोली, पवनी, लाखांदूर परिसरातील मालगुजारी व कृषी वसाहती.">The historic lake heartland...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Gondia District (गोंदिया)" data-lang-mr="गोंदिया जिल्हा">Gondia District (गोंदिया)</div>
+                            <div class="wiki-deity-desc" data-lang-en="The cradle of indigenous water architecture; encompassing the monumental Navegaon Bandh reservoir built by Kolu Patel Kohli, Arjuni Morgaon, and Sadak Arjuni." data-lang-mr="जलस्थापत्याचा केंद्रबिंदू; कोलू पटेल कोहळी यांनी बांधलेला भव्य नवेगावबांध, अर्जुनी मोरगाव व सडक अर्जुनी परिसर.">The cradle of indigenous water architecture...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Chandrapur District (चंद्रपूर)" data-lang-mr="चंद्रपूर जिल्हा">Chandrapur District (चंद्रपूर)</div>
+                            <div class="wiki-deity-desc" data-lang-en="Southern domain spanning Nagbhid, Bramhapuri, Chimur, and Sindewahi talukas, featuring historic tanks and long-standing Malguzari seats." data-lang-mr="नागभीड, ब्रम्हपुरी, चिमूर आणि सिंदेवाही परिसरातील ऐतिहासिक मालगुजारी गावे व जलसाठे.">Southern domain...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Gadchiroli District (गडचिरोली)" data-lang-mr="गडचिरोली जिल्हा">Gadchiroli District (गडचिरोली)</div>
+                            <div class="wiki-deity-desc" data-lang-en="Forest and river basins of Armori, Wadsa (Desaiganj), and Kurkheda, maintaining harmonious cooperative ties with indigenous tribal communities." data-lang-mr="आरमोरी, वडसा (देसाईगंज) व कुरखेडा पट्ट्यातील वसाहती; स्थानिक आदिवासी बांधवांशी सलोख्याचे सहकार्य.">Forest and river basins...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Balaghat District (बालाघाट)" data-lang-mr="बालाघाट जिल्हा (म.प्र.)">Balaghat District (बालाघाट)</div>
+                            <div class="wiki-deity-desc" data-lang-en="Southern Madhya Pradesh belt sharing seamless linguistic, matrimonial, and agrarian linkages with eastern Vidarbha." data-lang-mr="दक्षिण मध्य प्रदेशातील सीमावर्ती भाग; विदर्भाशी अखंड कौटुंबिक, सांस्कृतिक व कृषी नाते.">Southern Madhya Pradesh belt...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Urban Diaspora (नागपूर, पुणे, मुंबई)" data-lang-mr="शहरी वसाहती (नागपूर, पुणे, मुंबई)">Urban Diaspora (नागपूर, पुणे, मुंबई)</div>
+                            <div class="wiki-deity-desc" data-lang-en="Large professional and educated diaspora settled across major cities for higher education, administration, and corporate enterprise<sup>[1]</sup>." data-lang-mr="शिक्षण, शासकीय नोकऱ्या आणि व्यवसायानिमित्त महानगरांमध्ये स्थायिक झालेला उच्चशिक्षित समाजबांधव वर्ग<sup>[१]</sup>.">Large professional and educated diaspora...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: WATER HERITAGE & INDIGENOUS TANK ARCHITECTURE -->
+                <section id="sec-water">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="2. Water Heritage & Indigenous Tank Architecture" data-lang-mr="२. जलसंस्कृती व ऐतिहासिक तलाव निर्मिती">2. Water Heritage & Indigenous Tank Architecture</span></span>
+                        <a href="#sec-water" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="The defining historical achievement of the Kohli ancestors was their mastery of watershed geography and earthen embankment engineering. Community records emphasize that the ancestors undertook extensive water conservation campaigns (*Paani Adva, Paani Jirva*) relying entirely on communal labor and sweat, without seeking governmental grants<sup>[1]</sup>:" data-lang-mr="कोहळी पूर्वजांचे सर्वात मोठे ऐतिहासिक योगदान म्हणजे जलसंधारण व तलाव निर्मितीचे अजोड ज्ञान होय. समाज नोंदीनुसार, कोणत्याही शासकीय मदतीवर अवलंबून न राहता पूर्वजांनी अंगाचा घाम गाळून 'पाणी अडवा, पाणी जिरवा' मोहीम प्रत्यक्ष राबवली<sup>[१]</sup>:">...</span>
+                    </p>
+
+                    <div class="wiki-factbox">
+                        <div class="wiki-factbox-title">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span data-lang-en="Documented Engineering Feats (Source Line 1)" data-lang-mr="ऐतिहासिक जलस्थापत्य नोंदी (मूळ नोंद: ओळ १)">Documented Engineering Feats (Source Line 1)</span>
+                        </div>
+                        <p class="wiki-p" style="margin-bottom:0;" data-lang-en="&ldquo;Our Kohli ancestors, through sheer physical toil and without accepting any government financial grants, spearheaded indigenous water harvesting campaigns. They constructed grand reservoirs like Navegaon Bandh, and historical records confirm they also built the renowned Ambazari Lake in Nagpur. Their main livelihood was agriculture, centered around livestock stewardship and tank irrigation.&rdquo;" data-lang-mr="&ldquo;ज्या कोहळी पूर्वजांनी अंगाची लाही-लाही करून, अंगाचे घाम गाळून त्यावेळी कोणत्याही प्रकारचे शासकीय अनुदानाची मदत न घेता पाणी अडवा पाणी जिरवा मोहीम राबवली. नवेगावबांध सारखे मोठे-मोठे तलाव बांधले; नागपूरचे अंबाझरी तलाव सुद्धा बांधल्याचा इतिहास आहे. कोहळी समाजाचा मुख्य व्यवसाय शेती व पशुधन संवर्धन हाच राहिला आहे.&rdquo;">
+                            &ldquo;Our Kohli ancestors, through sheer physical toil and without accepting any government financial grants...&rdquo;
+                        </p>
+                    </div>
+
+                    <p class="wiki-p">
+                        <span data-lang-en="These reservoirs were engineered with stone-faced earthen bunds, gravity-fed irrigation channels, and stone sluice-gates (*khind* and *thana*), sustaining multi-season paddy agriculture across Central India for over three centuries<sup>[2]</sup>." data-lang-mr="दगडी बांधणी, पाषाणी सांडवे आणि गुरुत्वाकर्षणावर आधारित कालव्यांच्या साहाय्याने उभारलेली ही जलव्यवस्था आजही तीन शतकांनंतरही पूर्व विदर्भातील शेतीला पाणी पुरवत आहे<sup>[२]</sup>.">...</span>
+                    </p>
+                </section>
+
+                <!-- SECTION 3: AGRARIAN SOCIAL STRUCTURE & MALGUZARI ORDER -->
+                <section id="sec-agrarian">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="3. Agrarian Social Structure & Malguzari Order" data-lang-mr="३. मालगुजारी व्यवस्था व कृषी समाजव्यवस्था">3. Agrarian Social Structure & Malguzari Order</span></span>
+                        <a href="#sec-agrarian" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Because Malguzari across eastern Vidarbha was widely held by the Kohli community, Kohli village Patels and agrarian households maintained close, paternal relationships with the entire village social fabric, functioning as recognized patrons (*poshinde*) of the traditional Bara Balutedar system<sup>[1]</sup><sup>[3]</sup>:" data-lang-mr="पूर्व विदर्भातील बहुतांश भागात मालगुजारी कोहळी समाजाकडे असल्याने कोहळी पाटील आणि शेतकरी कुटुंबांकडे 'बारा बलुतेदारांचे पोशिंदे' म्हणून पाहिले जात असे. या सर्व घटकांशी त्यांचे जिव्हाळ्याचे कौटुंबिक संबंध होते<sup>[१]</sup><sup>[३]</sup>:">...</span>
+                    </p>
+
+                    <ul class="wiki-list">
+                        <li>
+                            <strong data-lang-en="The Patil's Wada & Dahaljit (डहलजीत) Tradition:" data-lang-mr="पाटलांचा वाडा आणि डहलजीत परंपरा:">The Patil's Wada & Dahaljit (डहलजीत) Tradition:</strong>
+                            <span data-lang-en="According to community recollections, village politics and affairs traditionally centered around the Kohli Patil's homestead (*wada*). When the Patil stood in the *dahaljit* (the outer portico of the house), passing villagers respectfully greeted him with 'Patil Saheb' (Source Line 1)." data-lang-mr="सामुदायिक आठवणींनुसार, गावातील कारभार कोहळी पाटलांच्या वाड्यातून चालत असे. कोहळी पाटील घराच्या 'डहलजीत' (ओसरीत) उभा जरी असला, तरी येणारे-जाणारे गावकरी आदराने 'पाटील साहेब' म्हणून नमस्कार घालत असत (मूळ नोंद ओळ १).">According to community recollections...</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Bara Balutedar & The Bhatyavar Remuneration System:" data-lang-mr="बारा बलुतेदार आणि भात्यावर मोबदला पद्धत:">Bara Balutedar & The Bhatyavar Remuneration System:</strong>
+                            <span data-lang-en="Rather than monetary transactions, village artisans—including blacksmiths (<em>khati</em>), carpenters (<em>sutar</em>), barbers (<em>navhi</em>), and leatherworkers (<em>chambhar</em>)—received fixed annual grain shares (<em>bhatyavar</em> / भात्यावर) after the harvest, ensuring equitable mutual subsistence (Source Line 1)." data-lang-mr="पैशांच्या व्यवहारांऐवजी भातकापणीच्या वेळी धान्याचे ठराविक माप ('भात्यावर') देऊन सुतार, खाती (लोहार), नाव्ही आणि चांभार यांना वर्षभराचा मोबदला दिला जात असे (मूळ नोंद ओळ १).">Rather than monetary transactions...</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Livestock Care & Farm Coordination:" data-lang-mr="पशुधन संवर्धन व शेती सहकार्य:">Livestock Care & Farm Coordination:</strong>
+                            <span data-lang-en="The Patil's wada maintained extensive herds of cows and working buffaloes, coordinating with plowing and field assistants across communities (Gond, Gowari, Dhiwar) in a spirit of mutual domestic respect (Source Line 1)." data-lang-mr="पाटलांच्या वाड्यात गाई-म्हशींचे संवर्धन केले जाई, तसेच नांगरणीसाठी चाकरमानी माणसे (गोंड, गोवारी, ढीवर) यांच्याशी जिव्हाळ्याचे कौटुंबिक सहकार्य होते (मूळ नोंद ओळ १).">The Patil's wada maintained extensive herds...</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 4: FAMILY ORGANIZATION: THE 2001 WATERSHED -->
+                <section id="sec-family">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="4. Family Organization: The 2001 Watershed" data-lang-mr="४. कुटुंबव्यवस्था: २००१ चा महत्त्वाचा टप्पा">4. Family Organization: The 2001 Watershed</span></span>
+                        <a href="#sec-family" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Community records identify the turn of the millennium as a major transition point in household governance and social organization<sup>[1]</sup>:" data-lang-mr="समाज दस्तावेजानुसार, सहस्रकाच्या सुरुवातीस (इ.स. २००१) कुटुंबव्यवस्था आणि सामाजिक रचनेमध्ये महत्त्वाचा बदल घडून आला<sup>[१]</sup>:">...</span>
+                    </p>
+
+                    <div class="wiki-highlight-card">
+                        <div class="wiki-highlight-header">
+                            <i class="fa-solid fa-people-roof"></i>
+                            <strong data-lang-en="The Joint Family System Prior to 2001 (Source Lines 45–49)" data-lang-mr="२००१ पूर्वीची एकत्र कुटुंब पद्धती (मूळ नोंद: ओळ ४५-४९)">The Joint Family System Prior to 2001 (Source Lines 45–49)</strong>
+                        </div>
+                        <p class="wiki-p" data-lang-en="Up until 2001, the joint family system (<em>ekatra kutumb paddhati</em>) predominated across Kohli settlements. Multiple generations, siblings, and extended relatives resided together under one roof, collaboratively sharing agricultural labor, cattle management, and household duties. This functioned as an exemplary model of joint socio-economic management." data-lang-mr="इ.स. २००१ पर्यंत कोहळी समाजात मोठ्या प्रमाणात एकत्र कुटुंब पद्धती होती. अनेक पिढ्या, नातलग, व भावंडं एकाच घरात शेती, गुरांचे पालन, आणि घरकाम यामध्ये एकत्र सहभाग घेत असत. हे संयुक्त आर्थिक व सामाजिक व्यवस्थापनाचे आदर्श उदाहरण होते.">...</p>
+                    </div>
+
+                    <div class="wiki-highlight-card">
+                        <div class="wiki-highlight-header">
+                            <i class="fa-solid fa-building"></i>
+                            <strong data-lang-en="Post-2001 Modernization & Preserved Solidarity" data-lang-mr="२००१ नंतरचे आधुनिकीकरण व निरंतर एकोपा">Post-2001 Modernization & Preserved Solidarity</strong>
+                        </div>
+                        <p class="wiki-p" data-lang-en="Following 2001, increased formal education, administrative employment, and urban migration led to the rise of nuclear family units. Despite this structural dispersal, community cohesion remains vibrant through mutual kinship visits, collective festival homecomings, and matrimonial conventions." data-lang-mr="२००१ नंतर शहरीकरण, उच्च शिक्षण व बदलत्या जीवनशैलीमुळे विभक्त कुटुंब पद्धती रुजत गेली. तरीसुद्धा आप्तस्वकीय एकोपा, सण-उत्सवांना गावी एकत्र येणे आणि वधू-वर मेळाव्यांद्वारे समूहभावना आजही तितकीच जिवंत आहे.">...</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: AGRO-ECONOMY: RICE, SUGARCANE & JAGGERY -->
+                <section id="sec-economy">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="5. Agro-Economy: Rice, Sugarcane & Jaggery" data-lang-mr="५. कृषी अर्थव्यवस्था: भात, ऊस व गुळ निर्मिती">5. Agro-Economy: Rice, Sugarcane & Jaggery</span></span>
+                        <a href="#sec-economy" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="The economic resilience of the community has historically been anchored in intensive cultivation of paddy and sugarcane, utilizing water from community-managed tanks (Source Lines 53, 57):" data-lang-mr="कोहळी समाजाची कृषी संपन्नता ही तलावांच्या पाण्यावर पिकणारा दर्जेदार भात, उसाची शेती आणि गुळ निर्मिती यांवर आधारलेली राहिली आहे (मूळ नोंद ओळ ५३, ५७):">...</span>
+                    </p>
+
+                    <div class="wiki-deity-grid">
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Wet Rice Cultivation (धान / तांदूळ)" data-lang-mr="भातशेती (धान / तांदूळ)">Wet Rice Cultivation (धान / तांदूळ)</div>
+                            <div class="wiki-deity-desc" data-lang-en="Cultivation of indigenous aromatic paddy varieties such as Luchai and Chinnor in tank-irrigated flatlands across Bhandara, Gondia, and Chandrapur." data-lang-mr="तलावांच्या भरवशावर पिकविला जाणारा लुचाई, चिन्नोर यांसारखा सुवासिक देशी भात; पूर्व विदर्भाची प्रमुख ओळख.">Wet Rice Cultivation...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Sugarcane & Jaggery Production (ऊस व गूळ)" data-lang-mr="ऊस शेती व गुळ उत्पादन">Sugarcane & Jaggery Production (ऊस व गूळ)</div>
+                            <div class="wiki-deity-desc" data-lang-en="Operation of traditional bullock-powered crushers (<em>charak</em>) and boiling pans, producing golden jaggery celebrated across regional markets." data-lang-mr="पारंपरिक बैलांचे चरक आणि गुऱ्हाळांद्वारे पिवळाधमक गूळ तयार करण्याची ऐतिहासिक परंपरा.">Sugarcane & Jaggery Production...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: CONTEMPORARY VISION, EDUCATION & REFORM -->
+                <section id="sec-vision">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="6. Contemporary Vision, Education & Reform" data-lang-mr="६. आधुनिक दृष्टीकोन, शिक्षण व सामाजिक सुधारणा">6. Contemporary Vision, Education & Reform</span></span>
+                        <a href="#sec-vision" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Today, the Kohli community is actively embracing higher education, competitive examinations, technology, and modern enterprise while preserving its rooted cultural identity (Source Line 55):" data-lang-mr="आज कोहळी समाज स्वतःच्या सांस्कृतिक मूल्यांशी नाळ जोडून ठेवत उच्च शिक्षण, स्पर्धा परीक्षा, तंत्रज्ञान आणि आधुनिक उद्योगांकडे वेगाने वाटचाल करीत आहे (मूळ नोंद ओळ ५५):">...</span>
+                    </p>
+
+                    <ul class="wiki-list">
+                        <li>
+                            <strong data-lang-en="Educational Upliftment & Youth Guidance:" data-lang-mr="शैक्षणिक विकास व युवा मार्गदर्शन:">Educational Upliftment & Youth Guidance:</strong>
+                            <span data-lang-en="Community initiatives actively mentor rural youth for competitive civil services (UPSC/MPSC), engineering, medicine, and administrative careers." data-lang-mr="ग्रामीण व होतकरू विद्यार्थ्यांना स्पर्धा परीक्षा, अभियांत्रिकी, वैद्यकीय आणि प्रशासकीय सेवांसाठी मार्गदर्शन.">Educational Upliftment...</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Dowry-Free & Mass Weddings:" data-lang-mr="हुंडाबंदी व सामूहिक विवाह चळवळ:">Dowry-Free & Mass Weddings:</strong>
+                            <span data-lang-en="Preserving the traditional ethos of simplicity, community organizations organize mass matrimonial conferences (<em>Vadhu-Var Melawa</em>) and advocate dowry-free simplicity." data-lang-mr="अनावश्यक खर्चाला फाटा देऊन साधेपणाने सामूहिक विवाह (वधू-वर मेळावे) आयोजित करणे व हुंडाविरोधी प्रबोधन करणे.">Dowry-Free & Mass Weddings...</span>
+                        </li>
+                        <li>
+                            <strong data-lang-en="Socio-Political Consciousness:" data-lang-mr="सामाजिक व राजकीय जागृती:">Socio-Political Consciousness:</strong>
+                            <span data-lang-en="Guided by the community principle of <em>'Pratham Samaj... Nantar Paksha'</em> (First Community, Then Party), elders and youth forums advocate united representation for rural development (Source Line 114, 160)." data-lang-mr="<em>'प्रथम समाज... नंतर पक्ष'</em> या तत्त्वावर आधारित सामाजिक एकात्मता आणि ग्रामीण भागाच्या विकासासाठी राजकीय जागृती (मूळ नोंद ओळ ११४, १६०).">Socio-Political Consciousness...</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- SECTION 7: PRIMARY COMMUNITY REFLECTION: GANIMA -->
+                <section id="sec-ganima">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="7. Primary Community Reflection: Ganima" data-lang-mr="७. मूळ सामुदायिक चिंतन: गणीमा">7. Primary Community Reflection: Ganima</span></span>
+                        <a href="#sec-ganima" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <div class="wiki-source-quote">
+                        <p data-lang-en="&ldquo;What is the true dignity (ganima) of the Kohli community? It is that our ancestors, through sheer physical toil and the sweat of their brows, without accepting any government financial aid, implemented the mission of water harvesting. They built grand reservoirs like Navegaon Bandh and Ambazari. Though the Kohli Patil in those days may have lacked formal schooling, he was thoughtful, prudent, dignified, and cultured—bringing great honor to the Kohli community. That living experience remains vivid in the hearts of the third generation even today.&rdquo;" data-lang-mr="&ldquo;काय आहे कोहळी समाजाची गणीमा? ज्या कोहळी पूर्वजांनी अंगाची लाही-लाही करून, अंगाचे घाम गाळून त्यावेळी कोणत्याही प्रकारचे शासकीय अनुदानाची मदत न घेता पाणी अडवा पाणी जिरवा मोहीम राबविण्यात आली. नवेगावबांध सारखी मोठी-मोठी तलाव बांधले, नागपूरचे अंबाझरी तलाव सुद्धा बांधल्याचा इतिहास आहे. कोहळी पाटील त्या काळी अशिक्षित असला तरी विचारी, हिशोबी आणि सुसंस्कृत होता, ज्यामुळे समाजाचा नावलौकिक होता. त्याचा अनुभव आज तिसऱ्या पिढीतील लोकांना आजही आहे.&rdquo;">
+                            &ldquo;What is the true dignity (ganima) of the Kohli community? It is that our ancestors, through sheer physical toil and the sweat of their brows, without accepting any government financial aid...&rdquo;
+                        </p>
+                        <div class="wiki-source-author">
+                            <span data-lang-en="— Community Historical Reflection (Source Archive: Line 1)" data-lang-mr="— सामुदायिक ऐतिहासिक चिंतन (मूळ संदर्भ: ओळ १)">— Community Historical Reflection (Source Archive: Line 1)</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 8: SEE ALSO -->
+                <section id="sec-see-also">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="8. See Also" data-lang-mr="८. हेही पहा">8. See Also</span></span>
+                        <a href="#sec-see-also" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <div class="wiki-see-also-grid">
+                        <a href="history.html" class="wiki-see-card">
+                            <i class="fa-solid fa-landmark"></i>
+                            <div>
+                                <strong data-lang-en="History & Origins" data-lang-mr="इतिहास व मूळ">History & Origins</strong>
+                                <p data-lang-en="Origins, Gond kingdom alliance, and Wainganga migrations." data-lang-mr="गोंडकालीन इतिहास व वैनगंगा खोऱ्यातील वसाहती.">Origins, Gond kingdom...</p>
+                            </div>
+                        </a>
+                        <a href="water-heritage.html" class="wiki-see-card">
+                            <i class="fa-solid fa-droplet"></i>
+                            <div>
+                                <strong data-lang-en="Water Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Heritage</strong>
+                                <p data-lang-en="Indigenous tank engineering, Navegaon Bandh, and Malguzari bodis." data-lang-mr="तलाव स्थापत्य, नवेगावबांध व मालगुजारी सिंचन.">Indigenous tank engineering...</p>
+                            </div>
+                        </a>
+                        <a href="culture.html" class="wiki-see-card">
+                            <i class="fa-solid fa-masks-theater"></i>
+                            <div>
+                                <strong data-lang-en="Culture & Living Traditions" data-lang-mr="संस्कृती व परंपरा">Culture & Living Traditions</strong>
+                                <p data-lang-en="Traditional weddings, Dandar folk theatre, and sacred deities." data-lang-mr="पारंपरिक विवाह, दंडार लोकनाट्य व कुलदैवते.">Traditional weddings...</p>
+                            </div>
+                        </a>
+                        <a href="achievements.html" class="wiki-see-card">
+                            <i class="fa-solid fa-trophy"></i>
+                            <div>
+                                <strong data-lang-en="Public Leadership & Achievements" data-lang-mr="लोकनेते व उपलब्धी">Public Leadership & Achievements</strong>
+                                <p data-lang-en="Legislative representatives, civic administrators, and scholars." data-lang-mr="माजी आमदार, समाजसुधारक व इतिहास संशोधक.">Legislative representatives...</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- SECTION 9: NOTES & REFERENCES -->
+                <section id="sec-references">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="9. Notes & References" data-lang-mr="९. संदर्भ व नोंदी">9. Notes & References</span></span>
+                        <a href="#sec-references" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <ol class="wiki-references-list">
+                        <li id="cite_note-1">
+                            <span data-lang-en="<strong>Community Historical Documentation:</strong> <em>'Kohli Samajachi Ganima va Samajik Sthan'</em>; verified community documentation (Lines 1, 31, 37, 47–57, 126) recording 518 villages across 5 districts, Navegaon Bandh and Ambazari water architecture, Patilki dahaljit traditions, and the 2001 joint-family transition." data-lang-mr="<strong>सामुदायिक ऐतिहासिक दस्तऐवज:</strong> <em>'कोहळी समाजाची गणीमा व सामाजिक स्थान'</em>; मूळ समाज नोंद (ओळ १, ३१, ३७, ४७-५७, १२६), ५ जिल्ह्यांतील ५१८ गावे, नवेगावबांध व अंबाझरी तलाव निर्मिती, डहलजीत परंपरा आणि २००१ ची कुटुंबव्यवस्था."><strong>Community Historical Documentation:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-2">
+                            <span data-lang-en="<strong>Historical Monograph:</strong> Ramdas Borkar, <em>'Kohli Samajacha Itihas, Sheti va Sanskrutik Parampara'</em>; independent historiographical survey documenting tank architecture, agriculture, and village society in eastern Vidarbha." data-lang-mr="<strong>ऐतिहासिक ग्रंथ:</strong> रामदास बोरकर, <em>'कोहळी समाजाचा इतिहास, शेती व सांस्कृतिक परंपरा'</em>; पूर्व विदर्भातील कोहळी समाजाचा कृषी, जलस्थापत्य व सामाजिक इतिहास मांडणारा संशोधन ग्रंथ."><strong>Historical Monograph:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-3">
+                            <span data-lang-en="<strong>Central Provinces District Gazetteers:</strong> <em>Bhandara District (1908)</em> and <em>Chanda District (1909)</em>, edited by R. V. Russell; recording the Kohli community's traditional Malguzari landholding, tank-irrigated sugarcane, and village social leadership." data-lang-mr="<strong>सेंट्रल प्रॉव्हिन्सेस डिस्ट्रिक्ट गॅझेटियर्स:</strong> <em>भंडारा जिल्हा (१९०८)</em> आणि <em>चांदा जिल्हा (१९०९)</em>; संपादन: आर. व्ही. रसेल; कोहळी समाजाची मालगुजारी, तलाव सिंचन आणि कृषी नेतृत्वाच्या शासकीय नोंदी."><strong>Central Provinces District Gazetteers:</strong> ...</span>
+                        </li>
+                    </ol>
+
+                    <div class="wiki-categories-box">
+                        <span class="wiki-cat-label" data-lang-en="Categories:" data-lang-mr="वर्ग:">Categories:</span>
+                        <a href="about.html" class="wiki-cat-link" data-lang-en="Agrarian Communities of Maharashtra" data-lang-mr="महाराष्ट्रातील शेतकरी समाज">Agrarian Communities of Maharashtra</a> |
+                        <a href="about.html" class="wiki-cat-link" data-lang-en="Kohli Samaj Overview" data-lang-mr="कोहळी समाज परिचय">Kohli Samaj Overview</a> |
+                        <a href="water-heritage.html" class="wiki-cat-link" data-lang-en="Traditional Water Engineers" data-lang-mr="पारंपरिक जलस्थापत्यकार">Traditional Water Engineers</a> |
+                        <a href="history.html" class="wiki-cat-link" data-lang-en="Malguzari Historical Records" data-lang-mr="मालगुजारी ऐतिहासिक नोंदी">Malguzari Historical Records</a>
+                    </div>
+                </section>
+
+            </article>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
             <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
-            <div>Built by Community Volunteers</div>
+            <div><span data-lang-en="Built by Community Volunteers" data-lang-mr="समाज स्वयंसेवकांनी बनवले">Built by Community Volunteers</span></div>
         </div>
     </footer>
+
+    <!-- WIKIPEDIA INTERACTIVE TOC SCROLL-SPY SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.wiki-toc-link');
+            const sections = document.querySelectorAll('article.wiki-article-body section, #sec-lead');
+
+            function highlightToc() {
+                let scrollPos = window.scrollY + 120;
+                sections.forEach(function(section) {
+                    if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                        const currentId = section.getAttribute('id');
+                        tocLinks.forEach(function(link) {
+                            if (link.getAttribute('href') === '#' + currentId) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightToc);
+            highlightToc();
+        });
+    </script>
+
     <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/nav.js"></script>
 </body>
-
 </html>
