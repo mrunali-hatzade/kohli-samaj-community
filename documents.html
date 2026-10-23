@@ -4,98 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historical Documents & Gazetteers | Kohli Samaj Official Portal</title>
-    <meta name="description" content="Archival British settlement reports, gazetteers, census records, and research publications documenting the Kohli Samaj community's heritage as master water engineers and Malguzars.">
+    <meta name="description" content="Archival British settlement reports, gazetteers, census records, and research publications documenting the Kohli Samaj community's heritage.">
+    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main CSS (Includes Centralized Vector 2022 Styles) -->
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* ── Document Archive Page Styles ── */
-        .doc-archive-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a5c3a 60%, #0a2e1f 100%);
-            padding: 3.5rem 0 2.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .doc-archive-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        .doc-hero-inner {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        .doc-hero-icon-wrap {
-            flex-shrink: 0;
-            width: 80px;
-            height: 80px;
-            background: rgba(245, 158, 11, 0.15);
-            border: 2px solid rgba(245, 158, 11, 0.4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--accent-gold);
-        }
-        .doc-hero-text h1 {
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-        .doc-hero-text p {
-            color: rgba(255,255,255,0.75);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Stats bar */
-        .doc-stats-bar {
-            background: white;
-            border-bottom: 2px solid var(--border-color);
-            padding: 1.2rem 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-        .doc-stats-inner {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .doc-stat-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-        .doc-stat-icon {
-            width: 38px;
-            height: 38px;
-            background: var(--primary-light);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-dark);
-            font-size: 0.85rem;
-        }
-        .doc-stat-label { font-size: 0.75rem; color: var(--text-muted); }
-        .doc-stat-value { font-size: 1.1rem; font-weight: 800; color: var(--primary-dark); }
-
-        /* Filter bar */
+        /* Document Cards & Filter Specific Enhancements */
         .doc-filter-bar {
-            background: #f8faf9;
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 40;
+            background: var(--wiki-bg-subtle);
+            border: 1px solid var(--wiki-border);
+            border-radius: 6px;
+            padding: 0.8rem 1rem;
+            margin: 1.2rem 0 1.8rem 0;
         }
         .filter-inner {
             display: flex;
@@ -104,21 +28,21 @@
             align-items: center;
         }
         .filter-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--wiki-text-dark);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.5px;
             margin-right: 0.4rem;
         }
         .filter-btn {
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            border: 1.5px solid var(--border-color);
+            padding: 0.35rem 0.85rem;
+            border-radius: 4px;
+            border: 1px solid var(--wiki-border);
             background: white;
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            font-weight: 500;
+            color: var(--wiki-text-muted);
+            font-size: 0.84rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
             font-family: inherit;
@@ -128,43 +52,41 @@
             color: white;
             border-color: var(--primary-dark);
         }
-
-        /* Document cards grid */
         .documents-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 1.5rem;
-            padding: 2.5rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.4rem;
+            margin: 1.5rem 0;
         }
         .doc-card {
             background: white;
-            border-radius: 14px;
-            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            border: 1px solid var(--wiki-border);
             overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-            transition: box-shadow 0.25s, transform 0.25s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
+            transition: box-shadow 0.2s, transform 0.2s;
         }
         .doc-card:hover {
-            box-shadow: 0 8px 32px rgba(14,62,41,0.12);
-            transform: translateY(-3px);
+            box-shadow: 0 4px 14px rgba(14,62,41,0.08);
+            border-color: var(--primary-dark);
         }
         .doc-card-header {
-            padding: 1.2rem 1.4rem 1rem;
-            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid var(--wiki-light-border);
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             align-items: flex-start;
         }
         .doc-icon-box {
-            width: 48px;
-            height: 48px;
-            border-radius: 10px;
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: white;
             flex-shrink: 0;
         }
@@ -174,132 +96,111 @@
         }
         .doc-year-badge {
             display: inline-block;
-            padding: 0.2rem 0.6rem;
-            border-radius: 6px;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
             font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 0.06em;
-            background: var(--primary-light);
+            background: #fdfaf2;
+            border: 1px solid var(--accent-gold);
             color: var(--primary-dark);
-            margin-bottom: 0.4rem;
         }
         .doc-category-badge {
             display: inline-block;
             padding: 0.15rem 0.5rem;
-            border-radius: 6px;
-            font-size: 0.68rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
             font-weight: 600;
-            letter-spacing: 0.04em;
             text-transform: uppercase;
-            margin-left: 0.4rem;
+            margin-left: 0.3rem;
         }
         .cat-gazetteer { background: #fef3c7; color: #92400e; }
         .cat-settlement { background: #d1fae5; color: #065f46; }
         .cat-census { background: #dbeafe; color: #1e40af; }
         .cat-research { background: #ede9fe; color: #5b21b6; }
         .doc-title {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--primary-dark);
             line-height: 1.35;
             margin-top: 0.3rem;
         }
         .doc-card-body {
-            padding: 1rem 1.4rem;
+            padding: 1rem 1.2rem;
             flex: 1;
         }
         .doc-meta-row {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.8rem;
+            color: var(--wiki-text-muted);
+        }
+        .doc-meta-item i { color: var(--accent-gold); margin-right: 0.3rem; }
+        .doc-description {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--wiki-text-dark);
             margin-bottom: 0.8rem;
         }
-        .doc-meta-item {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        .doc-meta-item i { color: var(--accent-gold); width: 12px; }
-        .doc-description {
-            font-size: 0.83rem;
-            color: var(--text-body);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
         .doc-quote-block {
-            background: linear-gradient(135deg, #f0fdf4, #fefce8);
+            background: var(--wiki-bg-subtle);
             border-left: 3px solid var(--accent-gold);
-            border-radius: 0 8px 8px 0;
-            padding: 0.75rem 1rem;
-            margin-bottom: 1rem;
+            border-radius: 0 4px 4px 0;
+            padding: 0.7rem 0.9rem;
+            margin-bottom: 0.8rem;
         }
         .doc-quote-block p {
-            font-size: 0.8rem;
-            color: #374151;
-            line-height: 1.55;
+            font-size: 0.82rem;
+            color: var(--wiki-text-dark);
+            line-height: 1.5;
             font-style: italic;
+            margin: 0;
         }
         .doc-quote-block .quote-label {
             font-size: 0.7rem;
             color: var(--accent-gold);
             font-weight: 700;
-            font-style: normal;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
         .doc-card-footer {
-            padding: 0.9rem 1.4rem;
-            border-top: 1px solid var(--border-color);
-            background: #f8faf9;
+            padding: 0.8rem 1.2rem;
+            background: #fafafa;
+            border-top: 1px solid var(--wiki-light-border);
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
         }
         .doc-avail-badge {
-            font-size: 0.75rem;
+            font-size: 0.76rem;
             font-weight: 600;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.3rem;
         }
-        .avail-yes { color: #059669; }
-        .avail-no { color: var(--text-muted); }
+        .avail-yes { color: #166534; }
+        .avail-no { color: #854d0e; }
         .btn-view-doc {
-            padding: 0.4rem 1rem;
-            background: var(--primary-dark);
-            color: white;
-            border: none;
-            border-radius: 7px;
-            font-size: 0.78rem;
+            background: var(--wiki-bg-subtle);
+            border: 1px solid var(--wiki-border);
+            border-radius: 4px;
+            padding: 0.3rem 0.7rem;
+            font-size: 0.8rem;
             font-weight: 600;
+            color: var(--wiki-link);
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            transition: background 0.2s;
-            text-decoration: none;
+            transition: all 0.2s;
         }
-        .btn-view-doc:hover { background: #0a2a1c; }
-        .btn-view-doc.disabled {
-            background: var(--border-color);
-            color: var(--text-muted);
-            cursor: not-allowed;
+        .btn-view-doc:hover {
+            background: #eaf3ff;
+            border-color: var(--wiki-link);
         }
-        /* no-results */
         .no-docs-msg {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-muted);
             display: none;
-        }
-        .no-docs-msg i { font-size: 3rem; margin-bottom: 1rem; color: var(--border-color); }
-
-        @media (max-width: 600px) {
-            .documents-grid { grid-template-columns: 1fr; }
-            .doc-stats-inner { gap: 1rem; }
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--wiki-text-muted);
         }
     </style>
 </head>
@@ -313,7 +214,7 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
                 </span>
-                
+
                 <!-- Language Switcher -->
                 <div class="utility-item">
                     <button id="btnLangEn" class="lang-btn active">English</button>
@@ -342,7 +243,7 @@
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
                 </span>
-                
+
                 <!-- Search Box -->
                 <form id="topSearchForm" class="top-search-form">
                     <input type="text" id="searchInput" placeholder="Search portal..." data-lang-en-placeholder="Search portal..." data-lang-mr-placeholder="शोधा...">
@@ -352,10 +253,9 @@
         </div>
     </div>
 
-    <!-- MAIN HEADER & BRANDING & NAVIGATION -->
+    <!-- MAIN HEADER & NAVIGATION -->
     <header class="main-header">
         <div class="container header-inner">
-            <!-- Official Emblem Logo -->
             <div class="brand-section">
                 <a href="index.html" class="brand-link">
                     <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Official Emblem Logo" class="brand-logo">
@@ -366,17 +266,17 @@
                 </a>
             </div>
 
-            <!-- Merged Navigation Bar -->
+            <!-- Navigation Bar -->
             <nav class="nav-bar" id="mainNavBar">
                 <ul class="nav-menu" id="mainNav">
                     <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
                     <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
                     <li class="has-dropdown">
-                        <a href="history.html" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="history.html" class="nav-link active"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
                             <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
-                            <li><a href="documents.html" class="dropdown-link"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></a></li>
+                            <li><a href="documents.html" class="dropdown-link active"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></a></li>
                             <li><a href="gazetteers.html" class="dropdown-link"><i class="fa-solid fa-book-open"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></a></li>
                             <li><a href="census.html" class="dropdown-link"><i class="fa-solid fa-users-rectangle"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></a></li>
                             <li><a href="settlement.html" class="dropdown-link"><i class="fa-solid fa-map"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></a></li>
@@ -412,192 +312,302 @@
                     <li><a href="contact.html" class="nav-link"><span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span></a></li>
                 </ul>
             </nav>
+
             <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <!-- BREADCRUMB -->
-    <div class="page-title-banner">
+    <!-- BREADCRUMB & ARTICLE SUBHEADER -->
+    <div class="wiki-header-container">
         <div class="container">
-            <div class="breadcrumb-trail">
-                <a href="index.html" class="bc-home"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-parent" data-lang-en="History" data-lang-mr="इतिहास">History</span>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-current" data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span>
+            <div class="wiki-site-notice">
+                <i class="fa-solid fa-file-contract" style="color:var(--accent-gold);"></i>
+                <a href="index.html" style="color:inherit; text-decoration:none;"><span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a> &gt;
+                <a href="history.html" style="color:inherit; text-decoration:none;"><span data-lang-en="History" data-lang-mr="इतिहास">History</span></a> &gt;
+                <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Historical Documents Archive" data-lang-mr="ऐतिहासिक दस्तऐवज संग्रह">Historical Documents Archive</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="British-era gazetteers, settlement reports, census records & research publications on Kohli heritage" data-lang-mr="कोहळी वारशावरील ब्रिटिशकालीन गॅझेटियर, सेटलमेंट अहवाल, जनगणना नोंदी व संशोधन प्रकाशने">British-era gazetteers, settlement reports, census records & research publications on Kohli heritage</span></p>
+            <div class="wiki-lang-tag">
+                <i class="fa-solid fa-language"></i>
+                <span data-lang-en="Article available in: English & Marathi" data-lang-mr="उपलब्ध भाषा: इंग्रजी व मराठी">Article available in: English & Marathi</span>
+            </div>
         </div>
     </div>
 
-    <!-- DOCUMENTS GRID -->
-    <main class="container" style="padding: 3rem 1.25rem;">
-        <div class="history-layout-container">
-            <!-- LEFT SIDEBAR PANEL -->
-            <aside class="history-sidebar-card">
-                <div class="history-sidebar-header">
-                    <h3>
-                        <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="History Navigation" data-lang-mr="इतिहास मार्गदर्शिका">History Navigation</span>
-                    </h3>
+    <!-- MAIN ENCYCLOPEDIC LAYOUT CONTAINER -->
+    <main class="container wiki-main-layout">
+        <div class="wiki-layout-grid">
+
+            <!-- LEFT RAIL: TABLE OF CONTENTS -->
+            <aside class="wiki-toc-sidebar" aria-label="Table of Contents">
+                <div class="wiki-toc-title">
+                    <i class="fa-solid fa-list-ol"></i>
+                    <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
                 </div>
-                <div class="history-sidebar-nav-wrapper">
-                    <ul class="history-sidebar-nav" id="historySidebarNav">
-                        <li>
-                            <a href="history.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-landmark"></i> &nbsp;<span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="history.html#sec-origin" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin & Journey" data-lang-mr="उगम व वाटचाल">Origin & Journey</span></a></li>
-                                <li><a href="history.html#sec-cp-records" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Central Provinces Record" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस नोंदी">Central Provinces Record</span></a></li>
-                                <li><a href="history.html#sec-chanda-settlement" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Settlement" data-lang-mr="चांदा सेटलमेंट">Chanda Settlement</span></a></li>
-                                <li><a href="history.html#sec-agri-heritage" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Agricultural Heritage" data-lang-mr="कृषी वारसा">Agricultural Heritage</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="historical-timeline.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-timeline"></i> &nbsp;<span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline (1867 – 1973)" data-lang-mr="कालरेषा (१८६७ – १९७३)">Timeline (1867 – 1973)</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="expanded">
-                            <a href="documents.html" class="sidebar-main-link active">
-                                <span><i class="fa-solid fa-file-contract"></i> &nbsp;<span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="gazetteers.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
-                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical References" data-lang-mr="ऐतिहासिक संदर्भ">Historical References</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="census.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-users-rectangle"></i> &nbsp;<span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
-                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="settlement.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-map"></i> &nbsp;<span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="water-heritage.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="historical-gallery.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="research.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-microscope"></i> &nbsp;<span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Spellings" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Spellings</span></a></li>
-                            </ul>
-                        </li>
+                <nav>
+                    <ul class="wiki-toc-list">
+                        <li class="wiki-toc-item"><a href="#sec-lead" class="wiki-toc-link active" data-lang-en="(Top / Overview)" data-lang-mr="(शीर्ष / विहंगावलोकन)">(Top / Overview)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-metrics" class="wiki-toc-link" data-lang-en="1. Archive Summary & Repository Metrics" data-lang-mr="१. दस्तऐवज सांख्यिकी व संग्रह सारांश">1. Archive Summary & Repository Metrics</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-explorer" class="wiki-toc-link" data-lang-en="2. Interactive Document Explorer" data-lang-mr="२. दस्तऐवज शोध व वर्गीकरण सूची">2. Interactive Document Explorer</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-excerpts" class="wiki-toc-link" data-lang-en="3. Key Archival Excerpts & Citations" data-lang-mr="३. प्रमुख ऐतिहासिक उतारे व संदर्भ">3. Key Archival Excerpts & Citations</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-verification" class="wiki-toc-link" data-lang-en="4. Preservation & Verification Protocol" data-lang-mr="४. जतन व प्रमाणीकरण नियमावली">4. Preservation & Verification Protocol</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-see-also" class="wiki-toc-link" data-lang-en="5. See Also" data-lang-mr="५. हेही पहा">5. See Also</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-references" class="wiki-toc-link" data-lang-en="6. Notes & References" data-lang-mr="६. संदर्भ व नोंदी">6. Notes & References</a></li>
                     </ul>
-                </div>
+                </nav>
             </aside>
 
-            <!-- RIGHT CONTENT AREA -->
-            <div class="history-content-area">
-                <!-- STATS SUMMARY CARD -->
-                <div class="doc-stats-bar" style="border-radius: 12px; margin-bottom: 1.5rem; background: var(--bg-cream); border: 1.5px solid var(--border-color); padding: 1.25rem 1.5rem;">
-                    <div class="doc-stats-inner" style="padding:0;">
-                        <div style="display:flex; gap:1.5rem; flex-wrap:wrap; align-items:center;">
-                            <div class="doc-stat-item">
-                                <div class="doc-stat-icon"><i class="fa-solid fa-file-lines"></i></div>
-                                <div>
-                                    <div class="doc-stat-label" data-lang-en="Total Records" data-lang-mr="एकूण नोंदी">Total Records</div>
-                                    <div class="doc-stat-value">12</div>
-                                </div>
-                            </div>
-                            <div class="doc-stat-item">
-                                <div class="doc-stat-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                                <div>
-                                    <div class="doc-stat-label" data-lang-en="Time Span" data-lang-mr="कालावधी">Time Span</div>
-                                    <div class="doc-stat-value">1867 – 2010</div>
-                                </div>
-                            </div>
-                            <div class="doc-stat-item">
-                                <div class="doc-stat-icon"><i class="fa-solid fa-book-open"></i></div>
-                                <div>
-                                    <div class="doc-stat-label" data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</div>
-                                    <div class="doc-stat-value">5</div>
-                                </div>
-                            </div>
-                            <div class="doc-stat-item">
-                                <div class="doc-stat-icon"><i class="fa-solid fa-scroll"></i></div>
-                                <div>
-                                    <div class="doc-stat-label" data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</div>
-                                    <div class="doc-stat-value">3</div>
-                                </div>
-                            </div>
+            <!-- ARTICLE BODY -->
+            <article class="wiki-article-body" id="article-content">
+
+                <!-- ARTICLE TITLE AREA -->
+                <div class="wiki-title-area">
+                    <h1 class="wiki-article-title">
+                        <span data-lang-en="Historical Documents & Gazetteers" data-lang-mr="ऐतिहासिक दस्तऐवज व शासकीय गॅझेटिअर">Historical Documents & Gazetteers</span>
+                    </h1>
+                    <div class="wiki-article-subline">
+                        <span data-lang-en="Archival British Settlement Reports, Gazetteers, Census Records & Research Publications" data-lang-mr="ब्रिटिश सेटलमेंट अहवाल, गॅझेटिअर, जनगणना नोंदी व ऐतिहासिक दस्तऐवज संग्रह">Archival British Settlement Reports, Gazetteers, Census Records & Research Publications</span>
+                        <div class="wiki-quick-lang">
+                            <button onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')" class="wiki-quick-lang-btn">
+                                <i class="fa-solid fa-language"></i> <span data-lang-en="मराठीत वाचा" data-lang-mr="Read in English">मराठीत वाचा</span>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- FILTER BAR -->
-                <div class="doc-filter-bar" style="margin-bottom: 1.5rem; border-radius: 10px;">
-                    <div class="filter-inner">
-                        <span class="filter-label" data-lang-en="Filter by:" data-lang-mr="फिल्टर:">Filter by:</span>
-                        <button class="filter-btn active" data-filter="all" id="filterAll">
-                            <i class="fa-solid fa-layer-group"></i> <span data-lang-en="All Documents" data-lang-mr="सर्व दस्तऐवज">All Documents</span>
-                        </button>
-                        <button class="filter-btn" data-filter="gazetteer">
-                            <i class="fa-solid fa-book-open"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span>
-                        </button>
-                        <button class="filter-btn" data-filter="settlement">
-                            <i class="fa-solid fa-scroll"></i> <span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span>
-                        </button>
-                        <button class="filter-btn" data-filter="census">
-                            <i class="fa-solid fa-users-rectangle"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span>
-                        </button>
-                        <button class="filter-btn" data-filter="research">
-                            <i class="fa-solid fa-microscope"></i> <span data-lang-en="Research" data-lang-mr="संशोधन">Research</span>
-                        </button>
-                    </div>
+                <!-- LEAD SECTION WITH RIGHT-FLOAT INFOBOX -->
+                <div class="wiki-lead-section" id="sec-lead">
+
+                    <!-- CANONICAL INFOBOX -->
+                    <aside class="wiki-infobox" aria-label="Documents Quick Facts">
+                        <div class="wiki-infobox-title">
+                            <span data-lang-en="Document Archive" data-lang-mr="ऐतिहासिक दस्तऐवज संग्रह">Document Archive</span>
+                        </div>
+                        <div class="wiki-infobox-subtitle">
+                            <span data-lang-en="Official Records Repository (1867–2010)" data-lang-mr="प्रमाणित शासकीय व समाज दस्तऐवज">Official Records Repository (1867–2010)</span>
+                        </div>
+                        <div class="wiki-infobox-image-box">
+                            <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Logo" class="wiki-infobox-img">
+                            <div class="wiki-infobox-caption">
+                                <span data-lang-en="Emblem certifying community historical document repository" data-lang-mr="कोहळी समाज ऐतिहासिक दस्तऐवज अधिकृत बोधचिन्ह">Emblem certifying community historical document repository</span>
+                            </div>
+                        </div>
+                        <table class="wiki-infobox-table">
+                            <tr>
+                                <th><span data-lang-en="Archival Span" data-lang-mr="कालावधी">Archival Span</span></th>
+                                <td><span data-lang-en="1867 to 2010 (Over 143 years of records)" data-lang-mr="१८६७ ते २०१० (१४३ वर्षांहून अधिक काळ)">1867 to 2010 (Over 143 years of records)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Total Documents" data-lang-mr="एकूण नोंदी">Total Documents</span></th>
+                                <td><span data-lang-en="12 Core Documented Works Catalogued" data-lang-mr="१२ प्रमाणित ऐतिहासिक दस्तऐवज">12 Core Documented Works Catalogued</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Key Categories" data-lang-mr="मुख्य वर्ग">Key Categories</span></th>
+                                <td><span data-lang-en="Gazetteers (5), Settlement Reports (3), Censuses (2), Research (2)" data-lang-mr="गॅझेटिअर (५), सेटलमेंट अहवाल (३), जनगणना (२), संशोधन (२)">Gazetteers (5), Settlement Reports (3), Censuses (2), Research (2)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Primary Languages" data-lang-mr="दस्तऐवज भाषा">Primary Languages</span></th>
+                                <td><span data-lang-en="English, Marathi, Regional Dialects" data-lang-mr="इंग्रजी, मराठी, प्रादेशिक बोली">English, Marathi, Regional Dialects</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Foundational Text" data-lang-mr="पायाभूत ग्रंथ">Foundational Text</span></th>
+                                <td><span data-lang-en="1869 Chanda Land Revenue Settlement (Capt. Lucie Smith)" data-lang-mr="१८६९ चांदा सेटलमेंट अहवाल (कॅप्टन लुसी स्मिथ)">1869 Chanda Land Revenue Settlement (Capt. Lucie Smith)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Custodianship" data-lang-mr="दस्तऐवज जतन">Custodianship</span></th>
+                                <td><span data-lang-en="Central Provinces Archives & Community Research Cell" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस पुराभिलेख व समाज संशोधन समिती">Central Provinces Archives & Community Research Cell</span></td>
+                            </tr>
+                        </table>
+                    </aside>
+
+                    <p class="wiki-lead-p">
+                        <span data-lang-en="The <strong>Historical Document Repository of the Kohli Community</strong> catalogues primary administrative, demographic, and ethnographic publications compiled by the British colonial administration of the Central Provinces, independent historiographers, and community researchers between 1867 and the contemporary era<sup>[1]</sup>. These archival documents serve as evidentiary pillars certifying the community's ancestral status as master hydraulic architects, Malguzari landholders, and cultural stewards of eastern Vidarbha<sup>[1]</sup><sup>[2]</sup>." data-lang-mr="<strong>कोहळी समाज ऐतिहासिक दस्तऐवज संग्रह</strong> हा १८६७ पासून ते आजतागायत सेंट्रल प्रॉव्हिन्सेसचे ब्रिटिश प्रशासकीय अधिकारी, स्वतंत्र इतिहास संशोधक आणि समाज विचारवंतांनी तयार केलेल्या अधिकृत दस्तऐवजांचे प्रमाणित संकलन आहे<sup>[१]</sup>. हे दस्तऐवज पूर्व विदर्भातील कोहळी समाजाचे तलाव स्थापत्य, मालगुजारी जमीनधारणा आणि समृद्ध कृषी संस्कृती यांचे ऐतिहासिक पुरावे म्हणून अत्यंत मोलाचे आहेत<sup>[१]</sup><sup>[२]</sup>.">The Historical Document Repository of the Kohli Community...</span>
+                    </p>
+                    <p class="wiki-p">
+                        <span data-lang-en="Every catalogued document contains direct citations, author details, publication years, and exact excerpts from historical gazetteers (such as the 1908 Bhandara and 1909 Chanda gazetteers), land revenue settlements (Capt. Lucie Smith, Hemingway, Napier), and ethnographic classics. Use the interactive filters below to explore documents by category." data-lang-mr="या संग्रहातील प्रत्येक दस्तऐवजामध्ये मूळ संदर्भ, लेखक, प्रकाशन वर्ष आणि ऐतिहासिक गॅझेटिअर (भंडारा १९०८, चांदा १९०९), महसूल सेटलमेंट अहवाल (कॅप्टन लुसी स्मिथ, हेमिंग्वे, नेपिअर) आणि संशोधन ग्रंथांमधील मूळ उतारे समाविष्ट आहेत. खालील फिल्टरच्या साहाय्याने आपण वर्गवारीनुसार दस्तऐवज पाहू शकता.">Every catalogued document contains direct citations...</span>
+                    </p>
                 </div>
 
-                <div class="documents-grid" id="documentsGrid">
-                    <!-- Cards rendered by JS below -->
-                </div>
-                <div class="no-docs-msg" id="noDocsMsg">
-                    <i class="fa-solid fa-file-circle-xmark"></i>
-                    <p data-lang-en="No documents found for this category." data-lang-mr="या श्रेणीसाठी दस्तऐवज आढळले नाहीत.">No documents found for this category.</p>
-                </div>
-            </div>
+                <!-- SECTION 1: ARCHIVE SUMMARY & METRICS -->
+                <section id="sec-metrics">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="1. Archive Summary & Repository Metrics" data-lang-mr="१. दस्तऐवज सांख्यिकी व संग्रह सारांश">1. Archive Summary & Repository Metrics</span></span>
+                        <a href="#sec-metrics" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin:1.2rem 0 1.8rem 0;">
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--accent-gold); padding:1.2rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04); text-align:center;">
+                            <div style="font-size:0.8rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700;" data-lang-en="Total Records" data-lang-mr="एकूण दस्तऐवज">Total Records</div>
+                            <div style="font-size:2.2rem; font-weight:800; color:var(--primary-dark); margin:0.3rem 0;">12</div>
+                            <div style="font-size:0.82rem; color:var(--wiki-text-muted);" data-lang-en="Verified Catalogued Works" data-lang-mr="प्रमाणित ऐतिहासिक ग्रंथ">Verified Catalogued Works</div>
+                        </div>
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--primary-dark); padding:1.2rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04); text-align:center;">
+                            <div style="font-size:0.8rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700;" data-lang-en="Documented Span" data-lang-mr="ऐतिहासिक कालावधी">Documented Span</div>
+                            <div style="font-size:1.8rem; font-weight:800; color:var(--primary-dark); margin:0.5rem 0;">1867–2010</div>
+                            <div style="font-size:0.82rem; color:var(--wiki-text-muted);" data-lang-en="143 Years of Records" data-lang-mr="१४३ वर्षांची कालरेषा">143 Years of Records</div>
+                        </div>
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--accent-gold); padding:1.2rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04); text-align:center;">
+                            <div style="font-size:0.8rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700;" data-lang-en="Official Gazetteers" data-lang-mr="शासकीय गॅझेटिअर">Official Gazetteers</div>
+                            <div style="font-size:2.2rem; font-weight:800; color:var(--primary-dark); margin:0.3rem 0;">5</div>
+                            <div style="font-size:0.82rem; color:var(--wiki-text-muted);" data-lang-en="District & Imperial Series" data-lang-mr="जिल्हा व इम्पेरियल गॅझेटिअर">District & Imperial Series</div>
+                        </div>
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--primary-dark); padding:1.2rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04); text-align:center;">
+                            <div style="font-size:0.8rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700;" data-lang-en="Settlement Surveys" data-lang-mr="सेटलमेंट अहवाल">Settlement Surveys</div>
+                            <div style="font-size:2.2rem; font-weight:800; color:var(--primary-dark); margin:0.3rem 0;">3</div>
+                            <div style="font-size:0.82rem; color:var(--wiki-text-muted);" data-lang-en="Land Revenue Assessments" data-lang-mr="जमीन महसूल पाहणी">Land Revenue Assessments</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: INTERACTIVE DOCUMENT EXPLORER -->
+                <section id="sec-explorer">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="2. Interactive Document Explorer" data-lang-mr="२. दस्तऐवज शोध व वर्गीकरण सूची">2. Interactive Document Explorer</span></span>
+                        <a href="#sec-explorer" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+
+                    <!-- FILTER CONTROLS -->
+                    <div class="doc-filter-bar">
+                        <div class="filter-inner">
+                            <span class="filter-label" data-lang-en="Filter Category:" data-lang-mr="वर्गवारी निवडा:">Filter Category:</span>
+                            <button class="filter-btn active" data-filter="all" id="filterAll">
+                                <i class="fa-solid fa-layer-group"></i> <span data-lang-en="All Records (12)" data-lang-mr="सर्व दस्तऐवज (१२)">All Records (12)</span>
+                            </button>
+                            <button class="filter-btn" data-filter="gazetteer">
+                                <i class="fa-solid fa-book-open"></i> <span data-lang-en="Gazetteers (5)" data-lang-mr="गॅझेटिअर (५)">Gazetteers (5)</span>
+                            </button>
+                            <button class="filter-btn" data-filter="settlement">
+                                <i class="fa-solid fa-scroll"></i> <span data-lang-en="Settlement Reports (3)" data-lang-mr="सेटलमेंट अहवाल (३)">Settlement Reports (3)</span>
+                            </button>
+                            <button class="filter-btn" data-filter="census">
+                                <i class="fa-solid fa-users-rectangle"></i> <span data-lang-en="Census Records (2)" data-lang-mr="जनगणना नोंदी (२)">Census Records (2)</span>
+                            </button>
+                            <button class="filter-btn" data-filter="research">
+                                <i class="fa-solid fa-microscope"></i> <span data-lang-en="Research Monographs (2)" data-lang-mr="संशोधन ग्रंथ (२)">Research Monographs (2)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- DYNAMIC CARDS GRID -->
+                    <div class="documents-grid" id="documentsGrid">
+                        <!-- Cards rendered dynamically by JS -->
+                    </div>
+                    <div class="no-docs-msg" id="noDocsMsg">
+                        <i class="fa-solid fa-file-circle-xmark" style="font-size:2rem; margin-bottom:0.5rem; display:block;"></i>
+                        <p data-lang-en="No documents found for this category." data-lang-mr="या श्रेणीसाठी दस्तऐवज आढळले नाहीत.">No documents found for this category.</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: KEY ARCHIVAL EXCERPTS & CITATIONS -->
+                <section id="sec-excerpts">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="3. Key Archival Excerpts & Citations" data-lang-mr="३. प्रमुख ऐतिहासिक उतारे व संदर्भ">3. Key Archival Excerpts & Citations</span></span>
+                        <a href="#sec-excerpts" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Selected verbatim extracts from primary administrative publications illustrating the official standing of the Kohli community in Central India:" data-lang-mr="ब्रिटिश प्रशासकीय ग्रंथांमधील निवडक मूळ उतारे, जे तत्कालीन सेंट्रल प्रॉव्हिन्सेसमध्ये कोहळी समाजाचे स्थान अधोरेखित करतात:">Selected verbatim extracts...</span>
+                    </p>
+
+                    <div class="wiki-quotebox">
+                        <div class="wiki-quotebox-title">
+                            <i class="fa-solid fa-book-bookmark" style="color:var(--accent-gold);"></i>
+                            <span>Bhandara District Gazetteer (1908), p. 138 — R. V. Russell</span>
+                        </div>
+                        <div data-lang-en="“The Kohlis are the best irrigators in the district and have constructed large reservoirs. They are also excellent cultivators of sugarcane... Navegaon Bandh is their greatest achievement, with a water spread of nearly five square miles.”" data-lang-mr="“कोहळी हे या जिल्ह्यातील सर्वश्रेष्ठ सिंचनकार असून त्यांनी विशाल जलाशय निर्माण केले आहेत. ते उसाचे उत्कृष्ट शेतकरी आहेत... नवेगावबांध ही त्यांची सर्वांत मोठी कामगिरी असून त्याचा जलविस्तार सुमारे पाच चौरस मैल आहे.”">
+                            “The Kohlis are the best irrigators in the district and have constructed large reservoirs...”
+                        </div>
+                        <div class="wiki-quotebox-credit">
+                            <span data-lang-en="— Central Provinces District Gazetteers: Bhandara District (1908)" data-lang-mr="— सेंट्रल प्रॉव्हिन्सेस डिस्ट्रिक्ट गॅझेटियर्स: भंडारा जिल्हा (१९०८)">— Central Provinces District Gazetteers: Bhandara District (1908)</span>
+                        </div>
+                    </div>
+
+                    <div class="wiki-quotebox">
+                        <div class="wiki-quotebox-title">
+                            <i class="fa-solid fa-book-bookmark" style="color:var(--accent-gold);"></i>
+                            <span>Chanda Settlement Report (1869), para 242 — Capt. Lucie Smith</span>
+                        </div>
+                        <div data-lang-en="“The Kaulees or Kohlis are celebrated throughout the district as tank-builders and cultivators of sugarcane. Their tanks are remarkably well engineered with earthen bunds and stone sluices.”" data-lang-mr="“कौली किंवा कोहळी हे संपूर्ण जिल्ह्यात तलाव निर्माते आणि उसाचे बागायतदार म्हणून प्रसिद्ध आहेत. त्यांचे तलाव मातीचे भक्कम बांध आणि दगडी खिडक्यांनी अत्यंत कुशलतेने बांधलेले आहेत.”">
+                            “The Kaulees or Kohlis are celebrated throughout the district as tank-builders...”
+                        </div>
+                        <div class="wiki-quotebox-credit">
+                            <span data-lang-en="— Report on the Land Revenue Settlement of the Chanda District (1869)" data-lang-mr="— चांदा जिल्हा लँड रेव्हेन्यू सेटलमेंट अहवाल (१८६९)">— Report on the Land Revenue Settlement of the Chanda District (1869)</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: PRESERVATION & VERIFICATION PROTOCOL -->
+                <section id="sec-verification">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="4. Preservation & Verification Protocol" data-lang-mr="४. जतन व प्रमाणीकरण नियमावली">4. Preservation & Verification Protocol</span></span>
+                        <a href="#sec-verification" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="The Kohli Samaj Community Research Cell follows strict historiographical protocols when archiving and referencing historical literature:" data-lang-mr="कोहळी समाज इतिहास संशोधन समिती ऐतिहासिक दस्तऐवजांचे जतन करताना खालील वस्तुनिष्ठ नियमावलीचे पालन करते:">The Kohli Samaj Community Research Cell...</span>
+                    </p>
+                    <div class="wiki-fact-list">
+                        <ul>
+                            <li data-lang-en="<strong>Primary Source Priority:</strong> State gazetteers, land revenue settlement reports, and imperial census returns are treated as foundational baseline evidence." data-lang-mr="<strong>मूळ शासकीय नोंदींना प्राधान्य:</strong> शासकीय गॅझेटिअर, सेटलमेंट अहवाल आणि जनगणना नोंदी या प्राथमिक ऐतिहासिक पुरावा म्हणून मानल्या जातात.">Primary Source Priority...</li>
+                            <li data-lang-en="<strong>Contextual Integrity:</strong> British administrative entries are contextualized alongside community oral testimonies, elder memoirs, and village revenue records." data-lang-mr="<strong>सामाजिक संदर्भ:</strong> ब्रिटिश नोंदींचा अभ्यास करताना समाजातील मौखिक संस्मरणे आणि गावपातळीवरील महसूल नोंदींचा समतोल राखला जातो.">Contextual Integrity...</li>
+                            <li data-lang-en="<strong>Open Archival Access:</strong> Digitized excerpts and reference details are made transparently available to community youth, historians, and academic researchers." data-lang-mr="<strong>मुक्त संशोधन प्रवेश:</strong> समाजातील तरुण पिढी, अभ्यासक व इतिहासकारांसाठी हे सर्व ऐतिहासिक संदर्भ डिजिटल स्वरूपात खुले केले आहेत.">Open Archival Access...</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: SEE ALSO -->
+                <section id="sec-see-also">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="5. See Also" data-lang-mr="५. हेही पहा">5. See Also</span></span>
+                        <a href="#sec-see-also" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <div class="wiki-see-also-grid">
+                        <a href="gazetteers.html" class="wiki-see-also-card">
+                            <span data-lang-en="Colonial Gazetteers & Excerpts" data-lang-mr="ब्रिटिश गॅझेटिअर व ऐतिहासिक उतारे">Colonial Gazetteers & Excerpts</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="settlement.html" class="wiki-see-also-card">
+                            <span data-lang-en="Settlement Reports Archive" data-lang-mr="सेटलमेंट अहवाल संग्रह">Settlement Reports Archive</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="census.html" class="wiki-see-also-card">
+                            <span data-lang-en="Historical Census Records" data-lang-mr="ऐतिहासिक जनगणना नोंदी">Historical Census Records</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="historical-timeline.html" class="wiki-see-also-card">
+                            <span data-lang-en="Chronological Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा (१८०७–१९७३)">Chronological Historical Timeline</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: NOTES & REFERENCES -->
+                <section id="sec-references">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="6. Notes & References" data-lang-mr="६. संदर्भ व नोंदी">6. Notes & References</span></span>
+                        <a href="#sec-references" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <ol class="wiki-references-list">
+                        <li id="cite_note-1">
+                            <span data-lang-en="<strong>Central Provinces Administration:</strong> <em>Imperial Gazetteer of India: Provincial Series, Central Provinces (1908)</em>; Calcutta: Superintendent of Government Printing." data-lang-mr="<strong>सेंट्रल प्रॉव्हिन्सेस प्रशासन:</strong> <em>इम्पेरियल गॅझेटिअर ऑफ इंडिया: सेंट्रल प्रॉव्हिन्सेस (१९०८)</em>; कलकत्ता: गव्हर्नमेंट प्रिंटिंग."><strong>Central Provinces Administration:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-2">
+                            <span data-lang-en="<strong>Historical Monograph:</strong> Ramdas Borkar, <em>'Kohli Samajacha Itihas, Sheti va Sanskrutik Parampara'</em>; independent historiographical survey documenting tank architecture, agriculture, and village society in eastern Vidarbha." data-lang-mr="<strong>ऐतिहासिक ग्रंथ:</strong> रामदास बोरकर, <em>'कोहळी समाजाचा इतिहास, शेती व सांस्कृतिक परंपरा'</em>; पूर्व विदर्भातील कोहळी समाजाचा कृषी, जलस्थापत्य व सामाजिक इतिहास मांडणारा संशोधन ग्रंथ."><strong>Historical Monograph:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-3">
+                            <span data-lang-en="<strong>Land Revenue Settlement Reports:</strong> Captain Lucie Smith, <em>Report on the Land Revenue Settlement of the Chanda District (1869)</em>, and P. Hemingway, <em>Bhandara Settlement Report (1916–1921)</em>." data-lang-mr="<strong>ब्रिटिश सेटलमेंट अहवाल:</strong> कॅप्टन लुसी स्मिथ, <em>चांदा जिल्हा सेटलमेंट रिपोर्ट (१८६९)</em>; आणि पी. हेमिंग्वे, <em>भंडारा जिल्हा सेटलमेंट अहवाल (१९१६-१९२१)</em>."><strong>Land Revenue Settlement Reports:</strong> ...</span>
+                        </li>
+                    </ol>
+
+                    <div class="wiki-categories-box">
+                        <span class="wiki-cat-label" data-lang-en="Categories:" data-lang-mr="वर्ग:">Categories:</span>
+                        <a href="documents.html" class="wiki-cat-link" data-lang-en="Historical Documents of Maharashtra" data-lang-mr="महाराष्ट्रातील ऐतिहासिक दस्तऐवज">Historical Documents of Maharashtra</a> |
+                        <a href="gazetteers.html" class="wiki-cat-link" data-lang-en="Central Provinces Gazetteers" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस गॅझेटिअर">Central Provinces Gazetteers</a> |
+                        <a href="history.html" class="wiki-cat-link" data-lang-en="Kohli Samaj Archival Collection" data-lang-mr="कोहळी समाज दस्तऐवज संग्रह">Kohli Samaj Archival Collection</a> |
+                        <a href="water-heritage.html" class="wiki-cat-link" data-lang-en="Traditional Hydraulic Engineering Records" data-lang-mr="जलस्थापत्य ऐतिहासिक नोंदी">Traditional Hydraulic Engineering Records</a>
+                    </div>
+                </section>
+
+            </article>
         </div>
     </main>
 
@@ -609,18 +619,46 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- INTERACTIVE TOC SCROLL-SPY SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.wiki-toc-link');
+            const sections = document.querySelectorAll('article.wiki-article-body section, #sec-lead');
+
+            function highlightToc() {
+                let scrollPos = window.scrollY + 120;
+                sections.forEach(function(section) {
+                    if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                        const currentId = section.getAttribute('id');
+                        tocLinks.forEach(function(link) {
+                            if (link.getAttribute('href') === '#' + currentId) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightToc);
+            highlightToc();
+        });
+    </script>
+
+    <!-- Core Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/nav.js"></script>
+
+    <!-- Documents Dynamic Render & Filter Script -->
     <script>
     (function() {
         const data = typeof initialData !== 'undefined' ? initialData : window.initialData;
         const docs = (data && data.documents) ? data.documents : [];
         const grid = document.getElementById('documentsGrid');
         const noMsg = document.getElementById('noDocsMsg');
-        let currentLangLocal = (typeof currentLang !== 'undefined') ? currentLang : 'en';
 
         const catLabels = {
             gazetteer: { en: 'Gazetteer', mr: 'गॅझेटियर' },
@@ -655,7 +693,7 @@
                 const availClass = doc.available ? 'avail-yes' : 'avail-no';
                 const availIcon = doc.available ? 'fa-circle-check' : 'fa-clock';
                 const btnHtml = doc.available
-                    ? `<button class="btn-view-doc" onclick="alert('Archival reference for: ${title.replace(/'/g,"\\'")}. Full digital copy integration pending.')" aria-label="View document"><i class="fa-solid fa-book-open-reader"></i> ${lang === 'mr' ? 'संदर्भ पहा' : 'View Reference'}</button>`
+                    ? `<button class="btn-view-doc" onclick="alert('Archival reference for: ${title.replace(/'/g,"\'")}. Full digital copy integration pending.')" aria-label="View document"><i class="fa-solid fa-book-open-reader"></i> ${lang === 'mr' ? 'संदर्भ पहा' : 'View Reference'}</button>`
                     : `<button class="btn-view-doc disabled" disabled><i class="fa-solid fa-clock"></i> ${lang === 'mr' ? 'लवकरच' : 'Coming Soon'}</button>`;
 
                 grid.innerHTML += `
@@ -692,10 +730,8 @@
             });
         }
 
-        // Initial render
         renderDocs('all');
 
-        // Filter buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -704,7 +740,6 @@
             });
         });
 
-        // Re-render on language change
         document.addEventListener('langChange', () => {
             const activeFilter = document.querySelector('.filter-btn.active');
             renderDocs(activeFilter ? activeFilter.dataset.filter : 'all');
@@ -712,4 +747,4 @@
     })();
     </script>
 </body>
-</html>
+</html>\n
