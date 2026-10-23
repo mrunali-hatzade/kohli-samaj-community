@@ -11,22 +11,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- TOP UTILITY BAR -->
+<body class="font-normal">
+    <!-- ==========================================================================
+         1. TOP GOVT UTILITY BAR
+         ========================================================================== -->
     <div class="top-utility-bar">
         <div class="container utility-flex">
             <div class="utility-left">
-                <span class="portal-badge" data-lang-en="Official Community Portal" data-lang-mr="अधिकृत समाज पोर्टल">Official Community Portal</span>
-                <span class="portal-update"><i class="fa-solid fa-clock-rotate-left"></i> <span data-lang-en="Archival Settlement Record" data-lang-mr="अभिलेखागार सेटलमेंट नोंद">Archival Settlement Record</span></span>
-            </div>
+                <span class="utility-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
+                </span>
 
-            <!-- Central Language Switcher -->
-            <div class="language-selector-wrapper">
-                <span class="lang-label"><i class="fa-solid fa-globe"></i> <span data-lang-en="Language:" data-lang-mr="भाषा:">Language:</span></span>
-                <div class="lang-buttons">
-                    <button class="lang-btn active" data-lang="en">English</button>
-                    <button class="lang-btn" data-lang="mr">मराठी</button>
+                <!-- Language Switcher -->
+                <div class="utility-item">
+                    <button id="btnLangEn" class="lang-btn active">English</button>
+                    <button id="btnLangMr" class="lang-btn">मराठी</button>
                 </div>
+
+                <!-- Font Resizer -->
+                <div class="utility-item font-resizer" title="Adjust Text Size">
+                    <button id="btnFontSm" class="font-btn">A-</button>
+                    <button id="btnFontMd" class="font-btn active">A</button>
+                    <button id="btnFontLg" class="font-btn">A+</button>
+                </div>
+
+                <span class="utility-item" style="cursor:pointer;" onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')">
+                    <i class="fa-universal-access"></i>
+                    <span data-lang-en="Accessibility" data-lang-mr="अ‍ॅक्सेसिबिलिटी">Accessibility</span>
+                </span>
             </div>
 
             <div class="utility-right">
@@ -34,10 +47,10 @@
                     <i class="fa-solid fa-bell"></i>
                     <span data-lang-en="Notices" data-lang-mr="सूचना">Notices</span>
                 </a>
-                <a href="contact.html" class="utility-item" title="Contact" style="text-decoration:none;">
+                <span class="utility-item">
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
-                </a>
+                </span>
 
                 <!-- Search Box -->
                 <form id="topSearchForm" class="top-search-form">
