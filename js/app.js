@@ -642,7 +642,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateStaticText(lang) {
         document.querySelectorAll('[data-lang-en]').forEach(elem => {
             if (elem.children.length === 0) {
-                elem.textContent = lang === 'mr' ? elem.getAttribute('data-lang-mr') : elem.getAttribute('data-lang-en');
+                const val = lang === 'mr' ? elem.getAttribute('data-lang-mr') : elem.getAttribute('data-lang-en');
+                if (val !== null) {
+                    if (val.indexOf('<') !== -1 && val.indexOf('>') !== -1) {
+                        elem.innerHTML = val;
+                    } else {
+                        elem.textContent = val;
+                    }
+                }
             }
         });
     }
