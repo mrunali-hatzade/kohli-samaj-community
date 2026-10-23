@@ -148,93 +148,117 @@
     <div class="wiki-main-layout">
         <div class="wiki-layout-grid">
 
-            <!-- LEFT STICKY TABLE OF CONTENTS -->
-            <aside class="wiki-toc-sidebar">
+            <!-- LEFT RAIL: TABLE OF CONTENTS -->
+            <aside class="wiki-toc-sidebar" aria-label="Table of Contents">
                 <div class="wiki-toc-title">
-                    <i class="fa-solid fa-list-ul"></i>
+                    <i class="fa-solid fa-list-ol"></i>
                     <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
                 </div>
-                <ul class="wiki-toc-list">
-                    <li><a href="#sec-overview" class="wiki-toc-link"><span class="wiki-toc-num">1</span> <span data-lang-en="Historiographical Scope" data-lang-mr="इतिहासलेखन व्याप्ती">Historiographical Scope</span></a></li>
-                    <li><a href="#sec-official-sources" class="wiki-toc-link"><span class="wiki-toc-num">2</span> <span data-lang-en="Official Colonial Gazetteers" data-lang-mr="अधिकृत वसाहतकालीन गॅझेटिअर">Official Colonial Gazetteers</span></a></li>
-                    <li><a href="#sec-russell-hiralal" class="wiki-toc-link"><span class="wiki-toc-num">3</span> <span data-lang-en="Russell & Hira Lal Survey (1916)" data-lang-mr="रसेल व हिरालाल सर्वेक्षण (१९१६)">Russell & Hira Lal Survey (1916)</span></a></li>
-                    <li><a href="#sec-name-references" class="wiki-toc-link"><span class="wiki-toc-num">4</span> <span data-lang-en="Orthographic Variations" data-lang-mr="नावांची ऐतिहासिक रूपे व लिप्यंतरण">Orthographic Variations</span></a></li>
-                    <li><a href="#sec-settlement-research" class="wiki-toc-link"><span class="wiki-toc-num">5</span> <span data-lang-en="Land Settlement Analysis" data-lang-mr="जमीन सेटलमेंट विश्लेषण">Land Settlement Analysis</span></a></li>
-                    <li><a href="#sec-census-research" class="wiki-toc-link"><span class="wiki-toc-num">6</span> <span data-lang-en="Demographic Records (11,399 & 19,739)" data-lang-mr="लोकसंख्या नोंदी (११,३९९ व १९,७३९)">Demographic Records (11,399 & 19,739)</span></a></li>
-                    <li><a href="#sec-community-publications" class="wiki-toc-link"><span class="wiki-toc-num">7</span> <span data-lang-en="Community Smrutigranths" data-lang-mr="समाज स्मृतीग्रंथ व स्मरणिका">Community Smrutigranths</span></a></li>
-                    <li><a href="#sec-culture-research" class="wiki-toc-link"><span class="wiki-toc-num">8</span> <span data-lang-en="Cultural Traditions & Ethnology" data-lang-mr="सांस्कृतिक परंपरा व नृवंशशास्त्र">Cultural Traditions & Ethnology</span></a></li>
-                    <li><a href="#sec-water-research" class="wiki-toc-link"><span class="wiki-toc-num">9</span> <span data-lang-en="Hydraulic Engineering Studies" data-lang-mr="जलव्यवस्थापन व तलाव अभियांत्रिकी">Hydraulic Engineering Studies</span></a></li>
-                    <li><a href="#sec-agri-research" class="wiki-toc-link"><span class="wiki-toc-num">10</span> <span data-lang-en="Agrarian Cultivars & Sugarcane" data-lang-mr="पारंपरिक शेती व वाण संशोधन">Agrarian Cultivars & Sugarcane</span></a></li>
-                    <li><a href="#sec-contemporary-research" class="wiki-toc-link"><span class="wiki-toc-num">11</span> <span data-lang-en="Contemporary Distinctions" data-lang-mr="समकालीन यश व गुणवत्ता">Contemporary Distinctions</span></a></li>
-                    <li><a href="#sec-methodology" class="wiki-toc-link"><span class="wiki-toc-num">12</span> <span data-lang-en="Historical Method (4 Principles)" data-lang-mr="संशोधन पद्धती (४ तत्त्वे)">Historical Method (4 Principles)</span></a></li>
-                    <li><a href="#sec-source-hierarchy" class="wiki-toc-link"><span class="wiki-toc-num">13</span> <span data-lang-en="Source Reliability Hierarchy" data-lang-mr="स्रोत श्रेणीरचना व विश्वासार्हता">Source Reliability Hierarchy</span></a></li>
-                    <li><a href="#sec-references" class="wiki-toc-link"><span class="wiki-toc-num">14</span> <span data-lang-en="Bibliographic References" data-lang-mr="ग्रंथसूची व संदर्भ">Bibliographic References</span></a></li>
-                </ul>
+                <nav>
+                    <ul class="wiki-toc-list">
+                        <li class="wiki-toc-item"><a href="#sec-lead" class="wiki-toc-link active" data-lang-en="(Top / Overview)" data-lang-mr="(शीर्ष / विहंगावलोकन)">(Top / Overview)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-overview" class="wiki-toc-link"><span class="wiki-toc-num">1.</span> <span data-lang-en="Historiographical Scope & Catalog Search" data-lang-mr="इतिहासलेखन व्याप्ती व शोध सूची">Historiographical Scope & Catalog Search</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-official-sources" class="wiki-toc-link"><span class="wiki-toc-num">2.</span> <span data-lang-en="Official Colonial Gazetteers (1867–1909)" data-lang-mr="अधिकृत वसाहतकालीन गॅझेटिअर (१८६७–१९०९)">Official Colonial Gazetteers (1867–1909)</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-russell-hiralal" class="wiki-toc-link"><span class="wiki-toc-num">3.</span> <span data-lang-en="Russell & Hira Lal Ethnographic Survey (1916)" data-lang-mr="रसेल व हिरालाल मानववंश सर्वेक्षण (१९१६)">Russell & Hira Lal Ethnographic Survey (1916)</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-name-references" class="wiki-toc-link"><span class="wiki-toc-num">4.</span> <span data-lang-en="Orthographic Variations & Archival Name Forms" data-lang-mr="नावांची ऐतिहासिक रूपे व लिप्यंतरण">Orthographic Variations & Archival Name Forms</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-settlement-research" class="wiki-toc-link"><span class="wiki-toc-num">5.</span> <span data-lang-en="Land Settlement Analysis & Revenue Administration" data-lang-mr="जमीन सेटलमेंट विश्लेषण व महसूल प्रशासन">Land Settlement Analysis & Revenue Administration</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-census-research" class="wiki-toc-link"><span class="wiki-toc-num">6.</span> <span data-lang-en="Demographic Records: The 11,399 & 19,739 Benchmarks" data-lang-mr="लोकसंख्या नोंदी: ११,३९९ व १९,७३९ संदर्भ">Demographic Records: The 11,399 & 19,739 Benchmarks</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-community-publications" class="wiki-toc-link"><span class="wiki-toc-num">7.</span> <span data-lang-en="Community Publications, Smrutigranths & Monographic Studies" data-lang-mr="समाज स्मृतीग्रंथ, स्मरणिका व संशोधन ग्रंथ">Community Publications, Smrutigranths & Monographic Studies</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-culture-research" class="wiki-toc-link"><span class="wiki-toc-num">8.</span> <span data-lang-en="Cultural Traditions, Rituals & Ethnology" data-lang-mr="सांस्कृतिक परंपरा, विधी व नृवंशशास्त्र">Cultural Traditions, Rituals & Ethnology</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-water-research" class="wiki-toc-link"><span class="wiki-toc-num">9.</span> <span data-lang-en="Hydraulic Engineering & Malguzari Tank Studies" data-lang-mr="जलव्यवस्थापन व तलाव अभियांत्रिकी संशोधन">Hydraulic Engineering & Malguzari Tank Studies</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-agri-research" class="wiki-toc-link"><span class="wiki-toc-num">10.</span> <span data-lang-en="Agrarian Cultivars, Sugarcane & Paddy Heritage" data-lang-mr="पारंपरिक शेती, ऊस व भाताचे वाण संशोधन">Agrarian Cultivars, Sugarcane & Paddy Heritage</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-contemporary-research" class="wiki-toc-link"><span class="wiki-toc-num">11.</span> <span data-lang-en="Contemporary Distinctions & Academic Honors" data-lang-mr="समकालीन गुणवत्ता व शैक्षणिक यश">Contemporary Distinctions & Academic Honors</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-methodology" class="wiki-toc-link"><span class="wiki-toc-num">12.</span> <span data-lang-en="Historical Methodology: The Four Interpretive Principles" data-lang-mr="संशोधन पद्धती: चार मूलभूत अभ्यास तत्त्वे">Historical Methodology: The Four Interpretive Principles</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-source-hierarchy" class="wiki-toc-link"><span class="wiki-toc-num">13.</span> <span data-lang-en="Source Reliability Hierarchy Matrix" data-lang-mr="स्रोत श्रेणीरचना व विश्वासार्हता रचना">Source Reliability Hierarchy Matrix</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-references" class="wiki-toc-link"><span class="wiki-toc-num">14.</span> <span data-lang-en="Bibliographic References & Primary Records" data-lang-mr="ग्रंथसूची व प्राथमिक संदर्भ">Bibliographic References & Primary Records</span></a></li>
+                    </ul>
+                </nav>
             </aside>
 
             <!-- MAIN ENCYCLOPEDIC ARTICLE COLUMN -->
             <main class="wiki-article-col">
 
-                <!-- ARTICLE TITLE & SUBTITLE -->
-                <div class="wiki-article-header">
-                    <h1 class="wiki-page-title" data-lang-en="Research, Publications & Historiographical Library" data-lang-mr="संशोधन, प्रकाशने व इतिहासलेखन ग्रंथालय">Research, Publications & Historiographical Library</h1>
-                    <div class="wiki-page-subtitle" data-lang-en="Evidence-based corpus of colonial administrative records, ethnographic surveys, land settlement registers, and community historiography" data-lang-mr="वसाहतकालीन प्रशासकीय नोंदी, मानववंशशास्त्रीय सर्वेक्षणे, जमीन सेटलमेंट नोंदवह्या आणि समाज इतिहासलेखनाचा पुराव्याधारित संग्रह">Evidence-based corpus of colonial administrative records, ethnographic surveys, land settlement registers, and community historiography</div>
+                <!-- ARTICLE TITLE AREA -->
+                <div class="wiki-title-area">
+                    <h1 class="wiki-article-title">
+                        <span data-lang-en="Research, Publications & Historiographical Library" data-lang-mr="संशोधन, प्रकाशने व इतिहासलेखन ग्रंथालय">Research, Publications & Historiographical Library</span>
+                    </h1>
+                    <div class="wiki-article-subline">
+                        <span data-lang-en="Evidence-based corpus of colonial administrative records, ethnographic surveys, land settlement registers, and community historiography" data-lang-mr="वसाहतकालीन प्रशासकीय नोंदी, मानववंशशास्त्रीय सर्वेक्षणे, जमीन सेटलमेंट नोंदवह्या आणि समाज इतिहासलेखनाचा पुराव्याधारित संग्रह">Evidence-based corpus of colonial administrative records, ethnographic surveys, land settlement registers, and community historiography</span>
+                        <div class="wiki-quick-lang">
+                            <button onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')" class="wiki-quick-lang-btn">
+                                <i class="fa-solid fa-language"></i> <span data-lang-en="मराठीत वाचा" data-lang-mr="Read in English">मराठीत वाचा</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- WIKIPEDIA ARTICLE BODY -->
-                <div class="wiki-article-body">
+                <!-- LEAD SECTION WITH RIGHT-FLOAT INFOBOX -->
+                <div class="wiki-lead-section" id="sec-lead">
 
-                    <!-- RIGHT FLOATING INFOBOX -->
-                    <aside class="wiki-infobox">
-                        <div class="wiki-infobox-title" data-lang-en="Historiographical Library" data-lang-mr="इतिहास संशोधन ग्रंथालय">Historiographical Library</div>
-                        <div class="wiki-infobox-image">
-                            <i class="fa-solid fa-microscope" style="font-size:3.2rem; color:var(--primary-dark); padding:1rem 0;"></i>
-                            <div class="wiki-infobox-caption" data-lang-en="Evidence-Based Historical Archive of Kohli Community" data-lang-mr="कोहळी समाजाचा पुराव्याधारित ऐतिहासिक संग्रह">Evidence-Based Historical Archive of Kohli Community</div>
+                    <!-- CANONICAL INFOBOX -->
+                    <aside class="wiki-infobox" aria-label="Historiographical Library Quick Facts">
+                        <div class="wiki-infobox-title">
+                            <span data-lang-en="Historiographical Library" data-lang-mr="इतिहास संशोधन ग्रंथालय">Historiographical Library</span>
+                        </div>
+                        <div class="wiki-infobox-subtitle">
+                            <span data-lang-en="Evidence-Based Historical Archive" data-lang-mr="पुराव्याधारित ऐतिहासिक संग्रह">Evidence-Based Historical Archive</span>
+                        </div>
+                        <div class="wiki-infobox-image-box">
+                            <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Logo" class="wiki-infobox-img">
+                            <div class="wiki-infobox-caption">
+                                <span data-lang-en="Evidence-Based Historical Archive of Kohli Community" data-lang-mr="कोहळी समाजाचा पुराव्याधारित ऐतिहासिक संग्रह">Evidence-Based Historical Archive of Kohli Community</span>
+                            </div>
                         </div>
                         <table class="wiki-infobox-table">
                             <tr>
-                                <th data-lang-en="Territorial Scope" data-lang-mr="भौगोलिक क्षेत्र">Territorial Scope</th>
-                                <td data-lang-en="Central Provinces (Bhandara, Chanda, Balaghat)" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस (भंडारा, चांदा, बालाघाट)">Central Provinces (Bhandara, Chanda, Balaghat)</td>
+                                <th><span data-lang-en="Territorial Scope" data-lang-mr="भौगोलिक क्षेत्र">Territorial Scope</span></th>
+                                <td><span data-lang-en="Central Provinces (Bhandara, Chanda, Balaghat)" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस (भंडारा, चांदा, बालाघाट)">Central Provinces (Bhandara, Chanda, Balaghat)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Key Colonial Surveys" data-lang-mr="प्रमुख ब्रिटिश सर्वेक्षणे">Key Colonial Surveys</th>
-                                <td data-lang-en="Grant (1870), Lucie Smith (1869), Russell (1908)" data-lang-mr="ग्रँट (१८७०), लुसी स्मिथ (१८६९), रसेल (१९०८)">Grant (1870), Lucie Smith (1869), Russell (1908)</td>
+                                <th><span data-lang-en="Key Colonial Surveys" data-lang-mr="प्रमुख ब्रिटिश सर्वेक्षणे">Key Colonial Surveys</span></th>
+                                <td><span data-lang-en="Grant (1870), Lucie Smith (1869), Russell (1908)" data-lang-mr="ग्रँट (१८७०), लुसी स्मिथ (१८६९), रसेल (१९०८)">Grant (1870), Lucie Smith (1869), Russell (1908)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Ethnographic Work" data-lang-mr="मानववंश ग्रंथ">Ethnographic Work</th>
-                                <td data-lang-en="R. V. Russell & Rai Bahadur Hira Lal (1916)" data-lang-mr="आर. व्ही. रसेल व राय बहादूर हिरालाल (१९१६)">R. V. Russell & Rai Bahadur Hira Lal (1916)</td>
+                                <th><span data-lang-en="Ethnographic Work" data-lang-mr="मानववंश ग्रंथ">Ethnographic Work</span></th>
+                                <td><span data-lang-en="R. V. Russell & Rai Bahadur Hira Lal (1916)" data-lang-mr="आर. व्ही. रसेल व राय बहादूर हिरालाल (१९१६)">R. V. Russell & Rai Bahadur Hira Lal (1916)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Demographic Records" data-lang-mr="लोकसंख्या नोंदी">Demographic Records</th>
-                                <td data-lang-en="11,399 (1911 Bhandara) | 19,739 (Settlement)" data-lang-mr="११,३९९ (१९११ भंडारा) | १९,७३९ (सेटलमेंट)">11,399 (1911 Bhandara) | 19,739 (Settlement)</td>
+                                <th><span data-lang-en="Demographic Records" data-lang-mr="लोकसंख्या नोंदी">Demographic Records</span></th>
+                                <td><span data-lang-en="11,399 (1911 Bhandara) | 19,739 (Settlement)" data-lang-mr="११,३९९ (१९११ भंडारा) | १९,७३९ (सेटलमेंट)">11,399 (1911 Bhandara) | 19,739 (सेटलमेंट)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Key Monograph" data-lang-mr="प्रमुख संशोधन ग्रंथ">Key Monograph</th>
-                                <td data-lang-en="Ramdas Borkar, <em>Kohli Samaj Itihas va Sanskruti</em> (2001)" data-lang-mr="रामदास बोरकर, <em>कोहळी समाज इतिहास व संस्कृती</em> (२००१)">Ramdas Borkar, <em>Kohli Samaj Itihas va Sanskruti</em> (2001)</td>
+                                <th><span data-lang-en="Key Monograph" data-lang-mr="प्रमुख संशोधन ग्रंथ">Key Monograph</span></th>
+                                <td><span data-lang-en="Ramdas Borkar, <em>Kohli Samaj Itihas va Sanskruti</em> (2001)" data-lang-mr="रामदास बोरकर, <em>कोहळी समाज इतिहास व संस्कृती</em> (२००१)">Ramdas Borkar, <em>Kohli Samaj Itihas va Sanskruti</em> (2001)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Academic Distinction" data-lang-mr="शैक्षणिक गुणवत्ता">Academic Distinction</th>
-                                <td data-lang-en="Miss Tejaswini Kapgate (94.66%, RTMNU Topper)" data-lang-mr="कु. तेजस्विनी कापगते (९४.६६%, नागपूर विद्यापीठ टॉपर)">Miss Tejaswini Kapgate (94.66%, RTMNU Topper)</td>
+                                <th><span data-lang-en="Academic Distinction" data-lang-mr="शैक्षणिक गुणवत्ता">Academic Distinction</span></th>
+                                <td><span data-lang-en="Miss Tejaswini Kapgate (94.66%, RTMNU Topper)" data-lang-mr="कु. तेजस्विनी कापगते (९४.६६%, नागपूर विद्यापीठ टॉपर)">Miss Tejaswini Kapgate (94.66%, RTMNU Topper)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Methodology" data-lang-mr="पद्धतीशास्त्र">Methodology</th>
-                                <td data-lang-en="Contextual historical analysis & source triangulation" data-lang-mr="संदर्भाधिष्ठित ऐतिहासिक विश्लेषण व बहु-स्रोत पडताळणी">Contextual historical analysis & source triangulation</td>
+                                <th><span data-lang-en="Methodology" data-lang-mr="पद्धतीशास्त्र">Methodology</span></th>
+                                <td><span data-lang-en="Contextual historical analysis & source triangulation" data-lang-mr="संदर्भाधिष्ठित ऐतिहासिक विश्लेषण व बहु-स्रोत पडताळणी">Contextual historical analysis & source triangulation</span></td>
                             </tr>
                         </table>
                     </aside>
 
                     <!-- LEAD PARAGRAPHS -->
-                    <p class="wiki-lead" data-lang-en="The <strong>Historiographical & Research Library</strong> of the Kohli Samaj provides an organized, evidence-based repository of historical documentation relating to the community in the Central Provinces and Berar. Drawing upon nineteenth-century official gazetteers, cadastral settlement records, decennial census volumes, colonial ethnographic treatises, and twentieth-century community monographs, the library establishes an objective empirical foundation for studying eastern Vidarbha’s agrarian and social development." data-lang-mr="कोहळी समाजाचे <strong>इतिहासलेखन व संशोधन ग्रंथालय</strong> हे सेंट्रल प्रॉव्हिन्सेस व बेरारमधील समाजाशी संबंधित ऐतिहासिक दस्तऐवजांचा एक पद्धतशीर, पुराव्याधारित संग्रह आहे. एकोणिसाव्या शतकातील शासकीय गॅझेटिअर, भूमापन सेटलमेंट नोंदी, दशवार्षिक जनगणना खंड, वसाहतकालीन मानववंशशास्त्रीय ग्रंथ आणि विसाव्या शतकातील समाज ग्रंथांच्या आधारे, हे ग्रंथालय पूर्व विदर्भाच्या कृषी व सामाजिक विकासाच्या अभ्यासासाठी वस्तुनिष्ठ पाया प्रदान करते.">
-                        The <strong>Historiographical & Research Library</strong> of the Kohli Samaj provides an organized, evidence-based repository of historical documentation relating to the community in the Central Provinces and Berar. Drawing upon nineteenth-century official gazetteers, cadastral settlement records, decennial census volumes, colonial ethnographic treatises, and twentieth-century community monographs, the library establishes an objective empirical foundation for studying eastern Vidarbha’s agrarian and social development.
+                    <p class="wiki-lead-p">
+                        <span data-lang-en="The <strong>Historiographical & Research Library</strong> of the Kohli Samaj provides an organized, evidence-based repository of historical documentation relating to the community in the Central Provinces and Berar. Drawing upon nineteenth-century official gazetteers, cadastral settlement records, decennial census volumes, colonial ethnographic treatises, and twentieth-century community monographs, the library establishes an objective empirical foundation for studying eastern Vidarbha’s agrarian and social development." data-lang-mr="कोहळी समाजाचे <strong>इतिहासलेखन व संशोधन ग्रंथालय</strong> हे सेंट्रल प्रॉव्हिन्सेस व बेरारमधील समाजाशी संबंधित ऐतिहासिक दस्तऐवजांचा एक पद्धतशीर, पुराव्याधारित संग्रह आहे. एकोणिसाव्या शतकातील शासकीय गॅझेटिअर, भूमापन सेटलमेंट नोंदी, दशवार्षिक जनगणना खंड, वसाहतकालीन मानववंशशास्त्रीय ग्रंथ आणि विसाव्या शतकातील समाज ग्रंथांच्या आधारे, हे ग्रंथालय पूर्व विदर्भाच्या कृषी व सामाजिक विकासाच्या अभ्यासासाठी वस्तुनिष्ठ पाया प्रदान करते.">The <strong>Historiographical & Research Library</strong> of the Kohli Samaj provides an organized, evidence-based repository of historical documentation relating to the community in the Central Provinces and Berar. Drawing upon nineteenth-century official gazetteers, cadastral settlement records, decennial census volumes, colonial ethnographic treatises, and twentieth-century community monographs, the library establishes an objective empirical foundation for studying eastern Vidarbha’s agrarian and social development.</span>
                     </p>
 
-                    <p data-lang-en="Historical scholarship on the Kohli community is marked by a distinctive convergence between colonial administrative reports—which documented their unparalleled mastery over tank construction, sugarcane cultivation, and village Malguzari titles—and indigenous community memoirs which preserved oral genealogies, clan deities, social conventions, and marital traditions. This portal applies rigorous critical standards, separating primary administrative records from oral memory while documenting both with bibliographic integrity." data-lang-mr="कोहळी समाजावरील ऐतिहासिक संशोधनाचे वैशिष्ट्य म्हणजे ब्रिटिश प्रशासकीय अहवाल—ज्यांनी तलाव निर्मिती, ऊस शेती आणि मालगुजारी अधिकारांवरील समाजाचे प्रभुत्व नोंदवले—आणि स्थानिक समाज ग्रंथ—ज्यांनी वंशावळी, कुलदैवते, सामाजिक चालीरीती आणि विवाह परंपरा जतन केल्या—यांचा समतोल संगम. हे पोर्टल प्राथमिक शासकीय नोंदी आणि मौखिक स्मृती यांच्यात स्पष्ट भेद राखून दोन्हीचे काटेकोर संदर्भ जतन करते.">
-                        Historical scholarship on the Kohli community is marked by a distinctive convergence between colonial administrative reports—which documented their unparalleled mastery over tank construction, sugarcane cultivation, and village Malguzari titles—and indigenous community memoirs which preserved oral genealogies, clan deities, social conventions, and marital traditions. This portal applies rigorous critical standards, separating primary administrative records from oral memory while documenting both with bibliographic integrity.
+                    <p class="wiki-p">
+                        <span data-lang-en="Historical scholarship on the Kohli community is marked by a distinctive convergence between colonial administrative reports—which documented their unparalleled mastery over tank construction, sugarcane cultivation, and village Malguzari titles—and indigenous community memoirs which preserved oral genealogies, clan deities, social conventions, and marital traditions. This portal applies rigorous critical standards, separating primary administrative records from oral memory while documenting both with bibliographic integrity." data-lang-mr="कोहळी समाजावरील ऐतिहासिक संशोधनाचे वैशिष्ट्य म्हणजे ब्रिटिश प्रशासकीय अहवाल—ज्यांनी तलाव निर्मिती, ऊस शेती आणि मालगुजारी अधिकारांवरील समाजाचे प्रभुत्व नोंदवले—आणि स्थानिक समाज ग्रंथ—ज्यांनी वंशावळी, कुलदैवते, सामाजिक चालीरीती आणि विवाह परंपरा जतन केल्या—यांचा समतोल संगम. हे पोर्टल प्राथमिक शासकीय नोंदी आणि मौखिक स्मृती यांच्यात स्पष्ट भेद राखून दोन्हीचे काटेकोर संदर्भ जतन करते.">Historical scholarship on the Kohli community is marked by a distinctive convergence between colonial administrative reports—which documented their unparalleled mastery over tank construction, sugarcane cultivation, and village Malguzari titles—and indigenous community memoirs which preserved oral genealogies, clan deities, social conventions, and marital traditions. This portal applies rigorous critical standards, separating primary administrative records from oral memory while documenting both with bibliographic integrity.</span>
                     </p>
+
+                </div>
 
                     <!-- SECTION 1: HISTORIOGRAPHICAL SCOPE & SEARCH -->
                     <section id="sec-overview" class="wiki-section">
-                        <h2 class="wiki-heading-2" data-lang-en="Historiographical Scope & Catalog Search" data-lang-mr="इतिहासलेखन व्याप्ती व शोध सूची">Historiographical Scope & Catalog Search</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="1. Historiographical Scope & Catalog Search" data-lang-mr="१. इतिहासलेखन व्याप्ती व शोध सूची">1. Historiographical Scope & Catalog Search</span></span>
+                            <a href="#sec-overview" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Use the interactive research filters below to navigate across government gazetteers, revenue settlements, census benchmarks, ethnographic publications, and community literature:" data-lang-mr="शासकीय गॅझेटिअर, महसूल सेटलमेंट, जनगणना नोंदी, मानववंश प्रकाशने आणि समाज साहित्याचा अभ्यास करण्यासाठी खालील शोध सूची वापरा:">
                             Use the interactive research filters below to navigate across government gazetteers, revenue settlements, census benchmarks, ethnographic publications, and community literature:
@@ -264,7 +288,10 @@
 
                     <!-- SECTION 2: OFFICIAL COLONIAL GAZETTEERS -->
                     <section id="sec-official-sources" class="wiki-section research-sec-block" data-section-category="official-records gazetteers">
-                        <h2 class="wiki-heading-2" data-lang-en="Official Colonial Gazetteers (1867–1909)" data-lang-mr="अधिकृत वसाहतकालीन गॅझेटिअर (१८६७–१९०९)">Official Colonial Gazetteers (1867–1909)</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="2. Official Colonial Gazetteers (1867–1909)" data-lang-mr="२. अधिकृत वसाहतकालीन गॅझेटिअर (१८६७–१९०९)">2. Official Colonial Gazetteers (1867–1909)</span></span>
+                            <a href="#sec-official-sources" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Government gazetteers of the Central Provinces provide the most authoritative administrative descriptions of regional geography, agrarian systems, and community settlements. Four district compilations are of primary relevance:" data-lang-mr="सेंट्रल प्रॉव्हिन्सेसचे शासकीय गॅझेटिअर हे प्रादेशिक भूगोल, शेती व्यवस्था आणि समाज वस्त्यांची सर्वाधिक विश्वासार्ह प्रशासकीय माहिती देतात. खालील चार गॅझेटिअर विशेष महत्त्वाचे आहेत:">
                             Government gazetteers of the Central Provinces provide the most authoritative administrative descriptions of regional geography, agrarian systems, and community settlements. Four district compilations are of primary relevance:
@@ -311,7 +338,10 @@
 
                     <!-- SECTION 3: RUSSELL & HIRA LAL (1916) -->
                     <section id="sec-russell-hiralal" class="wiki-section research-sec-block" data-section-category="official-records">
-                        <h2 class="wiki-heading-2" data-lang-en="Russell & Hira Lal Ethnographic Survey (1916)" data-lang-mr="रसेल व हिरालाल मानववंश सर्वेक्षण (१९१६)">Russell & Hira Lal Ethnographic Survey (1916)</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="3. Russell & Hira Lal Ethnographic Survey (1916)" data-lang-mr="३. रसेल व हिरालाल मानववंश सर्वेक्षण (१९१६)">3. Russell & Hira Lal Ethnographic Survey (1916)</span></span>
+                            <a href="#sec-russell-hiralal" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Published in 1916 by Macmillan & Co., London, <em>The Tribes and Castes of the Central Provinces of India</em> by <strong>R. V. Russell</strong> and <strong>Rai Bahadur Hira Lal</strong> constitutes the benchmark colonial ethnographic survey of the province. In Volume III, the authors dedicated an extensive monograph to the Kohli community:" data-lang-mr="१९१६ मध्ये मॅकमिलन कंपनी, लंडनद्वारे प्रकाशित झालेले <em>द ट्राईब्स अँड कास्ट्स ऑफ द सेंट्रल प्रॉव्हिन्सेस ऑफ इंडिया</em> हे <strong>आर. व्ही. रसेल</strong> आणि <strong>राय बहादूर हिरालाल</strong> यांचे चार खंडांचे काम तत्कालीन प्रांताचे मूलभूत मानववंशशास्त्रीय सर्वेक्षण मानले जाते. खंड ३ मध्ये लेखकांनी कोहळी समाजावर सविस्तर निबंध लिहिला आहे:">
                             Published in 1916 by Macmillan & Co., London, <em>The Tribes and Castes of the Central Provinces of India</em> by <strong>R. V. Russell</strong> and <strong>Rai Bahadur Hira Lal</strong> constitutes the benchmark colonial ethnographic survey of the province. In Volume III, the authors dedicated an extensive monograph to the Kohli community:
@@ -333,7 +363,10 @@
 
                     <!-- SECTION 4: ORTHOGRAPHIC VARIATIONS -->
                     <section id="sec-name-references" class="wiki-section research-sec-block" data-section-category="official-records">
-                        <h2 class="wiki-heading-2" data-lang-en="Orthographic Variations & Archival Name Forms" data-lang-mr="नावांची ऐतिहासिक रूपे व लिप्यंतरण">Orthographic Variations & Archival Name Forms</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="4. Orthographic Variations & Archival Name Forms" data-lang-mr="४. नावांची ऐतिहासिक रूपे व लिप्यंतरण">4. Orthographic Variations & Archival Name Forms</span></span>
+                            <a href="#sec-name-references" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Due to variations in phonetic transcription by British revenue collectors, land settlement officers, and census supervisors between 1867 and 1931, the community’s name appeared in official records under diverse transliterations:" data-lang-mr="१८६७ ते १९३१ दरम्यान ब्रिटिश महसूल अधिकारी, सेटलमेंट सुपरवायझर आणि जनगणना अधिकाऱ्यांच्या उच्चारानुरूप इंग्रजी लिप्यंतरणामुळे अधिकृत नोंदींत विविध स्पेलिंग्स आढळतात:">
                             Due to variations in phonetic transcription by British revenue collectors, land settlement officers, and census supervisors between 1867 and 1931, the community’s name appeared in official records under diverse transliterations:
@@ -352,7 +385,10 @@
 
                     <!-- SECTION 5: LAND SETTLEMENT ANALYSIS -->
                     <section id="sec-settlement-research" class="wiki-section research-sec-block" data-section-category="settlement-reports">
-                        <h2 class="wiki-heading-2" data-lang-en="Land Settlement Analysis & Revenue Administration" data-lang-mr="जमीन सेटलमेंट विश्लेषण व महसूल प्रशासन">Land Settlement Analysis & Revenue Administration</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="5. Land Settlement Analysis & Revenue Administration" data-lang-mr="५. जमीन सेटलमेंट विश्लेषण व महसूल प्रशासन">5. Land Settlement Analysis & Revenue Administration</span></span>
+                            <a href="#sec-settlement-research" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Settlement reports executed by <strong>Captain C. B. Lucie Smith</strong> (Chanda, 1869), <strong>A. J. Lawrence</strong> (Bhandara, 1867), and <strong>A. B. Napier</strong> (Chanda Revision, 1904) provide foundational empirical data on agrarian land distribution, proprietary titles, and village tank administration." data-lang-mr="<strong>कॅप्टन सी. बी. लुसी स्मिथ</strong> (चांदा, १८६९), <strong>ए. जे. लॉरेन्स</strong> (भंडारा, १८६७) आणि <strong>ए. बी. नेपियर</strong> (चांदा पुनरावलोकन, १९०४) यांनी तयार केलेले सेटलमेंट अहवाल कृषी जमीन वाटप, मालकी हक्क आणि तलाव प्रशासनाचे मूलभूत पुरावे देतात.">
                             Settlement reports executed by <strong>Captain C. B. Lucie Smith</strong> (Chanda, 1869), <strong>A. J. Lawrence</strong> (Bhandara, 1867), and <strong>A. B. Napier</strong> (Chanda Revision, 1904) provide foundational empirical data on agrarian land distribution, proprietary titles, and village tank administration.
@@ -371,7 +407,10 @@
 
                     <!-- SECTION 6: DEMOGRAPHIC RECORDS -->
                     <section id="sec-census-research" class="wiki-section research-sec-block" data-section-category="census-records">
-                        <h2 class="wiki-heading-2" data-lang-en="Demographic Records: The 11,399 & 19,739 Benchmarks" data-lang-mr="लोकसंख्या नोंदी: ११,३९९ व १९,७३९ संदर्भ">Demographic Records: The 11,399 & 19,739 Benchmarks</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="6. Demographic Records: The 11,399 & 19,739 Benchmarks" data-lang-mr="६. लोकसंख्या नोंदी: ११,३९९ व १९,७३९ संदर्भ">6. Demographic Records: The 11,399 & 19,739 Benchmarks</span></span>
+                            <a href="#sec-census-research" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Two historical demographic benchmarks recur consistently across colonial archives and scholarly publications, representing distinct administrative scopes:" data-lang-mr="वसाहतकालीन अभिलेख आणि संशोधन ग्रंथांमध्ये दोन ऐतिहासिक लोकसंख्या आकडे वारंवार आढळतात, जे स्वतंत्र प्रशासकीय कार्यक्षेत्र दर्शवतात:">
                             Two historical demographic benchmarks recur consistently across colonial archives and scholarly publications, representing distinct administrative scopes:
@@ -400,7 +439,10 @@
 
                     <!-- SECTION 7: COMMUNITY SMRUTIGRANTHS -->
                     <section id="sec-community-publications" class="wiki-section research-sec-block" data-section-category="community-publications">
-                        <h2 class="wiki-heading-2" data-lang-en="Community Publications, Smrutigranths & Monographic Studies" data-lang-mr="समाज स्मृतीग्रंथ, स्मरणिका व संशोधन ग्रंथ">Community Publications, Smrutigranths & Monographic Studies</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="7. Community Publications, Smrutigranths & Monographic Studies" data-lang-mr="७. समाज स्मृतीग्रंथ, स्मरणिका व संशोधन ग्रंथ">7. Community Publications, Smrutigranths & Monographic Studies</span></span>
+                            <a href="#sec-community-publications" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="During the post-independence era, community intellectuals and social forums initiated systematic documentation of oral history, village genealogies, and cultural traditions. The most comprehensive academic contribution is <strong>Ramdas Borkar’s</strong> monographic treatise <em>Kohli Samaj Itihas va Sanskruti</em> (2001), which surveyed 518 villages across eastern Vidarbha." data-lang-mr="स्वातंत्र्योत्तर काळात समाजातील विचारवंत आणि सामाजिक संघटनांनी मौखिक इतिहास, ग्राम वंशावळी आणि सांस्कृतिक परंपरांचे पद्धतशीर दस्तऐवजीकरण सुरू केले. यामध्ये <strong>रामदास बोरकर</strong> यांचा <em>कोहळी समाज इतिहास व संस्कृती</em> (२००१) हा ग्रंथ अत्यंत महत्त्वाचा मानला जातो, ज्यामध्ये पूर्व विदर्भातील ५१८ गावांचे सर्वेक्षण केले गेले.">
                             During the post-independence era, community intellectuals and social forums initiated systematic documentation of oral history, village genealogies, and cultural traditions. The most comprehensive academic contribution is <strong>Ramdas Borkar’s</strong> monographic treatise <em>Kohli Samaj Itihas va Sanskruti</em> (2001), which surveyed 518 villages across eastern Vidarbha.
@@ -409,7 +451,10 @@
 
                     <!-- SECTION 8: CULTURAL TRADITIONS & ETHNOLOGY -->
                     <section id="sec-culture-research" class="wiki-section research-sec-block" data-section-category="culture">
-                        <h2 class="wiki-heading-2" data-lang-en="Cultural Traditions, Rituals & Ethnology" data-lang-mr="सांस्कृतिक परंपरा, विधी व नृवंशशास्त्र">Cultural Traditions, Rituals & Ethnology</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="8. Cultural Traditions, Rituals & Ethnology" data-lang-mr="८. सांस्कृतिक परंपरा, विधी व नृवंशशास्त्र">8. Cultural Traditions, Rituals & Ethnology</span></span>
+                            <a href="#sec-culture-research" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Ethnological research on the community documents distinctive social practices including <strong>Tulsi Vivah</strong> community worship, ancestral kuldaivat rituals (such as <em>Khandoba</em> and <em>Bhavani</em>), and communal gatherings at Dahaljit platforms, reflecting strong social coherence." data-lang-mr="समाजावरील सांस्कृतिक संशोधनात <strong>तुळशी विवाह</strong> हा सामुदायिक विधी, कुलदैवतांची पूजा (उदा. <em>खंडोबा</em> व <em>भवानी</em>) आणि डहळजीत ओट्यांवरील बैठका यांसारख्या परंपरांची नोंद आढळते, ज्यातून समाजातील दृढ एकात्मतेचे दर्शन घडते.">
                             Ethnological research on the community documents distinctive social practices including <strong>Tulsi Vivah</strong> community worship, ancestral kuldaivat rituals (such as <em>Khandoba</em> and <em>Bhavani</em>), and communal gatherings at Dahaljit platforms, reflecting strong social coherence.
@@ -418,7 +463,10 @@
 
                     <!-- SECTION 9: HYDRAULIC ENGINEERING STUDIES -->
                     <section id="sec-water-research" class="wiki-section research-sec-block" data-section-category="water-heritage">
-                        <h2 class="wiki-heading-2" data-lang-en="Hydraulic Engineering & Malguzari Tank Studies" data-lang-mr="जलव्यवस्थापन व तलाव अभियांत्रिकी संशोधन">Hydraulic Engineering & Malguzari Tank Studies</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="9. Hydraulic Engineering & Malguzari Tank Studies" data-lang-mr="९. जलव्यवस्थापन व तलाव अभियांत्रिकी संशोधन">9. Hydraulic Engineering & Malguzari Tank Studies</span></span>
+                            <a href="#sec-water-research" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Modern civil and environmental engineering studies have highlighted the sophisticated ecological balance achieved by traditional Kohli tank systems. Through cascading overflow catchments, earthen embankments with rip-rap stone pitching, and gravity-fed stone sluice conduits (<em>Khind</em>), these historical works preserved groundwater without electric power." data-lang-mr="आधुनिक जलव्यवस्थापन अभ्यासकांनी कोहळी तलाव पद्धतीच्या पर्यावरणीय संतुलनाची प्रशंसा केली आहे. नैसर्गिक उतारानुसार जोडलेले तलाव, दगडांची पिचिंग असलेले मातीचे मजबूत बांध आणि दगडी सांडव्यांमधून (<em>खिंड</em>) पाण्याचा विसर्ग यांमुळे विजेचा वापर न करता नैसर्गिक पाण्याचे उत्कृष्ट नियोजन शक्य झाले.">
                             Modern civil and environmental engineering studies have highlighted the sophisticated ecological balance achieved by traditional Kohli tank systems. Through cascading overflow catchments, earthen embankments with rip-rap stone pitching, and gravity-fed stone sluice conduits (<em>Khind</em>), these historical works preserved groundwater without electric power.
@@ -427,7 +475,10 @@
 
                     <!-- SECTION 10: AGRARIAN CULTIVARS & SUGARCANE -->
                     <section id="sec-agri-research" class="wiki-section research-sec-block" data-section-category="official-records">
-                        <h2 class="wiki-heading-2" data-lang-en="Agrarian Cultivars, Sugarcane & Paddy Heritage" data-lang-mr="पारंपरिक शेती, ऊस व भाताचे वाण संशोधन">Agrarian Cultivars, Sugarcane & Paddy Heritage</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="10. Agrarian Cultivars, Sugarcane & Paddy Heritage" data-lang-mr="१०. पारंपरिक शेती, ऊस व भाताचे वाण संशोधन">10. Agrarian Cultivars, Sugarcane & Paddy Heritage</span></span>
+                            <a href="#sec-agri-research" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Agrarian records demonstrate that Kohli cultivators systematically introduced and propagated superior fragrant rice strains including <strong>Chinnor</strong>, <strong>Luchai</strong>, and <strong>Dubraj</strong>, alongside high-sucrose <em>Kathani</em> sugarcane. Their transplantation method (<em>Aavni</em>) became the standard agricultural technique adopted across the Central Provinces." data-lang-mr="कृषी अभिलेख दर्शवतात की कोहळी शेतकऱ्यांनी <strong>चिन्नोर</strong>, <strong>लुचई</strong> आणि <strong>दुबराज</strong> यांसारख्या सुवासिक बारीक भाताच्या वाणांची आणि गोड <em>काठणी</em> उसाची लागवड रूढ केली. त्यांची रोपांची शास्त्रीय आवणी करण्याची पद्धत (<em>आवणी</em>) नंतर संपूर्ण सेंट्रल प्रॉव्हिन्सेसमध्ये प्रमाण मानली गेली.">
                             Agrarian records demonstrate that Kohli cultivators systematically introduced and propagated superior fragrant rice strains including <strong>Chinnor</strong>, <strong>Luchai</strong>, and <strong>Dubraj</strong>, alongside high-sucrose <em>Kathani</em> sugarcane. Their transplantation method (<em>Aavni</em>) became the standard agricultural technique adopted across the Central Provinces.
@@ -436,7 +487,10 @@
 
                     <!-- SECTION 11: CONTEMPORARY DISTINCTIONS -->
                     <section id="sec-contemporary-research" class="wiki-section research-sec-block" data-section-category="contemporary">
-                        <h2 class="wiki-heading-2" data-lang-en="Contemporary Distinctions & Academic Honors" data-lang-mr="समकालीन गुणवत्ता व शैक्षणिक यश">Contemporary Distinctions & Academic Honors</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="11. Contemporary Distinctions & Academic Honors" data-lang-mr="११. समकालीन गुणवत्ता व शैक्षणिक यश">11. Contemporary Distinctions & Academic Honors</span></span>
+                            <a href="#sec-contemporary-research" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Documenting academic excellence in higher education and distinguished public recognition within the contemporary community:" data-lang-mr="समकालीन समाजातील उच्च शिक्षणातील शैक्षणिक गुणवत्ता आणि उल्लेखनीय समाज सन्मानांचे दस्तऐवजीकरण:">
                             Documenting academic excellence in higher education and distinguished public recognition within the contemporary community:
@@ -463,7 +517,10 @@
 
                     <!-- SECTION 12: RESEARCH METHODOLOGY -->
                     <section id="sec-methodology" class="wiki-section">
-                        <h2 class="wiki-heading-2" data-lang-en="Historical Methodology: The Four Interpretive Principles" data-lang-mr="संशोधन पद्धती: चार मूलभूत अभ्यास तत्त्वे">Historical Methodology: The Four Interpretive Principles</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="12. Historical Methodology: The Four Interpretive Principles" data-lang-mr="१२. संशोधन पद्धती: चार मूलभूत अभ्यास तत्त्वे">12. Historical Methodology: The Four Interpretive Principles</span></span>
+                            <a href="#sec-methodology" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="To ensure scholarly rigor, this portal adheres to four core historiographical principles when consulting archival sources:" data-lang-mr="ऐतिहासिक अभ्यासात अचूकता राखण्यासाठी हे पोर्टल चार मूलभूत पद्धतीशास्त्र तत्त्वांचे पालन करते:">
                             To ensure scholarly rigor, this portal adheres to four core historiographical principles when consulting archival sources:
@@ -494,7 +551,10 @@
 
                     <!-- SECTION 13: SOURCE RELIABILITY HIERARCHY -->
                     <section id="sec-source-hierarchy" class="wiki-section">
-                        <h2 class="wiki-heading-2" data-lang-en="Source Reliability Hierarchy Matrix" data-lang-mr="स्रोत श्रेणीरचना व विश्वासार्हता रचना">Source Reliability Hierarchy Matrix</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="13. Source Reliability Hierarchy Matrix" data-lang-mr="१३. स्रोत श्रेणीरचना व विश्वासार्हता रचना">13. Source Reliability Hierarchy Matrix</span></span>
+                            <a href="#sec-source-hierarchy" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin:1.25rem 0;">
                             <div style="background:white; border:1px solid var(--wiki-border); border-top:4px solid #16a34a; border-radius:4px; padding:1rem;">
@@ -541,7 +601,10 @@
 
                     <!-- SECTION 14: REFERENCES -->
                     <section id="sec-references" class="wiki-section">
-                        <h2 class="wiki-heading-2" data-lang-en="Bibliographic References & Primary Records" data-lang-mr="ग्रंथसूची व प्राथमिक संदर्भ">Bibliographic References & Primary Records</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="14. Bibliographic References & Primary Records" data-lang-mr="१४. ग्रंथसूची व प्राथमिक संदर्भ">14. Bibliographic References & Primary Records</span></span>
+                            <a href="#sec-references" class="wiki-edit-pill">[edit]</a>
+                        </h2>
                         <ol class="wiki-references" style="font-size:0.85rem; line-height:1.6; margin-left:1.5rem; color:var(--wiki-text-muted);">
                             <li id="ref-1">Grant, Charles (1870). <em>The Gazetteer of the Central Provinces of India</em>. Education Society’s Press, Bombay.</li>
                             <li id="ref-2">Lucie Smith, C. B. (1869). <em>Report on the Land Revenue Settlement of the Chanda District</em>. Government Press, Bombay.</li>

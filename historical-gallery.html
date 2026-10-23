@@ -148,82 +148,106 @@
     <div class="wiki-main-layout">
         <div class="wiki-layout-grid">
 
-            <!-- LEFT STICKY TABLE OF CONTENTS -->
-            <aside class="wiki-toc-sidebar">
+            <!-- LEFT RAIL: TABLE OF CONTENTS -->
+            <aside class="wiki-toc-sidebar" aria-label="Table of Contents">
                 <div class="wiki-toc-title">
-                    <i class="fa-solid fa-list-ul"></i>
+                    <i class="fa-solid fa-list-ol"></i>
                     <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
                 </div>
-                <ul class="wiki-toc-list">
-                    <li><a href="#sec-overview" class="wiki-toc-link"><span class="wiki-toc-num">1</span> <span data-lang-en="Visual Archive Overview" data-lang-mr="दृश्य संग्रह विहंगावलोकन">Visual Archive Overview</span></a></li>
-                    <li><a href="#sec-community-heritage" class="wiki-toc-link"><span class="wiki-toc-num">2</span> <span data-lang-en="Village Architecture & Settlements" data-lang-mr="ग्रामीण वास्तुकला व वसाहती">Village Architecture & Settlements</span></a></li>
-                    <li><a href="#sec-water-heritage" class="wiki-toc-link"><span class="wiki-toc-num">3</span> <span data-lang-en="Water Heritage & Reservoirs" data-lang-mr="जलवारसा व जलाशय">Water Heritage & Reservoirs</span></a></li>
-                    <li><a href="#sec-agricultural-heritage" class="wiki-toc-link"><span class="wiki-toc-num">4</span> <span data-lang-en="Traditional Agriculture & Sugarcane" data-lang-mr="पारंपरिक शेती व ऊस उद्योग">Traditional Agriculture & Sugarcane</span></a></li>
-                    <li><a href="#sec-personalities" class="wiki-toc-link"><span class="wiki-toc-num">5</span> <span data-lang-en="Personalities & Public Figures" data-lang-mr="मान्यवर व लोकप्रतिनिधी">Personalities & Public Figures</span></a></li>
-                    <li><a href="#sec-culture-traditions" class="wiki-toc-link"><span class="wiki-toc-num">6</span> <span data-lang-en="Culture, Rituals & Assemblies" data-lang-mr="संस्कृती, विधी व मेळावे">Culture, Rituals & Assemblies</span></a></li>
-                    <li><a href="#sec-documents-publications" class="wiki-toc-link"><span class="wiki-toc-num">7</span> <span data-lang-en="Historical Documents & Gazetteers" data-lang-mr="ऐतिहासिक दस्तऐवज व गॅझेटिअर">Historical Documents & Gazetteers</span></a></li>
-                    <li><a href="#sec-education-achievements" class="wiki-toc-link"><span class="wiki-toc-num">8</span> <span data-lang-en="Academic Distinctions" data-lang-mr="शैक्षणिक गुणवत्ता व यश">Academic Distinctions</span></a></li>
-                    <li><a href="#sec-community-events" class="wiki-toc-link"><span class="wiki-toc-num">9</span> <span data-lang-en="Conventions & Digital Recognition" data-lang-mr="अधिवेशने व डिजिटल सन्मान">Conventions & Digital Recognition</span></a></li>
-                    <li><a href="#sec-image-policy" class="wiki-toc-link"><span class="wiki-toc-num">10</span> <span data-lang-en="Image Verification Policy" data-lang-mr="छायाचित्र पडताळणी धोरण">Image Verification Policy</span></a></li>
-                    <li><a href="#sec-references" class="wiki-toc-link"><span class="wiki-toc-num">11</span> <span data-lang-en="Archival References" data-lang-mr="अभिलेख व संदर्भ सूची">Archival References</span></a></li>
-                </ul>
+                <nav>
+                    <ul class="wiki-toc-list">
+                        <li class="wiki-toc-item"><a href="#sec-lead" class="wiki-toc-link active" data-lang-en="(Top / Overview)" data-lang-mr="(शीर्ष / विहंगावलोकन)">(Top / Overview)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-overview" class="wiki-toc-link"><span class="wiki-toc-num">1.</span> <span data-lang-en="Curated Collections & Search Catalog" data-lang-mr="संकलित संग्रह व शोध सूची">Curated Collections & Search Catalog</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-community-heritage" class="wiki-toc-link"><span class="wiki-toc-num">2.</span> <span data-lang-en="Village Architecture & Rural Settlements" data-lang-mr="ग्रामीण वास्तुकला व वसाहती">Village Architecture & Rural Settlements</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-water-heritage" class="wiki-toc-link"><span class="wiki-toc-num">3.</span> <span data-lang-en="Water Heritage & Historic Reservoirs" data-lang-mr="जलवारसा व ऐतिहासिक जलाशय">Water Heritage & Historic Reservoirs</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-agricultural-heritage" class="wiki-toc-link"><span class="wiki-toc-num">4.</span> <span data-lang-en="Traditional Agriculture & Agrarian Processing" data-lang-mr="पारंपरिक शेती व कृषी प्रक्रिया">Traditional Agriculture & Agrarian Processing</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-personalities" class="wiki-toc-link"><span class="wiki-toc-num">5.</span> <span data-lang-en="Community Personalities & Public Leadership" data-lang-mr="समाजातील मान्यवर व सार्वजनिक नेतृत्व">Community Personalities & Public Leadership</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-culture-traditions" class="wiki-toc-link"><span class="wiki-toc-num">6.</span> <span data-lang-en="Culture, Rituals & Communal Assemblies" data-lang-mr="संस्कृती, विधी व सामाजिक मेळावे">Culture, Rituals & Communal Assemblies</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-documents-publications" class="wiki-toc-link"><span class="wiki-toc-num">7.</span> <span data-lang-en="Historical Documents & Publications" data-lang-mr="ऐतिहासिक दस्तऐवज व प्रकाशने">Historical Documents & Publications</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-education-achievements" class="wiki-toc-link"><span class="wiki-toc-num">8.</span> <span data-lang-en="Academic Excellence & Distinctions" data-lang-mr="शैक्षणिक गुणवत्ता व यश">Academic Excellence & Distinctions</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-community-events" class="wiki-toc-link"><span class="wiki-toc-num">9.</span> <span data-lang-en="Conventions & Contemporary Digital Media" data-lang-mr="अधिवेशने व आधुनिक डिजिटल माध्यम">Conventions & Contemporary Digital Media</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-image-policy" class="wiki-toc-link"><span class="wiki-toc-num">10.</span> <span data-lang-en="Image Verification & Archival Submission Policy" data-lang-mr="छायाचित्र पडताळणी व अधिकृतता धोरण">Image Verification & Archival Submission Policy</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-references" class="wiki-toc-link"><span class="wiki-toc-num">11.</span> <span data-lang-en="Archival References & Primary Sources" data-lang-mr="अभिलेख व प्राथमिक संदर्भ">Archival References & Primary Sources</span></a></li>
+                    </ul>
+                </nav>
             </aside>
 
             <!-- MAIN ENCYCLOPEDIC ARTICLE COLUMN -->
             <main class="wiki-article-col">
 
-                <!-- ARTICLE TITLE & SUBTITLE -->
-                <div class="wiki-article-header">
-                    <h1 class="wiki-page-title" data-lang-en="Historical Visual Archive & Heritage Gallery" data-lang-mr="ऐतिहासिक दृश्य संग्रह व वारसा चित्रदालन">Historical Visual Archive & Heritage Gallery</h1>
-                    <div class="wiki-page-subtitle" data-lang-en="Documented visual records of traditional architecture, irrigation reservoirs, agrarian heritage, community publications, and educational milestones" data-lang-mr="पारंपरिक वास्तुकला, सिंचन जलाशय, कृषी वारसा, समाज प्रकाशने आणि शैक्षणिक यशाचे प्रमाणित दृश्य दस्तऐवजीकरण">Documented visual records of traditional architecture, irrigation reservoirs, agrarian heritage, community publications, and educational milestones</div>
+                <!-- ARTICLE TITLE AREA -->
+                <div class="wiki-title-area">
+                    <h1 class="wiki-article-title">
+                        <span data-lang-en="Historical Visual Archive & Heritage Gallery" data-lang-mr="ऐतिहासिक दृश्य संग्रह व वारसा चित्रदालन">Historical Visual Archive & Heritage Gallery</span>
+                    </h1>
+                    <div class="wiki-article-subline">
+                        <span data-lang-en="Documented visual records of traditional architecture, irrigation reservoirs, agrarian heritage, community publications, and educational milestones" data-lang-mr="पारंपरिक वास्तुकला, सिंचन जलाशय, कृषी वारसा, समाज प्रकाशने आणि शैक्षणिक यशाचे प्रमाणित दृश्य दस्तऐवजीकरण">Documented visual records of traditional architecture, irrigation reservoirs, agrarian heritage, community publications, and educational milestones</span>
+                        <div class="wiki-quick-lang">
+                            <button onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')" class="wiki-quick-lang-btn">
+                                <i class="fa-solid fa-language"></i> <span data-lang-en="मराठीत वाचा" data-lang-mr="Read in English">मराठीत वाचा</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- WIKIPEDIA ARTICLE BODY -->
-                <div class="wiki-article-body">
+                <!-- LEAD SECTION WITH RIGHT-FLOAT INFOBOX -->
+                <div class="wiki-lead-section" id="sec-lead">
 
-                    <!-- RIGHT FLOATING INFOBOX -->
-                    <aside class="wiki-infobox">
-                        <div class="wiki-infobox-title" data-lang-en="Visual Heritage Archive" data-lang-mr="दृश्य वारसा संग्रह">Visual Heritage Archive</div>
-                        <div class="wiki-infobox-image">
-                            <i class="fa-solid fa-images" style="font-size:3.2rem; color:var(--primary-dark); padding:1rem 0;"></i>
-                            <div class="wiki-infobox-caption" data-lang-en="Curated Photographic & Documentary Heritage of Kohli Samaj" data-lang-mr="कोहळी समाजाचा संकलित छायाचित्र व दस्तऐवज वारसा">Curated Photographic & Documentary Heritage of Kohli Samaj</div>
+                    <!-- CANONICAL INFOBOX -->
+                    <aside class="wiki-infobox" aria-label="Visual Heritage Archive Quick Facts">
+                        <div class="wiki-infobox-title">
+                            <span data-lang-en="Visual Heritage Archive" data-lang-mr="दृश्य वारसा संग्रह">Visual Heritage Archive</span>
+                        </div>
+                        <div class="wiki-infobox-subtitle">
+                            <span data-lang-en="Photographic & Documentary Records" data-lang-mr="छायाचित्र व दस्तऐवज नोंदी">Photographic & Documentary Records</span>
+                        </div>
+                        <div class="wiki-infobox-image-box">
+                            <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Logo" class="wiki-infobox-img">
+                            <div class="wiki-infobox-caption">
+                                <span data-lang-en="Curated Photographic & Documentary Heritage of Kohli Samaj" data-lang-mr="कोहळी समाजाचा संकलित छायाचित्र व दस्तऐवज वारसा">Curated Photographic & Documentary Heritage of Kohli Samaj</span>
+                            </div>
                         </div>
                         <table class="wiki-infobox-table">
                             <tr>
-                                <th data-lang-en="Regional Scope" data-lang-mr="प्रादेशिक व्याप्ती">Regional Scope</th>
-                                <td data-lang-en="Bhandara, Gondia, Chandrapur, Gadchiroli, Nagpur" data-lang-mr="भंडारा, गोंदिया, चंद्रपूर, गडचिरोली, नागपूर">Bhandara, Gondia, Chandrapur, Gadchiroli, Nagpur</td>
+                                <th><span data-lang-en="Regional Scope" data-lang-mr="प्रादेशिक व्याप्ती">Regional Scope</span></th>
+                                <td><span data-lang-en="Bhandara, Gondia, Chandrapur, Gadchiroli, Nagpur" data-lang-mr="भंडारा, गोंदिया, चंद्रपूर, गडचिरोली, नागपूर">Bhandara, Gondia, Chandrapur, Gadchiroli, Nagpur</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Key Visual Themes" data-lang-mr="प्रमुख दृश्य विषय">Key Visual Themes</th>
-                                <td data-lang-en="Malguzari Tanks, Rural Wadas, Sugarcane Mills, Gazetteers" data-lang-mr="मालगुजारी तलाव, वाडे, गुऱ्हाळे, गॅझेटिअर">Malguzari Tanks, Rural Wadas, Sugarcane Mills, Gazetteers</td>
+                                <th><span data-lang-en="Key Visual Themes" data-lang-mr="प्रमुख दृश्य विषय">Key Visual Themes</span></th>
+                                <td><span data-lang-en="Malguzari Tanks, Rural Wadas, Sugarcane Mills, Gazetteers" data-lang-mr="मालगुजारी तलाव, वाडे, गुऱ्हाळे, गॅझेटिअर">Malguzari Tanks, Rural Wadas, Sugarcane Mills, Gazetteers</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Academic Distinction" data-lang-mr="शैक्षणिक गौरव">Academic Distinction</th>
-                                <td data-lang-en="Miss Tejaswini Kapgate (94.66%, RTMNU Topper)" data-lang-mr="कु. तेजस्विनी कापगते (९४.६६%, राष्ट्रसंत तुकडोजी महाराज नागपूर विद्यापीठ टॉपर)">Miss Tejaswini Kapgate (94.66%, RTMNU Topper)</td>
+                                <th><span data-lang-en="Academic Distinction" data-lang-mr="शैक्षणिक गौरव">Academic Distinction</span></th>
+                                <td><span data-lang-en="Miss Tejaswini Kapgate (94.66%, RTMNU Topper)" data-lang-mr="कु. तेजस्विनी कापगते (९४.६६%, राष्ट्रसंत तुकडोजी महाराज नागपूर विद्यापीठ टॉपर)">Miss Tejaswini Kapgate (94.66%, RTMNU Topper)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Key Water Landmarks" data-lang-mr="प्रमुख जलसाठे">Key Water Landmarks</th>
-                                <td data-lang-en="Navegaon Bandh, Bodalkasa, Historic Baravs" data-lang-mr="नवेगाव बांध, बोदलकसा, ऐतिहासिक बारव">Navegaon Bandh, Bodalkasa, Historic Baravs</td>
+                                <th><span data-lang-en="Key Water Landmarks" data-lang-mr="प्रमुख जलसाठे">Key Water Landmarks</span></th>
+                                <td><span data-lang-en="Navegaon Bandh, Bodalkasa, Historic Baravs" data-lang-mr="नवेगाव बांध, बोदलकसा, ऐतिहासिक बारव">Navegaon Bandh, Bodalkasa, Historic Baravs</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Curation Standard" data-lang-mr="प्रमाणीकरण निकष">Curation Standard</th>
-                                <td data-lang-en="Primary provenance; AI-generated images excluded" data-lang-mr="अधिकृत ऐतिहासिक संदर्भ; AI छायाचित्रे वर्ज्य">Primary provenance; AI-generated images excluded</td>
+                                <th><span data-lang-en="Curation Standard" data-lang-mr="प्रमाणीकरण निकष">Curation Standard</span></th>
+                                <td><span data-lang-en="Primary provenance; AI-generated images excluded" data-lang-mr="अधिकृत ऐतिहासिक संदर्भ; AI छायाचित्रे वर्ज्य">Primary provenance; AI-generated images excluded</span></td>
                             </tr>
                         </table>
                     </aside>
 
                     <!-- LEAD PARAGRAPHS -->
-                    <p class="wiki-lead" data-lang-en="The <strong>Historical Visual Archive</strong> of the Kohli Samaj serves as a curated photographic, architectural, and documentary catalog preserving tangible records of the community across eastern Vidarbha. Organized systematically across thematic domains—ranging from centuries-old Malguzari reservoir embankments to pioneering twentieth-century community conventions—the archive links visual material directly to primary colonial gazetteers and verified community records." data-lang-mr="कोहळी समाजाचे <strong>ऐतिहासिक दृश्य संग्रह</strong> हे पूर्व विदर्भातील समाजाच्या भौतिक वारशाचे जतन करणारे एक पद्धतशीर छायाचित्र, वास्तुकला व दस्तऐवजीकरण दालन आहे. शतकानुशतके जुन्या मालगुजारी तलावांच्या बांधांपासून ते विसाव्या शतकातील समाज अधिवेशनांपर्यंत विविध विषयांत विभागलेला हा संग्रह, दृश्य घटकांना थेट ऐतिहासिक गॅझेटिअर आणि प्रमाणित समाज संदर्भांशी जोडतो.">
-                        The <strong>Historical Visual Archive</strong> of the Kohli Samaj serves as a curated photographic, architectural, and documentary catalog preserving tangible records of the community across eastern Vidarbha. Organized systematically across thematic domains—ranging from centuries-old Malguzari reservoir embankments to pioneering twentieth-century community conventions—the archive links visual material directly to primary colonial gazetteers and verified community records.
+                    <p class="wiki-lead-p">
+                        <span data-lang-en="The <strong>Historical Visual Archive</strong> of the Kohli Samaj serves as a curated photographic, architectural, and documentary catalog preserving tangible records of the community across eastern Vidarbha. Organized systematically across thematic domains—ranging from centuries-old Malguzari reservoir embankments to pioneering twentieth-century community conventions—the archive links visual material directly to primary colonial gazetteers and verified community records." data-lang-mr="कोहळी समाजाचे <strong>ऐतिहासिक दृश्य संग्रह</strong> हे पूर्व विदर्भातील समाजाच्या भौतिक वारशाचे जतन करणारे एक पद्धतशीर छायाचित्र, वास्तुकला व दस्तऐवजीकरण दालन आहे. शतकानुशतके जुन्या मालगुजारी तलावांच्या बांधांपासून ते विसाव्या शतकातील समाज अधिवेशनांपर्यंत विविध विषयांत विभागलेला हा संग्रह, दृश्य घटकांना थेट ऐतिहासिक गॅझेटिअर आणि प्रमाणित समाज संदर्भांशी जोडतो.">The <strong>Historical Visual Archive</strong> of the Kohli Samaj serves as a curated photographic, architectural, and documentary catalog preserving tangible records of the community across eastern Vidarbha. Organized systematically across thematic domains—ranging from centuries-old Malguzari reservoir embankments to pioneering twentieth-century community conventions—the archive links visual material directly to primary colonial gazetteers and verified community records.</span>
                     </p>
 
-                    <p data-lang-en="Consistent with scientific archival methodologies, this repository maintains an explicit provenance policy: photographs and site records are accompanied by administrative citations, geographic locations, and source annotations. Where archival photographic plates are pending official digitisation, the repository utilizes descriptive catalog cards rather than speculative or unverified imagery." data-lang-mr="शास्त्रीय दस्तऐवजीकरण पद्धतीनुसार, या संग्रहात कठोर प्रमाणीकरण धोरण पाळले जाते: छायाचित्रे आणि स्थळ नोंदींना प्रशासकीय संदर्भ, भौगोलिक स्थान आणि मूळ स्रोत जोडलेले आहेत. ज्या नोंदींचे मूळ छायाचित्र डिजिटल स्वरूपात उपलब्ध होणे बाकी आहे, तेथे काल्पनिक चित्रांऐवजी वर्णनात्मक कॅटलॉग कार्ड्स वापरले आहेत.">
-                        Consistent with scientific archival methodologies, this repository maintains an explicit provenance policy: photographs and site records are accompanied by administrative citations, geographic locations, and source annotations. Where archival photographic plates are pending official digitisation, the repository utilizes descriptive catalog cards rather than speculative or unverified imagery.
+                    <p class="wiki-p">
+                        <span data-lang-en="Consistent with scientific archival methodologies, this repository maintains an explicit provenance policy: photographs and site records are accompanied by administrative citations, geographic locations, and source annotations. Where archival photographic plates are pending official digitisation, the repository utilizes descriptive catalog cards rather than speculative or unverified imagery." data-lang-mr="शास्त्रीय दस्तऐवजीकरण पद्धतीनुसार, या संग्रहात कठोर प्रमाणीकरण धोरण पाळले जाते: छायाचित्रे आणि स्थळ नोंदींना प्रशासकीय संदर्भ, भौगोलिक स्थान आणि मूळ स्रोत जोडलेले आहेत. ज्या नोंदींचे मूळ छायाचित्र डिजिटल स्वरूपात उपलब्ध होणे बाकी आहे, तेथे काल्पनिक चित्रांऐवजी वर्णनात्मक कॅटलॉग कार्ड्स वापरले आहेत.">Consistent with scientific archival methodologies, this repository maintains an explicit provenance policy: photographs and site records are accompanied by administrative citations, geographic locations, and source annotations. Where archival photographic plates are pending official digitisation, the repository utilizes descriptive catalog cards rather than speculative or unverified imagery.</span>
                     </p>
+
+                </div>
 
                     <!-- SECTION 1: ARCHIVE OVERVIEW & SEARCH FILTER -->
                     <section id="sec-overview" class="wiki-section">
-                        <h2 class="wiki-heading-2" data-lang-en="Curated Collections & Search Catalog" data-lang-mr="संकलित संग्रह व शोध सूची">Curated Collections & Search Catalog</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="1. Curated Collections & Search Catalog" data-lang-mr="१. संकलित संग्रह व शोध सूची">1. Curated Collections & Search Catalog</span></span>
+                            <a href="#sec-overview" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Filter through the catalog below by thematic category or search across visual records, documented sites, and personalities." data-lang-mr="खालील विषयानुसार फिल्टर करा किंवा दृश्य नोंदी, ऐतिहासिक स्थळे आणि मान्यवरांचा शोध घ्या.">
                             Filter through the catalog below by thematic category or search across visual records, documented sites, and personalities.
@@ -255,7 +279,10 @@
 
                     <!-- SECTION 2: VILLAGE ARCHITECTURE & SETTLEMENTS -->
                     <section id="sec-community-heritage" class="wiki-section gallery-sec-block" data-section-category="community-heritage">
-                        <h2 class="wiki-heading-2" data-lang-en="Village Architecture & Rural Settlements" data-lang-mr="ग्रामीण वास्तुकला व वसाहती">Village Architecture & Rural Settlements</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="2. Village Architecture & Rural Settlements" data-lang-mr="२. ग्रामीण वास्तुकला व वसाहती">2. Village Architecture & Rural Settlements</span></span>
+                            <a href="#sec-community-heritage" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Historic Kohli settlements were characterized by compact spatial organization situated adjacent to irrigation tanks, featuring prominent Malguzari residences (<em>Wadas</em> or <em>Gadhis</em>), wide threshing floors, and mud-and-timber residences built with indigenous thermal insulation." data-lang-mr="ऐतिहासिक कोहळी गावांची रचना वैशिष्ट्यपूर्ण होती. तलावांच्या लगत वसलेली ही गावे, मालगुजारांचे प्रशस्त वाडे, विस्तृत खळी आणि स्थानिक लाकूड व मातीचा वापर करून बांधलेली घरे यांमुळे ओळखली जात.">
                             Historic Kohli settlements were characterized by compact spatial organization situated adjacent to irrigation tanks, featuring prominent Malguzari residences (<em>Wadas</em> or <em>Gadhis</em>), wide threshing floors, and mud-and-timber residences built with indigenous thermal insulation.
@@ -298,7 +325,10 @@
 
                     <!-- SECTION 3: WATER HERITAGE & RESERVOIRS -->
                     <section id="sec-water-heritage" class="wiki-section gallery-sec-block" data-section-category="water-heritage">
-                        <h2 class="wiki-heading-2" data-lang-en="Water Heritage & Historic Reservoirs" data-lang-mr="जलवारसा व ऐतिहासिक जलाशय">Water Heritage & Historic Reservoirs</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="3. Water Heritage & Historic Reservoirs" data-lang-mr="३. जलवारसा व ऐतिहासिक जलाशय">3. Water Heritage & Historic Reservoirs</span></span>
+                            <a href="#sec-water-heritage" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="The hydraulic monuments constructed by Kohli Malguzars constitute one of central India's most extraordinary irrigation legacies, encompassing thousands of interconnected water bodies such as <strong>Navegaon Bandh</strong> and <strong>Bodalkasa</strong>." data-lang-mr="कोहळी मालगुजारांनी निर्माण केलेली जलरचना ही मध्य भारतातील सिंचनाचा अद्वितीय वारसा मानली जाते. यामध्ये <strong>नवेगाव बांध</strong> आणि <strong>बोदलकसा</strong> यांसारख्या हजारो एकमेकांशी जोडलेल्या तलावांचा समावेश आहे.">
                             The hydraulic monuments constructed by Kohli Malguzars constitute one of central India's most extraordinary irrigation legacies, encompassing thousands of interconnected water bodies such as <strong>Navegaon Bandh</strong> and <strong>Bodalkasa</strong>.
@@ -357,7 +387,10 @@
 
                     <!-- SECTION 4: TRADITIONAL AGRICULTURE & SUGARCANE -->
                     <section id="sec-agricultural-heritage" class="wiki-section gallery-sec-block" data-section-category="agriculture">
-                        <h2 class="wiki-heading-2" data-lang-en="Traditional Agriculture & Agrarian Processing" data-lang-mr="पारंपरिक शेती व कृषी प्रक्रिया">Traditional Agriculture & Agrarian Processing</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="4. Traditional Agriculture & Agrarian Processing" data-lang-mr="४. पारंपरिक शेती व कृषी प्रक्रिया">4. Traditional Agriculture & Agrarian Processing</span></span>
+                            <a href="#sec-agricultural-heritage" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="The agrarian legacy of the Kohli community encompassed both specialized paddy nurseries and extensive sugarcane plantations served by bullock-driven crushing apparatus and boiling installations (<em>Gurhale</em>)." data-lang-mr="कोहळी समाजाच्या कृषी वारशात दर्जेदार भात शेतीसह मोठ्या प्रमाणावर उसाची लागवड, बैलांच्या साहाय्याने चालणारे चरके आणि गुऱ्हाळे यांचा समावेश होता.">
                             The agrarian legacy of the Kohli community encompassed both specialized paddy nurseries and extensive sugarcane plantations served by bullock-driven crushing apparatus and boiling installations (<em>Gurhale</em>).
@@ -400,7 +433,10 @@
 
                     <!-- SECTION 5: PERSONALITIES & COMMUNITY LEADERS -->
                     <section id="sec-personalities" class="wiki-section gallery-sec-block" data-section-category="personalities">
-                        <h2 class="wiki-heading-2" data-lang-en="Community Personalities & Public Leadership" data-lang-mr="समाजातील मान्यवर व सार्वजनिक नेतृत्व">Community Personalities & Public Leadership</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="5. Community Personalities & Public Leadership" data-lang-mr="५. समाजातील मान्यवर व सार्वजनिक नेतृत्व">5. Community Personalities & Public Leadership</span></span>
+                            <a href="#sec-personalities" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="From hereditary village Patils and freedom fighters to modern legislative representatives and civic jurists, community members have participated actively in regional governance and social reform across Vidarbha." data-lang-mr="पारंपरिक गाव पाटील आणि स्वातंत्र्यलढ्यातील कार्यकर्त्यांपासून ते आधुनिक विधिमंडळ प्रतिनिधी आणि न्यायमूर्तींपर्यंत, समाजातील व्यक्तींनी प्रादेशिक प्रशासन आणि सामाजिक सुधारणांमध्ये महत्त्वपूर्ण योगदान दिले आहे.">
                             From hereditary village Patils and freedom fighters to modern legislative representatives and civic jurists, community members have participated actively in regional governance and social reform across Vidarbha.
@@ -421,7 +457,10 @@
 
                     <!-- SECTION 6: CULTURE & TRADITIONS -->
                     <section id="sec-culture-traditions" class="wiki-section gallery-sec-block" data-section-category="culture">
-                        <h2 class="wiki-heading-2" data-lang-en="Culture, Rituals & Communal Assemblies" data-lang-mr="संस्कृती, विधी व सामाजिक मेळावे">Culture, Rituals & Communal Assemblies</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="6. Culture, Rituals & Communal Assemblies" data-lang-mr="६. संस्कृती, विधी व सामाजिक मेळावे">6. Culture, Rituals & Communal Assemblies</span></span>
+                            <a href="#sec-culture-traditions" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Traditional social ceremonies including <strong>Tulsi Vivah</strong>, ceremonial Dahaljit gatherings, and distinctive folk theatrical forms like <strong>Dandar</strong> represent the vital cultural heritage preserved through oral memory and community memoirs." data-lang-mr="<strong>तुळशी विवाह</strong>, पारंपरिक डहळजीत मेळावे आणि <strong>दंडार</strong> सारख्या लोकनाट्य परंपरा या मौखिक स्मृती आणि समाज ग्रंथांमधून जतन केलेल्या महत्त्वाच्या सांस्कृतिक वारशाचे प्रतिनिधित्व करतात.">
                             Traditional social ceremonies including <strong>Tulsi Vivah</strong>, ceremonial Dahaljit gatherings, and distinctive folk theatrical forms like <strong>Dandar</strong> represent the vital cultural heritage preserved through oral memory and community memoirs.
@@ -464,7 +503,10 @@
 
                     <!-- SECTION 7: DOCUMENTS & PUBLICATIONS -->
                     <section id="sec-documents-publications" class="wiki-section gallery-sec-block" data-section-category="documents">
-                        <h2 class="wiki-heading-2" data-lang-en="Historical Documents & Publications" data-lang-mr="ऐतिहासिक दस्तऐवज व प्रकाशने">Historical Documents & Publications</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="7. Historical Documents & Publications" data-lang-mr="७. ऐतिहासिक दस्तऐवज व प्रकाशने">7. Historical Documents & Publications</span></span>
+                            <a href="#sec-documents-publications" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Primary print archives include nineteenth-century British land settlement reports, district gazetteers of the Central Provinces, and community-published souvenirs documenting genealogies and surname lineages." data-lang-mr="प्राथमिक मुद्रित दस्तऐवजांमध्ये ब्रिटिश कालीन जमीन सेटलमेंट अहवाल, सेंट्रल प्रॉव्हिन्सेसचे गॅझेटिअर आणि समाज वंशावळी नोंदवणारी ऐतिहासिक प्रकाशने समाविष्ट आहेत.">
                             Primary print archives include nineteenth-century British land settlement reports, district gazetteers of the Central Provinces, and community-published souvenirs documenting genealogies and surname lineages.
@@ -507,7 +549,10 @@
 
                     <!-- SECTION 8: ACADEMIC DISTINCTIONS -->
                     <section id="sec-education-achievements" class="wiki-section gallery-sec-block" data-section-category="education">
-                        <h2 class="wiki-heading-2" data-lang-en="Academic Excellence & Distinctions" data-lang-mr="शैक्षणिक गुणवत्ता व यश">Academic Excellence & Distinctions</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="8. Academic Excellence & Distinctions" data-lang-mr="८. शैक्षणिक गुणवत्ता व यश">8. Academic Excellence & Distinctions</span></span>
+                            <a href="#sec-education-achievements" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Academic honors achieved by community scholars in higher education, documented through official university notifications and verified congratulatory publications." data-lang-mr="उच्च शिक्षणात समाज युवक-युवतींनी संपादन केलेले यश, जे अधिकृत विद्यापीठ निकाल आणि अभिनंदनपर नोंदींद्वारे प्रमाणित आहे.">
                             Academic honors achieved by community scholars in higher education, documented through official university notifications and verified congratulatory publications.
@@ -536,7 +581,10 @@
 
                     <!-- SECTION 9: CONVENTIONS & DIGITAL RECOGNITION -->
                     <section id="sec-community-events" class="wiki-section gallery-sec-block" data-section-category="events">
-                        <h2 class="wiki-heading-2" data-lang-en="Conventions & Contemporary Digital Media" data-lang-mr="अधिवेशने व आधुनिक डिजिटल माध्यम">Conventions & Contemporary Digital Media</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="9. Conventions & Contemporary Digital Media" data-lang-mr="९. अधिवेशने व आधुनिक डिजिटल माध्यम">9. Conventions & Contemporary Digital Media</span></span>
+                            <a href="#sec-community-events" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <p data-lang-en="Documentation of twentieth- and twenty-first-century community conventions, educational sammelans, and achievements in modern digital communication." data-lang-mr="विसाव्या आणि एकविसाव्या शतकातील समाज अधिवेशने, शैक्षणिक मेळावे आणि आधुनिक डिजिटल संवादातील उल्लेखनीय कामगिरीचे दस्तऐवजीकरण.">
                             Documentation of twentieth- and twenty-first-century community conventions, educational sammelans, and achievements in modern digital communication.
@@ -579,7 +627,10 @@
 
                     <!-- SECTION 10: IMAGE VERIFICATION POLICY -->
                     <section id="sec-image-policy" class="wiki-section">
-                        <h2 class="wiki-heading-2" data-lang-en="Image Verification & Archival Submission Policy" data-lang-mr="छायाचित्र पडताळणी व अधिकृतता धोरण">Image Verification & Archival Submission Policy</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="10. Image Verification & Archival Submission Policy" data-lang-mr="१०. छायाचित्र पडताळणी व अधिकृतता धोरण">10. Image Verification & Archival Submission Policy</span></span>
+                            <a href="#sec-image-policy" class="wiki-edit-pill">[edit]</a>
+                        </h2>
 
                         <div class="wiki-callout" style="background:var(--wiki-bg-subtle); border-left:4px solid var(--wiki-blue); padding:1rem 1.25rem; margin:1.25rem 0; border-radius:4px;">
                             <strong data-lang-en="Strict Provenance Standards:" data-lang-mr="कठोर प्रमाणीकरण मानके:">Strict Provenance Standards:</strong>
@@ -591,7 +642,10 @@
 
                     <!-- SECTION 11: REFERENCES -->
                     <section id="sec-references" class="wiki-section">
-                        <h2 class="wiki-heading-2" data-lang-en="Archival References & Primary Sources" data-lang-mr="अभिलेख व प्राथमिक संदर्भ">Archival References & Primary Sources</h2>
+                        <h2 class="wiki-heading">
+                            <span><span data-lang-en="11. Archival References & Primary Sources" data-lang-mr="११. अभिलेख व प्राथमिक संदर्भ">11. Archival References & Primary Sources</span></span>
+                            <a href="#sec-references" class="wiki-edit-pill">[edit]</a>
+                        </h2>
                         <ol class="wiki-references" style="font-size:0.85rem; line-height:1.6; margin-left:1.5rem; color:var(--wiki-text-muted);">
                             <li id="ref-1">Russell, R. V. (1908). <em>Central Provinces District Gazetteers: Bhandara District</em>. Vol. A. Pioneer Press, Allahabad.</li>
                             <li id="ref-2">Begbie, L. F. (1909). <em>Central Provinces District Gazetteers: Chanda District</em>. Vol. A. Pioneer Press, Allahabad.</li>
