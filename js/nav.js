@@ -275,6 +275,85 @@
             });
         });
 
+        /* ------------------------------------------------------------------ */
+        /* 10. WIKIPEDIA VECTOR 2022 TOC SCROLL-SPY & INTERACTIVE NAVIGATION   */
+        /* ------------------------------------------------------------------ */
+        var tocSidebar = document.querySelector('.wiki-toc-sidebar');
+        if (tocSidebar) {
+            var tocLinks = tocSidebar.querySelectorAll('.wiki-toc-link');
+            var targets = [];
+
+            tocLinks.forEach(function (link) {
+                var href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    var targetEl = document.querySelector(href);
+                    if (targetEl) {
+                        targets.push({ link: link, element: targetEl });
+                    }
+                }
+            });
+
+            if (targets.length > 0) {
+                var updateTocActive = function () {
+                    var scrollPos = window.scrollY + 130;
+                    var currentTarget = targets[0];
+
+                    for (var i = 0; i < targets.length; i++) {
+                        var top = targets[i].element.getBoundingClientRect().top + window.scrollY;
+                        if (top <= scrollPos) {
+                            currentTarget = targets[i];
+                        } else {
+                            break;
+                        }
+                    }
+
+                    tocLinks.forEach(function (l) {
+                        l.classList.remove('active');
+                    });
+                    if (currentTarget) {
+                        currentTarget.link.classList.add('active');
+                    }
+                };
+
+                window.addEventListener('scroll', updateTocActive, { passive: true });
+                updateTocActive();
+
+                // Smooth scroll handling with sticky header offset
+                tocLinks.forEach(function (link) {
+                    link.addEventListener('click', function (e) {
+                        var href = this.getAttribute('href');
+                        if (href && href.startsWith('#')) {
+                            var target = document.querySelector(href);
+                            if (target) {
+                                e.preventDefault();
+                                var offset = 100;
+                                var bodyRect = document.body.getBoundingClientRect().top;
+                                var elementRect = target.getBoundingClientRect().top;
+                                var elementPosition = elementRect - bodyRect;
+                                var offsetPosition = elementPosition - offset;
+
+                                window.scrollTo({
+                                    top: offsetPosition,
+                                    behavior: 'smooth'
+                                });
+
+                                if (history.pushState) {
+                                    history.pushState(null, null, href);
+                                } else {
+                                    window.location.hash = href;
+                                }
+
+                                tocLinks.forEach(function (l) {
+                                    l.classList.remove('active');
+                                });
+                                this.classList.add('active');
+                            }
+                        }
+                    });
+                });
+            }
+        }
+
     }); // end DOMContentLoaded
 
 })();

@@ -2828,6 +2828,11 @@ button {
         }
 
         /* Wikipedia Headings */
+        .wiki-lead-section,
+        .wiki-section,
+        section[id] {
+            scroll-margin-top: 100px;
+        }
         .wiki-heading {
             font-family: 'Outfit', 'Noto Sans Devanagari', serif;
             font-size: 1.55rem;
@@ -2839,7 +2844,7 @@ button {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            scroll-margin-top: 90px;
+            scroll-margin-top: 100px;
         }
         .wiki-subheading {
             font-size: 1.22rem;
