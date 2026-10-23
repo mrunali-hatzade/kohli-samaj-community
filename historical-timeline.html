@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historical Timeline | Kohli Samaj | Kohli Samaj Official Portal</title>
-    <meta name="description" content="A chronological journey through centuries of Kohli Samaj history from 1867 to present">
+    <title>Historical Timeline | Kohli Samaj Official Portal</title>
+    <meta name="description" content="A chronological journey through centuries of Kohli Samaj history, archival gazetteers, and settlement records from 1867 to 1973.">
+    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main CSS (Includes Centralized Vector 2022 Styles) -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-normal">
 
     <!-- ==========================================================================
-         1. TOP GOVT UTILITY BAR
+         TOP UTILITY BAR
          ========================================================================== -->
     <div class="top-utility-bar">
         <div class="container utility-flex">
@@ -23,7 +25,7 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
                 </span>
-                
+
                 <!-- Language Switcher -->
                 <div class="utility-item">
                     <button id="btnLangEn" class="lang-btn active">English</button>
@@ -52,7 +54,7 @@
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
                 </span>
-                
+
                 <!-- Search Box -->
                 <form id="topSearchForm" class="top-search-form">
                     <input type="text" id="searchInput" placeholder="Search portal..." data-lang-en-placeholder="Search portal..." data-lang-mr-placeholder="शोधा...">
@@ -63,11 +65,10 @@
     </div>
 
     <!-- ==========================================================================
-         2. MAIN HEADER & BRANDING & NAVIGATION
+         MAIN HEADER & BRANDING & NAVIGATION
          ========================================================================== -->
     <header class="main-header">
         <div class="container header-inner">
-            <!-- Official Emblem Logo -->
             <div class="brand-section">
                 <a href="index.html" class="brand-link">
                     <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Official Emblem Logo" class="brand-logo">
@@ -78,16 +79,16 @@
                 </a>
             </div>
 
-            <!-- Merged Navigation Bar -->
+            <!-- Navigation Bar -->
             <nav class="nav-bar" id="mainNavBar">
                 <ul class="nav-menu" id="mainNav">
                     <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
                     <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
                     <li class="has-dropdown">
-                        <a href="history.html" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="history.html" class="nav-link active"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
-                            <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
+                            <li><a href="historical-timeline.html" class="dropdown-link active"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
                             <li><a href="documents.html" class="dropdown-link"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></a></li>
                             <li><a href="gazetteers.html" class="dropdown-link"><i class="fa-solid fa-book-open"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></a></li>
                             <li><a href="census.html" class="dropdown-link"><i class="fa-solid fa-users-rectangle"></i> <span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></a></li>
@@ -100,7 +101,7 @@
                     </li>
                     <li><a href="culture.html" class="nav-link"><span data-lang-en="Culture" data-lang-mr="संस्कृती">Culture</span></a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="about.html" class="nav-link"><span data-lang-en="Community" data-lang-mr="समाज">Community</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="about.html" class="dropdown-link"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Overview" data-lang-mr="समाज परिचय">Community Overview</span></a></li>
                             <li><a href="districts.html" class="dropdown-link"><i class="fa-solid fa-map-location-dot"></i> <span data-lang-en="Districts & Regions" data-lang-mr="जिल्हे व क्षेत्र">Districts & Regions</span></a></li>
@@ -131,139 +132,310 @@
         </div>
     </header>
 
-        <!-- Page Title Banner & Breadcrumbs -->
-    <div class="page-title-banner">
+    <!-- ==========================================================================
+         BREADCRUMB & ARTICLE SUBHEADER
+         ========================================================================== -->
+    <div class="wiki-header-container">
         <div class="container">
-            <div class="breadcrumb-trail">
-                <a href="index.html" class="bc-home"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-parent" data-lang-en="History" data-lang-mr="इतिहास">History</span>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-current" data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span>
+            <div class="wiki-site-notice">
+                <i class="fa-solid fa-timeline" style="color:var(--accent-gold);"></i>
+                <a href="index.html" style="color:inherit; text-decoration:none;"><span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a> &gt;
+                <a href="history.html" style="color:inherit; text-decoration:none;"><span data-lang-en="History" data-lang-mr="इतिहास">History</span></a> &gt;
+                <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Kohli Samaj — Historical Timeline" data-lang-mr="कोहळी समाजाचा ऐतिहासिक कालक्रम">Kohli Samaj — Historical Timeline</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="A chronological overview of historical records, census references, gazetteers, settlement reports and publications relating to the Kohli community." data-lang-mr="कोहळी समाजाशी संबंधित उपलब्ध ऐतिहासिक नोंदी, जनगणना, गॅझेटिअर, सेटलमेंट रिपोर्ट आणि अभ्यासपूर्ण प्रकाशनांचा कालानुक्रमिक आढावा.">A chronological overview of historical records, census references, gazetteers, settlement reports and publications relating to the Kohli community.</span></p>
+            <div class="wiki-lang-tag">
+                <i class="fa-solid fa-language"></i>
+                <span data-lang-en="Article available in: English & Marathi" data-lang-mr="उपलब्ध भाषा: इंग्रजी व मराठी">Article available in: English & Marathi</span>
+            </div>
         </div>
     </div>
-    <main class="container" style="padding: 3rem 1.25rem;">
-        <div class="history-layout-container">
-            <!-- LEFT SIDEBAR PANEL -->
-            <aside class="history-sidebar-card">
-                <div class="history-sidebar-header">
-                    <h3>
-                        <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="History Navigation" data-lang-mr="इतिहास मार्गदर्शिका">History Navigation</span>
-                    </h3>
+
+    <!-- ==========================================================================
+         MAIN ENCYCLOPEDIC LAYOUT CONTAINER
+         ========================================================================== -->
+    <main class="container wiki-main-layout">
+        <div class="wiki-layout-grid">
+
+            <!-- LEFT RAIL: TABLE OF CONTENTS -->
+            <aside class="wiki-toc-sidebar" aria-label="Table of Contents">
+                <div class="wiki-toc-title">
+                    <i class="fa-solid fa-list-ol"></i>
+                    <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
                 </div>
-                <div class="history-sidebar-nav-wrapper">
-                    <ul class="history-sidebar-nav" id="historySidebarNav">
-                        <li>
-                            <a href="history.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-landmark"></i> &nbsp;<span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="history.html#sec-presence" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Presence" data-lang-mr="ऐतिहासिक उपस्थिती">Historical Presence</span></a></li>
-                                <li><a href="history.html#sec-livelihood" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Farming & Livelihood" data-lang-mr="शेती व उपजीविका">Farming & Livelihood</span></a></li>
-                                <li><a href="history.html#sec-stats" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Records" data-lang-mr="ऐतिहासिक नोंदी">Historical Records</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="expanded">
-                            <a href="historical-timeline.html" class="sidebar-main-link active">
-                                <span><i class="fa-solid fa-timeline"></i> &nbsp;<span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालक्रम">Historical Timeline</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link active"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chronology of Records" data-lang-mr="नोंदींचा कालक्रम">Chronology of Records</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="documents.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-file-contract"></i> &nbsp;<span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="gazetteers.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
-                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical References" data-lang-mr="ऐतिहासिक संदर्भ">Historical References</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="census.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-users-rectangle"></i> &nbsp;<span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
-                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="settlement.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-map"></i> &nbsp;<span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="water-heritage.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="historical-gallery.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="research.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-microscope"></i> &nbsp;<span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Spellings" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Spellings</span></a></li>
-                            </ul>
-                        </li>
+                <nav>
+                    <ul class="wiki-toc-list">
+                        <li class="wiki-toc-item"><a href="#sec-lead" class="wiki-toc-link active" data-lang-en="(Top / Overview)" data-lang-mr="(शीर्ष / विहंगावलोकन)">(Top / Overview)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-timeline" class="wiki-toc-link" data-lang-en="1. Chronological Timeline (1867–1973)" data-lang-mr="१. कालानुक्रमिक कालरेषा (१८६७–१९७३)">1. Chronological Timeline (1867–1973)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-settlement-rec" class="wiki-toc-link" data-lang-en="2. Historical Settlement Record (19,739)" data-lang-mr="२. ऐतिहासिक सेटलमेंट लोकसंख्या नोंद (१९,७३९)">2. Historical Settlement Record (19,739)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-periodization" class="wiki-toc-link" data-lang-en="3. Periodization & Archival Categories" data-lang-mr="३. ऐतिहासिक कालखंड व स्रोत वर्गीकरण">3. Periodization & Archival Categories</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-methodology" class="wiki-toc-link" data-lang-en="4. Contextual Guidance for Census Data" data-lang-mr="४. जनगणना सांख्यिकी वाचन संदर्भ">4. Contextual Guidance for Census Data</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-see-also" class="wiki-toc-link" data-lang-en="5. See Also" data-lang-mr="५. हेही पहा">5. See Also</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-references" class="wiki-toc-link" data-lang-en="6. Notes & References" data-lang-mr="६. संदर्भ व नोंदी">6. Notes & References</a></li>
                     </ul>
-                </div>
+                </nav>
             </aside>
 
-            <!-- RIGHT CONTENT AREA -->
-            <div class="history-content-area" id="sec-timeline">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <h2 style="color: var(--primary-dark); font-size: 1.6rem; font-weight: 800;" data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालक्रम">Historical Timeline</h2>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;" data-lang-en="A chronological overview of historical records, census references, gazetteers, settlement reports and publications relating to the Kohli community." data-lang-mr="कोहळी समाजाशी संबंधित उपलब्ध ऐतिहासिक नोंदी, जनगणना, गॅझेटिअर, सेटलमेंट रिपोर्ट आणि अभ्यासपूर्ण प्रकाशनांचा कालानुक्रमिक आढावा.">A chronological overview of historical records, census references, gazetteers, settlement reports and publications relating to the Kohli community.</p>
+            <!-- ARTICLE BODY -->
+            <article class="wiki-article-body" id="article-content">
+
+                <!-- ARTICLE TITLE AREA -->
+                <div class="wiki-title-area">
+                    <h1 class="wiki-article-title">
+                        <span data-lang-en="Chronological Historical Timeline (1867–1973)" data-lang-mr="कोहळी समाज ऐतिहासिक कालरेषा (१८६७–१९७३)">Chronological Historical Timeline (1867–1973)</span>
+                    </h1>
+                    <div class="wiki-article-subline">
+                        <span data-lang-en="Archival Milestones, Settlement Surveys, Gazetteers & Demographic Records" data-lang-mr="प्रशासकीय नोंदी, सेटलमेंट अहवाल, गॅझेटिअर व ऐतिहासिक लोकसंख्या संदर्भ">Archival Milestones, Settlement Surveys, Gazetteers & Demographic Records</span>
+                        <div class="wiki-quick-lang">
+                            <button onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')" class="wiki-quick-lang-btn">
+                                <i class="fa-solid fa-language"></i> <span data-lang-en="मराठीत वाचा" data-lang-mr="Read in English">मराठीत वाचा</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="timelineFullContainer" style="display:flex; flex-direction:column; gap:1.2rem;">
-                    <!-- Rendered dynamically -->
+                <!-- LEAD SECTION WITH RIGHT-FLOAT INFOBOX -->
+                <div class="wiki-lead-section" id="sec-lead">
+
+                    <!-- CANONICAL INFOBOX -->
+                    <aside class="wiki-infobox" aria-label="Timeline Quick Facts">
+                        <div class="wiki-infobox-title">
+                            <span data-lang-en="Timeline Summary" data-lang-mr="कालरेषा सारांश">Timeline Summary</span>
+                        </div>
+                        <div class="wiki-infobox-subtitle">
+                            <span data-lang-en="Documented Archival Span (1867–1973)" data-lang-mr="प्रमाणित नोंदींचा कालखंड (१८६७–१९७३)">Documented Archival Span (1867–1973)</span>
+                        </div>
+                        <div class="wiki-infobox-image-box">
+                            <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Logo" class="wiki-infobox-img">
+                            <div class="wiki-infobox-caption">
+                                <span data-lang-en="Emblem of Kohli Samaj documenting centuries of recorded heritage" data-lang-mr="कोहळी समाजाचा अधिकृत ऐतिहासिक वारसा बोधचिन्ह">Emblem of Kohli Samaj documenting centuries of recorded heritage</span>
+                            </div>
+                        </div>
+                        <table class="wiki-infobox-table">
+                            <tr>
+                                <th><span data-lang-en="Time Span" data-lang-mr="नोंदींचा कालखंड">Time Span</span></th>
+                                <td><span data-lang-en="1867 to 1973 (Over 106 years of documented records)" data-lang-mr="१८६७ ते १९७३ (१०६ वर्षांहून अधिक काळाच्या नोंदी)">1867 to 1973 (Over 106 years of documented records)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Earliest Record" data-lang-mr="पहिली नोंद">Earliest Record</span></th>
+                                <td><span data-lang-en="1867 Central Provinces Historical References" data-lang-mr="१८६७ सेंट्रल प्रॉव्हिन्सेस ऐतिहासिक संदर्भ">1867 Central Provinces Historical References</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Settlement Survey" data-lang-mr="सेटलमेंट अहवाल">Settlement Survey</span></th>
+                                <td><span data-lang-en="1870 Capt. Lucie Smith Chanda Settlement" data-lang-mr="१८७० कॅप्टन लुसी स्मिथ चांदा सेटलमेंट अहवाल">1870 Capt. Lucie Smith Chanda Settlement</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Census Series" data-lang-mr="जनगणना मालिका">Census Series</span></th>
+                                <td><span data-lang-en="1881, 1891, 1901, 1911 (Census of India)" data-lang-mr="१८८१, १८९१, १९०१, १९११ (भारत सरकार जनगणना)">1881, 1891, 1901, 1911 (Census of India)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="1911 Benchmark" data-lang-mr="१९११ लोकसंख्या">1911 Benchmark</span></th>
+                                <td><span data-lang-en="11,399 (Bhandara District statistical tables)" data-lang-mr="११,३९९ (भंडारा जिल्हा अधिकृत सांख्यिकी तक्ता)">11,399 (Bhandara District statistical tables)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Settlement Total" data-lang-mr="सेटलमेंट एकूण नोंद">Settlement Total</span></th>
+                                <td><span data-lang-en="19,739 across Bhandara and Chanda districts" data-lang-mr="१९,७३९ (भंडारा व चांदा जिल्हे मिळून नोंद)">19,739 across Bhandara and Chanda districts</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Ethnographic Survey" data-lang-mr="वांशिक संशोधन">Ethnographic Survey</span></th>
+                                <td><span data-lang-en="1916 Russell & Hira Lal (Tribes & Castes of CP)" data-lang-mr="१९१६ रसेल व हिरालाल (सेंट्रल प्रॉव्हिन्सेस समाज)">1916 Russell & Hira Lal (Tribes & Castes of CP)</span></td>
+                            </tr>
+                        </table>
+                    </aside>
+
+                    <p class="wiki-lead-p">
+                        <span data-lang-en="The <strong>Historical Timeline of the Kohli Community</strong> presents a chronological synthesis of official British colonial gazetteers, land revenue settlement reports, decennial censuses, and scholarly ethnographic publications compiled between 1867 and 1973<sup>[1]</sup>. These documented milestones chronologically trace the historical presence, population distributions, water architecture, and Malguzari landholdings of the Kohli people across eastern Vidarbha and contiguous central Indian territories<sup>[1]</sup><sup>[2]</sup>." data-lang-mr="<strong>कोहळी समाजाची ऐतिहासिक कालरेषा</strong> ही १८६७ ते १९७३ या कालखंडातील ब्रिटिशकालीन शासकीय गॅझेटिअर, महसूल सेटलमेंट अहवाल, दशवार्षिक जनगणना आणि वांशिक ग्रंथांमधील नोंदींचे वस्तुनिष्ठ कालानुक्रमिक संकलन आहे<sup>[१]</sup>. या ऐतिहासिक टप्प्यांच्या आधारे पूर्व विदर्भ आणि लगतच्या मध्य भारतातील कोहळी समाजाचे वास्तव्य, लोकसंख्या, जलस्थापत्य आणि मालगुजारी जमीनधारणा यांचा सलग इतिहास स्पष्ट होतो<sup>[१]</sup><sup>[२]</sup>.">The Historical Timeline of the Kohli Community...</span>
+                    </p>
+                    <p class="wiki-p">
+                        <span data-lang-en="Each milestone is drawn from verified archival sources, highlighting how colonial surveyors recognized the community as industrious master tank builders and progressive agricultural custodians of the Wainganga basin. The chronological records are arranged sequentially below, followed by detailed settlement analyses and periodization contexts." data-lang-mr="प्रत्येक ऐतिहासिक नोंद अधिकृत शासकीय दस्तऐवजांवर आधारलेली असून, वैनगंगा खोऱ्यातील शेती आणि भव्य तलावांचे कुशल निर्माते म्हणून ब्रिटिश अधिकाऱ्यांनी कोहळी समाजाचा केलेला गौरव यातून ठळकपणे समोर येतो. खालील कालरेषेत हे सर्व टप्पे कालक्रमानुसार मांडले आहेत.">Each milestone is drawn from verified archival sources...</span>
+                    </p>
                 </div>
-            </div>
+
+                <!-- SECTION 1: CHRONOLOGICAL TIMELINE (1867–1973) -->
+                <section id="sec-timeline">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="1. Chronological Timeline of Archival Records (1867–1973)" data-lang-mr="१. ऐतिहासिक नोंदींचा कालानुक्रमिक तक्ता (१८६७–१९७३)">1. Chronological Timeline of Archival Records (1867–1973)</span></span>
+                        <a href="#sec-timeline" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="The interactive timeline below chronologically outlines the key historical publications, decennial censuses, and district gazetteer references documenting the Kohli community:" data-lang-mr="खालील कालरेषेत कोहळी समाजाशी संबंधित प्रमुख ऐतिहासिक प्रकाशने, जनगणना नोंदी आणि गॅझेटिअर संदर्भ कालक्रमानुसार मांडलेले आहेत:">The interactive timeline below...</span>
+                    </p>
+
+                    <!-- DYNAMIC FULL TIMELINE CONTAINER -->
+                    <div id="timelineFullContainer" style="display:flex; flex-direction:column; gap:1.2rem; margin:1.5rem 0;">
+                        <!-- Rendered dynamically by js/app.js -->
+                    </div>
+                </section>
+
+                <!-- SECTION 2: HISTORICAL SETTLEMENT RECORD ANALYSIS -->
+                <section id="sec-settlement-rec">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="2. Historical Settlement Record Analysis (19,739 Benchmark)" data-lang-mr="२. ऐतिहासिक सेटलमेंट लोकसंख्या नोंद विश्लेषण (१९,७३९ संदर्भ)">2. Historical Settlement Record Analysis (19,739 Benchmark)</span></span>
+                        <a href="#sec-settlement-rec" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="In British land revenue settlement records of the Central Provinces, a combined population of <strong>19,739</strong> was documented for the Kohli/Kohri community across the adjoining Bhandara and Chanda districts<sup>[1]</sup><sup>[3]</sup>:" data-lang-mr="सेंट्रल प्रॉव्हिन्सेसच्या ब्रिटिश जमीन महसूल सेटलमेंट नोंदींमध्ये लगतच्या भंडारा आणि चांदा जिल्ह्यांमध्ये मिळून कोहळी/कोहरी समाजाची एकूण लोकसंख्या <strong>१९,७३९</strong> अशी नोंदवण्यात आली आहे<sup>[१]</sup><sup>[३]</sup>:">In British land revenue settlement records...</span>
+                    </p>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.2rem; margin-bottom:1.5rem;">
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--accent-gold); padding:1.2rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                            <div style="font-size:0.82rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700;">Bhandara District Share</div>
+                            <div style="font-size:2rem; font-weight:800; color:var(--primary-dark); margin:0.3rem 0;">12,097</div>
+                            <p style="font-size:0.88rem; color:var(--wiki-text-dark); margin:0;">Includes major concentrations across <strong>Sakoli tehsil (8,130)</strong>, Pauni, and Lakhandur talukas.</p>
+                        </div>
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--primary-dark); padding:1.2rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                            <div style="font-size:0.82rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700;">Chanda District Share</div>
+                            <div style="font-size:2rem; font-weight:800; color:var(--primary-dark); margin:0.3rem 0;">7,602</div>
+                            <p style="font-size:0.88rem; color:var(--wiki-text-dark); margin:0;">Includes major settlements across <strong>Brahmapuri tehsil (6,578)</strong>, Nagbhid, and Sindewahi.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: PERIODIZATION & ARCHIVAL CATEGORIES -->
+                <section id="sec-periodization">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="3. Periodization & Archival Categories" data-lang-mr="३. ऐतिहासिक कालखंड व स्रोत वर्गीकरण">3. Periodization & Archival Categories</span></span>
+                        <a href="#sec-periodization" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="The timeline of documented records can be categorized into four distinct archival phases<sup>[2]</sup>:" data-lang-mr="उपलब्ध नोंदींचा कालक्रम चार प्रमुख ऐतिहासिक टप्प्यांमध्ये विभागला जाऊ शकतो<sup>[२]</sup>:">The timeline of documented records...</span>
+                    </p>
+
+                    <div class="wiki-fact-list">
+                        <ul>
+                            <li>
+                                <strong data-lang-en="Early Colonial Settlement Era (1867–1870):" data-lang-mr="आरंभीचा ब्रिटिश सेटलमेंट कालखंड (१८६७–१८७०):">Early Colonial Settlement Era (1867–1870):</strong>
+                                <span data-lang-en="First systematic land revenue assessments following the creation of the Central Provinces in 1861; Captain Lucie Smith's 1869 Chanda report establishes early records of Kohli Malguzari rights and sugarcane irrigation." data-lang-mr="१८६१ मध्ये मध्य प्रांताची स्थापना झाल्यानंतरचे पहिले महसूल सर्वेक्षण; कॅप्टन लुसी स्मिथ यांच्या अहवालात कोहळी मालगुजारी व सिंचनाचे ऐतिहासिक श्रेय नोंदवले गेले.">First systematic assessments...</span>
+                            </li>
+                            <li>
+                                <strong data-lang-en="Decennial Census Series (1881–1911):" data-lang-mr="दशवार्षिक जनगणना कालखंड (१८८१–१९११):">Decennial Census Series (1881–1911):</strong>
+                                <span data-lang-en="Formal British imperial census operations recording community population, primary agrarian occupations, and village demographic distribution across central India." data-lang-mr="ब्रिटिश भारत सरकारची नियमित जनगणना, ज्यामध्ये समाजाची लोकसंख्या, मुख्य शेती व्यवसाय आणि ग्रामीण वसाहतींची आकडेवारी नोंदवली गेली.">Formal British imperial census operations...</span>
+                            </li>
+                            <li>
+                                <strong data-lang-en="Gazetteer & Ethnographic Synthesis (1908–1921):" data-lang-mr="गॅझेटिअर व वांशिक संशोधन कालखंड (१९०८–१९२१):">Gazetteer & Ethnographic Synthesis (1908–1921):</strong>
+                                <span data-lang-en="Comprehensive district gazetteers edited by R. V. Russell and the classic 1916 study 'The Tribes and Castes of the Central Provinces' by Russell & Hira Lal, recognizing the community as expert hydraulic architects." data-lang-mr="आर. व्ही. रसेल आणि रायबहादूर हिरालाल यांनी लिहिलेले संशोधन ग्रंथ, ज्यात कोहळी समाजाचा 'जलस्थापत्यकार व तलाव निर्माते' म्हणून सविस्तर गौरव केला गेला.">Comprehensive district gazetteers...</span>
+                            </li>
+                            <li>
+                                <strong data-lang-en="Post-Independence Revised Gazetteers (1973):" data-lang-mr="स्वातंत्र्योत्तर सुधारित गॅझेटिअर कालखंड (१९७३):">Post-Independence Revised Gazetteers (1973):</strong>
+                                <span data-lang-en="Government of Maharashtra's revised district gazetteers incorporating historical surveys into contemporary state administrative literature." data-lang-mr="महाराष्ट्र शासनाने प्रकाशित केलेले सुधारित जिल्हा गॅझेटिअर, ज्यामध्ये ऐतिहासिक संदर्भांचे पुनरावलोकन करण्यात आले.">Government of Maharashtra revised gazetteers...</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: CONTEXTUAL GUIDANCE FOR CENSUS DATA -->
+                <section id="sec-methodology">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="4. Contextual Guidance for Census Data" data-lang-mr="४. जनगणना सांख्यिकी वाचन संदर्भ">4. Contextual Guidance for Census Data</span></span>
+                        <a href="#sec-methodology" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <div style="background:var(--wiki-bg-subtle); border:1px solid var(--wiki-light-border); border-left:4px solid var(--primary-dark); padding:1.2rem 1.4rem; border-radius:4px; margin-bottom:1.5rem;">
+                        <h4 style="color:var(--primary-dark); font-size:1.02rem; font-weight:700; margin:0 0 0.5rem 0;" data-lang-en="Historiographical Reading Rules" data-lang-mr="ऐतिहासिक सांख्यिकी समजून घेताना आवश्यक नियम">Historiographical Reading Rules</h4>
+                        <p style="font-size:0.92rem; line-height:1.65; color:var(--wiki-text-dark); margin-bottom:0.6rem;" data-lang-en="When interpreting colonial population numbers (such as 11,399 in Bhandara in 1911 or 19,739 in combined settlement records), researchers should consider the following essential historical realities:" data-lang-mr="ब्रिटिश काळातील लोकसंख्या आकडेवारीचा (उदा. १९११ ची ११,३९९ किंवा सेटलमेंटमधील १९,७३९) अभ्यास करताना खालील वस्तुस्थिती लक्षात घेणे आवश्यक आहे:">When interpreting colonial population numbers...</p>
+                        <ul style="font-size:0.88rem; line-height:1.6; color:var(--wiki-text-dark); margin:0 0 0.4rem 1.2rem; padding:0;">
+                            <li data-lang-en="<strong>Administrative Boundary Fluctuations:</strong> 19th-century colonial districts covered vastly different geographic areas than present-day districts (e.g. Gondia was part of Bhandara, and Gadchiroli was within Chanda)." data-lang-mr="<strong>प्रशासकीय सीमा:</strong> त्या काळातील चांदा व भंडारा जिल्ह्यांच्या सीमा आजच्या जिल्ह्यांपेक्षा खूप मोठ्या होत्या (उदा. गोंदिया हा पूर्वी भंडारा जिल्ह्यात होता, तर गडचिरोली हा चांदा जिल्ह्यात होता).">19th-century colonial districts covered vastly different geographic areas...</li>
+                            <li data-lang-en="<strong>Phonetic Transliteration Divergence:</strong> Colonial officers documented names under variants such as <em>Kohli</em>, <em>Kohri</em>, <em>Kohiree</em>, and <em>Kaulees</em>." data-lang-mr="<strong>नावांची इंग्रजी स्पेलिंग्ज:</strong> ब्रिटिश अधिकाऱ्यांनी कोहळी, कोहरी, Kohri, Kaulees अशा विविध स्पेलिंग्जखाली नोंदी केल्या आहेत.">Colonial officers documented names under variants...</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: SEE ALSO -->
+                <section id="sec-see-also">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="5. See Also" data-lang-mr="५. हेही पहा">5. See Also</span></span>
+                        <a href="#sec-see-also" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <div class="wiki-see-also-grid">
+                        <a href="history.html" class="wiki-see-also-card">
+                            <span data-lang-en="Our History & Colonial Records" data-lang-mr="आमचा इतिहास व गॅझेटिअर नोंदी">Our History & Colonial Records</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="documents.html" class="wiki-see-also-card">
+                            <span data-lang-en="Historical Documents & Archives" data-lang-mr="ऐतिहासिक दस्तऐवज व पुरावे">Historical Documents & Archives</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="census.html" class="wiki-see-also-card">
+                            <span data-lang-en="Detailed Census Records" data-lang-mr="सविस्तर जनगणना नोंदी">Detailed Census Records</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="water-heritage.html" class="wiki-see-also-card">
+                            <span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा">Water Conservation Heritage</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: NOTES & REFERENCES -->
+                <section id="sec-references">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="6. Notes & References" data-lang-mr="६. संदर्भ व नोंदी">6. Notes & References</span></span>
+                        <a href="#sec-references" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <ol class="wiki-references-list">
+                        <li id="cite_note-1">
+                            <span data-lang-en="<strong>Central Provinces District Gazetteers:</strong> <em>Bhandara District (1908)</em> and <em>Chanda District (1909)</em>; Statistical Tables 1891–1926, corrected up to 1926; recording decennial census benchmarks and Malguzari landholdings." data-lang-mr="<strong>सेंट्रल प्रॉव्हिन्सेस डिस्ट्रिक्ट गॅझेटियर्स:</strong> <em>भंडारा जिल्हा (१९०८)</em> आणि <em>चांदा जिल्हा (१९०९)</em>; सांख्यिकी कोष्टके १८९१–१९२६; कोहळी समाजाच्या जनगणना व मालगुजारी नोंदी."><strong>Central Provinces District Gazetteers:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-2">
+                            <span data-lang-en="<strong>Ethnographic Literature:</strong> R. V. Russell & Rai Bahadur Hira Lal, <em>The Tribes and Castes of the Central Provinces of India</em> (Macmillan & Co., London, 1916); comprehensive study of Kohli agrarian and tank-building society." data-lang-mr="<strong>वांशिक व ऐतिहासिक संशोधन:</strong> आर. व्ही. रसेल व रायबहादूर हिरालाल, <em>द ट्राइब्स अँड कास्ट्स ऑफ द सेंट्रल प्रॉव्हिन्सेस ऑफ इंडिया</em> (लंडन, १९१६)."><strong>Ethnographic Literature:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-3">
+                            <span data-lang-en="<strong>Settlement Surveys:</strong> Captain Lucie Smith, <em>Land Revenue Settlement of the Chanda District (1869)</em>, and P. Hemingway, <em>Final Report on the Land Revenue Settlement of Bhandara (1916–1921)</em>." data-lang-mr="<strong>ब्रिटिश सेटलमेंट अहवाल:</strong> कॅप्टन लुसी स्मिथ, <em>चांदा जिल्हा सेटलमेंट रिपोर्ट (१८६९)</em>; आणि पी. हेमिंग्वे, <em>भंडारा जिल्हा सेटलमेंट अहवाल (१९१६-१९२१)</em>."><strong>Settlement Surveys:</strong> ...</span>
+                        </li>
+                    </ol>
+
+                    <div class="wiki-categories-box">
+                        <span class="wiki-cat-label" data-lang-en="Categories:" data-lang-mr="वर्ग:">Categories:</span>
+                        <a href="historical-timeline.html" class="wiki-cat-link" data-lang-en="Historical Timelines" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timelines</a> |
+                        <a href="history.html" class="wiki-cat-link" data-lang-en="Central Provinces Archival Records" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस दस्तऐवज">Central Provinces Archival Records</a> |
+                        <a href="census.html" class="wiki-cat-link" data-lang-en="Census History of Vidarbha" data-lang-mr="विदर्भाचा जनगणना इतिहास">Census History of Vidarbha</a> |
+                        <a href="about.html" class="wiki-cat-link" data-lang-en="Kohli Samaj History" data-lang-mr="कोहळी समाज इतिहास">Kohli Samaj History</a>
+                    </div>
+                </section>
+
+            </article>
         </div>
     </main>
-    <!-- Footer -->
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
             <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
             <div><span data-lang-en="Built by Community Volunteers" data-lang-mr="समाज स्वयंसेवकांनी बनवले">Built by Community Volunteers</span></div>
         </div>
     </footer>
-    <!-- Scripts -->
+
+    <!-- INTERACTIVE TOC SCROLL-SPY SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.wiki-toc-link');
+            const sections = document.querySelectorAll('article.wiki-article-body section, #sec-lead');
+
+            function highlightToc() {
+                let scrollPos = window.scrollY + 120;
+                sections.forEach(function(section) {
+                    if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                        const currentId = section.getAttribute('id');
+                        tocLinks.forEach(function(link) {
+                            if (link.getAttribute('href') === '#' + currentId) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightToc);
+            highlightToc();
+        });
+    </script>
+
+    <!-- Core Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/nav.js"></script>
 </body>
-</html>
+</html>\n
