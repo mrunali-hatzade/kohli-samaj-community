@@ -8,14 +8,16 @@
     <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Main CSS (Includes Centralized Wikipedia Vector 2022 Styles) -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-normal">
 
-    <!-- TOP UTILITY BAR -->
+    <!-- ==========================================================================
+         TOP UTILITY BAR
+         ========================================================================== -->
     <div class="top-utility-bar">
         <div class="container utility-flex">
             <div class="utility-left">
@@ -23,7 +25,7 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <span data-lang-en="India | Maharashtra" data-lang-mr="भारत | महाराष्ट्र">India | Maharashtra</span>
                 </span>
-                
+
                 <!-- Language Switcher -->
                 <div class="utility-item">
                     <button id="btnLangEn" class="lang-btn active">English</button>
@@ -52,7 +54,7 @@
                     <i class="fa-solid fa-phone"></i>
                     <span data-lang-en="Contact" data-lang-mr="संपर्क">Contact</span>
                 </span>
-                
+
                 <!-- Search Box -->
                 <form id="topSearchForm" class="top-search-form">
                     <input type="text" id="searchInput" placeholder="Search portal..." data-lang-en-placeholder="Search portal..." data-lang-mr-placeholder="शोधा...">
@@ -62,7 +64,9 @@
         </div>
     </div>
 
-    <!-- MAIN HEADER & BRANDING & NAVIGATION -->
+    <!-- ==========================================================================
+         MAIN HEADER & BRANDING & NAVIGATION
+         ========================================================================== -->
     <header class="main-header">
         <div class="container header-inner">
             <div class="brand-section">
@@ -81,9 +85,9 @@
                     <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a></li>
                     <li><a href="about.html" class="nav-link"><span data-lang-en="About" data-lang-mr="आमच्याबद्दल">About</span></a></li>
                     <li class="has-dropdown">
-                        <a href="history.html" class="nav-link"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                        <a href="history.html" class="nav-link active"><span data-lang-en="History" data-lang-mr="इतिहास">History</span> <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="history.html" class="dropdown-link"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
+                            <li><a href="history.html" class="dropdown-link active"><i class="fa-solid fa-landmark"></i> <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></a></li>
                             <li><a href="historical-timeline.html" class="dropdown-link"><i class="fa-solid fa-timeline"></i> <span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></a></li>
                             <li><a href="documents.html" class="dropdown-link"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></a></li>
                             <li><a href="gazetteers.html" class="dropdown-link"><i class="fa-solid fa-book-open"></i> <span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></a></li>
@@ -128,526 +132,514 @@
         </div>
     </header>
 
-    <!-- Page Title Banner & Breadcrumbs -->
-    <div class="page-title-banner">
+    <!-- ==========================================================================
+         BREADCRUMB & ARTICLE SUBHEADER
+         ========================================================================== -->
+    <div class="wiki-header-container">
         <div class="container">
-            <div class="breadcrumb-trail">
-                <a href="index.html" class="bc-home"><i class="fa-solid fa-house"></i> <span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-parent" data-lang-en="History" data-lang-mr="इतिहास">History</span>
-                <span class="bc-sep">&gt;&gt;</span>
-                <span class="bc-current" data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span>
+            <div class="wiki-site-notice">
+                <i class="fa-solid fa-landmark"></i>
+                <a href="index.html" style="color:inherit; text-decoration:none;"><span data-lang-en="Home" data-lang-mr="मुखपृष्ठ">Home</span></a> &gt;
+                <span data-lang-en="History" data-lang-mr="इतिहास">History</span> &gt;
+                <span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span>
             </div>
-            <h1 class="page-banner-title"><span data-lang-en="Kohli Samaj — Our History" data-lang-mr="कोहळी समाजाचा इतिहास">Kohli Samaj — Our History</span></h1>
-            <p class="page-banner-subtitle"><span data-lang-en="Centuries of agricultural leadership, water engineering marvels & historical documentation" data-lang-mr="शतकांची कृषी संस्कृती, मालगुजारी तलाव आणि ऐतिहासिक दस्तऐवज">Centuries of agricultural leadership, water engineering marvels & historical documentation</span></p>
+            <div class="wiki-lang-tag">
+                <i class="fa-solid fa-language"></i>
+                <span data-lang-en="Article available in: English & Marathi" data-lang-mr="उपलब्ध भाषा: इंग्रजी व मराठी">Article available in: English & Marathi</span>
+            </div>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="container" style="padding: 3rem 1.25rem;">
-        <div class="history-layout-container">
-            
-            <!-- LEFT SIDEBAR PANEL (Independently Scrollable with Custom Scrollbar) -->
-            <aside class="history-sidebar-card">
-                <div class="history-sidebar-header">
-                    <h3>
-                        <i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i>
-                        <span data-lang-en="History Navigation" data-lang-mr="इतिहास मार्गदर्शिका">History Navigation</span>
-                    </h3>
+    <!-- ==========================================================================
+         MAIN ENCYCLOPEDIC LAYOUT CONTAINER
+         ========================================================================== -->
+    <main class="container wiki-main-layout">
+        <div class="wiki-layout-grid">
+
+            <!-- LEFT RAIL: TABLE OF CONTENTS -->
+            <aside class="wiki-toc-sidebar" aria-label="Table of Contents">
+                <div class="wiki-toc-title">
+                    <i class="fa-solid fa-list-ol"></i>
+                    <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
                 </div>
-                <div class="history-sidebar-nav-wrapper">
-                    <ul class="history-sidebar-nav" id="historySidebarNav">
-                        
-                        <!-- Item 1: Our History -->
-                        <li class="expanded">
-                            <a href="history.html" class="sidebar-main-link active">
-                                <span><i class="fa-solid fa-landmark"></i> &nbsp;<span data-lang-en="Our History" data-lang-mr="आमचा इतिहास">Our History</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="history.html#sec-presence" class="sidebar-sub-link" data-scroll="sec-presence"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Presence" data-lang-mr="ऐतिहासिक उपस्थिती">Historical Presence</span></a></li>
-                                <li><a href="history.html#sec-livelihood" class="sidebar-sub-link" data-scroll="sec-livelihood"><i class="fa-solid fa-circle"></i> <span data-lang-en="Farming & Livelihood" data-lang-mr="शेती व उपजीविका">Farming & Livelihood</span></a></li>
-                                <li><a href="history.html#sec-patil" class="sidebar-sub-link" data-scroll="sec-patil"><i class="fa-solid fa-circle"></i> <span data-lang-en="Village Administration" data-lang-mr="ग्रामव्यवस्था">Village Administration</span></a></li>
-                                <li><a href="history.html#sec-family" class="sidebar-sub-link" data-scroll="sec-family"><i class="fa-solid fa-circle"></i> <span data-lang-en="Social Change" data-lang-mr="सामाजिक बदल">Social Change</span></a></li>
-                                <li><a href="history.html#sec-spellings" class="sidebar-sub-link" data-scroll="sec-spellings"><i class="fa-solid fa-circle"></i> <span data-lang-en="Name Transliterations" data-lang-mr="नावांची रूपे">Name Transliterations</span></a></li>
-                                <li><a href="history.html#sec-stats" class="sidebar-sub-link" data-scroll="sec-stats"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Records" data-lang-mr="ऐतिहासिक नोंदी">Historical Records</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 2: Historical Timeline -->
-                        <li>
-                            <a href="historical-timeline.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-timeline"></i> &nbsp;<span data-lang-en="Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा">Historical Timeline</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="historical-timeline.html#sec-timeline" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Timeline Milestones (1867 – 1973)" data-lang-mr="कालरेषा टप्पे (१८६७ – १९७३)">Timeline Milestones (1867 – 1973)</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 3: Historical Documents -->
-                        <li>
-                            <a href="documents.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-file-contract"></i> &nbsp;<span data-lang-en="Historical Documents" data-lang-mr="ऐतिहासिक दस्तऐवज">Historical Documents</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-
-                        <!-- Item 4: Gazetteers -->
-                        <li>
-                            <a href="gazetteers.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-book-open"></i> &nbsp;<span data-lang-en="Gazetteers" data-lang-mr="गॅझेटियर">Gazetteers</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="gazetteers.html#sec-cp-gazetteer" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chandrapur Gazetteer" data-lang-mr="चंद्रपूर गॅझेटियर">Chandrapur Gazetteer</span></a></li>
-                                <li><a href="gazetteers.html#sec-kaulees-ref" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Kaulees & Regional References" data-lang-mr="कौली व प्रादेशिक संदर्भ">Kaulees & Regional References</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 5: Census Records -->
-                        <li>
-                            <a href="census.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-users-rectangle"></i> &nbsp;<span data-lang-en="Census Records" data-lang-mr="जनगणना नोंदी">Census Records</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="census.html#sec-census-1916" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="1916 Population Figures" data-lang-mr="१९१६ लोकसंख्या आकडेवारी">1916 Population Figures</span></a></li>
-                                <li><a href="census.html#sec-origin-traditions" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Origin Traditions" data-lang-mr="उत्पत्ती परंपरा">Origin Traditions</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 6: Settlement Reports -->
-                        <li>
-                            <a href="settlement.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-map"></i> &nbsp;<span data-lang-en="Settlement Reports" data-lang-mr="सेटलमेंट अहवाल">Settlement Reports</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="settlement.html#sec-napier-report" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Chanda Report (Napier)" data-lang-mr="चांदा अहवाल (नेपिअर)">Chanda Report (Napier)</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 7: Water Conservation Heritage -->
-                        <li>
-                            <a href="water-heritage.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-droplet"></i> &nbsp;<span data-lang-en="Water Conservation" data-lang-mr="जलसंवर्धन वारसा">Water Conservation</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="water-heritage.html#sec-malguzari-systems" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Malguzari Water Systems" data-lang-mr="मालगुजारी जल यंत्रणा">Malguzari Water Systems</span></a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Item 8: Historical Gallery -->
-                        <li>
-                            <a href="historical-gallery.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-image"></i> &nbsp;<span data-lang-en="Historical Gallery" data-lang-mr="ऐतिहासिक गॅलरी">Historical Gallery</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                        </li>
-
-                        <!-- Item 9: Research & Publications -->
-                        <li>
-                            <a href="research.html" class="sidebar-main-link">
-                                <span><i class="fa-solid fa-microscope"></i> &nbsp;<span data-lang-en="Research & Publications" data-lang-mr="संशोधन व प्रकाशन">Research & Publications</span></span>
-                                <i class="fa-solid fa-chevron-right chevron-toggle"></i>
-                            </a>
-                            <ul class="sidebar-sub-list">
-                                <li><a href="research.html#sec-spellings-table" class="sidebar-sub-link"><i class="fa-solid fa-circle"></i> <span data-lang-en="Historical Names & Transliterations" data-lang-mr="ऐतिहासिक नावे व स्पेलिंग्ज">Historical Names & Transliterations</span></a></li>
-                            </ul>
-                        </li>
+                <nav>
+                    <ul class="wiki-toc-list">
+                        <li class="wiki-toc-item"><a href="#sec-lead" class="wiki-toc-link active" data-lang-en="(Top / Overview)" data-lang-mr="(शीर्ष / विहंगावलोकन)">(Top / Overview)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-presence" class="wiki-toc-link" data-lang-en="1. Historical Sphere & Regional Distribution" data-lang-mr="१. ऐतिहासिक उपस्थिती व भौगोलिक विस्तार">1. Historical Sphere & Regional Distribution</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-water" class="wiki-toc-link" data-lang-en="2. Indigenous Tank Architecture & Water Heritage" data-lang-mr="२. जलव्यवस्थापन व ऐतिहासिक तलाव निर्मिती">2. Indigenous Tank Architecture & Water Heritage</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-livelihood" class="wiki-toc-link" data-lang-en="3. Agrarian Economy & Indigenous Crops" data-lang-mr="३. शेती, पारंपरिक पिके व गुळनिर्मिती">3. Agrarian Economy & Indigenous Crops</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-patil" class="wiki-toc-link" data-lang-en="4. Village Administration & Dahaljit Traditions" data-lang-mr="४. पाटील, मालगुजार व ग्रामव्यवस्था">4. Village Administration & Dahaljit Traditions</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-village" class="wiki-toc-link" data-lang-en="5. Village Life & Reciprocal Social Order" data-lang-mr="५. ग्रामजीवन, वाडा व सामाजिक एकोपा">5. Village Life & Reciprocal Social Order</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-family" class="wiki-toc-link" data-lang-en="6. Joint Family Evolution & Modern Change" data-lang-mr="६. संयुक्त कुटुंबव्यवस्था व आधुनिक स्थित्यंतर">6. Joint Family Evolution & Modern Change</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-sources" class="wiki-toc-link" data-lang-en="7. Colonial Archival Records & Gazetteers" data-lang-mr="७. शासकीय गॅझेटिअर व ऐतिहासिक स्रोत">7. Colonial Archival Records & Gazetteers</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-stats" class="wiki-toc-link" data-lang-en="8. Historical Census & Settlement Records" data-lang-mr="८. ऐतिहासिक जनगणना व सेटलमेंट नोंदी">8. Historical Census & Settlement Records</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-spellings" class="wiki-toc-link" data-lang-en="9. Historical Name Transliterations" data-lang-mr="९. दस्तऐवजांमधील नावांची रूपे">9. Historical Name Transliterations</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-methodology" class="wiki-toc-link" data-lang-en="10. Historiographical Note & Methodology" data-lang-mr="१०. इतिहास संशोधन व स्रोत मर्यादा">10. Historiographical Note & Methodology</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-see-also" class="wiki-toc-link" data-lang-en="11. See Also" data-lang-mr="११. हेही पहा">11. See Also</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-references" class="wiki-toc-link" data-lang-en="12. Notes & References" data-lang-mr="१२. संदर्भ व नोंदी">12. Notes & References</a></li>
                     </ul>
-                </div>
+                </nav>
             </aside>
 
-            
-            <!-- RIGHT CONTENT AREA (Independent Page Content) -->
-            <div class="history-content-area">
-                
-                <!-- HERO / INTRODUCTION -->
-                <div id="sec-origin" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" style="width:100%; max-height:340px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem; box-shadow:var(--shadow-sm);" alt="History Banner">
-                    
-                    <h2 style="color:var(--primary-dark); font-size:1.6rem; font-weight:800; margin-bottom:1rem;" data-lang-en="Historical Background" data-lang-mr="ऐतिहासिक पार्श्वभूमी">Historical Background</h2>
-                    
-                    <p style="line-height:1.8; font-size:1.02rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="The history of the Kohli community is deeply intertwined with the social, agricultural, water management, and rural life of the Vidarbha region. Available historical records, gazetteers, settlement reports, census references, as well as written and oral traditions within the community, point to a historical connection of the Kohli community with Bhandara, Gondia, Chandrapur, Gadchiroli, and the adjoining Balaghat region in Madhya Pradesh." data-lang-mr="कोहळी समाजाचा इतिहास विदर्भातील सामाजिक, कृषी, जलव्यवस्थापन आणि ग्रामजीवनाशी जोडलेला आहे. उपलब्ध ऐतिहासिक नोंदी, गॅझेटिअर, सेटलमेंट रिपोर्ट, जनगणना संदर्भ तसेच समुदायातील लिखित व मौखिक परंपरांमध्ये भंडारा, गोंदिया, चंद्रपूर, गडचिरोली आणि लगतच्या मध्यप्रदेशातील बालाघाट परिसराशी कोहळी समाजाचा ऐतिहासिक संबंध आढळतो.">
-                        The history of the Kohli community is deeply intertwined with the social, agricultural, water management, and rural life of the Vidarbha region. Available historical records, gazetteers, settlement reports, census references, as well as written and oral traditions within the community, point to a historical connection of the Kohli community with Bhandara, Gondia, Chandrapur, Gadchiroli, and the adjoining Balaghat region in Madhya Pradesh.
-                    </p>
-                    <p style="line-height:1.8; font-size:1.02rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="Life developed around rivers, lakes, hills, agriculture, and irrigation systems. Traditional farming, water resource management, village administration, and social harmony are described in various sources as important elements of the Kohli community's historical way of life." data-lang-mr="नदी, तलाव, डोंगर, शेती आणि सिंचनव्यवस्थेच्या आसपास विकसित झालेले जीवन, पारंपरिक शेती, जलस्रोतांचे व्यवस्थापन, ग्रामव्यवस्था आणि सामाजिक एकोपा हे कोहळी समाजाच्या ऐतिहासिक जीवनपद्धतीतील महत्त्वाचे घटक म्हणून विविध स्रोतांमध्ये वर्णन केलेले आढळतात.">
-                        Life developed around rivers, lakes, hills, agriculture, and irrigation systems. Traditional farming, water resource management, village administration, and social harmony are described in various sources as important elements of the Kohli community's historical way of life.
-                    </p>
-                    <p style="line-height:1.8; font-size:1.02rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="Over time, the community has also moved from traditional agriculture and rural life towards education, business, technology, social work, and modern professional sectors." data-lang-mr="काळानुसार समाजाने पारंपरिक शेती आणि ग्रामजीवनातून शिक्षण, व्यवसाय, तंत्रज्ञान, सामाजिक कार्य आणि आधुनिक व्यावसायिक क्षेत्राकडेही वाटचाल केली class=">
-                        Over time, the community has also moved from traditional agriculture and rural life towards education, business, technology, social work, and modern professional sectors.
-                    </p>
-                </div>
+            <!-- ARTICLE BODY -->
+            <article class="wiki-article-body" id="article-content">
 
-                <!-- SECTION 1: ऐतिहासिक उपस्थिती -->
-                <div id="sec-presence" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin-bottom:1rem;" data-lang-en="Historical Presence in Vidarbha" data-lang-mr="विदर्भातील ऐतिहासिक उपस्थिती">Historical Presence in Vidarbha</h3>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="In available historical references, the presence of the Kohli community is found to be associated with the eastern Vidarbha districts of Bhandara, Gondia, Chandrapur, and Gadchiroli, as well as the Balaghat region in Madhya Pradesh." data-lang-mr="उपलब्ध ऐतिहासिक संदर्भांमध्ये कोहळी समाजाची उपस्थिती पूर्व विदर्भातील भंडारा, गोंदिया, चंद्रपूर आणि गडचिरोली तसेच मध्यप्रदेशातील बालाघाट परिसराशी संबंधित असल्याचे आढळते.">
-                        In available historical references, the presence of the Kohli community is found to be associated with the eastern Vidarbha districts of Bhandara, Gondia, Chandrapur, and Gadchiroli, as well as the Balaghat region in Madhya Pradesh.
-                    </p>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1.5rem;" data-lang-en="Community literature also mentions that community members have settled in cities like Nagpur, Pune, and Mumbai for education, employment, and business. However, regarding the community's origins, various historical opinions, local traditions, and community narratives exist. Therefore, a single origin story should not be cited as an undisputed historical conclusion on the website." data-lang-mr="समुदायाच्या उपलब्ध लेखनात नागपूर, पुणे आणि मुंबईसारख्या शहरांमध्ये शिक्षण, नोकरी आणि व्यवसायाच्या निमित्ताने समाजबांधव स्थायिक झाल्याचाही उल्लेख आहे. समाजाच्या उगमाबाबत मात्र विविध ऐतिहासिक मते, स्थानिक परंपरा आणि समुदायीय कथन आढळतात. त्यामुळे वेबसाइटवर एकाच उगमकथेचा निर्विवाद ऐतिहासिक निष्कर्ष म्हणून उल्लेख करू नये.">
-                        Community literature also mentions that community members have settled in cities like Nagpur, Pune, and Mumbai for education, employment, and business. However, regarding the community's origins, various historical opinions, local traditions, and community narratives exist. Therefore, a single origin story should not be cited as an undisputed historical conclusion on the website.
-                    </p>
-                    
-                    <div style="display:flex; flex-wrap:wrap; gap:0.8rem; margin-bottom:1.5rem;">
-                        <span style="background:var(--bg-cream); border:1px solid var(--border-color); padding:0.6rem 1rem; border-radius:8px; font-weight:700; color:var(--primary-dark);" data-lang-en="Bhandara" data-lang-mr="भंडारा">Bhandara</span>
-                        <span style="background:var(--bg-cream); border:1px solid var(--border-color); padding:0.6rem 1rem; border-radius:8px; font-weight:700; color:var(--primary-dark);" data-lang-en="Gondia" data-lang-mr="गोंदिया">Gondia</span>
-                        <span style="background:var(--bg-cream); border:1px solid var(--border-color); padding:0.6rem 1rem; border-radius:8px; font-weight:700; color:var(--primary-dark);" data-lang-en="Chandrapur" data-lang-mr="चंद्रपूर">Chandrapur</span>
-                        <span style="background:var(--bg-cream); border:1px solid var(--border-color); padding:0.6rem 1rem; border-radius:8px; font-weight:700; color:var(--primary-dark);" data-lang-en="Gadchiroli" data-lang-mr="गडचिरोली">Gadchiroli</span>
-                        <span style="background:var(--bg-cream); border:1px solid var(--border-color); padding:0.6rem 1rem; border-radius:8px; font-weight:700; color:var(--primary-dark);" data-lang-en="Balaghat" data-lang-mr="बालाघाट">Balaghat</span>
-                    </div>
-
-                    <h4 style="color:var(--text-muted); font-size:1.05rem; font-weight:600; margin-bottom:0.8rem;" data-lang-en="Modern Urban Presence" data-lang-mr="आधुनिक शहरी उपस्थिती">Modern Urban Presence</h4>
-                    <div style="display:flex; flex-wrap:wrap; gap:0.8rem;">
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; color:var(--text-main);" data-lang-en="Nagpur" data-lang-mr="नागपूर">Nagpur</span>
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; color:var(--text-main);" data-lang-en="Pune" data-lang-mr="पुणे">Pune</span>
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; color:var(--text-main);" data-lang-en="Mumbai" data-lang-mr="मुंबई">Mumbai</span>
-                    </div>
-                </div>
-
-                <!-- SECTION 2: ऐतिहासिक जीवनपद्धती -->
-                <div id="sec-livelihood" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin-bottom:1rem;" data-lang-en="Farming, Village Life & Traditional Livelihood" data-lang-mr="शेती, ग्रामजीवन आणि पारंपरिक उपजीविका">Farming, Village Life & Traditional Livelihood</h3>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="Agriculture held an important place in the traditional life of the Kohli community. Available historical references mention agricultural life related to rice farming, sugarcane cultivation, irrigation, and water resources." data-lang-mr="कोहळी समाजाच्या पारंपरिक जीवनात शेतीला महत्त्वाचे स्थान होते. उपलब्ध ऐतिहासिक संदर्भांमध्ये भात शेती, ऊस लागवड, सिंचन आणि जलस्रोतांशी संबंधित कृषीजीवनाचे उल्लेख आढळतात.">
-                        Agriculture held an important place in the traditional life of the Kohli community. Available historical references mention agricultural life related to rice farming, sugarcane cultivation, irrigation, and water resources.
-                    </p>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1.5rem;" data-lang-en="Along with agriculture, animal husbandry, jaggery production, and traditional work related to village water systems were also part of social and economic life. Developing agriculture according to the availability of water resources and utilizing water through tanks, dams, and canals was a tradition deeply connected to rural life in Vidarbha." data-lang-mr="शेतीसोबत पशुपालन, गुळनिर्मिती आणि गावाच्या जलव्यवस्थेशी संबंधित पारंपरिक कामेही सामाजिक व आर्थिक जीवनाचा भाग होती. जलस्रोतांच्या उपलब्धतेनुसार शेती विकसित करणे आणि तलाव, बंधारे व कालव्यांच्या माध्यमातून पाण्याचा उपयोग करणे ही परंपरा विदर्भातील ग्रामीण जीवनाशी जोडलेली होती.">
-                        Along with agriculture, animal husbandry, jaggery production, and traditional work related to village water systems were also part of social and economic life. Developing agriculture according to the availability of water resources and utilizing water through tanks, dams, and canals was a tradition deeply connected to rural life in Vidarbha.
-                    </p>
-                    
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:1rem;">
-                        <div style="background:white; border:1px solid var(--border-color); border-radius:8px; padding:1rem; text-align:center; box-shadow:var(--shadow-sm);">
-                            <i class="fa-solid fa-seedling" style="font-size:1.6rem; color:var(--accent-gold); margin-bottom:0.5rem;"></i>
-                            <div style="font-weight:700; color:var(--primary-dark);" data-lang-en="Rice Farming" data-lang-mr="भात शेती">Rice Farming</div>
-                        </div>
-                        <div style="background:white; border:1px solid var(--border-color); border-radius:8px; padding:1rem; text-align:center; box-shadow:var(--shadow-sm);">
-                            <i class="fa-solid fa-leaf" style="font-size:1.6rem; color:var(--accent-gold); margin-bottom:0.5rem;"></i>
-                            <div style="font-weight:700; color:var(--primary-dark);" data-lang-en="Sugarcane Farming" data-lang-mr="ऊस शेती">Sugarcane Farming</div>
-                        </div>
-                        <div style="background:white; border:1px solid var(--border-color); border-radius:8px; padding:1rem; text-align:center; box-shadow:var(--shadow-sm);">
-                            <i class="fa-solid fa-fire-burner" style="font-size:1.6rem; color:var(--accent-gold); margin-bottom:0.5rem;"></i>
-                            <div style="font-weight:700; color:var(--primary-dark);" data-lang-en="Jaggery Production" data-lang-mr="गुळनिर्मिती">Jaggery Production</div>
-                        </div>
-                        <div style="background:white; border:1px solid var(--border-color); border-radius:8px; padding:1rem; text-align:center; box-shadow:var(--shadow-sm);">
-                            <i class="fa-solid fa-water" style="font-size:1.6rem; color:var(--accent-gold); margin-bottom:0.5rem;"></i>
-                            <div style="font-weight:700; color:var(--primary-dark);" data-lang-en="Irrigation" data-lang-mr="सिंचन">Irrigation</div>
-                        </div>
-                        <div style="background:white; border:1px solid var(--border-color); border-radius:8px; padding:1rem; text-align:center; box-shadow:var(--shadow-sm);">
-                            <i class="fa-solid fa-cow" style="font-size:1.6rem; color:var(--accent-gold); margin-bottom:0.5rem;"></i>
-                            <div style="font-weight:700; color:var(--primary-dark);" data-lang-en="Animal Husbandry" data-lang-mr="पशुपालन">Animal Husbandry</div>
-                        </div>
-                        <div style="background:white; border:1px solid var(--border-color); border-radius:8px; padding:1rem; text-align:center; box-shadow:var(--shadow-sm);">
-                            <i class="fa-solid fa-house-chimney" style="font-size:1.6rem; color:var(--accent-gold); margin-bottom:0.5rem;"></i>
-                            <div style="font-weight:700; color:var(--primary-dark);" data-lang-en="Village Life" data-lang-mr="ग्रामजीवन">Village Life</div>
+                <!-- ARTICLE TITLE AREA -->
+                <div class="wiki-title-area">
+                    <h1 class="wiki-article-title">
+                        <span data-lang-en="History of the Kohli Community" data-lang-mr="कोहळी समाजाचा इतिहास">History of the Kohli Community</span>
+                    </h1>
+                    <div class="wiki-article-subline">
+                        <span data-lang-en="Documented Heritage, Colonial Gazetteers & Water Engineering Archives" data-lang-mr="प्रमाणित इतिहास, शासकीय गॅझेटिअर व जलस्थापत्य दस्तऐवज">Documented Heritage, Colonial Gazetteers & Water Engineering Archives</span>
+                        <div class="wiki-quick-lang">
+                            <button onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')" class="wiki-quick-lang-btn">
+                                <i class="fa-solid fa-language"></i> <span data-lang-en="मराठीत वाचा" data-lang-mr="Read in English">मराठीत वाचा</span>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- SECTION 3: पाटील आणि मालगुजार परंपरा -->
-                <div id="sec-patil" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:1rem;">
-                        <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin:0;" data-lang-en="Patil, Malguzar and Village Administration" data-lang-mr="पाटील, मालगुजार आणि ग्रामव्यवस्था">Patil, Malguzar and Village Administration</h3>
-                        <span class="badge-source badge-record" style="background:#e6fcf5; color:#0ca678; border:1px solid #63e6be; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.75rem;"><i class="fa-solid fa-book"></i> <span data-lang-en="Community Source" data-lang-mr="समुदायीय स्रोत">Community Source</span></span>
-                    </div>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="Historical writings within the community and available references mention Kohli Patil and Malguzar families in certain areas. It is described in the community's historical memory that the Patil or Malguzar played a role in village agricultural affairs, water management, social coordination, local decision-making, and village life." data-lang-mr="समुदायातील ऐतिहासिक लेखन आणि उपलब्ध संदर्भांमध्ये काही भागांतील कोहळी पाटील आणि मालगुजार घराण्यांचा उल्लेख आढळतो. गावातील शेतीविषयक व्यवहार, जलव्यवस्था, सामाजिक समन्वय, स्थानिक निर्णयप्रक्रिया आणि ग्रामजीवनात पाटील किंवा मालगुजार यांची भूमिका असल्याचे समुदायाच्या ऐतिहासिक स्मृतीमध्ये वर्णन केले जाते.">
-                        Historical writings within the community and available references mention Kohli Patil and Malguzar families in certain areas. It is described in the community's historical memory that the Patil or Malguzar played a role in village agricultural affairs, water management, social coordination, local decision-making, and village life.
-                    </p>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1.5rem;" data-lang-en="While studying this tradition, it should not be assumed that the social system was identical in every village. Roles could vary depending on local circumstances." data-lang-mr="या परंपरेचा अभ्यास करताना प्रत्येक गावातील सामाजिक व्यवस्था समान होती असे गृहीत धरू नये. स्थानिक परिस्थितीनुसार भूमिका बदलत असू शकतात.">
-                        While studying this tradition, it should not be assumed that the social system was identical in every village. Roles could vary depending on local circumstances.
-                    </p>
+                <!-- LEAD SECTION WITH RIGHT-FLOAT INFOBOX -->
+                <div class="wiki-lead-section" id="sec-lead">
 
-                    <div style="display:flex; flex-direction:column; gap:0.8rem;">
-                        <div style="background:white; border-left:4px solid var(--accent-gold); padding:1rem; border-radius:6px; box-shadow:var(--shadow-sm);">
-                            <strong style="color:var(--primary-dark);" data-lang-en="Patil" data-lang-mr="पाटील">Patil</strong> → <span data-lang-en="Village Administration" data-lang-mr="ग्रामव्यवस्था">Village Administration</span>
+                    <!-- CANONICAL INFOBOX -->
+                    <aside class="wiki-infobox" aria-label="History Quick Facts">
+                        <div class="wiki-infobox-title">
+                            <span data-lang-en="Kohli Samaj History" data-lang-mr="कोहळी समाज इतिहास">Kohli Samaj History</span>
                         </div>
-                        <div style="background:white; border-left:4px solid var(--accent-gold); padding:1rem; border-radius:6px; box-shadow:var(--shadow-sm);">
-                            <strong style="color:var(--primary-dark);" data-lang-en="Malguzar" data-lang-mr="मालगुजार">Malguzar</strong> → <span data-lang-en="Land & Revenue System" data-lang-mr="जमीन व महसूल व्यवस्था">Land & Revenue System</span>
+                        <div class="wiki-infobox-subtitle">
+                            <span data-lang-en="Historical Summary & Archival Records" data-lang-mr="ऐतिहासिक सारांश व प्रशासकीय नोंदी">Historical Summary & Archival Records</span>
                         </div>
-                        <div style="background:white; border-left:4px solid var(--accent-gold); padding:1rem; border-radius:6px; box-shadow:var(--shadow-sm);">
-                            <strong style="color:var(--primary-dark);" data-lang-en="Community" data-lang-mr="समुदाय">Community</strong> → <span data-lang-en="Agriculture, Water Management & Social Coordination" data-lang-mr="शेती, जलव्यवस्था आणि सामाजिक समन्वय">Agriculture, Water Management & Social Coordination</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECTION 4: जलव्यवस्थापन -->
-                <div id="sec-water" class="history-tab-section" style="background:var(--bg-cream); padding:1.8rem; border-radius:12px; margin-bottom: 2.5rem; border:1px solid var(--border-color);">
-                    <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin-bottom:1rem;" data-lang-en="Water Management — An Important Part of Kohli Historical Life" data-lang-mr="जलव्यवस्थापन — कोहळी समाजाच्या ऐतिहासिक जीवनाचा महत्त्वाचा भाग">Water Management — An Important Part of Kohli Historical Life</h3>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="The connection of the Kohli community's historical life with tanks, irrigation, and water management is found in various community and historical references. Providing water for agriculture through tanks, dams, canals, and reservoirs, planning water usage, and utilizing available water resources communally were important skills in rural life." data-lang-mr="कोहळी समाजाच्या ऐतिहासिक जीवनाशी तलाव, सिंचन आणि जलव्यवस्थापनाचा संबंध विविध समुदायीय आणि ऐतिहासिक संदर्भांमध्ये आढळतो. तलाव, बंधारे, कालवे आणि पाणीसाठ्यांच्या माध्यमातून शेतीसाठी पाणी उपलब्ध करून देणे, पाण्याचे नियोजन करणे आणि उपलब्ध जलस्रोतांचा सामुदायिक उपयोग करणे ही ग्रामीण जीवनातील महत्त्वाची कौशल्ये होती.">
-                        The connection of the Kohli community's historical life with tanks, irrigation, and water management is found in various community and historical references. Providing water for agriculture through tanks, dams, canals, and reservoirs, planning water usage, and utilizing available water resources communally were important skills in rural life.
-                    </p>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1.5rem;" data-lang-en="The concept of 'Samaj Tithe Talav' (Where there is the community, there is a tank) is presented as a cultural symbol of this water tradition within the community." data-lang-mr="'समाज तिथे तलाव' ही संकल्पना या जलपरंपरेचे समुदायातील सांस्कृतिक प्रतीक म्हणून मांडली जाते.">
-                        The concept of 'Samaj Tithe Talav' (Where there is the community, there is a tank) is presented as a cultural symbol of this water tradition within the community.
-                    </p>
-                    <a href="water-heritage.html" class="btn-gold-fill" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.2rem; font-size:0.95rem; border-radius:6px; font-weight:700;">
-                        <i class="fa-solid fa-droplet"></i>
-                        <span data-lang-en="Detailed History of Water Management →" data-lang-mr="जलव्यवस्थापनाचा सविस्तर इतिहास →">Detailed History of Water Management →</span>
-                    </a>
-                </div>
-
-                <!-- SECTION 5: ऊस आणि गुळनिर्मिती -->
-                <div id="sec-sugarcane" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:1rem;">
-                        <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin:0;" data-lang-en="Sugarcane Cultivation & Jaggery Production" data-lang-mr="ऊस शेती आणि गुळनिर्मिती">Sugarcane Cultivation & Jaggery Production</h3>
-                        <span class="badge-source badge-record" style="background:#e6fcf5; color:#0ca678; border:1px solid #63e6be; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.75rem;"><i class="fa-solid fa-file-lines"></i> <span data-lang-en="Historical Source" data-lang-mr="ऐतिहासिक स्रोत">Historical Source</span></span>
-                    </div>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="Available historical and community writings mention the association of sugarcane farming and jaggery production with the life of the Kohli community. Extracting sugarcane juice using traditional methods, making jaggery on furnaces, and selling it in local markets was a traditional livelihood in some areas." data-lang-mr="उपलब्ध ऐतिहासिक आणि समुदायीय लेखनात कोहळी समाजाच्या जीवनाशी ऊस शेती आणि गुळनिर्मितीचा संबंध नमूद केला आहे. पारंपरिक पद्धतीने ऊसाचा रस काढणे, भट्टीवर गुळ तयार करणे आणि स्थानिक बाजारपेठेत त्याची विक्री करणे ही काही भागांतील पारंपरिक उपजीविका होती.">
-                        Available historical and community writings mention the association of sugarcane farming and jaggery production with the life of the Kohli community. Extracting sugarcane juice using traditional methods, making jaggery on furnaces, and selling it in local markets was a traditional livelihood in some areas.
-                    </p>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:0;" data-lang-en="Today, in some places, this tradition continues with modern equipment." data-lang-mr="आज काही ठिकाणी ही परंपरा आधुनिक साधनांसह पुढे चालू आहे.">
-                        Today, in some places, this tradition continues with modern equipment.
-                    </p>
-                </div>
-
-                <!-- SECTION 6: धान आणि पारंपरिक शेती -->
-                <div id="sec-rice" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:1rem;">
-                        <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin:0;" data-lang-en="Rice Farming & Agricultural Traditions" data-lang-mr="भात शेती आणि कृषीपरंपरा">Rice Farming & Agricultural Traditions</h3>
-                        <span class="badge-source badge-record" style="background:#e6fcf5; color:#0ca678; border:1px solid #63e6be; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.75rem;"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Source" data-lang-mr="समुदायीय स्रोत">Community Source</span></span>
-                    </div>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="The rural agricultural life of the community was closely tied to rice (paddy) farming, irrigation, and farming near tanks. According to community-reported information, traditional rice varieties such as Luchai, Chinnor, and Dubraj were cultivated." data-lang-mr="समुदायाचे ग्रामीण कृषीजीवन भात (धान) शेती, सिंचन आणि तलावाशेजारील शेतीशी घट्ट जोडलेले होते. समुदाय-नोंदीत माहितीनुसार, लुचाई, चिन्नोर आणि दुबराज यांसारख्या पारंपरिक भाताच्या जातींची लागवड केली जात असे.">
-                        The rural agricultural life of the community was closely tied to rice (paddy) farming, irrigation, and farming near tanks. According to community-reported information, traditional rice varieties such as Luchai, Chinnor, and Dubraj were cultivated.
-                    </p>
-                    <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
-                        <span style="background:var(--bg-cream); border:1px solid var(--border-color); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; color:var(--primary-dark);" data-lang-en="Luchai" data-lang-mr="लुचाई">Luchai</span>
-                        <span style="background:var(--bg-cream); border:1px solid var(--border-color); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; color:var(--primary-dark);" data-lang-en="Chinnor" data-lang-mr="चिन्नोर">Chinnor</span>
-                        <span style="background:var(--bg-cream); border:1px solid var(--border-color); padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem; color:var(--primary-dark);" data-lang-en="Dubraj" data-lang-mr="दुबराज">Dubraj</span>
-                    </div>
-                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.8rem; font-style:italic;" data-lang-en="*Community-reported traditional varieties." data-lang-mr="*समुदाय-नोंदीत पारंपरिक जाती.">
-                        *Community-reported traditional varieties.
-                    </p>
-                </div>
-
-                <!-- SECTION 7: ग्रामजीवन आणि सामाजिक संबंध -->
-                <div id="sec-village" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:1rem;">
-                        <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin:0;" data-lang-en="Village Life & Social Relations" data-lang-mr="ग्रामजीवन आणि सामाजिक एकोपा">Village Life & Social Relations</h3>
-                        <span class="badge-source badge-record" style="background:#e6fcf5; color:#0ca678; border:1px solid #63e6be; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.75rem;"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Source" data-lang-mr="समुदायीय स्रोत">Community Source</span></span>
-                    </div>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="According to older writings of the community, village life was centered around agriculture, animal husbandry, social relationships, and mutual cooperation. Mentions of the Patil Wada, social coordination within the village, agriculture-related activities, and mutual relations with communities engaged in various traditional occupations are found in old community narratives." data-lang-mr="समुदायाच्या जुन्या लेखनानुसार गावातील जीवन हे शेती, पशुपालन, सामाजिक संबंध आणि परस्पर सहकार्याभोवती केंद्रित होते. पाटील वाडा, गावातील सामाजिक समन्वय, शेतीशी संबंधित कामे आणि विविध पारंपरिक व्यवसाय करणाऱ्या समुदायांशी परस्पर संबंध यांचा उल्लेख जुन्या समुदायीय कथनांमध्ये आढळतो.">
-                        According to older writings of the community, village life was centered around agriculture, animal husbandry, social relationships, and mutual cooperation. Mentions of the Patil Wada, social coordination within the village, agriculture-related activities, and mutual relations with communities engaged in various traditional occupations are found in old community narratives.
-                    </p>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:0;" data-lang-en="This description should be presented as the social memory and experience of that era; it should not be concluded that an identical system existed in all villages." data-lang-mr="हे वर्णन त्या काळातील सामाजिक स्मृती आणि अनुभव म्हणून सादर करावे; सर्व गावांमध्ये समान व्यवस्था होती असा निष्कर्ष काढू नये.">
-                        This description should be presented as the social memory and experience of that era; it should not be concluded that an identical system existed in all villages.
-                    </p>
-                </div>
-
-                <!-- SECTION 8: संयुक्त कुटुंब आणि सामाजिक बदल -->
-                <div id="sec-family" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:1rem;">
-                        <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin:0;" data-lang-en="From Joint Families to Modern Life" data-lang-mr="संयुक्त कुटुंबापासून आधुनिक जीवनाकडे">From Joint Families to Modern Life</h3>
-                        <span class="badge-source badge-record" style="background:#e6fcf5; color:#0ca678; border:1px solid #63e6be; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.75rem;"><i class="fa-solid fa-users"></i> <span data-lang-en="Community Source" data-lang-mr="समुदायीय स्रोत">Community Source</span></span>
-                    </div>
-                    <p style="line-height:1.8; font-size:1rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="According to available literature within the community, in the past, many generations lived together in joint families. There was collective participation of family members in agriculture, animal husbandry, household chores, and economic responsibilities. Due to education, urbanization, and changing lifestyles, the nuclear family system increased in subsequent periods. Nevertheless, a sense of community is maintained in many places due to collective participation in festivals, family ceremonies, and social events." data-lang-mr="समुदायातील उपलब्ध लेखनानुसार पूर्वी अनेक कुटुंबांमध्ये अनेक पिढ्या एकत्र राहत असत. शेती, पशुपालन, घरकाम आणि आर्थिक जबाबदाऱ्यांमध्ये कुटुंबातील सदस्यांचा सामूहिक सहभाग असे. शिक्षण, शहरीकरण आणि बदलती जीवनशैली यांमुळे पुढील काळात विभक्त कुटुंबपद्धती वाढली. तरीही सण, कौटुंबिक समारंभ आणि सामाजिक कार्यक्रमांमधील सामूहिक सहभागामुळे समुदायभावना अनेक ठिकाणी टिकून आहे.">
-                        According to available literature within the community, in the past, many generations lived together in joint families. There was collective participation of family members in agriculture, animal husbandry, household chores, and economic responsibilities. Due to education, urbanization, and changing lifestyles, the nuclear family system increased in subsequent periods. Nevertheless, a sense of community is maintained in many places due to collective participation in festivals, family ceremonies, and social events.
-                    </p>
-                    <div style="background:#fff3cd; border-left:4px solid #ffc107; padding:0.8rem 1rem; border-radius:4px; font-size:0.85rem; color:#856404;">
-                        <strong data-lang-en="Note: " data-lang-mr="टीप: ">Note: </strong>
-                        <span data-lang-en="Available community writings mention different years such as 1995 and 2001 for changes in the joint family system. More historical sources are needed to determine an accurate timeline." data-lang-mr="उपलब्ध समुदाय लेखनात संयुक्त कुटुंबपद्धतीतील बदलासाठी 1995 आणि 2001 अशी वेगवेगळी वर्षे नमूद झाली आहेत. अचूक कालमर्यादा निश्चित करण्यासाठी अधिक ऐतिहासिक स्रोतांची आवश्यकता आहे.">
-                            Available community writings mention different years such as 1995 and 2001 for changes in the joint family system. More historical sources are needed to determine an accurate timeline.
-                        </span>
-                    </div>
-                </div>
-
-                <!-- SECTION 9: ऐतिहासिक नावांची रूपे -->
-                <div id="sec-spellings" class="history-tab-section" style="background: var(--bg-cream); padding: 1.8rem; border-radius: 12px; border: 1.5px solid var(--border-color); box-shadow: var(--shadow-sm); margin-bottom: 2.5rem;">
-                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-bottom:0.8rem;">
-                        <h3 style="color:var(--primary-dark); font-size:1.25rem; font-weight:800; margin:0;" data-lang-en="Historical Names & Transliterations" data-lang-mr="ऐतिहासिक दस्तऐवजांमधील नावांची रूपे">Historical Names & Transliterations</h3>
-                        <span class="badge-source badge-record" style="background:#f0f4ff; color:#3b5bdb; border:1px solid #bac8ff; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.75rem;"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Administrative Records" data-lang-mr="प्रशासकीय नोंदी">Administrative Records</span></span>
-                    </div>
-                    <p style="line-height:1.7; font-size:0.95rem; color:var(--text-main); margin-bottom:1rem;" data-lang-en="In old English and administrative documents, the writing of names of local communities is found in different forms according to the transliteration practices of that era." data-lang-mr="जुन्या इंग्रजी आणि प्रशासकीय दस्तऐवजांमध्ये स्थानिक समुदायांच्या नावांचे लेखन त्या काळातील transliteration पद्धतीनुसार वेगवेगळ्या प्रकारे आढळते.">
-                        In old English and administrative documents, the writing of names of local communities is found in different forms according to the transliteration practices of that era.
-                    </p>
-                    <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1rem;">
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; color:var(--primary-dark);">Kohli</span>
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; color:var(--primary-dark);">Kohri</span>
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; color:var(--primary-dark);">Kohiree</span>
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; color:var(--primary-dark);">Kohulee</span>
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; color:var(--primary-dark);">Koholee</span>
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; color:var(--primary-dark);">Kohoree</span>
-                        <span style="background:white; border:1px solid var(--border-color); padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; color:var(--primary-dark);">Kaulees</span>
-                    </div>
-                    <p style="font-size:0.85rem; color:var(--text-muted); margin:0; font-style:italic;" data-lang-en="Note: These various written forms are shown as forms/spellings found in available historical references. They should not be understood as separate modern official social classifications." data-lang-mr="टीप: ही विविध लेखनरूपे उपलब्ध ऐतिहासिक संदर्भांमध्ये आढळणारी forms/spellings म्हणून दाखवली आहेत. त्यांना स्वतंत्र आधुनिक अधिकृत सामाजिक वर्गीकरण म्हणून समजू नये.">
-                        Note: These various written forms are shown as forms/spellings found in available historical references. They should not be understood as separate modern official social classifications.
-                    </p>
-                </div>
-
-                <!-- SECTION 10: ऐतिहासिक स्रोतांचा आढावा -->
-                <div id="sec-sources" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin-bottom:1.2rem;" data-lang-en="Available Sources for Understanding History" data-lang-mr="इतिहास समजून घेण्यासाठी उपलब्ध स्रोत">Available Sources for Understanding History</h3>
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
-                        
-                        <!-- Source Cards -->
-                        <div style="background:white; border:1px solid var(--border-color); padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.3rem;" data-lang-en="Gazetteer" data-lang-mr="गॅझेटिअर">Gazetteer</div>
-                            <strong style="color:var(--primary-dark); font-size:1.05rem; display:block; margin-bottom:0.2rem;">Central Provinces Gazetteer</strong>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.2rem;" data-lang-en="Region: Central Provinces" data-lang-mr="प्रदेश: सेंट्रल प्रॉव्हिन्सेस">Region: Central Provinces</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);" data-lang-en="Contains general references to the community's presence and administration." data-lang-mr="समाजाची उपस्थिती आणि प्रशासनाचे सामान्य संदर्भ आहेत.">Contains general references to the community's presence and administration.</div>
-                        </div>
-
-                        <div style="background:white; border:1px solid var(--border-color); padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.3rem;" data-lang-en="Settlement Report" data-lang-mr="सेटलमेंट रिपोर्ट">Settlement Report</div>
-                            <strong style="color:var(--primary-dark); font-size:1.05rem; display:block; margin-bottom:0.2rem;">Chanda Settlement Report</strong>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.2rem;" data-lang-en="Region: Chanda (1869)" data-lang-mr="प्रदेश: चांदा (१८६९)">Region: Chanda (1869)</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);" data-lang-en="Documents historical land revenues and Malguzari settlements." data-lang-mr="ऐतिहासिक जमीन महसूल आणि मालगुजारी सेटलमेंटचे दस्तऐवज.">Documents historical land revenues and Malguzari settlements.</div>
-                        </div>
-
-                        <div style="background:white; border:1px solid var(--border-color); padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.3rem;" data-lang-en="Demographics" data-lang-mr="जनगणना">Demographics</div>
-                            <strong style="color:var(--primary-dark); font-size:1.05rem; display:block; margin-bottom:0.2rem;">Census of India</strong>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.2rem;" data-lang-en="Various Years" data-lang-mr="विविध वर्षे">Various Years</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);" data-lang-en="Provides historical population and occupational data." data-lang-mr="ऐतिहासिक लोकसंख्या आणि व्यावसायिक माहिती प्रदान करते.">Provides historical population and occupational data.</div>
-                        </div>
-
-                        <div style="background:white; border:1px solid var(--border-color); padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.3rem;" data-lang-en="Gazetteer" data-lang-mr="गॅझेटिअर">Gazetteer</div>
-                            <strong style="color:var(--primary-dark); font-size:1.05rem; display:block; margin-bottom:0.2rem;">Imperial Gazetteer of India</strong>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.2rem;" data-lang-en="Region: India" data-lang-mr="प्रदेश: भारत">Region: India</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);" data-lang-en="Broad national-level historical context and administration." data-lang-mr="विस्तृत राष्ट्रीय पातळीवरील ऐतिहासिक संदर्भ आणि प्रशासन.">Broad national-level historical context and administration.</div>
-                        </div>
-
-                        <div style="background:white; border:1px solid var(--border-color); padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.3rem;" data-lang-en="Ethnographic Report" data-lang-mr="वांशिक अहवाल">Ethnographic Report</div>
-                            <strong style="color:var(--primary-dark); font-size:1.05rem; display:block; margin-bottom:0.2rem;">Tribes and Castes of the CP</strong>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.2rem;" data-lang-en="By R. V. Russell & Hiralal" data-lang-mr="लेखक: आर. व्ही. रसेल व हिरालाल">By R. V. Russell & Hiralal</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);" data-lang-en="Contains ethnographic notes and historical descriptions." data-lang-mr="वांशिक नोंदी आणि ऐतिहासिक वर्णने समाविष्ट आहेत.">Contains ethnographic notes and historical descriptions.</div>
-                        </div>
-
-                        <div style="background:white; border:1px solid var(--border-color); padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.3rem;" data-lang-en="Gazetteer" data-lang-mr="गॅझेटिअर">Gazetteer</div>
-                            <strong style="color:var(--primary-dark); font-size:1.05rem; display:block; margin-bottom:0.2rem;">Bhandara District Gazetteer</strong>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.2rem;" data-lang-en="Region: Bhandara" data-lang-mr="प्रदेश: भंडारा">Region: Bhandara</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);" data-lang-en="Specific mentions of community agricultural and water engineering." data-lang-mr="समाज कृषी आणि जल अभियांत्रिकीचे विशिष्ट उल्लेख.">Specific mentions of community agricultural and water engineering.</div>
-                        </div>
-
-                        <div style="background:white; border:1px solid var(--border-color); padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.3rem;" data-lang-en="Gazetteer" data-lang-mr="गॅझेटिअर">Gazetteer</div>
-                            <strong style="color:var(--primary-dark); font-size:1.05rem; display:block; margin-bottom:0.2rem;">Chanda District Gazetteer</strong>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.2rem;" data-lang-en="Region: Chandrapur" data-lang-mr="प्रदेश: चंद्रपूर">Region: Chandrapur</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);" data-lang-en="Details on local landholdings, irrigation, and society." data-lang-mr="स्थानिक जमीनधारणा, सिंचन आणि समाजाचा तपशील.">Details on local landholdings, irrigation, and society.</div>
-                        </div>
-
-                        <div style="background:white; border:1px solid var(--border-color); padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.3rem;" data-lang-en="Gazetteer" data-lang-mr="गॅझेटिअर">Gazetteer</div>
-                            <strong style="color:var(--primary-dark); font-size:1.05rem; display:block; margin-bottom:0.2rem;">Maharashtra State Gazetteer</strong>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.2rem;" data-lang-en="Region: Maharashtra State" data-lang-mr="प्रदेश: महाराष्ट्र राज्य">Region: Maharashtra State</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);" data-lang-en="Post-independence revised historical documentation." data-lang-mr="स्वातंत्र्योत्तर सुधारित ऐतिहासिक दस्तऐवजीकरण.">Post-independence revised historical documentation.</div>
-                        </div>
-
-                        <div style="background:white; border:1px solid var(--border-color); padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-                            <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.3rem;" data-lang-en="Community Source" data-lang-mr="समुदाय प्रकाशने">Community Source</div>
-                            <strong style="color:var(--primary-dark); font-size:1.05rem; display:block; margin-bottom:0.2rem;">Community Publications</strong>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.2rem;" data-lang-en="Various Articles & Books" data-lang-mr="विविध लेख व पुस्तके">Various Articles & Books</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);" data-lang-en="Oral histories, historical articles, and community narratives." data-lang-mr="मौखिक इतिहास, ऐतिहासिक लेख आणि समुदाय कथने.">Oral histories, historical articles, and community narratives.</div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- SECTION 11: HISTORICAL RECORDS SUMMARY -->
-                <div id="sec-stats" class="history-tab-section" style="margin-bottom: 2.5rem;">
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
-                        
-                        <div style="background:linear-gradient(to bottom right, #ffffff, #fdfbfa); border:1px solid var(--border-color); border-top:3px solid var(--accent-gold); padding:1.5rem; border-radius:10px; box-shadow:var(--shadow-sm);">
-                            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
-                                <h4 style="font-size:0.9rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;" data-lang-en="1911 Historical Population Record" data-lang-mr="1911 ऐतिहासिक लोकसंख्या नोंद">1911 Historical Population Record</h4>
-                                <span class="badge-source badge-record" style="background:#f0f4ff; color:#3b5bdb; border:1px solid #bac8ff; padding:0.1rem 0.5rem; border-radius:4px; font-size:0.7rem;"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Historical Record" data-lang-mr="ऐतिहासिक नोंद">Historical Record</span></span>
-                            </div>
-                            <div style="font-size:2.4rem; font-weight:800; color:var(--primary-dark); margin-bottom:0.5rem;">11,399</div>
-                            <p style="font-size:0.95rem; color:var(--text-main); margin-bottom:0.8rem; line-height:1.5;" data-lang-en="Historical statistical record of the Kohli community's population in Bhandara district from 1911." data-lang-mr="कोहळी समाजाची भंडारा जिल्ह्यातील 1911 च्या ऐतिहासिक सांख्यिकीय नोंदीतील लोकसंख्या.">
-                                Historical statistical record of the Kohli community's population in Bhandara district from 1911.
-                            </p>
-                            <div style="font-size:0.8rem; color:var(--text-muted); background:var(--bg-cream); padding:0.4rem 0.6rem; border-radius:4px; display:inline-block;">
-                                <i class="fa-solid fa-book-open"></i> <span data-lang-en="Source: Bhandara District / Central Provinces District Gazetteers statistical material" data-lang-mr="स्रोत: भंडारा जिल्हा / सेंट्रल प्रॉव्हिन्सेस डिस्ट्रिक्ट गॅझेटिअर्स सांख्यिकीय साहित्य">Source: Bhandara District / Central Provinces District Gazetteers statistical material</span>
+                        <div class="wiki-infobox-image-box">
+                            <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Emblem" class="wiki-infobox-img">
+                            <div class="wiki-infobox-caption">
+                                <span data-lang-en="Official Emblem representing agrarian stewardship and tank architecture" data-lang-mr="जलस्थापत्य व कृषी संस्कृतीचे प्रतीक असलेले समाज बोधचिन्ह">Official Emblem representing agrarian stewardship and tank architecture</span>
                             </div>
                         </div>
+                        <table class="wiki-infobox-table">
+                            <tr>
+                                <th><span data-lang-en="Historical Sphere" data-lang-mr="ऐतिहासिक कार्यक्षेत्र">Historical Sphere</span></th>
+                                <td><span data-lang-en="Wainganga River Basin (Bhandara, Gondia, Chandrapur, Gadchiroli, Balaghat)" data-lang-mr="वैनगंगा खोरे (भंडारा, गोंदिया, चंद्रपूर, गडचिरोली, बालाघाट)">Wainganga River Basin (Bhandara, Gondia, Chandrapur, Gadchiroli, Balaghat)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Traditional Title" data-lang-mr="ऐतिहासिक पदवी">Traditional Title</span></th>
+                                <td><span data-lang-en="Patil, Malguzar (Village Agricultural & Revenue Heads)" data-lang-mr="पाटील, मालगुजार (ग्राम महसूल व व्यवस्था प्रमुख)">Patil, Malguzar (Village Agricultural & Revenue Heads)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Engineering Marvels" data-lang-mr="प्रमुख जलनिर्मिती">Engineering Marvels</span></th>
+                                <td><span data-lang-en="Navegaon Bandh, Bodalkasa, Asolamendha, Ambazari (Nagpur)" data-lang-mr="नवेगावबांध, बोदालकसा, असोलामेंढा, अंबाझरी (नागपूर)">Navegaon Bandh, Bodalkasa, Asolamendha, Ambazari (Nagpur)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Indigenous Crops" data-lang-mr="पारंपरिक पिके">Indigenous Crops</span></th>
+                                <td><span data-lang-en="Paddy (Luchai, Chinnor, Dubraj), Sugarcane, Jaggery" data-lang-mr="भात (लुचाई, चिन्नोर, दुबराज), ऊस, सेंद्रिय गूळ">Paddy (Luchai, Chinnor, Dubraj), Sugarcane, Jaggery</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="Key Gazetteers" data-lang-mr="प्रमुख गॅझेटिअर">Key Gazetteers</span></th>
+                                <td><span data-lang-en="Chanda (1869), Bhandara (1908), Russell & Hira Lal (1916)" data-lang-mr="चांदा (१८६९), भंडारा (१९०८), रसेल व हिरालाल (१९१६)">Chanda (1869), Bhandara (1908), Russell & Hira Lal (1916)</span></td>
+                            </tr>
+                            <tr>
+                                <th><span data-lang-en="1911 Census Record" data-lang-mr="१९११ जनगणना नोंद">1911 Census Record</span></th>
+                                <td><span data-lang-en="19,739 recorded across Bhandara & Chanda districts" data-lang-mr="१९,७३९ (भंडारा व चांदा जिल्हे मिळून नोंद)">19,739 recorded across Bhandara & Chanda districts</span></td>
+                            </tr>
+                        </table>
+                    </aside>
 
-                        <div style="background:linear-gradient(to bottom right, #ffffff, #fdfbfa); border:1px solid var(--border-color); border-top:3px solid var(--primary-dark); padding:1.5rem; border-radius:10px; box-shadow:var(--shadow-sm);">
-                            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
-                                <h4 style="font-size:0.9rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;" data-lang-en="Historical Settlement Record" data-lang-mr="ऐतिहासिक सेटलमेंट नोंद">Historical Settlement Record</h4>
-                                <span class="badge-source badge-record" style="background:#f0f4ff; color:#3b5bdb; border:1px solid #bac8ff; padding:0.1rem 0.5rem; border-radius:4px; font-size:0.7rem;"><i class="fa-solid fa-file-contract"></i> <span data-lang-en="Historical Record" data-lang-mr="ऐतिहासिक नोंद">Historical Record</span></span>
-                            </div>
-                            <div style="font-size:2.4rem; font-weight:800; color:var(--primary-dark); margin-bottom:0.5rem;">19,739</div>
-                            <p style="font-size:0.95rem; color:var(--text-main); margin-bottom:0.8rem; line-height:1.5;" data-lang-en="Kohli/Kohri population recorded in the supplied historical Chanda/Bhandara settlement context." data-lang-mr="प्रदान केलेल्या ऐतिहासिक चांदा/भंडारा सेटलमेंट संदर्भानुसार नोंदवलेली कोहळी/कोहरी लोकसंख्या.">
-                                Kohli/Kohri population recorded in the supplied historical Chanda/Bhandara settlement context.
-                            </p>
-                            <div style="font-size:0.85rem; color:var(--text-main); margin-bottom:0.8rem; display:flex; gap:2rem;">
-                                <div>
-                                    <strong data-lang-en="Breakdown:" data-lang-mr="विभागणी:">Breakdown:</strong><br>
-                                    <span data-lang-en="Bhandara" data-lang-mr="भंडारा">Bhandara</span> — 12,097<br>
-                                    <span data-lang-en="Chanda" data-lang-mr="चांदा">Chanda</span> — 7,602
-                                </div>
-                                <div>
-                                    <strong data-lang-en="Additional figures:" data-lang-mr="अतिरिक्त आकडेवारी:">Additional figures:</strong><br>
-                                    <span data-lang-en="Sakoli" data-lang-mr="साकोली">Sakoli</span> — 8,130<br>
-                                    <span data-lang-en="Brahmapuri" data-lang-mr="ब्रह्मपुरी">Brahmapuri</span> — 6,578
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted); font-style:italic;" data-lang-en="Note: Historical administrative boundaries and source contexts differ; these historical figures should not be directly compared with present-day district populations." data-lang-mr="टीप: ऐतिहासिक प्रशासकीय सीमा आणि स्रोतांचे संदर्भ वेगळे आहेत; या ऐतिहासिक आकडेवारीची सध्याच्या जिल्हा लोकसंख्येशी थेट तुलना करू नये.">
-                        Note: Historical administrative boundaries and source contexts differ; these historical figures should not be directly compared with present-day district populations.
-                    </div>
+                    <p class="wiki-lead-p">
+                        <span data-lang-en="The history of the <strong>Kohli community</strong> (Marathi: <em>कोहळी समाज</em>) is deeply intertwined with the social, agricultural, water management, and rural life of the Vidarbha region in Central India<sup>[1]</sup>. Available historical records, colonial settlement reports, district gazetteers, and verified community memoirs attest that the community has been historically rooted across the Wainganga basin—encompassing Bhandara, Gondia, Chandrapur, and Gadchiroli districts in Maharashtra, as well as the adjoining Balaghat region of Madhya Pradesh<sup>[1]</sup><sup>[2]</sup>." data-lang-mr="<strong>कोहळी समाजाचा इतिहास</strong> हा मध्य भारतातील विदर्भातील सामाजिक, कृषी, जलव्यवस्थापन आणि ग्रामजीवनाशी शतकानुशतके घट्ट जोडलेला आहे<sup>[१]</sup>. उपलब्ध ऐतिहासिक नोंदी, ब्रिटिश सेटलमेंट अहवाल, जिल्हा गॅझेटिअर आणि समाज संस्मरणे हे स्पष्ट करतात की, हा समाज वैनगंगा नदीच्या खोऱ्यात—महाराष्ट्र राज्यातील भंडारा, गोंदिया, चंद्रपूर व गडचिरोली जिल्हे तसेच लगतच्या मध्य प्रदेशातील बालाघाट भागात—ऐतिहासिक काळापासून स्थायिक आहे<sup>[१]</sup><sup>[२]</sup>.">The history of the Kohli community...</span>
+                    </p>
+                    <p class="wiki-p">
+                        <span data-lang-en="Life traditionally developed around natural watercourses, hills, and communal earthen tanks (*bodis* and *bandharas*). By pioneering gravity-fed irrigation and indigenous stone sluice-gate systems without state financial grants, the Kohli ancestors converted dense forests into flourishing agrarian settlements<sup>[1]</sup><sup>[3]</sup>. Over successive generations, while preserving this sacred agrarian stewardship, community members have transitioned into higher education, civil administration, technology, and national public service." data-lang-mr="नदी, डोंगर आणि तलावांच्या नैसर्गिक परिसंस्थेत कोहळी समाजाचे जीवन विकसित झाले. कोणत्याही शासकीय अनुदानाची वाट न पाहता केवळ स्वतःच्या कौशल्याने आणि घामाने मातीचे भक्कम बांध व दगडी खिडक्या (स्लुईस गेट्स) बांधून समाजाने घनदाट अरण्यात संपन्न कृषी वसाहती निर्माण केल्या<sup>[१]</sup><sup>[३]</sup>. बदलत्या काळात आपल्या या पवित्र जलसंस्कृतीचे जतन करत आज समाजबांधव उच्च शिक्षण, प्रशासकीय सेवा, तंत्रज्ञान आणि राष्ट्रीय राजकारणात यशस्वी वाटचाल करत आहेत.">Life traditionally developed...</span>
+                    </p>
                 </div>
 
-                <!-- SECTION 12: HISTORICAL INTERPRETATION NOTE -->
-                <div id="sec-note" class="history-tab-section" style="background:#f8f9fa; border:1px solid #dee2e6; padding:1.5rem; border-radius:12px; margin-bottom: 2.5rem; box-shadow:0 4px 12px rgba(0,0,0,0.03);">
-                    <div style="display:flex; gap:1rem; align-items:flex-start;">
-                        <i class="fa-solid fa-circle-info" style="font-size:1.5rem; color:#495057; margin-top:0.2rem;"></i>
-                        <div>
-                            <h4 style="color:#212529; font-size:1.15rem; font-weight:800; margin-bottom:0.6rem;" data-lang-en="Understanding Historical Sources" data-lang-mr="इतिहासातील स्रोत समजून घेताना">Understanding Historical Sources</h4>
-                            <p style="font-size:0.95rem; color:#495057; line-height:1.6; margin-bottom:0.8rem;" data-lang-en="Available information regarding the history of the Kohli community includes government gazetteers, censuses, settlement reports, newspaper articles, community publications, and oral traditions." data-lang-mr="कोहळी समाजाच्या इतिहासाबाबत उपलब्ध माहितीमध्ये शासकीय गॅझेटिअर, जनगणना, सेटलमेंट रिपोर्ट, वृत्तपत्रीय लेख, समुदाय प्रकाशने आणि मौखिक परंपरा यांचा समावेश आहे.">
-                                Available information regarding the history of the Kohli community includes government gazetteers, censuses, settlement reports, newspaper articles, community publications, and oral traditions.
-                            </p>
-                            <p style="font-size:0.95rem; color:#495057; line-height:1.6; margin-bottom:0.8rem;" data-lang-en="The standard and nature of all these sources are not identical. Government records, historical books, newspaper reports, and oral traditions within the community should be presented with their respective contexts." data-lang-mr="या सर्व स्रोतांचा दर्जा आणि स्वरूप समान नाही. शासकीय नोंद, ऐतिहासिक पुस्तक, वृत्तपत्रीय वृत्त आणि समुदायातील मौखिक परंपरा यांना त्यांच्या संबंधित संदर्भासह मांडण्यात यावे.">
-                                The standard and nature of all these sources are not identical. Government records, historical books, newspaper reports, and oral traditions within the community should be presented with their respective contexts.
-                            </p>
-                            <p style="font-size:0.95rem; color:#495057; line-height:1.6; margin-bottom:0;" data-lang-en="Historical figures and references should be understood considering the changes in old administrative boundaries and the writing of community names." data-lang-mr="जुन्या प्रशासकीय सीमांमध्ये आणि समुदायाच्या नावांच्या लेखनात झालेल्या बदलांचा विचार करूनच ऐतिहासिक आकडे आणि उल्लेख समजून घ्यावेत.">
-                                Historical figures and references should be understood considering the changes in old administrative boundaries and the writing of community names.
-                            </p>
+                <!-- SECTION 1: HISTORICAL SPHERE & REGIONAL DISTRIBUTION -->
+                <section id="sec-presence">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="1. Historical Sphere & Regional Distribution" data-lang-mr="१. ऐतिहासिक उपस्थिती व भौगोलिक विस्तार">1. Historical Sphere & Regional Distribution</span></span>
+                        <a href="#sec-presence" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="In available historical references, the presence of the Kohli community is found to be concentrated in eastern Vidarbha and contiguous central Indian forested tracts. Documented settlements span five core districts across Maharashtra and Madhya Pradesh<sup>[1]</sup>:" data-lang-mr="उपलब्ध ऐतिहासिक संदर्भांमध्ये कोहळी समाजाची उपस्थिती पूर्व विदर्भ आणि लगतच्या मध्य भारतातील अरण्यमय परिसरात केंद्रित असल्याचे आढळते. प्रमाणित नोंदीनुसार पाच जिल्ह्यांमध्ये समाजाचे वास्तव्य आहे<sup>[१]</sup>:">In available historical references...</span>
+                    </p>
+
+                    <div class="wiki-deity-grid">
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Bhandara District (भंडारा)" data-lang-mr="भंडारा जिल्हा">Bhandara District (भंडारा)</div>
+                            <div class="wiki-deity-desc" data-lang-en="The historic lake heartland; major settlements across Sakoli, Pauni, and Lakhandur talukas known for extensive Malguzari tank systems." data-lang-mr="तलावांचा ऐतिहासिक जिल्हा; साकोली, पवनी, लाखांदूर परिसरातील मालगुजारी व कृषी वसाहती.">The historic lake heartland...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Gondia District (गोंदिया)" data-lang-mr="गोंदिया जिल्हा">Gondia District (गोंदिया)</div>
+                            <div class="wiki-deity-desc" data-lang-en="The cradle of indigenous water architecture; encompassing the monumental Navegaon Bandh reservoir built by Kolu Patel Kohli, Arjuni Morgaon, and Sadak Arjuni." data-lang-mr="जलस्थापत्याचा केंद्रबिंदू; कोलू पटेल कोहळी यांनी बांधलेला भव्य नवेगावबांध, अर्जुनी मोरगाव व सडक अर्जुनी परिसर.">The cradle of indigenous water architecture...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Chandrapur District (चंद्रपूर)" data-lang-mr="चंद्रपूर जिल्हा">Chandrapur District (चंद्रपूर)</div>
+                            <div class="wiki-deity-desc" data-lang-en="Historically documented in Captain Lucie Smith's 1869 Settlement Report; major settlements across Nagbhid, Sindewahi, and Brahmapuri." data-lang-mr="कॅप्टन लुसी स्मिथ यांच्या १८६९ च्या सेटलमेंट अहवालात नोंद असलेला; नागभीड, सिंदेवाही, ब्रह्मपुरी परिसरातील वसाहती.">Historically documented...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Gadchiroli District (गडचिरोली)" data-lang-mr="गडचिरोली जिल्हा">Gadchiroli District (गडचिरोली)</div>
+                            <div class="wiki-deity-desc" data-lang-en="Forested frontier region bordering the Wainganga river; settlements across Armori, Kurkheda, and Wadsa maintaining sustainable forest agriculture." data-lang-mr="वैनगंगा नदीलगतचा अरण्यमय परिसर; आरमोरी, कुरखेडा, वडसा येथील वसाहती व वनशेती परंपरा.">Forested frontier region...</div>
+                        </div>
+                        <div class="wiki-deity-card">
+                            <div class="wiki-deity-name" data-lang-en="Balaghat District (बालाघाट)" data-lang-mr="बालाघाट जिल्हा (म.प्र.)">Balaghat District (बालाघाट)</div>
+                            <div class="wiki-deity-desc" data-lang-en="Southern Madhya Pradesh belt sharing seamless linguistic, matrimonial, and agrarian linkages with eastern Vidarbha." data-lang-mr="पूर्व विदर्भाशी थेट भाषिक, वैवाहिक आणि कृषी संबंध असलेला दक्षिण मध्य प्रदेशातील परिसर.">Southern Madhya Pradesh belt...</div>
                         </div>
                     </div>
-                </div>
 
-                <!-- FOUR PILLARS REPLACEMENT: इतिहासाचे चार प्रमुख आयाम -->
-                <div style="margin-bottom:2.5rem;">
-                    <h3 style="color:var(--primary-dark); font-size:1.35rem; font-weight:800; margin-bottom:1.2rem;" data-lang-en="Four Key Dimensions of History" data-lang-mr="इतिहासाचे चार प्रमुख आयाम">Four Key Dimensions of History</h3>
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem;">
-                        <a href="#sec-livelihood" style="display:block; text-decoration:none; background:var(--bg-cream); border:1.5px solid var(--border-color); border-radius:10px; padding:1.2rem; text-align:center; transition:var(--transition);">
+                    <p class="wiki-p">
+                        <span data-lang-en="In addition to rural settlements, community members have settled across urban centers including <strong>Nagpur</strong>, <strong>Pune</strong>, and <strong>Mumbai</strong> for higher education, administrative service, legal practice, and modern enterprise<sup>[1]</sup>. Community literature notes that while various oral traditions exist regarding origins, the community presents its history objectively based on archival records and documented memoirs." data-lang-mr="ग्रामीण वसाहतींसोबतच उच्च शिक्षण, प्रशासकीय सेवा, न्यायदान आणि आधुनिक व्यवसायांच्या निमित्ताने समाजबांधव <strong>नागपूर</strong>, <strong>पुणे</strong> आणि <strong>मुंबई</strong> यांसारख्या महानगरांमध्ये मोठ्या संख्येने स्थायिक झाले आहेत<sup>[१]</sup>. समाजाच्या उगमाबाबत मौखिक स्मृतींमध्ये विविध संदर्भ येत असले, तरी उपलब्ध शासकीय नोंदी आणि समाज दस्तऐवजांच्या आधारे वस्तुनिष्ठ मांडणी केली जाते.">In addition to rural settlements...</span>
+                    </p>
+                </section>
+
+                <!-- SECTION 2: INDIGENOUS TANK ARCHITECTURE & WATER HERITAGE -->
+                <section id="sec-water">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="2. Indigenous Tank Architecture & Water Heritage" data-lang-mr="२. जलव्यवस्थापन व ऐतिहासिक तलाव निर्मिती">2. Indigenous Tank Architecture & Water Heritage</span></span>
+                        <a href="#sec-water" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="The defining historical achievement of the Kohli ancestors was their mastery of watershed topography, gravity-fed irrigation, and earthen embankment engineering. The cultural adage <em>'Samaj Tithe Talav'</em> (Where there is the community, there is a tank) embodies this deep ecological heritage<sup>[1]</sup><sup>[2]</sup>:" data-lang-mr="कोहळी पूर्वजांचे ऐतिहासिक कर्तृत्व म्हणजे नैसर्गिक पाणलोट रचना, गुरुत्वाकर्षण सिंचन आणि मातीचे भक्कम बांध बांधण्याचे त्यांचे पारंपरिक स्थापत्यशास्त्र. <em>'समाज तिथे तलाव'</em> ही म्हण या समृद्ध जलसंस्कृतीचे प्रतीक मानली जाते<sup>[१]</sup><sup>[२]</sup>:">The defining historical achievement...</span>
+                    </p>
+
+                    <div class="wiki-quotebox">
+                        <div class="wiki-quotebox-title">
+                            <i class="fa-solid fa-droplet" style="color:var(--accent-gold);"></i>
+                            <span data-lang-en="Primary Community Documentation (Source Line 1)" data-lang-mr="मूळ समाज ऐतिहासिक नोंद (ओळ १)">Primary Community Documentation (Source Line 1)</span>
+                        </div>
+                        <div data-lang-en="“Our Kohli ancestors, through sheer physical toil and without accepting any government financial grants, spearheaded indigenous water harvesting campaigns (*Paani Adva, Paani Jirva*). They constructed grand reservoirs like Navegaon Bandh, and historical records confirm they also built the renowned Ambazari Lake in Nagpur. Their main livelihood was agriculture, centered around livestock stewardship and tank irrigation.”" data-lang-mr="“आपल्या कोहळी पूर्वजांनी कोणत्याही शासकीय मदतीची अथवा अनुदानाची अपेक्षा न ठेवता, 'पाणी आडवा, पाणी जिरवा' या पारंपरिक न्यायाने स्वतःच्या घामातून भव्य तलाव निर्माण केले. कोलू पटेल कोहळी यांनी नवेगावबांधसारखा अथांग जलाशय बांधला, तसेच नागपूर येथील प्रसिद्ध अंबाझरी तलावाची निर्मितीही कोहळी पूर्वजांनी केली. शेती व जलव्यवस्थापन हीच त्यांची मुख्य उपजीविका होती.”">
+                            “Our Kohli ancestors, through sheer physical toil and without accepting any government financial grants, spearheaded indigenous water harvesting campaigns...”
+                        </div>
+                        <div class="wiki-quotebox-credit">
+                            <span data-lang-en="— Verified Community Documentation; recording Navegaon Bandh, Ambazari Tank, and thousands of Malguzari bodis." data-lang-mr="— मूळ समाज ऐतिहासिक दस्तऐवज; नवेगावबांध, अंबाझरी तलाव व हजारो मालगुजारी बोड्यांच्या निर्मितीची नोंद.">— Verified Community Documentation...</span>
+                        </div>
+                    </div>
+
+                    <p class="wiki-p">
+                        <span data-lang-en="These tanks were designed with stone sluice-gates (*khind* and *thana*), stone-faced waste-weirs, and peripheral channels, sustaining multi-season crops across eastern Vidarbha for centuries. To explore the detailed technical aspects and colonial surveys of this water system, refer to the dedicated <a href='water-heritage.html'>Water Conservation Heritage</a> section." data-lang-mr="या तलावांची उभारणी दगडी खिडक्या (स्लुईस गेट्स), पाषाणी सांडवे आणि कालव्यांच्या माध्यमातून करण्यात आली होती, ज्यांनी पूर्व विदर्भात शतकानुशतके बारामाही शेतीला पाणी पुरवले. या जलव्यवस्थेच्या सविस्तर तंत्रज्ञानासाठी <a href='water-heritage.html'>जलसंवर्धन वारसा</a> हा स्वतंत्र विभाग पहावा.">These tanks were designed with stone sluice-gates...</span>
+                    </p>
+                </section>
+
+                <!-- SECTION 3: AGRARIAN ECONOMY & INDIGENOUS CROPS -->
+                <section id="sec-livelihood">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="3. Agrarian Economy & Indigenous Crops" data-lang-mr="३. शेती, पारंपरिक पिके व गुळनिर्मिती">3. Agrarian Economy & Indigenous Crops</span></span>
+                        <a href="#sec-livelihood" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Agriculture was the cornerstone of community economic life. The fertile soils nourished by tank irrigation supported extensive paddy cultivation, sugarcane farming, jaggery production, and livestock husbandry<sup>[1]</sup><sup>[3]</sup>:" data-lang-mr="शेती हा कोहळी समाजाच्या आर्थिक आणि सामाजिक जीवनाचा पाया होता. तलावांच्या सिंचनामुळे सुपीक झालेल्या जमिनींवर प्रामुख्याने भात शेती, ऊस लागवड, गुळनिर्मिती आणि पशुपालन केले जात असे<sup>[१]</sup><sup>[३]</sup>:">Agriculture was the cornerstone...</span>
+                    </p>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--accent-gold); border-radius:6px; padding:1.2rem; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
                             <i class="fa-solid fa-seedling" style="font-size:2rem; color:var(--accent-gold); margin-bottom:0.6rem;"></i>
-                            <h4 style="font-size:1.05rem; font-weight:700; color:var(--primary-dark); margin:0;" data-lang-en="Farming & Livelihood" data-lang-mr="शेती आणि उपजीविका">Farming & Livelihood</h4>
+                            <div style="font-weight:700; color:var(--primary-dark); font-size:1.05rem;" data-lang-en="Rice Farming" data-lang-mr="भात (धान) शेती">Rice Farming</div>
+                            <div style="font-size:0.85rem; color:var(--wiki-text-muted); margin-top:0.3rem;" data-lang-en="Primary staple crop" data-lang-mr="प्रमुख नगदी व अन्न पीक">Primary staple crop</div>
+                        </div>
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--accent-gold); border-radius:6px; padding:1.2rem; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                            <i class="fa-solid fa-leaf" style="font-size:2rem; color:var(--accent-gold); margin-bottom:0.6rem;"></i>
+                            <div style="font-weight:700; color:var(--primary-dark); font-size:1.05rem;" data-lang-en="Sugarcane Cultivation" data-lang-mr="ऊस लागवड">Sugarcane Cultivation</div>
+                            <div style="font-size:0.85rem; color:var(--wiki-text-muted); margin-top:0.3rem;" data-lang-en="Irrigated cash crop" data-lang-mr="तलाव सिंचनावर ऊस शेती">Irrigated cash crop</div>
+                        </div>
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--accent-gold); border-radius:6px; padding:1.2rem; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                            <i class="fa-solid fa-fire-burner" style="font-size:2rem; color:var(--accent-gold); margin-bottom:0.6rem;"></i>
+                            <div style="font-weight:700; color:var(--primary-dark); font-size:1.05rem;" data-lang-en="Jaggery Production" data-lang-mr="गुळनिर्मिती">Jaggery Production</div>
+                            <div style="font-size:0.85rem; color:var(--wiki-text-muted); margin-top:0.3rem;" data-lang-en="Traditional furnaces (*chula*)" data-lang-mr="गावरान गुळाच्या भट्ट्या">Traditional furnaces (*chula*)</div>
+                        </div>
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--accent-gold); border-radius:6px; padding:1.2rem; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                            <i class="fa-solid fa-cow" style="font-size:2rem; color:var(--accent-gold); margin-bottom:0.6rem;"></i>
+                            <div style="font-weight:700; color:var(--primary-dark); font-size:1.05rem;" data-lang-en="Livestock Care" data-lang-mr="पशुपालन व गोधन">Livestock Care</div>
+                            <div style="font-size:0.85rem; color:var(--wiki-text-muted); margin-top:0.3rem;" data-lang-en="Integral to draft power" data-lang-mr="शेतीकामासाठी बैलांची निगा">Integral to draft power</div>
+                        </div>
+                    </div>
+
+                    <h3 class="wiki-subheading" data-lang-en="Traditional Paddy Varieties" data-lang-mr="पारंपरिक भाताच्या सुगंधी जाती">Traditional Paddy Varieties</h3>
+                    <p class="wiki-p">
+                        <span data-lang-en="According to community historical memory and agrarian surveys, Kohli farmers cultivated prized indigenous fragrant paddy cultivars suited to tank-irrigated soils:" data-lang-mr="समुदायाच्या ऐतिहासिक स्मृतीनुसार व कृषी नोंदींनुसार, कोहळी शेतकरी खालील वैशिष्ट्यपूर्ण सुगंधी भाताच्या वाणांची लागवड करत असत:">According to community historical memory...</span>
+                    </p>
+                    <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem;">
+                        <span class="wiki-stat-pill"><i class="fa-solid fa-seedling"></i> <strong data-lang-en="Luchai" data-lang-mr="लुचाई">Luchai</strong> (<span data-lang-en="Fine white table rice" data-lang-mr="उत्कृष्ट पांढरा भात">Fine white table rice</span>)</span>
+                        <span class="wiki-stat-pill"><i class="fa-solid fa-seedling"></i> <strong data-lang-en="Chinnor" data-lang-mr="चिन्नोर">Chinnor</strong> (<span data-lang-en="Aromatic heritage rice" data-lang-mr="सुगंधी व चवदार वाण">Aromatic heritage rice</span>)</span>
+                        <span class="wiki-stat-pill"><i class="fa-solid fa-seedling"></i> <strong data-lang-en="Dubraj" data-lang-mr="दुबराज">Dubraj</strong> (<span data-lang-en="Traditional festive grain" data-lang-mr="सण-समारंभाचा पारंपरिक तांदूळ">Traditional festive grain</span>)</span>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: VILLAGE ADMINISTRATION & DAHALJIT TRADITIONS -->
+                <section id="sec-patil">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="4. Village Administration & Dahaljit Traditions" data-lang-mr="४. पाटील, मालगुजार व ग्रामव्यवस्था">4. Village Administration & Dahaljit Traditions</span></span>
+                        <a href="#sec-patil" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Historical writings and colonial revenue reports document that Kohli Patil and Malguzar households were the agrarian custodians of their villages. Village politics, land revenue administration, and social coordination were traditionally conducted from the Patil's residence (*Wada*)<sup>[1]</sup><sup>[3]</sup>:" data-lang-mr="ऐतिहासिक दस्तऐवज आणि ब्रिटिश महसूल अहवाल हे स्पष्ट करतात की, अनेक गावांमध्ये कोहळी पाटील व मालगुजार घराणी ही ग्रामव्यवस्थेची प्रमुख आधारस्तंभ होती. गावातील शेतीचे व्यवहार, महसूल व्यवस्थापन आणि स्थानिक न्यायनिवाडा पारंपरिक रीत्या पाटलांच्या वाड्यातून चालत असे<sup>[१]</sup><sup>[३]</sup>:">Historical writings and colonial revenue reports...</span>
+                    </p>
+
+                    <div style="display:flex; flex-direction:column; gap:0.8rem; margin-bottom:1.5rem;">
+                        <div style="background:white; border-left:4px solid var(--accent-gold); padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                            <strong style="color:var(--primary-dark);" data-lang-en="The Dahaljit (डहलजीत) Tradition:" data-lang-mr="डहलजीत परंपरा:">The Dahaljit (डहलजीत) Tradition:</strong>
+                            <span data-lang-en="According to community records (Source Line 1), village affairs centered around the Patil's homestead (*wada*). When the Patil stood in the *dahaljit* (the outer portico of the house), passing villagers respectfully greeted him with 'Patil Saheb'." data-lang-mr="मूळ समाज नोंदीनुसार (ओळ १), गावातील व्यवहार पाटलांच्या वाड्याभोवती चालत. पाटील जेव्हा वाड्याच्या डहलजीत (बाहेरील बैठक/ओसरी) उभे राहत, तेव्हा गावातून येणारा-जाणारा प्रत्येक नागरिक 'पाटील साहेब' म्हणून आदराने अभिवादन करत असे.">According to community records (Source Line 1)...</span>
+                        </div>
+                        <div style="background:white; border-left:4px solid var(--accent-gold); padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                            <strong style="color:var(--primary-dark);" data-lang-en="Malguzari Revenue Responsibilities:" data-lang-mr="मालगुजारी महसूल व जलव्यवस्था:">Malguzari Revenue Responsibilities:</strong>
+                            <span data-lang-en="The Malguzar was responsible for timely payment of village land revenue to the treasury, maintenance of the main tanks and distributary channels, and organizing collective seasonal labor (*bhatti* and *roji*)." data-lang-mr="गावाचा जमीन महसूल शासकीय कोषागारात जमा करणे, मुख्य तलाव व पाटबंधाऱ्यांची नियमित दुरुस्ती करणे आणि हंगामी कामांचे नियोजन करणे ही मालगुजारांची मुख्य जबाबदारी असे.">The Malguzar was responsible for...</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: VILLAGE LIFE & RECIPROCAL SOCIAL ORDER -->
+                <section id="sec-village">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="5. Village Life & Reciprocal Social Order" data-lang-mr="५. ग्रामजीवन, वाडा व सामाजिक एकोपा">5. Village Life & Reciprocal Social Order</span></span>
+                        <a href="#sec-village" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Traditional village life in eastern Vidarbha was structured on mutual interdependence. Kohli agrarian households maintained close, paternal relationships with the entire village social fabric, functioning as recognized patrons (*poshinde*) of the traditional <em>Bara Balutedar</em> system<sup>[1]</sup>:" data-lang-mr="पूर्व विदर्भातील ग्रामीण जीवन हे परस्पर सहकार्यावर आधारलेले होते. कोहळी शेतकरी व पाटील घराणी ही ग्रामीण रचनेमध्ये 'बारा बलुतेदारांचे पोशिंदे' म्हणून सन्मानित होती<sup>[१]</sup>:">Traditional village life in eastern Vidarbha...</span>
+                    </p>
+                    <div class="wiki-fact-list">
+                        <ul>
+                            <li>
+                                <strong data-lang-en="Bara Balutedar & The Bhatyavar Compensation System:" data-lang-mr="बारा बलुतेदार व 'भात्यावर' पद्धत:">Bara Balutedar & The Bhatyavar Compensation System:</strong>
+                                <span data-lang-en="Village artisans—including blacksmiths (*lohar*), carpenters (*sutar*), barbers (*nhavi*), and potters (*kumbhar*)—rendered services throughout the agricultural season and were remunerated during harvest through the customary *bhatyavar* (paddy grain) share (Source Line 1)." data-lang-mr="लोहार, सुतार, न्हावी, कुंभार यांसारख्या बारा बलुतेदारांना शेतीच्या हंगामात केलेल्या कामाचा मोबदला सुगीच्या वेळी थेट धान्याच्या (भाताच्या) स्वरूपात 'भात्यावर' दिला जात असे (ओळ १).">Village artisans...</span>
+                            </li>
+                            <li>
+                                <strong data-lang-en="Inter-Community Harmony with Gond, Gowari & Dhiwar:" data-lang-mr="गोंड, गोवारी व धिवर समाजाशी सलोखा:">Inter-Community Harmony with Gond, Gowari & Dhiwar:</strong>
+                                <span data-lang-en="Historical records document harmonious coexistence with indigenous Gond kings and tribes (who granted malguzari tracts), Gowari cattle herders, and Dhiwar fishermen who managed tank fisheries (Source Line 1)." data-lang-mr="स्थानिक गोंड राजे व बांधव (ज्यांनी वसाहतींसाठी जमिनी दिल्या), गुरे राखणारे गोवारी बांधव आणि तलावातील मत्स्यपालन करणारे धिवर बांधव यांच्याशी पिढ्यानपिढ्या स्नेहाचे व सहकार्याचे संबंध होते (ओळ १).">Historical records document harmonious coexistence...</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: JOINT FAMILY EVOLUTION & MODERN CHANGE -->
+                <section id="sec-family">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="6. Joint Family Evolution & Modern Change" data-lang-mr="६. संयुक्त कुटुंबव्यवस्था व आधुनिक स्थित्यंतर">6. Joint Family Evolution & Modern Change</span></span>
+                        <a href="#sec-family" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="According to community literature, multi-generational joint families (*Ekatra Kutumb*) were the norm until the late 20th century. Up to three or four generations lived under one roof, sharing collective responsibilities in farming, livestock care, and household economy<sup>[1]</sup>:" data-lang-mr="समुदायातील लेखनानुसार, विसाव्या शतकाच्या उत्तरार्धापर्यंत अनेक पिढ्यांचे एकत्र कुटुंब (*संयुक्त कुटुंबपद्धती*) अस्तित्वात होते. एकाच छताखाली तीन-चार पिढ्या एकत्र राहत असत आणि शेती, पशुपालन व घरकामाची जबाबदारी सामूहिकपणे सांभाळत असत<sup>[१]</sup>:">According to community literature...</span>
+                    </p>
+
+                    <div style="background:#fff3cd; border-left:4px solid #ffc107; padding:1rem 1.2rem; border-radius:4px; font-size:0.92rem; color:#856404; margin-bottom:1.2rem;">
+                        <strong data-lang-en="The 2001 Watershed Transition:" data-lang-mr="२००१ चे सामाजिक स्थित्यंतर:">The 2001 Watershed Transition:</strong>
+                        <span data-lang-en="Community records identify the year 2001 as a historic transition point when extensive multi-generational joint households progressively divided into nuclear families due to agricultural land subdivision, modern education, and urban employment migration (Source Line 1)." data-lang-mr="मूळ समाज नोंदीनुसार (ओळ १), २००१ हे वर्ष संयुक्त कुटुंबव्यवस्थेतील स्थित्यंतराचा महत्त्वाचा टप्पा मानले जाते; या काळानंतर शेतीची विभागणी, उच्च शिक्षण आणि शहरांमधील नोकऱ्यांमुळे विभक्त कुटुंबपद्धती वाढीस लागली.">Community records identify the year 2001...</span>
+                    </div>
+                    <p class="wiki-p">
+                        <span data-lang-en="Despite the growth of nuclear families, community cohesion remains vibrant through shared participation in major festivals (*Bail Pola*, *Tulsi Vivah*), matrimonial assemblies, and community organizations." data-lang-mr="विभक्त कुटुंबे वाढली असली, तरी सण-उत्सव (बैल पोळा, तुळशी विवाह), विवाह समारंभ आणि समाज संघटनांच्या माध्यमातून कौटुंबिक व सामाजिक एकोपा आजही कायम आहे.">Despite the growth of nuclear families...</span>
+                    </p>
+                </section>
+
+                <!-- SECTION 7: COLONIAL ARCHIVAL RECORDS & GAZETTEERS -->
+                <section id="sec-sources">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="7. Colonial Archival Records & Gazetteers" data-lang-mr="७. शासकीय गॅझेटिअर व ऐतिहासिक स्रोत">7. Colonial Archival Records & Gazetteers</span></span>
+                        <a href="#sec-sources" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="The historical standing of the Kohli community is corroborated across British colonial surveys, settlement reports, and district gazetteers compiled from the mid-19th century onward<sup>[2]</sup><sup>[3]</sup>:" data-lang-mr="कोहळी समाजाचे ऐतिहासिक स्थान एकोणिसाव्या शतकाच्या मध्यापासून तयार करण्यात आलेल्या ब्रिटिश प्रशासकीय अहवाल, सेटलमेंट रिपोर्ट आणि जिल्हा गॅझेटिअरमध्ये नोंदवले गेले आहे<sup>[२]</sup><sup>[३]</sup>:">The historical standing of the Kohli community...</span>
+                    </p>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
+                        <div style="background:white; border:1px solid var(--wiki-light-border); padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                            <div style="font-size:0.75rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.2rem;" data-lang-en="Settlement Report (1869)" data-lang-mr="सेटलमेंट रिपोर्ट (१८६९)">Settlement Report (1869)</div>
+                            <strong style="color:var(--primary-dark); font-size:1.02rem; display:block; margin-bottom:0.3rem;">Chanda District Settlement Report</strong>
+                            <div style="font-size:0.86rem; color:var(--wiki-text-dark);" data-lang-en="Compiled by Capt. Lucie Smith; documents Kohli Malguzari landholdings, tank engineering, and sugarcane cultivation." data-lang-mr="कॅप्टन लुसी स्मिथ यांनी नोंदवलेला; कोहळी मालगुजारी, तलाव स्थापत्य आणि ऊस शेतीचे दस्तऐवज.">Compiled by Capt. Lucie Smith...</div>
+                        </div>
+
+                        <div style="background:white; border:1px solid var(--wiki-light-border); padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                            <div style="font-size:0.75rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.2rem;" data-lang-en="District Gazetteer (1908)" data-lang-mr="जिल्हा गॅझेटिअर (१९०८)">District Gazetteer (1908)</div>
+                            <strong style="color:var(--primary-dark); font-size:1.02rem; display:block; margin-bottom:0.3rem;">Bhandara District Gazetteer</strong>
+                            <div style="font-size:0.86rem; color:var(--wiki-text-dark);" data-lang-en="Edited by R. V. Russell; records the community as master builders of grand reservoirs and prominent agricultural leaders." data-lang-mr="संपादक: आर. व्ही. रसेल; कोहळी समाजाचे भव्य तलाव निर्माते व कृषी नेते म्हणून अधिकृत वर्णन.">Edited by R. V. Russell...</div>
+                        </div>
+
+                        <div style="background:white; border:1px solid var(--wiki-light-border); padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                            <div style="font-size:0.75rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.2rem;" data-lang-en="Ethnographic Survey (1916)" data-lang-mr="वांशिक व ऐतिहासिक सर्वेक्षण (१९१६)">Ethnographic Survey (1916)</div>
+                            <strong style="color:var(--primary-dark); font-size:1.02rem; display:block; margin-bottom:0.3rem;">Tribes and Castes of Central Provinces</strong>
+                            <div style="font-size:0.86rem; color:var(--wiki-text-dark);" data-lang-en="Authored by R. V. Russell & Rai Bahadur Hira Lal; extensive ethnographic chapter on Kohli landholding and culture." data-lang-mr="लेखक: आर. व्ही. रसेल व राय बहादूर हिरालाल; कोहळी जमीनधारणा, संस्कृती व स्थापत्याचा सविस्तर अभ्यास.">Authored by R. V. Russell & Rai Bahadur Hira Lal...</div>
+                        </div>
+
+                        <div style="background:white; border:1px solid var(--wiki-light-border); padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                            <div style="font-size:0.75rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700; margin-bottom:0.2rem;" data-lang-en="Settlement Report (1916–1921)" data-lang-mr="सेटलमेंट रिपोर्ट (१९१६-१९२१)">Settlement Report (1916–1921)</div>
+                            <strong style="color:var(--primary-dark); font-size:1.02rem; display:block; margin-bottom:0.3rem;">Bhandara Land Revenue Settlement</strong>
+                            <div style="font-size:0.86rem; color:var(--wiki-text-dark);" data-lang-en="Compiled by P. Hemingway and A. B. Napier; records tank maintenance and proprietary malguzari shares." data-lang-mr="पी. हेमिंग्वे व ए. बी. नेपियर यांचा अहवाल; तलावांची देखभाल व मालगुजारी अधिकारांची नोंद.">Compiled by P. Hemingway and A. B. Napier...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 8: HISTORICAL CENSUS & SETTLEMENT RECORDS -->
+                <section id="sec-stats">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="8. Historical Census & Settlement Records" data-lang-mr="८. ऐतिहासिक जनगणना व सेटलमेंट नोंदी">8. Historical Census & Settlement Records</span></span>
+                        <a href="#sec-stats" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="Archival statistical records from the colonial period demonstrate the community's geographic concentration in the eastern Vidarbha districts:" data-lang-mr="ब्रिटिश काळातील ऐतिहासिक सांख्यिकी नोंदी पूर्व विदर्भातील जिल्ह्यांमध्ये कोहळी समाजाची लोकसंख्या स्पष्ट करतात:">Archival statistical records...</span>
+                    </p>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:1.5rem;">
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--accent-gold); padding:1.5rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                                <h4 style="font-size:0.85rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700; margin:0;" data-lang-en="1911 Census Record (Bhandara)" data-lang-mr="१९११ जनगणना नोंद (भंडारा)">1911 Census Record (Bhandara)</h4>
+                                <span class="wiki-stat-pill" style="margin:0;"><i class="fa-solid fa-file-contract"></i> Official</span>
+                            </div>
+                            <div style="font-size:2.4rem; font-weight:800; color:var(--primary-dark); margin:0.4rem 0;">11,399</div>
+                            <p style="font-size:0.92rem; color:var(--wiki-text-dark); margin-bottom:0.8rem; line-height:1.5;" data-lang-en="Historical population of the Kohli community in Bhandara district recorded in the 1911 Census." data-lang-mr="१९११ च्या जनगणनेनुसार भंडारा जिल्ह्यात नोंदवलेली कोहळी समाजाची अधिकृत लोकसंख्या.">
+                                Historical population of the Kohli community in Bhandara district recorded in the 1911 Census.
+                            </p>
+                            <div style="font-size:0.8rem; color:var(--wiki-text-muted); background:var(--wiki-bg-subtle); padding:0.4rem 0.6rem; border-radius:4px;">
+                                <i class="fa-solid fa-book-open"></i> <span data-lang-en="Source: Central Provinces District Gazetteers (Bhandara Statistical Table)" data-lang-mr="स्रोत: सेंट्रल प्रॉव्हिन्सेस डिस्ट्रिक्ट गॅझेटिअर्स (भंडारा सांख्यिकी तक्ता)">Source: Central Provinces District Gazetteers</span>
+                            </div>
+                        </div>
+
+                        <div style="background:white; border:1px solid var(--wiki-light-border); border-top:3px solid var(--primary-dark); padding:1.5rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                                <h4 style="font-size:0.85rem; color:var(--wiki-text-muted); text-transform:uppercase; font-weight:700; margin:0;" data-lang-en="Colonial Settlement Record" data-lang-mr="ऐतिहासिक सेटलमेंट नोंद">Colonial Settlement Record</h4>
+                                <span class="wiki-stat-pill" style="margin:0;"><i class="fa-solid fa-file-contract"></i> Archival</span>
+                            </div>
+                            <div style="font-size:2.4rem; font-weight:800; color:var(--primary-dark); margin:0.4rem 0;">19,739</div>
+                            <p style="font-size:0.92rem; color:var(--wiki-text-dark); margin-bottom:0.8rem; line-height:1.5;" data-lang-en="Combined historical population across Bhandara and Chanda districts in colonial surveys." data-lang-mr="ब्रिटिश सेटलमेंट संदर्भात भंडारा व चांदा जिल्ह्यांमध्ये मिळून नोंदवलेली एकूण लोकसंख्या.">
+                                Combined historical population across Bhandara and Chanda districts in colonial surveys.
+                            </p>
+                            <div style="font-size:0.84rem; color:var(--wiki-text-dark); display:flex; gap:1.5rem;">
+                                <div><strong>Bhandara:</strong> 12,097 (Sakoli: 8,130)</div>
+                                <div><strong>Chanda:</strong> 7,602 (Brahmapuri: 6,578)</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 9: HISTORICAL NAME TRANSLITERATIONS -->
+                <section id="sec-spellings">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="9. Historical Name Transliterations" data-lang-mr="९. दस्तऐवजांमधील नावांची रूपे">9. Historical Name Transliterations</span></span>
+                        <a href="#sec-spellings" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <p class="wiki-p">
+                        <span data-lang-en="In British administrative documents and 19th-century colonial gazetteers, names of regional communities were transliterated phonetically by English officials in diverse spelling variants. Historical references document the following variants for the Kohli community:" data-lang-mr="ब्रिटिश प्रशासकीय दस्तऐवज आणि एकोणिसाव्या शतकातील शासकीय गॅझेटिअरमध्ये इंग्रजी अधिकाऱ्यांनी स्थानिक समाजाच्या नावांचे उच्चारण वेगवेगळ्या इंग्रजी स्पेलिंग्जमध्ये नोंदवले आहे. ऐतिहासिक दस्तऐवजांमध्ये कोहळी समाजासाठी खालील स्पेलिंग्ज आढळतात:">In British administrative documents...</span>
+                    </p>
+
+                    <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1rem;">
+                        <span style="background:white; border:1px solid var(--wiki-border); padding:0.4rem 0.8rem; border-radius:4px; font-weight:700; color:var(--primary-dark);">Kohli</span>
+                        <span style="background:white; border:1px solid var(--wiki-border); padding:0.4rem 0.8rem; border-radius:4px; font-weight:700; color:var(--primary-dark);">Kohri</span>
+                        <span style="background:white; border:1px solid var(--wiki-border); padding:0.4rem 0.8rem; border-radius:4px; font-weight:700; color:var(--primary-dark);">Kohiree</span>
+                        <span style="background:white; border:1px solid var(--wiki-border); padding:0.4rem 0.8rem; border-radius:4px; font-weight:700; color:var(--primary-dark);">Kohulee</span>
+                        <span style="background:white; border:1px solid var(--wiki-border); padding:0.4rem 0.8rem; border-radius:4px; font-weight:700; color:var(--primary-dark);">Koholee</span>
+                        <span style="background:white; border:1px solid var(--wiki-border); padding:0.4rem 0.8rem; border-radius:4px; font-weight:700; color:var(--primary-dark);">Kohoree</span>
+                        <span style="background:white; border:1px solid var(--wiki-border); padding:0.4rem 0.8rem; border-radius:4px; font-weight:700; color:var(--primary-dark);">Kaulees</span>
+                    </div>
+                    <p style="font-size:0.86rem; color:var(--wiki-text-muted); font-style:italic;" data-lang-en="*Note: These phonetic spelling variants represent 19th-century administrative transliterations and do not denote separate social groups." data-lang-mr="*टीप: ही विविध स्पेलिंग्ज तत्कालीन इंग्रजी प्रशासकीय transliteration मुळे निर्माण झालेली रूपे असून, ती स्वतंत्र सामाजिक गट दर्शवत नाहीत.">
+                        *Note: These phonetic spelling variants represent 19th-century administrative transliterations and do not denote separate social groups.
+                    </p>
+                </section>
+
+                <!-- SECTION 10: HISTORIOGRAPHICAL NOTE & METHODOLOGY -->
+                <section id="sec-methodology">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="10. Historiographical Note & Methodology" data-lang-mr="१०. इतिहास संशोधन व स्रोत मर्यादा">10. Historiographical Note & Methodology</span></span>
+                        <a href="#sec-methodology" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <div style="background:var(--wiki-bg-subtle); border:1px solid var(--wiki-light-border); border-left:4px solid var(--primary-dark); padding:1.2rem 1.4rem; border-radius:4px; margin-bottom:1.5rem;">
+                        <h4 style="color:var(--primary-dark); font-size:1.05rem; font-weight:700; margin:0 0 0.5rem 0;" data-lang-en="Standard of Historical Evidence" data-lang-mr="ऐतिहासिक साधनांचे वस्तुनिष्ठ विश्लेषण">Standard of Historical Evidence</h4>
+                        <p style="font-size:0.94rem; line-height:1.7; color:var(--wiki-text-dark); margin-bottom:0.6rem;" data-lang-en="Available records concerning the history of the Kohli community comprise colonial gazetteers, land settlement surveys, census tables, independent monographs, and oral community recollections. Each source category carries specific methodological contexts:" data-lang-mr="कोहळी समाजाच्या इतिहासाबाबत उपलब्ध सामग्रीमध्ये ब्रिटिश गॅझेटिअर, महसूल सेटलमेंट अहवाल, जनगणना नोंदी, स्वतंत्र संशोधन ग्रंथ आणि मौखिक स्मृतींचा समावेश आहे. प्रत्येक स्रोताचे स्वरूप खालीलप्रमाणे समजून घेणे आवश्यक आहे:">Available records concerning the history...</p>
+                        <ul style="font-size:0.9rem; line-height:1.65; color:var(--wiki-text-dark); margin:0 0 0.5rem 1.2rem; padding:0;">
+                            <li data-lang-en="<strong>Administrative Boundaries:</strong> 19th-century district boundaries (such as the undivided Chanda and Bhandara districts) differed substantially from contemporary Maharashtra districts." data-lang-mr="<strong>प्रशासकीय सीमा:</strong> एकोणिसाव्या शतकातील चांदा व भंडारा जिल्ह्यांच्या प्रशासकीय सीमा आजच्या जिल्ह्यांपेक्षा विस्तृत होत्या."><strong>Administrative Boundaries:</strong> 19th-century district boundaries differed...</li>
+                            <li data-lang-en="<strong>Oral Traditions vs. State Records:</strong> Oral elder recollections preserve social memories of wada life, dahaljit greetings, and festive theatre (Dandar), complementing formal archival land records." data-lang-mr="<strong>मौखिक परंपरा व दस्तऐवज:</strong> वाडा संस्कृती, डहलजीत आणि दंडार लोकनाट्याचे संदर्भ मौखिक स्मृतींमधून जिवंत राहतात, जे प्रशासकीय दस्तऐवजांना सामाजिक परिमाण जोडतात."><strong>Oral Traditions vs. State Records:</strong> Oral elder recollections...</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 11: SEE ALSO -->
+                <section id="sec-see-also">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="11. See Also" data-lang-mr="११. हेही पहा">11. See Also</span></span>
+                        <a href="#sec-see-also" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <div class="wiki-see-also-grid">
+                        <a href="historical-timeline.html" class="wiki-see-also-card">
+                            <span data-lang-en="Chronological Historical Timeline" data-lang-mr="ऐतिहासिक कालरेषा (१८०७–१९७३)">Chronological Historical Timeline</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="water-heritage.html" style="display:block; text-decoration:none; background:var(--bg-cream); border:1.5px solid var(--border-color); border-radius:10px; padding:1.2rem; text-align:center; transition:var(--transition);">
-                            <i class="fa-solid fa-droplet" style="font-size:2rem; color:var(--accent-gold); margin-bottom:0.6rem;"></i>
-                            <h4 style="font-size:1.05rem; font-weight:700; color:var(--primary-dark); margin:0;" data-lang-en="Water Management" data-lang-mr="जलव्यवस्थापन">Water Management</h4>
+                        <a href="water-heritage.html" class="wiki-see-also-card">
+                            <span data-lang-en="Water Conservation Heritage" data-lang-mr="जलसंवर्धन वारसा व तलाव निर्मिती">Water Conservation Heritage</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="#sec-patil" style="display:block; text-decoration:none; background:var(--bg-cream); border:1.5px solid var(--border-color); border-radius:10px; padding:1.2rem; text-align:center; transition:var(--transition);">
-                            <i class="fa-solid fa-building-columns" style="font-size:2rem; color:var(--accent-gold); margin-bottom:0.6rem;"></i>
-                            <h4 style="font-size:1.05rem; font-weight:700; color:var(--primary-dark); margin:0;" data-lang-en="Village Administration" data-lang-mr="ग्रामव्यवस्था">Village Administration</h4>
+                        <a href="gazetteers.html" class="wiki-see-also-card">
+                            <span data-lang-en="Colonial Gazetteers & Excerpts" data-lang-mr="ब्रिटिश गॅझेटिअर व ऐतिहासिक उतारे">Colonial Gazetteers & Excerpts</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="#sec-village" style="display:block; text-decoration:none; background:var(--bg-cream); border:1.5px solid var(--border-color); border-radius:10px; padding:1.2rem; text-align:center; transition:var(--transition);">
-                            <i class="fa-solid fa-people-roof" style="font-size:2rem; color:var(--accent-gold); margin-bottom:0.6rem;"></i>
-                            <h4 style="font-size:1.05rem; font-weight:700; color:var(--primary-dark); margin:0;" data-lang-en="Social & Cultural Life" data-lang-mr="सामाजिक व सांस्कृतिक जीवन">Social & Cultural Life</h4>
+                        <a href="culture.html" class="wiki-see-also-card">
+                            <span data-lang-en="Living Traditions & Culture" data-lang-mr="सांस्कृतिक वारसा व लोकपरंपरा">Living Traditions & Culture</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
-                </div>
+                </section>
 
-            </div>
+                <!-- SECTION 12: NOTES & REFERENCES -->
+                <section id="sec-references">
+                    <h2 class="wiki-heading">
+                        <span><span data-lang-en="12. Notes & References" data-lang-mr="१२. संदर्भ व नोंदी">12. Notes & References</span></span>
+                        <a href="#sec-references" class="wiki-edit-pill">[edit]</a>
+                    </h2>
+                    <ol class="wiki-references-list">
+                        <li id="cite_note-1">
+                            <span data-lang-en="<strong>Primary Community Documentation:</strong> <em>'Kohli Samajachi Ganima va Samajik Sthan'</em>; verified community documentation recording historical settlements across 518 villages, Navegaon Bandh and Ambazari water engineering, Patilki Dahaljit customs, and the 2001 joint-family watershed (Source Lines 1, 31, 37, 47–57)." data-lang-mr="<strong>मूळ समाज ऐतिहासिक दस्तऐवज:</strong> <em>'कोहळी समाजाची गणीमा व सामाजिक स्थान'</em>; ५ जिल्ह्यांतील ५१८ गावे, नवेगावबांध व अंबाझरी तलाव निर्मिती, डहलजीत परंपरा आणि २००१ चे स्थित्यंतर (ओळ १, ३१, ३७, ४७-५७)."><strong>Primary Community Documentation:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-2">
+                            <span data-lang-en="<strong>Central Provinces District Gazetteers:</strong> <em>Bhandara District (1908)</em> and <em>Chanda District (1909)</em>, edited by R. V. Russell; recording the Kohli community's Malguzari landholding, traditional tank construction, and agricultural stewardship." data-lang-mr="<strong>सेंट्रल प्रॉव्हिन्सेस डिस्ट्रिक्ट गॅझेटियर्स:</strong> <em>भंडारा जिल्हा (१९०८)</em> आणि <em>चांदा जिल्हा (१९०९)</em>; संपादन: आर. व्ही. रसेल; कोहळी समाजाची मालगुजारी, तलाव सिंचन आणि कृषी नेतृत्वाच्या शासकीय नोंदी."><strong>Central Provinces District Gazetteers:</strong> ...</span>
+                        </li>
+                        <li id="cite_note-3">
+                            <span data-lang-en="<strong>Land Revenue Settlement Reports:</strong> Captain Lucie Smith, <em>Report on the Land Revenue Settlement of the Chanda District, Central Provinces (1869)</em>, and P. Hemingway, <em>Final Report on the Land Revenue Settlement of the Bhandara District (1916–1921)</em>." data-lang-mr="<strong>ब्रिटिश लँड रेव्हेन्यू सेटलमेंट अहवाल:</strong> कॅप्टन लुसी स्मिथ, <em>चांदा जिल्हा सेटलमेंट रिपोर्ट (१८६९)</em>; आणि पी. हेमिंग्वे, <em>भंडारा जिल्हा लँड रेव्हेन्यू सेटलमेंट अहवाल (१९१६-१९२१)</em>."><strong>Land Revenue Settlement Reports:</strong> ...</span>
+                        </li>
+                    </ol>
+
+                    <div class="wiki-categories-box">
+                        <span class="wiki-cat-label" data-lang-en="Categories:" data-lang-mr="वर्ग:">Categories:</span>
+                        <a href="history.html" class="wiki-cat-link" data-lang-en="History of Vidarbha" data-lang-mr="विदर्भाचा इतिहास">History of Vidarbha</a> |
+                        <a href="about.html" class="wiki-cat-link" data-lang-en="Kohli Samaj Community" data-lang-mr="कोहळी समाज">Kohli Samaj Community</a> |
+                        <a href="water-heritage.html" class="wiki-cat-link" data-lang-en="Malguzari Tank Builders" data-lang-mr="मालगुजारी तलाव स्थापत्य">Malguzari Tank Builders</a> |
+                        <a href="gazetteers.html" class="wiki-cat-link" data-lang-en="Colonial Central Provinces Records" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस शासकीय नोंदी">Colonial Central Provinces Records</a>
+                    </div>
+                </section>
+
+            </article>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
     <footer class="site-footer">
         <div class="container footer-bottom-flex" style="padding:1.5rem 0;">
             <div>© 2026 Kohli Samaj Portal. All Rights Reserved.</div>
-            <div>Built by Community Volunteers</div>
+            <div><span data-lang-en="Built by Community Volunteers" data-lang-mr="समाज स्वयंसेवकांनी बनवले">Built by Community Volunteers</span></div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- INTERACTIVE TOC SCROLL-SPY SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.wiki-toc-link');
+            const sections = document.querySelectorAll('article.wiki-article-body section, #sec-lead');
+
+            function highlightToc() {
+                let scrollPos = window.scrollY + 120;
+                sections.forEach(function(section) {
+                    if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                        const currentId = section.getAttribute('id');
+                        tocLinks.forEach(function(link) {
+                            if (link.getAttribute('href') === '#' + currentId) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightToc);
+            highlightToc();
+        });
+    </script>
+
+    <!-- Core Scripts -->
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/admin.js"></script>
