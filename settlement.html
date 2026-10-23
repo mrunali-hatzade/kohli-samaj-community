@@ -148,78 +148,98 @@
     <div class="wiki-main-layout">
         <div class="wiki-layout-grid">
 
-            <!-- LEFT STICKY TABLE OF CONTENTS -->
-            <aside class="wiki-toc-sidebar">
+            <!-- LEFT RAIL: TABLE OF CONTENTS -->
+            <aside class="wiki-toc-sidebar" aria-label="Table of Contents">
                 <div class="wiki-toc-title">
-                    <i class="fa-solid fa-list-ul"></i>
+                    <i class="fa-solid fa-list-ol"></i>
                     <span data-lang-en="Contents" data-lang-mr="अनुक्रमणिका">Contents</span>
                 </div>
-                <ul class="wiki-toc-list">
-                    <li><a href="#sec-intro" class="wiki-toc-link"><span class="wiki-toc-num">1</span> <span data-lang-en="Historical Framework" data-lang-mr="ऐतिहासिक चौकट व परिचय">Historical Framework</span></a></li>
-                    <li><a href="#sec-chanda" class="wiki-toc-link"><span class="wiki-toc-num">2</span> <span data-lang-en="Chanda District Settlements" data-lang-mr="चांदा जिल्हा सेटलमेंट अहवाल">Chanda District Settlements</span></a></li>
-                    <li><a href="#sec-bhandara" class="wiki-toc-link"><span class="wiki-toc-num">3</span> <span data-lang-en="Bhandara District Surveys" data-lang-mr="भंडारा जिल्हा भूमापन नोंदी">Bhandara District Surveys</span></a></li>
-                    <li><a href="#sec-malguzari" class="wiki-toc-link"><span class="wiki-toc-num">4</span> <span data-lang-en="Malguzari Administration" data-lang-mr="मालगुजारी व ग्राम प्रशासन">Malguzari Administration</span></a></li>
-                    <li><a href="#sec-agrarian" class="wiki-toc-link"><span class="wiki-toc-num">5</span> <span data-lang-en="Agrarian Structure & Sugarcane" data-lang-mr="कृषी रचना व ऊस लागवड">Agrarian Structure & Sugarcane</span></a></li>
-                    <li><a href="#sec-water-rights" class="wiki-toc-link"><span class="wiki-toc-num">6</span> <span data-lang-en="Water Rights & Irrigation" data-lang-mr="जलहक्क व सिंचन व्यवस्था">Water Rights & Irrigation</span></a></li>
-                    <li><a href="#sec-settlement-pop" class="wiki-toc-link"><span class="wiki-toc-num">7</span> <span data-lang-en="Settlement Demographics (19,739)" data-lang-mr="सेटलमेंट लोकसंख्या (१९,७३९)">Settlement Demographics (19,739)</span></a></li>
-                    <li><a href="#sec-village-records" class="wiki-toc-link"><span class="wiki-toc-num">8</span> <span data-lang-en="Village Records & Wajib-ul-arz" data-lang-mr="ग्राम दस्तऐवज व वाजीब-उल-अर्ज">Village Records & Wajib-ul-arz</span></a></li>
-                    <li><a href="#sec-spellings" class="wiki-toc-link"><span class="wiki-toc-num">9</span> <span data-lang-en="Historical Spellings" data-lang-mr="नावांची ऐतिहासिक रूपे">Historical Spellings</span></a></li>
-                    <li><a href="#sec-archive" class="wiki-toc-link"><span class="wiki-toc-num">10</span> <span data-lang-en="Settlement Sources Archive" data-lang-mr="सेटलमेंट स्रोत संग्रह">Settlement Sources Archive</span></a></li>
-                    <li><a href="#sec-references" class="wiki-toc-link"><span class="wiki-toc-num">11</span> <span data-lang-en="References & Records" data-lang-mr="संदर्भ व शासकीय अभिलेख">References & Records</span></a></li>
-                </ul>
+                <nav>
+                    <ul class="wiki-toc-list">
+                        <li class="wiki-toc-item"><a href="#sec-lead" class="wiki-toc-link active" data-lang-en="(Top / Overview)" data-lang-mr="(शीर्ष / विहंगावलोकन)">(Top / Overview)</a></li>
+                        <li class="wiki-toc-item"><a href="#sec-intro" class="wiki-toc-link"><span class="wiki-toc-num">1.</span> <span data-lang-en="Historical Framework & Revenue Administration" data-lang-mr="ऐतिहासिक चौकट व महसूल प्रशासन">Historical Framework & Revenue Administration</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-chanda" class="wiki-toc-link"><span class="wiki-toc-num">2.</span> <span data-lang-en="Chanda District Settlements (Smith & Napier)" data-lang-mr="चांदा जिल्हा सेटलमेंट अहवाल (स्मिथ व नेपियर)">Chanda District Settlements (Smith & Napier)</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-bhandara" class="wiki-toc-link"><span class="wiki-toc-num">3.</span> <span data-lang-en="Bhandara District Surveys (Lawrence & Hemingway)" data-lang-mr="भंडारा जिल्हा भूमापन नोंदी (लॉरेन्स व हेमिंग्वे)">Bhandara District Surveys (Lawrence & Hemingway)</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-malguzari" class="wiki-toc-link"><span class="wiki-toc-num">4.</span> <span data-lang-en="Malguzari Administration & Hereditary Holdings" data-lang-mr="मालगुजारी व वंशपरंपरागत भूधारणा">Malguzari Administration & Hereditary Holdings</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-agrarian" class="wiki-toc-link"><span class="wiki-toc-num">5.</span> <span data-lang-en="Agrarian Structure & Sugarcane Cultivation" data-lang-mr="कृषी रचना व ऊस लागवड">Agrarian Structure & Sugarcane Cultivation</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-water-rights" class="wiki-toc-link"><span class="wiki-toc-num">6.</span> <span data-lang-en="Water Rights & Tank Irrigation Custom" data-lang-mr="जलहक्क व सिंचन व्यवस्था">Water Rights & Tank Irrigation Custom</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-settlement-pop" class="wiki-toc-link"><span class="wiki-toc-num">7.</span> <span data-lang-en="Settlement Demographics (19,739 Record)" data-lang-mr="सेटलमेंट लोकसंख्या (१९,७३९ नोंद)">Settlement Demographics (19,739 Record)</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-village-records" class="wiki-toc-link"><span class="wiki-toc-num">8.</span> <span data-lang-en="Village Records, Wajib-ul-arz & Nistar" data-lang-mr="ग्राम दस्तऐवज, वाजीब-उल-अर्ज व निस्तार">Village Records, Wajib-ul-arz & Nistar</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-spellings" class="wiki-toc-link"><span class="wiki-toc-num">9.</span> <span data-lang-en="Historical Name Transliterations" data-lang-mr="नावांची ऐतिहासिक रूपे व लिप्यंतरण">Historical Name Transliterations</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-archive" class="wiki-toc-link"><span class="wiki-toc-num">10.</span> <span data-lang-en="Settlement Sources Directory & Catalog" data-lang-mr="सेटलमेंट स्रोत संग्रह व सूची">Settlement Sources Directory & Catalog</span></a></li>
+                        <li class="wiki-toc-item"><a href="#sec-references" class="wiki-toc-link"><span class="wiki-toc-num">11.</span> <span data-lang-en="References & Primary Records" data-lang-mr="संदर्भ व शासकीय अभिलेख">References & Primary Records</span></a></li>
+                    </ul>
+                </nav>
             </aside>
 
             <!-- MAIN ENCYCLOPEDIC ARTICLE COLUMN -->
             <main class="wiki-article-col">
 
-                <!-- ARTICLE TITLE & SUBTITLE -->
-                <div class="wiki-article-header">
-                    <h1 class="wiki-page-title" data-lang-en="Land Settlement Reports & Historical Revenue Administration" data-lang-mr="जमीन सेटलमेंट अहवाल व ऐतिहासिक महसूल प्रशासन">Land Settlement Reports & Historical Revenue Administration</h1>
-                    <div class="wiki-page-subtitle" data-lang-en="Official colonial land revenue surveys, Malguzari tenurial systems, village administration, and agrarian irrigation records of the Central Provinces" data-lang-mr="सेंट्रल प्रॉव्हिन्सेसमधील अधिकृत जमीन महसूल सर्वेक्षणे, मालगुजारी भूधारणा व्यवस्था, ग्राम प्रशासन आणि शेती सिंचन नोंदी">Official colonial land revenue surveys, Malguzari tenurial systems, village administration, and agrarian irrigation records of the Central Provinces</div>
+                <!-- ARTICLE TITLE AREA -->
+                <div class="wiki-title-area">
+                    <h1 class="wiki-article-title">
+                        <span data-lang-en="Land Settlement Reports & Historical Revenue Administration" data-lang-mr="जमीन सेटलमेंट अहवाल व ऐतिहासिक महसूल प्रशासन">Land Settlement Reports & Historical Revenue Administration</span>
+                    </h1>
+                    <div class="wiki-article-subline">
+                        <span data-lang-en="Official colonial land revenue surveys, Malguzari tenurial systems, village administration, and agrarian irrigation records of the Central Provinces" data-lang-mr="सेंट्रल प्रॉव्हिन्सेसमधील अधिकृत जमीन महसूल सर्वेक्षणे, मालगुजारी भूधारणा व्यवस्था, ग्राम प्रशासन आणि शेती सिंचन नोंदी">Official colonial land revenue surveys, Malguzari tenurial systems, village administration, and agrarian irrigation records of the Central Provinces</span>
+                        <div class="wiki-quick-lang">
+                            <button onclick="switchLanguage(currentLang === 'en' ? 'mr' : 'en')" class="wiki-quick-lang-btn">
+                                <i class="fa-solid fa-language"></i> <span data-lang-en="मराठीत वाचा" data-lang-mr="Read in English">मराठीत वाचा</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- WIKIPEDIA ARTICLE BODY -->
                 <div class="wiki-article-body">
 
-                    <!-- RIGHT FLOATING INFOBOX -->
-                    <aside class="wiki-infobox">
-                        <div class="wiki-infobox-title" data-lang-en="Land Settlement Administration" data-lang-mr="जमीन सेटलमेंट प्रशासन">Land Settlement Administration</div>
-                        <div class="wiki-infobox-image">
-                            <i class="fa-solid fa-map-location-dot" style="font-size:3.2rem; color:var(--primary-dark); padding:1rem 0;"></i>
-                            <div class="wiki-infobox-caption" data-lang-en="Revenue Settlement Maps & Village Registers of Central Provinces" data-lang-mr="सेंट्रल प्रॉव्हिन्सेसचे महसूल सेटलमेंट नकाशे व गाव नोंदवह्या">Revenue Settlement Maps & Village Registers of Central Provinces</div>
+                <div class="wiki-lead-section" id="sec-lead">
+                    <!-- CANONICAL INFOBOX -->
+                    <aside class="wiki-infobox" aria-label="Settlement Quick Facts">
+                        <div class="wiki-infobox-title">
+                            <span data-lang-en="Land Settlement Administration" data-lang-mr="जमीन सेटलमेंट प्रशासन">Land Settlement Administration</span>
+                        </div>
+                        <div class="wiki-infobox-subtitle">
+                            <span data-lang-en="Historical Summary & Revenue Records" data-lang-mr="ऐतिहासिक सारांश व महसूल नोंदी">Historical Summary & Revenue Records</span>
+                        </div>
+                        <div class="wiki-infobox-image-box">
+                            <img src="images/kohli_samaj_logo.png" alt="Kohli Samaj Emblem" class="wiki-infobox-img">
+                            <div class="wiki-infobox-caption">
+                                <span data-lang-en="Official Emblem representing agrarian stewardship and land rights" data-lang-mr="कृषी वारसा आणि भूधारणा अधिकारांचे प्रतीक असलेले समाज बोधचिन्ह">Official Emblem representing agrarian stewardship and land rights</span>
+                            </div>
                         </div>
                         <table class="wiki-infobox-table">
                             <tr>
-                                <th data-lang-en="Jurisdiction" data-lang-mr="प्रशासकीय क्षेत्र">Jurisdiction</th>
-                                <td data-lang-en="Central Provinces (Vidarbha Division)" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस (विदर्भ विभाग)">Central Provinces (Vidarbha Division)</td>
+                                <th><span data-lang-en="Jurisdiction" data-lang-mr="प्रशासकीय क्षेत्र">Jurisdiction</span></th>
+                                <td><span data-lang-en="Central Provinces (Vidarbha Division)" data-lang-mr="सेंट्रल प्रॉव्हिन्सेस (विदर्भ विभाग)">Central Provinces (Vidarbha Division)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Key Settlements" data-lang-mr="प्रमुख सेटलमेंट">Key Settlements</th>
-                                <td data-lang-en="Chanda (1869, Napier), Bhandara (1867, Lawrence)" data-lang-mr="चांदा (१८६९, नेपियर), भंडारा (१८६७, लॉरेन्स)">Chanda (1869, Napier), Bhandara (1867, Lawrence)</td>
+                                <th><span data-lang-en="Key Settlements" data-lang-mr="प्रमुख सेटलमेंट">Key Settlements</span></th>
+                                <td><span data-lang-en="Chanda (1869, Napier), Bhandara (1867, Lawrence)" data-lang-mr="चांदा (१८६९, नेपियर), भंडारा (१८६७, लॉरेन्स)">Chanda (1869, Napier), Bhandara (1867, Lawrence)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Tenure System" data-lang-mr="भूधारणा पद्धत">Tenure System</th>
-                                <td data-lang-en="Malguzari System (Proprietary Rights)" data-lang-mr="मालगुजारी व्यवस्था (मालकी हक्क)">Malguzari System (Proprietary Rights)</td>
+                                <th><span data-lang-en="Tenure System" data-lang-mr="भूधारणा पद्धत">Tenure System</span></th>
+                                <td><span data-lang-en="Malguzari System (Proprietary Rights)" data-lang-mr="मालगुजारी व्यवस्था (मालकी हक्क)">Malguzari System (Proprietary Rights)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Recorded Population" data-lang-mr="नोंदणीकृत लोकसंख्या">Recorded Population</th>
-                                <td data-lang-en="19,739 (Bhandara 12,097; Chanda 7,602)" data-lang-mr="१९,७३९ (भंडारा १२,०९७; चांदा ७,६०२)">19,739 (Bhandara 12,097; Chanda 7,602)</td>
+                                <th><span data-lang-en="Recorded Figure" data-lang-mr="नोंदणीकृत लोकसंख्या">Recorded Figure</span></th>
+                                <td><span data-lang-en="19,739 (Bhandara 12,097; Chanda 7,602)" data-lang-mr="१९,७३९ (भंडारा १२,०९७; चांदा ७,६०२)">19,739 (Bhandara 12,097; Chanda 7,602)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Key Agrarian Crops" data-lang-mr="प्रमुख कृषी पिके">Key Agrarian Crops</th>
-                                <td data-lang-en="Sugarcane (Kathani gur), Paddy (Chinnor)" data-lang-mr="ऊस (काठणी गूळ), भात (चिन्नोर)">Sugarcane (Kathani gur), Paddy (Chinnor)</td>
+                                <th><span data-lang-en="Key Agrarian Crops" data-lang-mr="प्रमुख कृषी पिके">Key Agrarian Crops</span></th>
+                                <td><span data-lang-en="Sugarcane (Kathani gur), Paddy (Chinnor)" data-lang-mr="ऊस (काठणी गूळ), भात (चिन्नोर)">Sugarcane (Kathani gur), Paddy (Chinnor)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Water Framework" data-lang-mr="जलव्यवस्थापन">Water Framework</th>
-                                <td data-lang-en="Malguzari Tanks (Talao), Sluice Outlets (Khind/Thana)" data-lang-mr="मालगुजारी तलाव, दगडी सांडवे (खिंड/ठाणा)">Malguzari Tanks (Talao), Sluice Outlets (Khind/Thana)</td>
+                                <th><span data-lang-en="Water Framework" data-lang-mr="जलव्यवस्थापन">Water Framework</span></th>
+                                <td><span data-lang-en="Malguzari Tanks (Talao), Sluice Outlets (Khind/Thana)" data-lang-mr="मालगुजारी तलाव, दगडी सांडवे (खिंड/ठाणा)">Malguzari Tanks (Talao), Sluice Outlets (Khind/Thana)</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Customary Rights" data-lang-mr="पारंपरिक हक्क">Customary Rights</th>
-                                <td data-lang-en="Wajib-ul-arz, Nistar Patrak" data-lang-mr="वाजीब-उल-अर्ज, निस्तार पत्रक">Wajib-ul-arz, Nistar Patrak</td>
+                                <th><span data-lang-en="Customary Rights" data-lang-mr="पारंपरिक हक्क">Customary Rights</span></th>
+                                <td><span data-lang-en="Wajib-ul-arz, Nistar Patrak" data-lang-mr="वाजीब-उल-अर्ज, निस्तार पत्रक">Wajib-ul-arz, Nistar Patrak</span></td>
                             </tr>
                             <tr>
-                                <th data-lang-en="Historical Spellings" data-lang-mr="ऐतिहासिक स्पेलिंग">Historical Spellings</th>
-                                <td data-lang-en="Kohli, Kohri, Kohiree, Kohulee, Kaulees" data-lang-mr="Kohli, Kohri, Kohiree, Kohulee, Kaulees">Kohli, Kohri, Kohiree, Kohulee, Kaulees</td>
+                                <th><span data-lang-en="Historical Spellings" data-lang-mr="ऐतिहासिक स्पेलिंग">Historical Spellings</span></th>
+                                <td><span data-lang-en="Kohli, Kohri, Kohiree, Kohulee, Kaulees" data-lang-mr="Kohli, Kohri, Kohiree, Kohulee, Kaulees">Kohli, Kohri, Kohiree, Kohulee, Kaulees</span></td>
                             </tr>
                         </table>
                     </aside>
@@ -232,6 +252,8 @@
                     <p data-lang-en="In the Wainganga river basin—encompassing modern Bhandara, Gondia, Chandrapur, and Gadchiroli districts—settlement officers systematically chronicled the agrarian pre-eminence of the <strong>Kohli</strong> (also rendered historically as <em>Kohri</em> or <em>Kaulees</em>) community. The settlement surveys documented their hereditary roles as village Patils, Malguzari proprietary landholders, master builders of earthen irrigation tanks (<em>Malguzari Bandharas</em>), and pioneering cultivators of superior sugarcane and transplanted rice." data-lang-mr="वैनगंगा नदीच्या खोऱ्यात—ज्यात आधुनिक भंडारा, गोंदिया, चंद्रपूर व गडचिरोली जिल्ह्यांचा समावेश होतो—सेटलमेंट अधिकाऱ्यांनी <strong>कोहळी</strong> (ऐतिहासिक नोंदीत <em>Kohri</em> किंवा <em>Kaulees</em>) समाजाच्या कृषी वर्चस्वाचे पद्धतशीर दस्तऐवजीकरण केले. गावांचे पाटील, मालगुजारी जमीनदार, मातीचे भव्य तलाव (<em>मालगुजारी तलाव</em>) बांधणारे कुशल जलअभियंते आणि उत्कृष्ट ऊस व भात पिकांचे उत्पादक म्हणून त्यांच्या पारंपरिक भूमिका सेटलमेंट अहवालांत नमूद आहेत.">
                         In the Wainganga river basin—encompassing modern Bhandara, Gondia, Chandrapur, and Gadchiroli districts—settlement officers systematically chronicled the agrarian pre-eminence of the <strong>Kohli</strong> (also rendered historically as <em>Kohri</em> or <em>Kaulees</em>) community. The settlement surveys documented their hereditary roles as village Patils, Malguzari proprietary landholders, master builders of earthen irrigation tanks (<em>Malguzari Bandharas</em>), and pioneering cultivators of superior sugarcane and transplanted rice.
                     </p>
+
+                </div>
 
                     <!-- SECTION 1: HISTORICAL FRAMEWORK -->
                     <section id="sec-intro" class="wiki-section">
@@ -255,10 +277,18 @@
                             The initial comprehensive land settlement of Chanda (modern Chandrapur and Gadchiroli) was executed between 1867 and 1869 by <strong>Captain C. B. Lucie Smith</strong>, Deputy Commissioner and Settlement Officer. Captain Lucie Smith documented the profound impact of the Kohli community in the Brahmapuri and Garhchiroli parganas:
                         </p>
 
-                        <blockquote class="wiki-quote" style="border-left:3px solid var(--wiki-border); padding:0.6rem 1.2rem; margin:1rem 0; font-family:'Merriweather',serif; font-style:italic; color:var(--wiki-text);">
-                            <span data-lang-en="“The Kohris are the most industrious and intelligent cultivators in the district; they understand irrigation thoroughly and have constructed almost all the fine tanks which exist in the Garchiroli and Bramhapuri parganas... they are men of enterprise and substantial means.”" data-lang-mr="“कोहरी हे या जिल्ह्यातील सर्वाधिक कष्टाळू आणि बुद्धिमान शेतकरी आहेत; त्यांना सिंचनाची उत्कृष्ट जाण आहे आणि त्यांनी गडचिरोली व ब्रह्मपुरी परगण्यातील जवळपास सर्व उत्कृष्ट तलाव बांधले आहेत... ते धाडसी उद्योजक आणि संपन्न स्थितीतील लोक आहेत.”">“The Kohris are the most industrious and intelligent cultivators in the district; they understand irrigation thoroughly and have constructed almost all the fine tanks which exist in the Garchiroli and Bramhapuri parganas... they are men of enterprise and substantial means.”</span>
-                            <div style="font-size:0.85rem; font-style:normal; margin-top:0.4rem; color:var(--wiki-text-muted);">— <strong>Captain C. B. Lucie Smith</strong>, <em>Report on the Land Revenue Settlement of the Chanda District, Central Provinces</em> (1869)</div>
-                        </blockquote>
+                        <div class="wiki-quotebox">
+                            <div class="wiki-quotebox-title">
+                                <i class="fa-solid fa-quote-left" style="color:var(--accent-gold);"></i>
+                                <span data-lang-en="Official Commendation of Kohli Engineering & Cultivation" data-lang-mr="कोहळी जलस्थापत्य व शेतीविषयक अधिकृत गौरव नोंद">Official Commendation of Kohli Engineering & Cultivation</span>
+                            </div>
+                            <p style="margin:0.4rem 0 0.2rem 0; font-family:'Merriweather',serif; font-style:italic;" data-lang-en="“The Kohris are the most industrious and intelligent cultivators in the district; they understand irrigation thoroughly and have constructed almost all the fine tanks which exist in the Garchiroli and Bramhapuri parganas... they are men of enterprise and substantial means.”" data-lang-mr="“कोहरी हे या जिल्ह्यातील सर्वाधिक कष्टाळू आणि बुद्धिमान शेतकरी आहेत; त्यांना सिंचनाची उत्कृष्ट जाण आहे आणि त्यांनी गडचिरोली व ब्रह्मपुरी परगण्यातील जवळपास सर्व उत्कृष्ट तलाव बांधले आहेत... ते धाडसी उद्योजक आणि संपन्न स्थितीतील लोक आहेत.”">
+                                “The Kohris are the most industrious and intelligent cultivators in the district; they understand irrigation thoroughly and have constructed almost all the fine tanks which exist in the Garchiroli and Bramhapuri parganas... they are men of enterprise and substantial means.”
+                            </p>
+                            <div class="wiki-quotebox-credit">
+                                — <strong>Captain C. B. Lucie Smith</strong>, <em>Report on the Land Revenue Settlement of the Chanda District, Central Provinces</em> (1869)
+                            </div>
+                        </div>
 
                         <p data-lang-en="Subsequent settlement revisions undertaken by <strong>A. B. Napier, ICS</strong>, reaffirmed the community's agricultural leadership. Napier observed that the Kohli cultivators maintained sophisticated communal management over tank sluices and water distribution, ensuring that during seasons of precarious rainfall, paddy crops under Kohli tanks survived unblemished." data-lang-mr="त्यानंतर <strong>ए. बी. नेपियर (ICS)</strong> यांनी केलेल्या सेटलमेंट पुनरावलोकन अहवालात समाजाच्या कृषी नेतृत्वाची पुन्हा पुष्टी करण्यात आली. नेपियर यांनी नमूद केले की कोहळी शेतकरी तलावाचे सांडवे आणि पाणी वाटपावर प्रगत सामूहिक नियंत्रण ठेवत असत, ज्यामुळे अनिश्चित पावसाच्या वर्षांतही कोहळी तलावांखालील भातपिकाचे कधीही नुकसान झाले नाही.">
                             Subsequent settlement revisions undertaken by <strong>A. B. Napier, ICS</strong>, reaffirmed the community's agricultural leadership. Napier observed that the Kohli cultivators maintained sophisticated communal management over tank sluices and water distribution, ensuring that during seasons of precarious rainfall, paddy crops under Kohli tanks survived unblemished.
